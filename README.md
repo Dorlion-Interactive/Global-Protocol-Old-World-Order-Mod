@@ -1,6 +1,6 @@
-﻿# Global Protocol: Old World Order
+# Global Protocol: Old World Order
 
-[![Latest Release](https://img.shields.io/github/v/release/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod?label=download&style=for-the-badge&logo=github)](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod/releases/latest/download/old-world-order-latest.zip)
+[![Latest Release](https://img.shields.io/github/v/release/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod?label=download&style=for-the-badge&logo=github)](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod/releases)
 [![Total Downloads](https://img.shields.io/github/downloads/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod/total?style=for-the-badge)](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod/releases)
 [![License](https://img.shields.io/github/license/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod?style=for-the-badge)](LICENSE)
 
@@ -16,7 +16,8 @@ A historical total conversion mod for **[Global Protocol: New World Order](https
 
 If you just want to play the mod:
 
-1. Download **[old-world-order-latest.zip](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod/releases/latest/download/old-world-order-latest.zip)**
+1. Download the latest version from the **[Releases](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod/releases)** page.
+   *(Note: Look for the `old-world-order-latest.zip` asset in the latest release)*
 2. Extract it into:
    ```
    %LOCALAPPDATA%\NewWorldOrder\Mods\globalprotocol.old_world_order\

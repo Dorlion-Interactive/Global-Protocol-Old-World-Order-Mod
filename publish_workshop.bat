@@ -1,15 +1,15 @@
 @echo off
-setlocal
+setlocal EnableDelayedExpansion
 
 set "SCRIPT_DIR=%~dp0"
 set "MOD_ID=globalprotocol.old_world_order"
-set "DEFAULT_APP_ID=4500270"
-set "APP_ID=%DEFAULT_APP_ID%"
+set "APP_ID=4500270"
 set "CONTENT_FOLDER=%LOCALAPPDATA%\NewWorldOrder\Mods\%MOD_ID%"
 set "PREVIEW_FILE=%SCRIPT_DIR%thumbnail.png"
 set "TITLE=Global Protocol: Old World Order"
 set "DESCRIPTION=A historical total conversion mod for Global Protocol set in 1450 AD."
 set "VDF_FILE=%TEMP%\%MOD_ID%_workshop.vdf"
+set "PUBLISHEDFILEID="
 
 echo =======================================================
 echo Global Protocol: Old World Order - WORKSHOP PUBLISHER
@@ -49,14 +49,18 @@ if errorlevel 1 (
     exit /b 1
 )
 
-set "APP_ID_INPUT="
-set "USERNAME="
-set "PUBLISHEDFILEID="
-set "VISIBILITY="
-set "CHANGENOTE="
+for /f "usebackq delims=" %%A in (`powershell -NoProfile -Command "$json = Get-Content '%SCRIPT_DIR%mod.json' -Raw | ConvertFrom-Json; if ($json.workshopItemId) { $json.workshopItemId }"`) do (
+    set "PUBLISHEDFILEID=%%A"
+)
+set "PUBLISHEDFILEID=!PUBLISHEDFILEID: =!"
 
-set /p "APP_ID_INPUT=Enter Workshop AppID [%DEFAULT_APP_ID%]: "
-if not "%APP_ID_INPUT%"=="" set "APP_ID=%APP_ID_INPUT%"
+echo AppID:            %APP_ID%
+if defined PUBLISHEDFILEID (
+    echo Workshop item id: !PUBLISHEDFILEID!
+) else (
+    echo Workshop item id: none saved yet ^(first upload will create a new item^)
+)
+echo.
 
 set /p "USERNAME=Enter your Steam username: "
 if "%USERNAME%"=="" (
@@ -67,7 +71,6 @@ if "%USERNAME%"=="" (
     exit /b 1
 )
 
-set /p "PUBLISHEDFILEID=Enter Workshop item id (leave blank to create new): "
 set /p "VISIBILITY=Visibility [0=public, 1=friends-only, 2=hidden] [2]: "
 if "%VISIBILITY%"=="" set "VISIBILITY=2"
 set /p "CHANGENOTE=Change note (optional): "
@@ -98,8 +101,12 @@ if not "%STEAMCMD_EXIT%"=="0" (
     echo Workshop upload failed with exit code %STEAMCMD_EXIT%.
     echo Check the SteamCMD output above for details.
 ) else (
-    echo Workshop upload command completed.
-    echo If this was the first upload, copy the returned Workshop item id into mod.json as workshopItemId.
+    echo Workshop upload completed.
+    if defined PUBLISHEDFILEID (
+        echo Item id: !PUBLISHEDFILEID!
+    ) else (
+        echo A new Workshop item was created. Save the returned item id into mod.json as workshopItemId.
+    )
 )
 echo.
 pause
