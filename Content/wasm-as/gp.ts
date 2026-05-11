@@ -6,6 +6,9 @@
 @external("gp", "log")
 declare function gp_log(msgPtr: i32, msgLen: i32): void;
 
+@external("gp", "show_mod_popup")
+declare function gp_show_mod_popup(titlePtr: i32, titleLen: i32, bodyPtr: i32, bodyLen: i32): void;
+
 @external("gp", "fire_event")
 declare function gp_fire_event(countryIndex: i32, eventIdPtr: i32, eventIdLen: i32): void;
 
@@ -28,6 +31,21 @@ export function log(msg: string): void {
 export function fireEvent(countryIndex: i32, eventId: string): void {
     const b = String.UTF8.encode(eventId);
     gp_fire_event(countryIndex, changetype<i32>(b), b.byteLength);
+}
+
+/**
+ * Show a direct popup dialog in the game UI.
+ * Requires "InjectUI" permission in mod.json.
+ */
+export function showPopup(title: string, body: string): void {
+    const titleBytes = String.UTF8.encode(title);
+    const bodyBytes = String.UTF8.encode(body);
+    gp_show_mod_popup(
+        changetype<i32>(titleBytes),
+        titleBytes.byteLength,
+        changetype<i32>(bodyBytes),
+        bodyBytes.byteLength
+    );
 }
 
 /**

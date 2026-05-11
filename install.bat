@@ -2,8 +2,8 @@
 setlocal EnableDelayedExpansion
 
 set MOD_ID=globalprotocol.old_world_order
-set TARGET=%LOCALAPPDATA%\NewWorldOrder\Mods\%MOD_ID%
-set LEGACY_TARGET=%USERPROFILE%\AppData\LocalLow\Dorlion Interactive\Global Protocol\Mods\%MOD_ID%
+set TARGET=%USERPROFILE%\AppData\LocalLow\Dorlion Interactive\Global Protocol\Mods\%MOD_ID%
+set DUPLICATE_TARGET=%LOCALAPPDATA%\NewWorldOrder\Mods\%MOD_ID%
 set SCRIPT_DIR=%~dp0
 set BUILD_VARIANT=as
 set SKIP_BUILD=0
@@ -24,7 +24,7 @@ echo ============================================================
 echo.
 echo  Variant  : %BUILD_VARIANT%  (use /dotnet or /as to switch)
 echo  Target   : %TARGET%
-echo  Legacy   : %LEGACY_TARGET%
+echo  Cleanup  : remove duplicate at %DUPLICATE_TARGET%
 echo  Skip bld : %SKIP_BUILD%
 echo.
 
@@ -216,6 +216,14 @@ copy /Y "%SCRIPT_DIR%mod.json"      "%TARGET%\mod.json"      >nul
 copy /Y "%SCRIPT_DIR%logo.png"      "%TARGET%\logo.png"      >nul
 copy /Y "%SCRIPT_DIR%thumbnail.png" "%TARGET%\thumbnail.png" >nul
 
+echo   Aligning enableComponentRuntime with selected build variant...
+if /I "%BUILD_VARIANT%"=="dotnet" (
+    powershell -NoProfile -ExecutionPolicy Bypass -Command "$p='%TARGET%\\mod.json'; $j=Get-Content $p -Raw | ConvertFrom-Json; $j.enableComponentRuntime=$true; $j | ConvertTo-Json -Depth 20 | Set-Content $p -Encoding UTF8"
+) else (
+    powershell -NoProfile -ExecutionPolicy Bypass -Command "$p='%TARGET%\\mod.json'; $j=Get-Content $p -Raw | ConvertFrom-Json; $j.enableComponentRuntime=$false; $j | ConvertTo-Json -Depth 20 | Set-Content $p -Encoding UTF8"
+)
+if errorlevel 1 ( echo ERROR: failed to align enableComponentRuntime in deployed mod.json & pause & exit /b 1 )
+
 echo   Copying scenario\...
 robocopy "%SCRIPT_DIR%scenario"   "%TARGET%\scenario"   /E /NFL /NDL /NJH /NJS /R:1 /W:1
 if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on scenario\ & pause & exit /b 1 )
@@ -238,10 +246,10 @@ echo   Copying Content\ (runtime assets only, no source files)...
 robocopy "%SCRIPT_DIR%Content" "%TARGET%\Content" /E /NFL /NDL /NJH /NJS /R:1 /W:1 /XD wasm-as wasm-dotnet mod-csharp /XF *.ts *.cs *.csproj *.c *.h *.a *.rsp
 if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on Content\ & pause & exit /b 1 )
 
-echo   Mirroring install to legacy mods root...
-if not exist "%LEGACY_TARGET%" mkdir "%LEGACY_TARGET%"
-robocopy "%TARGET%" "%LEGACY_TARGET%" /E /NFL /NDL /NJH /NJS /R:1 /W:1
-if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on legacy target & pause & exit /b 1 )
+if exist "%DUPLICATE_TARGET%" (
+    echo   Removing duplicate mod copy from Local mods root...
+    rmdir /S /Q "%DUPLICATE_TARGET%"
+)
 
 :: =============================================================
 ::  PHASE 3 - SUMMARY
@@ -259,7 +267,7 @@ if exist "%TARGET%\Content\mod.wasm" (
     echo  Run install.bat again without /skip-build to compile WASM.
 )
 echo  Installed to: %TARGET%
-echo  Mirrored to: %LEGACY_TARGET%
+echo  Duplicate Local copy removed: %DUPLICATE_TARGET%
 echo ============================================================
 echo.
 echo  Next steps:
