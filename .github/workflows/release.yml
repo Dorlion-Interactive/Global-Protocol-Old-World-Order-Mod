@@ -80,6 +80,9 @@ jobs:
           zip -r "../${ZIP}" .
           cd ..
 
+          # Also produce a fixed-name ZIP so the badge URL never changes
+          cp "${ZIP}" "old-world-order-latest.zip"
+
           echo "ZIP=${ZIP}" >> "$GITHUB_ENV"
           echo "Packaged: ${ZIP}"
           unzip -l "${ZIP}"
@@ -111,5 +114,7 @@ jobs:
             ```
 
             Requires Node.js ≥ 18. See [README](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod#readme) for full details.
-          files: ${{ env.ZIP }}
+          files: |
+            ${{ env.ZIP }}
+            old-world-order-latest.zip
           fail_on_unmatched_files: true
