@@ -54,6 +54,10 @@ desktop.ini
 # Internal developer tooling — not for modders
 dev/
 
+# Wiki build dirs (not part of main repo)
+.wiki-temp/
+.wiki-clone/
+
 # npm / node_modules
 node_modules/
 
