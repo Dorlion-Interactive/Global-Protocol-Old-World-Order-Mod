@@ -14,6 +14,9 @@ internal static class GpHost
     [DllImport("gp", EntryPoint = "log")]
     internal static extern void Log(int msgPtr, int msgLen);
 
+    [DllImport("gp", EntryPoint = "show_mod_popup")]
+    internal static extern void ShowModPopup(int titlePtr, int titleLen, int bodyPtr, int bodyLen);
+
     [DllImport("gp", EntryPoint = "fire_event")]
     internal static extern void FireEvent(int countryIndex, int eventIdPtr, int eventIdLen);
 
@@ -45,6 +48,14 @@ internal static class Gp
         => WriteUtf8(eventId, (ptr, len) => GpHost.FireEvent(countryIndex, ptr, len));
 
     /// <summary>
+    /// Show a direct popup dialog in the game UI.
+    /// Requires "InjectUI" permission in mod.json.
+    /// </summary>
+    internal static void ShowPopup(string title, string body)
+        => WriteTwoUtf8(title, body, (titlePtr, titleLen, bodyPtr, bodyLen) =>
+            GpHost.ShowModPopup(titlePtr, titleLen, bodyPtr, bodyLen));
+
+    /// <summary>
     /// Decode a UTF-8 string passed in from the engine (ptr + len into WASM linear memory).
     /// Use this in [UnmanagedCallersOnly] hooks to read hookName, modId, etc.
     /// </summary>
@@ -61,5 +72,15 @@ internal static class Gp
         var bytes = Encoding.UTF8.GetBytes(value);
         fixed (byte* ptr = bytes)
             call((int)ptr, bytes.Length);
+    }
+
+    private static unsafe void WriteTwoUtf8(string first, string second, Action<int, int, int, int> call)
+    {
+        var firstBytes = Encoding.UTF8.GetBytes(first);
+        var secondBytes = Encoding.UTF8.GetBytes(second);
+
+        fixed (byte* firstPtr = firstBytes)
+        fixed (byte* secondPtr = secondBytes)
+            call((int)firstPtr, firstBytes.Length, (int)secondPtr, secondBytes.Length);
     }
 }

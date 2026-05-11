@@ -15,10 +15,24 @@
 import { log, fireEvent, readString } from "./gp";
 
 const MOD_ID = "globalprotocol.old_world_order";
+const WELCOME_EVENT_ID = "owo_welcome";
+
+let welcomeShown = false;
+
+// Optional initialization hook. The host calls this once at startup if present.
+export function on_init(): void {
+    // Keep at least one gp host import alive so runtime link binding resolves against module "gp".
+    log("OWO init");
+}
 
 // Called every game tick.
 // tick = total elapsed ticks, year/month = current in-game date.
 export function on_game_tick(tick: i32, year: i32, month: i32): void {
+    if (welcomeShown) return;
+
+    welcomeShown = true;
+    fireEvent(0, WELCOME_EVENT_ID);
+    log("OWO: welcome popup shown on first tick");
 }
 
 // Called when a war is declared.
@@ -54,6 +68,9 @@ export function on_ui_action(
 ): void {
     if (readString(modIdPtr, modIdLen) != MOD_ID) return;
 
-    // const hookName = readString(hookNamePtr, hookNameLen);
-    // if (hookName == "owo.my_button") { ... }
+    const hookName = readString(hookNamePtr, hookNameLen);
+    if (hookName != "owo.welcome") return;
+
+    fireEvent(0, WELCOME_EVENT_ID);
+    log("OWO: welcome popup reopened via toolbar button");
 }

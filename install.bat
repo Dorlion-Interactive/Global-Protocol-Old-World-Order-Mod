@@ -3,6 +3,7 @@ setlocal EnableDelayedExpansion
 
 set MOD_ID=globalprotocol.old_world_order
 set TARGET=%LOCALAPPDATA%\NewWorldOrder\Mods\%MOD_ID%
+set LEGACY_TARGET=%USERPROFILE%\AppData\LocalLow\Dorlion Interactive\Global Protocol\Mods\%MOD_ID%
 set SCRIPT_DIR=%~dp0
 set BUILD_VARIANT=as
 set SKIP_BUILD=0
@@ -10,9 +11,9 @@ set SKIP_BUILD=0
 :: -- Parse flags ---------------------------------------------------------------
 :parse_args
 if "%~1"=="" goto done_args
-if /I "%~1"=="/dotnet"     set BUILD_VARIANT=dotnet & shift & goto parse_args
-if /I "%~1"=="/as"         set BUILD_VARIANT=as    & shift & goto parse_args
-if /I "%~1"=="/skip-build" set SKIP_BUILD=1        & shift & goto parse_args
+if /I "%~1"=="/dotnet"     set "BUILD_VARIANT=dotnet" & shift & goto parse_args
+if /I "%~1"=="/as"         set "BUILD_VARIANT=as" & shift & goto parse_args
+if /I "%~1"=="/skip-build" set "SKIP_BUILD=1" & shift & goto parse_args
 echo WARNING: Unknown flag "%~1" ignored.
 shift & goto parse_args
 :done_args
@@ -23,6 +24,7 @@ echo ============================================================
 echo.
 echo  Variant  : %BUILD_VARIANT%  (use /dotnet or /as to switch)
 echo  Target   : %TARGET%
+echo  Legacy   : %LEGACY_TARGET%
 echo  Skip bld : %SKIP_BUILD%
 echo.
 
@@ -106,30 +108,45 @@ if errorlevel 1 (
 for /f "tokens=*" %%v in ('dotnet --version 2^>nul') do set DOTNET_VER=%%v
 echo   dotnet %DOTNET_VER% found.
 
-:: Check wasi-experimental workload
-dotnet workload list 2>nul | find /I "wasi-experimental" >nul
+:: Check wasi-experimental workload (locale-safe, non-interactive)
+dotnet workload list 2>nul | findstr /I /C:"wasi-experimental" >nul
 if errorlevel 1 (
     echo.
-    echo   WARNING: wasi-experimental workload is not installed.
-    echo   This is required to compile .NET to WASM.
+    echo ERROR: wasi-experimental workload is not installed.
     echo.
-    set /P INSTALL_WASI=  Install it now? (dotnet workload install wasi-experimental) [Y/N]: 
-    if /I "!INSTALL_WASI!"=="Y" (
-        echo   Installing wasi-experimental workload...
-        dotnet workload install wasi-experimental
-        if errorlevel 1 (
-            echo ERROR: Workload install failed.
-            pause & exit /b 1
-        )
-        echo   Workload installed.
-    ) else (
-        if exist "%SCRIPT_DIR%Content\mod.wasm" (
-            echo   Found a pre-built Content\mod.wasm -- continuing with that.
-            goto install
-        )
-        echo   No pre-built mod.wasm found. Cannot continue.
-        pause & exit /b 1
+    echo   Run this once, then retry:
+    echo     dotnet workload install wasi-experimental
+    echo.
+    if exist "%SCRIPT_DIR%Content\mod.wasm" (
+        echo   Found a pre-built Content\mod.wasm -- continuing with that.
+        goto install
     )
+    pause & exit /b 1
+)
+
+:: Resolve WASI_SDK_PATH if not already provided
+if not defined WASI_SDK_PATH (
+    if exist "%USERPROFILE%\wasi-sdk\bin\clang.exe" set "WASI_SDK_PATH=%USERPROFILE%\wasi-sdk"
+)
+if not defined WASI_SDK_PATH (
+    if exist "%USERPROFILE%\wasi-sdk-25.0\bin\clang.exe" set "WASI_SDK_PATH=%USERPROFILE%\wasi-sdk-25.0"
+)
+if not defined WASI_SDK_PATH (
+    if exist "%USERPROFILE%\wasi-sdk-25\bin\clang.exe" set "WASI_SDK_PATH=%USERPROFILE%\wasi-sdk-25"
+)
+
+if defined WASI_SDK_PATH (
+    echo   WASI_SDK_PATH=%WASI_SDK_PATH%
+) else (
+    echo.
+    echo ERROR: wasi-sdk not found and WASI_SDK_PATH is not set.
+    echo.
+    echo   Install wasi-sdk and set WASI_SDK_PATH, or install to one of these paths:
+    echo     %USERPROFILE%\wasi-sdk
+    echo     %USERPROFILE%\wasi-sdk-25.0
+    echo     %USERPROFILE%\wasi-sdk-25
+    echo.
+    pause & exit /b 1
 )
 
 :: Build -- CopyWasmToContent target in .csproj auto-copies dotnet.wasm -> Content/mod.wasm
@@ -207,6 +224,12 @@ echo   Copying overrides\...
 robocopy "%SCRIPT_DIR%overrides"  "%TARGET%\overrides"  /E /NFL /NDL /NJH /NJS /R:1 /W:1
 if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on overrides\ & pause & exit /b 1 )
 
+if exist "%SCRIPT_DIR%overrides\Art\" (
+    echo   Mirroring overrides\Art\ to root Art\ for marker/icon loaders...
+    robocopy "%SCRIPT_DIR%overrides\Art" "%TARGET%\Art" /E /NFL /NDL /NJH /NJS /R:1 /W:1
+    if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on overrides\Art\ & pause & exit /b 1 )
+)
+
 echo   Copying flags\...
 robocopy "%SCRIPT_DIR%flags"      "%TARGET%\flags"      /E /NFL /NDL /NJH /NJS /R:1 /W:1
 if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on flags\ & pause & exit /b 1 )
@@ -214,6 +237,11 @@ if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on flags\ & pause & exit /b 
 echo   Copying Content\ (runtime assets only, no source files)...
 robocopy "%SCRIPT_DIR%Content" "%TARGET%\Content" /E /NFL /NDL /NJH /NJS /R:1 /W:1 /XD wasm-as wasm-dotnet mod-csharp /XF *.ts *.cs *.csproj *.c *.h *.a *.rsp
 if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on Content\ & pause & exit /b 1 )
+
+echo   Mirroring install to legacy mods root...
+if not exist "%LEGACY_TARGET%" mkdir "%LEGACY_TARGET%"
+robocopy "%TARGET%" "%LEGACY_TARGET%" /E /NFL /NDL /NJH /NJS /R:1 /W:1
+if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on legacy target & pause & exit /b 1 )
 
 :: =============================================================
 ::  PHASE 3 - SUMMARY
@@ -231,6 +259,7 @@ if exist "%TARGET%\Content\mod.wasm" (
     echo  Run install.bat again without /skip-build to compile WASM.
 )
 echo  Installed to: %TARGET%
+echo  Mirrored to: %LEGACY_TARGET%
 echo ============================================================
 echo.
 echo  Next steps:
