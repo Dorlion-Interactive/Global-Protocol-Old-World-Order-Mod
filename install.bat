@@ -169,6 +169,21 @@ if exist "%TEMP%\owo_wasm_peek.hex" (
 echo.
 
 :: =============================================================
+::  PHASE 1b - VALIDATE SCENARIO FRAGMENTS
+:: =============================================================
+:validate
+echo [VALIDATE] Checking scenario\*.json shape before deploy...
+powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_DIR%dev\validate_scenario.ps1" -ScenarioDir "%SCRIPT_DIR%scenario"
+if errorlevel 1 (
+    echo.
+    echo ERROR: Scenario validation failed. Aborting install to prevent broken deploy.
+    echo        Fix the issues above, then re-run install.bat.
+    pause
+    exit /b 1
+)
+echo.
+
+:: =============================================================
 ::  PHASE 2 - INSTALL
 :: =============================================================
 :install
