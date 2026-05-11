@@ -1,0 +1,27 @@
+{
+  "army": {
+    "subcategory_icons": {
+      "infantry": "Art/Units/infantry_mod.png",
+      "artillery": "Art/Units/artillery_mod.png"
+    },
+    "unit_icons": {
+      "cavalry": "Art/Units/cavalry.png"
+    }
+  },
+  "fleet": {
+    "subcategory_icons": {
+      "destroyer": "Art/Units/destroyer_mod.png"
+    },
+    "unit_icons": {
+      "missile_frigate": "Art/Units/missile_frigate.png"
+    }
+  },
+  "air": {
+    "subcategory_icons": {
+      "fighter": "Art/Units/fighter_mod.png"
+    },
+    "unit_icons": {
+      "stealth_fighter": "Art/Units/stealth_fighter.png"
+    }
+  }
+}

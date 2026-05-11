@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>GlobalProtocol.ModSdk</AssemblyName>
+    <RootNamespace>GlobalProtocol.Core.Mods</RootNamespace>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <!--
+      PURPOSE: Forward-declaration stubs for the Global Protocol Mod SDK.
+      Lets mod source code compile and get full IntelliSense WITHOUT a game
+      installation. In a shipping game build these types live in the game's
+      own GlobalProtocol.Core.dll — this project is compile-time only.
+
+      Do NOT ship GlobalProtocol.ModSdk.dll with your mod.
+      The game provides the real implementations at runtime.
+    -->
+    <Description>Compile-time stubs for the Global Protocol Mod SDK. Do not ship this DLL — the game supplies the real implementations.</Description>
+    <!-- CS0067: events declared but never raised — expected for stub declarations -->
+    <NoWarn>CS0067</NoWarn>
+  </PropertyGroup>
+
+</Project>

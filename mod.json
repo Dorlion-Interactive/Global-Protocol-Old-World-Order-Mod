@@ -1,0 +1,20 @@
+{
+  "id": "globalprotocol.old_world_order",
+  "displayName": "Global Protocol: Old World Order",
+  "iconPath": "logo.png",
+  "thumbnailPath": "thumbnail.png",
+  "era": "1450",
+  "startYear": 1450,
+  "version": "0.2.0",
+  "description": "A historical scenario set in 1450 AD. Play as one of ~120 nations from the late medieval period, commanding historically accurate armies, governments, and ambitions. Featuring the Ottoman Empire, Ming Dynasty, Portugal, France, England, Muscovy, the Timurids, and more.",
+  "scenarioFolder": "scenario",
+  "enabledByDefault": false,
+  "wasmAbiVersion": 2,
+  "runtimePolicy": "wasm_only",
+  "enableComponentRuntime": true,
+  "permissions": ["InjectUI", "FireTriggers"],
+  "entrypoints": {
+    "wasm": "Content/mod.wasm",
+    "ui": "Content/ui/inject.json"
+  }
+}

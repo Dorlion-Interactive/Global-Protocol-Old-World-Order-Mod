@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_scenario_units_deploy_air.schema.json",
+    "title": "Mod Scenario – Air Wing Deployments",
+    "description": "Fragment file: places air wing stacks at scenario start.",
+    "type": "object",
+    "required": ["initialAirWings"],
+    "properties": {
+        "initialAirWings": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/ScenarioAirWingStackDefinition" },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "ScenarioStackUnitDefinition": {
+            "type": "object",
+            "required": ["unitTypeId"],
+            "properties": {
+                "unitTypeId": { "type": "string" },
+                "unitDefIndex": { "type": "integer", "minimum": -1, "default": -1 },
+                "count": { "type": "integer", "minimum": 1, "default": 1 },
+                "currentHp": { "type": "number", "minimum": 0, "default": -1 }
+            },
+            "additionalProperties": false
+        },
+        "ScenarioAirWingStackDefinition": {
+            "type": "object",
+            "required": ["ownerISO3", "provinceId", "units"],
+            "properties": {
+                "ownerISO3": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$"
+                },
+                "provinceId": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Province ID of the airfield province where the wing is based"
+                },
+                "missionType": {
+                    "type": "string",
+                    "enum": ["cas","interception","strategic_bombing","naval_strike","patrol","standby"],
+                    "description": "Default mission assigned to the wing at spawn"
+                },
+                "readiness": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "default": -1,
+                    "description": "Starting readiness in [0, 1]. -1 = full readiness."
+                },
+                "morale": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "default": -1
+                },
+                "units": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/ScenarioStackUnitDefinition" },
+                    "minItems": 1
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

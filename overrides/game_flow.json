@@ -1,0 +1,7 @@
+{
+  "_comment": "Game flow overrides for the Global Protocol: Old World Order mod. Sets Ottoman Empire as the default player country.",
+  "default_player_country": "OTT",
+  "autosave_enabled": true,
+  "autosave_interval_seconds": 300,
+  "max_save_slots": 20
+}

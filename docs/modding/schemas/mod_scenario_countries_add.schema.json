@@ -1,0 +1,131 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_scenario_countries_add.schema.json",
+    "title": "Mod Scenario – Add Countries",
+    "description": "Fragment file: defines new countries to introduce in the scenario. Maps to ScenarioCountryDefinition[].",
+    "type": "object",
+    "required": ["addCountries"],
+    "properties": {
+        "addCountries": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/ScenarioCountryDefinition" },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "ScenarioCountryDefinition": {
+            "type": "object",
+            "required": ["iso3"],
+            "properties": {
+                "templateISO3": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$",
+                    "description": "ISO3 of the base country to copy stats from. Leave empty for a fully custom country."
+                },
+                "iso3": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$",
+                    "description": "ISO3 code of the new country"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Display name of the country"
+                },
+                "mapColor": {
+                    "type": "string",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "description": "Hex map color, e.g. '#3a7bd5'"
+                },
+                "flagPngPath": {
+                    "type": "string",
+                    "description": "Relative path (from mod root) to a 128×80 flag PNG"
+                },
+                "capital": {
+                    "type": "string",
+                    "description": "Display name of the capital city"
+                },
+                "capitalProvince": {
+                    "type": "string",
+                    "description": "Province name or ID string used to resolve the capital entity"
+                },
+                "population": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "areaKm2": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "governmentType": {
+                    "type": "string",
+                    "enum": ["democracy","authoritarian","hybrid","monarchy","theocracy","military_junta","failed_state","city_state"]
+                },
+                "governmentSubtype": {
+                    "type": "string"
+                },
+                "ideology": {
+                    "type": "string",
+                    "enum": ["progressive","centrist","conservative","nationalist","communist","islamist","libertarian","green","theocratic"]
+                },
+                "militaryUnitTypeIds": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "IDs of unit types available to this country"
+                },
+                "neighbors": {
+                    "type": "array",
+                    "items": { "type": "string", "pattern": "^[A-Z]{3}$" },
+                    "description": "ISO3 codes of land neighbours"
+                },
+                "seaNeighbors": {
+                    "type": "array",
+                    "items": { "type": "string", "pattern": "^[A-Z]{3}$" },
+                    "description": "ISO3 codes of sea/naval neighbours"
+                },
+                "leaderTitle": {
+                    "type": "string",
+                    "description": "Override the leader's title, e.g. 'Chancellor'"
+                },
+                "leaderName": {
+                    "type": "string",
+                    "description": "Override the leader's name"
+                },
+                "homelandTerm": {
+                    "type": "string",
+                    "description": "Override the term used for this country's homeland, e.g. 'Federation'"
+                },
+                "continent": {
+                    "type": "string",
+                    "enum": ["Africa","Americas","Antarctica","Asia","Europe","Oceania","Unknown"],
+                    "description": "Continent enum value (case-insensitive at runtime)"
+                },
+                "region": {
+                    "type": "string",
+                    "enum": [
+                        "AustraliaNewZealand",
+                        "CentralAsia",
+                        "EastAsia",
+                        "EasternEurope",
+                        "LatinAmericaCaribbean",
+                        "Melanesia",
+                        "Micronesia",
+                        "NorthernAfrica",
+                        "NorthernAmerica",
+                        "NorthernEurope",
+                        "Polynesia",
+                        "SouthAsia",
+                        "SoutheastAsia",
+                        "SouthernEurope",
+                        "SubSaharanAfrica",
+                        "Unknown",
+                        "WesternAsia",
+                        "WesternEurope"
+                    ],
+                    "description": "WorldRegion enum value"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

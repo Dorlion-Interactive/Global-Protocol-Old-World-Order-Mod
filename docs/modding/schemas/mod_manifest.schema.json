@@ -1,0 +1,113 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_manifest.schema.json",
+    "title": "Mod Manifest",
+    "description": "Schema for mod.json (mod-level metadata). This is separate from scenario metadata.",
+    "type": "object",
+    "required": ["id", "displayName", "version"],
+    "properties": {
+        "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique mod identifier (reverse-domain recommended)"
+        },
+        "displayName": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Display name shown in mod browser"
+        },
+        "iconPath": {
+            "type": "string",
+            "description": "Relative path to a mod icon image (required if specified in code/UI). When declared, this path is used exclusively — no implicit fallbacks to root icon.png or other defaults."
+        },
+        "thumbnailPath": {
+            "type": "string",
+            "description": "Relative path to a larger mod thumbnail/preview image (required if specified in code/UI). When declared, this path is used exclusively — no implicit fallbacks."
+        },
+        "era": {
+            "type": "string",
+            "description": "Optional era tag for sorting/grouping"
+        },
+        "startYear": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Optional suggested start year for UI metadata"
+        },
+        "version": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Mod version string (semver recommended)"
+        },
+        "description": {
+            "type": "string"
+        },
+        "workshopItemId": {
+            "type": "string",
+            "description": "Steam Workshop item id when applicable"
+        },
+        "defaultScenarioFile": {
+            "type": "string",
+            "description": "Relative path to single-file scenario json"
+        },
+        "scenarioFolder": {
+            "type": "string",
+            "description": "Relative path to split scenario folder; takes precedence over defaultScenarioFile"
+        },
+        "entrypoints": {
+            "type": "object",
+            "description": "Optional explicit entrypoint declarations for runtime assets.",
+            "properties": {
+                "wasm": {
+                    "type": "string",
+                    "description": "Relative path to mod WASM entrypoint. Loader checks this first, then falls back to scripts/main.wasm for legacy mods."
+                },
+                "ui": {
+                    "type": "string",
+                    "description": "Relative path to UI injection descriptor. Loader checks this first, then falls back to ui/panels.json for legacy mods."
+                }
+            },
+            "additionalProperties": false
+        },
+        "enabledByDefault": {
+            "type": "boolean",
+            "default": false
+        },
+        "wasmAbiVersion": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1
+        },
+        "enableComponentRuntime": {
+            "type": "boolean",
+            "default": false,
+            "description": "Explicit opt-in to allow loading component-model WASM artifacts for this mod. Keep false unless the mod ships component-model binaries and the game runtime has a component backend enabled."
+        },
+        "runtimePolicy": {
+            "type": "string",
+            "enum": ["coexist", "wasm_only", "csharp_only"],
+            "default": "coexist",
+            "description": "Declares how this mod's runtime components coexist. coexist=WASM and C# run together (default). wasm_only=refuse to subscribe if C# hooks already registered. csharp_only=skip WASM loading for this mod."
+        },
+        "permissions": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "ReadEconomy",
+                    "WriteTreasury",
+                    "FireTriggers",
+                    "WriteFlags",
+                    "InjectUI",
+                    "read_economy",
+                    "write_treasury",
+                    "fire_triggers",
+                    "write_flags",
+                    "inject_ui"
+                ]
+            },
+            "uniqueItems": true,
+            "description": "Requested mod permissions"
+        }
+    },
+    "additionalProperties": false
+}

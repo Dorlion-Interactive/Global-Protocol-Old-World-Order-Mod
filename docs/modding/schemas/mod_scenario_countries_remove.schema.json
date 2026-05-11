@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_scenario_countries_remove.schema.json",
+    "title": "Mod Scenario – Remove Countries",
+    "description": "Fragment file: ISO3 codes of countries to remove from the world state when the scenario loads.",
+    "type": "object",
+    "required": ["removeCountries"],
+    "properties": {
+        "removeCountries": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "pattern": "^[A-Z]{3}$"
+            },
+            "minItems": 1,
+            "description": "ISO3 codes of countries to despawn"
+        }
+    },
+    "additionalProperties": false
+}

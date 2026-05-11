@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_scenario_units_deploy_fleets.schema.json",
+    "title": "Mod Scenario – Fleet Deployments",
+    "description": "Fragment file: places naval fleet stacks at scenario start.",
+    "type": "object",
+    "required": ["initialFleets"],
+    "properties": {
+        "initialFleets": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/ScenarioFleetStackDefinition" },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "ScenarioStackUnitDefinition": {
+            "type": "object",
+            "required": ["unitTypeId"],
+            "properties": {
+                "unitTypeId": { "type": "string" },
+                "unitDefIndex": { "type": "integer", "minimum": -1, "default": -1 },
+                "count": { "type": "integer", "minimum": 1, "default": 1 },
+                "currentHp": { "type": "number", "minimum": 0, "default": -1 }
+            },
+            "additionalProperties": false
+        },
+        "ScenarioFleetStackDefinition": {
+            "type": "object",
+            "required": ["ownerISO3", "provinceId", "units"],
+            "properties": {
+                "ownerISO3": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$"
+                },
+                "provinceId": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Province ID of the sea zone or coastal province where the fleet spawns"
+                },
+                "morale": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "default": -1
+                },
+                "inHarbor": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Whether the fleet starts docked in a harbor"
+                },
+                "units": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/ScenarioStackUnitDefinition" },
+                    "minItems": 1
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

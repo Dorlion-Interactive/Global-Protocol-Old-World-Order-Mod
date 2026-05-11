@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_scenario_units_define.schema.json",
+    "title": "Mod Scenario – Unit Type Definitions",
+    "description": "Fragment file: defines custom unit types introduced by this scenario/mod.",
+    "type": "object",
+    "required": ["unitTypes"],
+    "properties": {
+        "unitTypes": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/ScenarioUnitTypeDefinition" },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "ScenarioUnitTypeDefinition": {
+            "type": "object",
+            "required": ["id", "category"],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Unique identifier for this unit type, e.g. 'my_mod.elite_infantry'"
+                },
+                "ownerIso3": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$",
+                    "description": "If set, this unit type is exclusive to the given country"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string",
+                    "enum": ["infantry","cavalry","artillery","naval","air","armor","special_forces"],
+                    "description": "Broad unit category used for combat resolution"
+                },
+                "attack": { "type": "number", "minimum": 0 },
+                "defense": { "type": "number", "minimum": 0 },
+                "hp": { "type": "number", "minimum": 0 },
+                "speed": { "type": "number", "minimum": 0 },
+                "manpower": { "type": "integer", "minimum": 0 },
+                "airAttack": { "type": "number", "minimum": 0 },
+                "antiAir": { "type": "number", "minimum": 0 },
+                "range": { "type": "number", "minimum": 0 },
+                "terrainPlains": { "type": "number", "minimum": 0, "default": 1.0 },
+                "terrainMountain": { "type": "number", "minimum": 0, "default": 1.0 },
+                "terrainDesert": { "type": "number", "minimum": 0, "default": 1.0 },
+                "terrainForest": { "type": "number", "minimum": 0, "default": 1.0 },
+                "terrainUrban": { "type": "number", "minimum": 0, "default": 1.0 }
+            },
+            "additionalProperties": false
+        }
+    }
+}

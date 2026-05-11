@@ -1,0 +1,29 @@
+{
+  "targets": {
+    "release": {
+      "outFile": "../mod.wasm",
+      "runtime": "stub",
+      "use": ["abort="],
+      "exportRuntime": true,
+      "optimize": true
+    },
+    "named": {
+      "outFile": "../mod-as.wasm",
+      "runtime": "stub",
+      "use": ["abort="],
+      "exportRuntime": true,
+      "optimize": true
+    },
+    "debug": {
+      "outFile": "../mod.wasm",
+      "runtime": "stub",
+      "use": ["abort="],
+      "exportRuntime": true,
+      "debug": true,
+      "sourceMap": true
+    }
+  },
+  "options": {
+    "bindings": "esm"
+  }
+}

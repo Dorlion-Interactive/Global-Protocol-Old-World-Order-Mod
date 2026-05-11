@@ -1,0 +1,76 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary and log files
+*.log
+*.tmp
+*.bak
+
+# Visual Studio / Rider IDE folders
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code (keep tasks.json and settings if useful; ignore generated/cache files)
+.vscode/ipch/
+
+# .NET build outputs — all projects
+**/bin/
+**/obj/
+
+# .NET / WASM build outputs (legacy explicit paths kept for clarity)
+/Content/wasi-wasm/
+/Content/AppBundle/
+
+# Generated artifacts copied into Content/ root by build targets
+/Content/mod.wasm
+/Content/mod-as.wasm
+/Content/mod.js
+/Content/mod.d.ts
+/Content/dotnet.wasm
+/Content/*.dll
+/Content/*.pdb
+/Content/*.deps.json
+/Content/*.runtimeconfig.json
+/Content/runtimeconfig.bin
+/Content/*.a
+/Content/*.dat
+/Content/*.c
+/Content/*.h
+/Content/*.rsp
+/Content/*.wit
+/Content/wasm-props.json
+/Content/wasm-config.h
+
+# Generated artifacts spilled into repo root
+/dotnet.wasm
+/mod.wasm
+
+# Internal developer tooling — not for modders
+dev/
+
+# npm / node_modules
+node_modules/
+
+# Dev tools/probes
+/dev/anatolia_id_probe.txt
+/dev/province_search.txt
+/dev/sourced_flags/
+
+/*.pdb
+/*.deps.json
+/*.runtimeconfig.json
+/runtimeconfig.bin
+/*.a
+/*.dat
+/*.c
+/*.h
+/*.rsp
+/*.wit
+/wasm-props.json
+/wasm-config.h

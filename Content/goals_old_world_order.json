@@ -1,0 +1,9 @@
+{
+  "_description": "National goals for the Old World Order scenario. Reserved for future engine support of the nationalGoalsFile field.",
+  "goals": [
+    { "id": "dominate_trade_routes", "name": "Control the Silk Road", "description": "Establish dominance over Central Asian trade routes.", "category": "economy", "targetIso3": "", "conditions": [], "rewards": [] },
+    { "id": "reconquista",          "name": "Reconquista",            "description": "Unite Iberia under one Christian crown.",               "category": "military","targetIso3": "CAS","conditions": [], "rewards": [] },
+    { "id": "explore_new_world",    "name": "Chart Unknown Seas",     "description": "Sponsor expeditions beyond the known world.",           "category": "science", "targetIso3": "PRT","conditions": [], "rewards": [] },
+    { "id": "fall_of_byzantium",    "name": "Heir of Rome",           "description": "Claim the legacy of the Eastern Roman Empire.",        "category": "prestige","targetIso3": "OTT","conditions": [], "rewards": [] }
+  ]
+}

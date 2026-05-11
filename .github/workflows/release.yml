@@ -1,0 +1,115 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install AssemblyScript
+        working-directory: Content/wasm-as
+        run: npm install --prefer-offline
+
+      - name: Build WASM (AssemblyScript)
+        working-directory: Content/wasm-as
+        run: npx asc mod.ts --target release -o ../mod.wasm --runtime stub --use abort= --exportRuntime
+
+      - name: Verify WASM output
+        run: |
+          if [ ! -f Content/mod.wasm ]; then
+            echo "ERROR: Content/mod.wasm was not produced."
+            exit 1
+          fi
+          SIZE=$(wc -c < Content/mod.wasm)
+          echo "mod.wasm size: ${SIZE} bytes"
+          # Check magic bytes — must start with 00 61 73 6d (core WASM)
+          MAGIC=$(xxd -p -l 4 Content/mod.wasm)
+          echo "WASM magic: ${MAGIC}"
+          if [ "$MAGIC" != "0061736d" ]; then
+            echo "ERROR: Unexpected WASM magic bytes. Expected core WASM (0061736d)."
+            exit 1
+          fi
+
+      - name: Package mod
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          ZIP="old-world-order-${TAG}.zip"
+
+          # Stage installable files only — no source, no build dirs
+          mkdir -p staging/Content
+
+          cp mod.json staging/
+          cp logo.png staging/ 2>/dev/null || true
+          cp thumbnail.png staging/ 2>/dev/null || true
+
+          # scenario/, overrides/, flags/
+          cp -r scenario staging/ 2>/dev/null || true
+          cp -r overrides staging/ 2>/dev/null || true
+          cp -r flags staging/ 2>/dev/null || true
+
+          # Content/ — runtime assets only (exclude source subdirs)
+          rsync -a \
+            --exclude='wasm-as/' \
+            --exclude='wasm-dotnet/' \
+            --exclude='mod-csharp/' \
+            --exclude='*.ts' \
+            --exclude='*.cs' \
+            --exclude='*.csproj' \
+            --exclude='*.c' \
+            --exclude='*.h' \
+            --exclude='*.a' \
+            --exclude='*.rsp' \
+            Content/ staging/Content/
+
+          cd staging
+          zip -r "../${ZIP}" .
+          cd ..
+
+          echo "ZIP=${ZIP}" >> "$GITHUB_ENV"
+          echo "Packaged: ${ZIP}"
+          unzip -l "${ZIP}"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Old World Order ${{ github.ref_name }}"
+          body: |
+            ## Old World Order ${{ github.ref_name }}
+
+            Historical total conversion mod for Global Protocol — 1450 AD.
+
+            ### Install (players)
+
+            1. Download **old-world-order-${{ github.ref_name }}.zip** below
+            2. Extract the contents into:
+               ```
+               %LOCALAPPDATA%\NewWorldOrder\Mods\globalprotocol.old_world_order\
+               ```
+            3. Launch Global Protocol → Mods screen → enable **Old World Order** → start the 1450 scenario
+
+            ### Install (developers / from source)
+
+            ```bat
+            git clone https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod
+            cd old-world-order
+            install.bat
+            ```
+
+            Requires Node.js ≥ 18. See [README](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod#readme) for full details.
+          files: ${{ env.ZIP }}
+          fail_on_unmatched_files: true

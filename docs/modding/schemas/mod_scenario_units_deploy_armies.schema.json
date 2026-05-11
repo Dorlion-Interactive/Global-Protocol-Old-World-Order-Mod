@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_scenario_units_deploy_armies.schema.json",
+    "title": "Mod Scenario – Army Deployments",
+    "description": "Fragment file: places army stacks on the map at scenario start.",
+    "type": "object",
+    "required": ["initialArmies"],
+    "properties": {
+        "initialArmies": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/ScenarioArmyStackDefinition" },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "ScenarioStackUnitDefinition": {
+            "type": "object",
+            "required": ["unitTypeId"],
+            "properties": {
+                "unitTypeId": {
+                    "type": "string",
+                    "description": "ID of the unit type (from unitTypes or built-in definitions)"
+                },
+                "unitDefIndex": {
+                    "type": "integer",
+                    "minimum": -1,
+                    "default": -1,
+                    "description": "Index into the country's UnitDef list. -1 = auto-resolve from unitTypeId."
+                },
+                "count": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "default": 1
+                },
+                "currentHp": {
+                    "type": "number",
+                    "minimum": 0,
+                    "default": -1,
+                    "description": "HP override. -1 = full HP."
+                }
+            },
+            "additionalProperties": false
+        },
+        "ScenarioArmyStackDefinition": {
+            "type": "object",
+            "required": ["ownerISO3", "provinceId", "units"],
+            "properties": {
+                "ownerISO3": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$"
+                },
+                "provinceId": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Numeric province ID where the stack spawns"
+                },
+                "morale": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "default": -1,
+                    "description": "Starting morale in [0, 1]. -1 = default full morale."
+                },
+                "units": {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/ScenarioStackUnitDefinition" },
+                    "minItems": 1
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

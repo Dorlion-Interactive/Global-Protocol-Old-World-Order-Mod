@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_scenario_countries_state.schema.json",
+    "title": "Mod Scenario – Country State Overrides",
+    "description": "Fragment file: mutates economic, political, and diplomatic state of existing countries at scenario start.",
+    "type": "object",
+    "required": ["countryStateOverrides"],
+    "properties": {
+        "countryStateOverrides": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/ScenarioCountryStateOverride" },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "ScenarioCountryStateOverride": {
+            "type": "object",
+            "required": ["iso3"],
+            "properties": {
+                "iso3": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$",
+                    "description": "Target country ISO3"
+                },
+                "clearRelationships": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Clear all diplomatic relationships for this country before applying overrides"
+                },
+                "clearDiplomacyScope": {
+                    "type": "string",
+                    "enum": ["core", "extended"],
+                    "default": "extended"
+                },
+                "governmentType": {
+                    "type": "string",
+                    "enum": ["democracy","authoritarian","hybrid","monarchy","theocracy","military_junta","failed_state","city_state"]
+                },
+                "ideology": {
+                    "type": "string",
+                    "enum": ["progressive","centrist","conservative","nationalist","communist","islamist","libertarian","green","theocratic"]
+                },
+                "techLevel": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 10
+                },
+                "stability": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Political stability in [0, 1]"
+                },
+                "corruption": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                },
+                "treasury": {
+                    "type": "number",
+                    "description": "Override treasury balance (USD millions)"
+                },
+                "gdp": {
+                    "type": "number",
+                    "minimum": 0,
+                    "description": "Override annual GDP (USD millions)"
+                },
+                "manpower": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Available military manpower (thousands)"
+                },
+                "reserve": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Military reserve pool (thousands)"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

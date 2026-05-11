@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_scenario_header.schema.json",
+    "title": "Mod Scenario Header",
+    "description": "The required header file for a split mod scenario (scenario.json). Must contain scenarioId. May also embed domain arrays for simple mods that don't need separate files.",
+    "type": "object",
+    "required": ["scenarioId"],
+    "properties": {
+        "scenarioId": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique identifier for this scenario, e.g. 'my_mod.my_scenario'"
+        },
+        "displayName": {
+            "type": "string",
+            "description": "Human-readable display name shown in the scenario picker"
+        },
+        "version": {
+            "type": "string",
+            "description": "Semantic version string, e.g. '1.0.0'"
+        },
+        "startYear": {
+            "type": "integer",
+            "minimum": 1900,
+            "maximum": 2200
+        },
+        "startMonth": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12,
+            "default": 1
+        },
+        "startDay": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 31,
+            "default": 1
+        },
+        "startTick": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Absolute game tick to start at. 0 = derive from year/month/day."
+        },
+        "clearDiplomaticRelationships": {
+            "type": "boolean",
+            "default": false,
+            "description": "Wipe all diplomatic relationships before applying scenario state"
+        },
+        "clearDiplomacyScope": {
+            "type": "string",
+            "enum": ["core", "extended"],
+            "default": "extended",
+            "description": "Which relationships to clear: 'core' = wars/alliances only; 'extended' = all"
+        },
+        "rebuildNeutralRelations": {
+            "type": "boolean",
+            "default": true,
+            "description": "Re-initialise neutral opinion modifiers after clearing relationships"
+        },
+        "nationalGoalsFile": {
+            "type": "string",
+            "description": "Relative path (from mod root) to a national goals JSON file"
+        },
+        "gdpScale": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "default": 1.0,
+            "description": "Global GDP multiplier applied to all countries at scenario start"
+        },
+        "economicEraLabel": {
+            "type": "string",
+            "description": "Label key for the economic era, used by the economy init system"
+        },
+        "addCountries": { "$ref": "mod_scenario_countries_add.schema.json#/properties/addCountries" },
+        "removeCountries": { "$ref": "mod_scenario_countries_remove.schema.json#/properties/removeCountries" },
+        "countryStateOverrides": { "$ref": "mod_scenario_countries_state.schema.json#/properties/countryStateOverrides" },
+        "unitTypes": { "$ref": "mod_scenario_units_define.schema.json#/properties/unitTypes" },
+        "initialArmies": { "$ref": "mod_scenario_units_deploy_armies.schema.json#/properties/initialArmies" },
+        "initialFleets": { "$ref": "mod_scenario_units_deploy_fleets.schema.json#/properties/initialFleets" },
+        "initialAirWings": { "$ref": "mod_scenario_units_deploy_air.schema.json#/properties/initialAirWings" },
+        "provinceOwnerOverrides": { "$ref": "mod_scenario_provinces_ownership.schema.json#/properties/provinceOwnerOverrides" },
+        "regionOwnerOverrides": { "$ref": "mod_scenario_provinces_ownership.schema.json#/properties/regionOwnerOverrides" }
+    },
+    "additionalProperties": false
+}

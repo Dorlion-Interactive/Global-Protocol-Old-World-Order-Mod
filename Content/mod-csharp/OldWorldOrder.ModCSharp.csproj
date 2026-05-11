@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>OldWorldOrder.ModCSharp</AssemblyName>
+    <RootNamespace>GlobalProtocol.Mods.OldWorldOrder</RootNamespace>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <!--
+      OUTPUT: bin/Release/netstandard2.1/OldWorldOrder.ModCSharp.dll
+
+      This is Variant C — native C# delegate mod (no WASM).
+      To activate this variant at runtime:
+        1. Build:  dotnet build -c Release
+        2. Copy:   OldWorldOrder.ModCSharp.dll  →  <mod folder>/Mods/
+        3. Set in mod.json:  "runtimePolicy": "csharp_only"
+        4. Remove or comment out the "wasm" key in mod.json "entrypoints"
+
+      Note: Managed assembly loading (the engine discovering IModEntrypoint via
+      reflection) is a planned feature. The engine currently honours
+      runtimePolicy=csharp_only by skipping WASM load, but does not yet
+      auto-load external IModEntrypoint DLLs. Check MODDING_REFERENCE.md §2
+      for the current status when testing.
+
+      The GlobalProtocol.ModSdk project is compile-time-only — do NOT ship
+      GlobalProtocol.ModSdk.dll alongside your mod.
+    -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\sdk\GlobalProtocol.ModSdk.csproj" />
+  </ItemGroup>
+
+</Project>

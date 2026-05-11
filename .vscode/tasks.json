@@ -1,0 +1,36 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "clean-generated-content",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy",
+				"Bypass",
+				"-Command",
+				"$root = 'c:\\Personal\\Genel\\Projeler\\GlobalProtocolHistoricalMod\\Content'; $dirs = @('AppBundle','wasi-wasm'); foreach ($dir in $dirs) { $path = Join-Path $root $dir; if (Test-Path $path) { Remove-Item $path -Recurse -Force } }; $extensions = @('*.dll','*.pdb','*.deps.json','*.runtimeconfig.json','*.wasm','*.a','*.dat','*.c','*.h','*.rsp','*.wit','*.bin'); foreach ($pattern in $extensions) { Get-ChildItem -Path $root -Filter $pattern -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne 'goals_old_world_order.json' } | Remove-Item -Force }; Write-Host 'Cleaned generated content artifacts.'"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "clean-generated-content-2",
+			"type": "shell",
+			"command": "$root = \"c:\\Personal\\Genel\\Projeler\\GlobalProtocolHistoricalMod\\Content\"; $dirs = @(\"AppBundle\",\"wasi-wasm\"); foreach ($dir in $dirs) { $path = Join-Path $root $dir; if (Test-Path $path) { Remove-Item $path -Recurse -Force } }; $extensions = @(\"*.dll\",\"*.pdb\",\"*.deps.json\",\"*.runtimeconfig.json\",\"*.wasm\",\"*.a\",\"*.dat\",\"*.c\",\"*.h\",\"*.rsp\",\"*.wit\",\"*.bin\"); foreach ($pattern in $extensions) { Get-ChildItem -Path $root -Filter $pattern -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne \"goals_old_world_order.json\" } | Remove-Item -Force }; Write-Host \"Cleaned generated content artifacts.\"",
+			"isBackground": false
+		},
+		{
+			"label": "run-clean-generated-script",
+			"type": "shell",
+			"command": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\dev\\clean-generated-content.ps1",
+			"isBackground": false
+		},
+		{
+			"label": "run-clean-generated-script-2",
+			"type": "shell",
+			"command": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\dev\\clean-generated-content.ps1",
+			"isBackground": false
+		}
+	]
+}

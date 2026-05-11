@@ -1,0 +1,24 @@
+{
+  "name": "globalprotocol-old-world-order-wasm-as",
+  "version": "0.2.0",
+  "private": true,
+  "description": "AssemblyScript WASM source for Global Protocol: Old World Order (Variant B / core WASM).",
+  "scripts": {
+    "build": "asc mod.ts --target release -o ../mod.wasm --runtime stub --use abort= --exportRuntime",
+    "build:named": "asc mod.ts --target release -o ../mod-as.wasm --runtime stub --use abort= --exportRuntime",
+    "build:debug": "asc mod.ts --target debug -o ../mod.wasm --runtime stub --use abort= --sourceMap --debug"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.27.0"
+  },
+  "notes": [
+    "build        → outputs Content/mod.wasm (core WASM, active entrypoint in mod.json)",
+    "build:named  → outputs Content/mod-as.wasm (side-by-side comparison build)",
+    "build:debug  → outputs with source maps for WASM debugger",
+    "",
+    "Binary format: core WASM (magic 01 00 00 00). Requires no special engine flags.",
+    "mod.json does NOT need enableComponentRuntime for this variant.",
+    "To activate this variant instead of .NET WASI, run: npm run build",
+    "To activate .NET WASI variant: dotnet publish from Content/wasm-dotnet/"
+  ]
+}

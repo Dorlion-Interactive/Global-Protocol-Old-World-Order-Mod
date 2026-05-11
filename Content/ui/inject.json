@@ -1,0 +1,10 @@
+{
+  "toolbarButtons": [
+    {
+      "id": "owo.welcome_btn",
+      "iconPath": "Content/ui/icons/welcome.png",
+      "tooltip": "mod.ui.toolbar.welcome_tooltip",
+      "hookName": "owo.welcome"
+    }
+  ]
+}

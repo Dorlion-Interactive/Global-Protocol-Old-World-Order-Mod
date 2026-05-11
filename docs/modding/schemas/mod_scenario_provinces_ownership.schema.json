@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_scenario_provinces_ownership.schema.json",
+    "title": "Mod Scenario – Province & Region Ownership Overrides",
+    "description": "Fragment file: reassigns province or entire region ownership at scenario start.",
+    "type": "object",
+    "properties": {
+        "provinceOwnerOverrides": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/ScenarioProvinceOwnerOverride" },
+            "description": "Individual province reassignments"
+        },
+        "regionOwnerOverrides": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/ScenarioRegionOwnerOverride" },
+            "description": "Bulk region reassignments (applied before province-level overrides)"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "ScenarioProvinceOwnerOverride": {
+            "type": "object",
+            "required": ["provinceId", "ownerISO3"],
+            "properties": {
+                "provinceId": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "ownerISO3": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ScenarioRegionOwnerOverride": {
+            "type": "object",
+            "required": ["regionName", "ownerISO3"],
+            "properties": {
+                "regionName": {
+                    "type": "string",
+                    "enum": [
+                        "AustraliaNewZealand",
+                        "CentralAsia",
+                        "EastAsia",
+                        "EasternEurope",
+                        "LatinAmericaCaribbean",
+                        "Melanesia",
+                        "Micronesia",
+                        "NorthernAfrica",
+                        "NorthernAmerica",
+                        "NorthernEurope",
+                        "Polynesia",
+                        "SouthAsia",
+                        "SoutheastAsia",
+                        "SouthernEurope",
+                        "SubSaharanAfrica",
+                        "Unknown",
+                        "WesternAsia",
+                        "WesternEurope"
+                    ],
+                    "description": "WorldRegion enum value"
+                },
+                "ownerISO3": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

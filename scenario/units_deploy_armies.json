@@ -1,0 +1,262 @@
+﻿{
+    "initialArmies":  [
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "ottoman_janissary",
+                                                "count":  3
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "ottoman_sipahi",
+                                                "count":  2
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "ottoman_topcu",
+                                                "count":  1
+                                            }
+                                        ],
+                              "ownerISO3":  "OTT",
+                              "provinceId":  242
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "england_longbowman",
+                                                "count":  3
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "england_menatarms",
+                                                "count":  2
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_cavalry",
+                                                "count":  1
+                                            }
+                                        ],
+                              "ownerISO3":  "ENG",
+                              "provinceId":  315
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "ming_imperial_guard",
+                                                "count":  3
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "ming_fire_lance",
+                                                "count":  2
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "ming_cavalry_archer",
+                                                "count":  1
+                                            }
+                                        ],
+                              "ownerISO3":  "MYN",
+                              "provinceId":  17
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_cavalry",
+                                                "count":  2
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_infantry",
+                                                "count":  3
+                                            }
+                                        ],
+                              "ownerISO3":  "CAS",
+                              "provinceId":  247
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "muscovy_streltsy",
+                                                "count":  3
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "muscovy_boyar_cavalry",
+                                                "count":  2
+                                            }
+                                        ],
+                              "ownerISO3":  "MVY",
+                              "provinceId":  116
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_cavalry",
+                                                "count":  2
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_infantry",
+                                                "count":  2
+                                            }
+                                        ],
+                              "ownerISO3":  "MAM",
+                              "provinceId":  1399
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "france_knight",
+                                                "count":  3
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_infantry",
+                                                "count":  2
+                                            }
+                                        ],
+                              "ownerISO3":  "FRA",
+                              "provinceId":  47
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "portugal_knight_of_christ",
+                                                "count":  2
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "portugal_crossbowman",
+                                                "count":  2
+                                            }
+                                        ],
+                              "ownerISO3":  "PRT",
+                              "provinceId":  200
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "swiss_pikesquare",
+                                                "count":  2
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "swiss_halberdier",
+                                                "count":  1
+                                            }
+                                        ],
+                              "ownerISO3":  "CHE",
+                              "provinceId":  205
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_cavalry",
+                                                "count":  2
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_infantry",
+                                                "count":  2
+                                            }
+                                        ],
+                              "ownerISO3":  "POL",
+                              "provinceId":  433
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_cavalry",
+                                                "count":  2
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_infantry",
+                                                "count":  1
+                                            }
+                                        ],
+                              "ownerISO3":  "HUN",
+                              "provinceId":  300
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "bur_ordonnance",
+                                                "count":  2
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_cavalry",
+                                                "count":  1
+                                            }
+                                        ],
+                              "ownerISO3":  "BUR",
+                              "provinceId":  434
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_cavalry",
+                                                "count":  1
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_infantry",
+                                                "count":  2
+                                            }
+                                        ],
+                              "ownerISO3":  "VNC",
+                              "provinceId":  432
+                          },
+                          {
+                              "morale":  -1,
+                              "units":  [
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "war_elephant",
+                                                "count":  1
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_cavalry",
+                                                "count":  1
+                                            },
+                                            {
+                                                "currentHp":  -1,
+                                                "unitTypeId":  "medieval_infantry",
+                                                "count":  1
+                                            }
+                                        ],
+                              "ownerISO3":  "VIJ",
+                              "provinceId":  1519
+                          }
+                      ]
+}

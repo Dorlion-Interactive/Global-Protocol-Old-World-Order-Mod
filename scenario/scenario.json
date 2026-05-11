@@ -1,0 +1,14 @@
+﻿{
+    "scenarioId":  "old_world_order.1450",
+    "displayName":  "Old World Order (1450)",
+    "version":  "0.2.0",
+    "startYear":  1450,
+    "startMonth":  1,
+    "startDay":  1,
+    "gdpScale":  0.001,
+    "economicEraLabel":  "Florins",
+    "nationalGoalsFile":  "Content/goals_old_world_order.json",
+    "clearDiplomaticRelationships":  true,
+    "clearDiplomacyScope":  "extended",
+    "rebuildNeutralRelations":  true
+}

@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>mod</AssemblyName>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <!--
+      BUILD:
+        dotnet workload install wasi-experimental
+        set WASI_SDK_PATH=%USERPROFILE%\wasi-sdk   (wasi-sdk-25 required)
+        dotnet publish -c Release
+      CopyWasmToContent target auto-copies dotnet.wasm to Content/mod.wasm.
+
+      OUTPUT FORMAT - .NET 10 WASI produces a WASM Component (component model).
+      Requires Wasmtime 18+ or equivalent component-model-capable host.
+      For a flat core WASM host, use Variant B (Content/wasm-as/mod.ts).
+
+      AOT (uncomment for better runtime performance, requires WASI SDK):
+    -->
+    <!-- <RunAOTCompilation>true</RunAOTCompilation> -->
+  </PropertyGroup>
+
+  <Target Name="CopyWasmToContent" AfterTargets="Publish">
+    <Copy SourceFiles="$(PublishDir)dotnet.wasm"
+          DestinationFiles="$(MSBuildProjectDirectory)\..\mod.wasm"
+          OverwriteReadOnlyFiles="true" />
+    <Message Text="[OWO] Copied dotnet.wasm to Content/mod.wasm" Importance="High" />
+  </Target>
+
+</Project>
