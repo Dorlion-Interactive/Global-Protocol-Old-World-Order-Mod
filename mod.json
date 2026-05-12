@@ -11,7 +11,7 @@
   "scenarioFolder": "scenario",
   "enabledByDefault": false,
   "wasmAbiVersion": 2,
-  "runtimePolicy": "wasm_only",
+  "runtimePolicy": "csharp_only",
   "enableComponentRuntime": false,
   "permissions": ["InjectUI", "FireTriggers"],
   "entrypoints": {

@@ -72,6 +72,12 @@ The `runtimePolicy` field controls how a mod's WASM and C# hooks coexist:
 | `"wasm_only"` | Only WASM exports are called. C# mod code is skipped. Useful for pure WASM mods. |
 | `"csharp_only"` | Skip WASM loading entirely; only C# event hooks run. |
 
+For managed C# hooks, place your compiled mod assembly under:
+
+`<mod-root>/Mods/*.dll`
+
+The runtime scans this folder for public `IModEntrypoint` implementations.
+
 ### 2.2 Component-Model WASM Support
 
 The engine supports two WASM binary formats:
@@ -289,6 +295,8 @@ Declare required permissions in `mod.json`:
 
 The game will reject mods that call gated APIs without the required permission.
 
+For managed C# mods, `InjectUI` also gates `ModHookBus.ShowPopup(...)`.
+
 ---
 
 ## 8. Enum Reference
@@ -326,7 +334,7 @@ The engine detects WASM binary format at load time (magic bytes 0x00 0x61 0x73 0
 | Format | Version Bytes | Handled By | Requires `enableComponentRuntime` |
 |---|---|---|---|
 | **Core** | `01 00 00 00` | `ModWasmRuntime` (wasm3) | No |
-| **Component** | `0A 00 01 00` | `ModComponentWasmRuntime` (pluggable backend) | Yes |
+| **Component** | `XX 00 01 00` (for example `0A 00 01 00` or `0D 00 01 00`) | `ModComponentWasmRuntime` (pluggable backend) | Yes |
 
 **Core modules** (standard WebAssembly) are always supported.  
 **Component modules** require:

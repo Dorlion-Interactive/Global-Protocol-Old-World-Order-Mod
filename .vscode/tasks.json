@@ -31,6 +31,169 @@
 			"type": "shell",
 			"command": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\dev\\clean-generated-content.ps1",
 			"isBackground": false
+		},
+		{
+			"label": "verify-install-sdk",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /sdk"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-install-as",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /as"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-install-dotnet",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /dotnet"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-install-sdk-skip",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /sdk /skip-build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "probe-runtimepolicy-set",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy",
+				"Bypass",
+				"-Command",
+				"$p='C:\\Users\\User\\AppData\\LocalLow\\Dorlion Interactive\\Global Protocol\\Mods\\globalprotocol.old_world_order\\mod.json'; $j=Get-Content $p -Raw | ConvertFrom-Json; $j.enableComponentRuntime=$false; $j.runtimePolicy='csharp_only'; $j | ConvertTo-Json -Depth 20 | Set-Content $p -Encoding UTF8; Write-Host ('runtimePolicy=' + ((Get-Content $p -Raw | ConvertFrom-Json).runtimePolicy)); Write-Host ('enableComponentRuntime=' + ((Get-Content $p -Raw | ConvertFrom-Json).enableComponentRuntime))"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "probe-runtimepolicy-cmd",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"powershell -NoProfile -ExecutionPolicy Bypass -Command \"$p='C:\\Users\\User\\AppData\\LocalLow\\Dorlion Interactive\\Global Protocol\\Mods\\globalprotocol.old_world_order\\mod.json'; $j=Get-Content $p -Raw | ConvertFrom-Json; $j.enableComponentRuntime=$false; $j.runtimePolicy='csharp_only'; $j | ConvertTo-Json -Depth 20 | Set-Content $p -Encoding UTF8\""
+			],
+			"isBackground": false
+		},
+		{
+			"label": "probe-install-as-skip",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /as /skip-build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-runtime-align-as",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /as /skip-build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-runtime-align-sdk",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /sdk /skip-build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-runtime-align-dotnet",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /dotnet /skip-build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "finalize-sdk-deploy",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /sdk /skip-build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-dotnet-strict-after-refactor",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /dotnet"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-sdk-strict-after-refactor",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /sdk /skip-build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-sdk-no-wasm-entrypoint",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /sdk /skip-build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "verify-dotnet-entrypoint-after-script",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /dotnet /skip-build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "finalize-sdk-strict",
+			"type": "shell",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"echo.| install.bat /sdk /skip-build"
+			],
+			"isBackground": false
 		}
 	]
 }

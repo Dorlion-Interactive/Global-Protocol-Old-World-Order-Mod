@@ -204,12 +204,12 @@ If any of those conditions is missing, the mod shows a clear load error and the 
 
 ### 10.1 Prerequisites
 
-Choose one toolchain. AssemblyScript is the fastest path — no workload installs required.
+Choose one toolchain. .NET WASI is the primary path for this mod; AssemblyScript remains supported as a fallback path.
 
 | Toolchain | What you need | Binary kind |
 |---|---|---|
-| **AssemblyScript** (recommended) | Node.js ≥ 18 | Core WASM (`01 00 00 00`) |
-| **.NET WASI** | .NET 10 SDK + `dotnet workload install wasi-experimental` | Component (`0A 00 01 00`) |
+| **.NET WASI** (primary) | .NET 10 SDK + `dotnet workload install wasi-experimental` | Component (`XX 00 01 00`, e.g. `0A` or `0D`) |
+| **AssemblyScript** (fallback) | Node.js ≥ 18 | Core WASM (`01 00 00 00`) |
 
 ### 10.2 Build Commands
 
@@ -229,8 +229,9 @@ dotnet publish -c Release                    # CopyWasmToContent target auto-cop
 
 **Or just run `install.bat`** from the mod root — it detects your toolchain, builds, and installs in one step:
 ```
-install.bat              # default: AssemblyScript build + install
+install.bat              # default: .NET WASI (primary) build + install
 install.bat /dotnet      # .NET WASI build + install
+install.bat /as          # AssemblyScript fallback build + install
 install.bat /skip-build  # skip build, re-install existing mod.wasm
 ```
 
@@ -246,7 +247,7 @@ Format-Hex Content\mod.wasm | Select-Object -First 1
 | Bytes 0–7 | Binary kind | Engine path |
 |---|---|---|
 | `00 61 73 6D  01 00 00 00` | Core WASM | wasm3 runtime, no flags needed |
-| `00 61 73 6D  0A 00 01 00` | Component model | Needs `enableComponentRuntime: true` in `mod.json` |
+| `00 61 73 6D  XX 00 01 00` (for example `0A` or `0D`) | Component model | Needs `enableComponentRuntime: true` in `mod.json` |
 
 ### 10.4 In-Game Verification Checklist
 
@@ -275,8 +276,34 @@ After installing, run through this checklist to confirm everything works end-to-
 |---|---|---|
 | `Mod ABI version X not supported` | `wasmAbiVersion` in `mod.json` is wrong | Set `"wasmAbiVersion": 2` |
 | `component-model WASM detected but manifest does not opt in` | Built with .NET WASI but manifest missing opt-in | Add `"enableComponentRuntime": true` to `mod.json` |
-| `no component backend is registered` | Component binary but engine has no backend | Switch to AssemblyScript build (`npm run build`), or use `/as` flag |
+| `no component backend is registered` | Component binary but engine has no backend | Use `/as` fallback for now (`install.bat /as`), or integrate/enable a component backend in the game build |
 | `fire_event` call does nothing | Missing `FireTriggers` permission | Add `"FireTriggers"` to `permissions` in `mod.json` |
 | Toolbar button missing | Missing `InjectUI` permission or `entrypoints.ui` path wrong | Check `mod.json` permissions and `Content/ui/inject.json` exists |
 | `asc: command not found` | AssemblyScript not installed | Run `npm install` in `Content/wasm-as/` first |
 | `wasi-experimental not found` | .NET WASM workload missing | Run `dotnet workload install wasi-experimental` |
+
+### 10.6 Startup Briefing Localization (No Extra Setup)
+
+The component fallback startup popup resolves text through the normal mod localization override pipeline.
+
+Use these keys in both files:
+- `overrides/localization_en.csv`
+- `overrides/localization_tr.csv`
+
+Required keys:
+- `mod.owo.popup.startup.title`
+- `mod.owo.popup.startup.body_with_date` (supports `{0}` year and `{1}` month)
+- `mod.owo.popup.startup.body_no_date`
+
+If a key is missing, the host uses built-in English fallback text.
+
+### 10.7 Native C# Hook Showcase
+
+For a modder-facing SDK sample of hook overrides, see:
+
+- `Content/mod-csharp/ModEntrypoint.cs`
+
+The sample demonstrates:
+- overriding lifecycle hooks from `ModBase`
+- filtering `OnUiAction` by `modId`
+- routing a UI hook (`owo.welcome`) into `ModHookBus.FireEvent(...)`

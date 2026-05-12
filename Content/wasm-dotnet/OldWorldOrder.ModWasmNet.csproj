@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -8,8 +8,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyName>mod</AssemblyName>
+    <WasiClangFlags>$(WasiClangFlags) -mexec-model=reactor</WasiClangFlags>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <DefaultItemExcludes>$(DefaultItemExcludes);GlobalProtocol.ModWasmSdk\**</DefaultItemExcludes>
     <!--
       BUILD:
         dotnet workload install wasi-experimental
@@ -21,10 +23,33 @@
       Requires Wasmtime 18+ or equivalent component-model-capable host.
       For a flat core WASM host, use Variant B (Content/wasm-as/mod.ts).
 
+      Hook component contract scaffold lives at:
+        Content/wasm-dotnet/wit/globalprotocol-hooks.wit
+      The engine now accepts nested hook-interface exports for this contract shape.
+
       AOT (uncomment for better runtime performance, requires WASI SDK):
     -->
     <!-- <RunAOTCompilation>true</RunAOTCompilation> -->
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="GlobalProtocol.ModWasmSdk\GlobalProtocol.ModWasmSdk.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Add custom native hook shim to the sources compiled into dotnet.wasm. -->
+    <_WasmRuntimePackSrcFile Include="native/hooks_shim.c" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <LinkerArg Include="-Wl,--component-type,&quot;$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', 'wit', 'globalprotocol-hooks.wit').Replace('\','/'))&quot;" />
+  </ItemGroup>
+
+  <Target Name="PatchDefaultComponentTypeRsp"
+          AfterTargets="_WasmWriteRspForLinking"
+          BeforeTargets="_WasiLinkDotNet">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;$rsp='$(_WasmLinkRsp)'; $lines=Get-Content -Path $rsp; $lines=$lines | Where-Object { $_ -notmatch 'WasiHttpWorld_component_type\.wit' }; $lines=$lines | ForEach-Object { $_ -replace 'crt1-command\.o', 'crt1-reactor.o' }; Set-Content -Path $rsp -Value $lines -Encoding Ascii&quot;" />
+  </Target>
 
   <Target Name="CopyWasmToContent" AfterTargets="Publish">
     <Copy SourceFiles="$(PublishDir)dotnet.wasm"

@@ -5,12 +5,14 @@ set MOD_ID=globalprotocol.old_world_order
 set TARGET=%USERPROFILE%\AppData\LocalLow\Dorlion Interactive\Global Protocol\Mods\%MOD_ID%
 set DUPLICATE_TARGET=%LOCALAPPDATA%\NewWorldOrder\Mods\%MOD_ID%
 set SCRIPT_DIR=%~dp0
-set BUILD_VARIANT=as
+set BUILD_VARIANT=sdk
 set SKIP_BUILD=0
 
 :: -- Parse flags ---------------------------------------------------------------
 :parse_args
 if "%~1"=="" goto done_args
+if /I "%~1"=="/sdk"        set "BUILD_VARIANT=sdk" & shift & goto parse_args
+if /I "%~1"=="/csharp"     set "BUILD_VARIANT=sdk" & shift & goto parse_args
 if /I "%~1"=="/dotnet"     set "BUILD_VARIANT=dotnet" & shift & goto parse_args
 if /I "%~1"=="/as"         set "BUILD_VARIANT=as" & shift & goto parse_args
 if /I "%~1"=="/skip-build" set "SKIP_BUILD=1" & shift & goto parse_args
@@ -22,7 +24,7 @@ echo ============================================================
 echo  Global Protocol: Old World Order  ^|  Build + Installer
 echo ============================================================
 echo.
-echo  Variant  : %BUILD_VARIANT%  (use /dotnet or /as to switch)
+echo  Variant  : %BUILD_VARIANT%  (PRIMARY=sdk, use /dotnet or /as to switch)
 echo  Target   : %TARGET%
 echo  Cleanup  : remove duplicate at %DUPLICATE_TARGET%
 echo  Skip bld : %SKIP_BUILD%
@@ -37,8 +39,39 @@ if "%SKIP_BUILD%"=="1" (
     goto install
 )
 
+if "%BUILD_VARIANT%"=="sdk" goto build_sdk
 if "%BUILD_VARIANT%"=="as" goto build_as
 if "%BUILD_VARIANT%"=="dotnet" goto build_dotnet
+
+:build_sdk
+echo [BUILD] Variant: Native C# SDK hooks
+echo.
+
+where dotnet >nul 2>&1
+if errorlevel 1 (
+    echo ERROR: dotnet.exe not found on PATH.
+    echo.
+    echo   Install .NET SDK from https://dotnet.microsoft.com/download
+    echo   Then re-run this installer.
+    echo.
+    pause & exit /b 1
+)
+for /f "tokens=*" %%v in ('dotnet --version 2^>nul') do set DOTNET_VER=%%v
+echo   dotnet %DOTNET_VER% found.
+
+echo   Building managed mod entrypoint...
+dotnet build "%SCRIPT_DIR%Content\mod-csharp\OldWorldOrder.ModCSharp.csproj" -c Release
+if errorlevel 1 (
+    echo ERROR: dotnet build failed.
+    pause & exit /b 1
+)
+
+if not exist "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.1\OldWorldOrder.ModCSharp.dll" (
+    echo ERROR: Managed build completed but OldWorldOrder.ModCSharp.dll was not produced.
+    pause & exit /b 1
+)
+
+goto validate
 
 :build_as
 echo [BUILD] Variant: AssemblyScript (core WASM)
@@ -151,7 +184,7 @@ if defined WASI_SDK_PATH (
 
 :: Build -- CopyWasmToContent target in .csproj auto-copies dotnet.wasm -> Content/mod.wasm
 echo   Publishing .NET WASI project...
-dotnet publish "%SCRIPT_DIR%Content\wasm-dotnet\OldWorldOrder.csproj" -c Release
+dotnet publish "%SCRIPT_DIR%Content\wasm-dotnet\OldWorldOrder.ModWasmNet.csproj" -c Release
 if errorlevel 1 (
     echo ERROR: dotnet publish failed.
     pause & exit /b 1
@@ -176,7 +209,7 @@ certutil -encodehex -f "%SCRIPT_DIR%Content\mod.wasm" "%TEMP%\owo_wasm_peek.hex"
 if exist "%TEMP%\owo_wasm_peek.hex" (
     set /p HEXLINE=<"%TEMP%\owo_wasm_peek.hex"
     del "%TEMP%\owo_wasm_peek.hex" >nul 2>&1
-    echo !HEXLINE! | findstr /I "0a000100" >nul 2>&1
+    echo !HEXLINE! | findstr /I "0a000100 0d000100" >nul 2>&1
     if not errorlevel 1 (
         echo [BUILD] Binary kind  : component-model  (mod.json enableComponentRuntime=true set)
     ) else (
@@ -216,13 +249,9 @@ copy /Y "%SCRIPT_DIR%mod.json"      "%TARGET%\mod.json"      >nul
 copy /Y "%SCRIPT_DIR%logo.png"      "%TARGET%\logo.png"      >nul
 copy /Y "%SCRIPT_DIR%thumbnail.png" "%TARGET%\thumbnail.png" >nul
 
-echo   Aligning enableComponentRuntime with selected build variant...
-if /I "%BUILD_VARIANT%"=="dotnet" (
-    powershell -NoProfile -ExecutionPolicy Bypass -Command "$p='%TARGET%\\mod.json'; $j=Get-Content $p -Raw | ConvertFrom-Json; $j.enableComponentRuntime=$true; $j | ConvertTo-Json -Depth 20 | Set-Content $p -Encoding UTF8"
-) else (
-    powershell -NoProfile -ExecutionPolicy Bypass -Command "$p='%TARGET%\\mod.json'; $j=Get-Content $p -Raw | ConvertFrom-Json; $j.enableComponentRuntime=$false; $j | ConvertTo-Json -Depth 20 | Set-Content $p -Encoding UTF8"
-)
-if errorlevel 1 ( echo ERROR: failed to align enableComponentRuntime in deployed mod.json & pause & exit /b 1 )
+echo   Aligning runtimePolicy and enableComponentRuntime with selected build variant...
+powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_DIR%dev\set-runtime-settings.ps1" -ModJsonPath "%TARGET%\mod.json" -BuildVariant "%BUILD_VARIANT%"
+if errorlevel 1 ( echo ERROR: failed to align runtime settings in deployed mod.json & pause & exit /b 1 )
 
 echo   Copying scenario\...
 robocopy "%SCRIPT_DIR%scenario"   "%TARGET%\scenario"   /E /NFL /NDL /NJH /NJS /R:1 /W:1
@@ -246,6 +275,27 @@ echo   Copying Content\ (runtime assets only, no source files)...
 robocopy "%SCRIPT_DIR%Content" "%TARGET%\Content" /E /NFL /NDL /NJH /NJS /R:1 /W:1 /XD wasm-as wasm-dotnet mod-csharp /XF *.ts *.cs *.csproj *.c *.h *.a *.rsp
 if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on Content\ & pause & exit /b 1 )
 
+if /I "%BUILD_VARIANT%"=="sdk" (
+    if not exist "%TARGET%\Mods" mkdir "%TARGET%\Mods"
+    copy /Y "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.1\OldWorldOrder.ModCSharp.dll" "%TARGET%\Mods\OldWorldOrder.ModCSharp.dll" >nul
+    if errorlevel 1 ( echo ERROR: failed to copy managed entrypoint DLL to Mods\ & pause & exit /b 1 )
+
+    if exist "%TARGET%\Content\mod.wasm" (
+        echo   Removing Content\mod.wasm for strict csharp_only runtime...
+        del /Q "%TARGET%\Content\mod.wasm"
+    )
+) else (
+    if exist "%TARGET%\Mods\OldWorldOrder.ModCSharp.dll" (
+        echo   Removing managed entrypoint DLL for strict wasm_only runtime...
+        del /Q "%TARGET%\Mods\OldWorldOrder.ModCSharp.dll"
+    )
+)
+
+if exist "%TARGET%\Content\events\owo_welcome.json" (
+    echo   Removing legacy event file because direct popup flow no longer uses scripted events...
+    del /Q "%TARGET%\Content\events\owo_welcome.json"
+)
+
 if exist "%DUPLICATE_TARGET%" (
     echo   Removing duplicate mod copy from Local mods root...
     rmdir /S /Q "%DUPLICATE_TARGET%"
@@ -258,13 +308,17 @@ echo.
 echo ============================================================
 echo  DONE
 echo ============================================================
-if exist "%TARGET%\Content\mod.wasm" (
-    for %%F in ("%TARGET%\Content\mod.wasm") do set INST_SIZE=%%~zF
-    set /a INST_KB=!INST_SIZE! / 1024
-    echo  mod.wasm  !INST_KB! KB  installed  [variant: %BUILD_VARIANT%]
+if /I "%BUILD_VARIANT%"=="sdk" (
+    echo  managed DLL installed: Mods\OldWorldOrder.ModCSharp.dll  [variant: sdk]
 ) else (
-    echo  No mod.wasm  -- scenario and UI assets installed only.
-    echo  Run install.bat again without /skip-build to compile WASM.
+    if exist "%TARGET%\Content\mod.wasm" (
+        for %%F in ("%TARGET%\Content\mod.wasm") do set INST_SIZE=%%~zF
+        set /a INST_KB=!INST_SIZE! / 1024
+        echo  mod.wasm  !INST_KB! KB  installed  [variant: %BUILD_VARIANT%]
+    ) else (
+        echo  No mod.wasm  -- scenario and UI assets installed only.
+        echo  Run install.bat again without /skip-build to compile WASM.
+    )
 )
 echo  Installed to: %TARGET%
 echo  Duplicate Local copy removed: %DUPLICATE_TARGET%
@@ -275,8 +329,7 @@ echo   1. Start Global Protocol
 echo   2. Open Mods screen ^> enable "Old World Order"
 echo   3. Start the 1450 scenario
 echo   4. The crown toolbar button should appear in the HUD
-echo   5. On dev builds: check Unity console for
-echo        OWO: welcome popup shown on first tick
+echo   5. Click the crown button to reopen the SDK-driven strategic briefing popup
 echo.
 pause
 endlocal

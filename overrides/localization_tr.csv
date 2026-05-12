@@ -126,3 +126,8 @@ country.name.VIJ,Vijayanagara İmparatorluğu
 country.name.VNC,Venedik Cumhuriyeti
 country.name.WAL,Eflak Prensliği
 country.name.ZIM,Zimbabwe Krallığı
+ui.button.ok,TAMAM
+mod.ui.toolbar.welcome_tooltip,Stratejik Bilgilendirmeyi Aç
+mod.owo.popup.startup.title,Eski Dünya Düzeni 1450
+mod.owo.popup.startup.body_with_date,Tarih: {0}-{1}\n\nAvrupa ve Asya eski feodal düzenler ile yükselen merkezi devletler arasında sıkışmış durumda.\nAkdeniz Karadeniz Hint Okyanusu ve İpek Yolu üzerindeki ticaret hatları gücün atardamarlarını oluşturuyor.\nBarutlu ordular yükseliyor ancak süvari birlikleri levazım düzeni ve kaleler hala savaşların kaderini belirliyor.\n\nDöneme uygun hükümdarlar sınırlar ve askeri düzenlerle tanımlanan 120'den fazla tarihsel siyasi oluşumdan birini yönetiyorsun.\nBu bilgilendirmeyi istediğin zaman tekrar açmak için araç çubuğundaki taç düğmesini kullan.
+mod.owo.popup.startup.body_no_date,Avrupa ve Asya eski feodal düzenler ile yükselen merkezi devletler arasında sıkışmış durumda.\nAkdeniz Karadeniz Hint Okyanusu ve İpek Yolu üzerindeki ticaret hatları gücün atardamarlarını oluşturuyor.\nBarutlu ordular yükseliyor ancak süvari birlikleri levazım düzeni ve kaleler hala savaşların kaderini belirliyor.\n\nDöneme uygun hükümdarlar sınırlar ve askeri düzenlerle tanımlanan 120'den fazla tarihsel siyasi oluşumdan birini yönetiyorsun.\nBu bilgilendirmeyi istediğin zaman tekrar açmak için araç çubuğundaki taç düğmesini kullan.

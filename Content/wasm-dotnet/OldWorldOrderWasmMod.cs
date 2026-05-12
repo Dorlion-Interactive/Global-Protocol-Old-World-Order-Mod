@@ -1,19 +1,10 @@
-// GlobalProtocol: Old World Order — Mod Entrypoint
-//
-// This is your mod's main C# file. Override any hook below to react to game events.
-// Delete the ones you don't need. That's it — no boilerplate required.
-//
-// ModHookBus.FireEvent(countryIndex, eventId) — trigger a scripted event
-//   countryIndex 0 = the local player's country in single-player
-//   eventId      = the event ID from your Content/events/*.json file
+using GlobalProtocol.ModWasmSdk;
 
-using GlobalProtocol.Core.Mods;
+namespace OldWorldOrder;
 
-namespace GlobalProtocol.Mods.OldWorldOrder;
-
-public sealed class ModEntrypoint : ModBase
+internal sealed class OldWorldOrderWasmMod : WasmModBase
 {
-    private const string MOD_ID = "globalprotocol.old_world_order";
+    private const string ModId = "globalprotocol.old_world_order";
     private const string WelcomeHookName = "owo.welcome";
     private const string StartupTitle = "Old World Order, 1450";
     private const string ToolbarTitle = "Strategic Briefing";
@@ -26,8 +17,10 @@ public sealed class ModEntrypoint : ModBase
     private int _lastMonth;
     private bool _startupShown;
 
-    protected override void OnInitialize(IModServices services)
+    protected override void OnInitialize()
     {
+        Gp.KeepHostImportLinks();
+
         _warsObserved = 0;
         _techsObserved = 0;
         _buildingsObserved = 0;
@@ -35,10 +28,10 @@ public sealed class ModEntrypoint : ModBase
         _lastYear = 0;
         _lastMonth = 0;
         _startupShown = false;
+
+        Gp.Log("OWO init (.NET WASM SDK hooks)");
     }
 
-    // Called every game tick.
-    // tick  = total elapsed ticks, year/month = current in-game date.
     protected override void OnTick(int tick, int year, int month)
     {
         _lastYear = year;
@@ -51,51 +44,36 @@ public sealed class ModEntrypoint : ModBase
         ShowStartupBriefing(year, month);
     }
 
-    // Called when a war is declared.
-    // attacker / defender are country indices (0 = local player in single-player).
     protected override void OnWarDeclared(int attacker, int defender, int tick)
     {
         _warsObserved++;
     }
 
-    // Called when peace is signed between two countries.
-    protected override void OnPeaceSigned(int proposer, int target)
-    {
-    }
-
-    // Called when a country finishes researching a technology.
     protected override void OnTechResearched(int countryIndex, int techIndex)
     {
         _techsObserved++;
     }
 
-    // Called when a building finishes construction in a province.
     protected override void OnBuildingCompleted(int provinceId, int buildingDefIndex)
     {
         _buildingsObserved++;
     }
 
-    // Called when any scripted event fires for any country.
     protected override void OnEventFired(int countryIndex, int eventIndex)
     {
         _eventsObserved++;
     }
 
-    // Called when a country is fully eliminated from the game.
-    protected override void OnCountryEliminated(int countryIndex)
-    {
-    }
-
-    // Called when a toolbar button (registered in mod.json entrypoints.ui) is clicked.
-    // Always check modId first — other mods fire this hook too.
     protected override void OnUiAction(string hookName, string modId)
     {
-        if (modId != MOD_ID) return;
+        if (modId != ModId)
+            return;
 
-        if (hookName == WelcomeHookName)
-        {
-            ModHookBus.ShowPopup(MOD_ID, ToolbarTitle, BuildToolbarBody());
-        }
+        if (hookName != WelcomeHookName)
+            return;
+
+        Gp.ShowPopup(ToolbarTitle, BuildToolbarBody());
+        Gp.Log("OWO: toolbar popup shown via on_ui_action (.NET WASM SDK hooks)");
     }
 
     private void ShowStartupBriefing(int year, int month)
@@ -113,7 +91,8 @@ public sealed class ModEntrypoint : ModBase
             + "\n"
             + "Use the crown button in the toolbar to reopen this briefing at any time.";
 
-        ModHookBus.ShowPopup(MOD_ID, StartupTitle, body);
+        Gp.ShowPopup(StartupTitle, body);
+        Gp.Log("OWO: startup popup shown via on_game_tick (.NET WASM SDK hooks)");
     }
 
     private string BuildToolbarBody()
@@ -139,4 +118,3 @@ public sealed class ModEntrypoint : ModBase
         return $"{year}-{monthText}";
     }
 }
-

@@ -46,15 +46,39 @@ namespace GlobalProtocol.Core.Mods
         /// <summary>
         /// Fires a scripted event for the specified country.
         /// Requires <c>"FireTriggers"</c> permission in <c>mod.json</c>.
-        /// <para>
-        /// The event must be defined in the engine's baked EventConfigBlob (imported
-        /// via the EventConfigImporterWindow editor tool). Mod JSON event files are not
-        /// supported — this is a compile-time-only stub.
-        /// </para>
         /// </summary>
-        public static void FireEvent(int countryIndex, string eventId)
+        public static bool FireEvent(string modId, int countryIndex, string eventId)
         {
             // Stub — implemented by the game runtime.
+            return false;
+        }
+
+        /// <summary>
+        /// Backwards-compatible overload when mod id context is not provided.
+        /// </summary>
+        public static bool FireEvent(int countryIndex, string eventId)
+        {
+            // Stub — implemented by the game runtime.
+            return false;
+        }
+
+        /// <summary>
+        /// Shows a direct popup for this mod.
+        /// Requires <c>"InjectUI"</c> permission in <c>mod.json</c>.
+        /// </summary>
+        public static bool ShowPopup(string modId, string title, string body)
+        {
+            // Stub — implemented by the game runtime.
+            return false;
+        }
+
+        /// <summary>
+        /// Backwards-compatible overload when mod id context is not provided.
+        /// </summary>
+        public static bool ShowPopup(string title, string body)
+        {
+            // Stub — implemented by the game runtime.
+            return false;
         }
 
         // ─── Internal — do not call from mod code ──────────────────────────────

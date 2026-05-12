@@ -1,0 +1,25 @@
+package globalprotocol:hooks@1.0.0;
+
+// Host functions that the mod can call.
+interface gp {
+  log: func(msg: string);
+  show-mod-popup: func(title: string, body: string);
+}
+
+// Lifecycle hooks expected by the GlobalProtocol mod runtime.
+interface mod-hooks {
+  on-init: func();
+  on-game-tick: func(tick: s32, year: s32, month: s32);
+  on-war-declared: func(attacker: s32, defender: s32, tick: s32);
+  on-peace-signed: func(proposer: s32, target: s32);
+  on-tech-researched: func(country-index: s32, tech-index: s32);
+  on-building-completed: func(province-id: s32, building-def-index: s32);
+  on-country-eliminated: func(country-index: s32);
+  on-event-fired: func(country-index: s32, event-index: s32);
+  on-ui-action: func(hook-name: string, mod-id: string);
+}
+
+world globalprotocol-mod {
+  import gp;
+  export mod-hooks;
+}

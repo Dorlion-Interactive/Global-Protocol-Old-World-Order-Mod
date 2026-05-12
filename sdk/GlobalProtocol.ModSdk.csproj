@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>GlobalProtocol.ModSdk</AssemblyName>
+    <AssemblyName>GlobalProtocol.Core</AssemblyName>
     <RootNamespace>GlobalProtocol.Core.Mods</RootNamespace>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
@@ -12,10 +12,11 @@
       installation. In a shipping game build these types live in the game's
       own GlobalProtocol.Core.dll — this project is compile-time only.
 
-      Do NOT ship GlobalProtocol.ModSdk.dll with your mod.
-      The game provides the real implementations at runtime.
+      The output assembly name intentionally matches the runtime assembly
+      identity (GlobalProtocol.Core) so compiled mods bind to game types.
+      Do NOT ship this stub DLL with your mod.
     -->
-    <Description>Compile-time stubs for the Global Protocol Mod SDK. Do not ship this DLL — the game supplies the real implementations.</Description>
+    <Description>Compile-time stubs for the Global Protocol Mod SDK. Assembly identity matches runtime GlobalProtocol.Core. Do not ship this DLL.</Description>
     <!-- CS0067: events declared but never raised — expected for stub declarations -->
     <NoWarn>CS0067</NoWarn>
   </PropertyGroup>

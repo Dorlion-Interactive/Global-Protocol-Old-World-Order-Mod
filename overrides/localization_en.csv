@@ -126,3 +126,8 @@ country.name.VIJ,Vijayanagara Empire
 country.name.VNC,Republic of Venice
 country.name.WAL,Principality of Wallachia
 country.name.ZIM,Kingdom of Zimbabwe
+ui.button.ok,OK
+mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
+mod.owo.popup.startup.title,Old World Order, 1450
+mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand between old feudal orders and rising centralized states.\nTrade routes across the Mediterranean Black Sea Indian Ocean and Silk Road are the arteries of power.\nGunpowder armies are emerging but cavalry levies and fortresses still decide most wars.\n\nYou command one of 120+ historical polities with period-appropriate rulers borders and military posture.\nUse the crown button in the toolbar to reopen this briefing at any time.
+mod.owo.popup.startup.body_no_date,Europe and Asia stand between old feudal orders and rising centralized states.\nTrade routes across the Mediterranean Black Sea Indian Ocean and Silk Road are the arteries of power.\nGunpowder armies are emerging but cavalry levies and fortresses still decide most wars.\n\nYou command one of 120+ historical polities with period-appropriate rulers borders and military posture.\nUse the crown button in the toolbar to reopen this briefing at any time.
