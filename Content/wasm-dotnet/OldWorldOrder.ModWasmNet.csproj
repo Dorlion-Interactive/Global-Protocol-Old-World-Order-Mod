@@ -39,6 +39,7 @@
   <ItemGroup>
     <!-- Add custom native hook shim to the sources compiled into dotnet.wasm. -->
     <_WasmRuntimePackSrcFile Include="native/hooks_shim.c" />
+    <Compile Include="..\shared\OldWorldOrder.cs" Link="OldWorldOrder.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,37 @@
+/* GlobalProtocol: Old World Order — UI Styles */
+
+/* Modern, glassmorphism-inspired toolbar buttons */
+.unity-button--toolbar-mod {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 2px;
+    transition-property: background-color, border-color, scale;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out-back;
+}
+
+.unity-button--toolbar-mod:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    scale: 1.1;
+}
+
+.unity-button--toolbar-mod:active {
+    background-color: rgba(255, 255, 255, 0.25);
+    scale: 0.95;
+}
+
+/* Custom styling for injected panel rows */
+.unity-label--panel-row-mod {
+    color: #e0e0e0;
+    font-size: 13px;
+    -unity-font-style: bold;
+    padding-left: 4px;
+}
+
+.unity-label--panel-row-value-mod {
+    color: #ffd700; /* Golden for historical values */
+    -unity-font-style: bold;
+}

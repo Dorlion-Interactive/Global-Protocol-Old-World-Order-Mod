@@ -11,132 +11,94 @@ using GlobalProtocol.Core.Mods;
 
 namespace GlobalProtocol.Mods.OldWorldOrder;
 
-public sealed class ModEntrypoint : ModBase
+public sealed class ModEntrypoint : ModBase, IModHost
 {
-    private const string MOD_ID = "globalprotocol.old_world_order";
-    private const string WelcomeHookName = "owo.welcome";
-    private const string StartupTitle = "Old World Order, 1450";
-    private const string ToolbarTitle = "Strategic Briefing";
+    private OldWorldOrder _shared = null!;
 
-    private int _warsObserved;
-    private int _techsObserved;
-    private int _buildingsObserved;
-    private int _eventsObserved;
-    private int _lastYear;
-    private int _lastMonth;
-    private bool _startupShown;
+    public void ShowPopup(string title, string body)
+    {
+        ModHookBus.ShowPopup(OldWorldOrder.ModId, title, body);
+    }
+
+    public void Log(string message)
+    {
+        // Native C# delegate path logs natively or via unity engine if available.
+    }
+
+    public string GetModVersion()
+    {
+        try
+        {
+            string path = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(typeof(ModEntrypoint).Assembly.Location) ?? "", "..", "mod.json");
+            if (System.IO.File.Exists(path))
+            {
+                string content = System.IO.File.ReadAllText(path);
+                var match = System.Text.RegularExpressions.Regex.Match(content, @"""version""\s*:\s*""([^""]+)""");
+                if (match.Success)
+                    return match.Groups[1].Value;
+            }
+        }
+        catch
+        {
+            // fallback if pathing fails
+        }
+        return "0.2.2";
+    }
 
     protected override void OnInitialize(IModServices services)
     {
-        _warsObserved = 0;
-        _techsObserved = 0;
-        _buildingsObserved = 0;
-        _eventsObserved = 0;
-        _lastYear = 0;
-        _lastMonth = 0;
-        _startupShown = false;
+        _shared = new OldWorldOrder(this);
+        _shared.OnInitialize();
     }
 
     // Called every game tick.
     // tick  = total elapsed ticks, year/month = current in-game date.
     protected override void OnTick(int tick, int year, int month)
     {
-        _lastYear = year;
-        _lastMonth = month;
-
-        if (_startupShown)
-            return;
-
-        _startupShown = true;
-        ShowStartupBriefing(year, month);
+        _shared?.OnTick(tick, year, month);
     }
 
     // Called when a war is declared.
     // attacker / defender are country indices (0 = local player in single-player).
     protected override void OnWarDeclared(int attacker, int defender, int tick)
     {
-        _warsObserved++;
+        _shared?.OnWarDeclared(attacker, defender, tick);
     }
 
     // Called when peace is signed between two countries.
     protected override void OnPeaceSigned(int proposer, int target)
     {
+        _shared?.OnPeaceSigned(proposer, target);
     }
 
     // Called when a country finishes researching a technology.
     protected override void OnTechResearched(int countryIndex, int techIndex)
     {
-        _techsObserved++;
+        _shared?.OnTechResearched(countryIndex, techIndex);
     }
 
     // Called when a building finishes construction in a province.
     protected override void OnBuildingCompleted(int provinceId, int buildingDefIndex)
     {
-        _buildingsObserved++;
+        _shared?.OnBuildingCompleted(provinceId, buildingDefIndex);
     }
 
     // Called when any scripted event fires for any country.
     protected override void OnEventFired(int countryIndex, int eventIndex)
     {
-        _eventsObserved++;
+        _shared?.OnEventFired(countryIndex, eventIndex);
     }
 
     // Called when a country is fully eliminated from the game.
     protected override void OnCountryEliminated(int countryIndex)
     {
+        _shared?.OnCountryEliminated(countryIndex);
     }
 
     // Called when a toolbar button (registered in mod.json entrypoints.ui) is clicked.
     // Always check modId first — other mods fire this hook too.
     protected override void OnUiAction(string hookName, string modId)
     {
-        if (modId != MOD_ID) return;
-
-        if (hookName == WelcomeHookName)
-        {
-            ModHookBus.ShowPopup(MOD_ID, ToolbarTitle, BuildToolbarBody());
-        }
-    }
-
-    private void ShowStartupBriefing(int year, int month)
-    {
-        string monthText = month >= 1 && month <= 12 ? month.ToString("00") : "--";
-        string dateLine = year > 0
-            ? $"Date: {year}-{monthText}\n"
-            : "Date: unknown\n";
-
-        string body = dateLine
-            + "\n"
-            + "Europe and Asia stand between old feudal orders and rising centralized states.\n"
-            + "Trade routes across the Mediterranean, Black Sea, Indian Ocean, and Silk Road are the arteries of power.\n"
-            + "Gunpowder armies are emerging, but cavalry, levies, and fortresses still decide most wars.\n"
-            + "\n"
-            + "Use the crown button in the toolbar to reopen this briefing at any time.";
-
-        ModHookBus.ShowPopup(MOD_ID, StartupTitle, body);
-    }
-
-    private string BuildToolbarBody()
-    {
-        return "1450 Intelligence Report\n"
-            + "\n"
-            + $"Observed wars: {_warsObserved}\n"
-            + $"Observed technologies: {_techsObserved}\n"
-            + $"Observed building completions: {_buildingsObserved}\n"
-            + $"Observed scripted events: {_eventsObserved}\n"
-            + "\n"
-            + $"Current date snapshot: {FormatDate(_lastYear, _lastMonth)}\n"
-            + "\n"
-            + "Model your strategy around legitimacy, supply corridors, and defensible terrain.";
-    }
-
-    private static string FormatDate(int year, int month)
-    {
-        if (year <= 0)
-            return "unknown";
-
-        string monthText = month >= 1 && month <= 12 ? month.ToString("00") : "--";
-        return $"{year}-{monthText}";
+        _shared?.OnUiAction(hookName, modId);
     }
 }
-

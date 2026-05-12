@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\sdk\GlobalProtocol.ModSdk.csproj" Private="false" />
+    <Compile Include="..\shared\OldWorldOrder.cs" Link="OldWorldOrder.cs" />
   </ItemGroup>
 
 </Project>

@@ -5,6 +5,27 @@
       "iconPath": "Content/ui/icons/welcome.png",
       "tooltip": "mod.ui.toolbar.welcome_tooltip",
       "hookName": "owo.welcome"
+    },
+    {
+      "id": "owo.archive_btn",
+      "iconPath": "Content/ui/icons/archive.png",
+      "tooltip": "mod.ui.toolbar.archive_tooltip",
+      "hookName": "owo.archive"
+    },
+    {
+      "id": "owo.info_btn",
+      "iconPath": "Content/ui/icons/info.png",
+      "tooltip": "mod.ui.toolbar.info_tooltip",
+      "hookName": "owo.info"
+    }
+  ],
+  "provinceDetailRows": [
+    {
+      "id": "owo.historical_sig",
+      "label": "mod.ui.province.historical_sig",
+      "valueExpression": "province.stability",
+      "format": "High",
+      "iconPath": "Content/ui/icons/info.png"
     }
   ]
 }
