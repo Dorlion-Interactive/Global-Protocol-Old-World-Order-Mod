@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build-and-release:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -25,68 +25,56 @@ jobs:
         run: dotnet build "Content/mod-csharp/OldWorldOrder.ModCSharp.csproj" -c Release
 
       - name: Package mod (SDK primary)
-        shell: pwsh
         run: |
-          $ErrorActionPreference = "Stop"
+          TAG="${GITHUB_REF_NAME}"
+          ZIP="old-world-order-${TAG}.zip"
+          STAGING="staging"
 
-          $tag = "${{ github.ref_name }}"
-          $zip = "old-world-order-$tag.zip"
-          $staging = Join-Path $PWD "staging"
+          rm -rf "$STAGING"
+          mkdir -p "$STAGING/Content"
+          mkdir -p "$STAGING/Mods"
 
-          if (Test-Path $staging) {
-            Remove-Item $staging -Recurse -Force
-          }
+          cp mod.json "$STAGING/"
+          [ -f logo.png ] && cp logo.png "$STAGING/"
+          [ -f thumbnail.png ] && cp thumbnail.png "$STAGING/"
 
-          New-Item -ItemType Directory -Path $staging | Out-Null
-          New-Item -ItemType Directory -Path (Join-Path $staging "Content") | Out-Null
+          [ -d scenario ] && cp -r scenario "$STAGING/"
+          [ -d overrides ] && cp -r overrides "$STAGING/"
+          [ -d flags ] && cp -r flags "$STAGING/"
 
-          Copy-Item "mod.json" -Destination $staging -Force
-          if (Test-Path "logo.png") { Copy-Item "logo.png" -Destination $staging -Force }
-          if (Test-Path "thumbnail.png") { Copy-Item "thumbnail.png" -Destination $staging -Force }
+          # Copy Content but exclude source/build files and the large pre-built wasm
+          rsync -a \
+            --exclude='wasm-as/' \
+            --exclude='wasm-dotnet/' \
+            --exclude='mod-csharp/' \
+            --exclude='*.ts' \
+            --exclude='*.cs' \
+            --exclude='*.csproj' \
+            --exclude='*.c' \
+            --exclude='*.h' \
+            --exclude='*.a' \
+            --exclude='*.rsp' \
+            --exclude='mod.wasm' \
+            Content/ "$STAGING/Content/"
 
-          if (Test-Path "scenario") { Copy-Item "scenario" -Destination $staging -Recurse -Force }
-          if (Test-Path "overrides") { Copy-Item "overrides" -Destination $staging -Recurse -Force }
-          if (Test-Path "flags") { Copy-Item "flags" -Destination $staging -Recurse -Force }
+          # Copy built DLL to Mods/
+          cp "Content/mod-csharp/bin/Release/netstandard2.1/OldWorldOrder.ModCSharp.dll" "$STAGING/Mods/"
 
-          robocopy "Content" "$staging\Content" /E /NFL /NDL /NJH /NJS /R:1 /W:1 /XD wasm-as wasm-dotnet mod-csharp /XF *.ts *.cs *.csproj *.c *.h *.a *.rsp
-          if ($LASTEXITCODE -gt 7) {
-            throw "robocopy failed on Content with exit code $LASTEXITCODE"
-          }
+          # Patch mod.json for SDK variant using jq
+          jq '.runtimePolicy = "csharp_only" | .enableComponentRuntime = false | del(.entrypoints.wasm)' "$STAGING/mod.json" > "$STAGING/mod.json.tmp" && mv "$STAGING/mod.json.tmp" "$STAGING/mod.json"
 
-          New-Item -ItemType Directory -Path (Join-Path $staging "Mods") -Force | Out-Null
-          Copy-Item "Content\mod-csharp\bin\Release\netstandard2.1\OldWorldOrder.ModCSharp.dll" -Destination (Join-Path $staging "Mods\OldWorldOrder.ModCSharp.dll") -Force
+          # Print debug info for logs
+          echo "---- Runtime settings in packaged mod.json ----"
+          jq -r '.runtimePolicy, .enableComponentRuntime' "$STAGING/mod.json"
+          echo "------------------------------------------------"
 
-          powershell -NoProfile -ExecutionPolicy Bypass -File ".\dev\set-runtime-settings.ps1" -ModJsonPath (Join-Path $staging "mod.json") -BuildVariant "sdk"
-          if ($LASTEXITCODE -ne 0) {
-            throw "Failed to align runtime settings for SDK package"
-          }
+          # Create zip
+          cd "$STAGING"
+          zip -r "../$ZIP" .
+          cd ..
+          cp "$ZIP" "old-world-order-latest.zip"
 
-          $packagedWasm = Join-Path $staging "Content\mod.wasm"
-          if (Test-Path $packagedWasm) {
-            Remove-Item $packagedWasm -Force
-          }
-
-          $legacyEvent = Join-Path $staging "Content\events\owo_welcome.json"
-          if (Test-Path $legacyEvent) {
-            Remove-Item $legacyEvent -Force
-          }
-
-          if (Test-Path $zip) {
-            Remove-Item $zip -Force
-          }
-          if (Test-Path "old-world-order-latest.zip") {
-            Remove-Item "old-world-order-latest.zip" -Force
-          }
-
-          Compress-Archive -Path (Join-Path $staging "*") -DestinationPath $zip -Force
-          Copy-Item $zip "old-world-order-latest.zip" -Force
-
-          $manifest = Get-Content (Join-Path $staging "mod.json") -Raw | ConvertFrom-Json
-          Write-Host "runtimePolicy=$($manifest.runtimePolicy)"
-          Write-Host "enableComponentRuntime=$($manifest.enableComponentRuntime)"
-          Write-Host "Packaged: $zip"
-          Get-ChildItem $zip | Select-Object Name, Length | Format-Table -AutoSize
-
+          echo "ZIP_NAME=$ZIP" >> $GITHUB_ENV
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -118,6 +106,6 @@ jobs:
             Recommended WASM runtime path is AssemblyScript (`install.bat /as`).
             See [README](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod#readme) for full details.
           files: |
-            old-world-order-${{ github.ref_name }}.zip
+            ${{ env.ZIP_NAME }}
             old-world-order-latest.zip
           fail_on_unmatched_files: true
