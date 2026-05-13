@@ -24,7 +24,7 @@ echo ============================================================
 echo  Global Protocol: Old World Order  ^|  Build + Installer
 echo ============================================================
 echo.
-echo  Variant  : %BUILD_VARIANT%  (PRIMARY=sdk, use /dotnet or /as to switch)
+echo  Variant  : %BUILD_VARIANT%  (PRIMARY=sdk, use /as for recommended WASM runtime)
 echo  Target   : %TARGET%
 echo  Cleanup  : remove duplicate at %DUPLICATE_TARGET%
 echo  Skip bld : %SKIP_BUILD%

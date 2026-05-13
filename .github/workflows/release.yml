@@ -10,82 +10,83 @@ permissions:
 
 jobs:
   build-and-release:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
         with:
-          node-version: "20"
+          dotnet-version: "10.0.x"
 
-      - name: Install AssemblyScript
-        working-directory: Content/wasm-as
-        run: npm install --prefer-offline
+      - name: Build SDK managed mod
+        run: dotnet build "Content/mod-csharp/OldWorldOrder.ModCSharp.csproj" -c Release
 
-      - name: Build WASM (AssemblyScript)
-        working-directory: Content/wasm-as
-        run: npx asc mod.ts --target release -o ../mod.wasm --runtime stub --use abort= --exportRuntime
-
-      - name: Verify WASM output
+      - name: Package mod (SDK primary)
+        shell: pwsh
         run: |
-          if [ ! -f Content/mod.wasm ]; then
-            echo "ERROR: Content/mod.wasm was not produced."
-            exit 1
-          fi
-          SIZE=$(wc -c < Content/mod.wasm)
-          echo "mod.wasm size: ${SIZE} bytes"
-          # Check magic bytes — must start with 00 61 73 6d (core WASM)
-          MAGIC=$(xxd -p -l 4 Content/mod.wasm)
-          echo "WASM magic: ${MAGIC}"
-          if [ "$MAGIC" != "0061736d" ]; then
-            echo "ERROR: Unexpected WASM magic bytes. Expected core WASM (0061736d)."
-            exit 1
-          fi
+          $ErrorActionPreference = "Stop"
 
-      - name: Package mod
-        run: |
-          TAG="${GITHUB_REF_NAME}"
-          ZIP="old-world-order-${TAG}.zip"
+          $tag = "${{ github.ref_name }}"
+          $zip = "old-world-order-$tag.zip"
+          $staging = Join-Path $PWD "staging"
 
-          # Stage installable files only — no source, no build dirs
-          mkdir -p staging/Content
+          if (Test-Path $staging) {
+            Remove-Item $staging -Recurse -Force
+          }
 
-          cp mod.json staging/
-          cp logo.png staging/ 2>/dev/null || true
-          cp thumbnail.png staging/ 2>/dev/null || true
+          New-Item -ItemType Directory -Path $staging | Out-Null
+          New-Item -ItemType Directory -Path (Join-Path $staging "Content") | Out-Null
 
-          # scenario/, overrides/, flags/
-          cp -r scenario staging/ 2>/dev/null || true
-          cp -r overrides staging/ 2>/dev/null || true
-          cp -r flags staging/ 2>/dev/null || true
+          Copy-Item "mod.json" -Destination $staging -Force
+          if (Test-Path "logo.png") { Copy-Item "logo.png" -Destination $staging -Force }
+          if (Test-Path "thumbnail.png") { Copy-Item "thumbnail.png" -Destination $staging -Force }
 
-          # Content/ — runtime assets only (exclude source subdirs)
-          rsync -a \
-            --exclude='wasm-as/' \
-            --exclude='wasm-dotnet/' \
-            --exclude='mod-csharp/' \
-            --exclude='*.ts' \
-            --exclude='*.cs' \
-            --exclude='*.csproj' \
-            --exclude='*.c' \
-            --exclude='*.h' \
-            --exclude='*.a' \
-            --exclude='*.rsp' \
-            Content/ staging/Content/
+          if (Test-Path "scenario") { Copy-Item "scenario" -Destination $staging -Recurse -Force }
+          if (Test-Path "overrides") { Copy-Item "overrides" -Destination $staging -Recurse -Force }
+          if (Test-Path "flags") { Copy-Item "flags" -Destination $staging -Recurse -Force }
 
-          cd staging
-          zip -r "../${ZIP}" .
-          cd ..
+          robocopy "Content" "$staging\Content" /E /NFL /NDL /NJH /NJS /R:1 /W:1 /XD wasm-as wasm-dotnet mod-csharp /XF *.ts *.cs *.csproj *.c *.h *.a *.rsp
+          if ($LASTEXITCODE -gt 7) {
+            throw "robocopy failed on Content with exit code $LASTEXITCODE"
+          }
 
-          # Also produce a fixed-name ZIP so the badge URL never changes
-          cp "${ZIP}" "old-world-order-latest.zip"
+          New-Item -ItemType Directory -Path (Join-Path $staging "Mods") -Force | Out-Null
+          Copy-Item "Content\mod-csharp\bin\Release\netstandard2.1\OldWorldOrder.ModCSharp.dll" -Destination (Join-Path $staging "Mods\OldWorldOrder.ModCSharp.dll") -Force
 
-          echo "ZIP=${ZIP}" >> "$GITHUB_ENV"
-          echo "Packaged: ${ZIP}"
-          unzip -l "${ZIP}"
+          powershell -NoProfile -ExecutionPolicy Bypass -File ".\dev\set-runtime-settings.ps1" -ModJsonPath (Join-Path $staging "mod.json") -BuildVariant "sdk"
+          if ($LASTEXITCODE -ne 0) {
+            throw "Failed to align runtime settings for SDK package"
+          }
+
+          $packagedWasm = Join-Path $staging "Content\mod.wasm"
+          if (Test-Path $packagedWasm) {
+            Remove-Item $packagedWasm -Force
+          }
+
+          $legacyEvent = Join-Path $staging "Content\events\owo_welcome.json"
+          if (Test-Path $legacyEvent) {
+            Remove-Item $legacyEvent -Force
+          }
+
+          if (Test-Path $zip) {
+            Remove-Item $zip -Force
+          }
+          if (Test-Path "old-world-order-latest.zip") {
+            Remove-Item "old-world-order-latest.zip" -Force
+          }
+
+          Compress-Archive -Path (Join-Path $staging "*") -DestinationPath $zip -Force
+          Copy-Item $zip "old-world-order-latest.zip" -Force
+
+          $manifest = Get-Content (Join-Path $staging "mod.json") -Raw | ConvertFrom-Json
+          Write-Host "runtimePolicy=$($manifest.runtimePolicy)"
+          Write-Host "enableComponentRuntime=$($manifest.enableComponentRuntime)"
+          Write-Host "Packaged: $zip"
+          Get-ChildItem $zip | Select-Object Name, Length | Format-Table -AutoSize
+
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -113,8 +114,10 @@ jobs:
             install.bat
             ```
 
-            Requires Node.js ≥ 18. See [README](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod#readme) for full details.
+            `install.bat` defaults to the SDK path (`/sdk`).
+            Recommended WASM runtime path is AssemblyScript (`install.bat /as`).
+            See [README](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod#readme) for full details.
           files: |
-            ${{ env.ZIP }}
+            old-world-order-${{ github.ref_name }}.zip
             old-world-order-latest.zip
           fail_on_unmatched_files: true

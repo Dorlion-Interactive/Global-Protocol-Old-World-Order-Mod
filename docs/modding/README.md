@@ -7,6 +7,7 @@ Use this as the root page for your wiki import.
 - [Modding Reference](./MODDING_REFERENCE.md)
 - [WASM Scripting Guide](./WASM_SCRIPTING_GUIDE.md)
 - [UI Injection Guide](./UI_INJECTION_GUIDE.md)
+- [Province Reference](./PROVINCE_REFERENCE.md)
 
 ## Scenario Split JSON Schemas
 
@@ -28,4 +29,5 @@ Use this as the root page for your wiki import.
 2. Data Model: Modding Reference
 3. Scripting: WASM Scripting Guide
 4. UI: UI Injection Guide
-5. Appendices: JSON schema files
+5. Reference: Province Reference
+6. Appendices: JSON schema files

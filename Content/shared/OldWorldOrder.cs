@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Text.RegularExpressions;
 
 namespace GlobalProtocol.Mods.OldWorldOrder;
 

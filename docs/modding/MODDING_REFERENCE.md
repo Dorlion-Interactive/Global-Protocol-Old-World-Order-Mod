@@ -1,6 +1,6 @@
 # NewWorldOrder – Modding Reference
 
-Last updated: 2026-05-11
+Last updated: 2026-05-13
 
 This document is the authoritative reference for mod authors. It covers folder layout, the manifest, all data override types, scenario split files, permissions, and enum values.
 
@@ -55,52 +55,36 @@ Steam Workshop mods use the same layout under the Workshop item folder.
 | `enabledByDefault` | bool | | Whether the mod is pre-enabled on first install |
 | `defaultScenarioFile` | string | | Relative path to a single `scenario.json` |
 | `scenarioFolder` | string | | Relative path to a folder containing split scenario files. **Takes precedence over `defaultScenarioFile`.** |
+| `entrypoints` | object | | Explicit runtime entrypoints such as `entrypoints.wasm` and `entrypoints.ui` |
 | `wasmAbiVersion` | int | | WASM ABI version required (default: 1) |
-| `runtimePolicy` | string | | WASM runtime coexistence policy: `"coexist"` (default), `"wasm_only"`, or `"csharp_only"`. See §2.1. |
-| `enableComponentRuntime` | bool | | Allow component-model WASM binaries (requires a component backend to be registered). Set to `true` only if your WASM is component-format. See §2.2. |
+| `runtimePolicy` | string | | Runtime coexistence policy: `"coexist"` (default), `"wasm_only"`, `"csharp_only"` |
+| `enableComponentRuntime` | bool | | Allow component-model WASM binaries for this mod |
 | `permissions` | string[] | | Required permissions (see §7) |
+
+`entrypoints.wasm` is the preferred way to declare the mod's WASM module. `entrypoints.ui` is the preferred way to declare `inject.json`. Legacy fallback paths are still accepted for compatibility when the manifest entrypoint is omitted or unresolved.
 
 **Auto-detection:** If neither `defaultScenarioFile` nor `scenarioFolder` is set but a `scenario/` subfolder containing `scenario.json` exists, it is loaded automatically.
 
-### 2.1 WASM Runtime Policy
+### 2.1 Runtime Policy
 
-The `runtimePolicy` field controls how a mod's WASM and C# hooks coexist:
+The `runtimePolicy` field controls how WASM and managed C# hooks coexist:
 
 | Policy | Behavior |
 |---|---|
-| `"coexist"` (default) | Both WASM and C# event hooks run side-by-side. Useful for mods with fallback logic. |
-| `"wasm_only"` | Only WASM exports are called. C# mod code is skipped. Useful for pure WASM mods. |
-| `"csharp_only"` | Skip WASM loading entirely; only C# event hooks run. |
+| `"coexist"` (default) | WASM and C# hooks can run side-by-side. |
+| `"wasm_only"` | Only WASM exports are called. Managed C# hooks are skipped. |
+| `"csharp_only"` | WASM loading is skipped. Only managed C# hooks run. |
 
-For managed C# hooks, place your compiled mod assembly under:
+For managed C# hooks, place your compiled assembly under:
 
 `<mod-root>/Mods/*.dll`
 
 The runtime scans this folder for public `IModEntrypoint` implementations.
 
-### 2.2 Component-Model WASM Support
+### 2.2 Component Runtime Opt-In
 
-The engine supports two WASM binary formats:
-- **Core WASM** (default): Traditional WebAssembly modules. Set `wasmAbiVersion: 1` or `2`.
-- **Component-Model WASM** (opt-in): WebAssembly component binaries (binary format version 0A 00 01 00). Requires explicit opt-in.
-
-To use a component-model WASM in your mod:
-
-1. Set `"enableComponentRuntime": true` in `mod.json`
-2. Build your WASM as a component binary (not core module)
-3. The engine will route it to `ModComponentWasmRuntime` instead of the standard wasm3 runtime
-
-**Backend Requirements:** Component-model binaries require a backend to be registered via `ComponentWasmBackendRegistry`. If no backend is available at runtime, the mod will fail to load with a clear error message.
-
-**Example manifest:**
-```json
-{
-  "id": "com.example.component_mod",
-  "wasmAbiVersion": 2,
-  "enableComponentRuntime": true,
-  "runtimePolicy": "wasm_only"
-}
-```
+Set `enableComponentRuntime: true` only when your WASM binary is component-model format.
+Core WASM modules should leave this `false`.
 
 ---
 
@@ -157,6 +141,7 @@ Each file is optional; missing files are skipped. Lists from all files are **app
 | `nationalGoalsFile` | string | `""` | Relative path to national goals JSON |
 | `gdpScale` | float | 1.0 | Global GDP multiplier |
 | `economicEraLabel` | string | `""` | Economy era key for init system |
+| `currency_symbol` | string | `"$"` | Symbol shown in all money displays. Any UTF-8 string, e.g. `"€"`, `"fl."`, `"¥"`. Null/empty keeps the default `"$"`. |
 
 ---
 
@@ -297,6 +282,12 @@ The game will reject mods that call gated APIs without the required permission.
 
 For managed C# mods, `InjectUI` also gates `ModHookBus.ShowPopup(...)`.
 
+Localization overrides are loaded from both modern and legacy paths for compatibility:
+- `Content/localization/<language>.csv`
+- `overrides/localization_<language>.csv`
+
+Use `Content/localization/` for new mods.
+
 ---
 
 ## 8. Enum Reference
@@ -322,66 +313,3 @@ For managed C# mods, `InjectUI` also gates `ModHookBus.ShowPopup(...)`.
 ### 8.7 Diplomacy Clear Scopes
 - `core` — wars and alliances only
 - `extended` — all diplomatic relationships (default)
-
----
-
-## 9. WASM Binary Format & Backend Registration
-
-### 9.1 Core vs. Component-Model Binaries
-
-The engine detects WASM binary format at load time (magic bytes 0x00 0x61 0x73 0x6D followed by version bytes):
-
-| Format | Version Bytes | Handled By | Requires `enableComponentRuntime` |
-|---|---|---|---|
-| **Core** | `01 00 00 00` | `ModWasmRuntime` (wasm3) | No |
-| **Component** | `XX 00 01 00` (for example `0A 00 01 00` or `0D 00 01 00`) | `ModComponentWasmRuntime` (pluggable backend) | Yes |
-
-**Core modules** (standard WebAssembly) are always supported.  
-**Component modules** require:
-1. `"enableComponentRuntime": true` in manifest
-2. A component backend registered via `ComponentWasmBackendRegistry`
-
-### 9.2 Component Backend Registration (Engine Developers)
-
-Component-model binaries are routed to pluggable backends. To provide component support, register a backend during engine startup:
-
-```csharp
-// In your engine initialization code:
-using GlobalProtocol.Core.Mods.Wasm;
-
-// Register a factory function that creates component backends
-ComponentWasmBackendRegistry.RegisterFactory((modId, permissions) =>
-{
-    return new YourCustomComponentBackend(modId, permissions);
-});
-```
-
-The backend must implement `IComponentWasmBackend`:
-```csharp
-public interface IComponentWasmBackend : IDisposable
-{
-    bool Initialize(string modId, ModWasmPermissions permissions, byte[] wasmBytes);
-    bool CallVoid(string exportName);
-    bool CallI32(string exportName, int a);
-    bool CallI32I32(string exportName, int a, int b);
-    bool CallI32I32I32(string exportName, int a, int b, int c);
-    bool CallI32I32I32I32(string exportName, int a, int b, int c, int d);
-    bool CallUiAction(string exportName, string hookName, string modId);
-}
-```
-
-If no backend is registered, the engine will reject component-model mods with a clear error: *"component-model WASM detected but no component backend is registered."*
-
----
-
-## 9.3 WASM ABI Compatibility Matrix
-
-`wasmAbiVersion` in `mod.json` declares which ABI version the mod was compiled against. The engine validates this at load time.
-
-| Game ABI | Accepted `wasmAbiVersion` values | Notes |
-|---|---|---|
-| 1–2 (current) | `1`, `2` | Stable — all hook exports and host imports documented in WASM_SCRIPTING_GUIDE.md §3–4 |
-
-**Support window:** ABI 1 and ABI 2 are both accepted for backwards compatibility. When ABI 3 ships, both `1` and `2` will be accepted for at least one major game release cycle. After that window, older ABI versions will be rejected with a clear error in the mod browser.
-
-For versioning rules and the deprecation lifecycle, see `WASM_SCRIPTING_GUIDE.md` §10.

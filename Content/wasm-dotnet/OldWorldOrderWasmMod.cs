@@ -32,9 +32,9 @@ internal sealed class OldWorldOrderWasmMod : WasmModBase, IModHost
                 if (System.IO.File.Exists(path))
                 {
                     string content = System.IO.File.ReadAllText(path);
-                    var match = System.Text.RegularExpressions.Regex.Match(content, @"""version""\s*:\s*""([^""]+)""");
-                    if (match.Success)
-                        return match.Groups[1].Value;
+                    string? parsed = TryParseVersion(content);
+                    if (!string.IsNullOrWhiteSpace(parsed))
+                        return parsed;
                 }
             }
         }
@@ -43,6 +43,28 @@ internal sealed class OldWorldOrderWasmMod : WasmModBase, IModHost
             // fallback if sandboxing restricts I/O
         }
         return "0.2.2";
+    }
+
+    private static string? TryParseVersion(string json)
+    {
+        const string key = "\"version\"";
+        int keyIndex = json.IndexOf(key, StringComparison.Ordinal);
+        if (keyIndex < 0)
+            return null;
+
+        int colonIndex = json.IndexOf(':', keyIndex + key.Length);
+        if (colonIndex < 0)
+            return null;
+
+        int quoteStart = json.IndexOf('"', colonIndex + 1);
+        if (quoteStart < 0)
+            return null;
+
+        int quoteEnd = json.IndexOf('"', quoteStart + 1);
+        if (quoteEnd <= quoteStart)
+            return null;
+
+        return json.Substring(quoteStart + 1, quoteEnd - quoteStart - 1);
     }
 
     protected override void OnInitialize()

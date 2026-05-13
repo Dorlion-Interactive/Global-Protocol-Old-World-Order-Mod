@@ -1,62 +1,139 @@
 <Project Sdk="Microsoft.NET.Sdk">
+<!--
+  GlobalProtocol: Old World Order - WASM .NET Mod (NativeAOT experiment)
 
+  The generated/ bindings remain the canonical component surface.
+  NativeAOT is enabled to produce real wasm exports for
+  [UnmanagedCallersOnly] hook entrypoints.
+-->
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <RuntimeIdentifier>wasi-wasm</RuntimeIdentifier>
+    <OwoUseLocalNativeAotPack>true</OwoUseLocalNativeAotPack>
     <OutputType>Exe</OutputType>
+    <PublishAot>true</PublishAot>
+    <DisableUnsupportedError>true</DisableUnsupportedError>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyName>mod</AssemblyName>
-    <WasiClangFlags>$(WasiClangFlags) -mexec-model=reactor</WasiClangFlags>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <TrimMode>full</TrimMode>
+    <IlcTrimMetadata>true</IlcTrimMetadata>
+    <IlcUseLLVM>true</IlcUseLLVM>
+    <StripSymbols>false</StripSymbols>
+
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <DefaultItemExcludes>$(DefaultItemExcludes);GlobalProtocol.ModWasmSdk\**</DefaultItemExcludes>
-    <!--
-      BUILD:
-        dotnet workload install wasi-experimental
-        set WASI_SDK_PATH=%USERPROFILE%\wasi-sdk   (wasi-sdk-25 required)
-        dotnet publish -c Release
-      CopyWasmToContent target auto-copies dotnet.wasm to Content/mod.wasm.
-
-      OUTPUT FORMAT - .NET 10 WASI produces a WASM Component (component model).
-      Requires Wasmtime 18+ or equivalent component-model-capable host.
-      For a flat core WASM host, use Variant B (Content/wasm-as/mod.ts).
-
-      Hook component contract scaffold lives at:
-        Content/wasm-dotnet/wit/globalprotocol-hooks.wit
-      The engine now accepts nested hook-interface exports for this contract shape.
-
-      AOT (uncomment for better runtime performance, requires WASI SDK):
-    -->
-    <!-- <RunAOTCompilation>true</RunAOTCompilation> -->
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="GlobalProtocol.ModWasmSdk\GlobalProtocol.ModWasmSdk.csproj" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <WasiRuntimePackagePath>$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', '..', '..', 'dev', 'path1', 'runtime-src', 'artifacts', 'bin', 'microsoft.netcore.app.runtime.wasi-wasm', 'Release'))</WasiRuntimePackagePath>
+    <WasiRuntimeLibPath>$(WasiRuntimePackagePath)\runtimes\wasi-wasm\lib\net10.0\</WasiRuntimeLibPath>
+    <WasiRuntimeNativePath>$(WasiRuntimePackagePath)\runtimes\wasi-wasm\native\</WasiRuntimeNativePath>
+    <WasiRuntimeCoreLibPath>$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', '..', '..', 'dev', 'path1', 'runtime-src', 'artifacts', 'bin', 'mono', 'wasi.wasm.Release', 'System.Private.CoreLib.dll'))</WasiRuntimeCoreLibPath>
+    <OwoPrivateSdkAssemblyPath Condition="'$(OwoPrivateSdkAssemblyPath)' == '' and '$(OwoUseLocalNativeAotPack)' == 'true'">$(WasiRuntimeCoreLibPath)</OwoPrivateSdkAssemblyPath>
+    <OwoIlCompilerPackVersion Condition="'$(OwoIlCompilerPackVersion)' == ''">10.0.7</OwoIlCompilerPackVersion>
+    <OwoOverrideKnownIlCompilerPack Condition="'$(OwoOverrideKnownIlCompilerPack)' == ''">true</OwoOverrideKnownIlCompilerPack>
+    <OwoInjectFrameworkAssemblies Condition="'$(OwoInjectFrameworkAssemblies)' == '' and '$(OwoIlCompilerPackVersion)' != '10.0.7'">true</OwoInjectFrameworkAssemblies>
+    <OwoInjectFrameworkAssemblies Condition="'$(OwoInjectFrameworkAssemblies)' == ''">false</OwoInjectFrameworkAssemblies>
+    <OwoSanitizeIlcRsp Condition="'$(OwoSanitizeIlcRsp)' == ''">true</OwoSanitizeIlcRsp>
+    <OwoEnableComponentTypeLinkerArg Condition="'$(OwoEnableComponentTypeLinkerArg)' == ''">true</OwoEnableComponentTypeLinkerArg>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(OwoOverrideKnownIlCompilerPack)' == 'true'">
+    <KnownILCompilerPack Remove="Microsoft.DotNet.ILCompiler" />
+    <KnownILCompilerPack Include="Microsoft.DotNet.ILCompiler"
+                         TargetFramework="net10.0"
+                         ILCompilerPackNamePattern="runtime.**RID**.Microsoft.DotNet.ILCompiler"
+                         ILCompilerRuntimePackNamePattern="Microsoft.NETCore.App.Runtime.AOT.win-x64.Cross.**RID**"
+                         ILCompilerPackVersion="$(OwoIlCompilerPackVersion)"
+                         ILCompilerPortableRuntimeIdentifiers="linux-arm64;linux-musl-arm64;linux-musl-x64;linux-x64;win-arm64;win-x64;osx-x64;osx-arm64;freebsd-x64;freebsd-arm64;linux-arm;linux-musl-arm;linux-loongarch64;linux-musl-loongarch64;win-x86;linux-riscv64;linux-musl-riscv64;wasi-wasm"
+                         ILCompilerRuntimeIdentifiers="linux-arm64;linux-musl-arm64;linux-musl-x64;linux-x64;win-arm64;win-x64;osx-x64;osx-arm64;freebsd-x64;freebsd-arm64;linux-arm;linux-musl-arm;linux-loongarch64;linux-musl-loongarch64;win-x86;linux-riscv64;linux-musl-riscv64;wasi-wasm" />
+  </ItemGroup>
+
   <ItemGroup>
-    <!-- Add custom native hook shim to the sources compiled into dotnet.wasm. -->
-    <_WasmRuntimePackSrcFile Include="native/hooks_shim.c" />
     <Compile Include="..\shared\OldWorldOrder.cs" Link="OldWorldOrder.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <LinkerArg Include="-Wl,--component-type,&quot;$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', 'wit', 'globalprotocol-hooks.wit').Replace('\','/'))&quot;" />
-  </ItemGroup>
-
-  <Target Name="PatchDefaultComponentTypeRsp"
-          AfterTargets="_WasmWriteRspForLinking"
-          BeforeTargets="_WasiLinkDotNet">
-    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;$rsp='$(_WasmLinkRsp)'; $lines=Get-Content -Path $rsp; $lines=$lines | Where-Object { $_ -notmatch 'WasiHttpWorld_component_type\.wit' }; $lines=$lines | ForEach-Object { $_ -replace 'crt1-command\.o', 'crt1-reactor.o' }; Set-Content -Path $rsp -Value $lines -Encoding Ascii&quot;" />
+  <Target Name="OverrideWasiNativeAotRuntimePack"
+          AfterTargets="ImportRuntimeIlcPackageTarget"
+      BeforeTargets="SetupProperties;Publish"
+      Condition="'$(OwoUseLocalNativeAotPack)' == 'true'">
+    <PropertyGroup>
+      <RuntimePackagePath>$(WasiRuntimePackagePath)</RuntimePackagePath>
+      <IlcSdkPath>$(WasiRuntimePackagePath)\runtimes\wasi-wasm\lib\net10.0\</IlcSdkPath>
+    </PropertyGroup>
+    <Message Text="[OWO] Using local WASI runtime pack at $(RuntimePackagePath)" Importance="High" />
   </Target>
 
+  <Target Name="InjectWasiNativeAotInputs"
+      BeforeTargets="SetupProperties;Publish"
+      Condition="'$(OwoUseLocalNativeAotPack)' == 'true'">
+    <PropertyGroup>
+      <RuntimePackagePath>$(WasiRuntimePackagePath)</RuntimePackagePath>
+      <IlcSdkPath>$(WasiRuntimeLibPath)</IlcSdkPath>
+    </PropertyGroup>
+    <ItemGroup>
+      <PrivateSdkAssemblies Include="$(OwoPrivateSdkAssemblyPath)" Condition="Exists('$(OwoPrivateSdkAssemblyPath)')" />
+      <FrameworkAssemblies Include="$(WasiRuntimeLibPath)*.dll"
+                           Condition="'$(OwoInjectFrameworkAssemblies)' == 'true' and Exists('$(WasiRuntimeLibPath)')" />
+    </ItemGroup>
+    <Message Text="[OWO] Injected WASI NativeAOT inputs from $(WasiRuntimeLibPath)" Importance="High" />
+  </Target>
+
+  <!--
+    The wit-bindgen C# generator emits its own component-type WIT fragment
+    alongside the bindings. Pass it to wasm-component-ld so the encoder
+    lifts the [UnmanagedCallersOnly] core exports into the
+    globalprotocol:hooks/mod-hooks@1.0.0 component interface. Same recipe
+    confirmed working in dotnet/runtime issue 113868.
+  -->
+  <ItemGroup Condition="'$(OwoEnableComponentTypeLinkerArg)' == 'true'">
+    <LinkerArg Include="-Wl,--component-type,&quot;$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', 'generated', 'GlobalprotocolModWorld_component_type.wit').Replace('\','/'))&quot;" />
+  </ItemGroup>
+
   <Target Name="CopyWasmToContent" AfterTargets="Publish">
-    <Copy SourceFiles="$(PublishDir)dotnet.wasm"
+    <PropertyGroup>
+      <_PublishedWasmPath Condition="Exists('$(PublishDir)mod.wasm')">$(PublishDir)mod.wasm</_PublishedWasmPath>
+      <_PublishedWasmPath Condition="'$(_PublishedWasmPath)' == '' and Exists('$(PublishDir)dotnet.wasm')">$(PublishDir)dotnet.wasm</_PublishedWasmPath>
+    </PropertyGroup>
+
+    <Error Condition="'$(_PublishedWasmPath)' == ''"
+           Text="No published wasm file found under $(PublishDir)." />
+
+    <Copy SourceFiles="$(_PublishedWasmPath)"
           DestinationFiles="$(MSBuildProjectDirectory)\..\mod.wasm"
           OverwriteReadOnlyFiles="true" />
-    <Message Text="[OWO] Copied dotnet.wasm to Content/mod.wasm" Importance="High" />
+    <Message Text="[OWO] Copied $(_PublishedWasmPath) to Content/mod.wasm" Importance="High" />
+  </Target>
+
+  <PropertyGroup>
+    <WasiIlcRspFile>$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', 'obj', '$(Configuration)', 'native', '$(AssemblyName).ilc.rsp'))</WasiIlcRspFile>
+  </PropertyGroup>
+
+  <Target Name="SanitizeIlcReferences"
+      AfterTargets="WriteIlcRspFileForCompilation"
+          BeforeTargets="IlcCompile"
+        Condition="'$(OwoSanitizeIlcRsp)' == 'true' and Exists('$(WasiIlcRspFile)')">
+    <ReadLinesFromFile File="$(WasiIlcRspFile)">
+      <Output TaskParameter="Lines" ItemName="_IlcRspLinesRaw" />
+    </ReadLinesFromFile>
+
+    <ItemGroup>
+      <_IlcRspLinesSanitized Include="@(_IlcRspLinesRaw)"
+                             Condition="$([System.String]::Copy('%(_IlcRspLinesRaw.Identity)').Contains('mscorlib.dll')) == false and $([System.String]::Copy('%(_IlcRspLinesRaw.Identity)').Contains('netstandard.dll')) == false" />
+    </ItemGroup>
+
+    <WriteLinesToFile File="$(WasiIlcRspFile)"
+                      Lines="@(_IlcRspLinesSanitized)"
+                      Overwrite="true" />
+    <Message Text="[OWO] Sanitized $(WasiIlcRspFile) to remove mscorlib/netstandard entries" Importance="High" />
   </Target>
 
 </Project>

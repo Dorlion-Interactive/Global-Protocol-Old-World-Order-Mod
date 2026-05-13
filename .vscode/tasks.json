@@ -1,199 +1,199 @@
-{
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "clean-generated-content",
-			"type": "shell",
-			"command": "powershell",
-			"args": [
-				"-NoProfile",
-				"-ExecutionPolicy",
-				"Bypass",
-				"-Command",
-				"$root = 'c:\\Personal\\Genel\\Projeler\\GlobalProtocolHistoricalMod\\Content'; $dirs = @('AppBundle','wasi-wasm'); foreach ($dir in $dirs) { $path = Join-Path $root $dir; if (Test-Path $path) { Remove-Item $path -Recurse -Force } }; $extensions = @('*.dll','*.pdb','*.deps.json','*.runtimeconfig.json','*.wasm','*.a','*.dat','*.c','*.h','*.rsp','*.wit','*.bin'); foreach ($pattern in $extensions) { Get-ChildItem -Path $root -Filter $pattern -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne 'goals_old_world_order.json' } | Remove-Item -Force }; Write-Host 'Cleaned generated content artifacts.'"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "clean-generated-content-2",
-			"type": "shell",
-			"command": "$root = \"c:\\Personal\\Genel\\Projeler\\GlobalProtocolHistoricalMod\\Content\"; $dirs = @(\"AppBundle\",\"wasi-wasm\"); foreach ($dir in $dirs) { $path = Join-Path $root $dir; if (Test-Path $path) { Remove-Item $path -Recurse -Force } }; $extensions = @(\"*.dll\",\"*.pdb\",\"*.deps.json\",\"*.runtimeconfig.json\",\"*.wasm\",\"*.a\",\"*.dat\",\"*.c\",\"*.h\",\"*.rsp\",\"*.wit\",\"*.bin\"); foreach ($pattern in $extensions) { Get-ChildItem -Path $root -Filter $pattern -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne \"goals_old_world_order.json\" } | Remove-Item -Force }; Write-Host \"Cleaned generated content artifacts.\"",
-			"isBackground": false
-		},
-		{
-			"label": "run-clean-generated-script",
-			"type": "shell",
-			"command": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\dev\\clean-generated-content.ps1",
-			"isBackground": false
-		},
-		{
-			"label": "run-clean-generated-script-2",
-			"type": "shell",
-			"command": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\dev\\clean-generated-content.ps1",
-			"isBackground": false
-		},
-		{
-			"label": "verify-install-sdk",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /sdk"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "verify-install-as",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /as"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "verify-install-dotnet",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /dotnet"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "verify-install-sdk-skip",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /sdk /skip-build"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "probe-runtimepolicy-set",
-			"type": "shell",
-			"command": "powershell",
-			"args": [
-				"-NoProfile",
-				"-ExecutionPolicy",
-				"Bypass",
-				"-Command",
-				"$p='C:\\Users\\User\\AppData\\LocalLow\\Dorlion Interactive\\Global Protocol\\Mods\\globalprotocol.old_world_order\\mod.json'; $j=Get-Content $p -Raw | ConvertFrom-Json; $j.enableComponentRuntime=$false; $j.runtimePolicy='csharp_only'; $j | ConvertTo-Json -Depth 20 | Set-Content $p -Encoding UTF8; Write-Host ('runtimePolicy=' + ((Get-Content $p -Raw | ConvertFrom-Json).runtimePolicy)); Write-Host ('enableComponentRuntime=' + ((Get-Content $p -Raw | ConvertFrom-Json).enableComponentRuntime))"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "probe-runtimepolicy-cmd",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"powershell -NoProfile -ExecutionPolicy Bypass -Command \"$p='C:\\Users\\User\\AppData\\LocalLow\\Dorlion Interactive\\Global Protocol\\Mods\\globalprotocol.old_world_order\\mod.json'; $j=Get-Content $p -Raw | ConvertFrom-Json; $j.enableComponentRuntime=$false; $j.runtimePolicy='csharp_only'; $j | ConvertTo-Json -Depth 20 | Set-Content $p -Encoding UTF8\""
-			],
-			"isBackground": false
-		},
-		{
-			"label": "probe-install-as-skip",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /as /skip-build"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "verify-runtime-align-as",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /as /skip-build"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "verify-runtime-align-sdk",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /sdk /skip-build"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "verify-runtime-align-dotnet",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /dotnet /skip-build"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "finalize-sdk-deploy",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /sdk /skip-build"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "verify-dotnet-strict-after-refactor",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /dotnet"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "verify-sdk-strict-after-refactor",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /sdk /skip-build"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "verify-sdk-no-wasm-entrypoint",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /sdk /skip-build"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "verify-dotnet-entrypoint-after-script",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /dotnet /skip-build"
-			],
-			"isBackground": false
-		},
-		{
-			"label": "finalize-sdk-strict",
-			"type": "shell",
-			"command": "cmd",
-			"args": [
-				"/c",
-				"echo.| install.bat /sdk /skip-build"
-			],
-			"isBackground": false
-		}
-	]
+﻿{
+    "version":  "2.0.0",
+    "tasks":  [
+                  {
+                      "label":  "clean-generated-content",
+                      "type":  "shell",
+                      "command":  "powershell",
+                      "args":  [
+                                   "-NoProfile",
+                                   "-ExecutionPolicy",
+                                   "Bypass",
+                                   "-Command",
+                                   "$root = \u0027c:\\Personal\\Genel\\Projeler\\GlobalProtocolHistoricalMod\\Content\u0027; $dirs = @(\u0027AppBundle\u0027,\u0027wasi-wasm\u0027); foreach ($dir in $dirs) { $path = Join-Path $root $dir; if (Test-Path $path) { Remove-Item $path -Recurse -Force } }; $extensions = @(\u0027*.dll\u0027,\u0027*.pdb\u0027,\u0027*.deps.json\u0027,\u0027*.runtimeconfig.json\u0027,\u0027*.wasm\u0027,\u0027*.a\u0027,\u0027*.dat\u0027,\u0027*.c\u0027,\u0027*.h\u0027,\u0027*.rsp\u0027,\u0027*.wit\u0027,\u0027*.bin\u0027); foreach ($pattern in $extensions) { Get-ChildItem -Path $root -Filter $pattern -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne \u0027goals_old_world_order.json\u0027 } | Remove-Item -Force }; Write-Host \u0027Cleaned generated content artifacts.\u0027"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "clean-generated-content-2",
+                      "type":  "shell",
+                      "command":  "$root = \"c:\\Personal\\Genel\\Projeler\\GlobalProtocolHistoricalMod\\Content\"; $dirs = @(\"AppBundle\",\"wasi-wasm\"); foreach ($dir in $dirs) { $path = Join-Path $root $dir; if (Test-Path $path) { Remove-Item $path -Recurse -Force } }; $extensions = @(\"*.dll\",\"*.pdb\",\"*.deps.json\",\"*.runtimeconfig.json\",\"*.wasm\",\"*.a\",\"*.dat\",\"*.c\",\"*.h\",\"*.rsp\",\"*.wit\",\"*.bin\"); foreach ($pattern in $extensions) { Get-ChildItem -Path $root -Filter $pattern -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne \"goals_old_world_order.json\" } | Remove-Item -Force }; Write-Host \"Cleaned generated content artifacts.\"",
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "run-clean-generated-script",
+                      "type":  "shell",
+                      "command":  "powershell -NoProfile -ExecutionPolicy Bypass -File .\\dev\\clean-generated-content.ps1",
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "run-clean-generated-script-2",
+                      "type":  "shell",
+                      "command":  "powershell -NoProfile -ExecutionPolicy Bypass -File .\\dev\\clean-generated-content.ps1",
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-install-sdk",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /sdk"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-install-as",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /as"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-install-dotnet",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /dotnet"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-install-sdk-skip",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /sdk /skip-build"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "probe-runtimepolicy-set",
+                      "type":  "shell",
+                      "command":  "powershell",
+                      "args":  [
+                                   "-NoProfile",
+                                   "-ExecutionPolicy",
+                                   "Bypass",
+                                   "-Command",
+                                   "$p=\u0027C:\\Users\\User\\AppData\\LocalLow\\Dorlion Interactive\\Global Protocol\\Mods\\globalprotocol.old_world_order\\mod.json\u0027; $j=Get-Content $p -Raw | ConvertFrom-Json; $j.enableComponentRuntime=$false; $j.runtimePolicy=\u0027csharp_only\u0027; $j | ConvertTo-Json -Depth 20 | Set-Content $p -Encoding UTF8; Write-Host (\u0027runtimePolicy=\u0027 + ((Get-Content $p -Raw | ConvertFrom-Json).runtimePolicy)); Write-Host (\u0027enableComponentRuntime=\u0027 + ((Get-Content $p -Raw | ConvertFrom-Json).enableComponentRuntime))"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "probe-runtimepolicy-cmd",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$p=\u0027C:\\Users\\User\\AppData\\LocalLow\\Dorlion Interactive\\Global Protocol\\Mods\\globalprotocol.old_world_order\\mod.json\u0027; $j=Get-Content $p -Raw | ConvertFrom-Json; $j.enableComponentRuntime=$false; $j.runtimePolicy=\u0027csharp_only\u0027; $j | ConvertTo-Json -Depth 20 | Set-Content $p -Encoding UTF8\""
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "probe-install-as-skip",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /as /skip-build"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-runtime-align-as",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /as /skip-build"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-runtime-align-sdk",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /sdk /skip-build"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-runtime-align-dotnet",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /dotnet /skip-build"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "finalize-sdk-deploy",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /sdk /skip-build"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-dotnet-strict-after-refactor",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /dotnet"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-sdk-strict-after-refactor",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /sdk /skip-build"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-sdk-no-wasm-entrypoint",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /sdk /skip-build"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "verify-dotnet-entrypoint-after-script",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /dotnet /skip-build"
+                               ],
+                      "isBackground":  false
+                  },
+                  {
+                      "label":  "finalize-sdk-strict",
+                      "type":  "shell",
+                      "command":  "cmd",
+                      "args":  [
+                                   "/c",
+                                   "echo.| install.bat /sdk /skip-build"
+                               ],
+                      "isBackground":  false
+                  }
+              ]
 }
