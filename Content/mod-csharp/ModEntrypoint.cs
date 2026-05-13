@@ -42,7 +42,7 @@ public sealed class ModEntrypoint : ModBase, IModHost
         {
             // fallback if pathing fails
         }
-        return "0.2.2";
+        return "unknown";
     }
 
     protected override void OnInitialize(IModServices services)
