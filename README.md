@@ -10,6 +10,12 @@ A historical total conversion mod for **[Global Protocol: New World Order](https
 
 ~120 playable nations · Ottoman Empire · Ming Dynasty · Aztec Empire · Kingdom of France · and more.
 
+## WIP Screenshot Example
+
+WIP: in-game visuals and UI are still being refined and may change before release.
+
+![WIP in-game screenshot](docs/images/wip-ingame-example.png)
+
 ---
 
 ## For Players
@@ -35,9 +41,13 @@ If you want to clone this repo and build your own version of the mod:
 1. Clone the repository.
 2. Open the project in VS Code.
 3. Run `install.bat` to build and install the default native C# SDK variant.
-4. If you want the .NET WASM variant (`OldWorldOrder.ModWasmNet` + `GlobalProtocol.ModWasmSdk`), run `install.bat /dotnet`.
-5. If you want the AssemblyScript core WASM variant, run `install.bat /as`.
+4. Recommended WASM runtime path: AssemblyScript (`install.bat /as`).
+5. Experimental .NET WASM variant (`OldWorldOrder.ModWasmNet` + `GlobalProtocol.ModWasmSdk`): `install.bat /dotnet`.
 6. Make your changes, then run the installer again to rebuild and redeploy.
+
+Internal default policy for this repo:
+- `install.bat` (no flags) stays SDK-first (`/sdk`) for stable local deploys and CI release packaging.
+- AssemblyScript (`/as`) is the recommended WASM runtime path when you want a WASM build.
 
 For build details and reference material, see the **[Wiki](https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod/wiki)**.
 
@@ -47,14 +57,14 @@ Use this repo as a working template when building your own Global Protocol mod.
 
 ### Quick Start: 3 Runtime Options
 
-1. **Native C# SDK hooks (default)**
+1. **Native C# SDK hooks (default internal build/publish path)**
    - Command: `install.bat` (or `install.bat /sdk`)
    - Project: `Content/mod-csharp/OldWorldOrder.ModCSharp.csproj`
 2. **.NET WASM + WASM SDK**
    - Command: `install.bat /dotnet`
    - Mod entry project: `Content/wasm-dotnet/OldWorldOrder.ModWasmNet.csproj`
    - SDK project: `Content/wasm-dotnet/GlobalProtocol.ModWasmSdk/GlobalProtocol.ModWasmSdk.csproj`
-3. **AssemblyScript core WASM**
+3. **AssemblyScript core WASM (recommended WASM runtime path)**
    - Command: `install.bat /as`
    - Source: `Content/wasm-as/mod.ts`
 
