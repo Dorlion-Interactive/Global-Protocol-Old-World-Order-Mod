@@ -131,3 +131,126 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,Old World Order, 1450
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+
+country.homeland.CHE,THE CONFEDERATION
+country.name.CHE,Swiss Confederation
+country.homeland.FRA,THE REALM
+country.name.FRA,Kingdom of France
+country.homeland.HUN,THE REALM
+country.name.HUN,Crown of Hungary
+country.homeland.POL,THE HOMELAND
+country.name.POL,Crown of Poland
+country.homeland.PRT,THE REALM
+country.name.PRT,Kingdom of Portugal
+country.homeland.SAX,THE ELECTORATE
+country.name.SAX,Electorate of Saxony
+country.homeland.BRG,THE MARGRAVIATE
+country.name.BRG,Margraviate of Brandenburg
+country.homeland.BAV,THE DUCHY
+country.name.BAV,Duchy of Bavaria
+country.homeland.PAL,THE PALATINATE
+country.name.PAL,Electoral Palatinate
+country.homeland.COL,THE ARCHBISHOPRIC
+country.name.COL,Electorate of Cologne
+country.homeland.WUR,THE COUNTY
+country.name.WUR,County of Württemberg
+country.homeland.LIV,THE ORDER
+country.name.LIV,Livonian Confederation
+country.homeland.BOS,THE KINGDOM
+country.name.BOS,Kingdom of Bosnia
+country.homeland.LUS,THE KINGDOM
+country.name.LUS,Kingdom of Cyprus
+country.homeland.TAH,THE SULTANATE OF YEMEN
+country.name.TAH,Tahirid Sultanate of Yemen
+country.homeland.NBH,THE KINGDOM OF OMAN
+country.name.NBH,Nabhani Kingdom of Oman
+country.homeland.HRM,THE KINGDOM OF HORMUZ
+country.name.HRM,Kingdom of Hormuz
+country.homeland.JBR,THE EMIRATE OF AL-HASA
+country.name.JBR,Jabrid Emirate
+country.homeland.SHV,THE SHIRVANSHAHS
+country.name.SHV,Shirvanshahs
+country.homeland.GRG,THE KINGDOM OF GEORGIA
+country.name.GRG,Kingdom of Georgia
+country.homeland.ZAY,THE KINGDOM OF TLEMCEN
+country.name.ZAY,Zayyanid Kingdom of Tlemcen
+country.homeland.UZB,THE UZBEK KHANATE
+country.name.UZB,Uzbek Khanate
+country.homeland.MLW,THE SULTANATE
+country.name.MLW,Malwa Sultanate
+country.homeland.MEW,THE KINGDOM
+country.name.MEW,Kingdom of Mewar
+country.homeland.JNP,THE SULTANATE
+country.name.JNP,Jaunpur Sultanate
+country.homeland.ORI,THE KINGDOM
+country.name.ORI,Gajapati Kingdom of Orissa
+country.homeland.KSH,THE SULTANATE
+country.name.KSH,Kashmir Sultanate
+country.homeland.NEP,THE KINGDOM
+country.name.NEP,Malla Kingdom of Nepal
+country.homeland.KOT,THE KINGDOM
+country.name.KOT,Kingdom of Kotte
+country.homeland.MLD,THE SULTANATE
+country.name.MLD,Sultanate of the Maldives
+country.homeland.SND,THE SULTANATE
+country.name.SND,Samma Sultanate of Sindh
+country.homeland.AVA,THE KINGDOM
+country.name.AVA,Kingdom of Ava
+country.homeland.PEG,THE KINGDOM
+country.name.PEG,Hanthawaddy Kingdom of Pegu
+country.homeland.ARK,THE KINGDOM
+country.name.ARK,Kingdom of Mrauk U
+country.homeland.LNA,THE KINGDOM
+country.name.LNA,Lan Na Kingdom
+country.homeland.LXG,THE KINGDOM
+country.name.LXG,Kingdom of Lan Xang
+country.homeland.KMR,THE KINGDOM
+country.name.KMR,Khmer Kingdom
+country.homeland.CPA,THE KINGDOM
+country.name.CPA,Kingdom of Champa
+country.homeland.BRU,THE SULTANATE
+country.name.BRU,Sultanate of Brunei
+country.homeland.PSI,THE SULTANATE
+country.name.PSI,Samudra-Pasai Sultanate
+country.homeland.SUL,THE SULTANATE
+country.name.SUL,Sultanate of Sulu
+country.homeland.MGL,THE KHANATE
+country.name.MGL,Oirat Mongol Confederation
+country.homeland.MOS,THE MOSSI KINGDOMS
+country.name.MOS,Mossi Kingdoms
+country.homeland.HAU,THE HAUSA LANDS
+country.name.HAU,Hausa City-States
+country.homeland.OYO,THE OYO EMPIRE
+country.name.OYO,Oyo Empire
+country.homeland.LUB,THE KINGDOM OF LUBA
+country.name.LUB,Kingdom of Luba
+country.homeland.ADA,THE SULTANATE OF ADAL
+country.name.ADA,Adal Sultanate
+country.homeland.FNJ,THE FUNJ SULTANATE
+country.name.FNJ,Funj Sultanate of Sennar
+country.homeland.KLW,THE SWAHILI COAST
+country.name.KLW,Kilwa Sultanate (Swahili Coast)
+country.homeland.BUG,THE KINGDOM OF BUGANDA
+country.name.BUG,Kingdom of Buganda
+country.homeland.MAD,THE MALAGASY LANDS
+country.name.MAD,Madagascar Chiefdoms
+country.homeland.TAR,THE TARASCAN STATE
+country.name.TAR,Tarascan State (Purepecha)
+country.homeland.TLX,THE TLAXCALAN CONFEDERACY
+country.name.TLX,Tlaxcala
+country.homeland.ZAP,THE ZAPOTEC KINGDOM
+country.name.ZAP,Zapotec Kingdom
+country.homeland.CHM,THE KINGDOM OF CHIMOR
+country.name.CHM,Kingdom of Chimor
+country.homeland.MUI,THE MUISCA CONFEDERATION
+country.name.MUI,Muisca Confederation
+country.homeland.MAP,THE MAPUCHE LANDS
+country.name.MAP,Mapuche
+country.homeland.IRO,THE HAUDENOSAUNEE
+country.name.IRO,Haudenosaunee Confederacy
+country.homeland.PUE,THE PUEBLO LANDS
+country.name.PUE,Pueblo Peoples
+country.homeland.CAH,THE MISSISSIPPIAN LANDS
+country.name.CAH,Mississippian Chiefdoms (Cahokia)
+country.homeland.TAI,THE TAINO LANDS
+country.name.TAI,Taino Cacicazgos

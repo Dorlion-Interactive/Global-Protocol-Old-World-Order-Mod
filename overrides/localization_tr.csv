@@ -1,4 +1,4 @@
-country.homeland.ABY,HABEŞİSTAN
+﻿country.homeland.ABY,HABEŞİSTAN
 country.homeland.AKK,KONFEDERASYON
 country.homeland.ARA,ANAVATAN
 country.homeland.AYU,KRALLIK
@@ -131,3 +131,126 @@ mod.owo.popup.startup.body_with_date,Tarih: {0}-{1}\n\nAvrupa ve Asya eski feoda
 mod.owo.popup.startup.title,Eski Dünya Düzeni 1450
 mod.ui.toolbar.welcome_tooltip,Stratejik Bilgilendirmeyi Aç
 ui.button.ok,TAMAM
+
+country.homeland.CHE,KONFEDERASYON
+country.name.CHE,İsviçre Konfederasyonu
+country.homeland.FRA,KRALLIK
+country.name.FRA,Fransa Krallığı
+country.homeland.HUN,KRALLIK
+country.name.HUN,Macar Krallığı
+country.homeland.POL,ANAVATAN
+country.name.POL,Polonya Krallığı
+country.homeland.PRT,KRALLIK
+country.name.PRT,Portekiz Krallığı
+country.homeland.SAX,SEÇMENLİK
+country.name.SAX,Saksonya Seçmen Prensliği
+country.homeland.BRG,MARKGRAFLIK
+country.name.BRG,Brandenburg Markgraflığı
+country.homeland.BAV,DÜKALIK
+country.name.BAV,Bavyera Dükalığı
+country.homeland.PAL,KONT PALATİNLİĞİ
+country.name.PAL,Palatina Seçmen Prensliği
+country.homeland.COL,BAŞPİSKOPOSLUK
+country.name.COL,Köln Prens-Başpiskoposluğu
+country.homeland.WUR,KONTLUK
+country.name.WUR,Württemberg Kontluğu
+country.homeland.LIV,TARİKAT
+country.name.LIV,Livonya Konfederasyonu
+country.homeland.BOS,KRALLIK
+country.name.BOS,Bosna Krallığı
+country.homeland.LUS,KRALLIK
+country.name.LUS,Kıbrıs Krallığı
+country.homeland.TAH,YEMEN SULTANLIĞI
+country.name.TAH,Tahiri Yemen Sultanlığı
+country.homeland.NBH,UMMAN KRALLIĞI
+country.name.NBH,Nebhani Umman Krallığı
+country.homeland.HRM,HÜRMÜZ KRALLIĞI
+country.name.HRM,Hürmüz Krallığı
+country.homeland.JBR,EL-HASA EMİRLİĞİ
+country.name.JBR,Cebri Emirliği
+country.homeland.SHV,ŞİRVANŞAHLAR
+country.name.SHV,Şirvanşahlar
+country.homeland.GRG,GÜRCİSTAN KRALLIĞI
+country.name.GRG,Gürcistan Krallığı
+country.homeland.ZAY,TİLİMSAN KRALLIĞI
+country.name.ZAY,Zeyyani Tilimsan Krallığı
+country.homeland.UZB,ÖZBEK HANLIĞI
+country.name.UZB,Özbek Hanlığı
+country.homeland.MLW,SULTANLIK
+country.name.MLW,Malva Sultanlığı
+country.homeland.MEW,KRALLIK
+country.name.MEW,Mewar Krallığı
+country.homeland.JNP,SULTANLIK
+country.name.JNP,Jaunpur Sultanlığı
+country.homeland.ORI,KRALLIK
+country.name.ORI,Gajapati Orissa Krallığı
+country.homeland.KSH,SULTANLIK
+country.name.KSH,Keşmir Sultanlığı
+country.homeland.NEP,KRALLIK
+country.name.NEP,Malla Nepal Krallığı
+country.homeland.KOT,KRALLIK
+country.name.KOT,Kotte Krallığı
+country.homeland.MLD,SULTANLIK
+country.name.MLD,Maldivler Sultanlığı
+country.homeland.SND,SULTANLIK
+country.name.SND,Samma Sind Sultanlığı
+country.homeland.AVA,KRALLIK
+country.name.AVA,Ava Krallığı
+country.homeland.PEG,KRALLIK
+country.name.PEG,Hanthawaddy Pegu Krallığı
+country.homeland.ARK,KRALLIK
+country.name.ARK,Mrauk U Krallığı
+country.homeland.LNA,KRALLIK
+country.name.LNA,Lan Na Krallığı
+country.homeland.LXG,KRALLIK
+country.name.LXG,Lan Xang Krallığı
+country.homeland.KMR,KRALLIK
+country.name.KMR,Khmer Krallığı
+country.homeland.CPA,KRALLIK
+country.name.CPA,Çampa Krallığı
+country.homeland.BRU,SULTANLIK
+country.name.BRU,Bruney Sultanlığı
+country.homeland.PSI,SULTANLIK
+country.name.PSI,Samudra-Pasai Sultanlığı
+country.homeland.SUL,SULTANLIK
+country.name.SUL,Sulu Sultanlığı
+country.homeland.MGL,HANLIK
+country.name.MGL,Oyrat Moğol Konfederasyonu
+country.homeland.MOS,MOSSİ KRALLIKLARI
+country.name.MOS,Mossi Krallıkları
+country.homeland.HAU,HAUSA ŞEHİR DEVLETLERİ
+country.name.HAU,Hausa Şehir Devletleri
+country.homeland.OYO,OYO İMPARATORLUĞU
+country.name.OYO,Oyo İmparatorluğu
+country.homeland.LUB,LUBA KRALLIĞI
+country.name.LUB,Luba Krallığı
+country.homeland.ADA,ADAL SULTANLIĞI
+country.name.ADA,Adal Sultanlığı
+country.homeland.FNJ,FUNC SULTANLIĞI
+country.name.FNJ,Func Sennar Sultanlığı
+country.homeland.KLW,SVAHİLİ SAHİLİ
+country.name.KLW,Kilwa Sultanlığı (Svahili Sahili)
+country.homeland.BUG,BUGANDA KRALLIĞI
+country.name.BUG,Buganda Krallığı
+country.homeland.MAD,MADAGASKAR
+country.name.MAD,Madagaskar Şeflikleri
+country.homeland.TAR,TARASKAN DEVLETİ
+country.name.TAR,Taraskan Devleti (Purepeçalar)
+country.homeland.TLX,TLAXCALA KONFEDERASYONU
+country.name.TLX,Tlaxcala Konfederasyonu
+country.homeland.ZAP,ZAPOTEK KRALLIĞI
+country.name.ZAP,Zapotek Krallığı
+country.homeland.CHM,CHİMOR KRALLIĞI
+country.name.CHM,Chimor Krallığı
+country.homeland.MUI,MUİSKA KONFEDERASYONU
+country.name.MUI,Muiska Konfederasyonu
+country.homeland.MAP,MAPUÇE TOPRAKLARI
+country.name.MAP,Mapuçe Halkları
+country.homeland.IRO,HAUDENOSAUNEE KONFEDERASYONU
+country.name.IRO,Haudenosaunee Konfederasyonu
+country.homeland.PUE,PUEBLO TOPRAKLARI
+country.name.PUE,Pueblo Halkları
+country.homeland.CAH,MİSİSİPİ TOPRAKLARI
+country.name.CAH,Misisipi Şeflikleri (Cahokia)
+country.homeland.TAI,TAİNO TOPRAKLARI
+country.name.TAI,Taino Şeflikleri

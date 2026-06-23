@@ -83,7 +83,7 @@ function buildArchiveBody(): string {
 
 function buildInfoBody(): string {
     return "Global Protocol: Old World Order\n"
-        + "Version: 0.2.2\n\n"
+        + "Version: 0.3.0\n\n"
         + "A historical scenario mod focusing on the late medieval era.\n"
         + "Showcasing UI injection across SDK, WASM.NET, and AS paths.\n\n"
         + "Project: Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod";

@@ -1,0 +1,334 @@
+{
+  "initialFleets": [
+    {
+      "ownerISO3": "VNC",
+      "provinceId": 496,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "venetian_galleass",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_galley",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "GEN",
+      "provinceId": 593,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "OTT",
+      "provinceId": 334,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "ottoman_galley",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_galley",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BYZ",
+      "provinceId": 2276,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "ARA",
+      "provinceId": 637,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "NAP",
+      "provinceId": 2465,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MAM",
+      "provinceId": 19,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "PRT",
+      "provinceId": 1685,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "portuguese_caravel",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_cog",
+          "count": 1,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "CAS",
+      "provinceId": 533,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_cog",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "ENG",
+      "provinceId": 314,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_cog",
+          "count": 2,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "SCT",
+      "provinceId": 1706,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_cog",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "DAN",
+      "provinceId": 162,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_cog",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "SWD",
+      "provinceId": 163,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_cog",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MYN",
+      "provinceId": 961,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "ming_treasure_ship",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_galley",
+          "count": 1,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MAJ",
+      "provinceId": 3,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_galley",
+          "count": 1,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MLC",
+      "provinceId": 4,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_galley",
+          "count": 1,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "HRM",
+      "provinceId": 90,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "JOS",
+      "provinceId": 50,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1,
+          "currentHp": -1
+        },
+        {
+          "unitTypeId": "med_galley",
+          "count": 1,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KLW",
+      "provinceId": 1232,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "LUS",
+      "provinceId": 14,
+      "morale": -1,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2,
+          "currentHp": -1
+        }
+      ]
+    }
+  ]
+}

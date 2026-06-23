@@ -42,7 +42,7 @@ internal sealed class OldWorldOrderWasmMod : WasmModBase, IModHost
         {
             // fallback if sandboxing restricts I/O
         }
-        return "0.2.2";
+        return "0.3.0";
     }
 
     private static string? TryParseVersion(string json)
