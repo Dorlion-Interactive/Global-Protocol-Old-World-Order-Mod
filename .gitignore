@@ -55,7 +55,13 @@ desktop.ini
 /workshop_content/
 
 # Internal developer tooling — not for modders
-dev/
+dev/*
+# ...except the authoritative province-ownership curation source + build/audit tooling
+!dev/province_curation.json
+!dev/build_province_ownership.py
+!dev/audit_ownership.py
+!dev/curate_browse.py
+!dev/owo_provinces.py
 
 # Wiki build dirs (not part of main repo)
 .wiki-temp/

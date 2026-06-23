@@ -1,20 +1,13 @@
 {
+  "regionOwnerOverrides": [],
   "provinceOwnerOverrides": [
-    {
-      "provinceId": 1,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 2,
-      "ownerISO3": "INC"
-    },
     {
       "provinceId": 3,
       "ownerISO3": "MAJ"
     },
     {
       "provinceId": 4,
-      "ownerISO3": "MLC"
+      "ownerISO3": "BRU"
     },
     {
       "provinceId": 5,
@@ -42,14 +35,6 @@
     },
     {
       "provinceId": 11,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 12,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 13,
       "ownerISO3": "INC"
     },
     {
@@ -109,10 +94,6 @@
       "ownerISO3": "ABY"
     },
     {
-      "provinceId": 28,
-      "ownerISO3": "FNJ"
-    },
-    {
       "provinceId": 29,
       "ownerISO3": "ABY"
     },
@@ -141,34 +122,6 @@
       "ownerISO3": "ADA"
     },
     {
-      "provinceId": 36,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 37,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 38,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 39,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 40,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 41,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 42,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 43,
       "ownerISO3": "DEL"
     },
@@ -183,18 +136,6 @@
     {
       "provinceId": 46,
       "ownerISO3": "ADA"
-    },
-    {
-      "provinceId": 47,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 48,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 49,
-      "ownerISO3": "INC"
     },
     {
       "provinceId": 50,
@@ -229,19 +170,7 @@
       "ownerISO3": "MOR"
     },
     {
-      "provinceId": 58,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 59,
-      "ownerISO3": "MAY"
-    },
-    {
       "provinceId": 60,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 61,
       "ownerISO3": "KNG"
     },
     {
@@ -250,10 +179,6 @@
     },
     {
       "provinceId": 63,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 64,
       "ownerISO3": "KNG"
     },
     {
@@ -321,14 +246,6 @@
       "ownerISO3": "LTH"
     },
     {
-      "provinceId": 81,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 82,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 83,
       "ownerISO3": "MAM"
     },
@@ -373,10 +290,6 @@
       "ownerISO3": "HRM"
     },
     {
-      "provinceId": 94,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 95,
       "ownerISO3": "TIM"
     },
@@ -411,14 +324,6 @@
     {
       "provinceId": 103,
       "ownerISO3": "LTH"
-    },
-    {
-      "provinceId": 104,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 105,
-      "ownerISO3": "INC"
     },
     {
       "provinceId": 106,
@@ -459,10 +364,6 @@
     {
       "provinceId": 115,
       "ownerISO3": "MGL"
-    },
-    {
-      "provinceId": 116,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 117,
@@ -539,10 +440,6 @@
     {
       "provinceId": 135,
       "ownerISO3": "LIV"
-    },
-    {
-      "provinceId": 136,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 137,
@@ -985,10 +882,6 @@
       "ownerISO3": "FRA"
     },
     {
-      "provinceId": 247,
-      "ownerISO3": "GRN"
-    },
-    {
       "provinceId": 248,
       "ownerISO3": "MOR"
     },
@@ -1053,26 +946,6 @@
       "ownerISO3": "TIM"
     },
     {
-      "provinceId": 264,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 265,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 266,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 267,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 268,
-      "ownerISO3": "INC"
-    },
-    {
       "provinceId": 269,
       "ownerISO3": "BRG"
     },
@@ -1082,10 +955,6 @@
     },
     {
       "provinceId": 271,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 272,
       "ownerISO3": "INC"
     },
     {
@@ -1345,40 +1214,12 @@
       "ownerISO3": "OTT"
     },
     {
-      "provinceId": 337,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 338,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 339,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 340,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 341,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 342,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 343,
       "ownerISO3": "POL"
     },
     {
       "provinceId": 344,
       "ownerISO3": "HUN"
-    },
-    {
-      "provinceId": 345,
-      "ownerISO3": "MAL"
     },
     {
       "provinceId": 346,
@@ -1405,59 +1246,7 @@
       "ownerISO3": "MAL"
     },
     {
-      "provinceId": 352,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 353,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 354,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 355,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 356,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 357,
-      "ownerISO3": "KBR"
-    },
-    {
       "provinceId": 358,
-      "ownerISO3": "FNJ"
-    },
-    {
-      "provinceId": 359,
-      "ownerISO3": "FNJ"
-    },
-    {
-      "provinceId": 360,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 361,
-      "ownerISO3": "FNJ"
-    },
-    {
-      "provinceId": 362,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 363,
-      "ownerISO3": "FNJ"
-    },
-    {
-      "provinceId": 364,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 365,
       "ownerISO3": "FNJ"
     },
     {
@@ -1485,20 +1274,8 @@
       "ownerISO3": "LUB"
     },
     {
-      "provinceId": 372,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 373,
       "ownerISO3": "LUB"
-    },
-    {
-      "provinceId": 374,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 375,
-      "ownerISO3": "KLW"
     },
     {
       "provinceId": 376,
@@ -1625,10 +1402,6 @@
       "ownerISO3": "TEU"
     },
     {
-      "provinceId": 407,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 408,
       "ownerISO3": "BUR"
     },
@@ -1693,10 +1466,6 @@
       "ownerISO3": "HAB"
     },
     {
-      "provinceId": 424,
-      "ownerISO3": "MAL"
-    },
-    {
       "provinceId": 425,
       "ownerISO3": "MAL"
     },
@@ -1706,14 +1475,6 @@
     },
     {
       "provinceId": 427,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 428,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 429,
       "ownerISO3": "MAL"
     },
     {
@@ -1845,10 +1606,6 @@
       "ownerISO3": "SHV"
     },
     {
-      "provinceId": 462,
-      "ownerISO3": "INC"
-    },
-    {
       "provinceId": 463,
       "ownerISO3": "KKY"
     },
@@ -1902,10 +1659,6 @@
     },
     {
       "provinceId": 476,
-      "ownerISO3": "OYO"
-    },
-    {
-      "provinceId": 477,
       "ownerISO3": "OYO"
     },
     {
@@ -2025,23 +1778,11 @@
       "ownerISO3": "JBR"
     },
     {
-      "provinceId": 507,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 508,
       "ownerISO3": "ZIM"
     },
     {
-      "provinceId": 509,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 510,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 511,
       "ownerISO3": "ZIM"
     },
     {
@@ -2342,7 +2083,7 @@
     },
     {
       "provinceId": 586,
-      "ownerISO3": "MLC"
+      "ownerISO3": "BRU"
     },
     {
       "provinceId": 587,
@@ -2375,10 +2116,6 @@
     {
       "provinceId": 594,
       "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 595,
-      "ownerISO3": "ZAY"
     },
     {
       "provinceId": 596,
@@ -2439,46 +2176,6 @@
     {
       "provinceId": 610,
       "ownerISO3": "HAB"
-    },
-    {
-      "provinceId": 611,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 612,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 613,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 614,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 615,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 616,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 617,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 618,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 619,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 620,
-      "ownerISO3": "BUG"
     },
     {
       "provinceId": 621,
@@ -2749,26 +2446,6 @@
       "ownerISO3": "BOS"
     },
     {
-      "provinceId": 688,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 689,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 690,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 691,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 692,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 693,
       "ownerISO3": "TAI"
     },
@@ -2889,10 +2566,6 @@
       "ownerISO3": "MAY"
     },
     {
-      "provinceId": 723,
-      "ownerISO3": "MAY"
-    },
-    {
       "provinceId": 724,
       "ownerISO3": "MAY"
     },
@@ -2901,19 +2574,7 @@
       "ownerISO3": "MAY"
     },
     {
-      "provinceId": 726,
-      "ownerISO3": "MAY"
-    },
-    {
       "provinceId": 727,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 728,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 729,
       "ownerISO3": "MAY"
     },
     {
@@ -2921,119 +2582,15 @@
       "ownerISO3": "MAY"
     },
     {
-      "provinceId": 731,
-      "ownerISO3": "MAY"
-    },
-    {
       "provinceId": 732,
       "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 733,
-      "ownerISO3": "MUI"
     },
     {
       "provinceId": 734,
       "ownerISO3": "INC"
     },
     {
-      "provinceId": 735,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 736,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 737,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 738,
-      "ownerISO3": "INC"
-    },
-    {
       "provinceId": 739,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 740,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 741,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 742,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 743,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 744,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 745,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 746,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 747,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 748,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 749,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 750,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 751,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 752,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 753,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 754,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 755,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 756,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 757,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 758,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 759,
       "ownerISO3": "INC"
     },
     {
@@ -3677,24 +3234,12 @@
       "ownerISO3": "LTH"
     },
     {
-      "provinceId": 920,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 921,
-      "ownerISO3": "MVY"
-    },
-    {
       "provinceId": 922,
       "ownerISO3": "LTH"
     },
     {
       "provinceId": 923,
       "ownerISO3": "LTH"
-    },
-    {
-      "provinceId": 924,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 925,
@@ -3765,16 +3310,8 @@
       "ownerISO3": "SHV"
     },
     {
-      "provinceId": 942,
-      "ownerISO3": "MVY"
-    },
-    {
       "provinceId": 943,
       "ownerISO3": "MGL"
-    },
-    {
-      "provinceId": 944,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 945,
@@ -3789,10 +3326,6 @@
       "ownerISO3": "MGL"
     },
     {
-      "provinceId": 948,
-      "ownerISO3": "MVY"
-    },
-    {
       "provinceId": 949,
       "ownerISO3": "MGL"
     },
@@ -3803,22 +3336,6 @@
     {
       "provinceId": 951,
       "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 952,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 953,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 954,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 955,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 956,
@@ -4261,87 +3778,7 @@
       "ownerISO3": "LXG"
     },
     {
-      "provinceId": 1066,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1067,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1068,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1069,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1070,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1071,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1072,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1073,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1074,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1075,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1076,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1077,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1078,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1079,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1080,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1081,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1082,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1083,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1084,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 1085,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1086,
       "ownerISO3": "ZIM"
     },
     {
@@ -4351,74 +3788,6 @@
     {
       "provinceId": 1088,
       "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1089,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1090,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1091,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1092,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1093,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1094,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1095,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1096,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1097,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1098,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1099,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1100,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1101,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1102,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1103,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1104,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1105,
-      "ownerISO3": "BUG"
     },
     {
       "provinceId": 1106,
@@ -4453,36 +3822,8 @@
       "ownerISO3": "ABY"
     },
     {
-      "provinceId": 1114,
-      "ownerISO3": "FNJ"
-    },
-    {
       "provinceId": 1115,
       "ownerISO3": "ABY"
-    },
-    {
-      "provinceId": 1116,
-      "ownerISO3": "FNJ"
-    },
-    {
-      "provinceId": 1117,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1118,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1119,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1120,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1121,
-      "ownerISO3": "KBR"
     },
     {
       "provinceId": 1122,
@@ -4493,23 +3834,7 @@
       "ownerISO3": "KBR"
     },
     {
-      "provinceId": 1124,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1125,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1126,
-      "ownerISO3": "KNG"
-    },
-    {
       "provinceId": 1127,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1128,
       "ownerISO3": "KNG"
     },
     {
@@ -4517,23 +3842,7 @@
       "ownerISO3": "KNG"
     },
     {
-      "provinceId": 1130,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1131,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1132,
-      "ownerISO3": "KNG"
-    },
-    {
       "provinceId": 1133,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1134,
       "ownerISO3": "KNG"
     },
     {
@@ -4561,28 +3870,8 @@
       "ownerISO3": "KBR"
     },
     {
-      "provinceId": 1141,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1142,
-      "ownerISO3": "OYO"
-    },
-    {
-      "provinceId": 1143,
-      "ownerISO3": "KBR"
-    },
-    {
       "provinceId": 1144,
       "ownerISO3": "OYO"
-    },
-    {
-      "provinceId": 1145,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1146,
-      "ownerISO3": "KBR"
     },
     {
       "provinceId": 1147,
@@ -4681,32 +3970,16 @@
       "ownerISO3": "OYO"
     },
     {
-      "provinceId": 1171,
-      "ownerISO3": "MAL"
-    },
-    {
       "provinceId": 1172,
       "ownerISO3": "MOS"
-    },
-    {
-      "provinceId": 1173,
-      "ownerISO3": "MAL"
     },
     {
       "provinceId": 1174,
       "ownerISO3": "MOS"
     },
     {
-      "provinceId": 1175,
-      "ownerISO3": "MAL"
-    },
-    {
       "provinceId": 1176,
       "ownerISO3": "MOS"
-    },
-    {
-      "provinceId": 1177,
-      "ownerISO3": "MAL"
     },
     {
       "provinceId": 1178,
@@ -4773,39 +4046,11 @@
       "ownerISO3": "MOS"
     },
     {
-      "provinceId": 1194,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1195,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1196,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1197,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1198,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1199,
-      "ownerISO3": "MAL"
-    },
-    {
       "provinceId": 1200,
       "ownerISO3": "MAL"
     },
     {
       "provinceId": 1201,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1202,
       "ownerISO3": "MAL"
     },
     {
@@ -4933,54 +4178,6 @@
       "ownerISO3": "ZIM"
     },
     {
-      "provinceId": 1234,
-      "ownerISO3": "GRN"
-    },
-    {
-      "provinceId": 1235,
-      "ownerISO3": "GRN"
-    },
-    {
-      "provinceId": 1236,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1237,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1238,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1239,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1240,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1241,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1242,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1243,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1244,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1245,
-      "ownerISO3": "IRO"
-    },
-    {
       "provinceId": 1246,
       "ownerISO3": "IRO"
     },
@@ -4997,64 +4194,12 @@
       "ownerISO3": "IRO"
     },
     {
-      "provinceId": 1250,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1251,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1252,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1253,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1254,
-      "ownerISO3": "IRO"
-    },
-    {
       "provinceId": 1255,
       "ownerISO3": "PUE"
     },
     {
-      "provinceId": 1256,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 1257,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 1258,
-      "ownerISO3": "IRO"
-    },
-    {
       "provinceId": 1259,
       "ownerISO3": "PUE"
-    },
-    {
-      "provinceId": 1260,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 1261,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1262,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 1263,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 1264,
-      "ownerISO3": "AZT"
     },
     {
       "provinceId": 1265,
@@ -5081,14 +4226,6 @@
       "ownerISO3": "MAY"
     },
     {
-      "provinceId": 1271,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 1272,
-      "ownerISO3": "AZT"
-    },
-    {
       "provinceId": 1273,
       "ownerISO3": "MAY"
     },
@@ -5102,14 +4239,6 @@
     },
     {
       "provinceId": 1276,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1277,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1278,
       "ownerISO3": "MAY"
     },
     {
@@ -5133,79 +4262,7 @@
       "ownerISO3": "MAY"
     },
     {
-      "provinceId": 1284,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1285,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1286,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1287,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1288,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1289,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1290,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1291,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1292,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1293,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1294,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1295,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1296,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1297,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1298,
-      "ownerISO3": "MUI"
-    },
-    {
       "provinceId": 1299,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1300,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1301,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1302,
       "ownerISO3": "INC"
     },
     {
@@ -5237,10 +4294,6 @@
       "ownerISO3": "INC"
     },
     {
-      "provinceId": 1310,
-      "ownerISO3": "MUI"
-    },
-    {
       "provinceId": 1311,
       "ownerISO3": "INC"
     },
@@ -5249,27 +4302,7 @@
       "ownerISO3": "INC"
     },
     {
-      "provinceId": 1313,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1314,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1315,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1316,
-      "ownerISO3": "INC"
-    },
-    {
       "provinceId": 1317,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1318,
       "ownerISO3": "INC"
     },
     {
@@ -5277,40 +4310,8 @@
       "ownerISO3": "INC"
     },
     {
-      "provinceId": 1320,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1321,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1322,
-      "ownerISO3": "MAP"
-    },
-    {
-      "provinceId": 1323,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1324,
-      "ownerISO3": "MAP"
-    },
-    {
-      "provinceId": 1325,
-      "ownerISO3": "MAP"
-    },
-    {
       "provinceId": 1326,
       "ownerISO3": "MAP"
-    },
-    {
-      "provinceId": 1327,
-      "ownerISO3": "MAP"
-    },
-    {
-      "provinceId": 1328,
-      "ownerISO3": "INC"
     },
     {
       "provinceId": 1329,
@@ -5329,67 +4330,15 @@
       "ownerISO3": "MAP"
     },
     {
-      "provinceId": 1333,
-      "ownerISO3": "INC"
-    },
-    {
       "provinceId": 1334,
       "ownerISO3": "MAP"
-    },
-    {
-      "provinceId": 1335,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1336,
-      "ownerISO3": "MAP"
-    },
-    {
-      "provinceId": 1337,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1338,
-      "ownerISO3": "MAP"
-    },
-    {
-      "provinceId": 1339,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1340,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1341,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1342,
-      "ownerISO3": "MUI"
     },
     {
       "provinceId": 1343,
       "ownerISO3": "MUI"
     },
     {
-      "provinceId": 1344,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1345,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1346,
-      "ownerISO3": "MUI"
-    },
-    {
       "provinceId": 1347,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1348,
       "ownerISO3": "MUI"
     },
     {
@@ -5398,14 +4347,6 @@
     },
     {
       "provinceId": 1350,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1351,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1352,
       "ownerISO3": "MAJ"
     },
     {
@@ -5525,36 +4466,12 @@
       "ownerISO3": "UZB"
     },
     {
-      "provinceId": 1382,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 1383,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 1384,
-      "ownerISO3": "MVY"
-    },
-    {
       "provinceId": 1385,
       "ownerISO3": "UZB"
     },
     {
       "provinceId": 1386,
       "ownerISO3": "UZB"
-    },
-    {
-      "provinceId": 1387,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 1388,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 1389,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 1390,
@@ -5571,10 +4488,6 @@
     {
       "provinceId": 1393,
       "ownerISO3": "KRM"
-    },
-    {
-      "provinceId": 1394,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 1395,
@@ -5653,72 +4566,20 @@
       "ownerISO3": "NBH"
     },
     {
-      "provinceId": 1414,
-      "ownerISO3": "MAM"
-    },
-    {
       "provinceId": 1415,
       "ownerISO3": "TAH"
-    },
-    {
-      "provinceId": 1416,
-      "ownerISO3": "MAM"
     },
     {
       "provinceId": 1417,
       "ownerISO3": "TAH"
     },
     {
-      "provinceId": 1418,
-      "ownerISO3": "MAM"
-    },
-    {
       "provinceId": 1419,
       "ownerISO3": "TAH"
     },
     {
-      "provinceId": 1420,
-      "ownerISO3": "MAM"
-    },
-    {
-      "provinceId": 1421,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1422,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1423,
-      "ownerISO3": "HFS"
-    },
-    {
-      "provinceId": 1424,
-      "ownerISO3": "KBR"
-    },
-    {
       "provinceId": 1425,
       "ownerISO3": "SON"
-    },
-    {
-      "provinceId": 1426,
-      "ownerISO3": "ZAY"
-    },
-    {
-      "provinceId": 1427,
-      "ownerISO3": "MOR"
-    },
-    {
-      "provinceId": 1428,
-      "ownerISO3": "ZAY"
-    },
-    {
-      "provinceId": 1429,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1430,
-      "ownerISO3": "MAM"
     },
     {
       "provinceId": 1431,
@@ -5729,35 +4590,11 @@
       "ownerISO3": "MAM"
     },
     {
-      "provinceId": 1433,
-      "ownerISO3": "MAM"
-    },
-    {
-      "provinceId": 1434,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1435,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1436,
-      "ownerISO3": "ZAY"
-    },
-    {
       "provinceId": 1437,
       "ownerISO3": "MOR"
     },
     {
       "provinceId": 1438,
-      "ownerISO3": "MOR"
-    },
-    {
-      "provinceId": 1439,
-      "ownerISO3": "MOR"
-    },
-    {
-      "provinceId": 1440,
       "ownerISO3": "MOR"
     },
     {
@@ -5801,39 +4638,15 @@
       "ownerISO3": "HFS"
     },
     {
-      "provinceId": 1451,
-      "ownerISO3": "ZAY"
-    },
-    {
       "provinceId": 1452,
       "ownerISO3": "SON"
-    },
-    {
-      "provinceId": 1453,
-      "ownerISO3": "FNJ"
     },
     {
       "provinceId": 1454,
       "ownerISO3": "FNJ"
     },
     {
-      "provinceId": 1455,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1456,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1457,
-      "ownerISO3": "MAM"
-    },
-    {
       "provinceId": 1458,
-      "ownerISO3": "MAM"
-    },
-    {
-      "provinceId": 1459,
       "ownerISO3": "MAM"
     },
     {
@@ -5865,26 +4678,6 @@
       "ownerISO3": "ADA"
     },
     {
-      "provinceId": 1467,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 1468,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1469,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1470,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 1471,
-      "ownerISO3": "KLW"
-    },
-    {
       "provinceId": 1472,
       "ownerISO3": "KLW"
     },
@@ -5907,26 +4700,6 @@
     {
       "provinceId": 1477,
       "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1478,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1479,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1480,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1481,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1482,
-      "ownerISO3": "KNG"
     },
     {
       "provinceId": 1483,
@@ -5965,50 +4738,6 @@
       "ownerISO3": "MAL"
     },
     {
-      "provinceId": 1492,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1493,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1494,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1495,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1496,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1497,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1498,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1499,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1500,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1501,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1502,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 1503,
       "ownerISO3": "ZIM"
     },
@@ -6025,10 +4754,6 @@
       "ownerISO3": "ZIM"
     },
     {
-      "provinceId": 1507,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 1508,
       "ownerISO3": "KNG"
     },
@@ -6037,36 +4762,8 @@
       "ownerISO3": "KNG"
     },
     {
-      "provinceId": 1510,
-      "ownerISO3": "KNG"
-    },
-    {
       "provinceId": 1511,
       "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1512,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1513,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1514,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1515,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1516,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1517,
-      "ownerISO3": "ZIM"
     },
     {
       "provinceId": 1518,
@@ -6101,18 +4798,6 @@
       "ownerISO3": "MAL"
     },
     {
-      "provinceId": 1526,
-      "ownerISO3": "ZAY"
-    },
-    {
-      "provinceId": 1527,
-      "ownerISO3": "HFS"
-    },
-    {
-      "provinceId": 1528,
-      "ownerISO3": "HFS"
-    },
-    {
       "provinceId": 1529,
       "ownerISO3": "MOS"
     },
@@ -6123,82 +4808,6 @@
     {
       "provinceId": 1531,
       "ownerISO3": "MOS"
-    },
-    {
-      "provinceId": 1532,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1533,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1534,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1535,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1536,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1537,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1538,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1539,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1540,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1541,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1542,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1543,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1544,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1545,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1546,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1547,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1548,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1549,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1550,
-      "ownerISO3": "ZIM"
     },
     {
       "provinceId": 1551,
@@ -6241,87 +4850,11 @@
       "ownerISO3": "MOS"
     },
     {
-      "provinceId": 1561,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1562,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1563,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1564,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1565,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1566,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1567,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1568,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1569,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1570,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1571,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1572,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 1573,
       "ownerISO3": "ZIM"
     },
     {
-      "provinceId": 1574,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1575,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1576,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1577,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1578,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 1579,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1580,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1581,
       "ownerISO3": "BUG"
     },
     {
@@ -6341,64 +4874,12 @@
       "ownerISO3": "BUG"
     },
     {
-      "provinceId": 1586,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1587,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1588,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1589,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1590,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 1591,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1592,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1593,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1594,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1595,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1596,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1597,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 1598,
       "ownerISO3": "BUG"
     },
     {
       "provinceId": 1599,
       "ownerISO3": "ABY"
-    },
-    {
-      "provinceId": 1600,
-      "ownerISO3": "MAM"
     },
     {
       "provinceId": 1601,
@@ -6453,23 +4934,11 @@
       "ownerISO3": "GUJ"
     },
     {
-      "provinceId": 1614,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 1615,
-      "ownerISO3": "IRO"
-    },
-    {
       "provinceId": 1616,
       "ownerISO3": "FNJ"
     },
     {
       "provinceId": 1617,
-      "ownerISO3": "FNJ"
-    },
-    {
-      "provinceId": 1618,
       "ownerISO3": "FNJ"
     },
     {
@@ -6485,16 +4954,8 @@
       "ownerISO3": "PAP"
     },
     {
-      "provinceId": 1622,
-      "ownerISO3": "FNJ"
-    },
-    {
       "provinceId": 1623,
       "ownerISO3": "FNJ"
-    },
-    {
-      "provinceId": 1624,
-      "ownerISO3": "ZAY"
     },
     {
       "provinceId": 1625,
@@ -6587,30 +5048,6 @@
     {
       "provinceId": 1647,
       "ownerISO3": "NEP"
-    },
-    {
-      "provinceId": 1648,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1649,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1650,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1651,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1652,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1653,
-      "ownerISO3": "MAY"
     },
     {
       "provinceId": 1654,
@@ -6893,110 +5330,6 @@
       "ownerISO3": "AKK"
     },
     {
-      "provinceId": 1724,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1725,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1726,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1727,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1728,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1729,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1730,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1731,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1732,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1733,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1734,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1735,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1736,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1737,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1738,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1739,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1740,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1741,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1742,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1743,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1744,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1745,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1746,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1747,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1748,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1749,
-      "ownerISO3": "MAJ"
-    },
-    {
       "provinceId": 1750,
       "ownerISO3": "MAD"
     },
@@ -7047,50 +5380,6 @@
     {
       "provinceId": 1762,
       "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 1763,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1764,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1765,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1766,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1767,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1768,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1769,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1770,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1771,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1772,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 1773,
-      "ownerISO3": "ZIM"
     },
     {
       "provinceId": 1774,
@@ -7169,42 +5458,6 @@
       "ownerISO3": "MAJ"
     },
     {
-      "provinceId": 1793,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1794,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1795,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1796,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1797,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1798,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1799,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1800,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1801,
-      "ownerISO3": "MAJ"
-    },
-    {
       "provinceId": 1802,
       "ownerISO3": "MAJ"
     },
@@ -7223,10 +5476,6 @@
     {
       "provinceId": 1806,
       "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1807,
-      "ownerISO3": "MUI"
     },
     {
       "provinceId": 1808,
@@ -7273,18 +5522,6 @@
       "ownerISO3": "INC"
     },
     {
-      "provinceId": 1819,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1820,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1821,
-      "ownerISO3": "MAY"
-    },
-    {
       "provinceId": 1822,
       "ownerISO3": "SUL"
     },
@@ -7317,28 +5554,12 @@
       "ownerISO3": "PSI"
     },
     {
-      "provinceId": 1830,
-      "ownerISO3": "INC"
-    },
-    {
       "provinceId": 1831,
       "ownerISO3": "MAJ"
     },
     {
       "provinceId": 1832,
       "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 1833,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1834,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1835,
-      "ownerISO3": "SUL"
     },
     {
       "provinceId": 1836,
@@ -7349,55 +5570,7 @@
       "ownerISO3": "CPA"
     },
     {
-      "provinceId": 1838,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1839,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1840,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1841,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1842,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1843,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1844,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1845,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1846,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1847,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1848,
-      "ownerISO3": "SUL"
-    },
-    {
       "provinceId": 1849,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1850,
       "ownerISO3": "SUL"
     },
     {
@@ -7426,10 +5599,6 @@
     },
     {
       "provinceId": 1857,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1858,
       "ownerISO3": "SUL"
     },
     {
@@ -7493,10 +5662,6 @@
       "ownerISO3": "KOT"
     },
     {
-      "provinceId": 1874,
-      "ownerISO3": "SUL"
-    },
-    {
       "provinceId": 1875,
       "ownerISO3": "CPA"
     },
@@ -7513,140 +5678,8 @@
       "ownerISO3": "CPA"
     },
     {
-      "provinceId": 1879,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1880,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1881,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1882,
-      "ownerISO3": "SUL"
-    },
-    {
       "provinceId": 1883,
       "ownerISO3": "CPA"
-    },
-    {
-      "provinceId": 1884,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 1885,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 1886,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1887,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1888,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1889,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1890,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1891,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1892,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1893,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1894,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1895,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1896,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1897,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1898,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1899,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1900,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1901,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1902,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 1903,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1904,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1905,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1906,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1907,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1908,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1909,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1910,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1911,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 1912,
-      "ownerISO3": "TAI"
     },
     {
       "provinceId": 1913,
@@ -7677,14 +5710,6 @@
       "ownerISO3": "BNK"
     },
     {
-      "provinceId": 1920,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 1921,
-      "ownerISO3": "KNG"
-    },
-    {
       "provinceId": 1922,
       "ownerISO3": "KNG"
     },
@@ -7695,10 +5720,6 @@
     {
       "provinceId": 1924,
       "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 1925,
-      "ownerISO3": "HFS"
     },
     {
       "provinceId": 1926,
@@ -7837,10 +5858,6 @@
       "ownerISO3": "MOR"
     },
     {
-      "provinceId": 1960,
-      "ownerISO3": "MOR"
-    },
-    {
       "provinceId": 1961,
       "ownerISO3": "MAL"
     },
@@ -7893,46 +5910,6 @@
       "ownerISO3": "MAL"
     },
     {
-      "provinceId": 1974,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1975,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1976,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1977,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1978,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1979,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1980,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1981,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1982,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 1983,
-      "ownerISO3": "MAL"
-    },
-    {
       "provinceId": 1984,
       "ownerISO3": "MOS"
     },
@@ -7957,120 +5934,12 @@
       "ownerISO3": "TAI"
     },
     {
-      "provinceId": 1990,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1991,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1992,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1993,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1994,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1995,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1996,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1997,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1998,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 1999,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2000,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2001,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2002,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2003,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2004,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2005,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2006,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2007,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2008,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2009,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2010,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2011,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2012,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2013,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2014,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 2015,
-      "ownerISO3": "SUL"
-    },
-    {
       "provinceId": 2016,
       "ownerISO3": "TAI"
     },
     {
       "provinceId": 2017,
       "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2018,
-      "ownerISO3": "AZT"
     },
     {
       "provinceId": 2019,
@@ -8103,10 +5972,6 @@
     {
       "provinceId": 2026,
       "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2027,
-      "ownerISO3": "AZT"
     },
     {
       "provinceId": 2028,
@@ -8229,142 +6094,6 @@
       "ownerISO3": "JBR"
     },
     {
-      "provinceId": 2058,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2059,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2060,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2061,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2062,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2063,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2064,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2065,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2066,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2067,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2068,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2069,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2070,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2071,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2072,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2073,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 2074,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 2075,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2076,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2077,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2078,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2079,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2080,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2081,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2082,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2083,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2084,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2085,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2086,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2087,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2088,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2089,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2090,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 2091,
-      "ownerISO3": "MAY"
-    },
-    {
       "provinceId": 2092,
       "ownerISO3": "MAY"
     },
@@ -8441,26 +6170,6 @@
       "ownerISO3": "MAY"
     },
     {
-      "provinceId": 2111,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 2112,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 2113,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 2114,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 2115,
-      "ownerISO3": "MAY"
-    },
-    {
       "provinceId": 2116,
       "ownerISO3": "MYN"
     },
@@ -8518,22 +6227,6 @@
     },
     {
       "provinceId": 2130,
-      "ownerISO3": "MAM"
-    },
-    {
-      "provinceId": 2131,
-      "ownerISO3": "MAM"
-    },
-    {
-      "provinceId": 2132,
-      "ownerISO3": "MAM"
-    },
-    {
-      "provinceId": 2133,
-      "ownerISO3": "MAM"
-    },
-    {
-      "provinceId": 2134,
       "ownerISO3": "MAM"
     },
     {
@@ -8685,32 +6378,8 @@
       "ownerISO3": "MRC"
     },
     {
-      "provinceId": 2172,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2173,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2174,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2175,
-      "ownerISO3": "IRO"
-    },
-    {
       "provinceId": 2176,
       "ownerISO3": "MRC"
-    },
-    {
-      "provinceId": 2177,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2178,
-      "ownerISO3": "IRO"
     },
     {
       "provinceId": 2179,
@@ -8941,10 +6610,6 @@
       "ownerISO3": "JOS"
     },
     {
-      "provinceId": 2236,
-      "ownerISO3": "MVY"
-    },
-    {
       "provinceId": 2237,
       "ownerISO3": "GUJ"
     },
@@ -8971,10 +6636,6 @@
     {
       "provinceId": 2243,
       "ownerISO3": "VIJ"
-    },
-    {
-      "provinceId": 2244,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 2245,
@@ -9417,10 +7078,6 @@
       "ownerISO3": "SCT"
     },
     {
-      "provinceId": 2355,
-      "ownerISO3": "MVY"
-    },
-    {
       "provinceId": 2356,
       "ownerISO3": "DAN"
     },
@@ -9457,20 +7114,8 @@
       "ownerISO3": "DAN"
     },
     {
-      "provinceId": 2365,
-      "ownerISO3": "MVY"
-    },
-    {
       "provinceId": 2366,
       "ownerISO3": "NVD"
-    },
-    {
-      "provinceId": 2367,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 2368,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 2369,
@@ -9747,10 +7392,6 @@
     {
       "provinceId": 2437,
       "ownerISO3": "NVD"
-    },
-    {
-      "provinceId": 2438,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 2439,
@@ -10033,10 +7674,6 @@
       "ownerISO3": "GRN"
     },
     {
-      "provinceId": 2509,
-      "ownerISO3": "GRN"
-    },
-    {
       "provinceId": 2510,
       "ownerISO3": "PRT"
     },
@@ -10173,344 +7810,16 @@
       "ownerISO3": "DAN"
     },
     {
-      "provinceId": 2544,
-      "ownerISO3": "DAN"
-    },
-    {
-      "provinceId": 2545,
-      "ownerISO3": "DAN"
-    },
-    {
-      "provinceId": 2546,
-      "ownerISO3": "DAN"
-    },
-    {
-      "provinceId": 2547,
-      "ownerISO3": "DAN"
-    },
-    {
-      "provinceId": 2548,
-      "ownerISO3": "DAN"
-    },
-    {
-      "provinceId": 2549,
-      "ownerISO3": "DAN"
-    },
-    {
-      "provinceId": 2550,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 2551,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2552,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2553,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2554,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2555,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2556,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2557,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2558,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2559,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2560,
-      "ownerISO3": "MAJ"
-    },
-    {
       "provinceId": 2561,
       "ownerISO3": "DEL"
-    },
-    {
-      "provinceId": 2562,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 2563,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2564,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2565,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2566,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2567,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2568,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2569,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2570,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2571,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2572,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2573,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2574,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2575,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2576,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 2577,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2578,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2579,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2580,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2581,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2582,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2583,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2584,
-      "ownerISO3": "TAI"
     },
     {
       "provinceId": 2585,
       "ownerISO3": "VIJ"
     },
     {
-      "provinceId": 2586,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 2587,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2588,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 2589,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2590,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2591,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2592,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2593,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2594,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2595,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2596,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2597,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2598,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2599,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2600,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2601,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2602,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2603,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2604,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2605,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2606,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2607,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2608,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2609,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2610,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2611,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2612,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2613,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2614,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2615,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 2616,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2617,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2618,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2619,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2620,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2621,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2622,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2623,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2624,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2625,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2626,
-      "ownerISO3": "MAY"
-    },
-    {
       "provinceId": 2627,
       "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 2628,
-      "ownerISO3": "MAJ"
     },
     {
       "provinceId": 2629,
@@ -10603,10 +7912,6 @@
     {
       "provinceId": 2651,
       "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2652,
-      "ownerISO3": "MAY"
     },
     {
       "provinceId": 2653,
@@ -10742,10 +8047,6 @@
     },
     {
       "provinceId": 2686,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2687,
       "ownerISO3": "TAI"
     },
     {
@@ -10941,46 +8242,6 @@
       "ownerISO3": "TAI"
     },
     {
-      "provinceId": 2736,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2737,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2738,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2739,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2740,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2741,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2742,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2743,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2744,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 2745,
-      "ownerISO3": "TAI"
-    },
-    {
       "provinceId": 2746,
       "ownerISO3": "KRM"
     },
@@ -11029,62 +8290,6 @@
       "ownerISO3": "TIM"
     },
     {
-      "provinceId": 2758,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2759,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2760,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2761,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 2762,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 2763,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2764,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2765,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2766,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2767,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2768,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2769,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2770,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 2771,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 2772,
       "ownerISO3": "KLW"
     },
@@ -11095,14 +8300,6 @@
     {
       "provinceId": 2774,
       "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 2775,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2776,
-      "ownerISO3": "INC"
     },
     {
       "provinceId": 2777,
@@ -11123,190 +8320,6 @@
     {
       "provinceId": 2781,
       "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 2782,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2783,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2784,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2785,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2786,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2787,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2788,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2789,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2790,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2791,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2792,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2793,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2794,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2795,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2796,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2797,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2798,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2799,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2800,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2801,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2802,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 2803,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 2804,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 2805,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 2806,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 2807,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 2808,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2809,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2810,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2811,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2812,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2813,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2814,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2815,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2816,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2817,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2818,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2819,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2820,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2821,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2822,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2823,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2824,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2825,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2826,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 2827,
-      "ownerISO3": "MAL"
     },
     {
       "provinceId": 2828,
@@ -11613,20 +8626,8 @@
       "ownerISO3": "DAN"
     },
     {
-      "provinceId": 2904,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2905,
-      "ownerISO3": "MLD"
-    },
-    {
       "provinceId": 2906,
       "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2907,
-      "ownerISO3": "MLD"
     },
     {
       "provinceId": 2908,
@@ -11650,31 +8651,19 @@
     },
     {
       "provinceId": 2913,
-      "ownerISO3": "MLC"
+      "ownerISO3": "BRU"
     },
     {
       "provinceId": 2914,
       "ownerISO3": "AYU"
     },
     {
-      "provinceId": 2915,
-      "ownerISO3": "IRO"
-    },
-    {
       "provinceId": 2916,
       "ownerISO3": "RYU"
     },
     {
-      "provinceId": 2917,
-      "ownerISO3": "MYN"
-    },
-    {
       "provinceId": 2918,
       "ownerISO3": "JOS"
-    },
-    {
-      "provinceId": 2919,
-      "ownerISO3": "MVY"
     },
     {
       "provinceId": 2920,
@@ -11695,138 +8684,6 @@
     {
       "provinceId": 2924,
       "ownerISO3": "SWD"
-    },
-    {
-      "provinceId": 2925,
-      "ownerISO3": "DAN"
-    },
-    {
-      "provinceId": 2926,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2927,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2928,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2929,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2930,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2931,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2932,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2933,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2934,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2935,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2936,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2937,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2938,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2939,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2940,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2941,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2942,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2943,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2944,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2945,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2946,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2947,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2948,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2949,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2950,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2951,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2952,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2953,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2954,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2955,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2956,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2957,
-      "ownerISO3": "MAJ"
     },
     {
       "provinceId": 2958,
@@ -11861,88 +8718,12 @@
       "ownerISO3": "MAJ"
     },
     {
-      "provinceId": 2966,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2967,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2968,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2969,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2970,
-      "ownerISO3": "MAJ"
-    },
-    {
       "provinceId": 2971,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2972,
       "ownerISO3": "MAJ"
     },
     {
       "provinceId": 2973,
       "ownerISO3": "MLD"
-    },
-    {
-      "provinceId": 2974,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2975,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2976,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2977,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2978,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2979,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2980,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2981,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2982,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2983,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2984,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2985,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 2986,
-      "ownerISO3": "MAJ"
     },
     {
       "provinceId": 2987,
@@ -11981,10 +8762,6 @@
       "ownerISO3": "BRU"
     },
     {
-      "provinceId": 2996,
-      "ownerISO3": "MAJ"
-    },
-    {
       "provinceId": 2997,
       "ownerISO3": "MLD"
     },
@@ -11997,324 +8774,12 @@
       "ownerISO3": "SUL"
     },
     {
-      "provinceId": 3000,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3001,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3002,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3003,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3004,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3005,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3006,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3007,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3008,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3009,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3010,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3011,
-      "ownerISO3": "SUL"
-    },
-    {
       "provinceId": 3012,
       "ownerISO3": "BRU"
     },
     {
-      "provinceId": 3013,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3014,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3015,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3016,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3017,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3018,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3019,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3020,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3021,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3022,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3023,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3024,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3025,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3026,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3027,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3028,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3029,
-      "ownerISO3": "DAN"
-    },
-    {
-      "provinceId": 3030,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3031,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 3032,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3033,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3034,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3035,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3036,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3037,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3038,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3039,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 3040,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3041,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3042,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3043,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3044,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3045,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3046,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3047,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3048,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3049,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3050,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3051,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3052,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3053,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3054,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3055,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3056,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3057,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3058,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3059,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3060,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3061,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3062,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3063,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3064,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3065,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3066,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3067,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3068,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3069,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3070,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3071,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3072,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3073,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3074,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3075,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3076,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3077,
-      "ownerISO3": "MAJ"
-    },
-    {
       "provinceId": 3078,
       "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 3079,
-      "ownerISO3": "MAJ"
     },
     {
       "provinceId": 3080,
@@ -12349,10 +8814,6 @@
       "ownerISO3": "TAI"
     },
     {
-      "provinceId": 3088,
-      "ownerISO3": "MYN"
-    },
-    {
       "provinceId": 3089,
       "ownerISO3": "JBR"
     },
@@ -12367,66 +8828,6 @@
     {
       "provinceId": 3092,
       "ownerISO3": "JBR"
-    },
-    {
-      "provinceId": 3093,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 3094,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3095,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3096,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3097,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3098,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3099,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3100,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3101,
-      "ownerISO3": "MLD"
-    },
-    {
-      "provinceId": 3102,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3103,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3104,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3105,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3106,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3107,
-      "ownerISO3": "MAJ"
     },
     {
       "provinceId": 3108,
@@ -12445,10 +8846,6 @@
       "ownerISO3": "MLD"
     },
     {
-      "provinceId": 3112,
-      "ownerISO3": "MAJ"
-    },
-    {
       "provinceId": 3113,
       "ownerISO3": "MLD"
     },
@@ -12457,16 +8854,8 @@
       "ownerISO3": "MLD"
     },
     {
-      "provinceId": 3115,
-      "ownerISO3": "MUI"
-    },
-    {
       "provinceId": 3116,
       "ownerISO3": "MLD"
-    },
-    {
-      "provinceId": 3117,
-      "ownerISO3": "MAJ"
     },
     {
       "provinceId": 3118,
@@ -12481,52 +8870,16 @@
       "ownerISO3": "MLD"
     },
     {
-      "provinceId": 3121,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3122,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3123,
-      "ownerISO3": "MUI"
-    },
-    {
       "provinceId": 3124,
       "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 3125,
-      "ownerISO3": "MAJ"
     },
     {
       "provinceId": 3126,
       "ownerISO3": "TAI"
     },
     {
-      "provinceId": 3127,
-      "ownerISO3": "MAJ"
-    },
-    {
       "provinceId": 3128,
       "ownerISO3": "ENG"
-    },
-    {
-      "provinceId": 3129,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3130,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 3131,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 3132,
-      "ownerISO3": "MAJ"
     },
     {
       "provinceId": 3133,
@@ -12563,10 +8916,6 @@
     {
       "provinceId": 3141,
       "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 3142,
-      "ownerISO3": "AZT"
     },
     {
       "provinceId": 3143,
@@ -12615,98 +8964,6 @@
     {
       "provinceId": 3154,
       "ownerISO3": "SWD"
-    },
-    {
-      "provinceId": 3155,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 3156,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3157,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3158,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3159,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3160,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3161,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3162,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3163,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3164,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3165,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3166,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3167,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3168,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3169,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3170,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3171,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3172,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3173,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3174,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3175,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3176,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3177,
-      "ownerISO3": "SUL"
     },
     {
       "provinceId": 3178,
@@ -12837,50 +9094,6 @@
       "ownerISO3": "CPA"
     },
     {
-      "provinceId": 3210,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3211,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3212,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3213,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3214,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3215,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3216,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3217,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3218,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3219,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3220,
-      "ownerISO3": "MUI"
-    },
-    {
       "provinceId": 3221,
       "ownerISO3": "LTH"
     },
@@ -12997,26 +9210,6 @@
       "ownerISO3": "HAB"
     },
     {
-      "provinceId": 3250,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3251,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3252,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3253,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 3254,
-      "ownerISO3": "MAJ"
-    },
-    {
       "provinceId": 3255,
       "ownerISO3": "MOL"
     },
@@ -13101,48 +9294,8 @@
       "ownerISO3": "MLW"
     },
     {
-      "provinceId": 3276,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 3277,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 3278,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 3279,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 3280,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 3281,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 3282,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 3283,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 3284,
-      "ownerISO3": "IRO"
-    },
-    {
       "provinceId": 3285,
-      "ownerISO3": "IRO"
-    },
-    {
-      "provinceId": 3286,
-      "ownerISO3": "TAI"
+      "ownerISO3": "CAH"
     },
     {
       "provinceId": 3287,
@@ -13277,10 +9430,6 @@
       "ownerISO3": "MAJ"
     },
     {
-      "provinceId": 3320,
-      "ownerISO3": "MYN"
-    },
-    {
       "provinceId": 3321,
       "ownerISO3": "OTT"
     },
@@ -13297,18 +9446,6 @@
       "ownerISO3": "OTT"
     },
     {
-      "provinceId": 3325,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 3326,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 3327,
-      "ownerISO3": "KLW"
-    },
-    {
       "provinceId": 3328,
       "ownerISO3": "TIM"
     },
@@ -13319,14 +9456,6 @@
     {
       "provinceId": 3330,
       "ownerISO3": "KKY"
-    },
-    {
-      "provinceId": 3331,
-      "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 3332,
-      "ownerISO3": "MYN"
     },
     {
       "provinceId": 3333,
@@ -13621,14 +9750,6 @@
       "ownerISO3": "SWD"
     },
     {
-      "provinceId": 3406,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3407,
-      "ownerISO3": "INC"
-    },
-    {
       "provinceId": 3408,
       "ownerISO3": "FNJ"
     },
@@ -13638,14 +9759,6 @@
     },
     {
       "provinceId": 3410,
-      "ownerISO3": "FNJ"
-    },
-    {
-      "provinceId": 3411,
-      "ownerISO3": "FNJ"
-    },
-    {
-      "provinceId": 3412,
       "ownerISO3": "FNJ"
     },
     {
@@ -13691,10 +9804,6 @@
     {
       "provinceId": 3423,
       "ownerISO3": "CAS"
-    },
-    {
-      "provinceId": 3424,
-      "ownerISO3": "ZIM"
     },
     {
       "provinceId": 3425,
@@ -13811,10 +9920,6 @@
     {
       "provinceId": 3453,
       "ownerISO3": "JBR"
-    },
-    {
-      "provinceId": 3454,
-      "ownerISO3": "MAM"
     },
     {
       "provinceId": 3455,
@@ -14025,26 +10130,6 @@
       "ownerISO3": "MLC"
     },
     {
-      "provinceId": 3507,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 3508,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 3509,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 3510,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 3511,
-      "ownerISO3": "ZIM"
-    },
-    {
       "provinceId": 3512,
       "ownerISO3": "LTH"
     },
@@ -14157,15 +10242,7 @@
       "ownerISO3": "BUG"
     },
     {
-      "provinceId": 3540,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 3541,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3542,
       "ownerISO3": "BUG"
     },
     {
@@ -14174,10 +10251,6 @@
     },
     {
       "provinceId": 3544,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3545,
       "ownerISO3": "BUG"
     },
     {
@@ -14213,22 +10286,6 @@
       "ownerISO3": "BUG"
     },
     {
-      "provinceId": 3554,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3555,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3556,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3557,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 3558,
       "ownerISO3": "BUG"
     },
@@ -14259,14 +10316,6 @@
     {
       "provinceId": 3565,
       "ownerISO3": "PRT"
-    },
-    {
-      "provinceId": 3566,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 3567,
-      "ownerISO3": "SUL"
     },
     {
       "provinceId": 3568,
@@ -14309,56 +10358,8 @@
       "ownerISO3": "INC"
     },
     {
-      "provinceId": 3578,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3579,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3580,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3581,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3582,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3583,
-      "ownerISO3": "INC"
-    },
-    {
       "provinceId": 3584,
       "ownerISO3": "DEL"
-    },
-    {
-      "provinceId": 3585,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 3586,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 3587,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 3588,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 3589,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 3590,
-      "ownerISO3": "MAY"
     },
     {
       "provinceId": 3591,
@@ -14717,14 +10718,6 @@
       "ownerISO3": "SRB"
     },
     {
-      "provinceId": 3680,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3681,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 3682,
       "ownerISO3": "MAM"
     },
@@ -14763,38 +10756,6 @@
     {
       "provinceId": 3691,
       "ownerISO3": "MRC"
-    },
-    {
-      "provinceId": 3692,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 3693,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 3694,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 3695,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 3696,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 3697,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 3698,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 3699,
-      "ownerISO3": "MAL"
     },
     {
       "provinceId": 3700,
@@ -14953,10 +10914,6 @@
       "ownerISO3": "BRG"
     },
     {
-      "provinceId": 3739,
-      "ownerISO3": "KNG"
-    },
-    {
       "provinceId": 3740,
       "ownerISO3": "LIV"
     },
@@ -15029,10 +10986,6 @@
       "ownerISO3": "INC"
     },
     {
-      "provinceId": 3758,
-      "ownerISO3": "INC"
-    },
-    {
       "provinceId": 3759,
       "ownerISO3": "INC"
     },
@@ -15093,38 +11046,6 @@
       "ownerISO3": "HUN"
     },
     {
-      "provinceId": 3774,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 3775,
-      "ownerISO3": "MAY"
-    },
-    {
-      "provinceId": 3776,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3777,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3778,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3779,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3780,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3781,
-      "ownerISO3": "MUI"
-    },
-    {
       "provinceId": 3782,
       "ownerISO3": "MUI"
     },
@@ -15133,19 +11054,7 @@
       "ownerISO3": "MUI"
     },
     {
-      "provinceId": 3784,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3785,
-      "ownerISO3": "MUI"
-    },
-    {
       "provinceId": 3786,
-      "ownerISO3": "MUI"
-    },
-    {
-      "provinceId": 3787,
       "ownerISO3": "MUI"
     },
     {
@@ -15221,22 +11130,6 @@
       "ownerISO3": "KBR"
     },
     {
-      "provinceId": 3806,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 3807,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 3808,
-      "ownerISO3": "KBR"
-    },
-    {
-      "provinceId": 3809,
-      "ownerISO3": "KBR"
-    },
-    {
       "provinceId": 3810,
       "ownerISO3": "KMR"
     },
@@ -15251,34 +11144,6 @@
     {
       "provinceId": 3813,
       "ownerISO3": "KMR"
-    },
-    {
-      "provinceId": 3814,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3815,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3816,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3817,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3818,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 3819,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 3820,
-      "ownerISO3": "ZIM"
     },
     {
       "provinceId": 3821,
@@ -15317,14 +11182,6 @@
       "ownerISO3": "LTH"
     },
     {
-      "provinceId": 3830,
-      "ownerISO3": "TAI"
-    },
-    {
-      "provinceId": 3831,
-      "ownerISO3": "TAI"
-    },
-    {
       "provinceId": 3832,
       "ownerISO3": "SHV"
     },
@@ -15339,10 +11196,6 @@
     {
       "provinceId": 3835,
       "ownerISO3": "SHV"
-    },
-    {
-      "provinceId": 3836,
-      "ownerISO3": "KBR"
     },
     {
       "provinceId": 3837,
@@ -15389,10 +11242,6 @@
       "ownerISO3": "KKY"
     },
     {
-      "provinceId": 3848,
-      "ownerISO3": "MAJ"
-    },
-    {
       "provinceId": 3849,
       "ownerISO3": "HAB"
     },
@@ -15405,43 +11254,7 @@
       "ownerISO3": "KKY"
     },
     {
-      "provinceId": 3852,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3853,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3854,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3855,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3856,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3857,
-      "ownerISO3": "INC"
-    },
-    {
-      "provinceId": 3858,
-      "ownerISO3": "KNG"
-    },
-    {
       "provinceId": 3859,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 3860,
-      "ownerISO3": "KNG"
-    },
-    {
-      "provinceId": 3861,
       "ownerISO3": "KNG"
     },
     {
@@ -15473,10 +11286,6 @@
       "ownerISO3": "ZAY"
     },
     {
-      "provinceId": 3869,
-      "ownerISO3": "ZAY"
-    },
-    {
       "provinceId": 3870,
       "ownerISO3": "ZAY"
     },
@@ -15486,14 +11295,6 @@
     },
     {
       "provinceId": 3872,
-      "ownerISO3": "ZAY"
-    },
-    {
-      "provinceId": 3873,
-      "ownerISO3": "ZAY"
-    },
-    {
-      "provinceId": 3874,
       "ownerISO3": "ZAY"
     },
     {
@@ -15617,38 +11418,6 @@
       "ownerISO3": "ENG"
     },
     {
-      "provinceId": 3905,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3906,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3907,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3908,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3909,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3910,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3911,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3912,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 3913,
       "ownerISO3": "BUG"
     },
@@ -15673,47 +11442,11 @@
       "ownerISO3": "BUG"
     },
     {
-      "provinceId": 3919,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3920,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3921,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3922,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3923,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3924,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3925,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 3926,
       "ownerISO3": "BUG"
     },
     {
-      "provinceId": 3927,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 3928,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 3929,
       "ownerISO3": "BUG"
     },
     {
@@ -16133,30 +11866,6 @@
       "ownerISO3": "BUG"
     },
     {
-      "provinceId": 4034,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4035,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4036,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4037,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4038,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4039,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 4040,
       "ownerISO3": "BUG"
     },
@@ -16166,10 +11875,6 @@
     },
     {
       "provinceId": 4042,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4043,
       "ownerISO3": "BUG"
     },
     {
@@ -16186,10 +11891,6 @@
     },
     {
       "provinceId": 4047,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4048,
       "ownerISO3": "BUG"
     },
     {
@@ -16329,10 +12030,6 @@
       "ownerISO3": "KBR"
     },
     {
-      "provinceId": 4083,
-      "ownerISO3": "OYO"
-    },
-    {
       "provinceId": 4084,
       "ownerISO3": "OYO"
     },
@@ -16383,34 +12080,6 @@
     {
       "provinceId": 4096,
       "ownerISO3": "TRE"
-    },
-    {
-      "provinceId": 4097,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 4098,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 4099,
-      "ownerISO3": "KLW"
-    },
-    {
-      "provinceId": 4100,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4101,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4102,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4103,
-      "ownerISO3": "BUG"
     },
     {
       "provinceId": 4104,
@@ -16465,23 +12134,11 @@
       "ownerISO3": "KZN"
     },
     {
-      "provinceId": 4117,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 4118,
-      "ownerISO3": "MVY"
-    },
-    {
       "provinceId": 4119,
       "ownerISO3": "MVY"
     },
     {
       "provinceId": 4120,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 4121,
       "ownerISO3": "MVY"
     },
     {
@@ -16497,19 +12154,7 @@
       "ownerISO3": "MVY"
     },
     {
-      "provinceId": 4125,
-      "ownerISO3": "MVY"
-    },
-    {
       "provinceId": 4126,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 4127,
-      "ownerISO3": "MVY"
-    },
-    {
-      "provinceId": 4128,
       "ownerISO3": "MVY"
     },
     {
@@ -16605,10 +12250,6 @@
       "ownerISO3": "NVD"
     },
     {
-      "provinceId": 4152,
-      "ownerISO3": "MVY"
-    },
-    {
       "provinceId": 4153,
       "ownerISO3": "NVD"
     },
@@ -16649,90 +12290,6 @@
       "ownerISO3": "POL"
     },
     {
-      "provinceId": 4163,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4164,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4165,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4166,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4167,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4168,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4169,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4170,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4171,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4172,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4173,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4174,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4175,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4176,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4177,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4178,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4179,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4180,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4181,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4182,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4183,
-      "ownerISO3": "SUL"
-    },
-    {
       "provinceId": 4184,
       "ownerISO3": "NBH"
     },
@@ -16755,18 +12312,6 @@
     {
       "provinceId": 4189,
       "ownerISO3": "JOS"
-    },
-    {
-      "provinceId": 4190,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 4191,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 4192,
-      "ownerISO3": "ZIM"
     },
     {
       "provinceId": 4193,
@@ -16819,22 +12364,6 @@
     {
       "provinceId": 4205,
       "ownerISO3": "TAR"
-    },
-    {
-      "provinceId": 4206,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 4207,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 4208,
-      "ownerISO3": "AZT"
-    },
-    {
-      "provinceId": 4209,
-      "ownerISO3": "AZT"
     },
     {
       "provinceId": 4210,
@@ -17053,18 +12582,6 @@
       "ownerISO3": "HFS"
     },
     {
-      "provinceId": 4264,
-      "ownerISO3": "HFS"
-    },
-    {
-      "provinceId": 4265,
-      "ownerISO3": "HFS"
-    },
-    {
-      "provinceId": 4266,
-      "ownerISO3": "HFS"
-    },
-    {
       "provinceId": 4267,
       "ownerISO3": "UZB"
     },
@@ -17257,22 +12774,6 @@
       "ownerISO3": "ABY"
     },
     {
-      "provinceId": 4315,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4316,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4317,
-      "ownerISO3": "BUG"
-    },
-    {
-      "provinceId": 4318,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 4319,
       "ownerISO3": "MOS"
     },
@@ -17409,20 +12910,12 @@
       "ownerISO3": "OTT"
     },
     {
-      "provinceId": 4353,
-      "ownerISO3": "BUG"
-    },
-    {
       "provinceId": 4354,
       "ownerISO3": "TAH"
     },
     {
-      "provinceId": 4355,
-      "ownerISO3": "IRO"
-    },
-    {
       "provinceId": 4356,
-      "ownerISO3": "IRO"
+      "ownerISO3": "CAH"
     },
     {
       "provinceId": 4357,
@@ -17430,15 +12923,11 @@
     },
     {
       "provinceId": 4358,
-      "ownerISO3": "IRO"
+      "ownerISO3": "CAH"
     },
     {
       "provinceId": 4359,
       "ownerISO3": "CAH"
-    },
-    {
-      "provinceId": 4360,
-      "ownerISO3": "IRO"
     },
     {
       "provinceId": 4361,
@@ -17561,18 +13050,6 @@
       "ownerISO3": "HUN"
     },
     {
-      "provinceId": 4391,
-      "ownerISO3": "MAJ"
-    },
-    {
-      "provinceId": 4392,
-      "ownerISO3": "MAL"
-    },
-    {
-      "provinceId": 4393,
-      "ownerISO3": "MAL"
-    },
-    {
       "provinceId": 4394,
       "ownerISO3": "TAI"
     },
@@ -17585,52 +13062,8 @@
       "ownerISO3": "KKY"
     },
     {
-      "provinceId": 4397,
-      "ownerISO3": "TAI"
-    },
-    {
       "provinceId": 4398,
       "ownerISO3": "MYN"
-    },
-    {
-      "provinceId": 4399,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 4400,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 4401,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 4402,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 4403,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 4404,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 4405,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 4406,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 4407,
-      "ownerISO3": "MAD"
-    },
-    {
-      "provinceId": 4408,
-      "ownerISO3": "MAD"
     },
     {
       "provinceId": 4409,
@@ -17999,50 +13432,6 @@
     {
       "provinceId": 4500,
       "ownerISO3": "MAM"
-    },
-    {
-      "provinceId": 4501,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 4502,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 4503,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 4504,
-      "ownerISO3": "ZIM"
-    },
-    {
-      "provinceId": 4505,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4506,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4507,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4508,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4509,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4510,
-      "ownerISO3": "SUL"
-    },
-    {
-      "provinceId": 4511,
-      "ownerISO3": "SUL"
     },
     {
       "provinceId": 4512,
@@ -18416,6 +13805,5 @@
       "provinceId": 4604,
       "ownerISO3": "MOR"
     }
-  ],
-  "regionOwnerOverrides": []
+  ]
 }
