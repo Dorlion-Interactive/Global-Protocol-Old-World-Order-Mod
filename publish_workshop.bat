@@ -4,7 +4,7 @@ setlocal EnableDelayedExpansion
 set "SCRIPT_DIR=%~dp0"
 set "MOD_ID=globalprotocol.old_world_order"
 set "APP_ID=4500270"
-set "CONTENT_FOLDER=%LOCALAPPDATA%\NewWorldOrder\Mods\%MOD_ID%"
+set "CONTENT_FOLDER=%SCRIPT_DIR%workshop_content"
 set "PREVIEW_FILE=%SCRIPT_DIR%thumbnail.png"
 set "TITLE=Global Protocol: Old World Order"
 set "DESCRIPTION=A historical total conversion mod for Global Protocol set in 1450 AD."
@@ -22,7 +22,8 @@ echo.
 echo Expected staged content:
 echo   %CONTENT_FOLDER%
 echo.
-echo Run install.bat first if you want the latest build uploaded.
+echo Run "install.bat" and choose [2] Steam Workshop ^(or "install.bat /workshop"^)
+echo to (re)build this staging folder before publishing.
 echo.
 
 if not exist "%CONTENT_FOLDER%\mod.json" (

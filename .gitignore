@@ -51,6 +51,9 @@ desktop.ini
 /dotnet.wasm
 /mod.wasm
 
+# Steam Workshop staging folder (rebuilt by install.bat /workshop)
+/workshop_content/
+
 # Internal developer tooling — not for modders
 dev/
 

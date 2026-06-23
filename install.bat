@@ -1,12 +1,14 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-set MOD_ID=globalprotocol.old_world_order
-set TARGET=%USERPROFILE%\AppData\LocalLow\Dorlion Interactive\Global Protocol\Mods\%MOD_ID%
-set DUPLICATE_TARGET=%LOCALAPPDATA%\NewWorldOrder\Mods\%MOD_ID%
-set SCRIPT_DIR=%~dp0
-set BUILD_VARIANT=sdk
-set SKIP_BUILD=0
+set "SCRIPT_DIR=%~dp0"
+set "MOD_ID=globalprotocol.old_world_order"
+set "GAME_TARGET=%USERPROFILE%\AppData\LocalLow\Dorlion Interactive\Global Protocol\Mods\%MOD_ID%"
+set "WORKSHOP_TARGET=%SCRIPT_DIR%workshop_content"
+set "LEGACY_TARGET=%LOCALAPPDATA%\NewWorldOrder\Mods\%MOD_ID%"
+set "BUILD_VARIANT=sdk"
+set "SKIP_BUILD=0"
+set "DEPLOY_MODE="
 
 :: -- Parse flags ---------------------------------------------------------------
 :parse_args
@@ -15,18 +17,48 @@ if /I "%~1"=="/sdk"        set "BUILD_VARIANT=sdk" & shift & goto parse_args
 if /I "%~1"=="/csharp"     set "BUILD_VARIANT=sdk" & shift & goto parse_args
 if /I "%~1"=="/dotnet"     set "BUILD_VARIANT=dotnet" & shift & goto parse_args
 if /I "%~1"=="/as"         set "BUILD_VARIANT=as" & shift & goto parse_args
+if /I "%~1"=="/local"      set "DEPLOY_MODE=local" & shift & goto parse_args
+if /I "%~1"=="/workshop"   set "DEPLOY_MODE=workshop" & shift & goto parse_args
 if /I "%~1"=="/skip-build" set "SKIP_BUILD=1" & shift & goto parse_args
 echo WARNING: Unknown flag "%~1" ignored.
 shift & goto parse_args
 :done_args
 
+:: -- Choose deployment target (interactive by default) -------------------------
+if not defined DEPLOY_MODE (
+    echo ============================================================
+    echo  Global Protocol: Old World Order  ^|  Build + Deploy
+    echo ============================================================
+    echo.
+    echo  What do you want to do?
+    echo    [1] Deploy locally to the game mod folder   ^(test the mod in-game^)
+    echo    [2] Stage for Steam Workshop                ^(build the upload content folder^)
+    echo.
+    set /p "OWO_CHOICE=Enter 1 or 2 [1]: "
+    if "!OWO_CHOICE!"=="2" (
+        set "DEPLOY_MODE=workshop"
+    ) else (
+        set "DEPLOY_MODE=local"
+    )
+)
+
+if /I "%DEPLOY_MODE%"=="workshop" (
+    set "TARGET=%WORKSHOP_TARGET%"
+    set "TARGET_LABEL=Steam Workshop staging folder"
+) else (
+    set "DEPLOY_MODE=local"
+    set "TARGET=%GAME_TARGET%"
+    set "TARGET_LABEL=local game mod folder"
+)
+
+echo.
 echo ============================================================
-echo  Global Protocol: Old World Order  ^|  Build + Installer
+echo  Global Protocol: Old World Order  ^|  Build + Deploy
 echo ============================================================
 echo.
 echo  Variant  : %BUILD_VARIANT%  (PRIMARY=sdk, use /as for recommended WASM runtime)
+echo  Mode     : %DEPLOY_MODE%  (%TARGET_LABEL%)
 echo  Target   : %TARGET%
-echo  Cleanup  : remove duplicate at %DUPLICATE_TARGET%
 echo  Skip bld : %SKIP_BUILD%
 echo.
 
@@ -234,15 +266,16 @@ if errorlevel 1 (
 echo.
 
 :: =============================================================
-::  PHASE 2 - INSTALL
+::  PHASE 2 - DEPLOY (clean rebuild: delete target, then copy)
 :: =============================================================
 :install
-echo [INSTALL] Deploying to mod folder...
+echo [DEPLOY] Mode  : %DEPLOY_MODE%  (%TARGET_LABEL%)
+echo          Target: %TARGET%
+echo.
 
-if not exist "%TARGET%" (
-    echo   Creating mod folder...
-    mkdir "%TARGET%"
-)
+echo [CLEAN] Removing any existing copy at the target for a fresh build...
+if exist "%TARGET%" rmdir /S /Q "%TARGET%"
+mkdir "%TARGET%"
 
 echo   Copying root mod files...
 copy /Y "%SCRIPT_DIR%mod.json"      "%TARGET%\mod.json"      >nul
@@ -296,9 +329,10 @@ if exist "%TARGET%\Content\events\owo_welcome.json" (
     del /Q "%TARGET%\Content\events\owo_welcome.json"
 )
 
-if exist "%DUPLICATE_TARGET%" (
-    echo   Removing duplicate mod copy from Local mods root...
-    rmdir /S /Q "%DUPLICATE_TARGET%"
+:: Always clean up the stale legacy copy under %LOCALAPPDATA%\NewWorldOrder
+if exist "%LEGACY_TARGET%" (
+    echo   Removing stale legacy mod copy at %LEGACY_TARGET% ...
+    rmdir /S /Q "%LEGACY_TARGET%"
 )
 
 :: =============================================================
@@ -306,7 +340,7 @@ if exist "%DUPLICATE_TARGET%" (
 :: =============================================================
 echo.
 echo ============================================================
-echo  DONE
+echo  DONE  (%DEPLOY_MODE%)
 echo ============================================================
 if /I "%BUILD_VARIANT%"=="sdk" (
     echo  managed DLL installed: Mods\OldWorldOrder.ModCSharp.dll  [variant: sdk]
@@ -320,16 +354,21 @@ if /I "%BUILD_VARIANT%"=="sdk" (
         echo  Run install.bat again without /skip-build to compile WASM.
     )
 )
-echo  Installed to: %TARGET%
-echo  Duplicate Local copy removed: %DUPLICATE_TARGET%
-echo ============================================================
+echo  Deployed to: %TARGET%
 echo.
-echo  Next steps:
-echo   1. Start Global Protocol
-echo   2. Open Mods screen ^> enable "Old World Order"
-echo   3. Start the 1450 scenario
-echo   4. The crown toolbar button should appear in the HUD
-echo   5. Click the crown button to reopen the SDK-driven strategic briefing popup
+
+if /I "%DEPLOY_MODE%"=="workshop" (
+    echo  Next steps ^(Steam Workshop^):
+    echo    1. Review the staged content folder above.
+    echo    2. Run publish_workshop.bat to upload it to the Steam Workshop.
+) else (
+    echo  Next steps ^(local test^):
+    echo    1. Start Global Protocol
+    echo    2. Open Mods screen ^> enable "Old World Order"
+    echo    3. Start the 1450 scenario
+    echo    4. The crown toolbar button should appear in the HUD
+    echo    5. Click the crown button to reopen the SDK-driven strategic briefing popup
+)
 echo.
 pause
 endlocal
