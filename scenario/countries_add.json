@@ -1593,7 +1593,7 @@
       "homelandTerm": "THE SULTANATE"
     },
     {
-      "iso3": "CAN",
+      "iso3": "CND",
       "name": "Candarids",
       "mapColor": "#3B6EA5",
       "capital": "Sinop",
@@ -1610,7 +1610,7 @@
         "med_cog",
         "med_carrack"
       ],
-      "flagPngPath": "flags/CAN.png",
+      "flagPngPath": "flags/CND.png",
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "WesternAsia",
