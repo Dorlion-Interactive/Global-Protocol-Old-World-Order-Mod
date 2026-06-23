@@ -1,7 +1,7 @@
 ﻿{
     "scenarioId":  "old_world_order.1450",
     "displayName":  "Old World Order (1450)",
-    "version":  "0.3.0",
+    "version":  "0.3.2",
     "startYear":  1450,
     "startMonth":  1,
     "startDay":  1,
@@ -11,5 +11,7 @@
     "clearDiplomaticRelationships":  true,
     "clearDiplomacyScope":  "extended",
     "rebuildNeutralRelations":  true,
-    "disabledUnitCategories":  ["Air", "Missile", "Special"]
+    "unitsOverrideFile":  "units_override.json",
+    "disabledUnitCategories":  ["Air", "Missile", "Special"],
+    "disabledUnitTypeIds":  ["infantry", "mechanized_infantry", "armor", "artillery", "special_forces", "air_defense", "fighter", "bomber", "helicopter", "drone", "carrier", "destroyer", "submarine", "frigate", "patrol_boat", "amphibious", "mobile_launcher"]
 }
