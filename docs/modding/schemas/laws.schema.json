@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "laws.schema.json",
+  "title": "National Laws",
+  "description": "Law categories with mutually exclusive options (internal politics). Each country always has exactly one active option per category. Category and option ARRAY ORDER IS SAVE-STABLE: saves persist (categoryIndex, optionIndex) bytes, so entries are append-only — never reorder or remove.",
+  "type": "object",
+  "required": ["categories"],
+  "additionalProperties": false,
+  "properties": {
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 16,
+      "items": { "$ref": "#/definitions/category" }
+    },
+    "country_overrides": {
+      "type": "object",
+      "description": "Curated starting-law overrides keyed by ISO 3166-1 alpha-3 code. Each entry maps category id → option id (partial; unlisted categories fall back to ideology-derived seeding). Highest seed priority: override > ideology-derived > gov-type default. CURATION PRINCIPLE: entries encode LEGAL frameworks (constitutional/statutory reality — conscription statutes, state-religion clauses, press-control regimes, Gulf guest-worker systems), never electorate mood: the voter blocs express that. HAND-CURATED — safe to edit directly.",
+      "additionalProperties": {
+        "type": "object",
+        "description": "Partial category→option map for one country.",
+        "additionalProperties": { "type": "string", "minLength": 2, "maxLength": 32 }
+      }
+    }
+  },
+  "definitions": {
+    "category": {
+      "type": "object",
+      "required": ["id", "name_key", "change_cost", "cooldown_months", "options", "defaults"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 32,
+          "description": "Internal stable id (e.g. 'conscription'). Mapping key only — never displayed."
+        },
+        "name_key": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "Localization key for the category display name (politics.law.category.*)."
+        },
+        "change_cost": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Upfront treasury cost (USD) to start changing the law in this category."
+        },
+        "cooldown_months": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 120,
+          "description": "Months after a change (or failed vote) before this category can be changed again."
+        },
+        "diplo_weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 50,
+          "description": "Opinion points at full alignment product. Pairwise opinion contribution = alignA * alignB * weight (see option.diplo_alignment). 0 = category has no diplomatic footprint."
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": { "$ref": "#/definitions/option" }
+        },
+        "defaults": {
+          "type": "object",
+          "description": "Starting option id per GovernmentType (also seeds old saves). All 10 government types must be present.",
+          "required": ["unknown", "democracy", "authoritarian", "hybrid", "monarchy", "theocracy", "military_junta", "one_party", "communist_state", "transitional"],
+          "additionalProperties": false,
+          "properties": {
+            "unknown": { "type": "string" },
+            "democracy": { "type": "string" },
+            "authoritarian": { "type": "string" },
+            "hybrid": { "type": "string" },
+            "monarchy": { "type": "string" },
+            "theocracy": { "type": "string" },
+            "military_junta": { "type": "string" },
+            "one_party": { "type": "string" },
+            "communist_state": { "type": "string" },
+            "transitional": { "type": "string" }
+          }
+        }
+      }
+    },
+    "option": {
+      "type": "object",
+      "required": ["id", "name_key", "desc_key", "bloc_stance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 32,
+          "description": "Internal stable id, unique within the category. Mapping key only."
+        },
+        "name_key": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "Localization key for the option display name (politics.law.<category>.<option>)."
+        },
+        "desc_key": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "Localization key for the option tooltip/description."
+        },
+        "bloc_stance": {
+          "type": "object",
+          "description": "How each ideology bloc's parties vote on this option: -1 strongly oppose … +1 strongly support. Drives the parliament vote AND decree resentment.",
+          "required": ["liberal_capitalist", "socialist_communist", "nationalist_conservative", "authoritarian_theocratic"],
+          "additionalProperties": false,
+          "properties": {
+            "liberal_capitalist": { "type": "number", "minimum": -1, "maximum": 1 },
+            "socialist_communist": { "type": "number", "minimum": -1, "maximum": 1 },
+            "nationalist_conservative": { "type": "number", "minimum": -1, "maximum": 1 },
+            "authoritarian_theocratic": { "type": "number", "minimum": -1, "maximum": 1 }
+          }
+        },
+        "diplo_alignment": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "Position on the category's diplomatic axis (e.g. free press +1 … state press -1). Pairwise opinion = alignA * alignB * category.diplo_weight. Default 0."
+        },
+        "drift_target_bloc": {
+          "type": ["string", "null"],
+          "enum": ["liberal_capitalist", "socialist_communist", "nationalist_conservative", "authoritarian_theocratic", null],
+          "description": "Ideology bloc this law slowly pulls the electorate toward (PromoteBloc math, like reforms). Null/absent = no drift."
+        },
+        "drift_monthly": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.01,
+          "description": "Monthly electorate drift toward drift_target_bloc (share fraction). Default 0."
+        },
+        "gate_key": {
+          "type": "string",
+          "pattern": "^(military|government|economy|industry|diplomacy|intelligence|cyber|space|energy|society)_t[1-5]$",
+          "description": "Optional doctrine-tier gate ('{branch}_t{tier}', mirrors doctrines.json gate keys). Absent/omitted = ungated (every pre-existing option). When present, the option is unselectable (UI-disabled, AI-skipped, ideology-derived seeding-skipped) until the owning country's CountryDoctrineGates.CompletedTierMask has that branch/tier bit set. Must resolve to a real doctrines.json branch — validated cross-file."
+        },
+        "modifiers": { "$ref": "#/definitions/modifiers" }
+      }
+    },
+    "modifiers": {
+      "type": "object",
+      "description": "Gameplay effects while this option is active. Multipliers default 1.0, deltas default 0.",
+      "additionalProperties": false,
+      "properties": {
+        "tax_efficiency_mult": {
+          "type": "number", "minimum": 0.5, "maximum": 1.5,
+          "description": "Multiplies monthly tax revenue (BudgetAllocationSystem)."
+        },
+        "growth_bonus_annual": {
+          "type": "number", "minimum": -0.05, "maximum": 0.05,
+          "description": "Additive annual GDP growth-rate bonus (GrowthSystem law lane)."
+        },
+        "manpower_regen_mult": {
+          "type": "number", "minimum": 0.25, "maximum": 3,
+          "description": "Multiplies monthly manpower regeneration."
+        },
+        "recruit_cost_mult": {
+          "type": "number", "minimum": 0.5, "maximum": 2,
+          "description": "Multiplies unit/fleet/air-wing creation cost."
+        },
+        "upkeep_mult": {
+          "type": "number", "minimum": 0.5, "maximum": 2,
+          "description": "Multiplies military maintenance."
+        },
+        "unrest_pressure_delta": {
+          "type": "number", "minimum": -3, "maximum": 3,
+          "description": "Monthly unrest pressure applied to all owned provinces (positive = more unrest)."
+        },
+        "pop_growth_mult": {
+          "type": "number", "minimum": 0.5, "maximum": 1.5,
+          "description": "Multiplies population growth."
+        },
+        "stability_delta_monthly": {
+          "type": "number", "minimum": -1, "maximum": 1,
+          "description": "Monthly stability delta (StabilityLawDelta ledger channel)."
+        }
+      }
+    }
+  }
+}

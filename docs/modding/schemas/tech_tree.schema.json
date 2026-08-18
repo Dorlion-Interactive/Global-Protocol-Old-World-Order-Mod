@@ -1,0 +1,129 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "tech_tree.schema.json",
+    "title": "Technology Tree",
+    "description": "Full tech tree with three branches.",
+    "type": "object",
+    "required": [
+        "branches",
+        "nodes"
+    ],
+    "properties": {
+        "branches": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "enum": [
+                            "military",
+                            "civilian",
+                            "space"
+                        ]
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "color": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "nodes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "name",
+                    "branch",
+                    "tier",
+                    "cost"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "branch": {
+                        "type": "string",
+                        "enum": [
+                            "military",
+                            "civilian",
+                            "space"
+                        ]
+                    },
+                    "tier": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 10
+                    },
+                    "cost": {
+                        "type": "integer",
+                        "description": "Research points required"
+                    },
+                    "research_time_months": {
+                        "type": "integer"
+                    },
+                    "prerequisites": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "effects": {
+                        "type": "object",
+                        "description": "Modifiers applied when researched",
+                        "properties": {
+                            "gdp_modifier": {
+                                "type": "number"
+                            },
+                            "research_speed": {
+                                "type": "number"
+                            },
+                            "military_attack": {
+                                "type": "number"
+                            },
+                            "military_defense": {
+                                "type": "number"
+                            },
+                            "population_growth": {
+                                "type": "number"
+                            },
+                            "cyber_attack": {
+                                "type": "number"
+                            },
+                            "missile_range": {
+                                "type": "number"
+                            },
+                            "missile_defense": {
+                                "type": "number"
+                            },
+                            "surveillance_range": {
+                                "type": "integer",
+                                "description": "Fog of war vision radius bonus (province hops)"
+                            }
+                        }
+                    },
+                    "unlocks": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Unit types, buildings, or abilities unlocked"
+                    },
+                    "icon": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

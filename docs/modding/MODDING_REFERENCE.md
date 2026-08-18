@@ -12,10 +12,20 @@ This document is the authoritative reference for mod authors. It covers folder l
 %USERPROFILE%/Documents/GlobalProtocol/Mods/<mod-id>/
   mod.json                   ← required manifest
   Content/
-    data/                    ← JSON balance/config overrides
-    localization/            ← CSV localization additions
-    events/                  ← scripted event JSON
+    buildings.json           ← building overrides (merged by id)
+    units.json               ← unit-type overrides (merged by id)
+    resources.json           ← resource overrides (merged by id)
+    tech_tree.json           ← tech overrides (merged by id)
+    localization/            ← CSV localization additions (<language>.csv)
+    events/                  ← scripted event JSON (one event per file)
     ui/                      ← USS/icon overrides
+  overrides/                 ← sparse config overrides (see §9)
+    game_settings.json
+    doctrines.json
+    game_flow.json
+    events.json
+    envoys.json
+    military_markers.json
   scenario/                  ← optional split scenario folder
     scenario.json            ← required header (must contain scenarioId)
     countries_add.json
@@ -131,7 +141,7 @@ Each file is optional; missing files are skipped. Lists from all files are **app
 | `scenarioId` | string | — | **Required.** Unique identifier |
 | `displayName` | string | `""` | Shown in scenario picker |
 | `version` | string | `""` | Semver string |
-| `startYear` | int | 0 | Game start year (0 = use base game default) |
+| `startYear` | int | 0 | Game start year (0 = use base game default). Any year from 1 to 3000, so historical scenarios can start centuries before the base game's 2026. |
 | `startMonth` | int | 1 | 1–12 |
 | `startDay` | int | 1 | 1–31 |
 | `startTick` | int | 0 | Absolute tick override (0 = derive from date) |
@@ -290,26 +300,85 @@ Use `Content/localization/` for new mods.
 
 ---
 
-## 8. Enum Reference
+## 8. Data & Config Overrides
 
-### 8.1 Government Types
+Balance and content changes live outside `scenario/`. Every file here is optional.
+
+### 8.1 Content overrides (merged by `id`)
+
+`Content/buildings.json`, `Content/units.json`, `Content/resources.json` and `Content/tech_tree.json`
+are **JSON arrays**. Each entry is matched against the base game by its `id`:
+
+- fields you write overwrite the base entry,
+- fields you omit keep their base values,
+- an `id` the base game does not have is appended as a brand-new entry.
+
+So a file that changes only one building's cost is three lines long:
+
+```json
+[
+  { "id": "power_plant", "cost": 850 }
+]
+```
+
+Entries validate against `building_type.schema.json` / `unit_type.schema.json` /
+`resource_type.schema.json` / `tech_tree.schema.json` — those schemas describe **one array element**,
+not the whole file.
+
+When several mods are active they merge in load order, so a later mod wins on any field it sets.
+
+### 8.2 Config overrides (`overrides/`)
+
+Sparse documents against the shipped base config — write only the keys you want to change.
+
+| File | Covers |
+|---|---|
+| `game_settings.json` | Balance sections: economy, population, diplomacy, world order, AI weights, fog of war, intelligence, map interaction, satellite, … |
+| `doctrines.json` | Doctrine values, effects and text |
+| `game_flow.json` / `events.json` / `envoys.json` | The matching `game_settings` sections, kept as separate files for backwards compatibility |
+| `military_markers.json` | Map marker appearance |
+
+Two constraints worth knowing before you edit:
+
+- **Doctrines are structure-locked.** Branch, tier and doctrine positions are save-stable, so you can
+  change a doctrine's numbers, effects and strings, but adding, removing or reordering entries is
+  rejected — it would silently repoint every existing save.
+- **`game_flow` cannot be modded in practice.** Autosave interval, autosave on/off, save-slot count
+  and the pre-selected country are the *player's* settings (stored in their own `settings.json` and
+  edited from the Settings screen). A mod override of that section is ignored, which is why the
+  in-game Mod Builder hides it.
+
+`overrides/laws.json` is **not read yet** — laws are still baked at build time. `laws.schema.json`
+ships for reference, but a laws override has no in-game effect today.
+
+### 8.3 Localization
+
+Add `Content/localization/<language>.csv` with plain `key,value` rows (UTF-8, no BOM, no header).
+The 13 shipped languages are `cz, de, en, es, es-419, fr, ja, ko, pt, pt-br, ru, tr, zh`. Keys you
+define override the base game's; keys you omit fall back to the shipped string.
+
+---
+
+## 9. Enum Reference
+
+### 9.1 Government Types
 `democracy`, `authoritarian`, `hybrid`, `monarchy`, `theocracy`, `military_junta`, `failed_state`, `city_state`
 
-### 8.2 Ideologies
+### 9.2 Ideologies
 `progressive`, `centrist`, `conservative`, `nationalist`, `communist`, `islamist`, `libertarian`, `green`, `theocratic`
 
-### 8.3 Continents
+### 9.3 Continents
 `Africa`, `Americas`, `Antarctica`, `Asia`, `Europe`, `Oceania`, `Unknown`
 
-### 8.4 World Regions
+### 9.4 World Regions
 `AustraliaNewZealand`, `CentralAsia`, `EastAsia`, `EasternEurope`, `LatinAmericaCaribbean`, `Melanesia`, `Micronesia`, `NorthernAfrica`, `NorthernAmerica`, `NorthernEurope`, `Polynesia`, `SouthAsia`, `SoutheastAsia`, `SouthernEurope`, `SubSaharanAfrica`, `Unknown`, `WesternAsia`, `WesternEurope`
 
-### 8.5 Unit Categories
+### 9.5 Unit Categories
 `infantry`, `cavalry`, `artillery`, `naval`, `air`, `armor`, `special_forces`
 
-### 8.6 Air Mission Types
+### 9.6 Air Mission Types
 `cas`, `interception`, `strategic_bombing`, `naval_strike`, `patrol`, `standby`
 
-### 8.7 Diplomacy Clear Scopes
+### 9.7 Diplomacy Clear Scopes
 - `core` — wars and alliances only
 - `extended` — all diplomatic relationships (default)

@@ -1,0 +1,338 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "doctrines.schema.json",
+  "title": "National Doctrines",
+  "description": "Doctrine research tree: 10 branches, each with 5 tiers of 3 mutually-exclusive doctrine cards, a capstone milestone, 3 alternative directives (post-milestone, cooldown-gated), and a 12-card hidden pool (drawn as hidden_cards_presented options when a branch's hidden trigger fires). legacy_tech_map/legacy_tech_order bridge the retired flat tech_tree.json onto the new branch/tier gate-key space (e.g. 'military_t2') during the transition period. starting_grants seed curated great-power head starts (tier already unlocked at game start, 1-5).",
+  "type": "object",
+  "required": ["settings", "branches", "legacy_tech_map", "legacy_tech_order", "starting_grants"],
+  "additionalProperties": false,
+  "properties": {
+    "settings": { "$ref": "#/definitions/settings" },
+    "branches": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": { "$ref": "#/definitions/branch" }
+    },
+    "legacy_tech_map": {
+      "type": "object",
+      "description": "Old tech_tree.json node id -> doctrine gate key ('<branch>_t<tier>') it now maps onto. Transition-period lookup only; every value must satisfy the gate-key pattern.",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^(military|government|economy|industry|diplomacy|intelligence|cyber|space|energy|society)_t[1-5]$"
+      }
+    },
+    "legacy_tech_order": {
+      "type": "array",
+      "description": "The 56 legacy tech_tree.json node ids, in that file's node order. Must exactly match legacy_tech_map's keys (as a set) and tech_tree.json's node order (validated cross-file, not by this schema).",
+      "minItems": 56,
+      "maxItems": 56,
+      "items": { "type": "string", "minLength": 2 }
+    },
+    "starting_grants": {
+      "type": "object",
+      "description": "Curated head-start unlocks keyed by ISO 3166-1 alpha-3 code. Each entry maps branch id -> already-unlocked tier (1-5).",
+      "additionalProperties": {
+        "type": "object",
+        "minProperties": 1,
+        "additionalProperties": { "type": "integer", "minimum": 1, "maximum": 5 }
+      },
+      "propertyNames": { "pattern": "^[A-Z]{3}$" }
+    }
+  },
+  "definitions": {
+    "settings": {
+      "type": "object",
+      "required": [
+        "max_concurrent_research",
+        "queue_size",
+        "tier_costs",
+        "tier_research_months",
+        "hidden_trigger_tiers",
+        "hidden_campaign_trigger_cap",
+        "max_hidden_triggers_per_branch",
+        "hidden_cards_presented",
+        "directive_switch_cooldown_days",
+        "satellite_gate_key",
+        "base_research_speed",
+        "education_research_modifier",
+        "research_points_per_billion_gdp",
+        "building_research_multiplier",
+        "research_points_base",
+        "research_floor_max_compression",
+        "diplo_alignment_relation_scale"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "max_concurrent_research": {
+          "type": "integer", "minimum": 1, "maximum": 3,
+          "description": "How many doctrine tiers a country may research simultaneously."
+        },
+        "queue_size": {
+          "type": "integer", "minimum": 1,
+          "description": "Maximum queued (not-yet-started) doctrine research entries."
+        },
+        "tier_costs": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": { "type": "number", "exclusiveMinimum": 0 },
+          "description": "Treasury cost to research tier N (index 0 = T1 .. index 4 = T5), shared by every branch."
+        },
+        "tier_research_months": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": { "type": "number", "exclusiveMinimum": 0 },
+          "description": "Minimum research duration (months) for tier N, shared by every branch — a per-slot pace floor: RP throughput above cost/months is wasted, compressible only via research_floor_max_compression (DoctrineResearchSystem)."
+        },
+        "hidden_trigger_tiers": {
+          "type": "array", "minItems": 1, "maxItems": 5, "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "description": "Tier thresholds (1-based) whose completion in a source branch each generates one hidden opportunity, at most once per (branch, threshold) — canonical [2, 4] (T2/T4 source-trigger model, DoctrineResearchSystem)."
+        },
+        "hidden_campaign_trigger_cap": {
+          "type": "integer", "minimum": 0, "maximum": 5,
+          "description": "Campaign-lifetime cap on generated hidden opportunities per country — canonical 5. HARD maximum 5: CountryDoctrineState's banked-trigger source queue has exactly 5 slots (BankedHiddenSource0..4); a larger cap would silently drop source branches past slot 5 (the bake also clamps)."
+        },
+        "max_hidden_triggers_per_branch": {
+          "type": "integer", "minimum": 1,
+          "description": "Cap on hidden-card triggers a single branch can fire over the game."
+        },
+        "hidden_cards_presented": {
+          "type": "integer", "minimum": 1,
+          "description": "How many hidden_pool cards are drawn as a choice when a trigger fires."
+        },
+        "directive_switch_cooldown_days": {
+          "type": "integer", "minimum": 0,
+          "description": "Days a country must wait before switching its active branch directive again."
+        },
+        "satellite_gate_key": {
+          "type": "string",
+          "pattern": "^(military|government|economy|industry|diplomacy|intelligence|cyber|space|energy|society)_t[1-5]$",
+          "description": "Gate key that must be unlocked before satellite/recon features become available."
+        },
+        "base_research_speed": {
+          "type": "number", "exclusiveMinimum": 0,
+          "description": "Baseline doctrine research speed multiplier before education/self-feedback modifiers (DoctrineResearchSystem)."
+        },
+        "education_research_modifier": {
+          "type": "number", "exclusiveMinimum": 0,
+          "description": "Scales AvgEducationLevel's contribution to research speed (DoctrineResearchSystem)."
+        },
+        "research_points_per_billion_gdp": {
+          "type": "number", "exclusiveMinimum": 0,
+          "description": "Research points generated per sqrt(research budget in billions USD) (DoctrineResearchSystem)."
+        },
+        "building_research_multiplier": {
+          "type": "number", "exclusiveMinimum": 0,
+          "description": "Multiplier applied to building-sourced research output before it's added to budget-sourced RP (DoctrineResearchSystem)."
+        },
+        "research_points_base": {
+          "type": "number", "minimum": 0,
+          "description": "Flat monthly RP every country generates regardless of budget/buildings — keeps micro-states on the doctrine ladder (DoctrineResearchSystem)."
+        },
+        "research_floor_max_compression": {
+          "type": "number", "minimum": 1,
+          "description": "Max divisor research-speed tech bonuses can apply to tier_research_months (1 = floors immutable). A tier never completes faster than months / min(1 + research_speed, this) regardless of RP throughput (DoctrineResearchSystem)."
+        },
+        "diplo_alignment_relation_scale": {
+          "type": "number", "minimum": 0,
+          "description": "Monthly relation delta per point of (ownDiploAlignment x targetDiploAlignment) doctrine affinity (RelationsSystem) — the doctrine-domain counterpart of political_drift.law_relation_drift_scale, kept in doctrines.json (not game_settings.json) since it only scales CountryDoctrineEffects.DiploAlignment."
+        }
+      }
+    },
+    "branch": {
+      "type": "object",
+      "required": ["id", "name_key", "desc_key", "tiers", "milestone", "directives", "hidden_pool"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z_]+$",
+          "description": "Internal stable branch id (e.g. 'military'). Combines with tier index to form gate keys like 'military_t2'."
+        },
+        "name_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "desc_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "tiers": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": { "$ref": "#/definitions/tier" }
+        },
+        "milestone": { "$ref": "#/definitions/milestone" },
+        "directives": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": { "$ref": "#/definitions/directive" }
+        },
+        "hidden_pool": {
+          "type": "array", "minItems": 12, "maxItems": 12,
+          "items": { "$ref": "#/definitions/hidden_card" }
+        }
+      }
+    },
+    "tier": {
+      "type": "object",
+      "required": ["name_key", "question_key", "doctrines"],
+      "additionalProperties": false,
+      "properties": {
+        "name_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "question_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "doctrines": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": { "$ref": "#/definitions/doctrine_card" }
+        }
+      }
+    },
+    "doctrine_card": {
+      "type": "object",
+      "description": "One of the 3 mutually-exclusive doctrine choices within a tier.",
+      "required": ["id", "name_key", "desc_key", "icon", "effects", "ai"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+        "name_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "desc_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "icon": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "effects": { "$ref": "#/definitions/effects" },
+        "ai": { "$ref": "#/definitions/ai_weights" },
+        "bloc_stance": {
+          "type": "object",
+          "description": "OPTIONAL political identity (Government/Society/Military tier doctrines only — everything else stays neutral/absent). How each ideology bloc leans on this doctrine: -1 strongly oppose ... +1 strongly support, IdeologyBloc order. Every sub-key is itself optional (omitted = 0/no lean). Feeds ONLY AIDoctrineSystem's political-coherence scoring term (DoctrineFormulas.PoliticalCoherenceScore) — deliberately NOT summed into any CountryDoctrineEffects gameplay lane, NOT a DoctrineLaneKey, and excluded from DoctrineChoiceSetGuardTests' sibling-balance vectors (identity, not power).",
+          "additionalProperties": false,
+          "properties": {
+            "liberal_capitalist": { "type": "number", "minimum": -1, "maximum": 1 },
+            "socialist_communist": { "type": "number", "minimum": -1, "maximum": 1 },
+            "nationalist_conservative": { "type": "number", "minimum": -1, "maximum": 1 },
+            "authoritarian_theocratic": { "type": "number", "minimum": -1, "maximum": 1 }
+          }
+        },
+        "diplo_alignment": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "OPTIONAL political identity: position on the diplomatic axis, authoritarian-lean negative ... liberal-lean positive. Sums (clamped to [-1,1] across every active doctrine) into CountryDoctrineEffects.DiploAlignment, which RelationsSystem multiplies pairwise (own x target, scaled by settings.diplo_alignment_relation_scale) alongside national-law affinity. Default 0 (no footprint)."
+        },
+        "drift_target_bloc": {
+          "type": ["string", "null"],
+          "enum": ["liberal_capitalist", "socialist_communist", "nationalist_conservative", "authoritarian_theocratic", null],
+          "description": "OPTIONAL political identity: ideology bloc this doctrine slowly pulls the electorate toward (PromoteBloc math, same mechanism as laws.json's per-option drift). Null/absent = no drift."
+        },
+        "drift_monthly": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.0002,
+          "description": "OPTIONAL political identity: monthly electorate drift toward drift_target_bloc (share fraction), summed into CountryDoctrineEffects.BlocDriftMonthly alongside active laws' drift (LawEffectSystem). Ceiling is exactly 1/3 of laws.json's drift_monthly ceiling (0.0006 seen in practice) — doctrine picks are PERMANENT, so their electorate pull is authored smaller than a reversible law's. Default 0."
+        }
+      }
+    },
+    "milestone": {
+      "type": "object",
+      "description": "Capstone bonus granted once all 5 tiers of a branch are researched.",
+      "required": ["id", "name_key", "desc_key", "icon", "effects"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+        "name_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "desc_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "icon": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "effects": { "$ref": "#/definitions/effects" }
+      }
+    },
+    "directive": {
+      "type": "object",
+      "description": "One of 3 alternative post-milestone stances a branch can switch between (cooldown-gated, directive_switch_cooldown_days). No icon/ai: directives are a pure stance switch, not a drafted card.",
+      "required": ["id", "name_key", "desc_key", "effects"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+        "name_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "desc_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "effects": { "$ref": "#/definitions/effects" }
+      }
+    },
+    "hidden_card": {
+      "type": "object",
+      "description": "One of 12 pool cards a branch can surface when its hidden-card trigger fires; hidden_cards_presented of them are offered as a choice.",
+      "required": ["id", "name_key", "desc_key", "icon", "effects", "weight", "ai"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+        "name_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "desc_key": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "icon": { "type": "string", "pattern": "^[a-z0-9_.]+$", "maxLength": 96 },
+        "effects": { "$ref": "#/definitions/effects" },
+        "weight": {
+          "type": "number", "exclusiveMinimum": 0,
+          "description": "Relative draw weight among the branch's hidden_pool entries when hidden_cards_presented are sampled."
+        },
+        "ai": { "$ref": "#/definitions/ai_weights" }
+      }
+    },
+    "ai_weights": {
+      "type": "object",
+      "description": "AI pick-weighting by strategic lens (e.g. military/economy/stability/intel/diplomacy). Values are relative shares, normally summing to ~1.0. Additional lenses may be added later.",
+      "minProperties": 1,
+      "additionalProperties": { "type": "number", "minimum": 0, "maximum": 1 }
+    },
+    "effects": {
+      "type": "object",
+      "description": "Gameplay effect deltas/multipliers applied while a doctrine/milestone/directive/hidden card is active. Property names are restricted to the permitted vocabulary below; a given card may set any subset. Multiplier-style fields (the '_mult' suffix family, plus sovereign_invest_eff which multiplies without the suffix) are ratios centered on 1.0; the 7 listed integer fields are small +/- point deltas; everything else is a small additive fraction.",
+      "additionalProperties": false,
+      "properties": {
+        "policy_speed_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "disaster_resilience": { "type": "integer", "exclusiveMinimum": -10, "exclusiveMaximum": 10 },
+        "production_output_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "stability_delta_monthly": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "intel_confidence": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "gdp_modifier": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "military_attack": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "upkeep_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "relation_drift_delta": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "surveillance_range": { "type": "integer", "exclusiveMinimum": -10, "exclusiveMaximum": 10 },
+        "construction_speed_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "counterintel_detection": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "satellite_cost_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "institutional_resilience": { "type": "integer", "exclusiveMinimum": -10, "exclusiveMaximum": 10 },
+        "diplomatic_capacity_delta": { "type": "integer", "exclusiveMinimum": -10, "exclusiveMaximum": 10 },
+        "cyber_attack": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "cyber_defense": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "integration_capacity": { "type": "integer", "exclusiveMinimum": -10, "exclusiveMaximum": 10 },
+        "military_defense": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "corruption_delta": { "type": "integer", "exclusiveMinimum": -10, "exclusiveMaximum": 10 },
+        "readiness_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "trade_income_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "espionage_success_bonus": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "deterrence_credibility": { "type": "integer", "exclusiveMinimum": -10, "exclusiveMaximum": 10 },
+        "sovereign_invest_eff": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "prestige_gain_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "research_speed": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "stockpile_cap_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "econwar_power_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "unit_build_speed_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "manpower_regen_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "inflation_pressure_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "debt_interest_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "ae_gain_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "pop_growth_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "missile_defense": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "missile_range": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "unrest_pressure_delta": { "type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1 },
+        "tax_efficiency_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "war_exhaustion_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "law_cost_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "recruit_cost_mult": { "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0 },
+        "espionage_damage_mult": {
+          "type": "number", "exclusiveMinimum": 0.1, "exclusiveMaximum": 2.0,
+          "description": "Phase B (espionage-damage-containment): multiplies steal/sabotage/intel-theft magnitude resolved against this country's espionage/cyber defenses (neutral 1.0)."
+        },
+        "social_spending_drain": {
+          "type": "number", "minimum": 0, "exclusiveMaximum": 0.02,
+          "description": "Phase B (social-spending-drain): off-discretionary monthly treasury drain, as a fraction of GDP (neutral 0), booked to the FiscalAccumulator.SocialSpendingDrainExpense ledger lane."
+        },
+        "decree_resentment_mult": {
+          "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0,
+          "description": "Government Laws & Decrees hook: multiplies the ClandestineResentment added by ChangeLawCommand's decree branch (neutral 1.0). Lower is better — still bounded at max(0,·) so opposition resentment always still accumulates."
+        },
+        "law_cooldown_mult": {
+          "type": "number", "exclusiveMinimum": 0.5, "exclusiveMaximum": 2.0,
+          "description": "Government Laws & Decrees hook: multiplies a law category's authored cooldown months at ChangeLawCommand's cooldown gate (neutral 1.0). Lower is better (faster to change laws again)."
+        }
+      }
+    }
+  }
+}

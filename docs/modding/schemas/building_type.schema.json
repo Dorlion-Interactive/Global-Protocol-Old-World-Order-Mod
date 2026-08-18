@@ -1,0 +1,251 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "building_type.schema.json",
+    "title": "Building Type",
+    "type": "object",
+    "required": [
+        "id",
+        "name",
+        "category",
+        "cost",
+        "effects"
+    ],
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "category": {
+            "type": "string",
+            "enum": [
+                "economic",
+                "military",
+                "infrastructure",
+                "research",
+                "social",
+                "defense",
+                "intelligence"
+            ]
+        },
+        "cost": {
+            "type": "object",
+            "properties": {
+                "money": {
+                    "type": "number"
+                },
+                "build_time_months": {
+                    "type": "integer"
+                }
+            }
+        },
+        "maintenance_per_month": {
+            "type": "number"
+        },
+        "effects": {
+            "type": "object",
+            "properties": {
+                "gdp_modifier": {
+                    "type": "number"
+                },
+                "employment": {
+                    "type": "integer"
+                },
+                "infrastructure": {
+                    "type": "number",
+                    "description": "Infrastructure points contributed per YEAR, before the level multiplier and stacking weight. InfrastructureGrowthSystem accrues one twelfth of it each month and credits the reversible per-building ledger. Buildings are the only lane that can carry a province above passive_infrastructure_cap toward max_infrastructure.",
+                    "minimum": 0,
+                    "maximum": 50
+                },
+                "research_output": {
+                    "type": "number"
+                },
+                "defense_bonus": {
+                    "type": "number"
+                },
+                "population_growth": {
+                    "type": "number"
+                },
+                "unrest_reduction": {
+                    "type": "number"
+                },
+                "resource_production": {
+                    "type": "number"
+                },
+                "air_capacity": {
+                    "type": "integer"
+                },
+                "missile_silo_capacity": {
+                    "type": "integer",
+                    "description": "Number of silo-based missiles (IRBM/ICBM) this building can host"
+                },
+                "mobile_launcher_capacity": {
+                    "type": "integer",
+                    "description": "Number of mobile TEL launcher units this building can support"
+                },
+                "slbm_loading": {
+                    "type": "boolean",
+                    "description": "Whether this building enables SLBM loading onto submarine fleets at this port"
+                },
+                "missile_intercept_capacity": {
+                    "type": "integer",
+                    "description": "Number of incoming missiles this building can attempt to intercept per tick"
+                },
+                "missile_early_warning": {
+                    "type": "boolean",
+                    "description": "Whether this building provides early warning radar, improving intercept chance"
+                },
+                "satellite_launch_capacity": {
+                    "type": "integer",
+                    "description": "Number of reconnaissance satellites this facility can build/keep in orbit for the owning country"
+                },
+                "export_multiplier": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Fraction boost to this country's calibrated total export revenue (additive across all provinces)"
+                },
+                "import_discount": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Fraction reduction in total import costs (additive across all provinces, capped at 25%)"
+                },
+                "tariff_reduction": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Reduction to effective bilateral tariff rate applied in TradeSystem (additive)"
+                }
+            }
+        },
+        "prerequisites": {
+            "type": "object",
+            "properties": {
+                "tech": {
+                    "type": "string"
+                },
+                "infrastructure": {
+                    "type": "number"
+                },
+                "population": {
+                    "type": "integer"
+                }
+            }
+        },
+        "max_per_province": {
+            "type": "integer",
+            "default": 1
+        },
+        "production_role": {
+            "type": "string",
+            "enum": ["extraction", "processing", "advanced", "generic"],
+            "description": "Role of this building in the resource pipeline. Extraction unlocks latent resources; processing satisfies manufactured input chains; advanced raises ceilings on high-tech outputs; generic = pre-existing economic buildings."
+        },
+        "unlocks_resource": {
+            "type": "string",
+            "description": "Single resource this extraction building enables on a province (must also be in the province's latent resources). Use unlocks_resources for multi-target."
+        },
+        "unlocks_resources": {
+            "type": "array",
+            "description": "List of resources this extraction building can enable; each is gated by the province's latent resources.",
+            "items": { "type": "string" }
+        },
+        "specialty_resources": {
+            "type": "array",
+            "description": "Resources this processing/advanced building satisfies in supply-chain input gating (replaces the 0.10 raw-extraction fallback).",
+            "items": { "type": "string" }
+        },
+        "consumes_inputs": {
+            "type": "array",
+            "description": "Per-output-unit input draw applied by ResourceProductionSystem when this building runs.",
+            "items": {
+                "type": "object",
+                "required": ["resource", "ratio"],
+                "properties": {
+                    "resource": { "type": "string" },
+                    "ratio": { "type": "number", "minimum": 0 }
+                }
+            }
+        },
+        "recipes": {
+            "type": "array",
+            "description": "Optional alternative input/output recipes for a processing/advanced building. When present and length > 1, the player may switch the active recipe per building instance via the Building Detail panel. When absent, the building runs a single implicit recipe synthesized from consumes_inputs + specialty_resources (legacy behaviour, no choice). Extraction buildings express their selectable outputs via unlocks_resources instead and do not use this field.",
+            "items": {
+                "type": "object",
+                "required": ["id"],
+                "properties": {
+                    "id": { "type": "string", "description": "Stable recipe identifier (used for the localization key recipe.<id>)." },
+                    "inputs": {
+                        "type": "array",
+                        "description": "Inputs consumed by this recipe (same shape as consumes_inputs).",
+                        "items": {
+                            "type": "object",
+                            "required": ["resource", "ratio"],
+                            "properties": {
+                                "resource": { "type": "string" },
+                                "ratio": { "type": "number", "minimum": 0 }
+                            }
+                        }
+                    },
+                    "outputs": {
+                        "type": "array",
+                        "description": "Outputs produced by this recipe.",
+                        "items": {
+                            "type": "object",
+                            "required": ["resource"],
+                            "properties": {
+                                "resource": { "type": "string" },
+                                "share": { "type": "number", "minimum": 0, "default": 1.0 }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "geographic_requirement": {
+            "type": "string",
+            "enum": ["none", "coastal", "river", "oil_basin", "equatorial", "mountain", "tropical", "continental_shelf", "highland"],
+            "default": "none",
+            "description": "Hard geography gate evaluated at construction-issue time."
+        },
+        "tech_tier": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3,
+            "default": 1,
+            "description": "UI hint for end-game tier (1=basic extraction/legacy, 2=processing, 3=advanced manufacturing)."
+        },
+        "max_level": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 3,
+            "description": "Maximum upgrade level for this building (1 = no upgrades)"
+        },
+        "level_scaling_factor": {
+            "type": "number",
+            "minimum": 0,
+            "default": 0.5,
+            "description": "Per-level additive multiplier: effect = base * (1 + (level-1) * factor)"
+        },
+        "upgrade_cost_factor": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "default": 0.6,
+            "description": "Multiplier applied to base construction cost when queuing an upgrade"
+        },
+        "upgrade_time_factor": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "default": 0.75,
+            "description": "Multiplier applied to base build_time_months when queuing an upgrade"
+        },
+        "icon": {
+            "type": "string"
+        }
+    }
+}

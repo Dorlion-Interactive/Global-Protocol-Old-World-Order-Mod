@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Resource Type",
+  "description": "Definition of a tradeable resource in NewWorldOrder",
+  "type": "object",
+  "required": ["id", "display_name", "base_price", "category", "tier"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Enum name matching Resource enum in C#"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "Human-readable name for UI"
+    },
+    "base_price": {
+      "type": "number",
+      "description": "Starting market price in USD per unit",
+      "minimum": 0
+    },
+    "category": {
+      "type": "string",
+      "enum": ["energy", "energy_proc", "metal", "metal_proc", "critical", "agriculture", "forestry", "manufactured", "tertiary"]
+    },
+    "tier": {
+      "type": "integer",
+      "description": "1=Energy, 2=Industrial Metals, 3=Critical Minerals, 4=Agriculture, 5=Forestry, 6=Manufactured, 7=Tertiary",
+      "minimum": 1,
+      "maximum": 7
+    },
+    "unit_label": {
+      "type": "string",
+      "description": "Display unit (bbl, MT, MWh, kt, units, etc.) for tooltips",
+      "maxLength": 8
+    },
+    "terrain_bonus": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["plains", "forest", "mountain", "desert", "tundra", "coastal", "ocean", "urban", "jungle", "wetland", "boreal", "subtropical", "tropical", "hills", "river_valley", "monsoon", "steppe", "continental_shelf", "highland"]
+      }
+    },
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "default": 1.0
+    },
+    "input_requirements": {
+      "type": "array",
+      "description": "Raw materials required to produce one unit of this resource (supply chain inputs).",
+      "items": {
+        "type": "object",
+        "required": ["resource_id", "amount"],
+        "properties": {
+          "resource_id": { "type": "string" },
+          "amount": { "type": "number", "minimum": 0 }
+        }
+      }
+    },
+    "processing_buildings": {
+      "type": "array",
+      "description": "Building types that satisfy the processing chain. Any one enables full output.",
+      "items": { "type": "string" }
+    },
+    "processing_building": {
+      "type": "string",
+      "description": "DEPRECATED: use processing_buildings (array). Kept for back-compat reads only."
+    },
+    "geographic_concentration": {
+      "type": "array",
+      "description": "Ordered list of top real-world producer countries (ISO3) with approximate weight 0.0-1.0.",
+      "items": {
+        "type": "object",
+        "required": ["iso3", "weight"],
+        "properties": {
+          "iso3": { "type": "string", "minLength": 3, "maxLength": 3 },
+          "weight": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      }
+    },
+    "substitutes": {
+      "type": "array",
+      "description": "Partial substitutes (schema slot — not yet consumed by production math).",
+      "items": {
+        "type": "object",
+        "required": ["resource_id", "efficiency"],
+        "properties": {
+          "resource_id": { "type": "string" },
+          "efficiency": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      }
+    },
+    "criticality_score": {
+      "type": "number",
+      "description": "0.0-1.0 strategic urgency. Drives AI willingness to overpay, embargo impact, UI urgency colors.",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.0
+    },
+    "price_volatility": {
+      "type": "number",
+      "description": "0.0-0.5 multiplier on world-price random walk per tick.",
+      "minimum": 0,
+      "maximum": 0.5,
+      "default": 0.05
+    },
+    "stockpile_months": {
+      "type": "number",
+      "minimum": 0,
+      "default": 3
+    },
+    "criticality": {
+      "type": "string",
+      "enum": ["Consumer", "Industrial", "Strategic"],
+      "default": "Consumer"
+    },
+    "strategic_uses": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 31 }
+    },
+    "soft_deficit_effects": {
+      "type": "object",
+      "properties": {
+        "construction_speed_penalty_per_unit_deficit": { "type": "number", "minimum": 0, "maximum": 1 },
+        "recruitment_cost_multiplier_per_unit_deficit": { "type": "number", "minimum": 0, "maximum": 2 },
+        "unrest_per_unit_deficit": { "type": "number", "minimum": 0, "maximum": 5 }
+      }
+    },
+    "soft_deficit_active": {
+      "type": "boolean",
+      "description": "When true, this resource's soft_deficit_effects are applied at runtime and it joins the strategic auto-buy set. Defaults to false (effects defined but dormant) to allow gradual activation without an economy-wide balance shock.",
+      "default": false
+    }
+  }
+}

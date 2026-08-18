@@ -1,0 +1,4462 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Game Settings",
+  "description": "Global game balance configuration for NewWorldOrder",
+  "type": "object",
+  "required": [
+    "economy",
+    "population",
+    "buildings",
+    "military",
+    "diplomacy",
+    "technology",
+    "ai_weights",
+    "events",
+    "fog_of_war",
+    "political_drift",
+    "envoys"
+  ],
+  "properties": {
+    "population": {
+      "type": "object",
+      "description": "Population simulation balance parameters",
+      "required": [
+        "base_growth_rate",
+        "growth_rate_gdp_modifier",
+        "migration_pull_threshold",
+        "urbanization_rate",
+        "unrest_poverty_threshold",
+        "unrest_growth_per_month",
+        "unrest_decay_rate",
+        "education_growth_rate",
+        "healthcare_growth_rate",
+        "literacy_growth_rate",
+        "fertility_base",
+        "fertility_education_modifier",
+        "life_expectancy_base",
+        "life_expectancy_healthcare_modifier",
+        "migration_international_rate",
+        "refugee_unrest_threshold",
+        "max_migration_pct"
+      ],
+      "properties": {
+        "base_growth_rate": {
+          "type": "number",
+          "description": "Baseline annual population growth rate (0.01 = 1%)",
+          "minimum": -0.05,
+          "maximum": 0.1
+        },
+        "growth_rate_gdp_modifier": {
+          "type": "number",
+          "description": "GDP per capita contribution to growth rate",
+          "minimum": 0,
+          "maximum": 0.05
+        },
+        "migration_pull_threshold": {
+          "type": "number",
+          "description": "Development level difference threshold to trigger migration (0-1)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "urbanization_rate": {
+          "type": "number",
+          "description": "Monthly urbanization increase rate",
+          "minimum": 0,
+          "maximum": 0.05
+        },
+        "unrest_poverty_threshold": {
+          "type": "number",
+          "description": "GDP per capita below which unrest grows (thousands USD)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "unrest_growth_per_month": {
+          "type": "number",
+          "description": "Maximum unrest increase per month when below poverty threshold",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "unrest_decay_rate": {
+          "type": "number",
+          "description": "Base unrest decay rate per month from social spending",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "education_growth_rate": {
+          "type": "number",
+          "description": "Monthly education level increase from spending",
+          "minimum": 0,
+          "maximum": 0.05
+        },
+        "healthcare_growth_rate": {
+          "type": "number",
+          "description": "Monthly healthcare access increase from social spending",
+          "minimum": 0,
+          "maximum": 0.05
+        },
+        "literacy_growth_rate": {
+          "type": "number",
+          "description": "Monthly literacy increase rate (tracks education with lag)",
+          "minimum": 0,
+          "maximum": 0.05
+        },
+        "fertility_base": {
+          "type": "number",
+          "description": "Baseline fertility rate (children per woman, replacement ~2.1)",
+          "minimum": 0.5,
+          "maximum": 10.0
+        },
+        "fertility_education_modifier": {
+          "type": "number",
+          "description": "Education impact on fertility (negative = reduces fertility)",
+          "minimum": -10.0,
+          "maximum": 0
+        },
+        "life_expectancy_base": {
+          "type": "number",
+          "description": "Baseline life expectancy in years",
+          "minimum": 30,
+          "maximum": 100
+        },
+        "life_expectancy_healthcare_modifier": {
+          "type": "number",
+          "description": "Maximum years added by healthcare access (0-1 healthcare → 0-N years)",
+          "minimum": 0,
+          "maximum": 60
+        },
+        "unrest_natural_decay_rate": {
+          "type": "number",
+          "description": "Base unrest decay per month regardless of social spending (prevents irreversibility)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "migration_international_rate": {
+          "type": "number",
+          "description": "Fraction of border province population that can migrate internationally per month",
+          "minimum": 0,
+          "maximum": 0.1
+        },
+        "refugee_unrest_threshold": {
+          "type": "number",
+          "description": "Province unrest above which international outflow triggers",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "max_migration_pct": {
+          "type": "number",
+          "description": "Maximum fraction of a source province's population that can emigrate per month (aggregate outflow budget)",
+          "minimum": 0,
+          "maximum": 0.2
+        },
+        "max_migration_inflow_pct": {
+          "type": "number",
+          "description": "Maximum fraction of a destination province's population that can immigrate per month (aggregate inflow cap; bounds concentration)",
+          "minimum": 0,
+          "maximum": 0.2
+        },
+        "max_monthly_growth_pct": {
+          "type": "number",
+          "description": "Maximum magnitude of monthly natural population growth rate (correctness bound, not a post-hoc clamp)",
+          "minimum": 0,
+          "maximum": 0.1
+        },
+        "max_province_population": {
+          "type": "integer",
+          "description": "Absolute sanity ceiling on a single province's population. Not the primary runaway control (per-month percentage bounds in the growth/migration systems are); this is a final defensive clamp.",
+          "minimum": 1000000,
+          "maximum": 10000000000
+        }
+      }
+    },
+    "buildings": {
+      "type": "object",
+      "description": "Building system balance parameters",
+      "required": [
+        "max_construction_queue_per_province",
+        "construction_cost_multiplier",
+        "maintenance_cost_multiplier",
+        "infrastructure_construction_bonus",
+        "max_buildings_per_province",
+        "demolish_refund_pct",
+        "construction_progress_base",
+        "infrastructure_progress_bonus"
+      ],
+      "properties": {
+        "max_construction_queue_per_province": {
+          "type": "integer",
+          "description": "Maximum simultaneous construction slots per province",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "max_concurrent_constructions_per_country": {
+          "type": "integer",
+          "description": "Hard cap on total active ConstructionSlots across all provinces owned by a country. Prevents the maintenance cliff when hundreds of buildings finish simultaneously.",
+          "minimum": 1,
+          "maximum": 500,
+          "default": 50
+        },
+        "upkeep_warning_surplus_fraction": {
+          "type": "number",
+          "description": "UI-only warning threshold: warn the player when projected additional monthly building upkeep (queued constructions + the candidate building) exceeds this fraction of the country's current monthly surplus. Never blocks the build.",
+          "minimum": 0,
+          "maximum": 10,
+          "default": 1.0
+        },
+        "construction_cost_multiplier": {
+          "type": "number",
+          "description": "Global construction cost scaling (1.0 = normal, for difficulty)",
+          "minimum": 0.1,
+          "maximum": 5.0
+        },
+        "maintenance_cost_multiplier": {
+          "type": "number",
+          "description": "Global maintenance cost scaling",
+          "minimum": 0.1,
+          "maximum": 5.0
+        },
+        "infrastructure_construction_bonus": {
+          "type": "number",
+          "description": "Extra construction progress per infrastructure point",
+          "minimum": 0,
+          "maximum": 0.1
+        },
+        "max_buildings_per_province": {
+          "type": "integer",
+          "description": "Hard cap on total completed + under-construction buildings per province",
+          "minimum": 1,
+          "maximum": 50
+        },
+        "demolish_refund_pct": {
+          "type": "number",
+          "description": "Fraction of construction cost refunded when demolishing (0-1)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "construction_progress_base": {
+          "type": "number",
+          "description": "Base construction progress per tick (1 month = 1.0)",
+          "minimum": 0.1,
+          "maximum": 5.0
+        },
+        "infrastructure_progress_bonus": {
+          "type": "number",
+          "description": "Extra progress per infrastructure point (infra 100 → +50% at 0.005)",
+          "minimum": 0,
+          "maximum": 0.05
+        },
+        "base_building_slots": {
+          "type": "integer",
+          "description": "Minimum building slots per province regardless of infrastructure",
+          "minimum": 1,
+          "maximum": 20,
+          "default": 3
+        },
+        "infra_slot_threshold": {
+          "type": "number",
+          "description": "Infrastructure points required per extra building slot above base",
+          "minimum": 1,
+          "maximum": 500,
+          "default": 40
+        },
+        "small_nation_province_threshold": {
+          "type": "integer",
+          "description": "Owned-province count at/below which a nation gets the small-nation building-slot bonus (extra base slots + faster infra unlock). 0 disables the bonus.",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 6
+        },
+        "small_nation_bonus_slots": {
+          "type": "integer",
+          "description": "Extra base building slots per province granted to small nations.",
+          "minimum": 0,
+          "maximum": 20,
+          "default": 2
+        },
+        "small_nation_infra_threshold_scale": {
+          "type": "number",
+          "description": "Multiplier on the infra→slot threshold for small nations (<1 unlocks slots faster).",
+          "minimum": 0,
+          "maximum": 4,
+          "default": 0.5
+        },
+        "province_size_weight_enabled": {
+          "type": "boolean",
+          "description": "Scale the flat additive building research_output lane by baked province size relative to the world-average province, correcting the ADM1/ADM2 admin-granularity imbalance. Trade bonuses stay unweighted (already country-capped at 0.50/0.25); GDP/resource lanes stay unweighted (already size-fair) as do defense and province-local effects.",
+          "default": true
+        },
+        "province_size_weight_gdp_blend": {
+          "type": "number",
+          "description": "Share of the size weight taken from baked base production vs baked population (0 = population only, 1 = base production only).",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.5
+        },
+        "province_size_weight_exponent": {
+          "type": "number",
+          "description": "Exponent applied to the raw size ratio before clamping. 1.0 = linear (country weight sums are granularity-neutral away from the clamps); <1 compresses mega-provinces but re-inflates province-count-heavy countries.",
+          "minimum": 0.1,
+          "maximum": 2,
+          "default": 1.0
+        },
+        "province_size_weight_min": {
+          "type": "number",
+          "description": "Clamp floor on the province size weight. Keeps micro-province buildings marginally useful without letting huge ADM2 rosters (UK 232, Malta 68 provinces) stack floored output.",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.05
+        },
+        "province_size_weight_max": {
+          "type": "number",
+          "description": "Clamp ceiling on the province size weight. Stops mega-provinces (Punjab, Uttar Pradesh) from becoming single-province superlabs.",
+          "minimum": 1,
+          "maximum": 50,
+          "default": 6.0
+        },
+        "max_infrastructure": {
+          "type": "number",
+          "description": "Hard cap on province infrastructure. Must be a multiple of infra_slot_threshold for clean slot progression.",
+          "minimum": 10,
+          "maximum": 10000,
+          "default": 200
+        },
+        "passive_infrastructure_cap": {
+          "type": "number",
+          "description": "Ceiling on infrastructure funded by the national infrastructure budget alone. Budget spending stops contributing to a province at this level; only infrastructure BUILDINGS can push it from here up to max_infrastructure. A province with no infrastructure-providing buildings is also clamped back down to this level. Must be <= max_infrastructure. Deliberately NOT a multiple of infra_slot_threshold at the shipped value of 150: it sits just below the 160 slot threshold, so a purely budget-funded province stops at 6 slots and can see that the 7th requires an actual infrastructure building. Set it equal to max_infrastructure to disable the passive ceiling entirely.",
+          "minimum": 10,
+          "maximum": 10000,
+          "default": 150
+        },
+        "passive_infrastructure_reference_spending_ratio": {
+          "type": "number",
+          "description": "Actual monthly infrastructure spending as a GDP fraction that produces the reference annual passive infrastructure growth rate. 0.00375 corresponds to 18% of monthly revenue at a 25% tax rate.",
+          "minimum": 1e-06,
+          "maximum": 1,
+          "default": 0.00375
+        },
+        "passive_infrastructure_reference_annual_growth": {
+          "type": "number",
+          "description": "Annual passive infrastructure growth per eligible province at the reference spending ratio.",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 3
+        },
+        "passive_infrastructure_spending_exponent": {
+          "type": "number",
+          "description": "Response exponent for actual infrastructure spending relative to the reference ratio. Values above 1 make heavy investment progressively more effective until the annual cap.",
+          "minimum": 0.01,
+          "maximum": 5,
+          "default": 1.18
+        },
+        "passive_infrastructure_max_annual_growth": {
+          "type": "number",
+          "description": "Maximum annual passive infrastructure growth per eligible province, regardless of additional national infrastructure spending.",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 10
+        },
+        "base_queue_slots": {
+          "type": "integer",
+          "description": "Minimum concurrent construction queue slots per province",
+          "minimum": 1,
+          "maximum": 10,
+          "default": 3
+        },
+        "dev_queue_threshold": {
+          "type": "number",
+          "description": "Development level points required per extra queue slot above base",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 50
+        },
+        "building_dev_growth_rate": {
+          "type": "number",
+          "description": "DevLevel points gained per completed building per month",
+          "minimum": 0,
+          "maximum": 1.0,
+          "default": 0.15
+        },
+        "infra_dev_growth_rate": {
+          "type": "number",
+          "description": "Max monthly DevLevel growth from infrastructure (at infra=100)",
+          "minimum": 0,
+          "maximum": 5.0,
+          "default": 0.3
+        },
+        "level_stacking_decay": {
+          "type": "number",
+          "description": "Diminishing returns weight for stacking same-type buildings in a province. weight(i)=1/(1+decay*i). 0 = no penalty, 0.5 = 2nd≈0.67×, 3rd≈0.5×.",
+          "minimum": 0,
+          "maximum": 5.0,
+          "default": 0.5
+        },
+        "province_production_modifier_cap": {
+          "type": "number",
+          "description": "Hard cap on the per-province GDP modifier from buildings. 0 disables the cap. 1.5 = +150% max.",
+          "minimum": 0,
+          "maximum": 10.0,
+          "default": 1.5
+        },
+        "repeat_cost_factor": {
+          "type": "number",
+          "description": "Per-extra-instance cost surcharge for repeat builds of the same type in a province. cost = base × (1 + factor × existingCount). Anti-spam.",
+          "minimum": 0,
+          "maximum": 5.0,
+          "default": 0.5
+        },
+        "maintenance_level_scaling_exponent": {
+          "type": "number",
+          "description": "Super-linear maintenance per level. effective = base × pow(level, exponent). 1 = legacy linear, 1.3 = upgrades cost noticeably more.",
+          "minimum": 1.0,
+          "maximum": 3.0,
+          "default": 1.3
+        }
+      }
+    },
+    "military": {
+      "type": "object",
+      "description": "Military and combat balance parameters",
+      "required": [
+        "manpower_per_regiment",
+        "monthly_manpower_regen_rate",
+        "monthly_manpower_regen_min",
+        "military_tick_interval",
+        "combat_width_base",
+        "combat_width_infra_factor",
+        "morale_base",
+        "morale_casualty_penalty",
+        "morale_winning_bonus",
+        "morale_losing_penalty",
+        "morale_retreat_threshold",
+        "army_idle_morale_recovery_per_tick",
+        "army_idle_hp_recovery_per_tick",
+        "army_hp_recovery_garrison_bonus",
+        "army_hp_recovery_manpower_per_hp",
+        "occupation_unrest",
+        "attacker_return_fire_multiplier",
+        "combat_roll_min",
+        "combat_roll_max",
+        "air_superiority_ground_bonus",
+        "unit_creation_cost_multiplier",
+        "unit_maintenance_multiplier",
+        "fortification_modifier_max",
+        "creation_progress_base",
+        "creation_infra_bonus"
+      ],
+      "properties": {
+        "manpower_per_regiment": {
+          "type": "integer",
+          "description": "Real-world personnel per 1 in-game regiment (EU4-style scaling)",
+          "minimum": 1000,
+          "maximum": 50000
+        },
+        "monthly_manpower_regen_rate": {
+          "type": "number",
+          "description": "Monthly fraction of reserve manpower converted to active personnel",
+          "minimum": 0,
+          "maximum": 0.25
+        },
+        "monthly_manpower_regen_min": {
+          "type": "integer",
+          "description": "Minimum monthly manpower regenerated when reserve is available",
+          "minimum": 0,
+          "maximum": 50000
+        },
+        "contract_soldiers": {
+          "type": "object",
+          "description": "Bounded money->manpower path (professional/foreign enlistment, UAE/Qatar-style). Lets a rich small state field an expeditionary force capped by a fraction of its native pool.",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "cost_per_manpower_usd": {
+              "type": "number",
+              "description": "One-time treasury cost per contracted manpower point (recruit + train).",
+              "minimum": 0
+            },
+            "upkeep_per_manpower_usd_month": {
+              "type": "number",
+              "description": "Monthly treasury upkeep per active contracted manpower point. 0 disables upkeep.",
+              "minimum": 0
+            },
+            "max_fraction_of_base_pool": {
+              "type": "number",
+              "description": "Contract-force ceiling as a fraction of the native (bake-time) Manpower+Reserve pool. 1.0 = can at most double it.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "monthly_pace_fraction": {
+              "type": "number",
+              "description": "Fraction of the contract ceiling recruitable per month (pace limit).",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "military_tick_interval": {
+          "type": "integer",
+          "description": "Military systems run every N economy ticks (1 = every tick)",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "transport_troops_per_ship": {
+          "type": "integer",
+          "description": "Soldiers lifted per transport_capacity slot (a carrier's 4 slots move 4x this).",
+          "minimum": 1,
+          "maximum": 50000
+        },
+        "transport_max_pooled_fleets": {
+          "type": "integer",
+          "description": "Max fleets the auto-transport planner pools into one convoy for a single army lift.",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "transport_prefer_land_max_hops": {
+          "type": "integer",
+          "description": "Land paths up to this many province hops always march overland instead of offering sea transport (0 disables the preference).",
+          "minimum": 0,
+          "maximum": 64
+        },
+        "naval_queue_slots_per_province": {
+          "type": "integer",
+          "description": "Concurrent fleet construction slots per province (replaces the former per-country cap).",
+          "minimum": 1,
+          "maximum": 32
+        },
+        "air_queue_slots_per_province": {
+          "type": "integer",
+          "description": "Concurrent air wing construction slots per province (replaces the former per-country cap).",
+          "minimum": 1,
+          "maximum": 32
+        },
+        "template_rally_max_hops": {
+          "type": "integer",
+          "description": "Max province hops between an army-template build province and its rally point.",
+          "minimum": 1,
+          "maximum": 128
+        },
+        "template_rally_timeout_ticks": {
+          "type": "integer",
+          "description": "Ticks a rally order survives while its rally point stays unreachable, before expiring.",
+          "minimum": 1,
+          "maximum": 100000
+        },
+        "template_rank_hop_weight": {
+          "type": "number",
+          "description": "Template distribution: penalty weight per province hop from the rally point.",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "template_rank_infra_weight": {
+          "type": "number",
+          "description": "Template distribution: score weight per point of province infrastructure.",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "template_rank_spread_penalty": {
+          "type": "number",
+          "description": "Template distribution: penalty per unit already assigned to a province (drives the spread).",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "chase_retarget_interval_ticks": {
+          "type": "integer",
+          "description": "How often (military ticks) a chasing army/fleet re-checks its pursued target's province and re-routes. Higher = cheaper but slower reaction.",
+          "minimum": 1,
+          "maximum": 120,
+          "default": 15
+        },
+        "chase_max_consecutive_failures": {
+          "type": "integer",
+          "description": "Consecutive blocked/stalled chase evaluations before a pursuit order breaks off and the chaser halts (mirrors route-maintenance repath failure policy).",
+          "minimum": 1,
+          "maximum": 30,
+          "default": 6
+        },
+        "combat_width_base": {
+          "type": "number",
+          "description": "Minimum combat width (units that can fight simultaneously)",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "combat_width_infra_factor": {
+          "type": "number",
+          "description": "Infrastructure contribution to combat width (infra × factor)",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "morale_base": {
+          "type": "number",
+          "description": "Starting morale for all armies",
+          "minimum": 10,
+          "maximum": 200
+        },
+        "morale_casualty_penalty": {
+          "type": "number",
+          "description": "Morale lost per % casualties this tick",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "morale_winning_bonus": {
+          "type": "number",
+          "description": "Morale gained per tick when winning combat",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "morale_losing_penalty": {
+          "type": "number",
+          "description": "Morale lost per tick when losing combat",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "morale_retreat_threshold": {
+          "type": "number",
+          "description": "Army retreats when morale drops below this",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "army_idle_morale_recovery_per_tick": {
+          "type": "number",
+          "description": "Morale recovered per military tick for idle armies (not in combat, siege, occupation, or transport)",
+          "minimum": 0,
+          "maximum": 10.0
+        },
+        "army_idle_hp_recovery_per_tick": {
+          "type": "number",
+          "description": "HP recovered per military tick for idle armies (not in combat, siege, occupation, or transport). Draws from country ReservePersonnel.",
+          "minimum": 0,
+          "maximum": 10.0
+        },
+        "army_hp_recovery_garrison_bonus": {
+          "type": "number",
+          "description": "Fractional bonus applied to HP recovery when army is in owned territory (0.5 = +50% faster recovery in garrison)",
+          "minimum": 0,
+          "maximum": 2.0
+        },
+        "army_hp_recovery_manpower_per_hp": {
+          "type": "number",
+          "description": "ReservePersonnel consumed per HP recovered per regiment. Set to 0 to disable manpower cost for healing.",
+          "minimum": 0,
+          "maximum": 10.0
+        },
+        "occupation_unrest": {
+          "type": "number",
+          "description": "Unrest added to province when captured",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "attacker_return_fire_multiplier": {
+          "type": "number",
+          "description": "Damage multiplier applied to return fire on attackers (< 1.0 favors attacker)",
+          "minimum": 0.1,
+          "maximum": 2.0
+        },
+        "combat_roll_min": {
+          "type": "number",
+          "description": "Minimum combat roll value (deterministic random)",
+          "minimum": 0.1,
+          "maximum": 1.0
+        },
+        "combat_roll_max": {
+          "type": "number",
+          "description": "Maximum combat roll value",
+          "minimum": 1.0,
+          "maximum": 2.0
+        },
+        "air_superiority_ground_bonus": {
+          "type": "number",
+          "description": "Ground attack bonus from full air superiority (0-1 fraction)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "unit_creation_cost_multiplier": {
+          "type": "number",
+          "description": "Global multiplier for unit creation costs",
+          "minimum": 0.1,
+          "maximum": 5.0
+        },
+        "unit_maintenance_multiplier": {
+          "type": "number",
+          "description": "Global multiplier for unit maintenance costs",
+          "minimum": 0.1,
+          "maximum": 5.0
+        },
+        "fortification_modifier_max": {
+          "type": "number",
+          "description": "Maximum defense multiplier from fortifications",
+          "minimum": 1.0,
+          "maximum": 5.0
+        },
+        "creation_progress_base": {
+          "type": "number",
+          "description": "Base unit creation progress per tick",
+          "minimum": 0.1,
+          "maximum": 5.0
+        },
+        "creation_infra_bonus": {
+          "type": "number",
+          "description": "Extra creation progress per infrastructure point",
+          "minimum": 0,
+          "maximum": 0.05
+        },
+        "garrison_per_1k_pop": {
+          "type": "number",
+          "description": "Garrison units required per 1,000 population to maintain occupation",
+          "minimum": 0.1,
+          "maximum": 5.0
+        },
+        "occupation_attrition_rate": {
+          "type": "number",
+          "description": "Monthly HP/morale attrition rate on garrison from resistance (0-1)",
+          "minimum": 0,
+          "maximum": 0.5
+        },
+        "devastation_from_combat": {
+          "type": "number",
+          "description": "Devastation added per tick of active combat in a province",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "devastation_decay_rate": {
+          "type": "number",
+          "description": "Monthly devastation decay rate (absolute points per tick)",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "devastation_max": {
+          "type": "number",
+          "description": "Maximum devastation value",
+          "minimum": 50,
+          "maximum": 200
+        },
+        "devastation_production_penalty_max": {
+          "type": "number",
+          "description": "Maximum GDP penalty from devastation (0-1)",
+          "minimum": 0,
+          "maximum": 1.0
+        },
+        "resistance_growth_rate": {
+          "type": "number",
+          "description": "Monthly resistance growth rate in occupied provinces",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "transfer_resistance_base": {
+          "type": "number",
+          "description": "Initial resistance level when province is transferred in peace deal",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "transfer_resistance_decay_months": {
+          "type": "integer",
+          "description": "Months for transfer-resistance to fully decay",
+          "minimum": 12,
+          "maximum": 600
+        },
+        "displacement_migration_factor": {
+          "type": "number",
+          "description": "Population displacement factor from devastation (0-1)",
+          "minimum": 0,
+          "maximum": 0.5
+        },
+        "siege_defense_base": {
+          "type": "number",
+          "description": "Base defense points each province has at siege start (before pop/infra modifiers)",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "siege_defense_per_1k_pop": {
+          "type": "number",
+          "description": "Extra defense points per 1,000 province population",
+          "minimum": 0,
+          "maximum": 5.0
+        },
+        "siege_defense_infra_factor": {
+          "type": "number",
+          "description": "Extra defense points per infrastructure level",
+          "minimum": 0,
+          "maximum": 5.0
+        },
+        "siege_damage_per_unit": {
+          "type": "number",
+          "description": "Base siege damage contributed by one attacker unit per military tick",
+          "minimum": 0.01,
+          "maximum": 10.0
+        },
+        "siege_min_damage_per_tick": {
+          "type": "number",
+          "description": "Minimum siege damage per tick so progress never fully stalls",
+          "minimum": 0.01,
+          "maximum": 5.0
+        },
+        "siege_recovery_rate_per_tick": {
+          "type": "number",
+          "description": "Fraction of SiegeDefenseMax recovered per tick when no siege force is present",
+          "minimum": 0,
+          "maximum": 1.0
+        },
+        "siege_attacker_morale_drain_base": {
+          "type": "number",
+          "description": "Morale lost by besieging armies each military tick (supply strain, fatigue)",
+          "minimum": 0,
+          "maximum": 20.0
+        },
+        "siege_attacker_morale_drain_fort_multiplier": {
+          "type": "number",
+          "description": "Scales extra morale drain with province fortification level (higher = forts are more demoralising)",
+          "minimum": 0,
+          "maximum": 10.0
+        },
+        "siege_attacker_attrition_per_tick": {
+          "type": "number",
+          "description": "Fraction of attacker unit count lost per military tick from sniper fire / IEDs during siege",
+          "minimum": 0,
+          "maximum": 0.1
+        }
+      }
+    },
+    "economy": {
+      "type": "object",
+      "required": [
+        "base_gdp_growth_rate",
+        "infrastructure_gdp_multiplier",
+        "inflation_gdp_penalty_per_percent",
+        "base_tax_rate",
+        "resource_price_volatility",
+        "resource_surplus_export_ratio",
+        "resource_deficit_import_ratio",
+        "default_tariff_rate",
+        "per_capita_resource_demand",
+        "inflation_sensitivity",
+        "inflation_min",
+        "inflation_max",
+        "terrain_productivity",
+        "default_budget"
+      ],
+      "properties": {
+        "base_gdp_growth_rate": {
+          "type": "number",
+          "description": "Annual baseline GDP growth rate (0.02 = 2%)",
+          "minimum": -0.1,
+          "maximum": 0.2
+        },
+        "infrastructure_gdp_multiplier": {
+          "type": "number",
+          "description": "How much each unit of infrastructure boosts GDP",
+          "minimum": 0,
+          "maximum": 5.0
+        },
+        "inflation_gdp_penalty_per_percent": {
+          "type": "number",
+          "description": "GDP growth penalty factor applied to fraction-scale inflation (e.g. 0.1 means 5% inflation causes 0.005 growth penalty)",
+          "minimum": 0,
+          "maximum": 1.0
+        },
+        "base_tax_rate": {
+          "type": "number",
+          "description": "Default tax rate for new countries (0-1)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "resource_price_volatility": {
+          "type": "number",
+          "description": "Monthly price fluctuation range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "resource_surplus_export_ratio": {
+          "type": "number",
+          "description": "Fraction of surplus that gets exported",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "resource_deficit_import_ratio": {
+          "type": "number",
+          "description": "Fraction of deficit that gets imported",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "default_tariff_rate": {
+          "type": "number",
+          "description": "Default import tariff rate",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "per_capita_resource_demand": {
+          "type": "number",
+          "description": "Resource units consumed per person per month",
+          "minimum": 0
+        },
+        "trade_balance_growth_cap": {
+          "type": "number",
+          "description": "Absolute annual clamp for trade-balance contribution to GDP growth (0.03 = +/-3%)",
+          "minimum": 0.005,
+          "maximum": 0.2
+        },
+        "inflation_sensitivity": {
+          "type": "number",
+          "description": "How responsive inflation is to spending/GDP ratio",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "inflation_min": {
+          "type": "number",
+          "description": "Minimum inflation rate as fraction (e.g. -0.05 = -5% deflation)",
+          "minimum": -1.0,
+          "maximum": 0
+        },
+        "inflation_max": {
+          "type": "number",
+          "description": "Maximum inflation rate as fraction (e.g. 0.50 = 50%)",
+          "minimum": 0,
+          "maximum": 2.0
+        },
+        "province_gdp_reconciliation_strength": {
+          "type": "number",
+          "description": "Damping on the internal (organic) province-signal delta before it moves country GDP. 1.0 applies it in full.",
+          "minimum": 0,
+          "maximum": 1.0
+        },
+        "province_gdp_signal_scale_min": {
+          "type": "number",
+          "description": "Lower clamp on the per-country province-signal-to-GDP calibration. Also the system's memory of what a collapsed country used to be worth, so the GDP re-anchor has a target to converge to.",
+          "exclusiveMinimum": 0,
+          "maximum": 10.0
+        },
+        "province_gdp_signal_scale_max": {
+          "type": "number",
+          "description": "Upper clamp on the per-country province-signal-to-GDP calibration.",
+          "exclusiveMinimum": 0,
+          "maximum": 100.0
+        },
+        "province_reconciliation_max_monthly_delta": {
+          "type": "number",
+          "description": "Anti-spike cap on the internal reconciliation delta as a fraction of country GDP. 0.0005 = ±0.05%/month. 0 disables the cap.",
+          "minimum": 0,
+          "maximum": 1.0
+        },
+        "province_gdp_reanchor_monthly_rate": {
+          "type": "number",
+          "description": "Fraction of the shortfall below (engage_ratio × calibrated territory value) that country GDP recovers per month. 0.06 = half the gap in ~11 months, 95% in ~4 years. 0 disables the re-anchor.",
+          "minimum": 0,
+          "maximum": 1.0
+        },
+        "province_gdp_reanchor_engage_ratio": {
+          "type": "number",
+          "description": "The GDP re-anchor engages only below this fraction of the calibrated value of a country's owned territory, and converges to exactly that line. 0.75 leaves a 25% deadband so normal drift is ignored.",
+          "minimum": 0,
+          "maximum": 1.0
+        },
+        "terrain_productivity": {
+          "type": "object",
+          "description": "GDP multiplier per terrain type",
+          "required": [
+            "plains",
+            "forest",
+            "mountain",
+            "desert",
+            "tundra",
+            "coastal",
+            "ocean",
+            "urban",
+            "jungle",
+            "wetland"
+          ],
+          "properties": {
+            "plains": {
+              "type": "number",
+              "minimum": 0
+            },
+            "forest": {
+              "type": "number",
+              "minimum": 0
+            },
+            "mountain": {
+              "type": "number",
+              "minimum": 0
+            },
+            "desert": {
+              "type": "number",
+              "minimum": 0
+            },
+            "tundra": {
+              "type": "number",
+              "minimum": 0
+            },
+            "coastal": {
+              "type": "number",
+              "minimum": 0
+            },
+            "ocean": {
+              "type": "number",
+              "minimum": 0
+            },
+            "urban": {
+              "type": "number",
+              "minimum": 0
+            },
+            "jungle": {
+              "type": "number",
+              "minimum": 0
+            },
+            "wetland": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "default_budget": {
+          "type": "object",
+          "description": "Default budget allocation percentages (must sum to 1.0)",
+          "required": [
+            "military_pct",
+            "research_pct",
+            "infra_pct",
+            "social_pct",
+            "reserve_pct"
+          ],
+          "properties": {
+            "military_pct": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "research_pct": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "infra_pct": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "social_pct": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "reserve_pct": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "gdp_diminishing_reference_usd": {
+          "type": "number",
+          "description": "GDP reference point for diminishing returns calculation (USD). Economies above this see slower growth.",
+          "minimum": 1000000000000,
+          "maximum": 100000000000000
+        },
+        "gdp_diminishing_exponent": {
+          "type": "number",
+          "description": "Power-law exponent for GDP diminishing returns (lower = weaker effect).",
+          "minimum": 0.01,
+          "maximum": 1.0
+        },
+        "base_annual_interest_rate": {
+          "type": "number",
+          "description": "Annual interest rate on national debt (fraction, e.g. 0.04 = 4%)",
+          "minimum": 0,
+          "maximum": 0.5
+        },
+        "high_debt_interest_premium": {
+          "type": "number",
+          "description": "Additional annual interest rate when debt-to-GDP exceeds 1.0 (fraction)",
+          "minimum": 0,
+          "maximum": 0.5
+        },
+        "price_shock_decay_rate": {
+          "type": "number",
+          "description": "Realism pass: monthly decay of resource price-shock multipliers toward 1.0 (0.25 = 25%/mo)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "price_shock_max_multiplier": {
+          "type": "number",
+          "description": "Realism pass: upper clamp on the additive oil/food/global price-shock multiplier stack",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "demand_price_elasticity": {
+          "type": "number",
+          "description": "Realism pass: demand destruction — consumption × clamp(1 - e·(mult-1), minFactor, 1)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "demand_elasticity_min_factor": {
+          "type": "number",
+          "description": "Realism pass: floor on the demand-elasticity factor (necessities)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "supply_price_elasticity": {
+          "type": "number",
+          "description": "Realism pass: supply response — output × clamp(1 + e·(mult-1), 1, maxFactor)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "supply_elasticity_max_factor": {
+          "type": "number",
+          "description": "Realism pass: ceiling on the supply-response factor (short-run max output rise)",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "ai_deficit_tax_response": {
+          "type": "number",
+          "description": "Realism pass: AI fiscal discipline — fraction of the structural deficit gap converted to tax-toward-ceiling",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ai_deficit_ratio_trigger": {
+          "type": "number",
+          "description": "Realism pass: structural-deficit trigger as a fraction of monthly revenue",
+          "minimum": 0,
+          "maximum": 0.5
+        },
+        "ai_high_debt_ratio_trigger": {
+          "type": "number",
+          "description": "Realism pass: high-debt trigger (DebtToGDPRatio) for AI fiscal discipline / austerity",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "ai_fiscal_reserve_shift_max": {
+          "type": "number",
+          "description": "Realism pass: max discretionary→reserve reallocation per fiscal-discipline pass",
+          "minimum": 0,
+          "maximum": 0.5
+        },
+        "debt_anchor_drift_floor_fraction": {
+          "type": "number",
+          "description": "Fraction of a country's AnchorDebtRatio that its debt may be paid down to. Both paydown paths floor here. Shipped at 1.0: debt holds at its structural level and only moves when a country runs deficits. Values below 1.0 do NOT create fiscal drift — the paydown is fast enough that solvent countries all park on the floor, so it acts as a flat haircut on the curated real-world ratios (at 0.6, 169 of 217 countries sat at exactly 0.6x anchor and Japan read 151% against its true 251%).",
+          "minimum": 0,
+          "maximum": 1.0
+        },
+        "max_debt_ratio": {
+          "type": "number",
+          "description": "Maximum debt-to-GDP ratio before forced stabilization",
+          "minimum": 0.5,
+          "maximum": 10.0
+        },
+        "tier_growth_bonus": {
+          "type": "object",
+          "description": "Additional annual GDP growth rate by development tier (convergence mechanic)",
+          "properties": {
+            "high_income": {
+              "type": "number",
+              "minimum": -0.1,
+              "maximum": 0.2
+            },
+            "upper_middle_income": {
+              "type": "number",
+              "minimum": -0.1,
+              "maximum": 0.2
+            },
+            "lower_middle_income": {
+              "type": "number",
+              "minimum": -0.1,
+              "maximum": 0.2
+            },
+            "low_income": {
+              "type": "number",
+              "minimum": -0.1,
+              "maximum": 0.2
+            }
+          }
+        },
+        "trade_agreement_defaults": {
+          "type": "object",
+          "description": "Default term sheet for new bilateral trade agreements when caller passes none, plus global stacking caps. Mirrors trade_agreement.schema.json plus engine-wide caps.",
+          "properties": {
+            "tariff_reduction_pct": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "export_boost_pct": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "import_inflation_damp_pct": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "resource_priority_access": {
+              "type": "boolean"
+            },
+            "bilateral_growth_bonus_annual": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.01
+            },
+            "opinion_drift_per_month": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "duration_months": {
+              "type": "integer",
+              "minimum": -1,
+              "maximum": 600
+            },
+            "bilateral_growth_bonus_cap_annual": {
+              "type": "number",
+              "description": "Hard cap on summed BilateralGrowthBonus from all active agreements (annual).",
+              "minimum": 0,
+              "maximum": 0.05
+            },
+            "export_boost_cap": {
+              "type": "number",
+              "description": "Hard cap on cumulative AgreementExportBoost minus 1.0 (e.g. 0.5 = max +50%).",
+              "minimum": 0,
+              "maximum": 2.0
+            },
+            "max_concurrent": {
+              "type": "integer",
+              "description": "Maximum simultaneous bilateral agreements per country.",
+              "minimum": 1,
+              "maximum": 32
+            }
+          }
+        },
+        "spot_market": {
+          "type": "object",
+          "description": "Spot-market trade caps and price-impact (slippage) parameters.",
+          "properties": {
+            "max_single_transaction_usd": {
+              "type": "number",
+              "description": "Base USD cap per single spot transaction. Scaled up per-country by cap_infrastructure_scale x the country's building export bonus (trade ports).",
+              "minimum": 1000000,
+              "maximum": 100000000000
+            },
+            "cap_infrastructure_scale": {
+              "type": "number",
+              "description": "Per-transaction cap multiplier growth: effectiveCap = base x (1 + scale x min(BuildingExportBonus, cap_export_bonus_max)). 0 = flat cap for everyone.",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "cap_export_bonus_max": {
+              "type": "number",
+              "description": "Clamp on the BuildingExportBonus used for cap scaling (one maxed trade port = 0.15).",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "min_impact_factor": {
+              "type": "number",
+              "description": "Floor on the sell-side price-impact multiplier. Lower = saturated dumping approaches worthless fills (anti get-rich brake); the flat 0.20 default enabled ~20%-of-base bulk extraction.",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "max_impact_factor": {
+              "type": "number",
+              "description": "Ceiling on the buy-side (overbought) price-impact multiplier: net buying pressure can inflate a resource's quoted price to at most this multiple of its base spot price.",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "ai_auto_buy_enabled": {
+              "type": "boolean",
+              "description": "AI countries (no PlayerControlled tag) auto-buy strategic reserve shortfalls on the global spot market when funded. Human players keep their per-resource opt-in toggles."
+            },
+            "ai_auto_sell_enabled": {
+              "type": "boolean",
+              "description": "AI countries auto-sell stockpile surplus on the global spot market (fraction per tick, capped). Human players keep their per-resource opt-in toggles."
+            },
+            "auto_sell_min_impact_factor": {
+              "type": "number",
+              "description": "Crash-guard: auto-sell (player and AI) skips a resource while its standing market factor is below this (0.5 = stop dumping once the market is down 50%). 0 disables the guard.",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "auto_buy_max_impact_factor": {
+              "type": "number",
+              "description": "Realism pass: spike-guard mirror of auto_sell_min_impact_factor — auto-buy skips a resource while its standing market factor exceeds this (2.0 = stop chasing a market pumped 2×). 0 disables.",
+              "minimum": 1,
+              "maximum": 5
+            },
+            "auto_shortfall_buy_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "auto_surplus_sell_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "max_buys_per_country_per_tick": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 64
+            },
+            "max_sells_per_country_per_tick": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 64
+            },
+            "max_auto_spend_per_country_per_tick_usd": {
+              "type": "number",
+              "minimum": 0
+            },
+            "price_impact_k": {
+              "type": "number",
+              "description": "Slippage strength: sell price x= 1/(1 + k x pressure/supplyProxy). 0 disables slippage.",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "price_impact_monthly_decay": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sell_cap_stockpile_fraction": {
+              "type": "number",
+              "description": "A single spot SELL may always move at least this fraction of the resource's current stockpile (priced at the sell spread), regardless of the coastal trade-port cap — so small/landlocked nations aren't forced into thousands of clicks. 0 disables.",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sell_cap_swing_max_usd": {
+              "type": "number",
+              "description": "Absolute USD ceiling on the stockpile-fraction sell floor, so it can't be abused to crash the world market. 0 = country cap only.",
+              "minimum": 0
+            },
+            "auto_buy_treasury_floor_usd": {
+              "type": "number",
+              "description": "Absolute treasury floor (USD) below which strategic-reserve auto-buy is disabled. Effective floor = max(this, revenue_months x MonthlyRevenue, gdp_fraction x GDP). Replaces the old hardcoded $50M.",
+              "minimum": 0
+            },
+            "auto_buy_treasury_floor_revenue_months": {
+              "type": "number",
+              "description": "Relative auto-buy floor: months of MonthlyRevenue to keep in treasury before auto-buy. 0 disables the revenue term.",
+              "minimum": 0,
+              "maximum": 12
+            },
+            "auto_buy_treasury_floor_gdp_fraction": {
+              "type": "number",
+              "description": "Relative auto-buy floor: fraction of GDP to keep in treasury before auto-buy. 0 disables the GDP term.",
+              "minimum": 0,
+              "maximum": 0.5
+            }
+          }
+        },
+        "trade_hub": {
+          "type": "object",
+          "description": "Commerce niche: small and/or coastal nations earn a trade-hub bonus (extra export/import multipliers + commercial treasury revenue), fading to 0 for large continental powers.",
+          "properties": {
+            "size_reference_provinces": {
+              "type": "number",
+              "description": "Province count at/above which the small-nation trade-hub bonus fades to 0.",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "base_share": {
+              "type": "number",
+              "description": "Baseline commerce share for a small landlocked nation (no coastline).",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "coastal_weight": {
+              "type": "number",
+              "description": "Weight of the coastal-province fraction in the commerce term (added to base_share, saturated to 1).",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "export_bonus_max": {
+              "type": "number",
+              "description": "Max extra export bonus a full trade hub grants, added to BuildingExportBonus before the 0.50 usage cap.",
+              "minimum": 0,
+              "maximum": 0.5
+            },
+            "import_discount_max": {
+              "type": "number",
+              "description": "Max extra import discount a full trade hub grants, added to BuildingImportDiscount before the 0.25 usage cap.",
+              "minimum": 0,
+              "maximum": 0.25
+            },
+            "commercial_revenue_rate": {
+              "type": "number",
+              "description": "Commercial-hub treasury revenue = hubFactor x rate x monthly export throughput. The real-money lane of the commerce niche.",
+              "minimum": 0,
+              "maximum": 0.5
+            },
+            "micro_state_province_threshold": {
+              "type": "integer",
+              "description": "Micro-state services floor: countries owning <= this many provinces get a throughput-independent minimum commercial-hub income (tourism/financial services/licensing). 0 disables.",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "micro_state_services_floor_per_province_usd": {
+              "type": "number",
+              "description": "Guaranteed services income (USD/month) per owned province for micro-states under the threshold; commercial-hub revenue = max(throughput lane, provinces x this).",
+              "minimum": 0
+            }
+          }
+        },
+        "resource_strategic_caps": {
+          "type": "object",
+          "description": "Caps applied by ResourceStrategicEffectsSystem to keep deficit consequences bounded.",
+          "properties": {
+            "construction_speed_floor": {
+              "type": "number",
+              "description": "Lowest allowed ConstructionSpeedMultiplier across all stacked deficits.",
+              "minimum": 0.1,
+              "maximum": 1.0
+            },
+            "recruitment_cost_ceiling": {
+              "type": "number",
+              "description": "Highest allowed RecruitmentCostMultiplier across all stacked deficits.",
+              "minimum": 1.0,
+              "maximum": 5.0
+            },
+            "unrest_pressure_monthly_cap": {
+              "type": "number",
+              "description": "Maximum monthly UnrestPressureDelta from all resource deficits combined.",
+              "minimum": 0,
+              "maximum": 10.0
+            },
+            "strategic_block_deficit_threshold": {
+              "type": "number",
+              "description": "Deficit ratio at or above which a Strategic resource's strategic_uses are added to BlockedStrategicUses.",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      }
+    },
+    "diplomacy": {
+      "type": "object",
+      "description": "Diplomacy and relations balance parameters",
+      "required": [
+        "diplomacy_tick_interval",
+        "relation_decay_rate",
+        "relation_improve_amount",
+        "relation_insult_penalty",
+        "alliance_honor_threshold",
+        "alliance_break_relation_penalty",
+        "alliance_form_min_relation",
+        "war_exhaustion_monthly",
+        "war_exhaustion_max",
+        "war_exhaustion_depletion_min",
+        "war_exhaustion_depletion_max",
+        "war_exhaustion_reserve_weight",
+        "war_exhaustion_occupation_rate",
+        "war_exhaustion_first_year_dominant_min_multiplier",
+        "war_exhaustion_first_year_duration_days",
+        "war_exhaustion_first_year_dominant_ratio_threshold",
+        "war_score_battle_weight",
+        "war_score_occupation_weight",
+        "war_score_exhaustion_weight",
+        "war_score_battle_soft_cap",
+        "war_score_occupation_ramp_days",
+        "war_score_collapse_min_days",
+        "war_score_anti_farm_floor",
+        "war_score_anti_farm_intensity_threshold",
+        "war_score_enemy_collapse_strength_ratio",
+        "war_score_enemy_collapse_occupation_share",
+        "peace_accept_base_threshold",
+        "truce_duration_months",
+        "sanction_trade_penalty",
+        "trade_agreement_bonus",
+        "relation_sanction_penalty",
+        "relation_trade_agreement_bonus",
+        "ideology_relation_drift",
+        "leadership_relation_drift",
+        "allied_to_rival_penalty",
+        "allied_to_enemy_penalty",
+        "allied_to_friend_bonus",
+        "hostile_relation_threshold",
+        "friendly_relation_threshold",
+        "max_dynamic_relation_delta",
+        "alliance_relation_score_weight",
+        "war_relation_hostility_score_weight"
+      ],
+      "properties": {
+        "diplomacy_tick_interval": {
+          "type": "integer",
+          "description": "Diplomacy systems run every N economy ticks (1 = every tick)",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "relation_decay_rate": {
+          "type": "number",
+          "description": "Monthly relation drift speed toward regional base (points per month)",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "relation_improve_amount": {
+          "type": "integer",
+          "description": "Base relation gain per Improve Relations action",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "relation_insult_penalty": {
+          "type": "integer",
+          "description": "Relation loss per Insult action",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "alliance_honor_threshold": {
+          "type": "integer",
+          "description": "Minimum relation to honor alliance call to arms",
+          "minimum": -100,
+          "maximum": 100
+        },
+        "alliance_break_relation_penalty": {
+          "type": "integer",
+          "description": "Relation penalty for breaking an alliance (negative value)",
+          "minimum": -100,
+          "maximum": 0
+        },
+        "alliance_form_min_relation": {
+          "type": "integer",
+          "description": "Minimum bilateral relation to form an alliance",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "war_exhaustion_monthly": {
+          "type": "number",
+          "description": "War exhaustion gained per month while at war",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "war_exhaustion_max": {
+          "type": "number",
+          "description": "Maximum war exhaustion",
+          "minimum": 10,
+          "maximum": 200
+        },
+        "war_exhaustion_depletion_min": {
+          "type": "number",
+          "description": "Minimum depletion factor for dominant nations (e.g. 0.5 = half exhaustion rate when 2:1 stronger)",
+          "minimum": 0.1,
+          "maximum": 1.0
+        },
+        "war_exhaustion_depletion_max": {
+          "type": "number",
+          "description": "Maximum depletion factor for depleted nations (e.g. 3.0 = triple exhaustion rate when 5:1 weaker)",
+          "minimum": 1.0,
+          "maximum": 10.0
+        },
+        "war_exhaustion_reserve_weight": {
+          "type": "number",
+          "description": "How much reserve personnel count toward effective strength (0.5 = half weight)",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "war_exhaustion_occupation_rate": {
+          "type": "number",
+          "description": "Maximum additive monthly war exhaustion from full occupation of own provinces",
+          "minimum": 0.0,
+          "maximum": 10.0
+        },
+        "war_exhaustion_first_year_dominant_min_multiplier": {
+          "type": "number",
+          "description": "Minimum multiplier applied to base/depletion exhaustion during first-year wars for militarily dominant countries",
+          "minimum": 0.1,
+          "maximum": 1.0
+        },
+        "war_exhaustion_first_year_duration_days": {
+          "type": "integer",
+          "description": "Number of in-game days over which dominant first-year exhaustion damping linearly fades to normal",
+          "minimum": 30,
+          "maximum": 720
+        },
+        "war_exhaustion_first_year_dominant_ratio_threshold": {
+          "type": "number",
+          "description": "Own-to-enemy effective military ratio threshold where first-year dominant exhaustion damping begins",
+          "minimum": 1.0,
+          "maximum": 10.0
+        },
+        "war_score_battle_weight": {
+          "type": "number",
+          "description": "Weight of battles won in war score calculation (0-1)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_score_occupation_weight": {
+          "type": "number",
+          "description": "Weight of provinces occupied in war score calculation (0-1)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_score_exhaustion_weight": {
+          "type": "number",
+          "description": "Weight of war exhaustion in war score calculation (0-1)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_score_battle_soft_cap": {
+          "type": "number",
+          "description": "Accumulated battle intensity at which the full battle weight is earned. Intensity 1.0 means an enemy's entire standing army was destroyed, so 4.0 requires destroying it roughly four times over as they rebuild — a sustained campaign, not two won engagements",
+          "minimum": 0.1,
+          "maximum": 20
+        },
+        "war_score_enemy_exhaustion_weight": {
+          "type": "number",
+          "description": "Weight of the ENEMY's war exhaustion in this side's war score",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_score_occupation_curve_exponent": {
+          "type": "number",
+          "description": "Concavity applied to the occupied share before weighting. <1 makes early captures worth proportionally more, so the same military achievement scores alike regardless of how finely the victim is subdivided. 1 = linear",
+          "minimum": 0.1,
+          "maximum": 2
+        },
+        "war_score_full_occupation_signed_bonus": {
+          "type": "number",
+          "description": "Signed-advantage bonus added when a belligerent holds every enemy province",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "war_score_winning_threshold": {
+          "type": "number",
+          "description": "Signed war advantage at or above which a country is Winning: drives the UI band and the AI demand gates",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "war_score_decisive_threshold": {
+          "type": "number",
+          "description": "Signed war advantage at or above which a victory is Decisive (UI band)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "war_score_strength_weight": {
+          "type": "number",
+          "description": "War score the STRONGER side earns for military dominance at or beyond the ratio span. Additive and one-sided: the weaker side earns 0, never a penalty. 0 = use the formula default",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_score_strength_ratio_span": {
+          "type": "number",
+          "description": "Side-strength ratio (own / enemy, coalition-aware) at which the full strength weight is earned. 0 = use the formula default",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "territorial_concession_min_war_score": {
+          "type": "number",
+          "description": "Executable war score at which a belligerent WITHOUT a territorial casus belli may demand provinces it occupies. 0 = use the formula default",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "territorial_momentum_keep_fraction": {
+          "type": "number",
+          "description": "Fraction of the occupied provinces' total transfer cost that becomes territorial peace-demand budget. 0 = use the formula default",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_score_occupation_ramp_days": {
+          "type": "number",
+          "description": "Days from war start until province occupation reaches its full weight in war score",
+          "minimum": 1,
+          "maximum": 360
+        },
+        "war_score_collapse_min_days": {
+          "type": "integer",
+          "description": "Minimum war duration in days before total-collapse bypass of occupation ramp can activate",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "war_score_anti_farm_floor": {
+          "type": "number",
+          "description": "Anti-farm MULTIPLIER on the engaged score at zero recorded fighting, scaling to 1.0 at the intensity threshold. Dampens an unfought land grab without erasing it. Replaced an absolute cap whose 0 minimum zeroed genuine occupations and let the occupier read negative. 0 = use the formula default",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_score_anti_farm_intensity_threshold": {
+          "type": "number",
+          "description": "Accumulated battle intensity at which the anti-farm dampener reaches 1.0 (no dampening); below it the multiplier lerps down toward the floor",
+          "minimum": 0.01,
+          "maximum": 5
+        },
+        "war_score_enemy_collapse_strength_ratio": {
+          "type": "number",
+          "description": "Side-strength ratio at or above which an enemy counts as hopelessly outmatched, bypassing the anti-farm dampener. Requires the occupation share below as well. 0 = use the formula default",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "war_score_enemy_collapse_occupation_share": {
+          "type": "number",
+          "description": "Share of the enemy's provinces that must already be occupied before the outmatched-enemy bypass applies, so it describes this war rather than the two countries' sizes. 0 = use the formula default",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_score_coalition_influence": {
+          "type": "number",
+          "description": "RETIRED, ships at 0. Legacy multiplier on earned war score, superseded by war_score_strength_weight. A multiplier is the wrong shape on an additive scale. 0 here means retired, NOT unset",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "war_score_coalition_mult_min": {
+          "type": "number",
+          "description": "Lower clamp for the coalition earned-score multiplier",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_score_coalition_mult_max": {
+          "type": "number",
+          "description": "Upper clamp for the coalition earned-score multiplier",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "war_exhaustion_ally_relief_weight": {
+          "type": "number",
+          "description": "Fraction of friendly-ally strength that relieves the combat war-exhaustion term (small)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "peace_coalition_resistance_base": {
+          "type": "number",
+          "description": "Base defensive war-score cushion an allied co-belligerent earns, scaled by combined ally strength",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "peace_coalition_resistance_min": {
+          "type": "number",
+          "description": "Minimum coalition resistance cushion",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "peace_coalition_resistance_max": {
+          "type": "number",
+          "description": "Maximum coalition resistance cushion (war-score points)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "peace_coalition_balance_weight": {
+          "type": "number",
+          "description": "Weight of coalition balance in AI peace accept/hold-out decisions",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "peace_coalition_resistance_scale": {
+          "type": "number",
+          "description": "Scale converting the coalition resistance cushion (war-score points) into AI give-up resolve (peace-desire reduction per point)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "peace_accept_base_threshold": {
+          "type": "number",
+          "description": "Base war score threshold for AI to accept peace deal",
+          "minimum": 10,
+          "maximum": 100
+        },
+        "province_transfer_min_cost": {
+          "type": "number",
+          "description": "War score cost of the cheapest possible province in a peace deal (small, low-dev/pop)",
+          "minimum": 1,
+          "maximum": 50
+        },
+        "min_province_demand_budget": {
+          "type": "number",
+          "description": "Minimum executable peace budget before an AI demands any province. Align with province_transfer_min_cost so affordability gates land demands rather than a flat veto. 0 = use the formula default (10).",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "province_transfer_base_max_cost": {
+          "type": "number",
+          "description": "War score cost ceiling for ordinary (non-mega, non-capital) provinces; the dynamic world-relative score spans [min_cost, base_max_cost]",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "province_transfer_max_cost": {
+          "type": "number",
+          "description": "Absolute war score cost ceiling, reached only by mega provinces (huge population / world GDP share) and great-power capitals",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "province_transfer_gdp_weight": {
+          "type": "number",
+          "description": "Weight of the world-relative GDP term in the province transfer cost blend",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "province_transfer_infra_weight": {
+          "type": "number",
+          "description": "Weight of the world-relative infrastructure term in the province transfer cost blend",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "province_transfer_pop_weight": {
+          "type": "number",
+          "description": "Weight of the log-scale population term in the province transfer cost blend",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "province_transfer_gdp_log2_span": {
+          "type": "number",
+          "description": "GDP doublings above/below the world-average province that map to full/zero GDP scaling (log2 span; 6 = 64x)",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "province_transfer_pop_floor": {
+          "type": "number",
+          "description": "Population at which the population component of province cost begins scaling above the floor",
+          "minimum": 1,
+          "maximum": 10000000
+        },
+        "province_transfer_pop_log2_span": {
+          "type": "number",
+          "description": "Number of population doublings above the floor that maps to maximum population scaling (log2 span)",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "province_transfer_mega_pop_threshold": {
+          "type": "number",
+          "description": "Population at which a province starts counting as mega (cost can exceed base_max_cost)",
+          "minimum": 100000,
+          "maximum": 100000000
+        },
+        "province_transfer_mega_pop_saturation": {
+          "type": "number",
+          "description": "Population at which the mega population intensity saturates to 1 (cost reaches max_cost)",
+          "minimum": 100000,
+          "maximum": 200000000
+        },
+        "province_transfer_mega_gdp_share_threshold": {
+          "type": "number",
+          "description": "Share of world province GDP at which a province starts counting as mega",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "province_transfer_mega_gdp_share_saturation": {
+          "type": "number",
+          "description": "Share of world province GDP at which the mega GDP intensity saturates to 1",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "province_transfer_capital_min_mega": {
+          "type": "number",
+          "description": "Minimum mega intensity granted to any national capital (premium floor for micro-state capitals)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "province_transfer_capital_share_saturation": {
+          "type": "number",
+          "description": "Owning country's share of world GDP at which its capital's mega intensity saturates to 1 (great-power capitals cost max_cost)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "province_transfer_full_occupation_discount": {
+          "type": "number",
+          "description": "Cost multiplier applied to province demands when the proposer occupies 100% of the target's provinces (0.75 = 25% cheaper)",
+          "minimum": 0.1,
+          "maximum": 1
+        },
+        "full_occupation_peace_budget": {
+          "type": "number",
+          "description": "Peace demand budget granted when the proposer occupies 100% of the target's provinces",
+          "minimum": 50,
+          "maximum": 100
+        },
+        "truce_duration_months": {
+          "type": "integer",
+          "description": "Duration of truce after peace deal in months",
+          "minimum": 6,
+          "maximum": 240
+        },
+        "sanction_trade_penalty": {
+          "type": "number",
+          "description": "Trade multiplier per active sanction (0.5 = halve trade per sanction)",
+          "minimum": 0.01,
+          "maximum": 1.0
+        },
+        "trade_agreement_bonus": {
+          "type": "number",
+          "description": "Trade multiplier per active trade agreement (1.2 = 20% boost per agreement)",
+          "minimum": 1.0,
+          "maximum": 3.0
+        },
+        "relation_sanction_penalty": {
+          "type": "integer",
+          "description": "Relation impact per tick from active sanctions (negative)",
+          "minimum": -20,
+          "maximum": 0
+        },
+        "relation_trade_agreement_bonus": {
+          "type": "integer",
+          "description": "Relation improvement per tick from active trade agreements",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "ideology_relation_drift": {
+          "type": "number",
+          "description": "Monthly relation delta magnitude from ideological similarity or opposition",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "leadership_relation_drift": {
+          "type": "number",
+          "description": "Monthly relation delta magnitude from leadership-style similarity or opposition",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "ethnicity_relation_drift": {
+          "type": "number",
+          "description": "Monthly relation warming when two countries share a dominant ethnicity (one-sided; warms only)",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "religion_relation_drift": {
+          "type": "number",
+          "description": "Monthly relation warming when two countries share a dominant religion (one-sided; milder than ethnicity)",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "allied_to_rival_penalty": {
+          "type": "number",
+          "description": "Monthly relation penalty when a target is allied to one of our rivals",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "allied_to_rival_penalty_defensive_weight": {
+          "type": "number",
+          "description": "Weight applied to allied_to_rival_penalty when the alliance is defensive-only (CollectiveDefense)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "allied_to_enemy_penalty": {
+          "type": "number",
+          "description": "Monthly relation penalty when a target is allied to countries we strongly dislike",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "allied_to_friend_bonus": {
+          "type": "number",
+          "description": "Monthly relation bonus when a target is allied to countries we already trust",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "hostile_relation_threshold": {
+          "type": "integer",
+          "description": "Relation at or below this value counts as hostile for network spillover",
+          "minimum": -100,
+          "maximum": 0
+        },
+        "friendly_relation_threshold": {
+          "type": "integer",
+          "description": "Relation at or above this value counts as friendly for network spillover",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "max_dynamic_relation_delta": {
+          "type": "integer",
+          "description": "Maximum absolute monthly delta produced by dynamic relation logic",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "alliance_relation_score_weight": {
+          "type": "number",
+          "description": "Utility bonus weight from good relations when evaluating alliance formation",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "war_relation_hostility_score_weight": {
+          "type": "number",
+          "description": "Utility bonus weight from hostile relations when evaluating war declarations",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "relation_improve_low_threshold": {
+          "type": "integer",
+          "description": "Relations at or below this value receive the low-tier improve multiplier",
+          "minimum": -100,
+          "maximum": 100
+        },
+        "relation_improve_high_threshold": {
+          "type": "integer",
+          "description": "Relations above this value receive the high-tier improve multiplier",
+          "minimum": -100,
+          "maximum": 100
+        },
+        "relation_improve_low_multiplier": {
+          "type": "number",
+          "description": "Multiplier on improve amount when relation is at or below low threshold (e.g. 1.4 → +7 from base 5)",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "relation_improve_high_multiplier": {
+          "type": "number",
+          "description": "Multiplier on improve amount when relation is above high threshold (e.g. 0.8 → +4 from base 5)",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "neutral_zone_threshold": {
+          "type": "integer",
+          "description": "Relation range around zero where ideology/leadership drift is dampened",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "neutral_zone_dampen_factor": {
+          "type": "number",
+          "description": "Fraction of drift to suppress at relation=0 (0.6 = 60% suppression)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "peaceful_coexistence_bonus": {
+          "type": "integer",
+          "description": "Monthly relation bonus for negative pairs with neutral regional base and no active sanctions. 0 to disable.",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "improve_relations_mission_rival_multiplier": {
+          "type": "number",
+          "description": "Multiplier on Improve Relations mission tick bonus while target is marked as Rival",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "improve_relations_mission_sanction_multiplier": {
+          "type": "number",
+          "description": "Multiplier on Improve Relations mission tick bonus while sanctions are active",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "improve_relations_ceiling_offset": {
+          "type": "integer",
+          "description": "Global and mission relation ceiling offset applied above max(regional_base, 0)",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "technology": {
+      "type": "object",
+      "description": "Technology and research system balance parameters",
+      "required": [
+        "base_research_speed",
+        "education_research_modifier",
+        "building_research_multiplier",
+        "max_simultaneous_research",
+        "research_points_per_billion_gdp",
+        "tech_cost_tier_multiplier"
+      ],
+      "properties": {
+        "base_research_speed": {
+          "type": "number",
+          "description": "Base multiplier for research progress per tick (1.0 = normal)",
+          "minimum": 0.1,
+          "maximum": 5.0
+        },
+        "education_research_modifier": {
+          "type": "number",
+          "description": "How much average education level boosts research speed (0-1)",
+          "minimum": 0,
+          "maximum": 2.0
+        },
+        "building_research_multiplier": {
+          "type": "number",
+          "description": "Multiplier for building ResearchOutput contribution (1.0 = normal)",
+          "minimum": 0.1,
+          "maximum": 5.0
+        },
+        "max_simultaneous_research": {
+          "type": "integer",
+          "description": "Maximum number of technologies a country can research simultaneously",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "research_points_per_billion_gdp": {
+          "type": "number",
+          "description": "Research points generated per billion USD of research budget",
+          "minimum": 0.1,
+          "maximum": 100
+        },
+        "tech_cost_tier_multiplier": {
+          "type": "number",
+          "description": "Cost multiplier per tier above 1 (1.5 = 50% more per tier)",
+          "minimum": 1.0,
+          "maximum": 5.0
+        }
+      }
+    },
+    "ai_weights": {
+      "type": "object",
+      "description": "AI decision-making utility weights and thresholds",
+      "required": [
+        "war_declaration",
+        "alliance_formation",
+        "building_decision",
+        "budget_allocation",
+        "research_selection",
+        "general"
+      ],
+      "properties": {
+        "war_declaration": {
+          "type": "object",
+          "description": "War declaration utility weights",
+          "required": [
+            "territory_value",
+            "revenge",
+            "ideology_opposition",
+            "military_ratio",
+            "alliance_drag",
+            "war_exhaustion",
+            "economy_health",
+            "nuclear_deterrence",
+            "threshold"
+          ],
+          "properties": {
+            "territory_value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "revenge": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "ideology_opposition": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "military_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "alliance_drag": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "war_exhaustion": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "economy_health": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "nuclear_deterrence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "threshold": {
+              "type": "number",
+              "description": "Minimum utility to declare war",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "ideology_peace_shield": {
+              "type": "number",
+              "description": "War-utility multiplier for same-bloc nations without a casus belli (0-1; lower = stronger peace, 1 disables)",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "peace_shield_cb_threshold": {
+              "type": "number",
+              "description": "Casus-belli strength at which the ideological peace shield fully lifts",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "ethnicity_peace_shield": {
+              "type": "number",
+              "description": "War-utility multiplier for same-dominant-ethnicity nations without a casus belli (0-1; lower = stronger peace, 1 disables)",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "religion_peace_shield": {
+              "type": "number",
+              "description": "War-utility multiplier for same-dominant-religion nations without a casus belli (0-1; milder than ethnicity, 1 disables)",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "embargo_deterrent": {
+              "type": "number",
+              "description": "Negative war-utility weight for expected multilateral-sanction trade loss when warring without a casus belli (0 disables)",
+              "minimum": 0,
+              "maximum": 20
+            }
+          }
+        },
+        "alliance_formation": {
+          "type": "object",
+          "description": "Alliance formation utility weights",
+          "required": [
+            "shared_rivals",
+            "ideology_similarity",
+            "proximity",
+            "trade_volume",
+            "power_ratio_penalty_threshold",
+            "threshold"
+          ],
+          "properties": {
+            "shared_rivals": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "ideology_similarity": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "same_ethnicity": {
+              "type": "number",
+              "description": "Alliance-utility bonus when both countries share a dominant ethnicity",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "same_religion": {
+              "type": "number",
+              "description": "Alliance-utility bonus when both countries share a dominant religion (milder)",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "proximity": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "trade_volume": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "power_ratio_penalty_threshold": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "threshold": {
+              "type": "number",
+              "description": "Minimum utility to form alliance",
+              "minimum": 0,
+              "maximum": 20
+            }
+          }
+        },
+        "building_decision": {
+          "type": "object",
+          "description": "Building decision utility weights",
+          "required": [
+            "gdp_benefit",
+            "military_benefit",
+            "research_benefit"
+          ],
+          "properties": {
+            "gdp_benefit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "military_benefit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "research_benefit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "resource_production_benefit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "infrastructure_unlock_bonus": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "infrastructure_unlock_distance": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "queue_unlock_bonus": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "queue_unlock_distance": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "effect_scale_gdp_modifier": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "effect_scale_infrastructure": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "effect_scale_population_growth": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "effect_scale_defense_bonus": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "effect_scale_missile_silo": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "effect_scale_air_capacity": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "effect_scale_research_output": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "effect_scale_resource_production": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "effect_scale_missile_intercept": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "effect_scale_mobile_launcher": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "missile_early_warning_value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "candidate_pool_size": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 128
+            },
+            "max_builds_per_tick": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 32
+            },
+            "max_builds_per_province_per_tick": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            },
+            "min_candidate_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "cost_reference_gdp_fraction": {
+              "type": "number",
+              "minimum": 1e-06,
+              "maximum": 1
+            },
+            "min_cost_norm": {
+              "type": "number",
+              "minimum": 0.0001,
+              "maximum": 10
+            },
+            "max_cost_norm": {
+              "type": "number",
+              "minimum": 0.0001,
+              "maximum": 100
+            },
+            "cost_weight_min": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "cost_weight_max": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "runway_reference_months": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 120
+            },
+            "treasury_reserve_months": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 60
+            },
+            "slot_price_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "build_utility_scale": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "utility_clamp_min": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "utility_clamp_max": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "upkeep_surplus_fraction_cap": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "upkeep_free_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "upkeep_penalty_scale": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "upkeep_min_budget_gdp_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "saturation_province_share": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 10
+            },
+            "saturation_decay": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "province_repeat_type_penalty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "province_infra_slot_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "province_research_slot_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "class_dominance_threshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "class_repeat_penalty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "supply_chain_warn_threshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "supply_chain_min_multiplier": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "supply_chain_build_gate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "supply_chain_unlock_bonus": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "processing_order_tie_band": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "province_fitness_pop_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "province_fitness_infra_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "province_fitness_size_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "province_fitness_min": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "province_fitness_max": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "slot_unlock_value_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "slot_unlock_horizon_months": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 600
+            },
+            "passive_cap_infra_bonus": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "infra_floor_min_infrastructure": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 200
+            },
+            "infra_floor_min_population": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "infra_floor_reserved_picks": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 8
+            },
+            "country_queue_reserve_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_prosperity_gdp_pc_poor_log": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 12
+            },
+            "needs_prosperity_gdp_pc_rich_log": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 12
+            },
+            "needs_prosperity_trend_growth": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "needs_prosperity_recession_growth": {
+              "type": "number",
+              "minimum": -1,
+              "maximum": 1
+            },
+            "needs_prosperity_cyclical_unemployment_span": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "needs_prosperity_trade_deficit_gdp_span": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "needs_prosperity_default_debt_anchor": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "needs_prosperity_debt_excess_span": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "needs_prosperity_poverty_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_prosperity_growth_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_prosperity_unemployment_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_prosperity_trade_deficit_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_prosperity_debt_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_stability_unrest_reference": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            },
+            "needs_stability_max_province_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_stability_stability_floor": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            },
+            "needs_stability_unemployment_span": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "needs_stability_unrest_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_stability_gov_stability_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_stability_joblessness_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_security_threat_reference": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 20
+            },
+            "needs_security_encirclement_reference": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 20
+            },
+            "needs_security_defcon_peace_level": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 20
+            },
+            "needs_security_war_exhaustion_reference": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            },
+            "needs_security_war_exhaustion_damping": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_security_baseline_floor": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_security_threat_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_security_encirclement_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_security_war_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_security_defcon_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "needs_development_slack_ceiling": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "category_strategy_emphasis_strong": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_strategy_emphasis_mild": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_war_economic_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_war_military_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_war_infrastructure_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_war_research_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_war_social_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_war_defense_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_war_intelligence_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_peace_military_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_peace_research_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_peace_defense_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_peace_intelligence_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_economic_prosperity_gain": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_military_security_gain": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_military_prosperity_penalty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_military_stability_penalty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_infra_development_gain": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_infra_prosperity_penalty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_research_development_gain": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_research_prosperity_penalty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_research_stability_penalty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_social_stability_gain": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_social_prosperity_gain": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_defense_security_gain": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_defense_prosperity_penalty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_defense_stability_penalty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_intelligence_security_gain": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "need_intelligence_prosperity_penalty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_priority_min": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "category_priority_max": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "effect_scale_unrest_reduction": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unrest_benefit_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "unrest_aggression_blend": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "unrest_demand_reference": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            },
+            "unrest_demand_floor": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "resource_lane_category_blend": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "budget_allocation": {
+          "type": "object",
+          "description": "Budget allocation thresholds",
+          "required": [
+            "min_reserve",
+            "war_economy_military_pct",
+            "peace_economy_research_pct"
+          ],
+          "properties": {
+            "min_reserve": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.5
+            },
+            "war_economy_military_pct": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "peace_economy_research_pct": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "military_force": {
+          "type": "object",
+          "description": "AI force sizing and recruitment affordability gate",
+          "properties": {
+            "budget_maintenance_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "min_ground_units": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "max_ground_units": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5000
+            },
+            "max_batch_per_tick": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            },
+            "recruit_income_fraction_cap": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "recruit_treasury_runway_months": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 24
+            }
+          }
+        },
+        "war_planning": {
+          "type": "object",
+          "description": "Diplomatic escalation ladder (war-as-last-resort): per-phase durations, readiness gates, military-strength weights and ultimatum response tuning. Phase durations are in days. NOTE: AIWarPlanningSystem steps the ladder QUARTERLY, so a phase cannot advance sooner than the next quarterly tick regardless of the duration set here.",
+          "properties": {
+            "diplomatic_phase_duration": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
+            },
+            "economic_phase_duration": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
+            },
+            "military_phase_duration": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
+            },
+            "postwar_phase_duration": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
+            },
+            "ultimatum_phase_duration": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
+            },
+            "readiness_threshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "min_military_ratio_for_execute": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "personnel_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "tank_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "aircraft_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "ship_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "deescalation_relation_threshold": {
+              "type": "number",
+              "minimum": -100,
+              "maximum": 100
+            },
+            "deescalation_threat_floor": {
+              "type": "number",
+              "minimum": -100,
+              "maximum": 100
+            },
+            "ultimatum_base_accept_chance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "ultimatum_relation_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "ally_weight_military": {
+              "type": "number",
+              "description": "Fraction of a Military/CollectiveDefense/DefensePact ally's strength counted toward the target's defensive coalition.",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "ally_weight_political": {
+              "type": "number",
+              "description": "Fraction counted for a Political alignment. Deterrence, not a defence pact — 1.0 here means no AI may attack anything a great power is aligned with.",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "ally_weight_economic": {
+              "type": "number",
+              "description": "Fraction counted for Economic/TradeAgreement/InternationalOrg ties. Should normally be 0: a trade bloc is not a defensive commitment.",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "insolvency": {
+          "type": "object",
+          "description": "AI insolvency disband pass thresholds",
+          "properties": {
+            "disband_treasury_ratio_base": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "disband_stress_scale": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "disband_gdp_reference_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "disband_min_total_units": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "zombie_excess_maintenance_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "war_disband_excess_maintenance_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2
+            }
+          }
+        },
+        "research_selection": {
+          "type": "object",
+          "description": "Research selection utility weights",
+          "required": [
+            "military_branch_aggression_mult",
+            "economic_branch_econ_mult"
+          ],
+          "properties": {
+            "military_branch_aggression_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "economic_branch_econ_mult": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            }
+          }
+        },
+        "general": {
+          "type": "object",
+          "description": "General AI configuration",
+          "required": [
+            "max_actions_per_tick",
+            "grand_strategy_reeval_months",
+            "peace_war_exhaustion_decay",
+            "debug_logging_enabled",
+            "action_success_cooldown_ticks",
+            "action_failure_cooldown_multiplier",
+            "action_failure_cooldown_min_ticks",
+            "warning_throttle_ticks",
+            "siege_cancel_enemy_advantage_ratio",
+            "siege_cancel_min_friendly_units"
+          ],
+          "properties": {
+            "max_actions_per_tick": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "grand_strategy_reeval_months": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 120
+            },
+            "peace_war_exhaustion_decay": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "debug_logging_enabled": {
+              "type": "boolean"
+            },
+            "action_success_cooldown_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 360
+            },
+            "action_failure_cooldown_multiplier": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 1.0
+            },
+            "action_failure_cooldown_min_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 120
+            },
+            "warning_throttle_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 360
+            },
+            "siege_cancel_enemy_advantage_ratio": {
+              "type": "number",
+              "minimum": 1.0,
+              "maximum": 10.0
+            },
+            "siege_cancel_min_friendly_units": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200
+            }
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "object",
+      "description": "Event system balance parameters",
+      "required": [
+        "max_events_per_month",
+        "mtth_base_modifier",
+        "moderate_impact_threshold",
+        "major_impact_threshold",
+        "catastrophic_impact_threshold",
+        "moderate_impact_mtth_multiplier",
+        "major_impact_mtth_multiplier",
+        "catastrophic_impact_mtth_multiplier",
+        "event_check_interval_months",
+        "max_active_events_per_country",
+        "procedural_event_chance",
+        "cooldown_multiplier",
+        "generated_post_event_cooldown_days",
+        "reactive_post_event_cooldown_days",
+        "ai_event_evaluation_threshold",
+        "chain_event_delay_months",
+        "natural_disaster_frequency",
+        "max_flags_per_country",
+        "player_event_auto_decide_days"
+      ],
+      "properties": {
+        "max_events_per_month": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20,
+          "description": "Maximum events that can fire globally per month tick"
+        },
+        "mtth_base_modifier": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 10.0,
+          "description": "Global multiplier for all MTTH values (lower = more frequent events)"
+        },
+        "moderate_impact_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.2,
+          "description": "Annual growth-rate-equivalent threshold above which event rarity is moderately increased"
+        },
+        "major_impact_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.3,
+          "description": "Annual growth-rate-equivalent threshold above which event rarity is significantly increased"
+        },
+        "catastrophic_impact_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.5,
+          "description": "Annual growth-rate-equivalent threshold above which event rarity is heavily increased"
+        },
+        "moderate_impact_mtth_multiplier": {
+          "type": "number",
+          "minimum": 1.0,
+          "maximum": 10.0,
+          "description": "MTTH multiplier applied to events at or above the moderate impact threshold"
+        },
+        "major_impact_mtth_multiplier": {
+          "type": "number",
+          "minimum": 1.0,
+          "maximum": 10.0,
+          "description": "MTTH multiplier applied to events at or above the major impact threshold"
+        },
+        "catastrophic_impact_mtth_multiplier": {
+          "type": "number",
+          "minimum": 1.0,
+          "maximum": 10.0,
+          "description": "MTTH multiplier applied to events at or above the catastrophic impact threshold"
+        },
+        "event_check_interval_months": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12,
+          "description": "How often scripted/procedural events are evaluated (1 = every month)"
+        },
+        "max_active_events_per_country": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Maximum pending (unanswered) events per country"
+        },
+        "procedural_event_chance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1.0,
+          "description": "Base probability per month for a country to receive a procedural event"
+        },
+        "cooldown_multiplier": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 10.0,
+          "description": "Global multiplier for all event cooldown durations"
+        },
+        "generated_post_event_cooldown_days": {
+          "type": "integer",
+          "minimum": 60,
+          "maximum": 720,
+          "description": "Post-event cooldown (in days/ticks) applied when scripted or procedural events are queued"
+        },
+        "reactive_post_event_cooldown_days": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 120,
+          "description": "Post-event cooldown (in days/ticks) applied when reactive events are queued"
+        },
+        "ai_event_evaluation_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10.0,
+          "description": "Minimum utility score for AI to consider an event option"
+        },
+        "chain_event_delay_months": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 24,
+          "description": "Default delay before chain events fire (can be overridden per event)"
+        },
+        "natural_disaster_frequency": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5.0,
+          "description": "Multiplier for natural disaster MTTH (lower = more frequent)"
+        },
+        "max_flags_per_country": {
+          "type": "integer",
+          "minimum": 16,
+          "maximum": 256,
+          "description": "Maximum event flags per country entity"
+        },
+        "player_event_auto_decide_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 365,
+          "description": "Days before an unanswered player event automatically selects the default option"
+        }
+      }
+    },
+    "fog_of_war": {
+      "type": "object",
+      "description": "Fog of war visibility system parameters",
+      "required": [
+        "enabled",
+        "owned_province_vision_radius",
+        "army_vision_radius",
+        "allied_vision_sharing",
+        "satellite_tier1_vision_bonus",
+        "satellite_tier2_vision_bonus",
+        "satellite_tier3_vision_bonus",
+        "explored_desaturation",
+        "explored_darken",
+        "ai_vision_update_interval_ticks",
+        "ai_threat_intel_degradation"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether fog of war is active"
+        },
+        "owned_province_vision_radius": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Vision radius (province hops) from owned provinces"
+        },
+        "army_vision_radius": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Vision radius (province hops) from army positions"
+        },
+        "allied_vision_sharing": {
+          "type": "boolean",
+          "description": "Whether allied countries share vision"
+        },
+        "alliance_sharing_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Alliance types that grant shared vision (Military, DefensePact)"
+        },
+        "satellite_tier1_vision_bonus": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Additional vision radius from satellite_constellation tech"
+        },
+        "satellite_tier2_vision_bonus": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Additional vision radius from space_surveillance tech"
+        },
+        "satellite_tier3_vision_bonus": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Additional vision radius from space_based_radar tech"
+        },
+        "fog_color_r": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Red channel of the fog overlay drawn over explored-but-unseen territory (0-1)."
+        },
+        "fog_color_g": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Green channel of the fog overlay (0-1)."
+        },
+        "fog_color_b": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Blue channel of the fog overlay (0-1)."
+        },
+        "fog_color_a": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Opacity of the fog overlay (0-1). Higher hides more of the map underneath."
+        },
+        "terra_incognita_color_r": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Red channel of the unexplored-territory overlay (0-1)."
+        },
+        "terra_incognita_color_g": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Green channel of the unexplored-territory overlay (0-1)."
+        },
+        "terra_incognita_color_b": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Blue channel of the unexplored-territory overlay (0-1)."
+        },
+        "terra_incognita_color_a": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Opacity of the unexplored-territory overlay (0-1)."
+        },
+        "explored_desaturation": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "How much to desaturate explored-but-not-visible provinces (0=full color, 1=grayscale)"
+        },
+        "explored_darken": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "How much to darken explored-but-not-visible provinces (0=full bright, 1=black)"
+        },
+        "ai_vision_update_interval_ticks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30,
+          "description": "How many ticks between AI country vision recalculations"
+        },
+        "ai_threat_intel_degradation": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "How much to degrade AI threat estimates for unseen countries"
+        },
+        "coastal_vision_radius": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "description": "Vision radius into sea from owned coastal provinces"
+        },
+        "initial_neighbor_exploration": {
+          "type": "boolean",
+          "description": "Whether neighboring provinces of owned territory start as Explored"
+        },
+        "initial_universal_exploration": {
+          "type": "boolean",
+          "description": "Whether all sovereign-owned provinces start as Explored for all countries at game start (modern-era intelligence model). Default true."
+        },
+        "embassy_vision_radius": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Vision radius (province hops) around host capital from embassies. Default 1."
+        },
+        "trade_agreement_vision": {
+          "type": "boolean",
+          "description": "Whether active trade agreements maintain Explored visibility of partner territory. Default true."
+        },
+        "ally_full_vision_min_relation": {
+          "type": "integer",
+          "minimum": -100,
+          "maximum": 100,
+          "description": "Minimum bilateral relation for allied vision to grant full Visible (troop-level). Default 50."
+        },
+        "ally_explored_min_relation": {
+          "type": "integer",
+          "minimum": -100,
+          "maximum": 100,
+          "description": "Minimum bilateral relation for allied vision to grant Explored (terrain only). Default 0."
+        },
+        "fog_edge_radius_degrees": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Smooth fog transition zone width in equirectangular degrees for GPU distance field. Default 2.0."
+        }
+      }
+    },
+    "map_interaction": {
+      "type": "object",
+      "description": "Map picking/interaction tunables for micro (sub-pixel) provinces and marker zoom scaling",
+      "properties": {
+        "micro_pick_enabled": {
+          "type": "boolean",
+          "description": "Enable nearest-centroid pick fallback for micro provinces (Malta, Vatican, ...)"
+        },
+        "micro_pick_base_radius_px": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "Base screen-space pixel radius for the micro-province pick fallback"
+        },
+        "micro_pick_min_radius_px": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "Lower clamp on the zoom-scaled micro pick radius (px)"
+        },
+        "micro_pick_max_radius_px": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 400,
+          "description": "Upper clamp on the zoom-scaled micro pick radius (px)"
+        },
+        "micro_pick_steal_factor": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Fraction of the pick radius within which a micro province may steal a click that landed on non-micro land"
+        },
+        "marker_zoom_min_multiplier": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 1,
+          "description": "Lower clamp on the unit-marker zoom scale multiplier so markers shrink at deep zoom instead of covering micro provinces"
+        }
+      }
+    },
+    "satellite": {
+      "type": "object",
+      "description": "Player-deployable reconnaissance satellite parameters (launch, upkeep, vision, globe visuals)",
+      "properties": {
+        "launch_cost": {
+          "type": "number",
+          "minimum": 0,
+          "description": "One-time treasury cost to launch a satellite"
+        },
+        "upkeep_per_month": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Monthly treasury maintenance per active satellite"
+        },
+        "build_time_months": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 60,
+          "description": "Months from launch order to the satellite reaching orbit"
+        },
+        "base_vision_radius_hops": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Base fog-of-war reveal radius (province hops) around the satellite, before tech bonus"
+        },
+        "max_per_facility": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20,
+          "description": "Max satellites a country may field per completed satellite_launch_facility"
+        },
+        "orbital_altitude": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Height above the globe surface (world units) for the rendered satellite mesh"
+        },
+        "marker_scale": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Uniform scale of the satellite mesh on the globe"
+        },
+        "pick_radius_px": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "Screen-space pixel radius for clicking/selecting a satellite on the globe"
+        },
+        "move_smoothing": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 60,
+          "description": "Glide rate (per second) the rendered satellite eases toward its target lat/lon when repositioned"
+        },
+        "ring_color_r": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Red channel of the satellite orbit ring drawn on the globe (0-1)."
+        },
+        "ring_color_g": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Green channel of the satellite orbit ring (0-1)."
+        },
+        "ring_color_b": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Blue channel of the satellite orbit ring (0-1)."
+        },
+        "ring_color_a": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Opacity of the satellite orbit ring (0-1)."
+        },
+        "glow_intensity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Emissive multiplier applied to the owner-color glow"
+        },
+        "prewarm_pool_size": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 64,
+          "description": "Number of render entities pre-instantiated into the satellite pool at startup"
+        }
+      }
+    },
+    "political_drift": {
+      "type": "object",
+      "description": "Political drift, elections, coups, revolutions, and AI personality modifiers",
+      "required": [
+        "war_right_shift_per_month",
+        "war_social_authoritarian_shift",
+        "peace_moderation_rate",
+        "economic_crisis_populist_shift",
+        "economic_crisis_gdp_growth_threshold",
+        "regional_influence_weight",
+        "unrest_extremism_threshold",
+        "unrest_extremism_shift_rate",
+        "max_drift_magnitude",
+        "spring_back_rate",
+        "election_ideology_shift_chance",
+        "election_stability_boost",
+        "election_cycle_democracy",
+        "election_cycle_hybrid",
+        "coup_base_probability",
+        "coup_stability_threshold",
+        "coup_corruption_weight",
+        "coup_military_investment_weight",
+        "coup_stability_penalty",
+        "coup_cooldown_months",
+        "coup_democracy_resilience_multiplier",
+        "coup_hybrid_resilience_multiplier",
+        "revolution_base_probability",
+        "revolution_unrest_threshold",
+        "revolution_ideology_distance_weight",
+        "revolution_stability_penalty",
+        "revolution_cooldown_months",
+        "government_change_cooldown_months",
+        "max_disruptive_changes_per_month",
+        "peaceful_transition_stability_threshold",
+        "peaceful_transition_corruption_threshold",
+        "peaceful_transition_probability",
+        "leader_death_base_probability",
+        "leader_death_war_modifier",
+        "ai_personality_drift_rate",
+        "ai_personality_max_deviation",
+        "right_shift_aggression_mod",
+        "right_shift_military_mod",
+        "right_shift_diplomacy_penalty",
+        "left_shift_diplomacy_mod",
+        "left_shift_economic_mod",
+        "left_shift_military_penalty",
+        "extremism_isolationism_mod",
+        "extremism_alliance_loyalty_penalty",
+        "law_vote_pass_threshold",
+        "law_support_stance_threshold",
+        "law_debate_months",
+        "law_decree_resentment",
+        "law_relation_drift_scale",
+        "ai_law_eval_chance",
+        "ai_law_min_support_margin"
+      ],
+      "properties": {
+        "war_right_shift_per_month": {
+          "type": "number",
+          "description": "Monthly rightward political drift while at war",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "war_social_authoritarian_shift": {
+          "type": "number",
+          "description": "Monthly authoritarian shift on social axis while at war",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "peace_moderation_rate": {
+          "type": "number",
+          "description": "Monthly drift toward political center during peacetime",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "economic_crisis_populist_shift": {
+          "type": "number",
+          "description": "Monthly populist drift during economic crisis",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "economic_crisis_gdp_growth_threshold": {
+          "type": "number",
+          "description": "GDP growth rate below which economic crisis populist drift triggers (negative value)",
+          "minimum": -1,
+          "maximum": 0
+        },
+        "regional_influence_weight": {
+          "type": "number",
+          "description": "Weight of neighboring countries ideology on political drift",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "unrest_extremism_threshold": {
+          "type": "number",
+          "description": "Unrest level above which extremism drift activates",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "unrest_extremism_shift_rate": {
+          "type": "number",
+          "description": "Monthly extremism drift rate when unrest exceeds threshold",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "max_drift_magnitude": {
+          "type": "number",
+          "description": "Maximum total political drift magnitude from baseline ideology",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "spring_back_rate": {
+          "type": "number",
+          "description": "Rate at which ideology springs back toward baseline when drift causes exceed",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "election_ideology_shift_chance": {
+          "type": "number",
+          "description": "Probability of ideology shift during an election cycle",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "election_stability_boost": {
+          "type": "number",
+          "description": "Stability boost granted by a successful election",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "election_cycle_democracy": {
+          "type": "integer",
+          "description": "Election cycle length in months for democratic governments",
+          "minimum": 12,
+          "maximum": 120
+        },
+        "election_cycle_hybrid": {
+          "type": "integer",
+          "description": "Election cycle length in months for hybrid regime governments",
+          "minimum": 12,
+          "maximum": 120
+        },
+        "coup_base_probability": {
+          "type": "number",
+          "description": "Base monthly probability of a coup attempt",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "coup_stability_threshold": {
+          "type": "number",
+          "description": "Stability below which coups become possible",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "coup_corruption_weight": {
+          "type": "number",
+          "description": "Weight of corruption in coup probability calculation",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "coup_military_investment_weight": {
+          "type": "number",
+          "description": "Weight of military investment in coup probability calculation",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "coup_stability_penalty": {
+          "type": "number",
+          "description": "Stability penalty applied when a coup occurs (negative value)",
+          "minimum": -100,
+          "maximum": 0
+        },
+        "coup_cooldown_months": {
+          "type": "integer",
+          "description": "Minimum months between coup attempts",
+          "minimum": 1,
+          "maximum": 120
+        },
+        "revolution_base_probability": {
+          "type": "number",
+          "description": "Base monthly probability of a revolution",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "revolution_unrest_threshold": {
+          "type": "number",
+          "description": "Unrest level above which revolutions become possible",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "revolution_ideology_distance_weight": {
+          "type": "number",
+          "description": "Weight of ideology distance from population in revolution probability",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "revolution_stability_penalty": {
+          "type": "number",
+          "description": "Stability penalty applied when a revolution occurs (negative value)",
+          "minimum": -100,
+          "maximum": 0
+        },
+        "revolution_cooldown_months": {
+          "type": "integer",
+          "description": "Minimum months between revolution attempts",
+          "minimum": 1,
+          "maximum": 120
+        },
+        "coup_democracy_resilience_multiplier": {
+          "type": "number",
+          "description": "Resilience multiplier applied to coup probability for democratic governments",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "coup_hybrid_resilience_multiplier": {
+          "type": "number",
+          "description": "Resilience multiplier applied to coup probability for hybrid governments",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "government_change_cooldown_months": {
+          "type": "integer",
+          "description": "Minimum months between any government change events",
+          "minimum": 1,
+          "maximum": 120
+        },
+        "max_disruptive_changes_per_month": {
+          "type": "integer",
+          "description": "Maximum disruptive government changes that can fire globally in a single month; 0 disables the cap",
+          "minimum": 0,
+          "maximum": 32
+        },
+        "peaceful_transition_stability_threshold": {
+          "type": "number",
+          "description": "Minimum stability for peaceful government transitions to occur",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "peaceful_transition_corruption_threshold": {
+          "type": "number",
+          "description": "Maximum corruption level for peaceful government transitions",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "peaceful_transition_probability": {
+          "type": "number",
+          "description": "Monthly probability of peaceful government transition when conditions are met",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "leader_death_base_probability": {
+          "type": "number",
+          "description": "Base monthly probability of leader death from natural causes",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "leader_death_war_modifier": {
+          "type": "number",
+          "description": "Multiplier to leader death probability while at war",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "ai_personality_drift_rate": {
+          "type": "number",
+          "description": "Monthly rate at which AI personality traits drift toward ideology",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ai_personality_max_deviation": {
+          "type": "number",
+          "description": "Maximum deviation of AI personality traits from baseline",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "right_shift_aggression_mod": {
+          "type": "number",
+          "description": "AI aggression modifier from rightward political shift",
+          "minimum": -2,
+          "maximum": 2
+        },
+        "right_shift_military_mod": {
+          "type": "number",
+          "description": "AI military spending modifier from rightward political shift",
+          "minimum": -2,
+          "maximum": 2
+        },
+        "right_shift_diplomacy_penalty": {
+          "type": "number",
+          "description": "AI diplomacy penalty from rightward political shift",
+          "minimum": -2,
+          "maximum": 2
+        },
+        "left_shift_diplomacy_mod": {
+          "type": "number",
+          "description": "AI diplomacy modifier from leftward political shift",
+          "minimum": -2,
+          "maximum": 2
+        },
+        "left_shift_economic_mod": {
+          "type": "number",
+          "description": "AI economic focus modifier from leftward political shift",
+          "minimum": -2,
+          "maximum": 2
+        },
+        "left_shift_military_penalty": {
+          "type": "number",
+          "description": "AI military penalty from leftward political shift",
+          "minimum": -2,
+          "maximum": 2
+        },
+        "extremism_isolationism_mod": {
+          "type": "number",
+          "description": "AI isolationism modifier from political extremism",
+          "minimum": -2,
+          "maximum": 2
+        },
+        "extremism_alliance_loyalty_penalty": {
+          "type": "number",
+          "description": "AI alliance loyalty penalty from political extremism",
+          "minimum": -2,
+          "maximum": 2
+        },
+        "law_vote_pass_threshold": {
+          "type": "number",
+          "description": "Parliament support fraction required to pass a national law change",
+          "minimum": 0.3,
+          "maximum": 0.9
+        },
+        "law_support_stance_threshold": {
+          "type": "number",
+          "description": "Bloc stance above which a party votes for a law option (below negative threshold: against)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "law_debate_months": {
+          "type": "integer",
+          "description": "Months of parliamentary debate before a passed law applies (decrees skip this)",
+          "minimum": 0,
+          "maximum": 24
+        },
+        "law_decree_resentment": {
+          "type": "number",
+          "description": "ClandestineResentment added when decreeing a law the population fully opposes",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "law_relation_drift_scale": {
+          "type": "number",
+          "description": "Monthly relation delta per law-affinity dot point between two countries",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ai_law_eval_chance": {
+          "type": "number",
+          "description": "Chance an AI attempts one law move on its monthly slot when it wants a change",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ai_law_min_support_margin": {
+          "type": "number",
+          "description": "Extra parliament support margin above the pass threshold an AI democracy requires",
+          "minimum": 0,
+          "maximum": 0.5
+        }
+      }
+    },
+    "envoys": {
+      "type": "object",
+      "description": "Strategic Assets / specialist envoy system tunables.",
+      "required": [
+        "min_specialists_per_country",
+        "max_specialists_per_country",
+        "capacity_gdp_weight",
+        "capacity_prestige_weight",
+        "capacity_diplomatic_weight",
+        "capacity_step",
+        "infiltration_duration_days",
+        "established_duration_days",
+        "deep_state_unlock_days",
+        "exposure_burn_threshold",
+        "exposure_decay_per_day_neutral",
+        "exposure_decay_per_day_at_war",
+        "burn_out_relation_penalty",
+        "burn_out_persona_non_grata_days",
+        "recall_cooldown_days",
+        "signature_cooldown_days",
+        "recruit_treasury_cost_usd",
+        "deep_state_required_tech",
+        "experience_per_successful_op",
+        "experience_per_failed_op",
+        "trait_unlock_thresholds",
+        "ai_deploy_chance_min",
+        "ai_deploy_chance_max",
+        "ai_hostile_relation_threshold",
+        "max_incoming_hostile_envoys"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "min_specialists_per_country": {
+          "type": "integer",
+          "description": "Minimum specialist capacity floor per country.",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "max_specialists_per_country": {
+          "type": "integer",
+          "description": "Maximum specialist capacity ceiling for any country.",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "capacity_gdp_weight": {
+          "type": "number",
+          "description": "GDP contribution weight for specialist capacity power.",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "capacity_prestige_weight": {
+          "type": "number",
+          "description": "Prestige contribution weight for specialist capacity power.",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "capacity_diplomatic_weight": {
+          "type": "number",
+          "description": "Diplomatic-weight contribution weight for specialist capacity power.",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "capacity_step": {
+          "type": "number",
+          "description": "Composite-power points needed to gain one specialist above floor.",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "infiltration_duration_days": {
+          "type": "integer",
+          "description": "Days an envoy spends in Infiltration phase before auto-advancing to Established.",
+          "minimum": 30,
+          "maximum": 365
+        },
+        "established_duration_days": {
+          "type": "integer",
+          "description": "Days an envoy spends in Established phase before becoming eligible for Deep State.",
+          "minimum": 60,
+          "maximum": 730
+        },
+        "deep_state_unlock_days": {
+          "type": "integer",
+          "description": "Total days deployed (infiltration + established) before Deep State phase unlocks.",
+          "minimum": 180,
+          "maximum": 1095
+        },
+        "exposure_burn_threshold": {
+          "type": "number",
+          "description": "Exposure value at which the envoy is burned (recalled, target gets diplomatic incident).",
+          "minimum": 0.5,
+          "maximum": 1.0
+        },
+        "exposure_decay_per_day_neutral": {
+          "type": "number",
+          "description": "Exposure decay per day while envoy is idle and target is at peace.",
+          "minimum": 0.0,
+          "maximum": 0.01
+        },
+        "exposure_decay_per_day_at_war": {
+          "type": "number",
+          "description": "Exposure decay per day while owner and target are at war (counter-intel scrutiny is higher; usually 0 or negative-effective).",
+          "minimum": 0.0,
+          "maximum": 0.01
+        },
+        "burn_out_relation_penalty": {
+          "type": "number",
+          "description": "Bilateral relation hit applied to owner when an envoy is burned in target.",
+          "minimum": -200,
+          "maximum": 0
+        },
+        "burn_out_persona_non_grata_days": {
+          "type": "integer",
+          "description": "Days the owner is locked out of redeploying any envoy to the same target after a burn (PersonaNonGrata diplomatic state).",
+          "minimum": 0,
+          "maximum": 1825
+        },
+        "recall_cooldown_days": {
+          "type": "integer",
+          "description": "Days an envoy is unavailable after voluntary recall before they can be redeployed.",
+          "minimum": 0,
+          "maximum": 365
+        },
+        "signature_cooldown_days": {
+          "type": "integer",
+          "description": "Cooldown on Deep State signature ability per envoy.",
+          "minimum": 30,
+          "maximum": 730
+        },
+        "recruit_treasury_cost_usd": {
+          "type": "number",
+          "description": "Treasury cost paid to recruit one specialist envoy.",
+          "minimum": 0,
+          "maximum": 1000000000000
+        },
+        "deep_state_required_tech": {
+          "type": "string",
+          "description": "Doctrine gate key (e.g. 'intelligence_t3') required for Deep State phase to unlock for any envoy."
+        },
+        "experience_per_successful_op": {
+          "type": "integer",
+          "description": "Experience points gained when an envoy contributes to a successful covert op.",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "experience_per_failed_op": {
+          "type": "integer",
+          "description": "Experience points gained when an envoy is involved in a failed (but not detected) op.",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "trait_unlock_thresholds": {
+          "type": "array",
+          "description": "Experience thresholds at which a new trait roll is offered.",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "ai_deploy_chance_min": {
+          "type": "number",
+          "description": "Per idle envoy per quarter, the deploy probability for a zero-aggression AI (lerp floor).",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ai_deploy_chance_max": {
+          "type": "number",
+          "description": "Per idle envoy per quarter, the deploy probability for a max-aggression AI (lerp ceiling).",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ai_hostile_relation_threshold": {
+          "type": "integer",
+          "description": "A country must have relation strictly below this for the AI to consider it a hostile envoy target. Must be negative: 0 would make every country with any negative relation a target.",
+          "minimum": -200,
+          "maximum": -1
+        },
+        "max_incoming_hostile_envoys": {
+          "type": "integer",
+          "description": "Cap on how many foreign AI envoys may target the same country simultaneously (anti pile-on).",
+          "minimum": 1,
+          "maximum": 50
+        }
+      }
+    },
+    "step42_diplomacy": {
+      "type": "object",
+      "description": "Step 4.2 diplomacy system balance parameters",
+      "properties": {
+        "guarantee": {
+          "type": "object",
+          "properties": {
+            "expire_ticks": {
+              "type": "integer"
+            },
+            "relation_bonus": {
+              "type": "integer"
+            },
+            "break_prestige_penalty": {
+              "type": "integer"
+            },
+            "break_ally_relation_penalty": {
+              "type": "integer"
+            },
+            "min_military_ratio": {
+              "type": "number"
+            },
+            "honor_relation_bonus": {
+              "type": "integer"
+            },
+            "break_relation_penalty": {
+              "type": "integer"
+            }
+          },
+          "description": "Independence guarantees: how long they last, what honouring or breaking one does to prestige and relations."
+        },
+        "rivals": {
+          "type": "object",
+          "properties": {
+            "max_rivals": {
+              "type": "integer"
+            },
+            "spy_cost_reduction": {
+              "type": "number"
+            },
+            "ally_relation_penalty": {
+              "type": "integer"
+            },
+            "rival_relation_modifier": {
+              "type": "integer"
+            },
+            "strength_tolerance": {
+              "type": "number"
+            },
+            "redesignate_cooldown_ticks": {
+              "type": "integer"
+            }
+          },
+          "description": "Declared rivalries: how many are allowed, what they cost, and how they colour relations."
+        },
+        "aggressive_expansion": {
+          "type": "object",
+          "description": "Aggressive Expansion (AE) balance settings and decay rates",
+          "properties": {
+            "province_taken_ae": {
+              "type": "number"
+            },
+            "capital_occupied_ae": {
+              "type": "number"
+            },
+            "humiliation_ae": {
+              "type": "number"
+            },
+            "guarantee_break_ae": {
+              "type": "number"
+            },
+            "nuclear_strike_ae": {
+              "type": "number"
+            },
+            "nuclear_strike_ae_subsequent": {
+              "type": "number"
+            },
+            "province_ae_warscore_fraction": {
+              "type": "number"
+            },
+            "decay_per_tick": {
+              "type": "number"
+            },
+            "full_annexation_ae_bonus": {
+              "type": "number"
+            },
+            "coalition_threshold": {
+              "type": "number"
+            },
+            "max_ae": {
+              "type": "number"
+            },
+            "diplo_point_ae_reduction": {
+              "type": "number"
+            }
+          }
+        },
+        "coalition": {
+          "type": "object",
+          "properties": {
+            "min_members": {
+              "type": "integer"
+            },
+            "war_declaration_delay_ticks": {
+              "type": "integer"
+            },
+            "strength_ratio": {
+              "type": "number"
+            },
+            "eval_interval_ticks": {
+              "type": "integer"
+            }
+          },
+          "description": "Coalitions that form against an over-powerful country: size, timing and strength thresholds."
+        },
+        "opinion_modifiers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "How much each remembered action shifts one country's opinion of another."
+        },
+        "sphere": {
+          "type": "object",
+          "properties": {
+            "max_score_ratio": {
+              "type": "number"
+            },
+            "min_relation": {
+              "type": "integer"
+            },
+            "relation_bonus": {
+              "type": "integer"
+            },
+            "rival_sphere_penalty": {
+              "type": "integer"
+            },
+            "leave_relation_penalty": {
+              "type": "integer"
+            },
+            "great_power_count": {
+              "type": "integer"
+            }
+          },
+          "description": "Spheres of influence: who can lead one, the relations needed to join, and the cost of leaving."
+        },
+        "ai_weights": {
+          "type": "object",
+          "properties": {
+            "guarantee_diplomacy_threshold": {
+              "type": "number"
+            },
+            "rival_aggression_threshold": {
+              "type": "number"
+            },
+            "sphere_invite_diplomacy_threshold": {
+              "type": "number"
+            }
+          },
+          "description": "Thresholds that decide how readily the AI reaches for these diplomatic tools."
+        }
+      }
+    },
+    "advanced_diplomacy": {
+      "type": "object",
+      "description": "Advanced diplomacy systems balance parameters",
+      "properties": {
+        "multilateral_sanctions": {
+          "type": "object",
+          "description": "UN-backed sanctions: voting, the economic damage they inflict, and how targets evade them."
+        },
+        "trade_blocs": {
+          "type": "object",
+          "description": "Trade blocs: membership limits, the trade and GDP bonuses of joining, and the cost of leaving."
+        },
+        "treaties": {
+          "type": "object",
+          "description": "Arms-limitation, non-proliferation, climate and defence treaties: their benefits and the penalty for violating them."
+        },
+        "economic_warfare": {
+          "type": "object",
+          "description": "Economic weapons short of war: currency manipulation, trade wars, aid packages and debt traps."
+        },
+        "ai_weights": {
+          "type": "object",
+          "description": "Thresholds that decide how readily the AI uses sanctions, blocs, treaties and economic warfare."
+        }
+      }
+    },
+    "game_flow": {
+      "type": "object",
+      "description": "Game flow and save balance parameters",
+      "properties": {
+        "autosave_interval_seconds": {
+          "type": "integer",
+          "description": "Seconds between automatic saves."
+        },
+        "autosave_enabled": {
+          "type": "boolean",
+          "description": "Whether the game saves itself automatically."
+        },
+        "max_save_slots": {
+          "type": "integer",
+          "description": "How many save files are kept before the oldest is replaced."
+        },
+        "default_player_country": {
+          "type": "string",
+          "description": "Three-letter code of the country pre-selected when starting a new game."
+        }
+      }
+    },
+    "world_order": {
+      "type": "object",
+      "description": "World order and global prestige parameters",
+      "properties": {
+        "g7_gdp_modifier": {
+          "type": "number",
+          "description": "Share added to a G7 member's GDP growth, representing privileged access to capital and markets (0.05 = +5%)."
+        },
+        "g7_diplomatic_weight": {
+          "type": "number",
+          "description": "Extra diplomatic weight a G7 seat carries when votes and influence are tallied."
+        },
+        "g7_prestige": {
+          "type": "number",
+          "description": "Prestige granted for holding a G7 seat."
+        },
+        "g20_gdp_modifier": {
+          "type": "number",
+          "description": "Share added to a G20 member's GDP growth (0.02 = +2%)."
+        },
+        "g20_trade_modifier": {
+          "type": "number",
+          "description": "Share added to a G20 member's trade income (0.02 = +2%)."
+        },
+        "g20_diplomatic_weight": {
+          "type": "number",
+          "description": "Extra diplomatic weight a G20 seat carries."
+        },
+        "g20_prestige": {
+          "type": "number",
+          "description": "Prestige granted for holding a G20 seat."
+        },
+        "unsc_p5_prestige": {
+          "type": "number",
+          "description": "Prestige granted to a permanent UN Security Council member."
+        },
+        "unsc_p5_diplomatic_weight": {
+          "type": "number",
+          "description": "Extra diplomatic weight a permanent Security Council seat carries, reflecting the veto."
+        },
+        "unsc_nonperm_prestige": {
+          "type": "number",
+          "description": "Prestige granted to a non-permanent Security Council member."
+        },
+        "unsc_nonperm_diplomatic_weight": {
+          "type": "number",
+          "description": "Extra diplomatic weight a non-permanent Security Council seat carries."
+        },
+        "un_member_prestige": {
+          "type": "number",
+          "description": "Prestige granted for plain UN membership."
+        },
+        "base_prestige_from_gdp_per_trillion": {
+          "type": "number",
+          "description": "Prestige earned per trillion of GDP, so larger economies carry more weight."
+        },
+        "base_prestige_from_military_per_million": {
+          "type": "number",
+          "description": "Prestige earned per million troops fielded."
+        },
+        "prestige_decay_rate": {
+          "type": "number",
+          "description": "Share of prestige lost each month, so past glory fades unless it is renewed (0.01 = 1% per month)."
+        },
+        "max_prestige": {
+          "type": "number",
+          "description": "Ceiling on a country's prestige."
+        },
+        "veto_relation_penalty": {
+          "type": "number",
+          "description": "Relation change suffered with the country whose resolution you vetoed."
+        }
+      }
+    },
+    "intelligence": {
+      "type": "object",
+      "description": "Espionage and intelligence balance parameters"
+    }
+  }
+}

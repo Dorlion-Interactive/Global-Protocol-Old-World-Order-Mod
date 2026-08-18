@@ -37,6 +37,16 @@
                     "pattern": "^#[0-9a-fA-F]{6}$",
                     "description": "Hex map color, e.g. '#3a7bd5'"
                 },
+                "mapColorVibrant": {
+                    "type": "string",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "description": "Optional vibrant palette variant of mapColor. Falls back to mapColor when absent."
+                },
+                "mapColorGloomy": {
+                    "type": "string",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "description": "Optional gloomy palette variant of mapColor. Falls back to mapColor when absent."
+                },
                 "flagPngPath": {
                     "type": "string",
                     "description": "Relative path (from mod root) to a 128×80 flag PNG"

@@ -1,0 +1,327 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "event.schema.json",
+  "title": "Event",
+  "description": "Event definition for the event engine. Supports scripted, procedural, and reactive events.",
+  "type": "object",
+  "required": ["id", "type", "options"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique event identifier (snake_case)"
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title for the event popup"
+    },
+    "title_key": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]+$",
+      "description": "Localization key for event title (preferred over literal text)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Markdown-supported event text. Supports {variable} placeholders for procedural events."
+    },
+    "description_key": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]+$",
+      "description": "Localization key for event description (preferred over literal text)"
+    },
+    "image": {
+      "type": "string",
+      "description": "Event illustration path (relative to StreamingAssets/Events/)"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["scripted", "procedural", "reactive"]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "geopolitical_crisis",
+        "economic_shock",
+        "military_incident",
+        "diplomatic_opportunity",
+        "technology_breakthrough",
+        "natural_disaster",
+        "internal_politics",
+        "social_cultural"
+      ],
+      "description": "Event category for filtering and distribution control"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 5,
+      "description": "Higher priority events are evaluated first and take precedence"
+    },
+    "fire_once": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, event can only fire once per country per game. Each country tracks this independently in its FiredEventElement buffer, which is persisted across save/load."
+    },
+    "cooldown_months": {
+      "type": "integer",
+      "default": 0,
+      "description": "Minimum months between firings (0 = no cooldown)"
+    },
+    "target": {
+      "type": "string",
+      "enum": ["player", "any_country", "specific_country", "all", "random_matching"]
+    },
+    "target_country": {
+      "type": "string",
+      "description": "ISO3 code if target = specific_country"
+    },
+    "triggers": {
+      "type": "array",
+      "description": "For reactive events: game actions that cause this event to fire (OR logic).",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "on_war_declared",
+              "on_peace_signed",
+              "on_alliance_formed",
+              "on_alliance_broken",
+              "on_tech_researched",
+              "on_country_collapse",
+              "on_coup",
+              "on_nuke_launched",
+              "on_sanction_applied",
+              "on_building_completed",
+              "on_leader_death",
+              "on_revolution"
+            ],
+            "description": "Game action that triggers this event"
+          },
+          "source_country": {
+            "type": "string",
+            "description": "ISO3 filter: only triggers when this country performs the action"
+          },
+          "target_country": {
+            "type": "string",
+            "description": "ISO3 filter: only triggers when the action targets this country"
+          },
+          "param": {
+            "description": "Additional filter (e.g., tech branch for on_tech_researched)"
+          }
+        }
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "description": "All conditions must be true (AND logic) for the event to be eligible.",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "date_after",
+              "date_before",
+              "country_stat_gt",
+              "country_stat_lt",
+              "at_war",
+              "not_at_war",
+              "has_tech",
+              "province_stat_gt",
+              "alliance_member",
+              "relation_above",
+              "relation_gt",
+              "relation_below",
+              "relation_lt",
+              "has_nuclear",
+              "defcon_level",
+              "has_flag",
+              "not_has_flag",
+              "government_type",
+              "continent",
+              "not_continent",
+              "region",
+              "not_region"
+            ]
+          },
+          "field": {
+            "type": "string",
+            "description": "Dot-path to stat field (e.g., 'military.active_personnel', 'government.stability')"
+          },
+          "value": {
+            "description": "Comparison value. Numbers for stat conditions; string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before."
+          },
+          "target_country": {
+            "type": "string",
+            "description": "ISO3 for conditions targeting a specific country"
+          }
+        }
+      }
+    },
+    "mean_time_to_happen_months": {
+      "type": "number",
+      "minimum": 0.1,
+      "description": "Average months until event fires. P(month) = 1 - e^(-1/MTTH)."
+    },
+    "options": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["effects"],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Button text for this option"
+          },
+          "text_key": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]+$",
+            "description": "Localization key for option button text"
+          },
+          "tooltip": {
+            "type": "string",
+            "description": "Hover tooltip showing effect preview"
+          },
+          "tooltip_key": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]+$",
+            "description": "Localization key for option tooltip"
+          },
+          "ai_weight": {
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0,
+            "description": "Base AI preference (before personality modifiers)"
+          },
+          "ai_personality_factors": {
+            "type": "object",
+            "description": "Personality trait multipliers for AI utility scoring",
+            "properties": {
+              "aggression": { "type": "number", "default": 0 },
+              "diplomacy_focus": { "type": "number", "default": 0 },
+              "economic_priority": { "type": "number", "default": 0 },
+              "military_investment": { "type": "number", "default": 0 },
+              "tech_investment": { "type": "number", "default": 0 },
+              "alliance_loyalty": { "type": "number", "default": 0 },
+              "nuclear_threshold": { "type": "number", "default": 0 },
+              "isolationism": { "type": "number", "default": 0 }
+            }
+          },
+          "conditions": {
+            "type": "array",
+            "description": "Conditions for this option to be available",
+            "items": { "$ref": "#/properties/conditions/items" }
+          },
+          "effects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "modify_stat",
+                    "add_relation",
+                    "declare_war",
+                    "fire_event",
+                    "set_flag",
+                    "clear_flag",
+                    "create_unit",
+                    "annex_province",
+                    "change_government",
+                    "start_research",
+                    "add_treasury",
+                    "modify_unrest",
+                    "impose_sanction",
+                    "lift_sanction",
+                    "engage_diplomatically",
+                    "withdraw_forces",
+                    "modify_resource_price",
+                    "global_modifier"
+                  ]
+                },
+                "target": {
+                  "type": "string",
+                  "description": "Target ISO3 or province ID"
+                },
+                "field": {
+                  "type": "string",
+                  "description": "Stat field path for modify_stat"
+                },
+                "value": {
+                  "description": "Effect value (number, string, etc.)"
+                }
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "anyOf": [
+              { "required": ["text"] },
+              { "required": ["text_key"] }
+            ]
+          }
+        ]
+      }
+    },
+    "chain_event": {
+      "type": "string",
+      "description": "Event ID to fire after this event resolves"
+    },
+    "chain_delay_months": {
+      "type": "integer",
+      "default": 0,
+      "description": "Months to delay before chain event fires"
+    },
+    "template": {
+      "type": "object",
+      "description": "For procedural events: variable definitions and text generation",
+      "properties": {
+        "variables": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "random_country",
+                  "random_neighbor",
+                  "random_resource",
+                  "random_province",
+                  "top_export",
+                  "rival_country",
+                  "ally_country",
+                  "random_number"
+                ]
+              },
+              "min": { "type": "number" },
+              "max": { "type": "number" },
+              "filter": { "type": "object" }
+            }
+          }
+        },
+        "text_template": {
+          "type": "string",
+          "description": "Description with {variable} placeholders"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "anyOf": [
+        { "required": ["title"] },
+        { "required": ["title_key"] }
+      ]
+    }
+  ]
+}

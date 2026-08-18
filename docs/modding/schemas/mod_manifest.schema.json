@@ -88,6 +88,11 @@
             "default": "coexist",
             "description": "Declares how this mod's runtime components coexist. coexist=WASM and C# run together (default). wasm_only=refuse to subscribe if C# hooks already registered. csharp_only=skip WASM loading for this mod."
         },
+        "managedSdkVersion": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+$",
+            "description": "Optional. Declares which managed SDK version this mod's C# DLLs were compiled against. Format: MAJOR.MINOR (e.g. '1.0'). Major version must match the game's ManagedSdkVersion. Omit if the mod ships no managed DLLs (WASM-only mods can omit this)."
+        },
         "permissions": {
             "type": "array",
             "items": {
