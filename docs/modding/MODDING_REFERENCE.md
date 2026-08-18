@@ -307,7 +307,7 @@ Balance and content changes live outside `scenario/`. Every file here is optiona
 ### 8.1 Content overrides (merged by `id`)
 
 `Content/buildings.json`, `Content/units.json`, `Content/resources.json` and `Content/tech_tree.json`
-are **JSON arrays**. Each entry is matched against the base game by its `id`:
+hold entries matched against the base game by `id`:
 
 - fields you write overwrite the base entry,
 - fields you omit keep their base values,
@@ -321,9 +321,25 @@ So a file that changes only one building's cost is three lines long:
 ]
 ```
 
-Entries validate against `building_type.schema.json` / `unit_type.schema.json` /
-`resource_type.schema.json` / `tech_tree.schema.json` — those schemas describe **one array element**,
-not the whole file.
+Both shapes are accepted — a bare array as above, or an envelope:
+
+```json
+{ "overrides": [ { "id": "power_plant", "cost": 850 } ] }
+```
+
+The in-game Mod Builder writes the envelope form. Entries validate against
+`building_type.schema.json` / `unit_type.schema.json` / `resource_type.schema.json` /
+`tech_tree.schema.json` — those schemas describe **one entry**, not the whole file.
+
+`Content/resources.json` additionally supports a `disabled` list, which switches resources off
+entirely:
+
+```json
+{ "overrides": [], "disabled": ["oil"] }
+```
+
+Resources are the only content type with that capability — a `disabled` list in the other three
+files is ignored, which is why the Mod Builder only offers the toggle for resources.
 
 When several mods are active they merge in load order, so a later mod wins on any field it sets.
 

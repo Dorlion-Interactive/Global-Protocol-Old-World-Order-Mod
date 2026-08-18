@@ -35,9 +35,12 @@ directly.
 
 ## Content overrides (`Content/`)
 
-These four files are **JSON arrays**, merged into the base game by `id`: fields present in your entry
-overwrite the base, fields you omit are left alone, and an unknown `id` is appended as a new entry.
-The schema below describes **one array element**, not the whole file.
+These four files are merged into the base game by `id`: fields present in your entry overwrite the
+base, fields you omit are left alone, and an unknown `id` is appended as a new entry. Each file may
+be a bare array `[ … ]` or an envelope `{ "overrides": [ … ] }` — the Mod Builder writes the
+envelope. The schema below describes **one entry**, not the whole file.
+
+`resources.json` also accepts a `disabled` list of ids to switch off; the other three ignore it.
 
 | File | Schema |
 |---|---|
