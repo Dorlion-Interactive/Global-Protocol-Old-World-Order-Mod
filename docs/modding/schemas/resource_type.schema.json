@@ -15,7 +15,7 @@
     },
     "base_price": {
       "type": "number",
-      "description": "Starting market price in USD per unit",
+      "description": "Starting market price in USD per unit, where the unit is the one named for this resource in resource_real_world_scale.json. That file is the single place a unit is defined: price and per-capita demand must describe the SAME unit, or the resource's economic weight is wrong. Prices here were once a mix of conventional trading units (oil per barrel, gold per troy ounce, wheat per bushel) while demand treated them as comparable, which produced a ~300x spread in economic weight between resources.",
       "minimum": 0
     },
     "category": {
@@ -30,7 +30,7 @@
     },
     "unit_label": {
       "type": "string",
-      "description": "Display unit (bbl, MT, MWh, kt, units, etc.) for tooltips",
+      "description": "The unit base_price is quoted in, for tooltips: tonne, m3, vehicle, kUSD. Written by apply_real_world_resource_scale.py from resource_real_world_scale.json, so the price and its unit come from one row and cannot drift - it used to say Oil was priced per bbl at $660/tonne.",
       "maxLength": 8
     },
     "terrain_bonus": {

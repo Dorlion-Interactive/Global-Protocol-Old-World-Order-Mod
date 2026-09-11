@@ -364,8 +364,15 @@ Two constraints worth knowing before you edit:
   edited from the Settings screen). A mod override of that section is ignored, which is why the
   in-game Mod Builder hides it.
 
-`overrides/laws.json` is **not read yet** — laws are still baked at build time. `laws.schema.json`
-ships for reference, but a laws override has no in-game effect today.
+`overrides/laws.json` **is applied at runtime**: it merges onto the shipped `laws.json`
+(sparse, index-wise) and the laws blob is re-baked at boot. Mods may retune values on
+existing categories/options AND append new ones at the tail — appends are save-stable by
+design. Removing, reordering or replacing existing entries is rejected (category/option
+indices live in saves and on the multiplayer wire) and disables the offending mod. Caps:
+16 categories, 6 options per category, 4 diplomacy-weighted categories; every appended
+category needs at least one ungated option and a complete 10-government `defaults` block.
+Law names/descriptions come from `politics.law.*` keys in the mod's
+`Content/localization/<lang>.csv` files (all 13 shipped locales are loaded).
 
 ### 8.3 Localization
 

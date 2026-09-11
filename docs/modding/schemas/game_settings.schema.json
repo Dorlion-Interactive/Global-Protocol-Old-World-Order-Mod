@@ -875,6 +875,18 @@
           "minimum": 0,
           "maximum": 1
         },
+        "import_physical_delivery_efficiency": {
+          "type": "number",
+          "description": "Fraction of the paid-for import quantity that is physically delivered into the country stockpile each month (1.0 = full delivery, 0 = money-only legacy trade)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "import_stockpile_cap_months": {
+          "type": "number",
+          "description": "Cap on import deliveries: post-delivery stockpile may not exceed this many months of total consumption for that resource",
+          "minimum": 0,
+          "maximum": 24
+        },
         "default_tariff_rate": {
           "type": "number",
           "description": "Default import tariff rate",
@@ -1227,9 +1239,15 @@
           "properties": {
             "max_single_transaction_usd": {
               "type": "number",
-              "description": "Base USD cap per single spot transaction. Scaled up per-country by cap_infrastructure_scale x the country's building export bonus (trade ports).",
+              "description": "FALLBACK USD cap per single spot transaction, used only for a resource with no world-supply figure. max_single_transaction_world_share is the real cap. Scaled up per-country by cap_infrastructure_scale x the country's building export bonus (trade ports).",
               "minimum": 1000000,
               "maximum": 100000000000
+            },
+            "max_single_transaction_world_share": {
+              "type": "number",
+              "description": "Share of a resource's own MONTHLY WORLD TRADE (world_prices.json supply_proxy x world price) that one spot transaction may move. 0.02 = 2%, already a market event. Replaces the flat USD cap as the anti-dumping limit because a USD figure cannot survive a price change: $500M was 0.62% of monthly world resource trade when chosen and 0.022% after the real-world price rescale, without a line of code changing. 0 falls back to max_single_transaction_usd.",
+              "minimum": 0,
+              "maximum": 1
             },
             "cap_infrastructure_scale": {
               "type": "number",
@@ -1297,7 +1315,20 @@
             },
             "max_auto_spend_per_country_per_tick_usd": {
               "type": "number",
+              "description": "Flat USD ceiling on one country's strategic-reserve auto-spend per economy tick. FALLBACK only: used when max_auto_spend_revenue_fraction is 0. A currency amount cannot survive a price rescale - this was raised 1e9 -> 2.76e10 to keep auto-buy alive after the real-world price scale landed, and a mid-size economy then spent ~$25B stockpiling in seven months.",
               "minimum": 0
+            },
+            "max_auto_spend_revenue_fraction": {
+              "type": "number",
+              "description": "PRIMARY per-country per-tick auto-spend ceiling, as a fraction of MONTHLY REVENUE. 0.05 = 5% of a month's revenue per tick. Scales with the country instead of with the price level. 0 falls back to max_auto_spend_per_country_per_tick_usd.",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "auto_buy_headroom_revenue_months": {
+              "type": "number",
+              "description": "Months of revenue of treasury headroom (above the auto-buy treasury floor) needed before a country stockpiles at full rate. Scales ONLY the reserve target above the strategic-deficit penalty-clear point, so a country in a fiscal crisis still buys its way out of the penalties and defers the discretionary stockpiling. 0 disables the deferral.",
+              "minimum": 0,
+              "maximum": 24
             },
             "price_impact_k": {
               "type": "number",
@@ -1316,10 +1347,11 @@
               "minimum": 0,
               "maximum": 1
             },
-            "sell_cap_swing_max_usd": {
+            "sell_cap_swing_max_multiple": {
               "type": "number",
-              "description": "Absolute USD ceiling on the stockpile-fraction sell floor, so it can't be abused to crash the world market. 0 = country cap only.",
-              "minimum": 0
+              "description": "Ceiling on the stockpile-fraction sell floor, as a MULTIPLE of the country's resolved transaction cap, so it can't be abused to crash the world market. Was a flat $2B = 4x the then-flat $500M cap; a flat figure now sits BELOW the cap in every large market and so bounds nothing. 0 = country cap only.",
+              "minimum": 0,
+              "maximum": 100
             },
             "auto_buy_treasury_floor_usd": {
               "type": "number",
@@ -1422,6 +1454,62 @@
               "maximum": 1
             }
           }
+        },
+        "latent_resources": {
+          "type": "object",
+          "description": "Buildingless extraction and latent-deposit yield (LatentResourceProductionSystem / ResourceProductionSystem). This block shipped unvalidated: it was absent from the schema entirely, so typos in it were accepted silently and fell back to the C# defaults.",
+          "properties": {
+            "secondary_yield_factor": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Yield of a fully-saturated secondary latent deposit relative to primary output. MIRRORED by SECONDARY_YIELD in DataPipeline/solve_resource_basins.py - change both together or every calibrated country drifts by the ratio."
+            },
+            "raw_extraction_fallback": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Output multiplier for a resource whose required PROCESSING building is absent. Applies only to the 17 resources declaring processing_buildings."
+            },
+            "buildingless_extraction_factor": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Share of full rate a province produces of its PRIMARY resource when no building there extracts it. Applies to raw resources only (those some extraction building can produce); secondary latents are unaffected."
+            },
+            "extraction_building_output_scale": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20,
+              "description": "Multiplier on the dedicated extraction-building output line only. Raise this rather than buildings.json effects.resource_production, which also lifts the province's ungated baseline and so every secondary with it."
+            },
+            "output_selection_price_weight_floor": {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 1,
+              "description": "Floor on the price weight when a multi-output extraction site picks which resource to work, measured against its own best-paying workable candidate. 0.25 = the cheaper option needs 4x the availability to win; 1 = ignore price and rank on geology alone. Bounded because base_price now spans $50/t bauxite to $64,000,000/t gold, against an availability term in [0,1] - the raw price made any gold-capable site work gold however thin the seam."
+            }
+          },
+          "additionalProperties": false
+        },
+        "production_normalizer": {
+          "type": "object",
+          "description": "Bounds how far world PHYSICAL production may drift from world consumption. The normalizer captures worldConsumption/worldRawOutput once per resource and holds it fixed; that only pins the world magnitude while raw output stays near its capture-tick value, and it does not — the AI keeps building. Measured 2026-09-08: world Plastics at 240x real production, Steel 17x, resulting stockpiles worth 99% of world GDP.",
+          "properties": {
+            "world_supply_band_min": {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 1,
+              "description": "Floor on world physical production as a multiple of world consumption. 0.5 = a global shock may halve world supply before the normalizer resists."
+            },
+            "world_supply_band_max": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 20,
+              "description": "Ceiling on the same. 2.0 = building the world out may at most double world supply."
+            }
+          },
+          "additionalProperties": false
         }
       }
     },
@@ -1481,9 +1569,9 @@
         },
         "relation_decay_rate": {
           "type": "number",
-          "description": "Monthly relation drift speed toward regional base (points per month)",
+          "description": "Fraction of the remaining gap to the equilibrium (regional base + opinion modifiers) a relation closes each month. 0.10 = 10 points at a gap of 100, 1 point at a gap of 10; always at least 1 point and never past the equilibrium.",
           "minimum": 0,
-          "maximum": 10
+          "maximum": 1
         },
         "relation_improve_amount": {
           "type": "integer",
@@ -2911,6 +2999,7 @@
         "military_force": {
           "type": "object",
           "description": "AI force sizing and recruitment affordability gate",
+          "additionalProperties": false,
           "properties": {
             "budget_maintenance_fraction": {
               "type": "number",
@@ -2927,10 +3016,17 @@
               "minimum": 1,
               "maximum": 5000
             },
-            "max_batch_per_tick": {
+            "max_batch_per_month": {
               "type": "integer",
               "minimum": 1,
-              "maximum": 50
+              "maximum": 50,
+              "description": "Baseline formations an AI country may buy per MONTH across all three domains. AIRecruitmentPlanningSystem runs once per country per month and AIRecruitmentExecutionUtility charges purchases against AIForceRecoveryState.PurchasesThisMonth, so this was always a monthly figure; it was named max_batch_per_tick until 2026-09. The effective cap is max(this, ceil(batch_per_month_force_fraction x total desired formations)), bounded by max_ground_units."
+            },
+            "batch_per_month_force_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Fraction of a country's total desired formation count it may buy per month, used when it exceeds max_batch_per_month. 0 disables the scaling and leaves the flat cap. A flat cap made a ~280-formation great power rebuild at a micro-state's pace, which left every cash/upkeep/credit gate below it inert."
             },
             "recruit_income_fraction_cap": {
               "type": "number",
@@ -2941,6 +3037,214 @@
               "type": "number",
               "minimum": 0,
               "maximum": 24
+            },
+            "config_version": {
+              "type": "integer",
+              "enum": [
+                0,
+                1
+              ]
+            },
+            "recovery_treasury_runway_months": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 24
+            },
+            "procurement_savings_months": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 120
+            },
+            "recovery_completion_ratio": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            },
+            "recovery_completion_months": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 255
+            },
+            "forced_disband_cooldown_months": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 255
+            },
+            "peace_threat_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "war_threat_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "additional_threat_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "max_threats": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 32
+            },
+            "hostile_relation_threshold": {
+              "type": "number",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Relation at or below which an ADJACENT country counts as a threat worth arming against (AIRecruitmentFormulas.IsRelevantThreat). Deliberately bound to diplomacy.hostile_relation_threshold so 'hostile' means one thing across the game: this shipped at -30 while diplomacy used -35, which silently made a country at -32 a military threat but not a diplomatic one. Change both together."
+            },
+            "preparedness_min": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10
+            },
+            "preparedness_max": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10
+            },
+            "goal_preparedness_max": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "land_credit_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "naval_credit_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "air_credit_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "max_pending_orders": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5000
+            },
+            "ground_orders_per_province": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            },
+            "recovery_reserve_target": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "recovery_infra_floor": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "recovery_research_floor": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "recovery_military_ceiling": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "missing_recovery_facility_boost": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "ground_line_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "ground_mobile_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "ground_support_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "naval_escort_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "naval_submarine_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "air_superiority_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "air_strike_support_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "recovery_max_months": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 600,
+              "description": "Hard horizon in months after which an active force recovery completes regardless of what is still unmet; 0 disables it. Without a horizon a country that can never site a domain (no airfield it will build, a coast it never regains) stayed in RecoveryActive forever: shortened treasury runway, infrastructure pinned at recovery_infra_floor, PostWarReconstruction never completing."
+            },
+            "min_force_fraction_of_start": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Peacetime ground-target floor as a fraction of the country's baked native manpower pool (CountryMilitary.BaseManpowerPool / manpower_per_regiment). 0 (or a stale bake) resolves to the default 0.6. Without this floor a large conscript army that took war losses never rebuilt: its target tracked its (also decaying) neighbours' threat power instead of its own authored size."
+            },
+            "unit_roles": {
+              "type": "array",
+              "maxItems": 256,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "unit_id",
+                  "role"
+                ],
+                "properties": {
+                  "unit_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 61
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "GroundLine",
+                      "GroundMobile",
+                      "GroundSupport",
+                      "GroundAirDefense",
+                      "NavalEscort",
+                      "NavalSubmarine",
+                      "NavalTransport",
+                      "NavalCarrier",
+                      "AirSuperiority",
+                      "AirStrike",
+                      "AirSupport"
+                    ]
+                  },
+                  "optional": {
+                    "type": "boolean"
+                  }
+                }
+              }
             }
           }
         },
@@ -4263,6 +4567,18 @@
             },
             "diplo_point_ae_reduction": {
               "type": "number"
+            },
+            "declare_war_ae": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "AE granted to the attacker when it declares an OFFENSIVE war (defensive/coalition casus belli grant nothing)."
+            },
+            "declare_war_observer_relation_penalty": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 50,
+              "description": "Base relation drop every third country applies toward an attacker on an offensive declaration; scaled x0.5 (neutral observer) to x1 (observer at +100 with the victim)."
             }
           }
         },
@@ -4338,7 +4654,105 @@
       "properties": {
         "multilateral_sanctions": {
           "type": "object",
-          "description": "UN-backed sanctions: voting, the economic damage they inflict, and how targets evade them."
+          "description": "UN-backed sanctions: voting, the economic damage they inflict, and how targets evade them.",
+          "properties": {
+            "condemnation_base_offset": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "description": "Flat justification every UN voter demands before supporting a condemnation (subtracted from the per-voter score)."
+            },
+            "condemnation_support_threshold": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "description": "Per-voter score at or above which a UN member votes FOR a condemnation."
+            },
+            "condemnation_veto_min_relation": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "Relation a UNSC permanent member must hold toward a country before its veto shields it: a passed condemnation of that country still passes but creates no binding sanction, and the member spends a real veto on ordinary UNSC resolutions aimed at it."
+            },
+            "condemnation_aggressor_war_bonus": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 300,
+              "description": "Added to every voter's score while the condemned country prosecutes an offensive war."
+            },
+            "condemnation_ae_weight": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 300,
+              "description": "Added per coalition-threshold unit of the condemned country's aggressive expansion (capped at 2 units)."
+            },
+            "un_membership_reproposal_cooldown_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "The AI never re-nominates a UN candidate whose previous proposal was decided within this many ticks."
+            },
+            "un_membership_candidate_decision_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 3650,
+              "description": "A nominated candidate that has not answered within this many ticks is treated as having declined."
+            },
+            "un_admission_council_vote_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 3650,
+              "description": "Length in ticks of the Security Council recommendation stage a UN admission must clear before the General Assembly votes on it."
+            },
+            "un_admission_ga_supermajority_numer": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10,
+              "description": "Numerator of the General Assembly supermajority an admission needs (2 of 3 = the Charter's two-thirds)."
+            },
+            "un_admission_ga_supermajority_denom": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10,
+              "description": "Denominator of the General Assembly supermajority an admission needs."
+            },
+            "un_admission_neutral_vote_score": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Membership support score at or above which a General Assembly member votes FOR admission (below it votes AGAINST). A member with no relation row abstains. 0 is reserved for a stale bake; use -1 for neutral."
+            },
+            "un_admission_veto_max_relation": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "A permanent member vetoes an admission in the Security Council when its relation to the candidate is at or below this (it also vetoes any candidate it claims, or that its close ally claims). 0 is reserved for a stale bake."
+            },
+            "un_admission_nonrecogniser_penalty": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Added to a voter's membership support score when the voter does not recognise the candidate (holds a sovereignty_dispute modifier against it, claims it, or is allied to the claimant). Negative. 0 is reserved for a stale bake."
+            },
+            "condemnation_veto_client_min_relation": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "Client-state arm of the P5 shield: a permanent member also shields (and vetoes on behalf of) a country it likes at least this much when it is hostile to the resolution's proposer (see condemnation_veto_proposer_max_relation). Covers the Cuba case without a pact."
+            },
+            "condemnation_veto_proposer_max_relation": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "The client-state shield arm only applies while the permanent member's relation to the proposer is at or below this. 0 is reserved for a stale bake; use -1 for neutral-or-worse."
+            },
+            "condemnation_reproposal_cooldown_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "After a UN resolution of a given type against a target FAILS, no AI country re-tables the same type against the same target for this many ticks (the 2026-09-10 soak had the same aggressor re-proposing a 2:212 condemnation every monthly cooldown, 68 of 83 resolutions)."
+            }
+          }
         },
         "trade_blocs": {
           "type": "object",
@@ -4346,7 +4760,21 @@
         },
         "treaties": {
           "type": "object",
-          "description": "Arms-limitation, non-proliferation, climate and defence treaties: their benefits and the penalty for violating them."
+          "description": "Arms-limitation, non-proliferation, climate and defence treaties: their benefits and the penalty for violating them.",
+          "properties": {
+            "treaty_reject_cooldown_multiplier": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20,
+              "description": "When a treaty the AI proposed to the player fails on accept, the AI waits treaty_cooldown_ticks x this before re-proposing that treaty type to that player."
+            },
+            "treaty_reject_cooldown_min_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 3650,
+              "description": "Floor in ticks for the post-rejection re-proposal wait above."
+            }
+          }
         },
         "economic_warfare": {
           "type": "object",

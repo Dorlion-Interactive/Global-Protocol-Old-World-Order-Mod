@@ -145,7 +145,10 @@
               "continent",
               "not_continent",
               "region",
-              "not_region"
+              "not_region",
+              "country_unrest_gt",
+              "country_unrest_lt",
+              "active_law_is"
             ]
           },
           "field": {
@@ -153,11 +156,19 @@
             "description": "Dot-path to stat field (e.g., 'military.active_personnel', 'government.stability')"
           },
           "value": {
-            "description": "Comparison value. Numbers for stat conditions; string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before."
+            "description": "Comparison value. Numbers for stat conditions (country_unrest_gt/lt compare 0-100 average national unrest); string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before. For active_law_is, prefer law_category/law_option (or a 'categoryId/optionId' value string)."
           },
           "target_country": {
             "type": "string",
             "description": "ISO3 for conditions targeting a specific country"
+          },
+          "law_category": {
+            "type": "string",
+            "description": "active_law_is only: laws.json category id (e.g. 'labor_law'). Resolved to save-stable indices at import."
+          },
+          "law_option": {
+            "type": "string",
+            "description": "active_law_is only: laws.json option id within law_category (e.g. 'free_market_labor')."
           }
         }
       }

@@ -1,0 +1,315 @@
+{
+  "buildings": [
+    {
+      "id": "factory",
+      "name": "Guild Workshop",
+      "description": "Craft guild workshops and blacksmith smithies producing metal goods, textiles, and armor while employing burghers.",
+      "category": "economic",
+      "cost": {
+        "money": 500,
+        "build_time_months": 6
+      },
+      "maintenance_per_month": 4,
+      "effects": {
+        "gdp_modifier": 0.1,
+        "resource_production": 0.12,
+        "employment": 1000
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 15,
+        "population": 10000
+      },
+      "max_per_province": 3,
+      "max_level": 5,
+      "level_scaling_factor": 0.4
+    },
+    {
+      "id": "commercial_district",
+      "name": "Market Square",
+      "description": "Paved market square and merchant stalls facilitating regional trade, barter fairs, and toll revenue.",
+      "category": "economic",
+      "cost": {
+        "money": 300,
+        "build_time_months": 4
+      },
+      "maintenance_per_month": 2,
+      "effects": {
+        "gdp_modifier": 0.05,
+        "employment": 500,
+        "import_discount": 0.02,
+        "export_multiplier": 0.02
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 10,
+        "population": 5000
+      },
+      "max_per_province": 3,
+      "max_level": 5,
+      "level_scaling_factor": 0.4
+    },
+    {
+      "id": "trade_port",
+      "name": "Harbour & Wharves",
+      "description": "Sheltered coastal anchorage and stone quays handling merchant cogs, galleys, and international maritime cargo.",
+      "category": "economic",
+      "cost": {
+        "money": 800,
+        "build_time_months": 8
+      },
+      "maintenance_per_month": 6,
+      "effects": {
+        "gdp_modifier": 0.1,
+        "resource_production": 0.2,
+        "export_multiplier": 0.05,
+        "import_discount": 0.03
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 20,
+        "population": 15000
+      },
+      "max_per_province": 1,
+      "max_level": 3,
+      "level_scaling_factor": 0.5
+    },
+    {
+      "id": "tech_park",
+      "name": "Scriptorium & Library",
+      "description": "Monastic or municipal scriptorium preserving illuminated manuscripts, nautical charts, and scholarly treaties.",
+      "category": "research",
+      "cost": {
+        "money": 1200,
+        "build_time_months": 10
+      },
+      "maintenance_per_month": 8,
+      "effects": {
+        "gdp_modifier": 0.04,
+        "research_output": 0.15,
+        "employment": 200
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 20,
+        "population": 25000
+      },
+      "max_per_province": 1,
+      "max_level": 3,
+      "level_scaling_factor": 0.5
+    },
+    {
+      "id": "barracks",
+      "name": "Garrison & Muster Ground",
+      "description": "Muster field, weapons cache, and barracks for town militia, watchmen, and standing men-at-arms.",
+      "category": "military",
+      "cost": {
+        "money": 400,
+        "build_time_months": 4
+      },
+      "maintenance_per_month": 3,
+      "effects": {
+        "defense_bonus": 10,
+        "employment": 200
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 15,
+        "population": 10000
+      },
+      "max_per_province": 2,
+      "max_level": 3,
+      "level_scaling_factor": 0.3
+    },
+    {
+      "id": "military_base",
+      "name": "Castle & Keep",
+      "description": "Imposing stone fortress with curtain walls, towers, and moats establishing undisputed lordly authority.",
+      "category": "military",
+      "cost": {
+        "money": 1500,
+        "build_time_months": 12
+      },
+      "maintenance_per_month": 10,
+      "effects": {
+        "defense_bonus": 30,
+        "employment": 500,
+        "unrest_reduction": 0.05
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 25,
+        "population": 20000
+      },
+      "max_per_province": 1,
+      "max_level": 3,
+      "level_scaling_factor": 0.3
+    },
+    {
+      "id": "arms_factory",
+      "name": "Cannon & Bell Foundry",
+      "description": "Foundry casting heavy bronze bombards, iron cannonballs, arquebuses, and siege equipment.",
+      "category": "military",
+      "cost": {
+        "money": 1000,
+        "build_time_months": 8
+      },
+      "maintenance_per_month": 7,
+      "effects": {
+        "defense_bonus": 5,
+        "resource_production": 0.08,
+        "employment": 800
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 20,
+        "population": 15000
+      },
+      "max_per_province": 2,
+      "max_level": 3,
+      "level_scaling_factor": 0.4
+    },
+    {
+      "id": "highway",
+      "name": "Paved King's Highway",
+      "description": "Paved royal road with stone bridges and post stations facilitating messenger relays and troop movement.",
+      "category": "infrastructure",
+      "cost": {
+        "money": 600,
+        "build_time_months": 6
+      },
+      "maintenance_per_month": 4,
+      "effects": {
+        "infrastructure": 15,
+        "gdp_modifier": 0.03,
+        "employment": 300
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 10,
+        "population": 10000
+      },
+      "max_per_province": 2,
+      "max_level": 3,
+      "level_scaling_factor": 0.4
+    },
+    {
+      "id": "power_plant",
+      "name": "Watermills & Windmills",
+      "description": "River waterwheels and windmills driving grain milling, timber sawing, and iron trip-hammers.",
+      "category": "economic",
+      "cost": {
+        "money": 700,
+        "build_time_months": 6
+      },
+      "maintenance_per_month": 4,
+      "effects": {
+        "gdp_modifier": 0.08,
+        "resource_production": 0.1,
+        "employment": 400
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 15,
+        "population": 15000
+      },
+      "max_per_province": 2,
+      "max_level": 3,
+      "level_scaling_factor": 0.4
+    },
+    {
+      "id": "hospital",
+      "name": "Infirmary & Herbal Apothecary",
+      "description": "Hospital run by medical guild masters or religious orders providing herbal treatments and sheltering the sick.",
+      "category": "social",
+      "cost": {
+        "money": 400,
+        "build_time_months": 4
+      },
+      "maintenance_per_month": 3,
+      "effects": {
+        "population_growth": 0.02,
+        "unrest_reduction": 0.04,
+        "employment": 200
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 15,
+        "population": 15000
+      },
+      "max_per_province": 1,
+      "max_level": 3,
+      "level_scaling_factor": 0.3
+    },
+    {
+      "id": "university",
+      "name": "Medieval University",
+      "description": "Renowned scholastic center educating clerks and jurists in theology, civil law, rhetoric, and medicine.",
+      "category": "research",
+      "cost": {
+        "money": 1400,
+        "build_time_months": 12
+      },
+      "maintenance_per_month": 9,
+      "effects": {
+        "research_output": 0.25,
+        "gdp_modifier": 0.05,
+        "employment": 400
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 25,
+        "population": 35000
+      },
+      "max_per_province": 1,
+      "max_level": 3,
+      "level_scaling_factor": 0.5
+    },
+    {
+      "id": "naval_base",
+      "name": "Naval Arsenal & Dockyard",
+      "description": "State arsenal and shipwright slipways building war galleys, carracks, and rigging naval armaments.",
+      "category": "military",
+      "cost": {
+        "money": 1200,
+        "build_time_months": 10
+      },
+      "maintenance_per_month": 8,
+      "effects": {
+        "defense_bonus": 15,
+        "employment": 600
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 25,
+        "population": 25000
+      },
+      "max_per_province": 1,
+      "max_level": 3,
+      "level_scaling_factor": 0.4
+    },
+    {
+      "id": "radar_station",
+      "name": "Watchtower & Beacon Network",
+      "description": "System of hilltop watchtowers and beacon fires providing early detection against enemy host marches.",
+      "category": "defense",
+      "cost": {
+        "money": 250,
+        "build_time_months": 3
+      },
+      "maintenance_per_month": 1,
+      "effects": {
+        "defense_bonus": 8,
+        "employment": 50
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 5,
+        "population": 2000
+      },
+      "max_per_province": 2,
+      "max_level": 3,
+      "level_scaling_factor": 0.2
+    }
+  ]
+}

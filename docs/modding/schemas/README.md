@@ -67,7 +67,7 @@ Sparse documents: write only the keys you want to change.
 | Schema | Purpose |
 |---|---|
 | `country.schema.json` | The base game's country record. Not a mod file — read it to see which fields `countries_add.json` mirrors. |
-| `laws.schema.json` | Shipped for reference and editor use. **`overrides/laws.json` is not read at runtime yet** — laws are still baked, so a laws override has no effect in-game. |
+| `laws.schema.json` | Validates `overrides/laws.json`, which **is applied at runtime** (sparse merge onto the shipped laws.json, blob re-baked at boot). Values may be retuned and new categories/options appended; removals/reorders are rejected as save-breaking. |
 
 ## Notes
 

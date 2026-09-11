@@ -1,0 +1,209 @@
+{
+  "era": "1450",
+  "baseCurrency": {
+    "id": "florin",
+    "name": "Florentine Florin / Venetian Ducat",
+    "symbol": "fl.",
+    "standard": "gold",
+    "fineMetalGrams": 3.53,
+    "description": "Standard gold coin of ~3.5 grams pure gold (24 karat), the premier international trade currency of late medieval Europe, the Mediterranean, and the Levant."
+  },
+  "currencies": [
+    {
+      "id": "florin",
+      "name": "Florin / Ducat",
+      "symbol": "fl.",
+      "exchangeRateToBase": 1.0,
+      "standard": "gold",
+      "associatedCountries": [
+        "VNC",
+        "GEN",
+        "FRA",
+        "PAP",
+        "NAP",
+        "MIL",
+        "FLR",
+        "SIE",
+        "MOD",
+        "LCA",
+        "FER",
+        "MAN"
+      ]
+    },
+    {
+      "id": "akce",
+      "name": "Ottoman Akçe",
+      "symbol": "ak.",
+      "exchangeRateToBase": 45.0,
+      "standard": "silver",
+      "fineMetalGrams": 1.15,
+      "description": "Silver coin minted under Murad II and Mehmed II; ~40-45 akce equaled 1 gold ducat/florin in 1450.",
+      "associatedCountries": [
+        "OTT",
+        "CRA",
+        "DUL",
+        "RAM",
+        "TRE"
+      ]
+    },
+    {
+      "id": "liang",
+      "name": "Silver Liang (Tael)",
+      "symbol": "两",
+      "exchangeRateToBase": 0.28,
+      "standard": "silver",
+      "fineMetalGrams": 37.3,
+      "description": "Traditional Chinese unit of weight in silver (~37g silver = ~3.5 gold florins). Circulated alongside strings of copper cash (wen) and Baocao paper notes.",
+      "associatedCountries": [
+        "MYN",
+        "JOS",
+        "RYU",
+        "ANN"
+      ]
+    },
+    {
+      "id": "pound_sterling",
+      "name": "Pound Sterling",
+      "symbol": "£",
+      "exchangeRateToBase": 0.3,
+      "standard": "silver",
+      "fineMetalGrams": 108.0,
+      "description": "240 Tower pence of sterling silver (0.925 fine). 1 pound sterling was worth ~3.3 gold florins. Gold nobles circulated at 6s 8d (1/3 pound).",
+      "associatedCountries": [
+        "ENG",
+        "SCT",
+        "IRE"
+      ]
+    },
+    {
+      "id": "livre_tournois",
+      "name": "Livre tournois",
+      "symbol": "₶",
+      "exchangeRateToBase": 3.5,
+      "standard": "silver_account",
+      "description": "French money of account; ~3.5 livres tournois to 1 gold florin / ecu d or.",
+      "associatedCountries": [
+        "FRA",
+        "BUR",
+        "BRI",
+        "PRO",
+        "SAV",
+        "LOR"
+      ]
+    },
+    {
+      "id": "gulden",
+      "name": "Rhenish Gulden",
+      "symbol": "fl.",
+      "exchangeRateToBase": 1.0,
+      "standard": "gold",
+      "fineMetalGrams": 3.4,
+      "description": "The standard gold coin of the Holy Roman Empire established by the Rhenish Coinage Union.",
+      "associatedCountries": [
+        "HAB",
+        "BOH",
+        "BAV",
+        "SAX",
+        "PAL",
+        "BRA",
+        "HES",
+        "THU",
+        "TRI",
+        "MAI",
+        "KOL",
+        "CHE"
+      ]
+    },
+    {
+      "id": "maravedi",
+      "name": "Maravedí / Dobla",
+      "symbol": "mrs.",
+      "exchangeRateToBase": 375.0,
+      "standard": "silver_billon",
+      "description": "Standard money of account in Castile. 1 gold dobla de la banda was worth 365-375 maravedis (~1 florin).",
+      "associatedCountries": [
+        "CAS",
+        "ARA",
+        "NAV",
+        "GRA"
+      ]
+    },
+    {
+      "id": "cruzado",
+      "name": "Portuguese Cruzado / Real",
+      "symbol": "R$",
+      "exchangeRateToBase": 1.0,
+      "standard": "gold",
+      "fineMetalGrams": 3.5,
+      "description": "Portuguese gold cruzado minted under Alfonso V, equal in gold content to the Venetian ducat.",
+      "associatedCountries": [
+        "PRT"
+      ]
+    },
+    {
+      "id": "dinar_ashrafi",
+      "name": "Mamluk Ashrafi (Dinar)",
+      "symbol": "د.إ",
+      "exchangeRateToBase": 1.0,
+      "standard": "gold",
+      "fineMetalGrams": 3.45,
+      "description": "Introduced by Mamluk Sultan al-Ashraf Barsbay in 1425 to match the weight and purity of the Venetian ducat.",
+      "associatedCountries": [
+        "MAM",
+        "HFS",
+        "ZAY",
+        "YEM",
+        "HJZ"
+      ]
+    },
+    {
+      "id": "varaha",
+      "name": "Vijayanagara Varaha (Pagoda)",
+      "symbol": "V",
+      "exchangeRateToBase": 1.0,
+      "standard": "gold",
+      "fineMetalGrams": 3.4,
+      "description": "Gold varaha (also called pagoda by Europeans) featuring Hindu deities, standard trade currency of South India and Indian Ocean spice routes.",
+      "associatedCountries": [
+        "VIJ",
+        "GAJ",
+        "BHM",
+        "GUJ",
+        "MLW",
+        "JNP",
+        "DLH",
+        "BEN"
+      ]
+    },
+    {
+      "id": "toman",
+      "name": "Timurid Kepeki Dinar / Toman",
+      "symbol": "ت",
+      "exchangeRateToBase": 0.1,
+      "standard": "silver",
+      "description": "Timurid currency system centered on the silver dinar and super-unit toman (10,000 dinars).",
+      "associatedCountries": [
+        "TIM",
+        "KKY",
+        "AKK",
+        "SHV"
+      ]
+    },
+    {
+      "id": "denga",
+      "name": "Russian Denga / Ruble",
+      "symbol": "р.",
+      "exchangeRateToBase": 200.0,
+      "standard": "silver",
+      "fineMetalGrams": 0.78,
+      "description": "Silver denga coins minted in Moscow and Novgorod; 200 denga made up the ruble of account (~1 florin).",
+      "associatedCountries": [
+        "MVY",
+        "NOV",
+        "PSK",
+        "TVE",
+        "RYA"
+      ]
+    }
+  ]
+}

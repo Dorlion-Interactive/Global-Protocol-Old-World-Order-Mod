@@ -1,195 +1,229 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "unit_type.schema.json",
-    "title": "Unit Type",
-    "description": "Military unit type definition. All units defined here, not in code.",
-    "type": "object",
-    "required": [
-        "id",
-        "name",
-        "category",
-        "stats",
-        "cost"
-    ],
-    "properties": {
-        "id": {
-            "type": "string"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "unit_type.schema.json",
+  "title": "Unit Type",
+  "description": "Military unit type definition. All units defined here, not in code.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "category",
+    "stats",
+    "cost"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "ground",
+        "air",
+        "naval",
+        "missile",
+        "special"
+      ]
+    },
+    "subcategory": {
+      "type": "string",
+      "enum": [
+        "infantry",
+        "armor",
+        "artillery",
+        "fighter",
+        "bomber",
+        "helicopter",
+        "carrier",
+        "destroyer",
+        "submarine",
+        "frigate",
+        "srbm",
+        "mrbm",
+        "icbm",
+        "slbm",
+        "special_forces",
+        "cyber",
+        "mobile_launcher",
+        "drone",
+        "patrol_boat",
+        "amphibious"
+      ]
+    },
+    "equipment_slot": {
+      "type": "string",
+      "enum": [
+        "tanks",
+        "aircraft",
+        "ships",
+        "submarines",
+        "helicopters",
+        "apcs",
+        "artillery"
+      ],
+      "description": "Which CountryMilitary equipment bucket one formation of this unit contributes to. Omit for units that represent no tracked hardware (infantry, special forces, mobile launchers). Declared rather than inferred from subcategory, which cannot distinguish the buckets: subcategory 0 is shared by infantry, mechanized_infantry and mobile_launcher, and 2 by artillery and air_defense."
+    },
+    "equipment_per_regiment": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Equipment items one formation of this unit represents. Must equal the divisor DataPipeline/generate_military_deployments.py used to turn the real-world inventory into formations (EQUIPMENT_PER_UNIT, echoed into military_deployments.json as _equipment_per_unit) — derive is the inverse of generate, so a mismatch means derived equipment stops reproducing the inventory it came from."
+    },
+    "transport_capacity": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Fleet transport load contributed by one vessel of this unit type."
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "attack": {
+          "type": "number"
         },
-        "name": {
-            "type": "string"
+        "defense": {
+          "type": "number"
         },
-        "category": {
-            "type": "string",
-            "enum": [
-                "ground",
-                "air",
-                "naval",
-                "missile",
-                "special"
-            ]
+        "hp": {
+          "type": "number"
         },
-        "subcategory": {
-            "type": "string",
-            "enum": [
-                "infantry",
-                "armor",
-                "artillery",
-                "fighter",
-                "bomber",
-                "helicopter",
-                "carrier",
-                "destroyer",
-                "submarine",
-                "frigate",
-                "srbm",
-                "mrbm",
-                "icbm",
-                "slbm",
-                "special_forces",
-                "cyber",
-                "mobile_launcher",
-                "drone",
-                "patrol_boat",
-                "amphibious"
-            ]
+        "speed": {
+          "type": "number",
+          "description": "Provinces per month"
         },
-        "transport_capacity": {
-            "type": "integer",
-            "minimum": 1,
-            "description": "Fleet transport load contributed by one vessel of this unit type."
+        "range": {
+          "type": "number",
+          "description": "For missiles: range in provinces"
         },
-        "stats": {
-            "type": "object",
-            "properties": {
-                "attack": {
-                    "type": "number"
-                },
-                "defense": {
-                    "type": "number"
-                },
-                "hp": {
-                    "type": "number"
-                },
-                "speed": {
-                    "type": "number",
-                    "description": "Provinces per month"
-                },
-                "range": {
-                    "type": "number",
-                    "description": "For missiles: range in provinces"
-                },
-                "manpower": {
-                    "type": "integer",
-                    "description": "Personnel required"
-                },
-                "air_attack": {
-                    "type": "number",
-                    "default": 0
-                },
-                "anti_air": {
-                    "type": "number",
-                    "default": 0
-                },
-                "anti_sub": {
-                    "type": "number",
-                    "default": 0
-                }
-            }
+        "manpower": {
+          "type": "integer",
+          "description": "Personnel required"
         },
-        "cost": {
-            "type": "object",
-            "properties": {
-                "money": {
-                    "type": "number"
-                },
-                "build_time_months": {
-                    "type": "integer"
-                },
-                "required_building": {
-                    "type": "string",
-                    "description": "Building needed in province to recruit"
-                },
-                "resources": {
-                    "type": "array",
-                    "description": "Resources consumed from stockpile when unit is recruited",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "id": { "type": "string" },
-                            "amount": { "type": "number", "minimum": 0 }
-                        },
-                        "required": ["id", "amount"]
-                    }
-                }
-            }
+        "air_attack": {
+          "type": "number",
+          "default": 0
         },
-        "maintenance": {
-            "type": "object",
-            "properties": {
-                "money_per_month": {
-                    "type": "number"
-                },
-                "manpower_per_month": {
-                    "type": "integer"
-                },
-                "resources_per_month": {
-                    "type": "array",
-                    "description": "Resources consumed from stockpile each month per unit",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "id": { "type": "string" },
-                            "amount": { "type": "number", "minimum": 0 }
-                        },
-                        "required": ["id", "amount"]
-                    }
-                }
-            }
+        "anti_air": {
+          "type": "number",
+          "default": 0
         },
-        "terrain_modifiers": {
-            "type": "object",
-            "description": "Combat effectiveness multiplier per terrain type",
-            "properties": {
-                "plains": {
-                    "type": "number",
-                    "default": 1.0
-                },
-                "forest": {
-                    "type": "number",
-                    "default": 1.0
-                },
-                "mountain": {
-                    "type": "number",
-                    "default": 1.0
-                },
-                "desert": {
-                    "type": "number",
-                    "default": 1.0
-                },
-                "urban": {
-                    "type": "number",
-                    "default": 1.0
-                },
-                "coastal": {
-                    "type": "number",
-                    "default": 1.0
-                },
-                "tundra": {
-                    "type": "number",
-                    "default": 1.0
-                }
-            }
-        },
-        "prerequisites": {
-            "type": "object",
-            "properties": {
-                "tech": {
-                    "type": "string"
-                },
-                "building": {
-                    "type": "string"
-                }
-            }
+        "anti_sub": {
+          "type": "number",
+          "default": 0
         }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "properties": {
+        "money": {
+          "type": "number"
+        },
+        "build_time_months": {
+          "type": "integer"
+        },
+        "required_building": {
+          "type": "string",
+          "description": "Building needed in province to recruit"
+        },
+        "resources": {
+          "type": "array",
+          "description": "Resources consumed from stockpile when unit is recruited",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "id",
+              "amount"
+            ]
+          }
+        }
+      }
+    },
+    "maintenance": {
+      "type": "object",
+      "properties": {
+        "money_per_month": {
+          "type": "number"
+        },
+        "manpower_per_month": {
+          "type": "integer"
+        },
+        "resources_per_month": {
+          "type": "array",
+          "description": "Resources consumed from stockpile each month per unit",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "id",
+              "amount"
+            ]
+          }
+        }
+      }
+    },
+    "terrain_modifiers": {
+      "type": "object",
+      "description": "Combat effectiveness multiplier per terrain type",
+      "properties": {
+        "plains": {
+          "type": "number",
+          "default": 1.0
+        },
+        "forest": {
+          "type": "number",
+          "default": 1.0
+        },
+        "mountain": {
+          "type": "number",
+          "default": 1.0
+        },
+        "desert": {
+          "type": "number",
+          "default": 1.0
+        },
+        "urban": {
+          "type": "number",
+          "default": 1.0
+        },
+        "coastal": {
+          "type": "number",
+          "default": 1.0
+        },
+        "tundra": {
+          "type": "number",
+          "default": 1.0
+        }
+      }
+    },
+    "prerequisites": {
+      "type": "object",
+      "properties": {
+        "tech": {
+          "type": "string"
+        },
+        "building": {
+          "type": "string"
+        }
+      }
     }
+  }
 }

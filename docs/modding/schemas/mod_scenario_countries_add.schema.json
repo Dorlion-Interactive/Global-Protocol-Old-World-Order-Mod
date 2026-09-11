@@ -69,14 +69,15 @@
                 },
                 "governmentType": {
                     "type": "string",
-                    "enum": ["democracy","authoritarian","hybrid","monarchy","theocracy","military_junta","failed_state","city_state"]
+                    "enum": ["Unknown","Democracy","Authoritarian","Hybrid","Monarchy","Theocracy","MilitaryJunta","OneParty","CommunistState","Transitional"]
                 },
                 "governmentSubtype": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": ["None","FeudalMonarchy","Sultanate","Khanate","Shogunate","CityState","Duchy","Emirate","Empire","Tribe","Chiefdom","LiberalDemocracy","IlliberalDemocracy","ParliamentaryMonarchy","AbsoluteMonarchy","MilitaryDictatorship","Stratocracy","Theocracy","OnePartyState","Despotic","Anarchy","Transitional","SocialistRepublic","FederalRepublic"]
                 },
                 "ideology": {
                     "type": "string",
-                    "enum": ["progressive","centrist","conservative","nationalist","communist","islamist","libertarian","green","theocratic"]
+                    "enum": ["Unknown","Liberal","Conservative","Socialist","Nationalist","Islamist","Communist","Fascist","Libertarian","Mixed"]
                 },
                 "militaryUnitTypeIds": {
                     "type": "array",

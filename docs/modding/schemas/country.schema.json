@@ -128,6 +128,40 @@
                     "type": "number",
                     "minimum": 0,
                     "maximum": 100
+                },
+                "homeland_term": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 40,
+                    "description": "How citizens refer to their homeland (e.g. Motherland). Merged from government_overrides.json."
+                },
+                "term_years": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10,
+                    "description": "Electoral term length in years. Merged from government_overrides.json."
+                },
+                "next_election_year": {
+                    "type": "integer",
+                    "minimum": 2026,
+                    "maximum": 2100,
+                    "description": "Next scheduled national election year. A value > 0 gives the country an ElectionCycle at bake even for non-democracy/hybrid types."
+                },
+                "next_election_month": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                },
+                "last_election_year": {
+                    "type": "integer",
+                    "minimum": 1990,
+                    "maximum": 2025,
+                    "description": "Most recent real election before the Jan-2026 game start (display-only)."
+                },
+                "last_election_month": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
                 }
             }
         },
