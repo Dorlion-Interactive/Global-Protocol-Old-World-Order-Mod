@@ -7,6 +7,7 @@ desktop.ini
 *.log
 *.tmp
 *.bak
+scratch/
 
 # Visual Studio / Rider IDE folders
 .vs/
