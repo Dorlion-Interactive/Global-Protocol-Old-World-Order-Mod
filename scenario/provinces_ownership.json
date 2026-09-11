@@ -51,7 +51,7 @@
     },
     {
       "provinceId": 17,
-      "ownerISO3": "MYN"
+      "ownerISO3": "MOG"
     },
     {
       "provinceId": 18,
@@ -442,6 +442,10 @@
       "ownerISO3": "LIV"
     },
     {
+      "provinceId": 136,
+      "ownerISO3": "PSK"
+    },
+    {
       "provinceId": 137,
       "ownerISO3": "LIV"
     },
@@ -795,7 +799,7 @@
     },
     {
       "provinceId": 225,
-      "ownerISO3": "OTT"
+      "ownerISO3": "LEZ"
     },
     {
       "provinceId": 226,
@@ -815,7 +819,7 @@
     },
     {
       "provinceId": 230,
-      "ownerISO3": "OTT"
+      "ownerISO3": "LEZ"
     },
     {
       "provinceId": 231,
@@ -823,7 +827,7 @@
     },
     {
       "provinceId": 232,
-      "ownerISO3": "OTT"
+      "ownerISO3": "LEZ"
     },
     {
       "provinceId": 233,
@@ -882,6 +886,10 @@
       "ownerISO3": "FRA"
     },
     {
+      "provinceId": 247,
+      "ownerISO3": "PRT"
+    },
+    {
       "provinceId": 248,
       "ownerISO3": "MOR"
     },
@@ -903,11 +911,11 @@
     },
     {
       "provinceId": 253,
-      "ownerISO3": "TIM"
+      "ownerISO3": "MOG"
     },
     {
       "provinceId": 254,
-      "ownerISO3": "TIM"
+      "ownerISO3": "MOG"
     },
     {
       "provinceId": 255,
@@ -947,7 +955,7 @@
     },
     {
       "provinceId": 269,
-      "ownerISO3": "BRG"
+      "ownerISO3": "DAN"
     },
     {
       "provinceId": 270,
@@ -3234,12 +3242,24 @@
       "ownerISO3": "LTH"
     },
     {
+      "provinceId": 920,
+      "ownerISO3": "STE"
+    },
+    {
+      "provinceId": 921,
+      "ownerISO3": "STE"
+    },
+    {
       "provinceId": 922,
       "ownerISO3": "LTH"
     },
     {
       "provinceId": 923,
       "ownerISO3": "LTH"
+    },
+    {
+      "provinceId": 924,
+      "ownerISO3": "STE"
     },
     {
       "provinceId": 925,
@@ -4178,6 +4198,14 @@
       "ownerISO3": "ZIM"
     },
     {
+      "provinceId": 1234,
+      "ownerISO3": "GRN"
+    },
+    {
+      "provinceId": 1235,
+      "ownerISO3": "CAS"
+    },
+    {
       "provinceId": 1246,
       "ownerISO3": "IRO"
     },
@@ -4466,12 +4494,28 @@
       "ownerISO3": "UZB"
     },
     {
+      "provinceId": 1382,
+      "ownerISO3": "SIB"
+    },
+    {
+      "provinceId": 1383,
+      "ownerISO3": "SIB"
+    },
+    {
+      "provinceId": 1384,
+      "ownerISO3": "SIB"
+    },
+    {
       "provinceId": 1385,
       "ownerISO3": "UZB"
     },
     {
       "provinceId": 1386,
       "ownerISO3": "UZB"
+    },
+    {
+      "provinceId": 1388,
+      "ownerISO3": "SIB"
     },
     {
       "provinceId": 1390,
@@ -4488,6 +4532,10 @@
     {
       "provinceId": 1393,
       "ownerISO3": "KRM"
+    },
+    {
+      "provinceId": 1394,
+      "ownerISO3": "STE"
     },
     {
       "provinceId": 1395,
@@ -4646,7 +4694,15 @@
       "ownerISO3": "FNJ"
     },
     {
+      "provinceId": 1457,
+      "ownerISO3": "MAM"
+    },
+    {
       "provinceId": 1458,
+      "ownerISO3": "MAM"
+    },
+    {
+      "provinceId": 1459,
       "ownerISO3": "MAM"
     },
     {
@@ -5562,6 +5618,14 @@
       "ownerISO3": "MAJ"
     },
     {
+      "provinceId": 1833,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1835,
+      "ownerISO3": "MGD"
+    },
+    {
       "provinceId": 1836,
       "ownerISO3": "BRU"
     },
@@ -5570,40 +5634,92 @@
       "ownerISO3": "CPA"
     },
     {
+      "provinceId": 1838,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1839,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1840,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1841,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1842,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1843,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1844,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1845,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1846,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1847,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1848,
+      "ownerISO3": "MGD"
+    },
+    {
       "provinceId": 1849,
       "ownerISO3": "SUL"
     },
     {
+      "provinceId": 1850,
+      "ownerISO3": "MGD"
+    },
+    {
       "provinceId": 1851,
-      "ownerISO3": "SUL"
+      "ownerISO3": "MGD"
     },
     {
       "provinceId": 1852,
-      "ownerISO3": "SUL"
+      "ownerISO3": "MGD"
     },
     {
       "provinceId": 1853,
-      "ownerISO3": "SUL"
+      "ownerISO3": "MGD"
     },
     {
       "provinceId": 1854,
-      "ownerISO3": "SUL"
+      "ownerISO3": "MGD"
     },
     {
       "provinceId": 1855,
-      "ownerISO3": "SUL"
+      "ownerISO3": "MGD"
     },
     {
       "provinceId": 1856,
-      "ownerISO3": "SUL"
+      "ownerISO3": "MGD"
     },
     {
       "provinceId": 1857,
-      "ownerISO3": "SUL"
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 1858,
+      "ownerISO3": "MGD"
     },
     {
       "provinceId": 1859,
-      "ownerISO3": "SUL"
+      "ownerISO3": "MGD"
     },
     {
       "provinceId": 1860,
@@ -5662,6 +5778,10 @@
       "ownerISO3": "KOT"
     },
     {
+      "provinceId": 1874,
+      "ownerISO3": "CEB"
+    },
+    {
       "provinceId": 1875,
       "ownerISO3": "CPA"
     },
@@ -5676,6 +5796,22 @@
     {
       "provinceId": 1878,
       "ownerISO3": "CPA"
+    },
+    {
+      "provinceId": 1879,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 1880,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 1881,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 1882,
+      "ownerISO3": "CEB"
     },
     {
       "provinceId": 1883,
@@ -5934,6 +6070,110 @@
       "ownerISO3": "TAI"
     },
     {
+      "provinceId": 1990,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 1991,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 1992,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 1993,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 1994,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 1995,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 1996,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 1997,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 1998,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 1999,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2000,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2001,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2002,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2003,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2004,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2005,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2006,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2007,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2008,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2009,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2010,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2011,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2012,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2013,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2014,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 2015,
+      "ownerISO3": "TND"
+    },
+    {
       "provinceId": 2016,
       "ownerISO3": "TAI"
     },
@@ -6094,6 +6334,70 @@
       "ownerISO3": "JBR"
     },
     {
+      "provinceId": 2058,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2059,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2060,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2061,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2062,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2063,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2064,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2065,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2066,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2067,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2068,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2069,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2070,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2071,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2072,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 2073,
+      "ownerISO3": "MID"
+    },
+    {
       "provinceId": 2092,
       "ownerISO3": "MAY"
     },
@@ -6227,6 +6531,22 @@
     },
     {
       "provinceId": 2130,
+      "ownerISO3": "MAM"
+    },
+    {
+      "provinceId": 2131,
+      "ownerISO3": "MAM"
+    },
+    {
+      "provinceId": 2132,
+      "ownerISO3": "MAM"
+    },
+    {
+      "provinceId": 2133,
+      "ownerISO3": "MAM"
+    },
+    {
+      "provinceId": 2134,
       "ownerISO3": "MAM"
     },
     {
@@ -7419,11 +7739,11 @@
     },
     {
       "provinceId": 2445,
-      "ownerISO3": "OTT"
+      "ownerISO3": "LEZ"
     },
     {
       "provinceId": 2446,
-      "ownerISO3": "OTT"
+      "ownerISO3": "LEZ"
     },
     {
       "provinceId": 2447,
@@ -7672,6 +7992,10 @@
     {
       "provinceId": 2508,
       "ownerISO3": "GRN"
+    },
+    {
+      "provinceId": 2509,
+      "ownerISO3": "CAS"
     },
     {
       "provinceId": 2510,
@@ -8339,7 +8663,7 @@
     },
     {
       "provinceId": 2832,
-      "ownerISO3": "VNC"
+      "ownerISO3": "KNI"
     },
     {
       "provinceId": 2833,
@@ -8547,11 +8871,11 @@
     },
     {
       "provinceId": 2884,
-      "ownerISO3": "FRA"
+      "ownerISO3": "GEN"
     },
     {
       "provinceId": 2885,
-      "ownerISO3": "FRA"
+      "ownerISO3": "GEN"
     },
     {
       "provinceId": 2886,
@@ -8662,6 +8986,10 @@
       "ownerISO3": "RYU"
     },
     {
+      "provinceId": 2917,
+      "ownerISO3": "MYN"
+    },
+    {
       "provinceId": 2918,
       "ownerISO3": "JOS"
     },
@@ -8759,7 +9087,7 @@
     },
     {
       "provinceId": 2995,
-      "ownerISO3": "BRU"
+      "ownerISO3": "SUL"
     },
     {
       "provinceId": 2997,
@@ -8774,8 +9102,108 @@
       "ownerISO3": "SUL"
     },
     {
+      "provinceId": 3002,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 3003,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3004,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3005,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3006,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3007,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3008,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3009,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3010,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3011,
+      "ownerISO3": "CEB"
+    },
+    {
       "provinceId": 3012,
       "ownerISO3": "BRU"
+    },
+    {
+      "provinceId": 3013,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3014,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3015,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3016,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3017,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3018,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3019,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3020,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 3021,
+      "ownerISO3": "CEB"
+    },
+    {
+      "provinceId": 3022,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 3023,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 3024,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 3025,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 3026,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 3027,
+      "ownerISO3": "TND"
     },
     {
       "provinceId": 3078,
@@ -8812,6 +9240,10 @@
     {
       "provinceId": 3087,
       "ownerISO3": "TAI"
+    },
+    {
+      "provinceId": 3088,
+      "ownerISO3": "MYN"
     },
     {
       "provinceId": 3089,
@@ -8964,6 +9396,10 @@
     {
       "provinceId": 3154,
       "ownerISO3": "SWD"
+    },
+    {
+      "provinceId": 3177,
+      "ownerISO3": "CEB"
     },
     {
       "provinceId": 3178,
@@ -9430,6 +9866,10 @@
       "ownerISO3": "MAJ"
     },
     {
+      "provinceId": 3320,
+      "ownerISO3": "MID"
+    },
+    {
       "provinceId": 3321,
       "ownerISO3": "OTT"
     },
@@ -9456,6 +9896,14 @@
     {
       "provinceId": 3330,
       "ownerISO3": "KKY"
+    },
+    {
+      "provinceId": 3331,
+      "ownerISO3": "MID"
+    },
+    {
+      "provinceId": 3332,
+      "ownerISO3": "MID"
     },
     {
       "provinceId": 3333,
@@ -10318,12 +10766,20 @@
       "ownerISO3": "PRT"
     },
     {
+      "provinceId": 3566,
+      "ownerISO3": "MGD"
+    },
+    {
+      "provinceId": 3567,
+      "ownerISO3": "MGD"
+    },
+    {
       "provinceId": 3568,
-      "ownerISO3": "SUL"
+      "ownerISO3": "MGD"
     },
     {
       "provinceId": 3569,
-      "ownerISO3": "SUL"
+      "ownerISO3": "MGD"
     },
     {
       "provinceId": 3570,
@@ -11343,7 +11799,7 @@
     },
     {
       "provinceId": 3886,
-      "ownerISO3": "OTT"
+      "ownerISO3": "LEZ"
     },
     {
       "provinceId": 3887,
@@ -12179,7 +12635,7 @@
     },
     {
       "provinceId": 4134,
-      "ownerISO3": "MVY"
+      "ownerISO3": "RYA"
     },
     {
       "provinceId": 4135,
@@ -12231,7 +12687,7 @@
     },
     {
       "provinceId": 4147,
-      "ownerISO3": "MVY"
+      "ownerISO3": "TVR"
     },
     {
       "provinceId": 4148,
@@ -12288,6 +12744,90 @@
     {
       "provinceId": 4162,
       "ownerISO3": "POL"
+    },
+    {
+      "provinceId": 4163,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4164,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4165,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4166,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4167,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4168,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4169,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4170,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4171,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4172,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4173,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4174,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4175,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4176,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4177,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4178,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4179,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4180,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4181,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4182,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4183,
+      "ownerISO3": "TND"
     },
     {
       "provinceId": 4184,
@@ -13432,6 +13972,34 @@
     {
       "provinceId": 4500,
       "ownerISO3": "MAM"
+    },
+    {
+      "provinceId": 4505,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4506,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4507,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4508,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4509,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4510,
+      "ownerISO3": "TND"
+    },
+    {
+      "provinceId": 4511,
+      "ownerISO3": "TND"
     },
     {
       "provinceId": 4512,

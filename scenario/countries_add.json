@@ -3,7 +3,6 @@
     {
       "iso3": "OTT",
       "name": "Ottoman Empire",
-      "rulerName": "Murad II",
       "mapColor": "#C8392B",
       "capital": "Edirne",
       "capitalProvince": "Edirne",
@@ -34,7 +33,6 @@
     {
       "iso3": "FRA",
       "name": "Kingdom of France",
-      "rulerName": "Charles VII",
       "mapColor": "#4169E1",
       "capital": "Paris",
       "capitalProvince": "Île-de-France",
@@ -61,7 +59,6 @@
     {
       "iso3": "PRT",
       "name": "Kingdom of Portugal",
-      "rulerName": "Alfonso V",
       "mapColor": "#32CD32",
       "capital": "Lisbon",
       "capitalProvince": "Estremadura",
@@ -89,7 +86,6 @@
     {
       "iso3": "CHE",
       "name": "Swiss Confederation",
-      "rulerName": "Federal Diet",
       "mapColor": "#FF0000",
       "capital": "Lucerne",
       "capitalProvince": "Lucerne",
@@ -113,7 +109,6 @@
     {
       "iso3": "POL",
       "name": "Crown of Poland",
-      "rulerName": "Casimir IV",
       "mapColor": "#FFB6C1",
       "capital": "Kraków",
       "capitalProvince": "Kraków",
@@ -139,7 +134,6 @@
     {
       "iso3": "HUN",
       "name": "Crown of Hungary",
-      "rulerName": "John Hunyadi",
       "mapColor": "#FF6347",
       "capital": "Buda",
       "capitalProvince": "Budapest",
@@ -165,7 +159,6 @@
     {
       "iso3": "MYN",
       "name": "Ming Dynasty",
-      "rulerName": "Emperor Zhu Zhanji",
       "mapColor": "#E8B84B",
       "capital": "Nanjing",
       "capitalProvince": "Nanjing",
@@ -194,7 +187,6 @@
     {
       "iso3": "ENG",
       "name": "Kingdom of England",
-      "rulerName": "Henry VI",
       "mapColor": "#C63838",
       "capital": "London",
       "capitalProvince": "Greater London",
@@ -221,7 +213,6 @@
     {
       "iso3": "CAS",
       "name": "Crown of Castile",
-      "rulerName": "John II",
       "mapColor": "#C8A020",
       "capital": "Valladolid",
       "capitalProvince": "Valladolid",
@@ -247,7 +238,6 @@
     {
       "iso3": "ARA",
       "name": "Crown of Aragon",
-      "rulerName": "Alfonso V",
       "mapColor": "#D4622A",
       "capital": "Barcelona",
       "capitalProvince": "Barcelona",
@@ -273,7 +263,6 @@
     {
       "iso3": "MVY",
       "name": "Duchy of Moscow",
-      "rulerName": "Vasily III",
       "mapColor": "#8B0000",
       "capital": "Moscow",
       "capitalProvince": "Moscow Oblast",
@@ -300,7 +289,6 @@
     {
       "iso3": "VNC",
       "name": "Republic of Venice",
-      "rulerName": "Francesco Foscari",
       "mapColor": "#2A7A9B",
       "capital": "Venice",
       "capitalProvince": "Veneto",
@@ -327,7 +315,6 @@
     {
       "iso3": "MAM",
       "name": "Mamluk Sultanate",
-      "rulerName": "Jaqmaq",
       "mapColor": "#C8A050",
       "capital": "Cairo",
       "capitalProvince": "Cairo",
@@ -353,7 +340,6 @@
     {
       "iso3": "TIM",
       "name": "Timurid Empire",
-      "rulerName": "Abu Sa'id",
       "mapColor": "#7B6BB0",
       "capital": "Herat",
       "capitalProvince": "Herat",
@@ -379,7 +365,6 @@
     {
       "iso3": "JOS",
       "name": "Joseon Dynasty",
-      "rulerName": "King Munjong",
       "mapColor": "#3B7A8C",
       "capital": "Hanseong",
       "capitalProvince": "Seoul",
@@ -405,7 +390,6 @@
     {
       "iso3": "VIJ",
       "name": "Vijayanagara Empire",
-      "rulerName": "Vira Narasimha",
       "mapColor": "#C87020",
       "capital": "Hampi",
       "capitalProvince": "Karnataka",
@@ -478,7 +462,6 @@
     {
       "iso3": "BUR",
       "name": "Duchy of Burgundy",
-      "rulerName": "Philip the Good",
       "mapColor": "#4A2A8E",
       "capital": "Dijon",
       "capitalProvince": "Burgundy",
@@ -742,7 +725,6 @@
     {
       "iso3": "MIL",
       "name": "Duchy of Milan",
-      "rulerName": "Francesco Sforza",
       "mapColor": "#1E8C6A",
       "capital": "Milan",
       "capitalProvince": "Lombardy",
@@ -768,7 +750,6 @@
     {
       "iso3": "BYZ",
       "name": "Byzantine Empire",
-      "rulerName": "Constantine XI",
       "mapColor": "#9B1A8E",
       "capital": "Constantinople",
       "capitalProvince": "Constantinople",
@@ -1074,7 +1055,6 @@
     {
       "iso3": "MRC",
       "name": "Muromachi Shogunate",
-      "rulerName": "Shogun Yoshimasa",
       "mapColor": "#CC3322",
       "capital": "Kyoto",
       "capitalProvince": "Kinai",
@@ -1169,7 +1149,6 @@
     {
       "iso3": "FLR",
       "name": "Republic of Florence",
-      "rulerName": "Cosimo de' Medici",
       "mapColor": "#8B0000",
       "capital": "Florence",
       "capitalProvince": "Firenze",
@@ -1688,14 +1667,13 @@
     {
       "iso3": "SAX",
       "name": "Electorate of Saxony",
-      "rulerName": "Frederick II",
       "mapColor": "#3F7D5A",
       "capital": "Meissen",
       "capitalProvince": "Sachsen",
       "population": 700000,
       "areaKm2": 55000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Electorate",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -1714,14 +1692,13 @@
     {
       "iso3": "BRG",
       "name": "Margraviate of Brandenburg",
-      "rulerName": "Frederick II",
       "mapColor": "#6E7B8B",
       "capital": "Brandenburg",
       "capitalProvince": "Brandenburg",
       "population": 400000,
       "areaKm2": 42000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Margraviate",
+      "governmentSubtype": "Duchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -1740,7 +1717,6 @@
     {
       "iso3": "BAV",
       "name": "Duchy of Bavaria",
-      "rulerName": "Albert III",
       "mapColor": "#4F8FD0",
       "capital": "Munich",
       "capitalProvince": "Bayern",
@@ -1763,14 +1739,13 @@
     {
       "iso3": "PAL",
       "name": "Electoral Palatinate",
-      "rulerName": "Louis IV",
       "mapColor": "#B5651D",
       "capital": "Heidelberg",
       "capitalProvince": "Rheinland-Pfalz",
       "population": 380000,
       "areaKm2": 22000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "County Palatine",
+      "governmentSubtype": "Duchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -1786,14 +1761,13 @@
     {
       "iso3": "COL",
       "name": "Electorate of Cologne",
-      "rulerName": "Dietrich II",
       "mapColor": "#C0392B",
       "capital": "Cologne",
       "capitalProvince": "Nordrhein-Westfalen",
       "population": 450000,
       "areaKm2": 18000,
       "governmentType": "Theocracy",
-      "governmentSubtype": "Prince-Archbishopric",
+      "governmentSubtype": "Theocracy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -1809,14 +1783,13 @@
     {
       "iso3": "WUR",
       "name": "County of Württemberg",
-      "rulerName": "Louis I",
       "mapColor": "#D4A017",
       "capital": "Stuttgart",
       "capitalProvince": "Baden-Württemberg",
       "population": 300000,
       "areaKm2": 16000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "County",
+      "governmentSubtype": "Duchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -1832,14 +1805,13 @@
     {
       "iso3": "LIV",
       "name": "Livonian Confederation",
-      "rulerName": "Heidenreich Vincke",
       "mapColor": "#8E7CC3",
       "capital": "Riga",
       "capitalProvince": "Riga",
       "population": 500000,
       "areaKm2": 65000,
       "governmentType": "Theocracy",
-      "governmentSubtype": "Military Order",
+      "governmentSubtype": "Theocracy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -1858,14 +1830,13 @@
     {
       "iso3": "BOS",
       "name": "Kingdom of Bosnia",
-      "rulerName": "Stephen Thomas",
       "mapColor": "#A0522D",
       "capital": "Jajce",
       "capitalProvince": "Sarajevo",
       "population": 450000,
       "areaKm2": 51000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -1884,14 +1855,13 @@
     {
       "iso3": "LUS",
       "name": "Kingdom of Cyprus",
-      "rulerName": "John II",
       "mapColor": "#E0C068",
       "capital": "Nicosia",
       "capitalProvince": "Nicosia",
       "population": 180000,
       "areaKm2": 9000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -1910,7 +1880,6 @@
     {
       "iso3": "TAH",
       "name": "Tahirid Sultanate of Yemen",
-      "rulerName": "Al-Zafir Amir",
       "mapColor": "#3E7D4F",
       "capital": "Ta`izz",
       "capitalProvince": "Ta`izz",
@@ -1936,7 +1905,6 @@
     {
       "iso3": "NBH",
       "name": "Nabhani Kingdom of Oman",
-      "rulerName": "Sulayman bin Sulayman al-Nabhani",
       "mapColor": "#8A5A2B",
       "capital": "Nizwa",
       "capitalProvince": "Muscat",
@@ -1962,14 +1930,13 @@
     {
       "iso3": "HRM",
       "name": "Kingdom of Hormuz",
-      "rulerName": "Sayf al-Din",
       "mapColor": "#1F8FA0",
       "capital": "Hormuz",
       "capitalProvince": "Hormozgan",
       "population": 300000,
       "areaKm2": 60000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Maritime Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Islamist",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -1988,7 +1955,6 @@
     {
       "iso3": "JBR",
       "name": "Jabrid Emirate",
-      "rulerName": "Sayf bin Zamil al-Jabri",
       "mapColor": "#C2A14D",
       "capital": "Al-Hasa",
       "capitalProvince": "Al ManÄmah",
@@ -2014,14 +1980,13 @@
     {
       "iso3": "SHV",
       "name": "Shirvanshahs",
-      "rulerName": "Khalilullah I",
       "mapColor": "#5C6BC0",
       "capital": "Shamakhi",
       "capitalProvince": "Şamaxı",
       "population": 600000,
       "areaKm2": 50000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Shahdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Islamist",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2040,14 +2005,13 @@
     {
       "iso3": "GRG",
       "name": "Kingdom of Georgia",
-      "rulerName": "George VIII",
       "mapColor": "#B23A48",
       "capital": "Tbilisi",
       "capitalProvince": "Tbilisi",
       "population": 700000,
       "areaKm2": 70000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2066,7 +2030,6 @@
     {
       "iso3": "ZAY",
       "name": "Zayyanid Kingdom of Tlemcen",
-      "rulerName": "Abu Abdallah Muhammad IV",
       "mapColor": "#D98E32",
       "capital": "Tlemcen",
       "capitalProvince": "Tlemcen",
@@ -2092,7 +2055,6 @@
     {
       "iso3": "UZB",
       "name": "Uzbek Khanate",
-      "rulerName": "Abu'l-Khayr Khan",
       "mapColor": "#7E9B76",
       "capital": "Sighnaq",
       "capitalProvince": "South Kazakhstan",
@@ -2118,7 +2080,6 @@
     {
       "iso3": "MLW",
       "name": "Malwa Sultanate",
-      "rulerName": "Mahmud Khalji",
       "mapColor": "#8FB339",
       "capital": "Mandu",
       "capitalProvince": "Madhya Pradesh",
@@ -2142,14 +2103,13 @@
     {
       "iso3": "MEW",
       "name": "Kingdom of Mewar",
-      "rulerName": "Rana Kumbha",
       "mapColor": "#E0A34B",
       "capital": "Chittorgarh",
       "capitalProvince": "Rajasthan",
       "population": 1800000,
       "areaKm2": 140000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Rajput Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2166,7 +2126,6 @@
     {
       "iso3": "JNP",
       "name": "Jaunpur Sultanate",
-      "rulerName": "Mahmud Shah Sharqi",
       "mapColor": "#5FA68C",
       "capital": "Jaunpur",
       "capitalProvince": "Uttar Pradesh",
@@ -2190,14 +2149,13 @@
     {
       "iso3": "ORI",
       "name": "Gajapati Kingdom of Orissa",
-      "rulerName": "Kapilendra Deva",
       "mapColor": "#C2562F",
       "capital": "Cuttack",
       "capitalProvince": "Odisha",
       "population": 2500000,
       "areaKm2": 170000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Hindu Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2217,7 +2175,6 @@
     {
       "iso3": "KSH",
       "name": "Kashmir Sultanate",
-      "rulerName": "Zain-ul-Abidin",
       "mapColor": "#7E9BD9",
       "capital": "Srinagar",
       "capitalProvince": "Jammu and Kashmir",
@@ -2240,14 +2197,13 @@
     {
       "iso3": "NEP",
       "name": "Malla Kingdom of Nepal",
-      "rulerName": "Yaksha Malla",
       "mapColor": "#B0524F",
       "capital": "Bhaktapur",
       "capitalProvince": "Bagmati",
       "population": 800000,
       "areaKm2": 70000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Hindu Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2263,14 +2219,13 @@
     {
       "iso3": "KOT",
       "name": "Kingdom of Kotte",
-      "rulerName": "Parakramabahu VI",
       "mapColor": "#D8A93F",
       "capital": "Kotte",
       "capitalProvince": "Kōḷamba",
       "population": 700000,
       "areaKm2": 50000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Buddhist Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2289,7 +2244,6 @@
     {
       "iso3": "MLD",
       "name": "Sultanate of the Maldives",
-      "rulerName": "Hassan VI",
       "mapColor": "#3FA9A0",
       "capital": "Malé",
       "capitalProvince": "Malé",
@@ -2314,7 +2268,6 @@
     {
       "iso3": "SND",
       "name": "Samma Sultanate of Sindh",
-      "rulerName": "Jam Nizamuddin II",
       "mapColor": "#A88B5C",
       "capital": "Thatta",
       "capitalProvince": "Sind",
@@ -2340,14 +2293,13 @@
     {
       "iso3": "AVA",
       "name": "Kingdom of Ava",
-      "rulerName": "Narapati I",
       "mapColor": "#C99B3D",
       "capital": "Ava",
       "capitalProvince": "Mandalay",
       "population": 1500000,
       "areaKm2": 200000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Burmese Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2364,14 +2316,13 @@
     {
       "iso3": "PEG",
       "name": "Hanthawaddy Kingdom of Pegu",
-      "rulerName": "Binnya Waru",
       "mapColor": "#5DA85E",
       "capital": "Pegu",
       "capitalProvince": "Bago",
       "population": 1300000,
       "areaKm2": 130000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Mon Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2390,14 +2341,13 @@
     {
       "iso3": "ARK",
       "name": "Kingdom of Mrauk U",
-      "rulerName": "Ali Khan",
       "mapColor": "#9C6FB0",
       "capital": "Mrauk U",
       "capitalProvince": "Rakhine",
       "population": 600000,
       "areaKm2": 60000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Arakanese Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2416,14 +2366,13 @@
     {
       "iso3": "LNA",
       "name": "Lan Na Kingdom",
-      "rulerName": "Tilokaraj",
       "mapColor": "#D17B3F",
       "capital": "Chiang Mai",
       "capitalProvince": "Chiang Mai",
       "population": 900000,
       "areaKm2": 90000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Tai Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2439,14 +2388,13 @@
     {
       "iso3": "LXG",
       "name": "Kingdom of Lan Xang",
-      "rulerName": "Chakkaphat Phaen Phaeo",
       "mapColor": "#B5483C",
       "capital": "Luang Prabang",
       "capitalProvince": "Louangphrabang",
       "population": 800000,
       "areaKm2": 200000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Lao Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2462,14 +2410,13 @@
     {
       "iso3": "KMR",
       "name": "Khmer Kingdom",
-      "rulerName": "Ponhea Yat",
       "mapColor": "#C9A23D",
       "capital": "Phnom Penh",
       "capitalProvince": "Phnom Penh",
       "population": 1200000,
       "areaKm2": 180000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Khmer Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2488,14 +2435,13 @@
     {
       "iso3": "CPA",
       "name": "Kingdom of Champa",
-      "rulerName": "Maha Vijaya",
       "mapColor": "#5C8FB0",
       "capital": "Vijaya",
       "capitalProvince": "Bình Định",
       "population": 800000,
       "areaKm2": 90000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Cham Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2514,7 +2460,6 @@
     {
       "iso3": "BRU",
       "name": "Sultanate of Brunei",
-      "rulerName": "Sultan Sulaiman",
       "mapColor": "#E0C24B",
       "capital": "Brunei Town",
       "capitalProvince": "Brunei and Muara",
@@ -2539,7 +2484,6 @@
     {
       "iso3": "PSI",
       "name": "Samudra-Pasai Sultanate",
-      "rulerName": "Zain al-Abidin",
       "mapColor": "#3F9C6B",
       "capital": "Pasai",
       "capitalProvince": "Aceh",
@@ -2564,7 +2508,6 @@
     {
       "iso3": "SUL",
       "name": "Sultanate of Sulu",
-      "rulerName": "Sharif ul-Hashim",
       "mapColor": "#B07ECB",
       "capital": "Jolo",
       "capitalProvince": "Sulu",
@@ -2589,7 +2532,6 @@
     {
       "iso3": "MGL",
       "name": "Oirat Mongol Confederation",
-      "rulerName": "Esen Taishi",
       "mapColor": "#9AA0A6",
       "capital": "Karakorum",
       "capitalProvince": "Ulaanbaatar",
@@ -2612,14 +2554,13 @@
     {
       "iso3": "MOS",
       "name": "Mossi Kingdoms",
-      "rulerName": "Naba",
       "mapColor": "#B5651D",
       "capital": "Ouagadougou",
       "capitalProvince": "Upper West",
       "population": 600000,
       "areaKm2": 180000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Confederation of Kingdoms",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2638,14 +2579,13 @@
     {
       "iso3": "HAU",
       "name": "Hausa City-States",
-      "rulerName": "Sarki",
       "mapColor": "#9ACD32",
       "capital": "Kano",
       "capitalProvince": "Kano",
       "population": 700000,
       "areaKm2": 120000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "City-State League",
+      "governmentSubtype": "CityState",
       "ideology": "Islamist",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2661,14 +2601,13 @@
     {
       "iso3": "OYO",
       "name": "Oyo Empire",
-      "rulerName": "Alaafin",
       "mapColor": "#CD853F",
       "capital": "Oyo-Ile",
       "capitalProvince": "Oyo",
       "population": 500000,
       "areaKm2": 90000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2687,14 +2626,13 @@
     {
       "iso3": "LUB",
       "name": "Kingdom of Luba",
-      "rulerName": "Mulopwe",
       "mapColor": "#8B5A2B",
       "capital": "Mwibele",
       "capitalProvince": "Katanga",
       "population": 350000,
       "areaKm2": 150000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2710,7 +2648,6 @@
     {
       "iso3": "ADA",
       "name": "Adal Sultanate",
-      "rulerName": "Sabr ad-Din III",
       "mapColor": "#3CB371",
       "capital": "Zeila",
       "capitalProvince": "Woqooyi Galbeed",
@@ -2736,7 +2673,6 @@
     {
       "iso3": "FNJ",
       "name": "Funj Sultanate of Sennar",
-      "rulerName": "Amara Dunqas",
       "mapColor": "#DAA520",
       "capital": "Sennar",
       "capitalProvince": "Sennar",
@@ -2759,14 +2695,13 @@
     {
       "iso3": "KLW",
       "name": "Kilwa Sultanate (Swahili Coast)",
-      "rulerName": "Sultan al-Hasan",
       "mapColor": "#20B2AA",
       "capital": "Kilwa",
       "capitalProvince": "Mtwara",
       "population": 300000,
       "areaKm2": 60000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Mercantile Sultanate",
+      "governmentSubtype": "Sultanate",
       "ideology": "Islamist",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2785,14 +2720,13 @@
     {
       "iso3": "BUG",
       "name": "Kingdom of Buganda",
-      "rulerName": "Kabaka",
       "mapColor": "#6B8E23",
       "capital": "Kampala",
       "capitalProvince": "Kampala",
       "population": 400000,
       "areaKm2": 80000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2811,14 +2745,13 @@
     {
       "iso3": "MAD",
       "name": "Madagascar Chiefdoms",
-      "rulerName": "Andriana",
       "mapColor": "#C71585",
       "capital": "Antananarivo",
       "capitalProvince": "Analamanga",
       "population": 350000,
       "areaKm2": 200000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Chiefdoms",
+      "governmentSubtype": "Chiefdom",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2837,14 +2770,13 @@
     {
       "iso3": "TAR",
       "name": "Tarascan State (Purepecha)",
-      "rulerName": "Tzitzispandacuare",
       "mapColor": "#FF7F50",
       "capital": "Tzintzuntzan",
       "capitalProvince": "Michoacán",
       "population": 500000,
       "areaKm2": 75000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2863,14 +2795,13 @@
     {
       "iso3": "TLX",
       "name": "Tlaxcala",
-      "rulerName": "Tlaxcala Council",
       "mapColor": "#E9967A",
       "capital": "Tlaxcala",
       "capitalProvince": "Tlaxcala",
       "population": 200000,
       "areaKm2": 12000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Confederate Republic",
+      "governmentSubtype": "FederalRepublic",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2886,14 +2817,13 @@
     {
       "iso3": "ZAP",
       "name": "Zapotec Kingdom",
-      "rulerName": "Cosijoeza",
       "mapColor": "#DB7093",
       "capital": "Zaachila",
       "capitalProvince": "Oaxaca",
       "population": 250000,
       "areaKm2": 40000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2912,14 +2842,13 @@
     {
       "iso3": "CHM",
       "name": "Kingdom of Chimor",
-      "rulerName": "Minchançaman",
       "mapColor": "#4682B4",
       "capital": "Chan Chan",
       "capitalProvince": "La Libertad",
       "population": 500000,
       "areaKm2": 60000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Kingdom",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2938,14 +2867,13 @@
     {
       "iso3": "MUI",
       "name": "Muisca Confederation",
-      "rulerName": "Zipa Saguamanchica",
       "mapColor": "#FFD700",
       "capital": "Bacata",
       "capitalProvince": "Bogota",
       "population": 600000,
       "areaKm2": 30000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Confederation",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2964,14 +2892,13 @@
     {
       "iso3": "MAP",
       "name": "Mapuche",
-      "rulerName": "Lonko",
       "mapColor": "#2E8B57",
       "capital": "Temuco",
       "capitalProvince": "La Araucanía",
       "population": 400000,
       "areaKm2": 120000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Tribal Confederacy",
+      "governmentSubtype": "Tribe",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -2990,14 +2917,13 @@
     {
       "iso3": "IRO",
       "name": "Haudenosaunee Confederacy",
-      "rulerName": "Hiawatha",
       "mapColor": "#800000",
       "capital": "Onondaga",
       "capitalProvince": "New York",
       "population": 100000,
       "areaKm2": 200000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Confederacy",
+      "governmentSubtype": "FeudalMonarchy",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -3016,14 +2942,13 @@
     {
       "iso3": "PUE",
       "name": "Pueblo Peoples",
-      "rulerName": "Pueblo Council",
       "mapColor": "#CD5C5C",
       "capital": "Acoma",
       "capitalProvince": "New Mexico",
       "population": 80000,
       "areaKm2": 150000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "City-State League",
+      "governmentSubtype": "CityState",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -3039,14 +2964,13 @@
     {
       "iso3": "CAH",
       "name": "Mississippian Chiefdoms (Cahokia)",
-      "rulerName": "Great Sun",
       "mapColor": "#A0522D",
       "capital": "Cahokia",
       "capitalProvince": "Illinois",
       "population": 120000,
       "areaKm2": 250000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Paramount Chiefdom",
+      "governmentSubtype": "Chiefdom",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -3062,14 +2986,13 @@
     {
       "iso3": "TAI",
       "name": "Taino Cacicazgos",
-      "rulerName": "Cacique Guacanagarix",
       "mapColor": "#48D1CC",
       "capital": "Xaragua",
       "capitalProvince": "Santo Domingo",
       "population": 500000,
       "areaKm2": 90000,
       "governmentType": "Monarchy",
-      "governmentSubtype": "Chiefdoms",
+      "governmentSubtype": "Chiefdom",
       "ideology": "Conservative",
       "militaryUnitTypeIds": [
         "medieval_infantry",
@@ -3084,6 +3007,298 @@
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
       "homelandTerm": "THE TAINO LANDS"
+    },
+    {
+      "iso3": "TND",
+      "name": "Kingdom of Tondo",
+      "leaderName": "Lakan Timamanukum",
+      "leaderTitle": "Lakan",
+      "capital": "Tondo",
+      "capitalProvince": "Manila",
+      "population": 400000,
+      "areaKm2": 105000,
+      "governmentType": "Monarchy",
+      "governmentSubtype": "FeudalMonarchy",
+      "ideology": "Conservative",
+      "mapColor": "#3B6E8C",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry",
+        "med_galley",
+        "med_cog",
+        "med_carrack"
+      ],
+      "flagPngPath": "flags/TND.png",
+      "continent": "Asia",
+      "region": "SoutheastAsia",
+      "homelandTerm": "THE KINGDOM"
+    },
+    {
+      "iso3": "CEB",
+      "name": "Rajahnate of Cebu",
+      "leaderName": "Sri Lumay",
+      "leaderTitle": "Rajah",
+      "capital": "Singhapala",
+      "capitalProvince": "Cebu",
+      "population": 250000,
+      "areaKm2": 35000,
+      "governmentType": "Monarchy",
+      "governmentSubtype": "FeudalMonarchy",
+      "ideology": "Conservative",
+      "mapColor": "#D4A373",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry",
+        "med_galley",
+        "med_cog",
+        "med_carrack"
+      ],
+      "flagPngPath": "flags/CEB.png",
+      "continent": "Asia",
+      "region": "SoutheastAsia",
+      "homelandTerm": "THE RAJAHNATE"
+    },
+    {
+      "iso3": "MGD",
+      "name": "Sultanate of Maguindanao",
+      "leaderName": "Sharif Kabungsuwan",
+      "leaderTitle": "Sultan",
+      "capital": "Cotabato",
+      "capitalProvince": "Maguindanao",
+      "population": 350000,
+      "areaKm2": 65000,
+      "governmentType": "Monarchy",
+      "governmentSubtype": "Sultanate",
+      "ideology": "Islamist",
+      "mapColor": "#8F5E1E",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry",
+        "med_galley",
+        "med_cog",
+        "med_carrack"
+      ],
+      "flagPngPath": "flags/MGD.png",
+      "continent": "Asia",
+      "region": "SoutheastAsia",
+      "homelandTerm": "THE SULTANATE"
+    },
+    {
+      "iso3": "MID",
+      "name": "Kingdom of Middag",
+      "leaderName": "Kamachat Aslamie",
+      "leaderTitle": "King",
+      "capital": "Dadu",
+      "capitalProvince": "Taichung City",
+      "population": 120000,
+      "areaKm2": 25000,
+      "governmentType": "Monarchy",
+      "governmentSubtype": "Tribe",
+      "ideology": "Conservative",
+      "mapColor": "#4A7C59",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry",
+        "med_galley",
+        "med_cog",
+        "med_carrack"
+      ],
+      "flagPngPath": "flags/MID.png",
+      "continent": "Asia",
+      "region": "EastAsia",
+      "homelandTerm": "THE REALM"
+    },
+    {
+      "iso3": "LEZ",
+      "name": "League of Lezhë",
+      "leaderName": "Gjergj Kastrioti Skanderbeg",
+      "leaderTitle": "Prince",
+      "capital": "Krujë",
+      "capitalProvince": "Tiranë",
+      "population": 200000,
+      "areaKm2": 20000,
+      "governmentType": "Monarchy",
+      "governmentSubtype": "FeudalMonarchy",
+      "ideology": "Conservative",
+      "mapColor": "#A01A1E",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry",
+        "med_galley",
+        "med_cog",
+        "med_carrack"
+      ],
+      "flagPngPath": "flags/LEZ.png",
+      "continent": "Europe",
+      "region": "SouthernEurope",
+      "homelandTerm": "ALBANIA"
+    },
+    {
+      "iso3": "STE",
+      "name": "Great Horde",
+      "leaderName": "Sayid Ahmad I",
+      "leaderTitle": "Khan",
+      "capital": "Sarai",
+      "capitalProvince": "Volgograd",
+      "population": 1500000,
+      "areaKm2": 450000,
+      "governmentType": "Monarchy",
+      "governmentSubtype": "Khanate",
+      "ideology": "Islamist",
+      "mapColor": "#D4AF37",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry",
+        "med_galley",
+        "med_cog",
+        "med_carrack"
+      ],
+      "flagPngPath": "flags/STE.png",
+      "continent": "Europe",
+      "region": "EasternEurope",
+      "homelandTerm": "THE HORDE"
+    },
+    {
+      "iso3": "TVR",
+      "name": "Principality of Tver",
+      "leaderName": "Boris Alexandrovich",
+      "leaderTitle": "Grand Prince",
+      "capital": "Tver",
+      "capitalProvince": "Tver'",
+      "population": 250000,
+      "areaKm2": 40000,
+      "governmentType": "Monarchy",
+      "governmentSubtype": "FeudalMonarchy",
+      "ideology": "Conservative",
+      "mapColor": "#B8860B",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry",
+        "muscovy_streltsy",
+        "muscovy_boyar_cavalry"
+      ],
+      "flagPngPath": "flags/TVR.png",
+      "continent": "Europe",
+      "region": "EasternEurope",
+      "homelandTerm": "THE PRINCIPALITY"
+    },
+    {
+      "iso3": "RYA",
+      "name": "Principality of Ryazan",
+      "leaderName": "Ivan Fyodorovich",
+      "leaderTitle": "Grand Prince",
+      "capital": "Ryazan",
+      "capitalProvince": "Ryazan'",
+      "population": 200000,
+      "areaKm2": 35000,
+      "governmentType": "Monarchy",
+      "governmentSubtype": "FeudalMonarchy",
+      "ideology": "Conservative",
+      "mapColor": "#CD853F",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry",
+        "muscovy_streltsy",
+        "muscovy_boyar_cavalry"
+      ],
+      "flagPngPath": "flags/RYA.png",
+      "continent": "Europe",
+      "region": "EasternEurope",
+      "homelandTerm": "THE PRINCIPALITY"
+    },
+    {
+      "iso3": "PSK",
+      "name": "Pskov Republic",
+      "leaderName": "Pskov Veche",
+      "leaderTitle": "Posadnik",
+      "capital": "Pskov",
+      "capitalProvince": "Pskov",
+      "population": 150000,
+      "areaKm2": 30000,
+      "governmentType": "Democracy",
+      "governmentSubtype": "CityState",
+      "ideology": "Conservative",
+      "mapColor": "#5F9EA0",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry",
+        "muscovy_streltsy"
+      ],
+      "flagPngPath": "flags/PSK.png",
+      "continent": "Europe",
+      "region": "EasternEurope",
+      "homelandTerm": "THE REPUBLIC"
+    },
+    {
+      "iso3": "MOG",
+      "name": "Moghulistan",
+      "leaderName": "Esen Buqa II",
+      "leaderTitle": "Khan",
+      "capital": "Kashgar",
+      "capitalProvince": "Xinjiang",
+      "population": 800000,
+      "areaKm2": 800000,
+      "governmentType": "Monarchy",
+      "governmentSubtype": "Khanate",
+      "ideology": "Islamist",
+      "mapColor": "#2E8B57",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry",
+        "ming_cavalry_archer"
+      ],
+      "flagPngPath": "flags/MOG.png",
+      "continent": "Asia",
+      "region": "CentralAsia",
+      "homelandTerm": "THE KHANATE"
+    },
+    {
+      "iso3": "SIB",
+      "name": "Siberian Khanate",
+      "leaderName": "Taibugha",
+      "leaderTitle": "Khan",
+      "capital": "Chimgi-Tura",
+      "capitalProvince": "Tyumen'",
+      "population": 300000,
+      "areaKm2": 600000,
+      "governmentType": "Monarchy",
+      "governmentSubtype": "Khanate",
+      "ideology": "Islamist",
+      "mapColor": "#4682B4",
+      "militaryUnitTypeIds": [
+        "medieval_infantry",
+        "medieval_cavalry"
+      ],
+      "flagPngPath": "flags/SIB.png",
+      "continent": "Asia",
+      "region": "CentralAsia",
+      "homelandTerm": "THE KHANATE"
+    },
+    {
+      "iso3": "KNI",
+      "name": "Knights Hospitaller",
+      "leaderName": "Jean de Lastic",
+      "leaderTitle": "Grand Master",
+      "capital": "Rhodes",
+      "capitalProvince": "Notio Aigaio",
+      "population": 50000,
+      "areaKm2": 2500,
+      "governmentType": "Theocracy",
+      "governmentSubtype": "Theocracy",
+      "ideology": "Conservative",
+      "mapColor": "#800000",
+      "militaryUnitTypeIds": [
+        "teu_crusader_knight",
+        "medieval_infantry",
+        "medieval_cavalry",
+        "med_galley",
+        "med_cog",
+        "med_carrack"
+      ],
+      "flagPngPath": "flags/KNI.png",
+      "continent": "Europe",
+      "region": "SouthernEurope",
+      "homelandTerm": "THE ORDER"
     }
   ]
 }

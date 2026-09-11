@@ -1,256 +1,279 @@
 country.homeland.ABY,ETHIOPIA
+country.homeland.ADA,THE SULTANATE OF ADAL
 country.homeland.AKK,THE CONFEDERATION
 country.homeland.ARA,LA PATRIA
+country.homeland.ARK,THE KINGDOM
+country.homeland.AVA,THE KINGDOM
 country.homeland.AYU,THE KINGDOM
 country.homeland.AZT,THE REALM
 country.homeland.BAH,THE SULTANATE
+country.homeland.BAV,THE DUCHY
 country.homeland.BNG,THE SULTANATE
 country.homeland.BNK,THE KINGDOM
 country.homeland.BOH,THE KINGDOM
+country.homeland.BOS,THE KINGDOM
+country.homeland.BRG,THE MARGRAVIATE
+country.homeland.BRU,THE SULTANATE
+country.homeland.BUG,THE KINGDOM OF BUGANDA
 country.homeland.BUR,LA PATRIE
 country.homeland.BYZ,THE EMPIRE
-country.homeland.CND,THE BEYLIK
+country.homeland.CAH,THE MISSISSIPPIAN LANDS
 country.homeland.CAS,LA PATRIA
+country.homeland.CEB,THE RAJAHNATE
+country.homeland.CHE,THE CONFEDERATION
+country.homeland.CHM,THE KINGDOM OF CHIMOR
+country.homeland.CND,THE BEYLIK
+country.homeland.COL,THE ARCHBISHOPRIC
+country.homeland.CPA,THE KINGDOM
 country.homeland.DAN,THE HOMELAND
 country.homeland.DEL,THE SULTANATE
 country.homeland.DUL,THE BEYLIK
 country.homeland.DVT,DAI VIET
 country.homeland.ENG,BRITAIN
 country.homeland.FLR,LA PATRIA
+country.homeland.FNJ,THE FUNJ SULTANATE
+country.homeland.FRA,THE REALM
 country.homeland.GEN,LA SUPERBA
+country.homeland.GRG,THE KINGDOM OF GEORGIA
 country.homeland.GRN,AL-ANDALUS
 country.homeland.GUJ,THE SULTANATE
 country.homeland.HAB,FATHERLAND
+country.homeland.HAU,THE HAUSA LANDS
 country.homeland.HFS,THE SULTANATE
+country.homeland.HRM,THE KINGDOM OF HORMUZ
+country.homeland.HUN,THE REALM
 country.homeland.INC,TAWANTINSUYU
+country.homeland.IRO,THE HAUDENOSAUNEE
+country.homeland.JBR,THE EMIRATE OF AL-HASA
+country.homeland.JNP,THE SULTANATE
 country.homeland.JOS,HANGUK
 country.homeland.KAR,THE BEYLIK
 country.homeland.KBR,THE EMPIRE
 country.homeland.KKY,THE REALM
+country.homeland.KLW,THE SWAHILI COAST
+country.homeland.KMR,THE KINGDOM
 country.homeland.KNG,THE KINGDOM
+country.homeland.KNI,THE ORDER
+country.homeland.KOT,THE KINGDOM
 country.homeland.KRM,THE KHANATE
+country.homeland.KSH,THE SULTANATE
 country.homeland.KZN,THE KHANATE
+country.homeland.LEZ,ALBANIA
+country.homeland.LIV,THE ORDER
+country.homeland.LNA,THE KINGDOM
 country.homeland.LTH,THE HOMELAND
+country.homeland.LUB,THE KINGDOM OF LUBA
+country.homeland.LUS,THE KINGDOM
+country.homeland.LXG,THE KINGDOM
+country.homeland.MAD,THE MALAGASY LANDS
 country.homeland.MAJ,THE EMPIRE
 country.homeland.MAL,THE EMPIRE
 country.homeland.MAM,THE SULTANATE
+country.homeland.MAP,THE MAPUCHE LANDS
 country.homeland.MAY,THE CONFEDERACY
+country.homeland.MEW,THE KINGDOM
+country.homeland.MGD,THE SULTANATE
+country.homeland.MGL,THE KHANATE
+country.homeland.MID,THE REALM
 country.homeland.MIL,THE DUCHY
 country.homeland.MLC,THE SULTANATE
+country.homeland.MLD,THE SULTANATE
+country.homeland.MLW,THE SULTANATE
+country.homeland.MOG,THE KHANATE
 country.homeland.MOL,THE PRINCIPALITY
 country.homeland.MOR,THE SULTANATE
+country.homeland.MOS,THE MOSSI KINGDOMS
 country.homeland.MRC,NIPPON
+country.homeland.MUI,THE MUISCA CONFEDERATION
 country.homeland.MVY,MOTHERLAND
 country.homeland.MYN,THE MIDDLE KINGDOM
 country.homeland.NAP,LA PATRIA
 country.homeland.NAV,THE KINGDOM
+country.homeland.NBH,THE KINGDOM OF OMAN
+country.homeland.NEP,THE KINGDOM
 country.homeland.NVD,THE REPUBLIC
+country.homeland.ORI,THE KINGDOM
 country.homeland.OTT,THE SULTANATE
+country.homeland.OYO,THE OYO EMPIRE
+country.homeland.PAL,THE PALATINATE
 country.homeland.PAP,THE HOLY SEE
+country.homeland.PEG,THE KINGDOM
+country.homeland.POL,THE HOMELAND
+country.homeland.PRT,THE REALM
+country.homeland.PSI,THE SULTANATE
+country.homeland.PSK,THE REPUBLIC
+country.homeland.PUE,THE PUEBLO LANDS
 country.homeland.RAM,THE BEYLIK
+country.homeland.RYA,THE PRINCIPALITY
 country.homeland.RYU,THE ISLANDS
 country.homeland.SAV,THE DUCHY
+country.homeland.SAX,THE ELECTORATE
 country.homeland.SCT,THE HOMELAND
+country.homeland.SHV,THE SHIRVANSHAHS
+country.homeland.SIB,THE KHANATE
+country.homeland.SND,THE SULTANATE
 country.homeland.SON,THE EMPIRE
 country.homeland.SRB,THE HOMELAND
+country.homeland.STE,THE HORDE
+country.homeland.SUL,THE SULTANATE
 country.homeland.SWD,THE HOMELAND
+country.homeland.TAH,THE SULTANATE OF YEMEN
+country.homeland.TAI,THE TAINO LANDS
+country.homeland.TAR,THE TARASCAN STATE
 country.homeland.TEU,THE ORDER
 country.homeland.TIB,THE PLATEAU
 country.homeland.TIM,THE REALM
+country.homeland.TLX,THE TLAXCALAN CONFEDERACY
+country.homeland.TND,THE KINGDOM
 country.homeland.TRE,THE EMPIRE
+country.homeland.TVR,THE PRINCIPALITY
+country.homeland.UZB,THE UZBEK KHANATE
 country.homeland.VIJ,BHARAT
 country.homeland.VNC,LA SERENISSIMA
 country.homeland.WAL,THE PRINCIPALITY
+country.homeland.WUR,THE COUNTY
+country.homeland.ZAP,THE ZAPOTEC KINGDOM
+country.homeland.ZAY,THE KINGDOM OF TLEMCEN
 country.homeland.ZIM,THE KINGDOM
 country.name.ABY,Ethiopian Empire
+country.name.ADA,Adal Sultanate
 country.name.AKK,Ak Koyunlu
 country.name.ARA,Crown of Aragon
+country.name.ARK,Kingdom of Mrauk U
+country.name.AVA,Kingdom of Ava
 country.name.AYU,Ayutthaya Kingdom
 country.name.AZT,Aztec Empire
 country.name.BAH,Bahmani Sultanate
+country.name.BAV,Duchy of Bavaria
 country.name.BNG,Bengal Sultanate
 country.name.BNK,Kingdom of Benin
 country.name.BOH,Kingdom of Bohemia
+country.name.BOS,Kingdom of Bosnia
+country.name.BRG,Margraviate of Brandenburg
+country.name.BRU,Sultanate of Brunei
+country.name.BUG,Kingdom of Buganda
 country.name.BUR,Duchy of Burgundy
 country.name.BYZ,Byzantine Empire
-country.name.CND,Candarids
+country.name.CAH,Mississippian Chiefdoms (Cahokia)
 country.name.CAS,Crown of Castile
+country.name.CEB,Rajahnate of Cebu
+country.name.CHE,Swiss Confederation
+country.name.CHM,Kingdom of Chimor
+country.name.CND,Candarids
+country.name.COL,Electorate of Cologne
+country.name.CPA,Kingdom of Champa
 country.name.DAN,Kingdom of Denmark
 country.name.DEL,Delhi Sultanate
 country.name.DUL,Dulkadirids
 country.name.DVT,Dai Viet
 country.name.ENG,Kingdom of England
 country.name.FLR,Republic of Florence
+country.name.FNJ,Funj Sultanate of Sennar
+country.name.FRA,Kingdom of France
 country.name.GEN,Republic of Genoa
+country.name.GRG,Kingdom of Georgia
 country.name.GRN,Emirate of Granada
 country.name.GUJ,Sultanate of Gujarat
 country.name.HAB,Duchy of Austria
+country.name.HAU,Hausa City-States
 country.name.HFS,Hafsid Sultanate
+country.name.HRM,Kingdom of Hormuz
+country.name.HUN,Crown of Hungary
 country.name.INC,Inca Empire
+country.name.IRO,Haudenosaunee Confederacy
+country.name.JBR,Jabrid Emirate
+country.name.JNP,Jaunpur Sultanate
 country.name.JOS,Joseon Dynasty
 country.name.KAR,Karamanids
 country.name.KBR,Kanem-Bornu Empire
 country.name.KKY,Kara Koyunlu
+country.name.KLW,Kilwa Sultanate (Swahili Coast)
+country.name.KMR,Khmer Kingdom
 country.name.KNG,Kingdom of Kongo
+country.name.KNI,Knights Hospitaller
+country.name.KOT,Kingdom of Kotte
 country.name.KRM,Khanate of Crimea
+country.name.KSH,Kashmir Sultanate
 country.name.KZN,Khanate of Kazan
+country.name.LEZ,League of Lezhë
+country.name.LIV,Livonian Confederation
+country.name.LNA,Lan Na Kingdom
 country.name.LTH,Grand Duchy of Lithuania
+country.name.LUB,Kingdom of Luba
+country.name.LUS,Kingdom of Cyprus
+country.name.LXG,Kingdom of Lan Xang
+country.name.MAD,Madagascar Chiefdoms
 country.name.MAJ,Majapahit Empire
 country.name.MAL,Mali Empire
 country.name.MAM,Mamluk Sultanate
+country.name.MAP,Mapuche
 country.name.MAY,Maya Confederacy
+country.name.MEW,Kingdom of Mewar
+country.name.MGD,Sultanate of Maguindanao
+country.name.MGL,Oirat Mongol Confederation
+country.name.MID,Kingdom of Middag
 country.name.MIL,Duchy of Milan
 country.name.MLC,Malacca Sultanate
+country.name.MLD,Sultanate of the Maldives
+country.name.MLW,Malwa Sultanate
+country.name.MOG,Moghulistan
 country.name.MOL,Principality of Moldavia
 country.name.MOR,Marinid Morocco
+country.name.MOS,Mossi Kingdoms
 country.name.MRC,Muromachi Shogunate
+country.name.MUI,Muisca Confederation
 country.name.MVY,Duchy of Moscow
 country.name.MYN,Ming Dynasty
 country.name.NAP,Kingdom of Naples
 country.name.NAV,Kingdom of Navarre
+country.name.NBH,Nabhani Kingdom of Oman
+country.name.NEP,Malla Kingdom of Nepal
 country.name.NVD,Novgorod Republic
+country.name.ORI,Gajapati Kingdom of Orissa
 country.name.OTT,Ottoman Empire
+country.name.OYO,Oyo Empire
+country.name.PAL,Electoral Palatinate
 country.name.PAP,Papal States
+country.name.PEG,Hanthawaddy Kingdom of Pegu
+country.name.POL,Crown of Poland
+country.name.PRT,Kingdom of Portugal
+country.name.PSI,Samudra-Pasai Sultanate
+country.name.PSK,Pskov Republic
+country.name.PUE,Pueblo Peoples
 country.name.RAM,Ramadanids
+country.name.RYA,Principality of Ryazan
 country.name.RYU,Ryukyu Kingdom
 country.name.SAV,Duchy of Savoy
+country.name.SAX,Electorate of Saxony
 country.name.SCT,Kingdom of Scotland
+country.name.SHV,Shirvanshahs
+country.name.SIB,Siberian Khanate
+country.name.SND,Samma Sultanate of Sindh
 country.name.SON,Songhai Empire
 country.name.SRB,Serbian Despotate
+country.name.STE,Great Horde
+country.name.SUL,Sultanate of Sulu
 country.name.SWD,Kingdom of Sweden
+country.name.TAH,Tahirid Sultanate of Yemen
+country.name.TAI,Taino Cacicazgos
+country.name.TAR,Tarascan State (Purepecha)
 country.name.TEU,Teutonic Order
 country.name.TIB,Tibet
 country.name.TIM,Timurid Empire
+country.name.TLX,Tlaxcala
+country.name.TND,Kingdom of Tondo
 country.name.TRE,Empire of Trebizond
+country.name.TVR,Principality of Tver
+country.name.UZB,Uzbek Khanate
 country.name.VIJ,Vijayanagara Empire
 country.name.VNC,Republic of Venice
 country.name.WAL,Principality of Wallachia
+country.name.WUR,County of Württemberg
+country.name.ZAP,Zapotec Kingdom
+country.name.ZAY,Zayyanid Kingdom of Tlemcen
 country.name.ZIM,Kingdom of Zimbabwe
 mod.owo.popup.startup.body_no_date,Europe and Asia stand between old feudal orders and rising centralized states.\nTrade routes across the Mediterranean Black Sea Indian Ocean and Silk Road are the arteries of power.\nGunpowder armies are emerging but cavalry levies and fortresses still decide most wars.\n\nYou command one of 120+ historical polities with period-appropriate rulers borders and military posture.\nUse the crown button in the toolbar to reopen this briefing at any time.
 mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand between old feudal orders and rising centralized states.\nTrade routes across the Mediterranean Black Sea Indian Ocean and Silk Road are the arteries of power.\nGunpowder armies are emerging but cavalry levies and fortresses still decide most wars.\n\nYou command one of 120+ historical polities with period-appropriate rulers borders and military posture.\nUse the crown button in the toolbar to reopen this briefing at any time.
-mod.owo.popup.startup.title,Old World Order, 1450
+mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
-
-country.homeland.CHE,THE CONFEDERATION
-country.name.CHE,Swiss Confederation
-country.homeland.FRA,THE REALM
-country.name.FRA,Kingdom of France
-country.homeland.HUN,THE REALM
-country.name.HUN,Crown of Hungary
-country.homeland.POL,THE HOMELAND
-country.name.POL,Crown of Poland
-country.homeland.PRT,THE REALM
-country.name.PRT,Kingdom of Portugal
-country.homeland.SAX,THE ELECTORATE
-country.name.SAX,Electorate of Saxony
-country.homeland.BRG,THE MARGRAVIATE
-country.name.BRG,Margraviate of Brandenburg
-country.homeland.BAV,THE DUCHY
-country.name.BAV,Duchy of Bavaria
-country.homeland.PAL,THE PALATINATE
-country.name.PAL,Electoral Palatinate
-country.homeland.COL,THE ARCHBISHOPRIC
-country.name.COL,Electorate of Cologne
-country.homeland.WUR,THE COUNTY
-country.name.WUR,County of Württemberg
-country.homeland.LIV,THE ORDER
-country.name.LIV,Livonian Confederation
-country.homeland.BOS,THE KINGDOM
-country.name.BOS,Kingdom of Bosnia
-country.homeland.LUS,THE KINGDOM
-country.name.LUS,Kingdom of Cyprus
-country.homeland.TAH,THE SULTANATE OF YEMEN
-country.name.TAH,Tahirid Sultanate of Yemen
-country.homeland.NBH,THE KINGDOM OF OMAN
-country.name.NBH,Nabhani Kingdom of Oman
-country.homeland.HRM,THE KINGDOM OF HORMUZ
-country.name.HRM,Kingdom of Hormuz
-country.homeland.JBR,THE EMIRATE OF AL-HASA
-country.name.JBR,Jabrid Emirate
-country.homeland.SHV,THE SHIRVANSHAHS
-country.name.SHV,Shirvanshahs
-country.homeland.GRG,THE KINGDOM OF GEORGIA
-country.name.GRG,Kingdom of Georgia
-country.homeland.ZAY,THE KINGDOM OF TLEMCEN
-country.name.ZAY,Zayyanid Kingdom of Tlemcen
-country.homeland.UZB,THE UZBEK KHANATE
-country.name.UZB,Uzbek Khanate
-country.homeland.MLW,THE SULTANATE
-country.name.MLW,Malwa Sultanate
-country.homeland.MEW,THE KINGDOM
-country.name.MEW,Kingdom of Mewar
-country.homeland.JNP,THE SULTANATE
-country.name.JNP,Jaunpur Sultanate
-country.homeland.ORI,THE KINGDOM
-country.name.ORI,Gajapati Kingdom of Orissa
-country.homeland.KSH,THE SULTANATE
-country.name.KSH,Kashmir Sultanate
-country.homeland.NEP,THE KINGDOM
-country.name.NEP,Malla Kingdom of Nepal
-country.homeland.KOT,THE KINGDOM
-country.name.KOT,Kingdom of Kotte
-country.homeland.MLD,THE SULTANATE
-country.name.MLD,Sultanate of the Maldives
-country.homeland.SND,THE SULTANATE
-country.name.SND,Samma Sultanate of Sindh
-country.homeland.AVA,THE KINGDOM
-country.name.AVA,Kingdom of Ava
-country.homeland.PEG,THE KINGDOM
-country.name.PEG,Hanthawaddy Kingdom of Pegu
-country.homeland.ARK,THE KINGDOM
-country.name.ARK,Kingdom of Mrauk U
-country.homeland.LNA,THE KINGDOM
-country.name.LNA,Lan Na Kingdom
-country.homeland.LXG,THE KINGDOM
-country.name.LXG,Kingdom of Lan Xang
-country.homeland.KMR,THE KINGDOM
-country.name.KMR,Khmer Kingdom
-country.homeland.CPA,THE KINGDOM
-country.name.CPA,Kingdom of Champa
-country.homeland.BRU,THE SULTANATE
-country.name.BRU,Sultanate of Brunei
-country.homeland.PSI,THE SULTANATE
-country.name.PSI,Samudra-Pasai Sultanate
-country.homeland.SUL,THE SULTANATE
-country.name.SUL,Sultanate of Sulu
-country.homeland.MGL,THE KHANATE
-country.name.MGL,Oirat Mongol Confederation
-country.homeland.MOS,THE MOSSI KINGDOMS
-country.name.MOS,Mossi Kingdoms
-country.homeland.HAU,THE HAUSA LANDS
-country.name.HAU,Hausa City-States
-country.homeland.OYO,THE OYO EMPIRE
-country.name.OYO,Oyo Empire
-country.homeland.LUB,THE KINGDOM OF LUBA
-country.name.LUB,Kingdom of Luba
-country.homeland.ADA,THE SULTANATE OF ADAL
-country.name.ADA,Adal Sultanate
-country.homeland.FNJ,THE FUNJ SULTANATE
-country.name.FNJ,Funj Sultanate of Sennar
-country.homeland.KLW,THE SWAHILI COAST
-country.name.KLW,Kilwa Sultanate (Swahili Coast)
-country.homeland.BUG,THE KINGDOM OF BUGANDA
-country.name.BUG,Kingdom of Buganda
-country.homeland.MAD,THE MALAGASY LANDS
-country.name.MAD,Madagascar Chiefdoms
-country.homeland.TAR,THE TARASCAN STATE
-country.name.TAR,Tarascan State (Purepecha)
-country.homeland.TLX,THE TLAXCALAN CONFEDERACY
-country.name.TLX,Tlaxcala
-country.homeland.ZAP,THE ZAPOTEC KINGDOM
-country.name.ZAP,Zapotec Kingdom
-country.homeland.CHM,THE KINGDOM OF CHIMOR
-country.name.CHM,Kingdom of Chimor
-country.homeland.MUI,THE MUISCA CONFEDERATION
-country.name.MUI,Muisca Confederation
-country.homeland.MAP,THE MAPUCHE LANDS
-country.name.MAP,Mapuche
-country.homeland.IRO,THE HAUDENOSAUNEE
-country.name.IRO,Haudenosaunee Confederacy
-country.homeland.PUE,THE PUEBLO LANDS
-country.name.PUE,Pueblo Peoples
-country.homeland.CAH,THE MISSISSIPPIAN LANDS
-country.name.CAH,Mississippian Chiefdoms (Cahokia)
-country.homeland.TAI,THE TAINO LANDS
-country.name.TAI,Taino Cacicazgos
