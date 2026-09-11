@@ -3,7 +3,17 @@
     "subcategory_icons": {
       "infantry": "overrides/Art/Units/infantry_mod.png",
       "cavalry": "overrides/Art/Units/cavalry.png",
-      "artillery": "overrides/Art/Units/artillery_mod.png"
+      "artillery": "overrides/Art/Units/artillery_mod.png",
+      "special_forces": "overrides/Art/Units/special_forces_mod.png"
+    }
+  },
+  "fleet": {
+    "subcategory_icons": {
+      "destroyer": "overrides/Art/Units/naval_mod.png",
+      "frigate": "overrides/Art/Units/galley_mod.png",
+      "carrier": "overrides/Art/Units/naval_mod.png",
+      "patrol_boat": "overrides/Art/Units/galley_mod.png",
+      "amphibious": "overrides/Art/Units/naval_mod.png"
     }
   }
 }
