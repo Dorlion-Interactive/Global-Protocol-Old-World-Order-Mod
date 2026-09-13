@@ -1945,6 +1945,60 @@
           "minimum": 6,
           "maximum": 240
         },
+        "pending_request_expiry_ticks": {
+          "type": "object",
+          "description": "How many ticks (1 tick = 1 day) an inbox request sits before it auto-expires unanswered, per request type.",
+          "properties": {
+            "call_to_arms": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Call-to-arms invite expiry (short — an ally must answer quickly or the war moves on without them)."
+            },
+            "peace_offer": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Peace offer expiry (long — a target should not be pressured into a snap decision)."
+            },
+            "alliance_proposal": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Alliance proposal expiry."
+            },
+            "trade_proposal": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Trade agreement proposal expiry."
+            },
+            "treaty_proposal": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Treaty proposal expiry."
+            },
+            "nap_proposal": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Non-aggression pact proposal expiry."
+            },
+            "un_membership": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "UN membership consideration/vote request expiry."
+            },
+            "embassy_proposal": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Embassy hosting proposal expiry."
+            }
+          }
+        },
         "sanction_trade_penalty": {
           "type": "number",
           "description": "Trade multiplier per active sanction (0.5 = halve trade per sanction)",
@@ -3347,6 +3401,132 @@
             }
           }
         },
+        "embassy": {
+          "type": "object",
+          "description": "AIFormulas.ScoreEmbassy utility weights for founding/expanding an embassy. Terms are summed (each weight x its 0/1 or normalised factor), clamped at 0, and compared against threshold.",
+          "properties": {
+            "diplomacy_focus": {
+              "type": "number",
+              "description": "Weight for the founding country's DiplomacyFocus personality trait.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "ally": {
+              "type": "number",
+              "description": "Weight applied when the target is an ally.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "trade_partner": {
+              "type": "number",
+              "description": "Weight applied when the target is a bilateral trade partner.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "neighbour": {
+              "type": "number",
+              "description": "Weight applied when the target shares a border.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "relation": {
+              "type": "number",
+              "description": "Weight for bilateral relation, normalised -1..1.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "partner_trust": {
+              "type": "number",
+              "description": "Weight for the target's trust toward us, normalised -1..1; negative trust subtracts from the score.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "few_hosted": {
+              "type": "number",
+              "description": "Weight applied when the target hosts fewer than hosted_few_max embassies (an under-served capital is a better posting).",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "borders_rival": {
+              "type": "number",
+              "description": "Weight applied when the target borders one of our designated rivals.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "objective": {
+              "type": "number",
+              "description": "Weight applied when the target is a live national-goal objective.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "threshold": {
+              "type": "number",
+              "description": "Minimum ScoreEmbassy result to open/expand an embassy.",
+              "minimum": 0,
+              "maximum": 2
+            }
+          }
+        },
+        "trust": {
+          "type": "object",
+          "description": "Integration weights for bilateral trust (CountryRelationElement.TrustValue, -100..100, normalised -1..1) across war-declaration, threat, peace-acceptance, alliance-offer and honor-chance formulas.",
+          "properties": {
+            "alliance_partner_trust": {
+              "type": "number",
+              "description": "ScoreAllianceOffer: weight for the candidate's normalised trust toward us.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "alliance_imbalance_relief": {
+              "type": "number",
+              "description": "ScoreAllianceOffer: when partner trust >= 0.2, softens the >3x power-ratio penalty from x0.5 toward x1 by this fraction. A fraction, so capped at 1 — above that the penalty would invert into a bonus.",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "war_betrayal_penalty": {
+              "type": "number",
+              "description": "ScoreWarDeclaration: subtracted per point of the target's normalised trust toward us — attacking a country that trusts us is a betrayal.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "war_distrust_threat_weight": {
+              "type": "number",
+              "description": "ScoreWarDeclaration and ComputeThreatAssessment: added per point of our own normalised distrust of the target.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "peace_relief": {
+              "type": "number",
+              "description": "ShouldAcceptAIPeaceOffer: eases the acceptance pressure threshold per point of trust toward the enemy, tightens it per point of distrust.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "guarantee_weight": {
+              "type": "number",
+              "description": "Reserved for guarantee-honoring trust integration.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "rival_distrust_weight": {
+              "type": "number",
+              "description": "Reserved for rival-designation trust integration.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "treaty_partner_weight": {
+              "type": "number",
+              "description": "Reserved for treaty-compliance trust integration.",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "un_distrust_threshold": {
+              "type": "integer",
+              "description": "UNSC veto gate: trust at or below this counts as distrusting the proposer. Keep negative — at 0 it is true at neutral trust and the veto's distrust conjunct stops filtering. Default -20. 0 is a valid value, not a stale-bake sentinel.",
+              "minimum": -100,
+              "maximum": 100
+            }
+          }
+        },
         "insolvency": {
           "type": "object",
           "description": "AI insolvency disband pass thresholds",
@@ -4630,6 +4810,291 @@
             }
           },
           "description": "Spheres of influence: who can lead one, the relations needed to join, and the cost of leaving."
+        },
+        "trust": {
+          "type": "object",
+          "description": "Trust: do we believe they keep their word? Directional (A's trust in B need not equal B's trust in A) and separate from bilateral relation.",
+          "properties": {
+            "decay_rate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Fraction of the remaining gap to the trust equilibrium closed per month, same shape as relation_decay_rate."
+            },
+            "ae_shift_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5,
+              "description": "Weight applied to a target's aggressive-expansion score when it drags down others' trust equilibrium in it."
+            },
+            "alliance_min_trust": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum trust the proposer must hold in the target before a military alliance can be formed."
+            },
+            "defense_pact_min_trust": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum trust required to form a defense pact."
+            },
+            "nap_min_trust": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum trust required to propose a non-aggression pact."
+            },
+            "guarantee_min_trust": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum trust required to extend an independence guarantee."
+            },
+            "honor_chance_trust_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5,
+              "description": "Weight of trust in the ally call-to-arms honor-chance formula, alongside relation."
+            }
+          }
+        },
+        "trust_modifiers": {
+          "type": "object",
+          "description": "Named trust events. Magnitudes are opinion-modifier values (-100..100, directional on the affected pair); every *_decay_ticks is the lifetime of that event's linear decay to zero.",
+          "properties": {
+            "treaty_broken": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for breaking a treaty." },
+            "treaty_broken_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the treaty_broken modifier." },
+            "treaty_violation": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for violating (not fully breaking) a treaty." },
+            "treaty_violation_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the treaty_violation modifier." },
+            "alliance_broken": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for breaking an alliance." },
+            "alliance_broken_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the alliance_broken modifier." },
+            "call_dishonored": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for refusing an honored call to arms." },
+            "call_dishonored_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the call_dishonored modifier." },
+            "guarantee_broken": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for breaking an independence guarantee." },
+            "guarantee_broken_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the guarantee_broken modifier." },
+            "guarantee_honored": { "type": "number", "minimum": 0, "maximum": 100, "description": "Trust gain for honoring a guarantee." },
+            "guarantee_honored_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the guarantee_honored modifier." },
+            "nap_broken": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for breaking a non-aggression pact." },
+            "nap_broken_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the nap_broken modifier." },
+            "truce_broken": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for breaking a truce." },
+            "truce_broken_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the truce_broken modifier." },
+            "pact_cancelled_nap": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for a one-sided hostile NAP cancellation." },
+            "pact_cancelled_nap_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the pact_cancelled_nap modifier." },
+            "pact_cancelled_trade": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for a one-sided hostile trade-agreement cancellation." },
+            "pact_cancelled_trade_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the pact_cancelled_trade modifier." },
+            "spy_caught": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for being caught spying." },
+            "spy_caught_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the trust spy_caught modifier." },
+            "econ_attack_detected": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for a detected economic-warfare attack." },
+            "econ_attack_detected_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the econ_attack_detected modifier." },
+            "aid_delivered": { "type": "number", "minimum": 0, "maximum": 100, "description": "Trust gain for delivering an aid package." },
+            "aid_delivered_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the aid_delivered modifier." },
+            "embassy_expelled": { "type": "number", "minimum": -100, "maximum": 0, "description": "Trust hit for expelling a hosted embassy." },
+            "embassy_expelled_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the trust embassy_expelled modifier." },
+            "call_honored": { "type": "number", "minimum": 0, "maximum": 100, "description": "Trust gain for honoring a call to arms." },
+            "call_honored_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the call_honored modifier." },
+            "truce_kept": { "type": "number", "minimum": 0, "maximum": 100, "description": "Trust gain for a truce expiring without violation." },
+            "truce_kept_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the truce_kept modifier." },
+            "commitments_upheld_per_commitment": { "type": "number", "minimum": 0, "maximum": 5, "description": "Trust gain per upheld standing commitment." },
+            "commitments_upheld_per_year": { "type": "number", "minimum": 0, "maximum": 5, "description": "Trust gain per year of a standing commitment upheld." },
+            "commitments_upheld_cap": { "type": "number", "minimum": 0, "maximum": 100, "description": "Cap on the commitments-upheld trust bonus." },
+            "commitments_upheld_min_age_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Minimum commitment age before it counts toward the bonus." },
+            "commitments_upheld_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the commitments-upheld trust bonus." }
+          }
+        },
+        "embassy": {
+          "type": "object",
+          "description": "Embassies: how many a country can host, the two shared-visibility channels they open, and the diplomatic steps (propose/host/recall/expel) that move them.",
+          "properties": {
+            "cap_base": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000,
+              "description": "Base embassy hosting cap before the diplomatic-power term. cap = clamp(cap_base + round(power * cap_per_power), cap_min, cap_max)."
+            },
+            "cap_per_power": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Embassy slots added per point of DiplomaticPower."
+            },
+            "cap_min": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000,
+              "description": "Floor of the embassy cap formula."
+            },
+            "cap_max": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000,
+              "description": "Ceiling of the embassy cap formula."
+            },
+            "hosted_embassy_power": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5,
+              "description": "DiplomaticPower granted per embassy a country hosts."
+            },
+            "hosted_embassy_power_cap": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Maximum DiplomaticPower a country can gain from hosted embassies combined."
+            },
+            "two_way_channel": {
+              "type": "boolean",
+              "description": "Feature toggle: an embassy opens a two-way information channel between host and guest."
+            },
+            "org_channel": {
+              "type": "boolean",
+              "description": "Feature toggle: an embassy shares visibility through a common international-organization channel."
+            },
+            "half_channel_factor": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Visibility multiplier applied when only one of the two channels above is open."
+            },
+            "ai_court_min_trust": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum trust an AI needs in a target before it will court (seek to host an embassy with) it."
+            },
+            "ai_court_hosted_max": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000,
+              "description": "AI will not court a target that already hosts this many of the AI's embassies."
+            },
+            "propose_min_relation": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum bilateral relation required to propose hosting an embassy."
+            },
+            "propose_min_trust": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum trust required to propose hosting an embassy."
+            },
+            "host_accept_min_relation": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum relation the target needs before accepting an embassy proposal."
+            },
+            "host_accept_min_trust": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum trust the target needs before accepting an embassy proposal."
+            },
+            "host_accept_isolationism_weight": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "How strongly the target's isolationism personality trait discourages accepting."
+            },
+            "recall_relation_penalty": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Relation cost the recalling country pays for withdrawing its own ambassador."
+            },
+            "min_recall_duration_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Minimum ticks an embassy must stay recalled before it can be reopened."
+            },
+            "mission_bonus": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5,
+              "description": "Bonus applied while an embassy mission is active."
+            },
+            "acceptance_bonus": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Flat bonus added to the host's acceptance score for a proposal."
+            },
+            "closed_relation_modifier": {
+              "type": "number",
+              "minimum": -100,
+              "maximum": 0,
+              "description": "Opinion modifier applied when an embassy is closed (mutual, non-hostile withdrawal)."
+            },
+            "closed_decay_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Lifetime of the closed-embassy opinion modifier."
+            },
+            "expelled_relation_modifier": {
+              "type": "number",
+              "minimum": -100,
+              "maximum": 0,
+              "description": "Opinion modifier applied when an embassy is forcibly expelled."
+            },
+            "expelled_decay_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Lifetime of the expelled-embassy opinion modifier."
+            },
+            "ai_recall_relation": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Relation at or below which an AI recalls its own embassy from the host."
+            },
+            "ai_return_relation": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Relation at or above which an AI returns a previously recalled ambassador."
+            },
+            "seed_min_relation": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum starting relation for two countries to seed a scenario embassy between them."
+            },
+            "seed_great_power_count": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 50,
+              "description": "Number of top-ranked great powers seeded with embassies in every capital at scenario start."
+            },
+            "seed_great_power_min_relation": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Minimum relation for a great power's seeded embassy to be placed."
+            }
+          }
+        },
+        "hostile_cancel": {
+          "type": "object",
+          "description": "One-sided cancellation of a diplomatic pact on hostile grounds: the threshold that permits it and the hysteresis gap that stops both sides flapping the pact back on the instant relation recovers by one point.",
+          "properties": {
+            "threshold": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 0,
+              "description": "Relation at or below which a pact becomes eligible for one-sided hostile cancellation."
+            },
+            "hysteresis": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 0,
+              "description": "Relation must recover above this (less negative than threshold) before the pact can be re-formed."
+            }
+          }
         },
         "ai_weights": {
           "type": "object",

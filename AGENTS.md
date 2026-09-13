@@ -15,6 +15,7 @@ This file defines named agent roles for Claude Code. Use `@agent-name` in your p
 - `scenario/provinces_ownership.json` — assign provinces and regions to countries
 - `scenario/buildings_override.json` — building roster replacement (mode: replace)
 - `scenario/units_override.json` — unit roster replacement (mode: replace)
+- `scenario/resources_override.json` — resource commodity overrides (mode: replace / disabled list)
 - `scenario/currencies.json` — scenario currencies definition
 
 **Schema references:**

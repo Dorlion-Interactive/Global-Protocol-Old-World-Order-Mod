@@ -23,6 +23,7 @@ scenario/                        ← split scenario files (authoritative)
   units_deploy_armies.json       ← initial army stacks per province
   buildings_override.json        ← building roster replacement (mode: replace)
   units_override.json            ← unit roster replacement (mode: replace)
+  resources_override.json        ← resource commodity overrides (disabled modern list)
   currencies.json                ← scenario currencies definition
 Content/
   goals_old_world_order.json     ← national goals (path relative to mod root)

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dorlion/GlobalProtocol/main/docs/modding/schemas/mod_content_envelope.schema.json",
+  "disabled": [
+    "Oil",
+    "NaturalGas",
+    "Uranium",
+    "RefinedPetroleum",
+    "Lithium",
+    "Cobalt",
+    "RareEarths",
+    "Helium",
+    "Electronics",
+    "Semiconductors",
+    "Batteries",
+    "SolarPanels",
+    "WindTurbines",
+    "Automobiles",
+    "Aircraft",
+    "Chemicals",
+    "Plastics",
+    "Fertilizer",
+    "Pharmaceuticals"
+  ]
+}

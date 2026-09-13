@@ -38,6 +38,7 @@
         "mobile_launcher"
     ],
     "buildingsOverrideFile": "buildings_override.json",
+    "resourcesOverrideFile": "resources_override.json",
     "currenciesFile": "currencies.json",
     "disabledDoctrineBranches": [
         "cyber",
