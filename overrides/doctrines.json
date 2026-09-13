@@ -1,0 +1,154 @@
+{
+  "branches": [
+    {
+      "id": "military",
+      "tiers": [
+        {
+          "doctrines": [
+            {
+              "id": "professional_armed_forces",
+              "effects": {
+                "military_defense": 0.08,
+                "unit_build_speed_mult": 0.95,
+                "recruit_cost_mult": 1.1
+              }
+            }
+          ]
+        },
+        {
+          "doctrines": [
+            {
+              "id": "precision_warfare",
+              "effects": {
+                "military_attack": 0.06,
+                "military_defense": 0.04
+              }
+            }
+          ]
+        },
+        {
+          "doctrines": [
+            {
+              "id": "heavy_firepower",
+              "effects": {
+                "military_attack": 0.1,
+                "upkeep_mult": 1.08
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "government"
+    },
+    {
+      "id": "economy",
+      "tiers": [
+        {
+          "doctrines": [
+            {},
+            {},
+            {
+              "id": "fiscal_discipline",
+              "effects": {
+                "gdp_modifier": 0.08,
+                "research_speed": 0.05,
+                "tax_efficiency_mult": 1.05
+              }
+            }
+          ]
+        },
+        {},
+        {
+          "doctrines": [
+            {},
+            {
+              "id": "commercial_economy",
+              "effects": {
+                "gdp_modifier": 0.05,
+                "trade_income_mult": 1.12
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "tiers": [
+        {
+          "doctrines": [
+            {
+              "id": "mass_production_system",
+              "effects": {
+                "research_speed": 0.15,
+                "gdp_modifier": 0.03,
+                "production_output_mult": 1.05
+              }
+            }
+          ]
+        },
+        {
+          "doctrines": [
+            {
+              "id": "continuous_production",
+              "effects": {
+                "gdp_modifier": 0.06,
+                "production_output_mult": 1.08
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diplomacy",
+      "tiers": [
+        {
+          "doctrines": [
+            {},
+            {},
+            {
+              "id": "mobile_envoy_service",
+              "effects": {
+                "policy_speed_mult": 1.12,
+                "intel_confidence": 0.08,
+                "trade_income_mult": 1.06
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intelligence",
+      "tiers": [
+        {
+          "doctrines": [
+            {
+              "id": "centralized_intelligence_directorate",
+              "effects": {
+                "intel_confidence": 0.12,
+                "espionage_success_bonus": 0.08
+              }
+            }
+          ]
+        },
+        {},
+        {},
+        {
+          "doctrines": [
+            {
+              "id": "defensive_counter_intelligence",
+              "effects": {
+                "counterintel_detection": 0.12,
+                "stability_delta_monthly": 0.1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

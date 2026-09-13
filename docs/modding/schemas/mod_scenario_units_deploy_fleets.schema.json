@@ -36,13 +36,14 @@
                 "provinceId": {
                     "type": "integer",
                     "minimum": 1,
-                    "description": "Province ID of the sea zone or coastal province where the fleet spawns"
+                    "description": "Sea zone or coastal province where the fleet spawns. A coastal province docks the fleet in that port when inHarbor is true and the owner holds the province (like the base game's starting fleets); otherwise the fleet starts at sea in the adjacent sea zone. Landlocked provinces are rejected."
                 },
                 "morale": {
                     "type": "number",
                     "minimum": 0,
                     "maximum": 1,
-                    "default": -1
+                    "default": -1,
+                    "description": "Starting morale in [0, 1] of the fleet's maximum. -1 = full morale."
                 },
                 "inHarbor": {
                     "type": "boolean",

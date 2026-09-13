@@ -13,6 +13,9 @@ This file defines named agent roles for Claude Code. Use `@agent-name` in your p
 - `scenario/countries_remove.json` — remove base-game countries
 - `scenario/countries_state.json` — set initial stability, corruption, GDP, etc.
 - `scenario/provinces_ownership.json` — assign provinces and regions to countries
+- `scenario/buildings_override.json` — building roster replacement (mode: replace)
+- `scenario/units_override.json` — unit roster replacement (mode: replace)
+- `scenario/currencies.json` — scenario currencies definition
 
 **Schema references:**
 - `docs/modding/schemas/mod_scenario_countries_add.schema.json`

@@ -71,7 +71,7 @@
       "type": "number",
       "exclusiveMinimum": 0,
       "default": 1.0,
-      "description": "Global GDP multiplier applied to all countries at scenario start"
+      "description": "Multiplies every country's GDP, GDP per capita, exports, imports, foreign reserves and treasury once, when a new game starts. countryStateOverrides values are absolute and are applied after it."
     },
     "economicEraLabel": {
       "type": "string",
@@ -95,9 +95,82 @@
       "type": "array",
       "items": {
         "type": "string",
-        "minLength": 1
+        "minLength": 1,
+        "format": "content-id:units"
       },
       "description": "Specific unit type ids removed from availability, recruitment UI, and build eligibility for the whole scenario."
+    },
+    "disabledBuildingCategories": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "Economic",
+          "Military",
+          "Infrastructure",
+          "Research",
+          "Social",
+          "Defense",
+          "Intelligence"
+        ]
+      },
+      "description": "Building categories removed from every build menu, starting seeding, the AI and the build command for the whole scenario."
+    },
+    "disabledBuildingIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "format": "content-id:buildings"
+      },
+      "description": "Specific building ids removed from every build menu, starting seeding, the AI and the build command for the whole scenario. To drop most of the base roster, prefer \"mode\": \"replace\" in a buildings override file."
+    },
+    "disabledDoctrineBranches": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "military",
+          "government",
+          "economy",
+          "industry",
+          "diplomacy",
+          "intelligence",
+          "cyber",
+          "space",
+          "energy",
+          "society"
+        ]
+      },
+      "description": "Knowledge Network branches hidden from the research screen and never researched. Their tier gates never open, so every building, unit and law gated behind them stays locked."
+    },
+    "buildingsOverrideFile": {
+      "type": "string",
+      "description": "Path, relative to the scenario folder, of a buildings override file (same shape as a mod's Content/buildings.json, see mod_content_envelope.schema.json). Applied after every mod's Content/buildings.json; \"mode\": \"replace\" makes it the whole roster."
+    },
+    "unitsOverrideFile": {
+      "type": "string",
+      "description": "Path, relative to the scenario folder, of a units override file (see mod_content_envelope.schema.json). Applied after every mod's Content/units.json."
+    },
+    "resourcesOverrideFile": {
+      "type": "string",
+      "description": "Path, relative to the scenario folder, of a resources override file (see mod_content_envelope.schema.json). Resources are a fixed set: they can be re-priced, re-skinned or disabled, not added."
+    },
+    "techOverrideFile": {
+      "type": "string",
+      "description": "Deprecated and ignored: the tech tree was replaced by the Knowledge Network doctrines. Rewrite doctrine cards in overrides/doctrines.json and hide branches with disabledDoctrineBranches."
+    },
+    "currencySymbol": {
+      "type": "string",
+      "maxLength": 8,
+      "description": "Money symbol shown everywhere when no currencies file assigns a national currency (default \"$\")."
+    },
+    "currenciesFile": {
+      "type": "string",
+      "description": "Path, relative to the scenario folder, of a currencies file (see mod_currencies.schema.json). Stacked on top of the active mods' Content/currencies.json. Display-only."
     },
     "addCountries": {
       "$ref": "mod_scenario_countries_add.schema.json#/properties/addCountries"

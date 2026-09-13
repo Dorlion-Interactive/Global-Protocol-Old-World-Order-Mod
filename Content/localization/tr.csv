@@ -4,3 +4,23 @@ mod.ui.popup.body,1450 yılında yaklaşık 120 ulusun başındasınız. Tarihse
 mod.ui.popup.continue,Devam Et
 mod.ui.popup.mod_info,Mod Bilgisi
 ui.button.ok,TAMAM
+doctrine.military.t1.professional_armed_forces,Plaka Zırh ve Yüksek Fırınlar
+doctrine.military.t1.professional_armed_forces.desc,Yüksek fırınlardaki hidrolik körükler, eklemli plaka zırhlar için üstün sertleştirilmiş çelik üretir.
+doctrine.military.t2.precision_warfare,Kundaklı Yay ve Pavise Düzenleri
+doctrine.military.t2.precision_warfare.desc,Süvari hücumlarına karşı koyan, yüksek pavise kalkanlarıyla korunan disiplinli kundaklı yay birlikleri.
+doctrine.military.t3.heavy_firepower,Şahi Top Dökümü ve Kuşatma Barutu
+doctrine.military.t3.heavy_firepower.desc,Ortaçağ kale surlarını yerle bir edebilen devasa dökme tunç şahi toplar ve taneli barut formülleri.
+doctrine.economy.t1.fiscal_discipline,Çift Taraflı Muhasebe ve Tüccar Bankacılığı
+doctrine.economy.t1.fiscal_discipline.desc,Ticarette devrim yaratan Venedik ve Floransa usulü çift taraflı defterler, poliçeler ve tüccar mevduat bankaları.
+doctrine.economy.t3.commercial_economy,Karavela Gövdesi ve Latin Yelken Donanımı
+doctrine.economy.t3.commercial_economy.desc,Gemilerin ters rüzgarlara karşı seyredebilmesini sağlayan kıvrak sığ su gövdeleri ve üçgen latin yelkenler.
+doctrine.industry.t1.mass_production_system,Hareketli Harfli Matbaa
+doctrine.industry.t1.mass_production_system.desc,Kitap üretimini ve idari kayıt tutmayı yaygınlaştıran kurşun alaşımlı döküm harfler ve vidalı baskı presleri.
+doctrine.industry.t2.continuous_production,Su ve Rüzgar Değirmeni Mühendisliği
+doctrine.industry.t2.continuous_production.desc,Kırsal vilayetlerde mekanik iş gücünü katlayan gelişmiş dişli miller ve gelgit değirmenleri.
+doctrine.diplomacy.t1.mobile_envoy_service,Diplomatik Şifreler ve Ulak Hattı
+doctrine.diplomacy.t1.mobile_envoy_service.desc,Vilayetler arası güvenli iletişimi sağlayan şifreli diplomatik yazışmalar ve hızlı kraliyet atlı ulak ağları.
+doctrine.intelligence.t1.centralized_intelligence_directorate,Kraliyet Başcasusluğu ve Muhbir Ağları
+doctrine.intelligence.t1.centralized_intelligence_directorate.desc,Yabancı komplolara dair önceden istihbarat sağlayan saray muhbirleri, tüccar casuslar ve liman gözcüleri.
+doctrine.intelligence.t4.defensive_counter_intelligence,Engizisyon ve Hükümdar Gözetimi
+doctrine.intelligence.t4.defensive_counter_intelligence.desc,Yabancı fitneleri tespit etmeye odaklanan kraliyet mahkemeleri, şehir muhafızları ve dini denetim.

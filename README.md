@@ -8,6 +8,8 @@
 
 A historical total conversion mod for **[Global Protocol: New World Order](https://globalprotocolgame.com)** — play the world as it was in **1450 AD**.
 
+> **Note:** Requires Global Protocol engine build with content roster replace-mode support (`ba94d5e4c` or later).
+
 ~120 playable nations · Ottoman Empire · Ming Dynasty · Aztec Empire · Kingdom of France · and more.
 
 ## WIP Screenshot Example

@@ -277,3 +277,23 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
+doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
+doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations
+doctrine.military.t2.precision_warfare.desc,Disciplined ranks of crossbowmen protected by tall standing pavises, countering heavy cavalry charges.
+doctrine.military.t3.heavy_firepower,Bombard Casting & Siege Gunpowder
+doctrine.military.t3.heavy_firepower.desc,Massive cast-bronze bombards and corned gunpowder formulations capable of crumbling medieval curtain walls.
+doctrine.economy.t1.fiscal_discipline,Double-Entry Bookkeeping & Merchant Banking
+doctrine.economy.t1.fiscal_discipline.desc,Venetian and Florentine double-entry ledgers, bills of exchange, and merchant deposit banks revolutionizing commerce.
+doctrine.economy.t3.commercial_economy,Caravel Hull & Lateen Sail Rigging
+doctrine.economy.t3.commercial_economy.desc,Manoeuvrable shallow-draft hulls combined with triangular lateen sails, enabling ships to tack against head winds.
+doctrine.industry.t1.mass_production_system,Movable Type Printing Press
+doctrine.industry.t1.mass_production_system.desc,Hand mold casting lead alloy type and screw presses that democratize book production and administrative recordkeeping.
+doctrine.industry.t2.continuous_production,Watermill & Windmill Engineering
+doctrine.industry.t2.continuous_production.desc,Sophisticated geared drive shafts and tidal mills multiplying mechanical work output across rural provinces.
+doctrine.diplomacy.t1.mobile_envoy_service,Diplomatic Ciphers & Courier Relay
+doctrine.diplomacy.t1.mobile_envoy_service.desc,Encrypted diplomatic dispatches and fast royal horse relay networks ensuring secure communication across provinces.
+doctrine.intelligence.t1.centralized_intelligence_directorate,Royal Spymaster & Informant Rings
+doctrine.intelligence.t1.centralized_intelligence_directorate.desc,Recruitment of court informants, merchant spies, and harbor watchers providing advance intelligence of foreign schemes.
+doctrine.intelligence.t4.defensive_counter_intelligence,Inquisition & Crown Surveillance
+doctrine.intelligence.t4.defensive_counter_intelligence.desc,Royal judicial courts, town watches, and ecclesiastical scrutiny rooted in detecting foreign sedition.

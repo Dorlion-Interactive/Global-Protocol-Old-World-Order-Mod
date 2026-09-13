@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_content_envelope.schema.json",
+  "title": "Mod Content Override File",
+  "description": "Shape of a mod's Content/buildings.json, Content/units.json and Content/resources.json, and of a scenario's buildingsOverrideFile / unitsOverrideFile / resourcesOverrideFile. Entries are matched to the base game by id (case-insensitive). Files apply in load order: every active mod alphabetically by mod id, then the active scenario's override file. Base entries are never removed from the game's data: an id that a replace-mode roster does not list, or that a \"disabled\" list names, is switched off instead (hidden from build and recruit menus, never seeded, never chosen by the AI, rejected by the build command), which keeps saves and multiplayer consistent.",
+  "oneOf": [
+    {
+      "type": "array",
+      "description": "A bare array of entries: merge mode.",
+      "items": {
+        "$ref": "#/definitions/entry"
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "merge",
+            "replace"
+          ],
+          "default": "merge",
+          "description": "\"merge\" (default): entries change or add to the base game. \"replace\": the entries ARE the roster — every base id they do not list is disabled. \"replace\" with no entries starts from scratch. A later replacing file discards what earlier files composed."
+        },
+        "replace": {
+          "type": "boolean",
+          "description": "Alias for \"mode\": \"replace\". Do not combine with a contradicting \"mode\"."
+        },
+        "overrides": {
+          "type": "array",
+          "description": "The entries. The Mod Builder writes this key; \"buildings\", \"units\" and \"resources\" (the base config's own root keys) are accepted too.",
+          "items": {
+            "$ref": "#/definitions/entry"
+          }
+        },
+        "buildings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entry"
+          }
+        },
+        "units": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entry"
+          }
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entry"
+          }
+        },
+        "disabled": {
+          "type": "array",
+          "uniqueItems": true,
+          "description": "Ids switched off in this game. Wins over being listed.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  ],
+  "definitions": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z0-9_]+$",
+          "description": "Base id to change, or a new id to add. Unit ids must fit 29 bytes, building ids 61."
+        },
+        "inherit": {
+          "type": "boolean",
+          "description": "For an id that exists in the base game: true overwrites only the fields this entry names; false makes this entry the whole definition (missing fields take engine defaults). Defaults to false in a replace-mode file and true otherwise. New ids are always whole definitions."
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

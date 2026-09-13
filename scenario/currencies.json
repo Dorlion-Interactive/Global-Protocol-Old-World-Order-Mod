@@ -18,17 +18,16 @@
       "associatedCountries": [
         "VNC",
         "GEN",
-        "FRA",
         "PAP",
         "NAP",
         "MIL",
         "FLR",
-        "SIE",
-        "MOD",
-        "LCA",
-        "FER",
-        "MAN"
-      ]
+        "BYZ",
+        "HUN",
+        "POL",
+        "LTH"
+      ],
+      "symbolPosition": "prefix"
     },
     {
       "id": "akce",
@@ -40,11 +39,11 @@
       "description": "Silver coin minted under Murad II and Mehmed II; ~40-45 akce equaled 1 gold ducat/florin in 1450.",
       "associatedCountries": [
         "OTT",
-        "CRA",
         "DUL",
         "RAM",
         "TRE"
-      ]
+      ],
+      "symbolPosition": "suffix"
     },
     {
       "id": "liang",
@@ -58,8 +57,9 @@
         "MYN",
         "JOS",
         "RYU",
-        "ANN"
-      ]
+        "DVT"
+      ],
+      "symbolPosition": "suffix"
     },
     {
       "id": "pound_sterling",
@@ -71,9 +71,9 @@
       "description": "240 Tower pence of sterling silver (0.925 fine). 1 pound sterling was worth ~3.3 gold florins. Gold nobles circulated at 6s 8d (1/3 pound).",
       "associatedCountries": [
         "ENG",
-        "SCT",
-        "IRE"
-      ]
+        "SCT"
+      ],
+      "symbolPosition": "prefix"
     },
     {
       "id": "livre_tournois",
@@ -85,11 +85,9 @@
       "associatedCountries": [
         "FRA",
         "BUR",
-        "BRI",
-        "PRO",
-        "SAV",
-        "LOR"
-      ]
+        "SAV"
+      ],
+      "symbolPosition": "prefix"
     },
     {
       "id": "gulden",
@@ -105,14 +103,9 @@
         "BAV",
         "SAX",
         "PAL",
-        "BRA",
-        "HES",
-        "THU",
-        "TRI",
-        "MAI",
-        "KOL",
         "CHE"
-      ]
+      ],
+      "symbolPosition": "prefix"
     },
     {
       "id": "maravedi",
@@ -124,9 +117,9 @@
       "associatedCountries": [
         "CAS",
         "ARA",
-        "NAV",
-        "GRA"
-      ]
+        "NAV"
+      ],
+      "symbolPosition": "suffix"
     },
     {
       "id": "cruzado",
@@ -138,7 +131,8 @@
       "description": "Portuguese gold cruzado minted under Alfonso V, equal in gold content to the Venetian ducat.",
       "associatedCountries": [
         "PRT"
-      ]
+      ],
+      "symbolPosition": "prefix"
     },
     {
       "id": "dinar_ashrafi",
@@ -152,9 +146,9 @@
         "MAM",
         "HFS",
         "ZAY",
-        "YEM",
-        "HJZ"
-      ]
+        "MOR"
+      ],
+      "symbolPosition": "prefix"
     },
     {
       "id": "varaha",
@@ -166,14 +160,15 @@
       "description": "Gold varaha (also called pagoda by Europeans) featuring Hindu deities, standard trade currency of South India and Indian Ocean spice routes.",
       "associatedCountries": [
         "VIJ",
-        "GAJ",
-        "BHM",
         "GUJ",
         "MLW",
         "JNP",
-        "DLH",
-        "BEN"
-      ]
+        "DEL",
+        "BAH",
+        "BNG",
+        "ORI"
+      ],
+      "symbolPosition": "prefix"
     },
     {
       "id": "toman",
@@ -187,7 +182,8 @@
         "KKY",
         "AKK",
         "SHV"
-      ]
+      ],
+      "symbolPosition": "prefix"
     },
     {
       "id": "denga",
@@ -199,11 +195,10 @@
       "description": "Silver denga coins minted in Moscow and Novgorod; 200 denga made up the ruble of account (~1 florin).",
       "associatedCountries": [
         "MVY",
-        "NOV",
         "PSK",
-        "TVE",
         "RYA"
-      ]
+      ],
+      "symbolPosition": "suffix"
     }
   ]
 }

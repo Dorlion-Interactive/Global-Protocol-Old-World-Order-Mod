@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "mod_scenario_countries_state.schema.json",
     "title": "Mod Scenario – Country State Overrides",
-    "description": "Fragment file: mutates economic, political, and diplomatic state of existing countries at scenario start.",
+    "description": "Fragment file: mutates economic, political, and diplomatic state of existing countries at scenario start. Every field except iso3 is optional; an omitted field keeps the country's starting value.",
     "type": "object",
     "required": ["countryStateOverrides"],
     "properties": {
@@ -50,31 +50,32 @@
                     "type": "number",
                     "minimum": 0.0,
                     "maximum": 1.0,
-                    "description": "Political stability in [0, 1]"
+                    "description": "Political stability as a fraction in [0, 1] of the game's 0-100 scale (0.7 = 70). 0 or omitted keeps the starting value."
                 },
                 "corruption": {
                     "type": "number",
                     "minimum": 0.0,
-                    "maximum": 1.0
+                    "maximum": 1.0,
+                    "description": "Corruption as a fraction in [0, 1] of the game's 0-100 scale (0.3 = 30). Omitted keeps the starting value."
                 },
                 "treasury": {
                     "type": "number",
-                    "description": "Override treasury balance (USD millions)"
+                    "description": "Override treasury balance in US dollars (not millions). 0 or omitted keeps the starting value."
                 },
                 "gdp": {
                     "type": "number",
                     "minimum": 0,
-                    "description": "Override annual GDP (USD millions)"
+                    "description": "Override annual GDP in US dollars (not millions). 0 or omitted keeps the starting value."
                 },
                 "manpower": {
                     "type": "integer",
                     "minimum": 0,
-                    "description": "Available military manpower (thousands)"
+                    "description": "Available military manpower in people (not thousands). 0 or omitted keeps the starting value."
                 },
                 "reserve": {
                     "type": "integer",
                     "minimum": 0,
-                    "description": "Military reserve pool (thousands)"
+                    "description": "Military reserve pool in people (not thousands). 0 or omitted keeps the starting value."
                 }
             },
             "additionalProperties": false

@@ -1,4 +1,5 @@
 {
+  "mode": "replace",
   "buildings": [
     {
       "id": "factory",
@@ -22,7 +23,8 @@
       },
       "max_per_province": 3,
       "max_level": 5,
-      "level_scaling_factor": 0.4
+      "level_scaling_factor": 0.4,
+      "inherit": true
     },
     {
       "id": "commercial_district",
@@ -47,7 +49,8 @@
       },
       "max_per_province": 3,
       "max_level": 5,
-      "level_scaling_factor": 0.4
+      "level_scaling_factor": 0.4,
+      "inherit": true
     },
     {
       "id": "trade_port",
@@ -72,7 +75,8 @@
       },
       "max_per_province": 1,
       "max_level": 3,
-      "level_scaling_factor": 0.5
+      "level_scaling_factor": 0.5,
+      "inherit": true
     },
     {
       "id": "tech_park",
@@ -96,7 +100,8 @@
       },
       "max_per_province": 1,
       "max_level": 3,
-      "level_scaling_factor": 0.5
+      "level_scaling_factor": 0.5,
+      "inherit": true
     },
     {
       "id": "barracks",
@@ -119,7 +124,8 @@
       },
       "max_per_province": 2,
       "max_level": 3,
-      "level_scaling_factor": 0.3
+      "level_scaling_factor": 0.3,
+      "inherit": true
     },
     {
       "id": "military_base",
@@ -143,7 +149,8 @@
       },
       "max_per_province": 1,
       "max_level": 3,
-      "level_scaling_factor": 0.3
+      "level_scaling_factor": 0.3,
+      "inherit": true
     },
     {
       "id": "arms_factory",
@@ -167,7 +174,8 @@
       },
       "max_per_province": 2,
       "max_level": 3,
-      "level_scaling_factor": 0.4
+      "level_scaling_factor": 0.4,
+      "inherit": true
     },
     {
       "id": "highway",
@@ -191,7 +199,8 @@
       },
       "max_per_province": 2,
       "max_level": 3,
-      "level_scaling_factor": 0.4
+      "level_scaling_factor": 0.4,
+      "inherit": true
     },
     {
       "id": "power_plant",
@@ -215,7 +224,8 @@
       },
       "max_per_province": 2,
       "max_level": 3,
-      "level_scaling_factor": 0.4
+      "level_scaling_factor": 0.4,
+      "inherit": true
     },
     {
       "id": "hospital",
@@ -239,7 +249,8 @@
       },
       "max_per_province": 1,
       "max_level": 3,
-      "level_scaling_factor": 0.3
+      "level_scaling_factor": 0.3,
+      "inherit": true
     },
     {
       "id": "university",
@@ -263,7 +274,8 @@
       },
       "max_per_province": 1,
       "max_level": 3,
-      "level_scaling_factor": 0.5
+      "level_scaling_factor": 0.5,
+      "inherit": true
     },
     {
       "id": "naval_base",
@@ -286,7 +298,8 @@
       },
       "max_per_province": 1,
       "max_level": 3,
-      "level_scaling_factor": 0.4
+      "level_scaling_factor": 0.4,
+      "inherit": true
     },
     {
       "id": "radar_station",
@@ -309,7 +322,56 @@
       },
       "max_per_province": 2,
       "max_level": 3,
-      "level_scaling_factor": 0.2
+      "level_scaling_factor": 0.2,
+      "inherit": true
+    },
+    {
+      "id": "intelligence_hq",
+      "name": "Royal Spymaster's Office",
+      "description": "Central espionage chamber and courier hub directing court informants, intercepting diplomatic dispatches, and mounting foreign covert schemes.",
+      "category": "intelligence",
+      "inherit": true,
+      "cost": {
+        "money": 1000,
+        "build_time_months": 8
+      },
+      "maintenance_per_month": 6,
+      "effects": {
+        "defense_bonus": 5,
+        "unrest_reduction": 0.05
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 20,
+        "population": 20000
+      },
+      "max_per_province": 1,
+      "max_level": 3,
+      "level_scaling_factor": 0.3
+    },
+    {
+      "id": "counterintel_bureau",
+      "name": "Inquisition Tribunal",
+      "description": "Judicial tribunal and municipal watch rooting out foreign agitators, sedition, and covert infiltration through rigorous cross-examination.",
+      "category": "intelligence",
+      "inherit": true,
+      "cost": {
+        "money": 800,
+        "build_time_months": 6
+      },
+      "maintenance_per_month": 5,
+      "effects": {
+        "defense_bonus": 10,
+        "unrest_reduction": 0.1
+      },
+      "prerequisites": {
+        "tech": "none",
+        "infrastructure": 15,
+        "population": 15000
+      },
+      "max_per_province": 1,
+      "max_level": 3,
+      "level_scaling_factor": 0.3
     }
   ]
 }

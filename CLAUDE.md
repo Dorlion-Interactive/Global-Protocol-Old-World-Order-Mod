@@ -21,14 +21,19 @@ scenario/                        ← split scenario files (authoritative)
   provinces_ownership.json       ← province + region ownership
   units_define.json              ← custom unit type definitions
   units_deploy_armies.json       ← initial army stacks per province
+  buildings_override.json        ← building roster replacement (mode: replace)
+  units_override.json            ← unit roster replacement (mode: replace)
+  currencies.json                ← scenario currencies definition
 Content/
   goals_old_world_order.json     ← national goals (path relative to mod root)
+  localization/                  ← localization CSV additions (en.csv, tr.csv)
 overrides/
   localization_en.csv            ← English display strings
   localization_tr.csv            ← Turkish display strings
+  doctrines.json                 ← sparse doctrine card overrides
   military_markers.json          ← UI military marker overrides
   game_flow.json                 ← game flow overrides
-  Art/Units/                     ← unit artwork
+  Art/Units/                     ← unit artwork (map-marker art)
 flags/                           ← flag PNGs (128×80, named by ISO3)
 docs/modding/                    ← schema documentation
   MODDING_REFERENCE.md           ← authoritative field reference

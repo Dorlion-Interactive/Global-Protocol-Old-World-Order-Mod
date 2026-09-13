@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_currencies.schema.json",
+  "title": "Mod Currencies",
+  "description": "National currencies money is shown in (Content/currencies.json, or a scenario's currenciesFile). Display-only: the simulation keeps one money unit, the base currency, and amounts are converted when they are shown. Not part of the multiplayer lobby check.",
+  "type": "object",
+  "properties": {
+    "era": {
+      "type": "string",
+      "description": "Free-form label for the author; not read by the game."
+    },
+    "baseCurrency": {
+      "type": "object",
+      "description": "The unit the simulation counts in. Its symbol is shown to spectators, in menus, for countries without a currency, and when the player turns on the base-currency setting. A scenario's currencySymbol, when set, wins over this symbol.",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8
+        },
+        "symbolPosition": {
+          "type": "string",
+          "enum": [
+            "prefix",
+            "suffix"
+          ],
+          "default": "prefix",
+          "description": "Whether the symbol leads the amount (\"fl. 1.2K\") or follows it (\"45.0K ak.\")."
+        }
+      },
+      "additionalProperties": true
+    },
+    "currencies": {
+      "type": "array",
+      "description": "Later files replace a currency with the same id. A country listed under two currencies keeps the first.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "symbol",
+          "exchangeRateToBase"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8
+          },
+          "symbolPosition": {
+            "type": "string",
+            "enum": [
+              "prefix",
+              "suffix"
+            ],
+            "default": "prefix",
+            "description": "Whether the symbol leads the amount (\"fl. 1.2K\") or follows it (\"45.0K ak.\")."
+          },
+          "exchangeRateToBase": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Local units per one base unit: at 45, an amount of 1,000 in the base currency is shown as 45.0K."
+          },
+          "associatedCountries": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "format": "iso3"
+            },
+            "description": "ISO3 codes of the countries that use this currency."
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

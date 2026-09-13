@@ -4751,6 +4751,12 @@
               "minimum": 1,
               "maximum": 36500,
               "description": "After a UN resolution of a given type against a target FAILS, no AI country re-tables the same type against the same target for this many ticks (the 2026-09-10 soak had the same aggressor re-proposing a 2:212 condemnation every monthly cooldown, 68 of 83 resolutions)."
+            },
+            "unsc_resolution_retention_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 365000,
+              "description": "Resolved UN resolutions older than this many ticks are pruned from the resolution history (a row still referenced by a live sanction is kept). Never shorter than condemnation_reproposal_cooldown_ticks, which ages failed resolutions by the same proposal tick. Ids come from a persisted counter, so pruning never re-issues one. 3600 = about ten in-game years."
             }
           }
         },

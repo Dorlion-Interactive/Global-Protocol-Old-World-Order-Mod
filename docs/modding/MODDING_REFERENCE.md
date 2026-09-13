@@ -1,6 +1,6 @@
 # NewWorldOrder – Modding Reference
 
-Last updated: 2026-05-13
+Last updated: 2026-09-11
 
 This document is the authoritative reference for mod authors. It covers folder layout, the manifest, all data override types, scenario split files, permissions, and enum values.
 
@@ -12,13 +12,14 @@ This document is the authoritative reference for mod authors. It covers folder l
 %USERPROFILE%/Documents/GlobalProtocol/Mods/<mod-id>/
   mod.json                   ← required manifest
   Content/
-    buildings.json           ← building overrides (merged by id)
-    units.json               ← unit-type overrides (merged by id)
-    resources.json           ← resource overrides (merged by id)
-    tech_tree.json           ← tech overrides (merged by id)
+    buildings.json           ← building roster: merge, replace or start from scratch (§8.1)
+    units.json               ← unit roster (§8.1)
+    resources.json           ← resource overrides and disables (§8.1)
+    currencies.json          ← national currencies money is shown in, display-only (§8.5)
     localization/            ← CSV localization additions (<language>.csv)
     events/                  ← scripted event JSON (one event per file)
     ui/                      ← USS/icon overrides
+  icons/                     ← replacement icons by id: buildings/, units/, resources/, doctrines/ (§8.4)
   overrides/                 ← sparse config overrides (see §9)
     game_settings.json
     doctrines.json
@@ -149,9 +150,22 @@ Each file is optional; missing files are skipped. Lists from all files are **app
 | `clearDiplomacyScope` | string | `"extended"` | `"core"` or `"extended"` |
 | `rebuildNeutralRelations` | bool | true | Re-seed neutral opinion after clearing |
 | `nationalGoalsFile` | string | `""` | Relative path to national goals JSON |
-| `gdpScale` | float | 1.0 | Global GDP multiplier |
+| `gdpScale` | float | 1.0 | Multiplies every country's GDP, GDP per capita, exports, imports, foreign reserves and treasury once, when a new game starts. `countryStateOverrides` values are absolute and are applied after it. |
 | `economicEraLabel` | string | `""` | Economy era key for init system |
-| `currency_symbol` | string | `"$"` | Symbol shown in all money displays. Any UTF-8 string, e.g. `"€"`, `"fl."`, `"¥"`. Null/empty keeps the default `"$"`. |
+| `currencySymbol` | string | `"$"` | Symbol shown in all money displays. Any UTF-8 string, e.g. `"€"`, `"fl."`, `"¥"`. Null/empty keeps the default `"$"`. With national currencies (§8.5) it is the base currency's symbol, and it wins over the file's `baseCurrency.symbol`. |
+| `currenciesFile` | string | `""` | Currencies file, relative to the scenario folder (§8.5). Applied after every mod's `Content/currencies.json`. |
+| `buildingsOverrideFile` | string | `""` | Buildings roster file, relative to the scenario folder (§8.1). Applied after every mod's `Content/buildings.json`. |
+| `unitsOverrideFile` | string | `""` | Units roster file, relative to the scenario folder (§8.1). |
+| `resourcesOverrideFile` | string | `""` | Resources file, relative to the scenario folder (§8.1). |
+| `techOverrideFile` | string | `""` | **Ignored.** The tech tree was replaced by the Knowledge Network — use `overrides/doctrines.json` and `disabledDoctrineBranches`. |
+| `disabledUnitCategories` | string[] | `[]` | Unit categories (§9.5) removed from recruitment and build eligibility. |
+| `disabledUnitTypeIds` | string[] | `[]` | Specific unit ids, same effect. |
+| `disabledBuildingCategories` | string[] | `[]` | `Economic`, `Military`, `Infrastructure`, `Research`, `Social`, `Defense`, `Intelligence` — removed from every build menu, starting seeding, the AI and the build command. |
+| `disabledBuildingIds` | string[] | `[]` | Specific building ids, same effect. To drop most of the base roster, use `"mode": "replace"` (§8.1) instead. |
+| `disabledDoctrineBranches` | string[] | `[]` | Knowledge Network branches hidden from research: `military`, `government`, `economy`, `industry`, `diplomacy`, `intelligence`, `cyber`, `space`, `energy`, `society`. Their tier gates never open, so everything gated behind them stays locked. |
+
+Override file paths that do not resolve, and files that do not parse, are listed in the Mods panel
+(and the Mod Builder's Reload & Test) instead of being skipped silently.
 
 ---
 
@@ -304,44 +318,112 @@ Use `Content/localization/` for new mods.
 
 Balance and content changes live outside `scenario/`. Every file here is optional.
 
-### 8.1 Content overrides (merged by `id`)
+### 8.1 Content rosters (`Content/*.json`)
 
-`Content/buildings.json`, `Content/units.json`, `Content/resources.json` and `Content/tech_tree.json`
-hold entries matched against the base game by `id`:
+`Content/buildings.json`, `Content/units.json` and `Content/resources.json` — and a scenario's
+`buildingsOverrideFile` / `unitsOverrideFile` / `resourcesOverrideFile` — describe the game's
+content roster. Entries are matched against the base game by `id` (case-insensitive). Each file
+picks a **mode**:
 
-- fields you write overwrite the base entry,
-- fields you omit keep their base values,
-- an `id` the base game does not have is appended as a brand-new entry.
+| Mode | What the file means |
+|---|---|
+| `"merge"` (default; also any bare array) | Change or add to the base game. Fields you write overwrite the base entry, fields you omit keep their base values, a new `id` is added. |
+| `"replace"` | The file **is** the roster. Every base id it does not list is switched off. |
+| `"replace"` with no entries | Start from scratch: every base entry is switched off. |
 
-So a file that changes only one building's cost is three lines long:
+A merge file that re-prices one building:
 
 ```json
 [
-  { "id": "power_plant", "cost": 850 }
+  { "id": "power_plant", "cost": { "money": 850, "build_time_months": 12 } }
 ]
 ```
 
-Both shapes are accepted — a bare array as above, or an envelope:
+A replace file for an earlier era:
 
 ```json
-{ "overrides": [ { "id": "power_plant", "cost": 850 } ] }
+{
+  "mode": "replace",
+  "overrides": [
+    { "id": "naval_base", "name": "Shipyard", "category": "military",
+      "cost": { "money": 400, "build_time_months": 6 } },
+    { "id": "castle", "name": "Castle", "category": "defense",
+      "cost": { "money": 900, "build_time_months": 18 }, "effects": { "defense_bonus": 25 } }
+  ],
+  "disabled": []
+}
 ```
 
-The in-game Mod Builder writes the envelope form. Entries validate against
-`building_type.schema.json` / `unit_type.schema.json` / `resource_type.schema.json` /
-`tech_tree.schema.json` — those schemas describe **one entry**, not the whole file.
+`"replace": true` is accepted as a shorthand for `"mode": "replace"`. The entries may live under
+`overrides` (what the Mod Builder writes) or under the base config's own root key (`buildings`,
+`units`, `resources`).
 
-`Content/resources.json` additionally supports a `disabled` list, which switches resources off
-entirely:
+**`disabled`** switches ids off in any mode, for buildings, units and resources alike. It wins over
+being listed.
 
-```json
-{ "overrides": [], "disabled": ["oil"] }
-```
+**`inherit`** decides what an entry for an **existing** base id means:
 
-Resources are the only content type with that capability — a `disabled` list in the other three
-files is ignored, which is why the Mod Builder only offers the toggle for resources.
+- `true` — overwrite only the fields you wrote (the classic sparse merge);
+- `false` — the entry is the whole definition; fields you leave out take engine defaults instead of
+  the base game's values.
 
-When several mods are active they merge in load order, so a later mod wins on any field it sets.
+Entries in a replace-mode file default to `inherit: false`, so a medieval roster cannot silently
+keep modern recipes or effects; entries in a merge-mode file default to `true`. New ids are always
+whole definitions. Nested objects (`cost`, `effects`, `prerequisites`) are replaced as a whole,
+never merged field by field — write the full object.
+
+**What "switched off" means.** Base entries are never removed from the game's data: saves store
+buildings and units by position, and multiplayer compares unit positions. A switched-off building
+is hidden from every build menu, never placed at game start, never chosen by the AI, and rejected
+by the build command (upgrades included). A switched-off unit is hidden from recruitment, rejected
+by the recruit commands, and removed from the base game's starting armies. A switched-off resource
+is no longer produced.
+
+**Load order.** Files apply in load order: every active mod alphabetically by mod id, then the
+active scenario's override file. A later merge file wins on any field it sets and can bring back a
+base id an earlier replace file dropped; a later replace file discards everything composed before
+it (the Mods panel warns when that happens).
+
+**Save compatibility.** Ids you add are appended in roster order. Keep that order between versions
+of your mod — never remove or reorder ids you added — or saves made with the older version point at
+the wrong entries.
+
+**Buildings the engine finds by id.** Some features look their building up by id. Switching one off
+switches that feature off, so a historical roster usually keeps the id and re-skins it (name, icon,
+localization) instead. The Mods panel warns when one of these is off:
+
+| Building id | Used for |
+|---|---|
+| `naval_base` | Fleet recruitment and docking |
+| `airfield` | Air wing bases and starting airfields |
+| `barracks`, `military_base` | Land unit recruitment (units name them in `cost.required_building`) |
+| `submarine_pen`, `trade_port` | Coastal building rules |
+| `intelligence_hq`, `cyber_ops_center`, `counterintel_bureau` | Espionage |
+| `satellite_launch_facility` | Satellite launches |
+
+**Units** name the building they are recruited at in `cost.required_building`. A unit whose building
+is missing or switched off can never be recruited; the Mods panel says so.
+
+**Resources** are a fixed set. A mod can re-price, re-skin or switch them off, but cannot add new
+ones; unknown resource ids are reported.
+
+**In the Mod Builder** (Content tab) the roster mode sits at the top of each file. In replace mode
+the base entries you have not included are listed as switched off, each with an Include button, plus
+Include all to start from a copy of the base game. Add brand-new ids (optionally copying an existing
+entry), switch entries off, and set each entry's inherit flag right on its card. The checks box below
+runs the same checks as the game's loader while you edit. The scenario header's disabled lists are
+checklists of the game's real building, unit, category and branch ids on the Scenario tab.
+
+**`Content/tech_tree.json` is retired.** Research is the Knowledge Network (`overrides/doctrines.json`,
+§8.2). The file is ignored with a warning, and so is a scenario's `techOverrideFile`. To keep modern
+technology out of an earlier era, hide whole branches with the scenario header's
+`disabledDoctrineBranches` (§3.3): their tier gates never open, so everything gated behind them
+stays locked.
+
+Load problems — a file that does not parse, an override file that is not where the scenario says, a
+unit that needs a switched-off building — are listed in the Mods panel and in the Mod Builder's
+Reload & Test. Each entry validates against `building_type.schema.json` / `unit_type.schema.json` /
+`resource_type.schema.json`; the file as a whole follows `mod_content_envelope.schema.json`.
 
 ### 8.2 Config overrides (`overrides/`)
 
@@ -379,6 +461,62 @@ Law names/descriptions come from `politics.law.*` keys in the mod's
 Add `Content/localization/<language>.csv` with plain `key,value` rows (UTF-8, no BOM, no header).
 The 13 shipped languages are `cz, de, en, es, es-419, fr, ja, ko, pt, pt-br, ru, tr, zh`. Keys you
 define override the base game's; keys you omit fall back to the shipped string.
+
+### 8.4 Icons
+
+A mod replaces the picture of a building, unit, resource or doctrine by shipping an image named after
+its id. The game looks for mod icons first and falls back to the base game's art.
+
+| Folder | File name | Shown in |
+|---|---|---|
+| `icons/buildings/` | building id, e.g. `castle.png` | Build menus, province view, tooltips, research unlock chips |
+| `icons/units/` | unit id | Recruitment, army cards, unit lists |
+| `icons/resources/` | resource id, e.g. `oil.png` | Resource panels and tooltips |
+| `icons/doctrines/` | the doctrine's `icon` id from doctrines.json | Research screen cards, milestones, hidden cards |
+
+- `.png`, `.jpg` and `.jpeg` are read; if one id has both a `.png` and a `.jpg`, the `.png` wins.
+- `Content/icons/...` is read too, after `icons/...`.
+- When several active mods ship the same icon, the mod that loads last (alphabetically by mod id)
+  wins — the same order as content rosters.
+- New ids you add to a roster (§8.1) get their icon the same way.
+- Icons are presentation only and are not part of the multiplayer lobby check.
+- Map markers are drawn per unit **subcategory**: set those with `overrides/military_markers.json`
+  (`subcategory_icons`).
+
+The Mod Builder's Content tab has an icon picker on every building, unit and resource card, and the
+Doctrines tab lists every doctrine icon id with a picker; both copy your image to the right place.
+
+### 8.5 Currencies (`Content/currencies.json`)
+
+Countries can show money in their own currency. This is display-only. The simulation keeps one
+money unit, the base currency, and every amount is converted when it is shown. Currencies are
+therefore not part of the multiplayer lobby check.
+
+```json
+{
+  "baseCurrency": { "id": "florin", "name": "Florin", "symbol": "fl." },
+  "currencies": [
+    { "id": "akce", "name": "Ottoman Akçe", "symbol": "ak.", "symbolPosition": "suffix",
+      "exchangeRateToBase": 45.0, "associatedCountries": ["OTT", "CRA"] }
+  ]
+}
+```
+
+- `exchangeRateToBase` is local units per one base unit. At 45, an amount of 1,000 in the base
+  currency is shown to an Ottoman player as `45.0K ak.`. The rate must be above 0; a currency without
+  a valid rate or a `symbol` is skipped with a warning.
+- `symbolPosition` is `"prefix"` (the default) or `"suffix"`. A leading symbol of two or more
+  characters that ends in a letter or `.` is written with a space: `fl. 1.2K`.
+- A country listed under two currencies keeps the first one, with a warning.
+- Files stack like content rosters: every active mod's `Content/currencies.json` in load order, then
+  the scenario's `currenciesFile`. A later file replaces a currency with the same `id`, and its
+  `baseCurrency` replaces the base fields it sets.
+- Each player sees their own country's currency. Spectators, menus and countries without a currency
+  see the base currency. **Settings → Gameplay → Show money in the base currency** switches every
+  amount to the base currency.
+- Money written directly into localized prose (a few event texts) keeps `$`.
+
+The Mod Builder's Content tab has a Currencies sub-tab for all of this.
 
 ---
 

@@ -1,7 +1,7 @@
 {
     "scenarioId": "old_world_order.1450",
     "displayName": "Old World Order (1450)",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "startYear": 1450,
     "startMonth": 1,
     "startDay": 1,
@@ -38,5 +38,10 @@
         "mobile_launcher"
     ],
     "buildingsOverrideFile": "buildings_override.json",
-    "techOverrideFile": "tech_override.json"
+    "currenciesFile": "currencies.json",
+    "disabledDoctrineBranches": [
+        "cyber",
+        "space",
+        "energy"
+    ]
 }
