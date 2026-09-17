@@ -1,0 +1,288 @@
+{
+  "_description": "Old World Order 1450: national goals. Replaces the base game's agendas (nationalGoalsFile).",
+  "_BASIC": {
+    "goals": [
+      {
+        "id": "basic_fill_the_treasury",
+        "title": "Fill the Royal Treasury",
+        "title_key": "owo.goal.basic_fill_the_treasury",
+        "description": "A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.",
+        "description_key": "owo.goal.basic_fill_the_treasury.desc",
+        "type": "economic",
+        "priority": "starter",
+        "ai_weight": 0.5,
+        "on_complete_effects": {
+          "stability": 2
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.basic_fill_the_treasury.treasury",
+            "title": "Hold 500 fl. in the treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "500"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "basic_first_alliance",
+        "title": "Seek a Trusted Ally",
+        "title_key": "owo.goal.basic_first_alliance",
+        "description": "No crown stands alone for long. Win the friendship of a neighbour.",
+        "description_key": "owo.goal.basic_first_alliance.desc",
+        "type": "diplomatic",
+        "priority": "starter",
+        "ai_weight": 0.5,
+        "on_complete_effects": {
+          "prestige": 10
+        },
+        "tasks": [
+          {
+            "id": "relations",
+            "title_key": "owo.task.basic_first_alliance.relations",
+            "title": "Reach good relations with another realm",
+            "condition": {
+              "type": "improve_relations",
+              "params": {
+                "min_value": "50"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "OTT": {
+    "goals": [
+      {
+        "id": "ott_heir_of_rome",
+        "title": "Heir of Rome",
+        "title_key": "owo.goal.ott_heir_of_rome",
+        "description": "Take Constantinople and claim the mantle of the Caesars.",
+        "description_key": "owo.goal.ott_heir_of_rome.desc",
+        "type": "territorial",
+        "priority": "primary",
+        "ai_weight": 0.9,
+        "target_countries": [
+          "BYZ"
+        ],
+        "on_complete_effects": {
+          "prestige": 50,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "war",
+            "title_key": "owo.task.ott_heir_of_rome.war",
+            "title": "Declare war on the Byzantine Empire",
+            "condition": {
+              "type": "declare_war_on",
+              "params": {
+                "target_iso3": "BYZ"
+              }
+            }
+          },
+          {
+            "id": "army",
+            "title_key": "owo.task.ott_heir_of_rome.army",
+            "title": "Muster 20,000 soldiers",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 20000
+          }
+        ]
+      },
+      {
+        "id": "ott_anatolian_unity",
+        "title": "Anatolian Unity",
+        "title_key": "owo.goal.ott_anatolian_unity",
+        "description": "Bring Karaman and the other beyliks under the Sultan's authority.",
+        "description_key": "owo.goal.ott_anatolian_unity.desc",
+        "type": "unification",
+        "priority": "secondary",
+        "ai_weight": 0.7,
+        "target_countries": [
+          "KAR",
+          "CND",
+          "DUL"
+        ],
+        "on_complete_effects": {
+          "prestige": 25,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "karaman",
+            "title_key": "owo.task.ott_anatolian_unity.karaman",
+            "title": "Declare war on the Karamanids",
+            "condition": {
+              "type": "declare_war_on",
+              "params": {
+                "target_iso3": "KAR"
+              }
+            }
+          },
+          {
+            "id": "candar",
+            "title_key": "owo.task.ott_anatolian_unity.candar",
+            "title": "Reach good relations with the Candarids",
+            "condition": {
+              "type": "improve_relations",
+              "params": {
+                "target_iso3": "CND",
+                "min_value": "50"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "FRA": {
+    "goals": [
+      {
+        "id": "fra_end_hundred_years_war",
+        "title": "End the Hundred Years' War",
+        "title_key": "owo.goal.fra_end_hundred_years_war",
+        "description": "Drive the English crown from Normandy and Guyenne for good.",
+        "description_key": "owo.goal.fra_end_hundred_years_war.desc",
+        "type": "territorial",
+        "priority": "primary",
+        "ai_weight": 0.9,
+        "target_countries": [
+          "ENG"
+        ],
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "war",
+            "title_key": "owo.task.fra_end_hundred_years_war.war",
+            "title": "Declare war on England",
+            "condition": {
+              "type": "declare_war_on",
+              "params": {
+                "target_iso3": "ENG"
+              }
+            }
+          },
+          {
+            "id": "army",
+            "title_key": "owo.task.fra_end_hundred_years_war.army",
+            "title": "Muster 15,000 soldiers",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 15000
+          }
+        ]
+      },
+      {
+        "id": "fra_contain_burgundy",
+        "title": "Contain Burgundy",
+        "title_key": "owo.goal.fra_contain_burgundy",
+        "description": "Keep the Grand Dukes of the West from carving a kingdom out of France's borderlands.",
+        "description_key": "owo.goal.fra_contain_burgundy.desc",
+        "type": "diplomatic",
+        "priority": "secondary",
+        "ai_weight": 0.6,
+        "target_countries": [
+          "BUR"
+        ],
+        "on_complete_effects": {
+          "prestige": 20
+        },
+        "tasks": [
+          {
+            "id": "scotland",
+            "title_key": "owo.task.fra_contain_burgundy.scotland",
+            "title": "Renew the Auld Alliance with Scotland",
+            "condition": {
+              "type": "alliance_with",
+              "params": {
+                "target_iso3": "SCT"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "CAS": {
+    "goals": [
+      {
+        "id": "cas_reconquista",
+        "title": "Complete the Reconquista",
+        "title_key": "owo.goal.cas_reconquista",
+        "description": "Bring down the Emirate of Granada, the last Muslim realm in Iberia.",
+        "description_key": "owo.goal.cas_reconquista.desc",
+        "type": "territorial",
+        "priority": "primary",
+        "ai_weight": 0.9,
+        "target_countries": [
+          "GRN"
+        ],
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "war",
+            "title_key": "owo.task.cas_reconquista.war",
+            "title": "Declare war on Granada",
+            "condition": {
+              "type": "declare_war_on",
+              "params": {
+                "target_iso3": "GRN"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "cas_union_with_aragon",
+        "title": "Union of the Crowns",
+        "title_key": "owo.goal.cas_union_with_aragon",
+        "description": "Bind Castile and Aragon together into one Spanish monarchy.",
+        "description_key": "owo.goal.cas_union_with_aragon.desc",
+        "type": "diplomatic",
+        "priority": "secondary",
+        "ai_weight": 0.7,
+        "target_countries": [
+          "ARA"
+        ],
+        "on_complete_effects": {
+          "prestige": 30,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "alliance",
+            "title_key": "owo.task.cas_union_with_aragon.alliance",
+            "title": "Ally with the Crown of Aragon",
+            "condition": {
+              "type": "alliance_with",
+              "params": {
+                "target_iso3": "ARA"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

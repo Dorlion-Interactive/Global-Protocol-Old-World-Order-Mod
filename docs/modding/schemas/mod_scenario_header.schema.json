@@ -65,7 +65,7 @@
     },
     "nationalGoalsFile": {
       "type": "string",
-      "description": "Relative path (from mod root) to a national goals JSON file"
+      "description": "National goals file, relative to the scenario folder, in the national_goals_2026.json shape ({ \"_BASIC\": { \"goals\": [...] }, \"OTT\": { \"goals\": [...] } }). It REPLACES the base goals for the Agenda panel and the AI; a file without _BASIC means no starter goals."
     },
     "gdpScale": {
       "type": "number",

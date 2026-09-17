@@ -1,6 +1,6 @@
 # NewWorldOrder – Modding Reference
 
-Last updated: 2026-09-11
+Last updated: 2026-09-17
 
 This document is the authoritative reference for mod authors. It covers folder layout, the manifest, all data override types, scenario split files, permissions, and enum values.
 
@@ -29,6 +29,7 @@ This document is the authoritative reference for mod authors. It covers folder l
     military_markers.json
   scenario/                  ← optional split scenario folder
     scenario.json            ← required header (must contain scenarioId)
+    national_goals.json      ← optional, named by nationalGoalsFile (§8.6)
     countries_add.json
     countries_remove.json
     countries_state.json
@@ -149,7 +150,7 @@ Each file is optional; missing files are skipped. Lists from all files are **app
 | `clearDiplomaticRelationships` | bool | false | Wipe all diplomatic relations before loading |
 | `clearDiplomacyScope` | string | `"extended"` | `"core"` or `"extended"` |
 | `rebuildNeutralRelations` | bool | true | Re-seed neutral opinion after clearing |
-| `nationalGoalsFile` | string | `""` | Relative path to national goals JSON |
+| `nationalGoalsFile` | string | `""` | National goals file, relative to the scenario folder (§8.6). It **replaces** the base game's goals for the Agenda panel and the AI. |
 | `gdpScale` | float | 1.0 | Multiplies every country's GDP, GDP per capita, exports, imports, foreign reserves and treasury once, when a new game starts. `countryStateOverrides` values are absolute and are applied after it. |
 | `economicEraLabel` | string | `""` | Economy era key for init system |
 | `currencySymbol` | string | `"$"` | Symbol shown in all money displays. Any UTF-8 string, e.g. `"€"`, `"fl."`, `"¥"`. Null/empty keeps the default `"$"`. With national currencies (§8.5) it is the base currency's symbol, and it wins over the file's `baseCurrency.symbol`. |
@@ -390,7 +391,9 @@ the wrong entries.
 
 **Buildings the engine finds by id.** Some features look their building up by id. Switching one off
 switches that feature off, so a historical roster usually keeps the id and re-skins it (name, icon,
-localization) instead. The Mods panel warns when one of these is off:
+localization) instead. The Mods panel warns when a replace roster leaves one of these out. When you
+mean to drop the feature, name the id in the roster's `"disabled"` list (or the scenario's
+`disabledBuildingIds`) and the warning goes away:
 
 | Building id | Used for |
 |---|---|
@@ -403,6 +406,11 @@ localization) instead. The Mods panel warns when one of these is off:
 
 **Units** name the building they are recruited at in `cost.required_building`. A unit whose building
 is missing or switched off can never be recruited; the Mods panel says so.
+
+**Doctrine gates.** A building or unit whose `prerequisites.tech` names a tier of a hidden doctrine
+branch (`disabledDoctrineBranches`, or a branch a replace-mode `doctrines.json` leaves out, §8.2) is
+never offered. The Mods panel warns for the entries your roster lists; set their `prerequisites.tech`
+to `"none"` or to a tier of a branch the game shows.
 
 **Resources** are a fixed set. A mod can re-price, re-skin or switch them off, but cannot add new
 ones; unknown resource ids are reported.
@@ -418,7 +426,7 @@ checklists of the game's real building, unit, category and branch ids on the Sce
 §8.2). The file is ignored with a warning, and so is a scenario's `techOverrideFile`. To keep modern
 technology out of an earlier era, hide whole branches with the scenario header's
 `disabledDoctrineBranches` (§3.3): their tier gates never open, so everything gated behind them
-stays locked.
+stays locked. To rebuild the tree itself for another era, use a replace-mode `doctrines.json` (§8.2).
 
 Load problems — a file that does not parse, an override file that is not where the scenario says, a
 unit that needs a switched-off building — are listed in the Mods panel and in the Mod Builder's
@@ -438,9 +446,39 @@ Sparse documents against the shipped base config — write only the keys you wan
 
 Two constraints worth knowing before you edit:
 
-- **Doctrines are structure-locked.** Branch, tier and doctrine positions are save-stable, so you can
-  change a doctrine's numbers, effects and strings, but adding, removing or reordering entries is
-  rejected — it would silently repoint every existing save.
+- **Doctrines merge or replace.** `overrides/doctrines.json` has a root `"mode"`:
+  - `"merge"` (the default) patches the base tree position by position. You can change a
+    doctrine's numbers, effects and strings, but adding entries (branches, tiers, doctrines, hidden
+    cards, directives) is rejected — positions are save-stable, and new ones would repoint every
+    existing save. Nested objects merge key by key: an `effects` block you write keeps every base
+    effect you did not mention.
+  - `"replace"` rebuilds whole branches. Each branch the file lists, matched by `id` (file order does
+    not matter), replaces the base branch outright: its tiers, doctrines, effects, icons, AI weights,
+    milestone, directives and hidden cards are exactly what you wrote — nothing is inherited. Every
+    base branch the file leaves out is **hidden**, exactly as if the scenario listed it in
+    `disabledDoctrineBranches`, so its tier gates never open (laws, buildings and units gated behind
+    it stay locked). A replacing branch needs the base branch's 5 tiers, each with 1 to 3 doctrines
+    with unique ids; at most 16 hidden cards and 3 directives; effect values must be numbers.
+    `settings` still merges sparsely, `starting_grants` replaces the base grants when present, and
+    the legacy tech map is always the base game's. Names and descriptions come from your
+    `name_key`/`desc_key` rows in the mod's localization CSVs; icons from `icons/doctrines/` (§8.4).
+
+  ```json
+  { "mode": "replace",
+    "branches": [
+      { "id": "military", "name_key": "doctrine.branch.military",
+        "tiers": [
+          { "name_key": "mymod.military.t1", "doctrines": [
+              { "id": "feudal_levies", "name_key": "mymod.feudal_levies", "desc_key": "mymod.feudal_levies.desc",
+                "icon": "military_t1a_professional_armed_forces", "effects": { "recruit_cost_mult": 0.9 },
+                "ai": { "military": 0.6 } },
+              { "id": "mercenary_companies", "name_key": "mymod.mercenaries", "effects": { "military_attack": 0.05 } } ] },
+          "… tiers 2-5 …"
+        ] } ] }
+  ```
+
+  Files apply in load order; a replace file starts again from the base tree and the Mods panel warns
+  that it discarded the doctrine files loaded before it.
 - **`game_flow` cannot be modded in practice.** Autosave interval, autosave on/off, save-slot count
   and the pre-selected country are the *player's* settings (stored in their own `settings.json` and
   edited from the Settings screen). A mod override of that section is ignored, which is why the
@@ -517,6 +555,66 @@ therefore not part of the multiplayer lobby check.
 - Money written directly into localized prose (a few event texts) keeps `$`.
 
 The Mod Builder's Content tab has a Currencies sub-tab for all of this.
+
+### 8.6 National goals (scenario `nationalGoalsFile`)
+
+A scenario can bring its own national goals — the Agenda panel's goals, and the goals AI countries
+pursue. The file is named by the scenario header's `nationalGoalsFile`, relative to the scenario
+folder, and it **replaces** the base game's goals entirely: countries it does not list have no
+agenda, and a file without `_BASIC` has no starter goals. It uses the base game's
+`national_goals_2026.json` shape:
+
+```json
+{
+  "_BASIC": { "goals": [
+    { "id": "basic_secure_the_realm", "title_key": "mymod.goal.secure_realm",
+      "description_key": "mymod.goal.secure_realm.desc", "type": "defense", "priority": "starter",
+      "tasks": [ { "id": "war_chest", "title_key": "mymod.task.war_chest",
+                   "condition": { "type": "treasury_above", "params": { "min_value": "5000" } } } ] } ] },
+  "OTT": { "goals": [
+    { "id": "ott_heir_of_rome", "title": "Heir of Rome", "title_key": "mymod.goal.heir_of_rome",
+      "description_key": "mymod.goal.heir_of_rome.desc", "type": "territorial", "priority": "primary",
+      "ai_weight": 0.9, "target_countries": ["BYZ"],
+      "on_complete_effects": { "prestige": 50, "stability": 5 },
+      "tasks": [ { "id": "war_on_byzantium", "title_key": "mymod.task.war_on_byzantium",
+                   "condition": { "type": "declare_war_on", "params": { "target_iso3": "BYZ" } } } ] } ] }
+}
+```
+
+- **Keys** are `_BASIC` (starter goals every country sees) or a country's upper-case code. Other
+  `_`-prefixed keys are ignored as metadata.
+- **`id`** is required and unique across the file; the player's active goal is saved by id. Starter
+  goals appear in the planner's starter list only when their id starts with `basic_`.
+- **`title_key` / `description_key`** are looked up in the mod's localization CSVs; `title` and
+  `description` are the fallback text. The AI's copy of the goal uses `title` (or the key).
+- **`type`**: `expansion`, `territorial`, `economic`, `unification`, `defense`, `prestige`,
+  `diplomatic`, `ideological` (the AI understands these), plus `technology` and `intelligence` for the
+  Agenda panel's task templates. **`priority`**: `starter`, `primary`, `secondary`, `aspirational`.
+  Unknown values are reported and fall back to economic / secondary.
+- **`ai_weight`** (0–1, default 0.5) and **`target_countries`** steer AI countries that pursue the goal.
+- **`on_complete_effects`** — the AI applies `prestige`, `stability`, `aggression_modifier` and
+  `military_modifier` when it completes a goal; the Agenda panel shows them as the reward.
+- **`tasks`** are the player's steps. A goal without tasks gets a template from its `type`. Condition
+  types and their `params`:
+
+| `condition.type` | `params` |
+|---|---|
+| `own_provinces` | `province_owner` — counts owned provinces whose base-map country is this code |
+| `alliance_with`, `declare_war_on`, `espionage_on`, `embassy_with`, `trade_agreement_with`, `defensive_pact_with`, `guarantee_independence`, `sphere_member` | `target_iso3` |
+| `improve_relations` | `target_iso3` (optional), `min_value` (default 50) |
+| `build_in_provinces` | `province_owner` (optional) |
+| `recruit_units`, `military_units_above` | `unit_type`: `tanks`, `aircraft`, `ships`, `submarines`, `helicopters`, `apcs`, `artillery`, `personnel` — the count is the progress |
+| `research_tech` | none — the number of completed doctrine tiers is the progress |
+| `treasury_above`, `gdp_above` | `min_value`, in the base money unit |
+| `tutorial_objective` | `objective_id` |
+
+  `required_count` (default 1) is the progress a counting task needs, e.g. 10 for "own 10 provinces"
+  or 5000 for "5,000 personnel"; yes/no conditions report 1 when met. Unknown condition types never
+  progress.
+
+A file that is not an object, uses a key that is not a country code, or has a goal without an id or
+with a repeated id is rejected and the base goals stay; the Mods panel says why. The goals file is
+part of the multiplayer lobby check.
 
 ---
 
