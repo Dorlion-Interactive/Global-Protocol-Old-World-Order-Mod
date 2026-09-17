@@ -143,6 +143,48 @@
             }
           }
         ]
+      },
+      {
+        "id": "ott_danubian_frontier",
+        "title": "Fortify the Danubian March",
+        "title_key": "owo.goal.ott_danubian_frontier",
+        "description": "Secure the fortress line along the Danube river against Hungarian and crusader counter-offensives.",
+        "description_key": "owo.goal.ott_danubian_frontier.desc",
+        "type": "defense",
+        "priority": "secondary",
+        "ai_weight": 0.65,
+        "target_countries": [
+          "HUN"
+        ],
+        "on_complete_effects": {
+          "prestige": 20,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "army",
+            "title_key": "owo.task.ott_danubian_frontier.army",
+            "title": "Muster 25,000 soldiers",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 25000
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.ott_danubian_frontier.treasury",
+            "title": "Hold 800 fl. in the treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "800"
+              }
+            }
+          }
+        ]
       }
     ]
   },
@@ -218,6 +260,45 @@
             }
           }
         ]
+      },
+      {
+        "id": "fra_compagnies_ordonnance",
+        "title": "Compagnies d'Ordonnance",
+        "title_key": "owo.goal.fra_compagnies_ordonnance",
+        "description": "Institutionalize France's first professional standing army financed by a permanent royal tax.",
+        "description_key": "owo.goal.fra_compagnies_ordonnance.desc",
+        "type": "military",
+        "priority": "secondary",
+        "ai_weight": 0.7,
+        "on_complete_effects": {
+          "prestige": 30,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "standing_army",
+            "title_key": "owo.task.fra_compagnies_ordonnance.standing_army",
+            "title": "Muster 15,000 professional soldiers",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 15000
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.fra_compagnies_ordonnance.treasury",
+            "title": "Hold 600 fl. in the royal treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "600"
+              }
+            }
+          }
+        ]
       }
     ]
   },
@@ -278,6 +359,341 @@
               "type": "alliance_with",
               "params": {
                 "target_iso3": "ARA"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "cas_western_seas",
+        "title": "Chart the Ocean Sea",
+        "title_key": "owo.goal.cas_western_seas",
+        "description": "Sponsor intrepid navigators to seek a westward sea route across the Atlantic.",
+        "description_key": "owo.goal.cas_western_seas.desc",
+        "type": "prestige",
+        "priority": "aspirational",
+        "ai_weight": 0.6,
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 3
+        },
+        "tasks": [
+          {
+            "id": "fleet",
+            "title_key": "owo.task.cas_western_seas.fleet",
+            "title": "Build a naval exploration squadron of 10 ships",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "ships"
+              }
+            },
+            "required_count": 10
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.cas_western_seas.treasury",
+            "title": "Fund expeditions with 1,000 fl. in treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1000"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "ENG": {
+    "goals": [
+      {
+        "id": "eng_fortress_calais",
+        "title": "Fortress Calais & the Narrow Seas",
+        "title_key": "owo.goal.eng_fortress_calais",
+        "description": "Strengthen the fortifications of the Calais Pale and maintain naval mastery over the English Channel.",
+        "description_key": "owo.goal.eng_fortress_calais.desc",
+        "type": "defense",
+        "priority": "primary",
+        "ai_weight": 0.85,
+        "target_countries": [
+          "FRA"
+        ],
+        "on_complete_effects": {
+          "prestige": 35,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "fleet",
+            "title_key": "owo.task.eng_fortress_calais.fleet",
+            "title": "Muster a fleet of 10 warships",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "ships"
+              }
+            },
+            "required_count": 10
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.eng_fortress_calais.treasury",
+            "title": "Hold 600 fl. in the exchequer",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "600"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "eng_scottish_border",
+        "title": "Guard the Northern Marches",
+        "title_key": "owo.goal.eng_scottish_border",
+        "description": "Secure the Scottish Border Marches and neutralize the threat of a northern Auld Alliance invasion.",
+        "description_key": "owo.goal.eng_scottish_border.desc",
+        "type": "defense",
+        "priority": "secondary",
+        "ai_weight": 0.7,
+        "target_countries": [
+          "SCT"
+        ],
+        "on_complete_effects": {
+          "stability": 5,
+          "prestige": 20
+        },
+        "tasks": [
+          {
+            "id": "scotland",
+            "title_key": "owo.task.eng_scottish_border.scotland",
+            "title": "Pacify Scotland through diplomacy",
+            "condition": {
+              "type": "improve_relations",
+              "params": {
+                "target_iso3": "SCT",
+                "min_value": "50"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "eng_royal_solvency",
+        "title": "Restore Royal Solvency",
+        "title_key": "owo.goal.eng_royal_solvency",
+        "description": "Reorganize the exchequer, manage war debts, and restore parliamentary confidence in the Crown.",
+        "description_key": "owo.goal.eng_royal_solvency.desc",
+        "type": "economic",
+        "priority": "secondary",
+        "ai_weight": 0.65,
+        "on_complete_effects": {
+          "stability": 5,
+          "prestige": 20
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.eng_royal_solvency.treasury",
+            "title": "Accumulate 1,200 fl. in the royal treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1200"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "PRT": {
+    "goals": [
+      {
+        "id": "prt_chart_african_coast",
+        "title": "Chart the African Coast",
+        "title_key": "owo.goal.prt_chart_african_coast",
+        "description": "Push maritime caravels southward past Guinea to map the southern extremity of the African continent.",
+        "description_key": "owo.goal.prt_chart_african_coast.desc",
+        "type": "prestige",
+        "priority": "aspirational",
+        "ai_weight": 0.8,
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "navigation_tech",
+            "title_key": "owo.task.prt_chart_african_coast.navigation_tech",
+            "title": "Advance navigational knowledge by researching 2 doctrine tiers",
+            "condition": {
+              "type": "research_tech"
+            },
+            "required_count": 2
+          },
+          {
+            "id": "caravels",
+            "title_key": "owo.task.prt_chart_african_coast.caravels",
+            "title": "Muster a caravel fleet of 8 ships",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "ships"
+              }
+            },
+            "required_count": 8
+          }
+        ]
+      },
+      {
+        "id": "prt_spice_monopoly",
+        "title": "Maritime Spice Monopoly",
+        "title_key": "owo.goal.prt_spice_monopoly",
+        "description": "Establish armed feitorias along the Indian Ocean to secure the exclusive maritime spice trade.",
+        "description_key": "owo.goal.prt_spice_monopoly.desc",
+        "type": "economic",
+        "priority": "primary",
+        "ai_weight": 0.85,
+        "on_complete_effects": {
+          "prestige": 35,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "fleet",
+            "title_key": "owo.task.prt_spice_monopoly.fleet",
+            "title": "Muster a merchant fleet of 15 ships",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "ships"
+              }
+            },
+            "required_count": 15
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.prt_spice_monopoly.treasury",
+            "title": "Amass 2,000 fl. in commercial reserves",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "2000"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "MYN": {
+    "goals": [
+      {
+        "id": "myn_tumu_crisis_recovery",
+        "title": "Overcome the Tumu Crisis",
+        "title_key": "owo.goal.myn_tumu_crisis_recovery",
+        "description": "Rally the imperial court under Minister Yu Qian, fortify Beijing, and repel the Oirat Mongol invaders.",
+        "description_key": "owo.goal.myn_tumu_crisis_recovery.desc",
+        "type": "military",
+        "priority": "primary",
+        "ai_weight": 0.95,
+        "target_countries": [
+          "OIR"
+        ],
+        "on_complete_effects": {
+          "prestige": 50,
+          "stability": 10
+        },
+        "tasks": [
+          {
+            "id": "army",
+            "title_key": "owo.task.myn_tumu_crisis_recovery.army",
+            "title": "Mobilize 50,000 imperial troops",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 50000
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.myn_tumu_crisis_recovery.treasury",
+            "title": "Hold 1,000 fl. in the imperial treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1000"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "myn_rebuild_great_wall",
+        "title": "Stone Walls of the Ming Frontier",
+        "title_key": "owo.goal.myn_rebuild_great_wall",
+        "description": "Construct contiguous stone and brick watchtowers along the northern frontier passes to ensure enduring peace.",
+        "description_key": "owo.goal.myn_rebuild_great_wall.desc",
+        "type": "defense",
+        "priority": "secondary",
+        "ai_weight": 0.7,
+        "on_complete_effects": {
+          "prestige": 25,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "frontier_army",
+            "title_key": "owo.task.myn_rebuild_great_wall.frontier_army",
+            "title": "Garrison the northern marches with 30,000 soldiers",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 30000
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.myn_rebuild_great_wall.treasury",
+            "title": "Dedicate 2,500 fl. to frontier defenses",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "2500"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "myn_grand_canal",
+        "title": "Dredge the Grand Canal",
+        "title_key": "owo.goal.myn_grand_canal",
+        "description": "Reconstruct and dredge the 1,700-kilometer Grand Canal to guarantee continuous grain shipments from the Yangtze to the capital.",
+        "description_key": "owo.goal.myn_grand_canal.desc",
+        "type": "economic",
+        "priority": "secondary",
+        "ai_weight": 0.75,
+        "on_complete_effects": {
+          "prestige": 30,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.myn_grand_canal.treasury",
+            "title": "Invest 2,000 fl. in Grand Canal restoration",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "2000"
               }
             }
           }

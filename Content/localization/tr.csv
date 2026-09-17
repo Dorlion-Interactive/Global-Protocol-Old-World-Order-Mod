@@ -1,8 +1,281 @@
-mod.ui.toolbar.welcome_tooltip,Old World Order — Hoş Geldiniz
-mod.ui.popup.title,Old World Order'a Hoş Geldiniz
-mod.ui.popup.body,1450 yılında yaklaşık 120 ulusun başındasınız. Tarihsel açıdan gerçekçi ordular komuta edin, ittifaklar kurun ve ortaçağ dünyasının kaderini yeniden yazın. Bu mod; Osmanlı İmparatorluğu, Ming Hanedanı, Portekiz, Fransa, İngiltere, Moskova Prensliği, Timurluların ve çok daha fazlasını içerir.
-mod.ui.popup.continue,Devam Et
-mod.ui.popup.mod_info,Mod Bilgisi
+country.homeland.ABY,HABEŞİSTAN
+country.homeland.ADA,ADAL SULTANLIĞI
+country.homeland.AKK,KONFEDERASYON
+country.homeland.ARA,ANAVATAN
+country.homeland.ARK,KRALLIK
+country.homeland.AVA,KRALLIK
+country.homeland.AYU,KRALLIK
+country.homeland.AZT,ÜLKE
+country.homeland.BAH,SALTANAT
+country.homeland.BAV,DÜKALIK
+country.homeland.BNG,SALTANAT
+country.homeland.BNK,KRALLIK
+country.homeland.BOH,KRALLIK
+country.homeland.BOS,KRALLIK
+country.homeland.BRG,MARKGRAFLIK
+country.homeland.BRU,SULTANLIK
+country.homeland.BUG,BUGANDA KRALLIĞI
+country.homeland.BUR,ANAVATAN
+country.homeland.BYZ,İMPARATORLUK
+country.homeland.CAH,MİSİSİPİ TOPRAKLARI
+country.homeland.CAS,ANAVATAN
+country.homeland.CEB,RACALIK
+country.homeland.CHE,KONFEDERASYON
+country.homeland.CHM,CHİMOR KRALLIĞI
+country.homeland.CND,BEYLİK
+country.homeland.COL,BAŞPİSKOPOSLUK
+country.homeland.CPA,KRALLIK
+country.homeland.DAN,ANAVATAN
+country.homeland.DEL,SALTANAT
+country.homeland.DUL,BEYLİK
+country.homeland.DVT,DAI VIET
+country.homeland.ENG,BRITANYA
+country.homeland.FLR,ANAVATAN
+country.homeland.FNJ,FUNC SULTANLIĞI
+country.homeland.FRA,KRALLIK
+country.homeland.GEN,LA SUPERBA
+country.homeland.GRG,GÜRCİSTAN KRALLIĞI
+country.homeland.GRN,ENDELÜSİYE
+country.homeland.GUJ,SALTANAT
+country.homeland.HAB,VATAN
+country.homeland.HAU,HAUSA ŞEHİR DEVLETLERİ
+country.homeland.HFS,SALTANAT
+country.homeland.HRM,HÜRMÜZ KRALLIĞI
+country.homeland.HUN,KRALLIK
+country.homeland.INC,TAWANTINSUYU
+country.homeland.IRO,HAUDENOSAUNEE KONFEDERASYONU
+country.homeland.JBR,EL-HASA EMİRLİĞİ
+country.homeland.JNP,SULTANLIK
+country.homeland.JOS,HANGUK
+country.homeland.KAR,BEYLİK
+country.homeland.KBR,İMPARATORLUK
+country.homeland.KKY,ÜLKE
+country.homeland.KLW,SVAHİLİ SAHİLİ
+country.homeland.KMR,KRALLIK
+country.homeland.KNG,KRALLIK
+country.homeland.KNI,TARİKAT
+country.homeland.KOT,KRALLIK
+country.homeland.KRM,HANLIK
+country.homeland.KSH,SULTANLIK
+country.homeland.KZN,HANLIK
+country.homeland.LEZ,ARNAVUTLUK
+country.homeland.LIV,TARİKAT
+country.homeland.LNA,KRALLIK
+country.homeland.LTH,ANAVATAN
+country.homeland.LUB,LUBA KRALLIĞI
+country.homeland.LUS,KRALLIK
+country.homeland.LXG,KRALLIK
+country.homeland.MAD,MADAGASKAR
+country.homeland.MAJ,İMPARATORLUK
+country.homeland.MAL,İMPARATORLUK
+country.homeland.MAM,SALTANAT
+country.homeland.MAP,MAPUÇE TOPRAKLARI
+country.homeland.MAY,KONFEDERASYON
+country.homeland.MEW,KRALLIK
+country.homeland.MGD,SULTANLIK
+country.homeland.MGL,HANLIK
+country.homeland.MID,DİYAR
+country.homeland.MIL,DÜKALIK
+country.homeland.MLC,SALTANAT
+country.homeland.MLD,SULTANLIK
+country.homeland.MLW,SULTANLIK
+country.homeland.MOG,HANLIK
+country.homeland.MOL,PRENSLİK
+country.homeland.MOR,SALTANAT
+country.homeland.MOS,MOSSİ KRALLIKLARI
+country.homeland.MRC,NİPPON
+country.homeland.MUI,MUİSKA KONFEDERASYONU
+country.homeland.MVY,ANAVATANIMIZ
+country.homeland.MYN,ORTA ÜLKE
+country.homeland.NAP,ANAVATAN
+country.homeland.NAV,KRALLIK
+country.homeland.NBH,UMMAN KRALLIĞI
+country.homeland.NEP,KRALLIK
+country.homeland.NVD,CUMHURİYET
+country.homeland.ORI,KRALLIK
+country.homeland.OTT,SALTANAT
+country.homeland.OYO,OYO İMPARATORLUĞU
+country.homeland.PAL,KONT PALATİNLİĞİ
+country.homeland.PAP,KUTSAL MAKAM
+country.homeland.PEG,KRALLIK
+country.homeland.POL,ANAVATAN
+country.homeland.PRT,KRALLIK
+country.homeland.PSI,SULTANLIK
+country.homeland.PSK,CUMHURİYET
+country.homeland.PUE,PUEBLO TOPRAKLARI
+country.homeland.RAM,BEYLİK
+country.homeland.RYA,KNEZLİK
+country.homeland.RYU,ADALAR
+country.homeland.SAV,DÜKALIK
+country.homeland.SAX,SEÇMENLİK
+country.homeland.SCT,ANAVATAN
+country.homeland.SHV,ŞİRVANŞAHLAR
+country.homeland.SIB,HANLIK
+country.homeland.SND,SULTANLIK
+country.homeland.SON,İMPARATORLUK
+country.homeland.SRB,ANAVATAN
+country.homeland.STE,ORDA
+country.homeland.SUL,SULTANLIK
+country.homeland.SWD,ANAVATAN
+country.homeland.TAH,YEMEN SULTANLIĞI
+country.homeland.TAI,TAİNO TOPRAKLARI
+country.homeland.TAR,TARASKAN DEVLETİ
+country.homeland.TEU,DÜZEN
+country.homeland.TIB,YAYLA
+country.homeland.TIM,ÜLKE
+country.homeland.TLX,TLAXCALA KONFEDERASYONU
+country.homeland.TND,KRALLIK
+country.homeland.TRE,İMPARATORLUK
+country.homeland.TVR,KNEZLİK
+country.homeland.UZB,ÖZBEK HANLIĞI
+country.homeland.VIJ,BHARAT
+country.homeland.VNC,LA SERENISSIMA
+country.homeland.WAL,PRENSLİK
+country.homeland.WUR,KONTLUK
+country.homeland.ZAP,ZAPOTEK KRALLIĞI
+country.homeland.ZAY,TİLİMSAN KRALLIĞI
+country.homeland.ZIM,KRALLIK
+country.name.ABY,Habeş İmparatorluğu
+country.name.ADA,Adal Sultanlığı
+country.name.AKK,Akkoyunlular
+country.name.ARA,Aragon Krallığı
+country.name.ARK,Mrauk U Krallığı
+country.name.AVA,Ava Krallığı
+country.name.AYU,Ayutthaya Krallığı
+country.name.AZT,Aztek İmparatorluğu
+country.name.BAH,Bahmani Sultanlığı
+country.name.BAV,Bavyera Dükalığı
+country.name.BNG,Bengal Sultanlığı
+country.name.BNK,Benin Krallığı
+country.name.BOH,Bohemya Krallığı
+country.name.BOS,Bosna Krallığı
+country.name.BRG,Brandenburg Markgraflığı
+country.name.BRU,Bruney Sultanlığı
+country.name.BUG,Buganda Krallığı
+country.name.BUR,Burgonya Dükalığı
+country.name.BYZ,Bizans İmparatorluğu
+country.name.CAH,Misisipi Şeflikleri (Cahokia)
+country.name.CAS,Kastilya Krallığı
+country.name.CEB,Cebu Racalığı
+country.name.CHE,İsviçre Konfederasyonu
+country.name.CHM,Chimor Krallığı
+country.name.CND,Candaroğulları
+country.name.COL,Köln Prens-Başpiskoposluğu
+country.name.CPA,Çampa Krallığı
+country.name.DAN,Danimarka Krallığı
+country.name.DEL,Delhi Sultanlığı
+country.name.DUL,Dulkadiroğulları
+country.name.DVT,Dai Viet
+country.name.ENG,İngiltere Krallığı
+country.name.FLR,Floransa Cumhuriyeti
+country.name.FNJ,Func Sennar Sultanlığı
+country.name.FRA,Fransa Krallığı
+country.name.GEN,Cenova Cumhuriyeti
+country.name.GRG,Gürcistan Krallığı
+country.name.GRN,Gırnata Emirliği
+country.name.GUJ,Gücerat Sultanlığı
+country.name.HAB,Avusturya Arşidükalığı
+country.name.HAU,Hausa Şehir Devletleri
+country.name.HFS,Hafsi Sultanlığı
+country.name.HRM,Hürmüz Krallığı
+country.name.HUN,Macar Krallığı
+country.name.INC,İnka İmparatorluğu
+country.name.IRO,Haudenosaunee Konfederasyonu
+country.name.JBR,Cebri Emirliği
+country.name.JNP,Jaunpur Sultanlığı
+country.name.JOS,Joseon Hanedanlığı
+country.name.KAR,Karamanoğulları
+country.name.KBR,Kanem-Bornu İmparatorluğu
+country.name.KKY,Karakoyunlular
+country.name.KLW,Kilwa Sultanlığı (Svahili Sahili)
+country.name.KMR,Khmer Krallığı
+country.name.KNG,Kongo Krallığı
+country.name.KNI,Hospitalier Şövalyeleri
+country.name.KOT,Kotte Krallığı
+country.name.KRM,Kırım Hanlığı
+country.name.KSH,Keşmir Sultanlığı
+country.name.KZN,Kazan Hanlığı
+country.name.LEZ,Leş Birliği
+country.name.LIV,Livonya Konfederasyonu
+country.name.LNA,Lan Na Krallığı
+country.name.LTH,Litvanya Büyük Dükalığı
+country.name.LUB,Luba Krallığı
+country.name.LUS,Kıbrıs Krallığı
+country.name.LXG,Lan Xang Krallığı
+country.name.MAD,Madagaskar Şeflikleri
+country.name.MAJ,Majapahit İmparatorluğu
+country.name.MAL,Mali İmparatorluğu
+country.name.MAM,Memlük Sultanlığı
+country.name.MAP,Mapuçe Halkları
+country.name.MAY,Maya Konfederasyonu
+country.name.MEW,Mewar Krallığı
+country.name.MGD,Maguindanao Sultanlığı
+country.name.MGL,Oyrat Moğol Konfederasyonu
+country.name.MID,Middag Krallığı
+country.name.MIL,Milano Dükalığı
+country.name.MLC,Malaka Sultanlığı
+country.name.MLD,Maldivler Sultanlığı
+country.name.MLW,Malva Sultanlığı
+country.name.MOG,Babüristan (Doğu Çağatay)
+country.name.MOL,Boğdan Prensliği
+country.name.MOR,Merinli Fas
+country.name.MOS,Mossi Krallıkları
+country.name.MRC,Muromachi Şogunluğu
+country.name.MUI,Muiska Konfederasyonu
+country.name.MVY,Moskova Knezliği
+country.name.MYN,Ming Hanedanlığı
+country.name.NAP,Napoli Krallığı
+country.name.NAV,Navarra Krallığı
+country.name.NBH,Nebhani Umman Krallığı
+country.name.NEP,Malla Nepal Krallığı
+country.name.NVD,Novgorod Cumhuriyeti
+country.name.ORI,Gajapati Orissa Krallığı
+country.name.OTT,Osmanlı İmparatorluğu
+country.name.OYO,Oyo İmparatorluğu
+country.name.PAL,Palatina Seçmen Prensliği
+country.name.PAP,Papalık Devletleri
+country.name.PEG,Hanthawaddy Pegu Krallığı
+country.name.POL,Polonya Krallığı
+country.name.PRT,Portekiz Krallığı
+country.name.PSI,Samudra-Pasai Sultanlığı
+country.name.PSK,Pskov Cumhuriyeti
+country.name.PUE,Pueblo Halkları
+country.name.RAM,Ramazanoğulları
+country.name.RYA,Ryazan Knezliği
+country.name.RYU,Ryukyu Krallığı
+country.name.SAV,Savoy Dükalığı
+country.name.SAX,Saksonya Seçmen Prensliği
+country.name.SCT,İskoçya Krallığı
+country.name.SHV,Şirvanşahlar
+country.name.SIB,Sibir Hanlığı
+country.name.SND,Samma Sind Sultanlığı
+country.name.SON,Songay İmparatorluğu
+country.name.SRB,Sırp Despotluğu
+country.name.STE,Büyük Orda
+country.name.SUL,Sulu Sultanlığı
+country.name.SWD,İsveç Krallığı
+country.name.TAH,Tahiri Yemen Sultanlığı
+country.name.TAI,Taino Şeflikleri
+country.name.TAR,Taraskan Devleti (Purepeçalar)
+country.name.TEU,Töton Şövalyeleri
+country.name.TIB,Tibet
+country.name.TIM,Timurlu İmparatorluğu
+country.name.TLX,Tlaxcala Konfederasyonu
+country.name.TND,Tondo Krallığı
+country.name.TRE,Trabzon İmparatorluğu
+country.name.TVR,Tver Knezliği
+country.name.UZB,Özbek Hanlığı
+country.name.VIJ,Vijayanagara İmparatorluğu
+country.name.VNC,Venedik Cumhuriyeti
+country.name.WAL,Eflak Prensliği
+country.name.WUR,Württemberg Kontluğu
+country.name.ZAP,Zapotek Krallığı
+country.name.ZAY,Zeyyani Tilimsan Krallığı
+country.name.ZIM,Zimbabwe Krallığı
+mod.owo.popup.startup.body_no_date,Avrupa ve Asya eski feodal düzenler ile yükselen merkezi devletler arasında sıkışmış durumda.\nAkdeniz Karadeniz Hint Okyanusu ve İpek Yolu üzerindeki ticaret hatları gücün atardamarlarını oluşturuyor.\nBarutlu ordular yükseliyor ancak süvari birlikleri levazım düzeni ve kaleler hala savaşların kaderini belirliyor.\n\nDöneme uygun hükümdarlar sınırlar ve askeri düzenlerle tanımlanan 120'den fazla tarihsel siyasi oluşumdan birini yönetiyorsun.\nBu bilgilendirmeyi istediğin zaman tekrar açmak için araç çubuğundaki taç düğmesini kullan.
+mod.owo.popup.startup.body_with_date,Tarih: {0}-{1}\n\nAvrupa ve Asya eski feodal düzenler ile yükselen merkezi devletler arasında sıkışmış durumda.\nAkdeniz Karadeniz Hint Okyanusu ve İpek Yolu üzerindeki ticaret hatları gücün atardamarlarını oluşturuyor.\nBarutlu ordular yükseliyor ancak süvari birlikleri levazım düzeni ve kaleler hala savaşların kaderini belirliyor.\n\nDöneme uygun hükümdarlar sınırlar ve askeri düzenlerle tanımlanan 120'den fazla tarihsel siyasi oluşumdan birini yönetiyorsun.\nBu bilgilendirmeyi istediğin zaman tekrar açmak için araç çubuğundaki taç düğmesini kullan.
+mod.owo.popup.startup.title,Eski Dünya Düzeni 1450
+mod.ui.toolbar.welcome_tooltip,Stratejik Bilgilendirmeyi Aç
 ui.button.ok,TAMAM
 doctrine.military.t1.professional_armed_forces,Plaka Zırh ve Yüksek Fırınlar
 doctrine.military.t1.professional_armed_forces.desc,Yüksek fırınlardaki hidrolik körükler, eklemli plaka zırhlar için üstün sertleştirilmiş çelik üretir.
@@ -14,6 +287,292 @@ doctrine.economy.t1.fiscal_discipline,Çift Taraflı Muhasebe ve Tüccar Bankac�
 doctrine.economy.t1.fiscal_discipline.desc,Ticarette devrim yaratan Venedik ve Floransa usulü çift taraflı defterler, poliçeler ve tüccar mevduat bankaları.
 doctrine.economy.t3.commercial_economy,Karavela Gövdesi ve Latin Yelken Donanımı
 doctrine.economy.t3.commercial_economy.desc,Gemilerin ters rüzgarlara karşı seyredebilmesini sağlayan kıvrak sığ su gövdeleri ve üçgen latin yelkenler.
+owo.doctrine.military.t1,Levy ve Maiyet
+owo.doctrine.military.t1.question,Ordularını nasıl topluyorsun?
+owo.doctrine.military.t1.feudal_levies,Feodal Levyeler
+owo.doctrine.military.t1.feudal_levies.desc,Vasallar köylüleri ve silahlı adamlarıyla çağrıya uyar: ucuz, bol ama toplanması yavaş.
+owo.doctrine.military.t2,Muharebe Taktikleri
+owo.doctrine.military.t2.question,Savaşları hangi taktiklerle kazanıyorsun?
+owo.doctrine.military.t2.heavy_cavalry_charge,Ağır Süvari Hücumu
+owo.doctrine.military.t2.heavy_cavalry_charge.desc,Zırhlı şövalyeler ve sipahiler düşman hattını tek bir gürleyen hücumla yarar; bedeli at ve zırhla ağır ödenir.
+owo.doctrine.military.t3,Kuşatma Sanatı
+owo.doctrine.military.t3.question,Surları nasıl yıkıyor ya da savunuyorsun?
+owo.doctrine.military.t3.bastion_fortifications,Tabya Tahkimatı
+owo.doctrine.military.t3.bastion_fortifications.desc,Alçak, kalın ve açılı tabyalar top ateşine dayanır ve her sınır kalesini kuşatanlar için bir tuzağa çevirir.
+owo.doctrine.military.t4,İkmal ve Sefer
+owo.doctrine.military.t4.question,Orduları sahada nasıl ayakta tutuyorsun?
+owo.doctrine.military.t4.baggage_trains,Ağırlık Kolları ve Menziller
+owo.doctrine.military.t4.baggage_trains.desc,Araba kolları, nehir mavnaları ve tahkimli menzil hanları uzun seferlerde orduyu besler.
+owo.doctrine.military.t4.living_off_the_land,Yerel Tedarik
+owo.doctrine.military.t4.living_off_the_land.desc,Ordular yürürken yem toplar ve el koyar: beslemesi ucuzdur, geçtiği vilayetler içinse acıdır.
+owo.doctrine.military.t5,Daimi Ordular
+owo.doctrine.military.t5.question,Diyarının ordusu neye dönüşecek?
+owo.doctrine.military.t5.permanent_standing_army,Daimi Ordu
+owo.doctrine.military.t5.permanent_standing_army.desc,Taç sancağı altındaki maaşlı bölükler barışta da savaşta da silah altında kalır.
+owo.doctrine.military.t5.condottieri_contracts,Kondottiyeri Sözleşmeleri
+owo.doctrine.military.t5.condottieri_contracts.desc,Paralı asker kaptanları bütün bölükleri sözleşmeyle satar; altın nerede iyiyse oraya yürümeye hazırdır.
+owo.doctrine.military.milestone,Askeri Devrim
+owo.doctrine.military.milestone.desc,Barut, talim ve daimi bölükler diyarının savaşma biçimini yeniden şekillendirdi.
+owo.doctrine.economy.t1,Kraliyet Maliyesi
+owo.doctrine.economy.t1.question,Taç hazinesini nasıl dolduruyor?
+owo.doctrine.economy.t1.tax_farming,İltizam
+owo.doctrine.economy.t1.tax_farming.desc,Mültezimler vergi toplama hakkını peşin satın alır: taca hızlı gelir, köylüye zor günler.
+owo.doctrine.economy.t2,Loncalar ve Pazarlar
+owo.doctrine.economy.t2.question,Kasabalarında ticareti kim yönetiyor?
+owo.doctrine.economy.t2.chartered_craft_guilds,Beratlı Esnaf Loncaları
+owo.doctrine.economy.t2.chartered_craft_guilds.desc,Kraliyet beratları loncalara her atölyede kalite, fiyat ve çıraklar üzerinde söz hakkı verir.
+owo.doctrine.economy.t2.free_fairs,Serbest Panayırlar ve Pazar Kasabaları
+owo.doctrine.economy.t2.free_fairs.desc,Gümrüksüz mevsimlik panayırlar uzak diyarlardan tüccarları pazar kasabalarına çeker.
+owo.doctrine.economy.t3,Uzak Ticaret
+owo.doctrine.economy.t3.question,Servetin hangi yollardan geçiyor?
+owo.doctrine.economy.t3.caravanserai_network,Kervansaray Ağı
+owo.doctrine.economy.t3.caravanserai_network.desc,Birer günlük mesafedeki tahkimli hanlar ipek ve baharat kervanlarının karadan güvenle ilerlemesini sağlar.
+owo.doctrine.economy.t4,Ambarlar ve Sikke
+owo.doctrine.economy.t4.question,Kıtlığa ve sikke tağşişine nasıl dayanıyorsun?
+owo.doctrine.economy.t4.royal_granaries,Kraliyet Ambarları
+owo.doctrine.economy.t4.royal_granaries.desc,Taç ambarları bereketli yıllarda tahıl alır, kıt yıllarda kapılarını açar.
+owo.doctrine.economy.t4.sound_coinage,Sağlam Sikke
+owo.doctrine.economy.t4.sound_coinage.desc,Güvenilir darphane sikkeyi kırpmayı ve tağşişi reddeder; borç verenler tacın itibarını ödüllendirir.
+owo.doctrine.economy.t5,Ticari Güç
+owo.doctrine.economy.t5.question,Nasıl bir ekonomik güç olacaksın?
+owo.doctrine.economy.t5.trading_post_empire,Ticaret Karakolları İmparatorluğu
+owo.doctrine.economy.t5.trading_post_empire.desc,Uzak kıyılardaki tahkimli ticaret karakolları baharatı, altını ve şekeri kraliyet hazinesine akıtır.
+owo.doctrine.economy.t5.agrarian_crown_estates,Kraliyet Çiftlikleri
+owo.doctrine.economy.t5.agrarian_crown_estates.desc,Kurutulan bataklıklar, yeni köyler ve taç çiftlikleri diyarın servetini topraktan devşirir.
+owo.doctrine.economy.milestone,Ticaret Devrimi
+owo.doctrine.economy.milestone.desc,Bankacılık, poliçeler ve uzak ticaret diyarının servetini onun için çalıştırır hale getirdi.
+owo.goal.basic_fill_the_treasury,Kraliyet Hazinesini Doldur
+owo.goal.basic_fill_the_treasury.desc,Parası olmayan bir diyar ne ordu kurabilir ne de barışı koruyabilir. Korumaya değer bir birikim yap.
+owo.task.basic_fill_the_treasury.treasury,Hazinede 500 fl. biriktir
+owo.goal.basic_first_alliance,Güvenilir Bir Müttefik Ara
+owo.goal.basic_first_alliance.desc,Hiçbir taç uzun süre tek başına ayakta kalamaz. Bir komşunun dostluğunu kazan.
+owo.task.basic_first_alliance.relations,Başka bir diyarla iyi ilişkiler kur
+owo.goal.ott_heir_of_rome,Roma'nın Vârisi
+owo.goal.ott_heir_of_rome.desc,Konstantinopolis'i al ve Kayser-i Rûm unvanını sahiplen.
+owo.task.ott_heir_of_rome.war,Bizans İmparatorluğu'na savaş ilan et
+owo.task.ott_heir_of_rome.army,20.000 asker topla
+owo.goal.ott_anatolian_unity,Anadolu Birliği
+owo.goal.ott_anatolian_unity.desc,Karaman'ı ve diğer beylikleri Sultan'ın otoritesi altına al.
+owo.task.ott_anatolian_unity.karaman,Karamanoğulları'na savaş ilan et
+owo.task.ott_anatolian_unity.candar,Candaroğulları ile iyi ilişkiler kur
+owo.goal.fra_end_hundred_years_war,Yüz Yıl Savaşları'nı Bitir
+owo.goal.fra_end_hundred_years_war.desc,İngiliz tacını Normandiya ve Guyenne'den kesin olarak çıkar.
+owo.task.fra_end_hundred_years_war.war,İngiltere'ye savaş ilan et
+owo.task.fra_end_hundred_years_war.army,15.000 asker topla
+owo.goal.fra_contain_burgundy,Burgonya'yı Dizginle
+owo.goal.fra_contain_burgundy.desc,Batı'nın Büyük Dükleri'nin Fransa'nın sınır topraklarından bir krallık oyup çıkarmasını engelle.
+owo.task.fra_contain_burgundy.scotland,İskoçya ile Eski İttifak'ı yenile
+owo.goal.cas_reconquista,Reconquista'yı Tamamla
+owo.goal.cas_reconquista.desc,İber Yarımadası'ndaki son Müslüman devlet olan Gırnata Emirliği'ni düşür.
+owo.task.cas_reconquista.war,Gırnata'ya savaş ilan et
+owo.goal.cas_union_with_aragon,Tacların Birliği
+owo.goal.cas_union_with_aragon.desc,Kastilya ile Aragon'u tek bir İspanyol monarşisinde birleştir.
+owo.task.cas_union_with_aragon.alliance,Aragon Tacı ile ittifak kur
+owo.goal.ott_danubian_frontier,Tuna Serhaddini Tahkim Et
+owo.goal.ott_danubian_frontier.desc,Macar ve haçlı karşı taarruzlarına karşı Tuna nehri boyunca kale hattını emniyete al.
+owo.task.ott_danubian_frontier.army,25.000 asker topla
+owo.task.ott_danubian_frontier.treasury,Hazinede 800 fl. bulundur
+owo.goal.fra_compagnies_ordonnance,Compagnies d'Ordonnance
+owo.goal.fra_compagnies_ordonnance.desc,Daimi bir kraliyet vergisiyle finanse edilen Fransa'nın ilk profesyonel daimi ordusunu kur.
+owo.task.fra_compagnies_ordonnance.standing_army,15.000 profesyonel asker topla
+owo.task.fra_compagnies_ordonnance.treasury,Kraliyet hazinesinde 600 fl. bulundur
+owo.goal.eng_fortress_calais,Calais Kalesi ve Dar Denizler
+owo.goal.eng_fortress_calais.desc,Calais Bölgesi tahkimatlarını güçlendir ve Manş Denizi üzerindeki deniz hakimiyetini koru.
+owo.task.eng_fortress_calais.fleet,10 savaş gemisinden oluşan bir filo topla
+owo.task.eng_fortress_calais.treasury,Maliyede 600 fl. bulundur
+owo.goal.eng_scottish_border,Kuzey Serhatlerini Koru
+owo.goal.eng_scottish_border.desc,İskoç Sınır Bölgelerini emniyete al ve kuzeyden gelebilecek Auld Alliance istilası tehdidini etkisiz hale getir.
+owo.task.eng_scottish_border.scotland,Diplomasi yoluyla İskoçya'yı yatıştır
+owo.goal.eng_royal_solvency,Kraliyet Maliyesini İhya Et
+owo.goal.eng_royal_solvency.desc,Maliyeyi yeniden düzenle, savaş borçlarını yönet ve parlamentonun Taca olan güvenini tazele.
+owo.task.eng_royal_solvency.treasury,Kraliyet hazinesinde 1.200 fl. biriktir
+owo.goal.cas_western_seas,Okyanus Denizini Haritalandır
+owo.goal.cas_western_seas.desc,Atlantik üzerinden batıya giden bir deniz yolu aramaları için cesur denizcilere sponsor ol.
+owo.task.cas_western_seas.fleet,10 gemilik bir deniz keşif filosu inşa et
+owo.task.cas_western_seas.treasury,Keşifleri hazinedeki 1.000 fl. ile finanse et
+owo.goal.prt_chart_african_coast,Afrika Kıyılarını Haritalandır
+owo.goal.prt_chart_african_coast.desc,Afrika kıtasının güney ucunu haritalamak için karavelaları Gine'nin güneyine doğru sür.
+owo.task.prt_chart_african_coast.navigation_tech,2 doktrin kademesi araştırarak seyrüsefer bilgisini geliştir
+owo.task.prt_chart_african_coast.caravels,8 gemilik bir karavela filosu topla
+owo.goal.prt_spice_monopoly,Deniz Baharat Tekeli
+owo.goal.prt_spice_monopoly.desc,Münhasır deniz baharat ticaretini güvenceye almak için Hint Okyanusu boyunca silahlı feitorialar kur.
+owo.task.prt_spice_monopoly.fleet,15 gemilik bir ticaret filosu topla
+owo.task.prt_spice_monopoly.treasury,Ticari rezervlerde 2.000 fl. biriktir
+owo.goal.myn_tumu_crisis_recovery,Tumu Krizini Aş
+owo.goal.myn_tumu_crisis_recovery.desc,Bakan Yu Qian önderliğinde imparatorluk sarayını toparla, Pekin'i tahkim et ve Oyrat Moğol istilacılarını püskürt.
+owo.task.myn_tumu_crisis_recovery.army,50.000 imparatorluk askerini seferber et
+owo.task.myn_tumu_crisis_recovery.treasury,İmparatorluk hazinesinde 1.000 fl. bulundur
+owo.goal.myn_rebuild_great_wall,Ming Sınırının Taş Duvarları
+owo.goal.myn_rebuild_great_wall.desc,Kalıcı barışı sağlamak için kuzey sınır geçitleri boyunca kesintisiz taş ve tuğla gözetleme kuleleri inşa et.
+owo.task.myn_rebuild_great_wall.frontier_army,Kuzey serhatlerini 30.000 askerle garnizonla
+owo.task.myn_rebuild_great_wall.treasury,Sınır savunmalarına 2.500 fl. tahsis et
+owo.goal.myn_grand_canal,Büyük Kanal'ı Temizle
+owo.goal.myn_grand_canal.desc,Yangtze'den başkente kesintisiz tahıl sevkiyatını garanti etmek için 1.700 kilometrelik Büyük Kanal'ı yeniden inşa et ve tara.
+owo.task.myn_grand_canal.treasury,Büyük Kanal restorasyonuna 2.000 fl. yatırım yap
+owo.doctrine.government.t1,Feodal Yeminler ve Kâhyalar
+owo.doctrine.government.t1.question,Otorite diyar genelinde nasıl icra ediliyor?
+owo.doctrine.government.t1.feudal_oaths,Feodal Yeminler ve Vasallık
+owo.doctrine.government.t1.feudal_oaths.desc,Kişisel sadakat ve vasallık sözleşmeleri, diyarın askeri ve sivil düzeninin temel taşını oluşturur.
+owo.doctrine.government.t1.centralized_bailiffs,Kraliyet Kâhyaları ve Şerifler
+owo.doctrine.government.t1.centralized_bailiffs.desc,Doğrudan kraliyet görevlileri, hükümdarın sulhunu sağlar ve vilayetlerden kraliyet vergilerini toplar.
+owo.doctrine.government.t2,Konseyler ve Meclisler
+owo.doctrine.government.t2.question,Hukuk ve vergilendirme konusunda Taca kim danışmanlık ediyor?
+owo.doctrine.government.t2.privy_council,Lordlar Özel Meclisi
+owo.doctrine.government.t2.privy_council.desc,Güvenilir soylular ve ruhbanlardan oluşan seçkin bir konsey, devlet idaresini hız ve ihtiyatla yönlendirir.
+owo.doctrine.government.t2.chartered_parliaments,Zümreler ve Parlamentolar
+owo.doctrine.government.t2.chartered_parliaments.desc,Soylu, ruhban ve kentlilerden oluşan düzenli danışma meclisleri, vergileri müzakere eder ve şikayetleri dinler.
+owo.doctrine.government.t3,Yazılı Adalet ve Kayıtlar
+owo.doctrine.government.t3.question,Anlaşmazlıklar nasıl çözülüyor ve fermanlar nasıl kaydediliyor?
+owo.doctrine.government.t3.codified_customary_law,Yazılı Örfi Hukuk
+owo.doctrine.government.t3.codified_customary_law.desc,Yerel geleneklerin ve kraliyet fermanlarının kanunnamelere işlenmesi keyfi adaletsizlikleri azaltır.
+owo.doctrine.government.t3.chancery_clerks,Kraliyet Divan Kâtipliği
+owo.doctrine.government.t3.chancery_clerks.desc,Özel bir idari bürokrasi; beratları, fermanları ve vergi kayıtlarını mesleki titizlikle hazırlar.
+owo.doctrine.government.t4,Hükümdar Fermanları
+owo.doctrine.government.t4.question,Kraliyet fermanlarının yetkisi nereye kadar uzanır?
+owo.doctrine.government.t4.royal_ordinances,Kraliyet Fermanları ve Emirnameleri
+owo.doctrine.government.t4.royal_ordinances.desc,Bağlayıcı egemen fermanlar bölgesel feodal adetlerin yerini alarak yeknesak kraliyet içtihadı oluşturur.
+owo.doctrine.government.t4.provincial_intendants,Taşra İdarecileri
+owo.doctrine.government.t4.provincial_intendants.desc,Kraliyet komiserleri, kendilerine devredilen tam yetkiyle yerel mahkemeleri, vergi tahsilatını ve kamu düzenini denetler.
+owo.doctrine.government.t5,Egemen Devlet Düzeni
+owo.doctrine.government.t5.question,Kraliyet otoritesinin nihai kaynağı nedir?
+owo.doctrine.government.t5.divine_right_monarchy,İlahi Hak Monarşisi
+owo.doctrine.government.t5.divine_right_monarchy.desc,Tacın meşruiyeti doğrudan ilahi takdirden gelir ve hükümdarı tüm fani kliklerin üzerine çıkarır.
+owo.doctrine.government.t5.bureaucratic_centralism,Bürokratik Merkeziyetçilik
+owo.doctrine.government.t5.bureaucratic_centralism.desc,Daimi bir bakanlık bürokrasisi, kraliyet politikasını başkentten tüm taht topraklarına doğrudan uygular.
+owo.doctrine.government.milestone,Merkezi Monarşi
+owo.doctrine.government.milestone.desc,Dağınık feodal iddialardan, köklü ve kurumsal bir kraliyet yönetimi dövüldü.
+owo.doctrine.society.t1,Tarımsal Ortak Alanlar
+owo.doctrine.society.t1.question,Kırsalda toprak ve emek nasıl organize ediliyor?
+owo.doctrine.society.t1.communal_commons,Ortak Otlaklar ve Açık Tarlalar
+owo.doctrine.society.t1.communal_commons.desc,Köyün açık tarla ekim nöbeti ve ortak otlaklar, toplumsal ahengi ve köylünün geçimini temin eder.
+owo.doctrine.society.t1.manorial_estates,Malikane Arazileri ve Haslar
+owo.doctrine.society.t1.manorial_estates.desc,Soyluların elinde toplanan malikaneler, kralın savaş hazinesi için tahıl fazlasını ve angarya yükümlülüklerini artırır.
+owo.doctrine.society.t2,Loncalar ve Köylü Statüsü
+owo.doctrine.society.t2.question,Şehirli zanaatkârlar ve kır emekçileri hangi haklara sahip?
+owo.doctrine.society.t2.guild_charters,Beratlı Zanaat Loncaları
+owo.doctrine.society.t2.guild_charters.desc,Ayrıcalıklı lonca beratları üretim standartlarını, çıraklığı ve kentsel istikrarı düzenler.
+owo.doctrine.society.t2.free_peasantry,Serflerin Azad Edilmesi
+owo.doctrine.society.t2.free_peasantry.desc,Feodal bağlılıkların nakdi kiralara dönüştürülmesi köylü girişimciliğini ve nüfus artışını teşvik eder.
+owo.doctrine.society.t3,Sivil Kurumlar ve İlim
+owo.doctrine.society.t3.question,Hastalarla kim ilgileniyor ve alimleri kim yetiştiriyor?
+owo.doctrine.society.t3.monastic_hospitals,Manastır Şifahaneleri ve Sadaka
+owo.doctrine.society.t3.monastic_hospitals.desc,Dini kurumlar hastane ağlarını ve hayır işlerini yürüterek halkı salgınlardan ve kıtlıktan korur.
+owo.doctrine.society.t3.cathedral_schools,Katedral Mektepleri ve Üniversiteler
+owo.doctrine.society.t3.cathedral_schools.desc,Skolastik fakülteler; diyara hizmet edecek hukukçular, ilahiyatçılar ve tabipler yetiştirir.
+owo.doctrine.society.t4,Kentsel Düzen ve Hamilik
+owo.doctrine.society.t4.question,Şehirler krizlere nasıl dayanıyor ve refahı nasıl sergiliyor?
+owo.doctrine.society.t4.civic_relief_funds,Şehir İane Tahıl Ambarları
+owo.doctrine.society.t4.civic_relief_funds.desc,Belediye tahıl stokları ve acil durum yardımları, kıtlık zamanlarında halk huzursuzluğunu yatıştırır.
+owo.doctrine.society.t4.burgher_patronage,Kentli Tüccar Hamiliği
+owo.doctrine.society.t4.burgher_patronage.desc,Varlıklı tüccarlar, kentin itibarını artırmak için anıtlar, lonca sarayları ve hastaneler vakfeder.
+owo.doctrine.society.t5,Rönesans Uyanışı
+owo.doctrine.society.t5.question,Halkınızın ruhunu hangi kültür tanımlıyor?
+owo.doctrine.society.t5.humanist_renaissance,Hümanist Rönesans
+owo.doctrine.society.t5.humanist_renaissance.desc,Klasik uyanış, edebi eserler ve doğa felsefesi eşi görülmemiş bir yenilik çağını başlatır.
+owo.doctrine.society.t5.estate_harmony,Zümreler Ahengi
+owo.doctrine.society.t5.estate_harmony.desc,Soylular, din adamları ve halk arasındaki denge, köklü bir toplumsal huzur ve kalıcı meşruiyet tesis eder.
+owo.doctrine.society.milestone,Rönesans Toplumu
+owo.doctrine.society.milestone.desc,Toplumunuz karanlık içine kapanıklıktan çiçek açan, kültürlü bir diyara dönüştü.
+owo.doctrine.diplomacy.t1,Haberciler ve Hanedan Bağları
+owo.doctrine.diplomacy.t1.question,Yabancı saraylarla nasıl temas kuruyorsunuz?
+owo.doctrine.diplomacy.t1.royal_heralds,Kraliyet Habercileri ve Ulaklar
+owo.doctrine.diplomacy.t1.royal_heralds.desc,Dokunulmazlığı olan kraliyet habercileri sınırların ötesine resmi bildiriler, emanlar ve antlaşma şartları taşır.
+owo.doctrine.diplomacy.t1.dynastic_marriages,Hanedanlar Arası Evlilikler
+owo.doctrine.diplomacy.t1.dynastic_marriages.desc,Stratejik evlilik ittifakları hanedanları birbirine bağlar, kırılgan barışları soylu kanıyla pekiştirir.
+owo.doctrine.diplomacy.t2,Elçilikler ve İaneler
+owo.doctrine.diplomacy.t2.question,Yurtdışıyla sürekli ilişkileri nasıl sürdürüyorsunuz?
+owo.doctrine.diplomacy.t2.resident_ambassadors,Daimi Mukim Elçilikler
+owo.doctrine.diplomacy.t2.resident_ambassadors.desc,Önemli başkentlerde daimi diplomatik misyonlar bulundurmak, aralıksız müzakere ve istihbarat sağlar.
+owo.doctrine.diplomacy.t2.tribute_and_subsidies,Diplomatik Tahsisatlar ve Haraç
+owo.doctrine.diplomacy.t2.tribute_and_subsidies.desc,Yıllık altın tahsisatları tampon beylikleri sadık tutar ve büyük çatışmalarda tarafsızlık satın alır.
+owo.doctrine.diplomacy.t3,İttifaklar ve Ticaret
+owo.doctrine.diplomacy.t3.question,Sınırlarınızı ve deniz yollarınızı nasıl koruyorsunuz?
+owo.doctrine.diplomacy.t3.defensive_leagues,Karşılıklı Savunma Paktları
+owo.doctrine.diplomacy.t3.defensive_leagues.desc,Resmi kolektif savunma antlaşmaları, saldırgan komşuların müttefik topraklarına saldırmasını caydırır.
+owo.doctrine.diplomacy.t3.mercantile_treaties,İkili Kapitülasyonlar ve Ticaret Ahitnameleri
+owo.doctrine.diplomacy.t3.mercantile_treaties.desc,Karşılıklı ticaret imtiyazları, indirimli gümrükler ve tüccar mahalleleri dış ticareti zenginleştirir.
+owo.doctrine.diplomacy.t4,Arabuluculuk ve Baskı
+owo.doctrine.diplomacy.t4.question,Devletler arası rekabetleri nasıl yönetiyorsunuz?
+owo.doctrine.diplomacy.t4.papal_and_caliphal_mediation,Ruhani ve Hakemli Arabuluculuk
+owo.doctrine.diplomacy.t4.papal_and_caliphal_mediation.desc,Sınırları belirlemek için yüce ruhani makamları hakemliğe çağırmak tepkileri ve düşmanlıkları sınırlar.
+owo.doctrine.diplomacy.t4.coercive_ultimatums,Egemenlik Ültimatomları
+owo.doctrine.diplomacy.t4.coercive_ultimatums.desc,Askeri güç gösterisiyle desteklenen sert diplomatik ültimatomlar, zayıf sarayları savaşa girmeden boyun eğdirir.
+owo.doctrine.diplomacy.t5,Dünya Hâkimiyeti
+owo.doctrine.diplomacy.t5.question,Uluslararası düzeni nasıl yapılandırıyorsunuz?
+owo.doctrine.diplomacy.t5.concert_of_realms,Büyük Güçler Uyumu
+owo.doctrine.diplomacy.t5.concert_of_realms.desc,Çok taraflı kongreler ve güç dengesi antlaşmaları, egemen uluslar arasında dengeyi muhafaza eder.
+owo.doctrine.diplomacy.t5.hegemonic_vassal_system,İmparatorluk Hâkimiyeti ve Tabilik
+owo.doctrine.diplomacy.t5.hegemonic_vassal_system.desc,Tabi prenslikler imparatorluk tahtına askeri vergi ve diplomatik sadakat sunmakla yükümlüdür.
+owo.doctrine.diplomacy.milestone,Büyük Devlet İdaresi
+owo.doctrine.diplomacy.milestone.desc,Diplomasideki ustalığınız tacınızı bölgesel meselelerin tartışmasız hakemi haline getirdi.
+owo.doctrine.intelligence.t1,Saray Muhbirleri
+owo.doctrine.intelligence.t1.question,Tahta karşı kurulan komploları nasıl ortaya çıkarıyorsunuz?
+owo.doctrine.intelligence.t1.palace_informants,Saray Muhbirleri ve Gözcüler
+owo.doctrine.intelligence.t1.palace_informants.desc,Nedim ve hizmetkârları rüşvetle elde etmek, dahili hain komploları henüz filizlenmeden ifşa eder.
+owo.doctrine.intelligence.t1.whispering_networks,Meyhane ve Liman Fısıltı Ağları
+owo.doctrine.intelligence.t1.whispering_networks.desc,Liman nöbetçileri, hancılar ve serseriler askeri hareketlilikleri ve yabancı kışkırtıcıları bildirir.
+owo.doctrine.intelligence.t2,Şifreler ve Fesat
+owo.doctrine.intelligence.t2.question,Devlet sırlarını nasıl koruyor ve fitne tohumlarını nasıl ekiyorsunuz?
+owo.doctrine.intelligence.t2.cryptographic_ciphers,Polialfabetik Şifreler
+owo.doctrine.intelligence.t2.cryptographic_ciphers.desc,Riyazi gizli yazı yöntemleri, hassas diplomatik mektupları ele geçirilmekten korur.
+owo.doctrine.intelligence.t2.covert_provocateurs,Fitne ve Provokatörler
+owo.doctrine.intelligence.t2.covert_provocateurs.desc,Gizli ajanlar hasım topraklara sızarak hoşnutsuz vasallar arasında isyan ve huzursuzluk kışkırtır.
+owo.doctrine.intelligence.t3,İstihbarat Reisi
+owo.doctrine.intelligence.t3.question,Diyarın gizli operasyonlarını kim yönetiyor?
+owo.doctrine.intelligence.t3.master_of_spies,Casusbaşı
+owo.doctrine.intelligence.t3.master_of_spies.desc,Üst düzey bir divan veziri; iç gözetimi, denizaşırı güvenli evleri ve örtülü ödenekleri koordine eder.
+owo.doctrine.intelligence.t3.subversive_propaganda,Risaleler ve Vaizler
+owo.doctrine.intelligence.t3.subversive_propaganda.desc,Kışkırtıcı gravürler dağıtmak ve gezgin dervişleri desteklemek düşmanın meşruiyetini aşındırır.
+owo.doctrine.intelligence.t4,Engizisyon ve Karşı Casusluk
+owo.doctrine.intelligence.t4.question,Düşman sızmalarını nasıl etkisiz hale getiriyorsunuz?
+owo.doctrine.intelligence.t4.inquisitorial_apparatus,Tahkikat Mahkemesi
+owo.doctrine.intelligence.t4.inquisitorial_apparatus.desc,Sistemli soruşturma heyetleri yabancı sapkınları, sabotajcıları ve çift taraflı casusları ortaya çıkarır.
+owo.doctrine.intelligence.t4.intercepted_pigeon_couriers,Posta Güvercinlerinin Önünü Kesme
+owo.doctrine.intelligence.t4.intercepted_pigeon_couriers.desc,Posta denetimi ve taşıyıcı güvercinlerin yakalanması yabancı haberleşme zincirlerini kırar.
+owo.doctrine.intelligence.t5,Gölge Hâkimiyeti
+owo.doctrine.intelligence.t5.question,Görünmez gücü nasıl kullanıyorsunuz?
+owo.doctrine.intelligence.t5.black_chamber_statecraft,Hükümdarlık Gizli Kalemi
+owo.doctrine.intelligence.t5.black_chamber_statecraft.desc,Antlaşmaları tahrif edebilen, naipleri rüşvetle bağlayan ve veraseti yönlendiren gizli istihbarat bürosu.
+owo.doctrine.intelligence.t5.covert_dynastic_intrigue,Hanedan Suikastleri ve Zehir
+owo.doctrine.intelligence.t5.covert_dynastic_intrigue.desc,Kritik tarihi dönemeçlerde kilit düşman komutanlarını ve veliahtlarını hedef alan örtülü operasyonlar.
+owo.doctrine.intelligence.milestone,Gölgelerin Efendisi
+owo.doctrine.intelligence.milestone.desc,Bilinen dünyada hiçbir sır sizin her şeyi gören istihbarat ağınızdan kaçamaz.
+owo.doctrine.industry.t1,Değirmencilik ve Ormancılık
+owo.doctrine.industry.t1.question,Mekanik güç ve keresteden nasıl faydalanıyorsunuz?
+owo.doctrine.industry.t1.water_powered_mills,Su Değirmenleri
+owo.doctrine.industry.t1.water_powered_mills.desc,Tahıl, dokuma ve hızar değirmenlerini döndüren su çarkları, eyaletlerdeki üretim çıktısını katlar.
+owo.doctrine.industry.t1.timber_and_charcoal_works,Orman İdaresi ve Odun Kömürü Ocakları
+owo.doctrine.industry.t1.timber_and_charcoal_works.desc,Düzenli koruluk bakımı ve kömürlük ocakları, ortaçağ metalurjisi için elzem yakıtı sağlar.
+owo.doctrine.industry.t2,Dökümhaneler ve Taş Ocakları
+owo.doctrine.industry.t2.question,İnşaat malzemelerini nasıl çıkarıp işliyorsunuz?
+owo.doctrine.industry.t2.guild_metalwork_foundries,Dökümhaneler ve Demirciler
+owo.doctrine.industry.t2.guild_metalwork_foundries.desc,Ortak döküm ocakları dayanıklı ferforje aletler, demir çapalar ve zırh levhaları üretir.
+owo.doctrine.industry.t2.quarry_and_masonry_concessions,Kraliyet Taş Ocakları ve Taş Ustaları
+owo.doctrine.industry.t2.quarry_and_masonry_concessions.desc,Organize taş ocakçılığı ve yapı loncaları, katedral ve kale inşasını hızlandırır.
+owo.doctrine.industry.t3,Tersaneler ve Derin Madencilik
+owo.doctrine.industry.t3.question,Orduları nasıl donatıyor ve madenleri nasıl kazıyorsunuz?
+owo.doctrine.industry.t3.arsenal_shipbuilding,Devlet Donanma Tersaneleri
+owo.doctrine.industry.t3.arsenal_shipbuilding.desc,Merkezi kuru havuzlar ve halathaneler, kadırga ve kalyonları modüler bir verimlilikle inşa eder.
+owo.doctrine.industry.t3.deep_shaft_mining,Derin Maden Kuyuları ve Drenaj
+owo.doctrine.industry.t3.deep_shaft_mining.desc,Atlı tulumba mekanizmaları ve ahşap tahkimatlar, yeraltındaki zengin gümüş, bakır ve kalay damarlarını açar.
+owo.doctrine.industry.t4,Yüksek Fırınlar ve Silah Sanayii
+owo.doctrine.industry.t4.question,Ağır metalurjiyi nasıl modernize ediyorsunuz?
+owo.doctrine.industry.t4.early_blast_furnaces,Erken Dönem Yüksek Fırınları
+owo.doctrine.industry.t4.early_blast_furnaces.desc,Su körüklü yüksek taş fırınlar, yüksek ısıda kesintisiz dökme pik demir üretir.
+owo.doctrine.industry.t4.royal_arms_manufactories,Kraliyet Tophaneleri ve Cephanelikleri
+owo.doctrine.industry.t4.royal_arms_manufactories.desc,Birleştirilmiş taht atölyeleri; arkebüzleri, arbaletleri ve demir gülleleri devasa ölçekte döver.
+owo.doctrine.industry.t5,Ön-Sanayi
+owo.doctrine.industry.t5.question,Diyarınızın üretim geleceği nasıl şekillenecek?
+owo.doctrine.industry.t5.proto_industrial_workshops,Ön-Sanayi İmalathaneleri
+owo.doctrine.industry.t5.proto_industrial_workshops.desc,Fason üretim sistemleri ve bölgesel zanaatkâr kümelenmeleri yüksek hacimli üretime öncülük eder.
+owo.doctrine.industry.t5.standardized_ordnance,Standart Top Kalibreleri ve Mühimmat
+owo.doctrine.industry.t5.standardized_ordnance.desc,Sıkı metalurjik kalibreler, mühimmat uyumluluğu ve savaş alanında yıkıcı verimlilik sağlar.
+owo.doctrine.industry.milestone,Ön-Sanayi Devrimi
+owo.doctrine.industry.milestone.desc,Fırınlarınız, madenleriniz ve tersaneleriniz diyarınızı geç ortaçağın mekanik devine dönüştürdü.
+mod.ui.popup.title,Old World Order'a Hoş Geldiniz
+mod.ui.popup.body,1450 yılında yaklaşık 120 ulusun başındasınız. Tarihsel açıdan gerçekçi ordular komuta edin, ittifaklar kurun ve ortaçağ dünyasının kaderini yeniden yazın. Bu mod; Osmanlı İmparatorluğu, Ming Hanedanı, Portekiz, Fransa, İngiltere, Moskova Prensliği, Timurluların ve çok daha fazlasını içerir.
+mod.ui.popup.continue,Devam Et
+mod.ui.popup.mod_info,Mod Bilgisi
 doctrine.industry.t1.mass_production_system,Hareketli Harfli Matbaa
 doctrine.industry.t1.mass_production_system.desc,Kitap üretimini ve idari kayıt tutmayı yaygınlaştıran kurşun alaşımlı döküm harfler ve vidalı baskı presleri.
 doctrine.industry.t2.continuous_production,Su ve Rüzgar Değirmeni Mühendisliği

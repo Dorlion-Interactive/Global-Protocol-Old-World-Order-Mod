@@ -1,4 +1,4 @@
-﻿{
+{
     "version":  "2.0.0",
     "tasks":  [
                   {
@@ -10,14 +10,14 @@
                                    "-ExecutionPolicy",
                                    "Bypass",
                                    "-Command",
-                                   "$root = \u0027c:\\Personal\\Genel\\Projeler\\GlobalProtocolHistoricalMod\\Content\u0027; $dirs = @(\u0027AppBundle\u0027,\u0027wasi-wasm\u0027); foreach ($dir in $dirs) { $path = Join-Path $root $dir; if (Test-Path $path) { Remove-Item $path -Recurse -Force } }; $extensions = @(\u0027*.dll\u0027,\u0027*.pdb\u0027,\u0027*.deps.json\u0027,\u0027*.runtimeconfig.json\u0027,\u0027*.wasm\u0027,\u0027*.a\u0027,\u0027*.dat\u0027,\u0027*.c\u0027,\u0027*.h\u0027,\u0027*.rsp\u0027,\u0027*.wit\u0027,\u0027*.bin\u0027); foreach ($pattern in $extensions) { Get-ChildItem -Path $root -Filter $pattern -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne \u0027goals_old_world_order.json\u0027 } | Remove-Item -Force }; Write-Host \u0027Cleaned generated content artifacts.\u0027"
+                                   "$root = \u0027c:\\Personal\\Genel\\Projeler\\GlobalProtocolHistoricalMod\\Content\u0027; $dirs = @(\u0027AppBundle\u0027,\u0027wasi-wasm\u0027); foreach ($dir in $dirs) { $path = Join-Path $root $dir; if (Test-Path $path) { Remove-Item $path -Recurse -Force } }; $extensions = @(\u0027*.dll\u0027,\u0027*.pdb\u0027,\u0027*.deps.json\u0027,\u0027*.runtimeconfig.json\u0027,\u0027*.wasm\u0027,\u0027*.a\u0027,\u0027*.dat\u0027,\u0027*.c\u0027,\u0027*.h\u0027,\u0027*.rsp\u0027,\u0027*.wit\u0027,\u0027*.bin\u0027); foreach ($pattern in $extensions) { Get-ChildItem -Path $root -Filter $pattern -File -ErrorAction SilentlyContinue | Remove-Item -Force }; Write-Host \u0027Cleaned generated content artifacts.\u0027"
                                ],
                       "isBackground":  false
                   },
                   {
                       "label":  "clean-generated-content-2",
                       "type":  "shell",
-                      "command":  "$root = \"c:\\Personal\\Genel\\Projeler\\GlobalProtocolHistoricalMod\\Content\"; $dirs = @(\"AppBundle\",\"wasi-wasm\"); foreach ($dir in $dirs) { $path = Join-Path $root $dir; if (Test-Path $path) { Remove-Item $path -Recurse -Force } }; $extensions = @(\"*.dll\",\"*.pdb\",\"*.deps.json\",\"*.runtimeconfig.json\",\"*.wasm\",\"*.a\",\"*.dat\",\"*.c\",\"*.h\",\"*.rsp\",\"*.wit\",\"*.bin\"); foreach ($pattern in $extensions) { Get-ChildItem -Path $root -Filter $pattern -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne \"goals_old_world_order.json\" } | Remove-Item -Force }; Write-Host \"Cleaned generated content artifacts.\"",
+                      "command":  "$root = \"c:\\Personal\\Genel\\Projeler\\GlobalProtocolHistoricalMod\\Content\"; $dirs = @(\"AppBundle\",\"wasi-wasm\"); foreach ($dir in $dirs) { $path = Join-Path $root $dir; if (Test-Path $path) { Remove-Item $path -Recurse -Force } }; $extensions = @(\"*.dll\",\"*.pdb\",\"*.deps.json\",\"*.runtimeconfig.json\",\"*.wasm\",\"*.a\",\"*.dat\",\"*.c\",\"*.h\",\"*.rsp\",\"*.wit\",\"*.bin\"); foreach ($pattern in $extensions) { Get-ChildItem -Path $root -Filter $pattern -File -ErrorAction SilentlyContinue | Remove-Item -Force }; Write-Host \"Cleaned generated content artifacts.\"",
                       "isBackground":  false
                   },
                   {

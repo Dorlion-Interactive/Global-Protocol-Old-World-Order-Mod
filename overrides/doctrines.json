@@ -370,6 +370,914 @@
           "trade_income_mult": 1.05
         }
       }
+    },
+    {
+      "id": "government",
+      "name_key": "doctrine.branch.government",
+      "desc_key": "doctrine.branch.government.desc",
+      "tiers": [
+        {
+          "name_key": "owo.doctrine.government.t1",
+          "question_key": "owo.doctrine.government.t1.question",
+          "doctrines": [
+            {
+              "id": "feudal_oaths",
+              "name_key": "owo.doctrine.government.t1.feudal_oaths",
+              "desc_key": "owo.doctrine.government.t1.feudal_oaths.desc",
+              "icon": "government_t1b_federal_governance",
+              "effects": {
+                "stability_delta_monthly": 0.05,
+                "manpower_regen_mult": 1.08,
+                "tax_efficiency_mult": 0.95
+              },
+              "ai": {
+                "stability": 0.6,
+                "military": 0.3
+              }
+            },
+            {
+              "id": "centralized_bailiffs",
+              "name_key": "owo.doctrine.government.t1.centralized_bailiffs",
+              "desc_key": "owo.doctrine.government.t1.centralized_bailiffs.desc",
+              "icon": "government_t1a_centralized_administration",
+              "effects": {
+                "tax_efficiency_mult": 1.08,
+                "corruption_delta": -0.04
+              },
+              "ai": {
+                "economy": 0.6,
+                "stability": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.government.t2",
+          "question_key": "owo.doctrine.government.t2.question",
+          "doctrines": [
+            {
+              "id": "privy_council",
+              "name_key": "owo.doctrine.government.t2.privy_council",
+              "desc_key": "owo.doctrine.government.t2.privy_council.desc",
+              "icon": "government_t2a_strong_executive",
+              "effects": {
+                "policy_speed_mult": 1.15,
+                "law_cost_mult": 0.9
+              },
+              "ai": {
+                "stability": 0.5
+              }
+            },
+            {
+              "id": "chartered_parliaments",
+              "name_key": "owo.doctrine.government.t2.chartered_parliaments",
+              "desc_key": "owo.doctrine.government.t2.chartered_parliaments.desc",
+              "icon": "government_t2c_consensus_governance",
+              "effects": {
+                "unrest_pressure_delta": -0.05,
+                "stability_delta_monthly": 0.04
+              },
+              "ai": {
+                "stability": 0.6
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.government.t3",
+          "question_key": "owo.doctrine.government.t3.question",
+          "doctrines": [
+            {
+              "id": "codified_customary_law",
+              "name_key": "owo.doctrine.government.t3.codified_customary_law",
+              "desc_key": "owo.doctrine.government.t3.codified_customary_law.desc",
+              "icon": "government_t3a_professional_civil_service",
+              "effects": {
+                "corruption_delta": -0.06,
+                "institutional_resilience": 0.1
+              },
+              "ai": {
+                "stability": 0.7
+              }
+            },
+            {
+              "id": "chancery_clerks",
+              "name_key": "owo.doctrine.government.t3.chancery_clerks",
+              "desc_key": "owo.doctrine.government.t3.chancery_clerks.desc",
+              "icon": "government_t3c_technocratic_administration",
+              "effects": {
+                "tax_efficiency_mult": 1.06,
+                "policy_speed_mult": 1.1
+              },
+              "ai": {
+                "economy": 0.5,
+                "stability": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.government.t4",
+          "question_key": "owo.doctrine.government.t4.question",
+          "doctrines": [
+            {
+              "id": "royal_ordinances",
+              "name_key": "owo.doctrine.government.t4.royal_ordinances",
+              "desc_key": "owo.doctrine.government.t4.royal_ordinances.desc",
+              "icon": "government_t4c_order_first_governance",
+              "effects": {
+                "law_cost_mult": 0.85,
+                "unrest_pressure_delta": -0.06
+              },
+              "ai": {
+                "stability": 0.6
+              }
+            },
+            {
+              "id": "provincial_intendants",
+              "name_key": "owo.doctrine.government.t4.provincial_intendants",
+              "desc_key": "owo.doctrine.government.t4.provincial_intendants.desc",
+              "icon": "government_t4b_social_compact",
+              "effects": {
+                "tax_efficiency_mult": 1.1,
+                "corruption_delta": -0.05
+              },
+              "ai": {
+                "economy": 0.6,
+                "stability": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.government.t5",
+          "question_key": "owo.doctrine.government.t5.question",
+          "doctrines": [
+            {
+              "id": "divine_right_monarchy",
+              "name_key": "owo.doctrine.government.t5.divine_right_monarchy",
+              "desc_key": "owo.doctrine.government.t5.divine_right_monarchy.desc",
+              "icon": "government_t5a_strategic_state",
+              "effects": {
+                "prestige_gain_mult": 1.2,
+                "stability_delta_monthly": 0.08
+              },
+              "ai": {
+                "stability": 0.8
+              }
+            },
+            {
+              "id": "bureaucratic_centralism",
+              "name_key": "owo.doctrine.government.t5.bureaucratic_centralism",
+              "desc_key": "owo.doctrine.government.t5.bureaucratic_centralism.desc",
+              "icon": "government_t5b_adaptive_state",
+              "effects": {
+                "tax_efficiency_mult": 1.15,
+                "policy_speed_mult": 1.2
+              },
+              "ai": {
+                "economy": 0.7,
+                "stability": 0.3
+              }
+            }
+          ]
+        }
+      ],
+      "milestone": {
+        "id": "government_milestone",
+        "name_key": "owo.doctrine.government.milestone",
+        "desc_key": "owo.doctrine.government.milestone.desc",
+        "icon": "government_milestone",
+        "effects": {
+          "stability_delta_monthly": 0.05,
+          "tax_efficiency_mult": 1.05
+        }
+      }
+    },
+    {
+      "id": "society",
+      "name_key": "doctrine.branch.society",
+      "desc_key": "doctrine.branch.society.desc",
+      "tiers": [
+        {
+          "name_key": "owo.doctrine.society.t1",
+          "question_key": "owo.doctrine.society.t1.question",
+          "doctrines": [
+            {
+              "id": "communal_commons",
+              "name_key": "owo.doctrine.society.t1.communal_commons",
+              "desc_key": "owo.doctrine.society.t1.communal_commons.desc",
+              "icon": "society_t1a_universal_social_compact",
+              "effects": {
+                "pop_growth_mult": 1.05,
+                "unrest_pressure_delta": -0.04
+              },
+              "ai": {
+                "stability": 0.6
+              }
+            },
+            {
+              "id": "manorial_estates",
+              "name_key": "owo.doctrine.society.t1.manorial_estates",
+              "desc_key": "owo.doctrine.society.t1.manorial_estates.desc",
+              "icon": "society_t1b_needs_based_social_protection",
+              "effects": {
+                "tax_efficiency_mult": 1.06,
+                "pop_growth_mult": 1.02
+              },
+              "ai": {
+                "economy": 0.5,
+                "stability": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.society.t2",
+          "question_key": "owo.doctrine.society.t2.question",
+          "doctrines": [
+            {
+              "id": "guild_charters",
+              "name_key": "owo.doctrine.society.t2.guild_charters",
+              "desc_key": "owo.doctrine.society.t2.guild_charters.desc",
+              "icon": "society_t2c_consensus_based_social_policy",
+              "effects": {
+                "production_output_mult": 1.08,
+                "stability_delta_monthly": 0.04
+              },
+              "ai": {
+                "economy": 0.5,
+                "stability": 0.4
+              }
+            },
+            {
+              "id": "free_peasantry",
+              "name_key": "owo.doctrine.society.t2.free_peasantry",
+              "desc_key": "owo.doctrine.society.t2.free_peasantry.desc",
+              "icon": "society_t2a_preventive_social_investment",
+              "effects": {
+                "pop_growth_mult": 1.08,
+                "unrest_pressure_delta": -0.05
+              },
+              "ai": {
+                "stability": 0.6
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.society.t3",
+          "question_key": "owo.doctrine.society.t3.question",
+          "doctrines": [
+            {
+              "id": "monastic_hospitals",
+              "name_key": "owo.doctrine.society.t3.monastic_hospitals",
+              "desc_key": "owo.doctrine.society.t3.monastic_hospitals.desc",
+              "icon": "society_t3a_public_health_and_human_development",
+              "effects": {
+                "disaster_resilience": 0.15,
+                "pop_growth_mult": 1.05
+              },
+              "ai": {
+                "stability": 0.7
+              }
+            },
+            {
+              "id": "cathedral_schools",
+              "name_key": "owo.doctrine.society.t3.cathedral_schools",
+              "desc_key": "owo.doctrine.society.t3.cathedral_schools.desc",
+              "icon": "society_t3b_economic_inclusion_and_opportunity",
+              "effects": {
+                "research_speed": 0.06,
+                "institutional_resilience": 0.08
+              },
+              "ai": {
+                "economy": 0.4,
+                "stability": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.society.t4",
+          "question_key": "owo.doctrine.society.t4.question",
+          "doctrines": [
+            {
+              "id": "civic_relief_funds",
+              "name_key": "owo.doctrine.society.t4.civic_relief_funds",
+              "desc_key": "owo.doctrine.society.t4.civic_relief_funds.desc",
+              "icon": "society_t4a_automatic_social_stabilizers",
+              "effects": {
+                "unrest_pressure_delta": -0.08,
+                "stability_delta_monthly": 0.06
+              },
+              "ai": {
+                "stability": 0.7
+              }
+            },
+            {
+              "id": "burgher_patronage",
+              "name_key": "owo.doctrine.society.t4.burgher_patronage",
+              "desc_key": "owo.doctrine.society.t4.burgher_patronage.desc",
+              "icon": "society_t4c_post_crisis_social_reconstruction",
+              "effects": {
+                "production_output_mult": 1.1,
+                "prestige_gain_mult": 1.1
+              },
+              "ai": {
+                "economy": 0.6,
+                "stability": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.society.t5",
+          "question_key": "owo.doctrine.society.t5.question",
+          "doctrines": [
+            {
+              "id": "humanist_renaissance",
+              "name_key": "owo.doctrine.society.t5.humanist_renaissance",
+              "desc_key": "owo.doctrine.society.t5.humanist_renaissance.desc",
+              "icon": "society_t5b_human_capability_society",
+              "effects": {
+                "research_speed": 0.1,
+                "prestige_gain_mult": 1.25
+              },
+              "ai": {
+                "stability": 0.5,
+                "economy": 0.5
+              }
+            },
+            {
+              "id": "estate_harmony",
+              "name_key": "owo.doctrine.society.t5.estate_harmony",
+              "desc_key": "owo.doctrine.society.t5.estate_harmony.desc",
+              "icon": "society_t5a_social_solidarity_state",
+              "effects": {
+                "stability_delta_monthly": 0.1,
+                "unrest_pressure_delta": -0.1
+              },
+              "ai": {
+                "stability": 0.8
+              }
+            }
+          ]
+        }
+      ],
+      "milestone": {
+        "id": "society_milestone",
+        "name_key": "owo.doctrine.society.milestone",
+        "desc_key": "owo.doctrine.society.milestone.desc",
+        "icon": "society_milestone",
+        "effects": {
+          "pop_growth_mult": 1.05,
+          "stability_delta_monthly": 0.04
+        }
+      }
+    },
+    {
+      "id": "diplomacy",
+      "name_key": "doctrine.branch.diplomacy",
+      "desc_key": "doctrine.branch.diplomacy.desc",
+      "tiers": [
+        {
+          "name_key": "owo.doctrine.diplomacy.t1",
+          "question_key": "owo.doctrine.diplomacy.t1.question",
+          "doctrines": [
+            {
+              "id": "royal_heralds",
+              "name_key": "owo.doctrine.diplomacy.t1.royal_heralds",
+              "desc_key": "owo.doctrine.diplomacy.t1.royal_heralds.desc",
+              "icon": "diplomacy_t1c_mobile_envoy_service",
+              "effects": {
+                "diplomatic_capacity_delta": 1.0,
+                "relation_drift_delta": 0.05
+              },
+              "ai": {
+                "stability": 0.4
+              }
+            },
+            {
+              "id": "dynastic_marriages",
+              "name_key": "owo.doctrine.diplomacy.t1.dynastic_marriages",
+              "desc_key": "owo.doctrine.diplomacy.t1.dynastic_marriages.desc",
+              "icon": "diplomacy_t1b_strategic_partnership_diplomacy",
+              "effects": {
+                "relation_drift_delta": 0.08,
+                "prestige_gain_mult": 1.08
+              },
+              "ai": {
+                "stability": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.diplomacy.t2",
+          "question_key": "owo.doctrine.diplomacy.t2.question",
+          "doctrines": [
+            {
+              "id": "resident_ambassadors",
+              "name_key": "owo.doctrine.diplomacy.t2.resident_ambassadors",
+              "desc_key": "owo.doctrine.diplomacy.t2.resident_ambassadors.desc",
+              "icon": "diplomacy_t1a_permanent_diplomatic_network",
+              "effects": {
+                "diplomatic_capacity_delta": 2.0,
+                "relation_drift_delta": 0.06
+              },
+              "ai": {
+                "stability": 0.6
+              }
+            },
+            {
+              "id": "tribute_and_subsidies",
+              "name_key": "owo.doctrine.diplomacy.t2.tribute_and_subsidies",
+              "desc_key": "owo.doctrine.diplomacy.t2.tribute_and_subsidies.desc",
+              "icon": "diplomacy_t2b_transactional_diplomacy",
+              "effects": {
+                "trade_income_mult": 1.08,
+                "ae_gain_mult": 0.92
+              },
+              "ai": {
+                "economy": 0.5,
+                "military": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.diplomacy.t3",
+          "question_key": "owo.doctrine.diplomacy.t3.question",
+          "doctrines": [
+            {
+              "id": "defensive_leagues",
+              "name_key": "owo.doctrine.diplomacy.t3.defensive_leagues",
+              "desc_key": "owo.doctrine.diplomacy.t3.defensive_leagues.desc",
+              "icon": "diplomacy_t3b_security_diplomacy",
+              "effects": {
+                "deterrence_credibility": 0.15,
+                "military_defense": 0.05
+              },
+              "ai": {
+                "military": 0.6,
+                "stability": 0.3
+              }
+            },
+            {
+              "id": "mercantile_treaties",
+              "name_key": "owo.doctrine.diplomacy.t3.mercantile_treaties",
+              "desc_key": "owo.doctrine.diplomacy.t3.mercantile_treaties.desc",
+              "icon": "diplomacy_t3a_economic_diplomacy",
+              "effects": {
+                "trade_income_mult": 1.12,
+                "diplomatic_capacity_delta": 1.0
+              },
+              "ai": {
+                "economy": 0.7
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.diplomacy.t4",
+          "question_key": "owo.doctrine.diplomacy.t4.question",
+          "doctrines": [
+            {
+              "id": "papal_and_caliphal_mediation",
+              "name_key": "owo.doctrine.diplomacy.t4.papal_and_caliphal_mediation",
+              "desc_key": "owo.doctrine.diplomacy.t4.papal_and_caliphal_mediation.desc",
+              "icon": "diplomacy_t4b_mediation_diplomacy",
+              "effects": {
+                "ae_gain_mult": 0.85,
+                "war_exhaustion_mult": 0.9
+              },
+              "ai": {
+                "stability": 0.6
+              }
+            },
+            {
+              "id": "coercive_ultimatums",
+              "name_key": "owo.doctrine.diplomacy.t4.coercive_ultimatums",
+              "desc_key": "owo.doctrine.diplomacy.t4.coercive_ultimatums.desc",
+              "icon": "diplomacy_t2c_coercive_diplomacy",
+              "effects": {
+                "deterrence_credibility": 0.2,
+                "prestige_gain_mult": 1.15
+              },
+              "ai": {
+                "military": 0.7
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.diplomacy.t5",
+          "question_key": "owo.doctrine.diplomacy.t5.question",
+          "doctrines": [
+            {
+              "id": "concert_of_realms",
+              "name_key": "owo.doctrine.diplomacy.t5.concert_of_realms",
+              "desc_key": "owo.doctrine.diplomacy.t5.concert_of_realms.desc",
+              "icon": "diplomacy_t5a_multilateral_internationalism",
+              "effects": {
+                "diplomatic_capacity_delta": 3.0,
+                "relation_drift_delta": 0.12
+              },
+              "ai": {
+                "stability": 0.7
+              }
+            },
+            {
+              "id": "hegemonic_vassal_system",
+              "name_key": "owo.doctrine.diplomacy.t5.hegemonic_vassal_system",
+              "desc_key": "owo.doctrine.diplomacy.t5.hegemonic_vassal_system.desc",
+              "icon": "diplomacy_t5b_sphere_of_influence_strategy",
+              "effects": {
+                "prestige_gain_mult": 1.3,
+                "tax_efficiency_mult": 1.08
+              },
+              "ai": {
+                "military": 0.6,
+                "economy": 0.4
+              }
+            }
+          ]
+        }
+      ],
+      "milestone": {
+        "id": "diplomacy_milestone",
+        "name_key": "owo.doctrine.diplomacy.milestone",
+        "desc_key": "owo.doctrine.diplomacy.milestone.desc",
+        "icon": "diplomacy_milestone",
+        "effects": {
+          "diplomatic_capacity_delta": 1.0,
+          "relation_drift_delta": 0.05
+        }
+      }
+    },
+    {
+      "id": "intelligence",
+      "name_key": "doctrine.branch.intelligence",
+      "desc_key": "doctrine.branch.intelligence.desc",
+      "tiers": [
+        {
+          "name_key": "owo.doctrine.intelligence.t1",
+          "question_key": "owo.doctrine.intelligence.t1.question",
+          "doctrines": [
+            {
+              "id": "palace_informants",
+              "name_key": "owo.doctrine.intelligence.t1.palace_informants",
+              "desc_key": "owo.doctrine.intelligence.t1.palace_informants.desc",
+              "icon": "intelligence_t1a_centralized_intelligence_directorate",
+              "effects": {
+                "counterintel_detection": 0.1,
+                "unrest_pressure_delta": -0.03
+              },
+              "ai": {
+                "stability": 0.5
+              }
+            },
+            {
+              "id": "whispering_networks",
+              "name_key": "owo.doctrine.intelligence.t1.whispering_networks",
+              "desc_key": "owo.doctrine.intelligence.t1.whispering_networks.desc",
+              "icon": "intelligence_t1c_distributed_field_network",
+              "effects": {
+                "espionage_success_bonus": 0.08,
+                "intel_confidence": 0.05
+              },
+              "ai": {
+                "military": 0.4,
+                "stability": 0.2
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.intelligence.t2",
+          "question_key": "owo.doctrine.intelligence.t2.question",
+          "doctrines": [
+            {
+              "id": "cryptographic_ciphers",
+              "name_key": "owo.doctrine.intelligence.t2.cryptographic_ciphers",
+              "desc_key": "owo.doctrine.intelligence.t2.cryptographic_ciphers.desc",
+              "icon": "intelligence_t2b_data_driven_intelligence_analysis",
+              "effects": {
+                "counterintel_detection": 0.15,
+                "intel_confidence": 0.1
+              },
+              "ai": {
+                "stability": 0.5
+              }
+            },
+            {
+              "id": "covert_provocateurs",
+              "name_key": "owo.doctrine.intelligence.t2.covert_provocateurs",
+              "desc_key": "owo.doctrine.intelligence.t2.covert_provocateurs.desc",
+              "icon": "intelligence_t2a_human_centered_intelligence",
+              "effects": {
+                "espionage_damage_mult": 1.15,
+                "espionage_success_bonus": 0.08
+              },
+              "ai": {
+                "military": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.intelligence.t3",
+          "question_key": "owo.doctrine.intelligence.t3.question",
+          "doctrines": [
+            {
+              "id": "master_of_spies",
+              "name_key": "owo.doctrine.intelligence.t3.master_of_spies",
+              "desc_key": "owo.doctrine.intelligence.t3.master_of_spies.desc",
+              "icon": "intelligence_t3a_strategic_assessment",
+              "effects": {
+                "espionage_success_bonus": 0.12,
+                "counterintel_detection": 0.12
+              },
+              "ai": {
+                "military": 0.4,
+                "stability": 0.4
+              }
+            },
+            {
+              "id": "subversive_propaganda",
+              "name_key": "owo.doctrine.intelligence.t3.subversive_propaganda",
+              "desc_key": "owo.doctrine.intelligence.t3.subversive_propaganda.desc",
+              "icon": "intelligence_t3b_covert_influence_operations",
+              "effects": {
+                "espionage_damage_mult": 1.2,
+                "ae_gain_mult": 0.95
+              },
+              "ai": {
+                "military": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.intelligence.t4",
+          "question_key": "owo.doctrine.intelligence.t4.question",
+          "doctrines": [
+            {
+              "id": "inquisitorial_apparatus",
+              "name_key": "owo.doctrine.intelligence.t4.inquisitorial_apparatus",
+              "desc_key": "owo.doctrine.intelligence.t4.inquisitorial_apparatus.desc",
+              "icon": "intelligence_t4a_defensive_counter_intelligence",
+              "effects": {
+                "counterintel_detection": 0.25,
+                "corruption_delta": -0.05
+              },
+              "ai": {
+                "stability": 0.7
+              }
+            },
+            {
+              "id": "intercepted_pigeon_couriers",
+              "name_key": "owo.doctrine.intelligence.t4.intercepted_pigeon_couriers",
+              "desc_key": "owo.doctrine.intelligence.t4.intercepted_pigeon_couriers.desc",
+              "icon": "intelligence_t4c_active_counter_espionage",
+              "effects": {
+                "intel_confidence": 0.2,
+                "espionage_success_bonus": 0.1
+              },
+              "ai": {
+                "military": 0.5,
+                "stability": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.intelligence.t5",
+          "question_key": "owo.doctrine.intelligence.t5.question",
+          "doctrines": [
+            {
+              "id": "black_chamber_statecraft",
+              "name_key": "owo.doctrine.intelligence.t5.black_chamber_statecraft",
+              "desc_key": "owo.doctrine.intelligence.t5.black_chamber_statecraft.desc",
+              "icon": "intelligence_t5a_strategic_intelligence_primacy",
+              "effects": {
+                "espionage_success_bonus": 0.2,
+                "intel_confidence": 0.25
+              },
+              "ai": {
+                "military": 0.6,
+                "stability": 0.4
+              }
+            },
+            {
+              "id": "covert_dynastic_intrigue",
+              "name_key": "owo.doctrine.intelligence.t5.covert_dynastic_intrigue",
+              "desc_key": "owo.doctrine.intelligence.t5.covert_dynastic_intrigue.desc",
+              "icon": "intelligence_t5b_covert_statecraft_doctrine",
+              "effects": {
+                "espionage_damage_mult": 1.3,
+                "prestige_gain_mult": 1.15
+              },
+              "ai": {
+                "military": 0.7
+              }
+            }
+          ]
+        }
+      ],
+      "milestone": {
+        "id": "intelligence_milestone",
+        "name_key": "owo.doctrine.intelligence.milestone",
+        "desc_key": "owo.doctrine.intelligence.milestone.desc",
+        "icon": "intelligence_milestone",
+        "effects": {
+          "counterintel_detection": 0.1,
+          "espionage_success_bonus": 0.1
+        }
+      }
+    },
+    {
+      "id": "industry",
+      "name_key": "doctrine.branch.industry",
+      "desc_key": "doctrine.branch.industry.desc",
+      "tiers": [
+        {
+          "name_key": "owo.doctrine.industry.t1",
+          "question_key": "owo.doctrine.industry.t1.question",
+          "doctrines": [
+            {
+              "id": "water_powered_mills",
+              "name_key": "owo.doctrine.industry.t1.water_powered_mills",
+              "desc_key": "owo.doctrine.industry.t1.water_powered_mills.desc",
+              "icon": "industry_t1c_distributed_production_network",
+              "effects": {
+                "production_output_mult": 1.08,
+                "construction_speed_mult": 0.95
+              },
+              "ai": {
+                "economy": 0.6
+              }
+            },
+            {
+              "id": "timber_and_charcoal_works",
+              "name_key": "owo.doctrine.industry.t1.timber_and_charcoal_works",
+              "desc_key": "owo.doctrine.industry.t1.timber_and_charcoal_works.desc",
+              "icon": "industry_t1a_mass_production_system",
+              "effects": {
+                "construction_speed_mult": 0.92,
+                "stockpile_cap_mult": 1.1
+              },
+              "ai": {
+                "economy": 0.5,
+                "military": 0.2
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.industry.t2",
+          "question_key": "owo.doctrine.industry.t2.question",
+          "doctrines": [
+            {
+              "id": "guild_metalwork_foundries",
+              "name_key": "owo.doctrine.industry.t2.guild_metalwork_foundries",
+              "desc_key": "owo.doctrine.industry.t2.guild_metalwork_foundries.desc",
+              "icon": "industry_t2a_continuous_production",
+              "effects": {
+                "production_output_mult": 1.1,
+                "unit_build_speed_mult": 0.95
+              },
+              "ai": {
+                "economy": 0.5,
+                "military": 0.4
+              }
+            },
+            {
+              "id": "quarry_and_masonry_concessions",
+              "name_key": "owo.doctrine.industry.t2.quarry_and_masonry_concessions",
+              "desc_key": "owo.doctrine.industry.t2.quarry_and_masonry_concessions.desc",
+              "icon": "industry_t2b_demand_responsive_production",
+              "effects": {
+                "construction_speed_mult": 0.88,
+                "military_defense": 0.04
+              },
+              "ai": {
+                "economy": 0.4,
+                "stability": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.industry.t3",
+          "question_key": "owo.doctrine.industry.t3.question",
+          "doctrines": [
+            {
+              "id": "arsenal_shipbuilding",
+              "name_key": "owo.doctrine.industry.t3.arsenal_shipbuilding",
+              "desc_key": "owo.doctrine.industry.t3.arsenal_shipbuilding.desc",
+              "icon": "industry_t3b_industrial_processing",
+              "effects": {
+                "unit_build_speed_mult": 0.9,
+                "recruit_cost_mult": 0.92
+              },
+              "ai": {
+                "military": 0.6,
+                "economy": 0.3
+              }
+            },
+            {
+              "id": "deep_shaft_mining",
+              "name_key": "owo.doctrine.industry.t3.deep_shaft_mining",
+              "desc_key": "owo.doctrine.industry.t3.deep_shaft_mining.desc",
+              "icon": "industry_t3a_resource_development",
+              "effects": {
+                "production_output_mult": 1.12,
+                "gdp_modifier": 0.04
+              },
+              "ai": {
+                "economy": 0.7
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.industry.t4",
+          "question_key": "owo.doctrine.industry.t4.question",
+          "doctrines": [
+            {
+              "id": "early_blast_furnaces",
+              "name_key": "owo.doctrine.industry.t4.early_blast_furnaces",
+              "desc_key": "owo.doctrine.industry.t4.early_blast_furnaces.desc",
+              "icon": "industry_t4b_continuous_industrial_modernization",
+              "effects": {
+                "production_output_mult": 1.15,
+                "unit_build_speed_mult": 0.92
+              },
+              "ai": {
+                "economy": 0.6,
+                "military": 0.4
+              }
+            },
+            {
+              "id": "royal_arms_manufactories",
+              "name_key": "owo.doctrine.industry.t4.royal_arms_manufactories",
+              "desc_key": "owo.doctrine.industry.t4.royal_arms_manufactories.desc",
+              "icon": "industry_t4a_industrial_asset_preservation",
+              "effects": {
+                "recruit_cost_mult": 0.88,
+                "upkeep_mult": 0.94
+              },
+              "ai": {
+                "military": 0.7
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.industry.t5",
+          "question_key": "owo.doctrine.industry.t5.question",
+          "doctrines": [
+            {
+              "id": "proto_industrial_workshops",
+              "name_key": "owo.doctrine.industry.t5.proto_industrial_workshops",
+              "desc_key": "owo.doctrine.industry.t5.proto_industrial_workshops.desc",
+              "icon": "industry_t5a_industrial_scale_leadership",
+              "effects": {
+                "production_output_mult": 1.2,
+                "gdp_modifier": 0.08
+              },
+              "ai": {
+                "economy": 0.8
+              }
+            },
+            {
+              "id": "standardized_ordnance",
+              "name_key": "owo.doctrine.industry.t5.standardized_ordnance",
+              "desc_key": "owo.doctrine.industry.t5.standardized_ordnance.desc",
+              "icon": "industry_t5b_integrated_value_chain",
+              "effects": {
+                "military_attack": 0.08,
+                "unit_build_speed_mult": 0.85
+              },
+              "ai": {
+                "military": 0.8
+              }
+            }
+          ]
+        }
+      ],
+      "milestone": {
+        "id": "industry_milestone",
+        "name_key": "owo.doctrine.industry.milestone",
+        "desc_key": "owo.doctrine.industry.milestone.desc",
+        "icon": "industry_milestone",
+        "effects": {
+          "production_output_mult": 1.06,
+          "construction_speed_mult": 0.95
+        }
+      }
     }
   ]
 }

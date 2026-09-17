@@ -1,8 +1,281 @@
-mod.ui.toolbar.welcome_tooltip,Old World Order — Welcome
-mod.ui.popup.title,Welcome to Old World Order
-mod.ui.popup.body,You lead one of ~120 nations in 1450 AD. Command historically accurate armies, forge alliances, and rewrite the fate of the medieval world. This mod features the Ottoman Empire, Ming Dynasty, Portugal, France, England, Muscovy, the Timurids, and more.
-mod.ui.popup.continue,Continue
-mod.ui.popup.mod_info,Open Mod Info
+country.homeland.ABY,ETHIOPIA
+country.homeland.ADA,THE SULTANATE OF ADAL
+country.homeland.AKK,THE CONFEDERATION
+country.homeland.ARA,LA PATRIA
+country.homeland.ARK,THE KINGDOM
+country.homeland.AVA,THE KINGDOM
+country.homeland.AYU,THE KINGDOM
+country.homeland.AZT,THE REALM
+country.homeland.BAH,THE SULTANATE
+country.homeland.BAV,THE DUCHY
+country.homeland.BNG,THE SULTANATE
+country.homeland.BNK,THE KINGDOM
+country.homeland.BOH,THE KINGDOM
+country.homeland.BOS,THE KINGDOM
+country.homeland.BRG,THE MARGRAVIATE
+country.homeland.BRU,THE SULTANATE
+country.homeland.BUG,THE KINGDOM OF BUGANDA
+country.homeland.BUR,LA PATRIE
+country.homeland.BYZ,THE EMPIRE
+country.homeland.CAH,THE MISSISSIPPIAN LANDS
+country.homeland.CAS,LA PATRIA
+country.homeland.CEB,THE RAJAHNATE
+country.homeland.CHE,THE CONFEDERATION
+country.homeland.CHM,THE KINGDOM OF CHIMOR
+country.homeland.CND,THE BEYLIK
+country.homeland.COL,THE ARCHBISHOPRIC
+country.homeland.CPA,THE KINGDOM
+country.homeland.DAN,THE HOMELAND
+country.homeland.DEL,THE SULTANATE
+country.homeland.DUL,THE BEYLIK
+country.homeland.DVT,DAI VIET
+country.homeland.ENG,BRITAIN
+country.homeland.FLR,LA PATRIA
+country.homeland.FNJ,THE FUNJ SULTANATE
+country.homeland.FRA,THE REALM
+country.homeland.GEN,LA SUPERBA
+country.homeland.GRG,THE KINGDOM OF GEORGIA
+country.homeland.GRN,AL-ANDALUS
+country.homeland.GUJ,THE SULTANATE
+country.homeland.HAB,FATHERLAND
+country.homeland.HAU,THE HAUSA LANDS
+country.homeland.HFS,THE SULTANATE
+country.homeland.HRM,THE KINGDOM OF HORMUZ
+country.homeland.HUN,THE REALM
+country.homeland.INC,TAWANTINSUYU
+country.homeland.IRO,THE HAUDENOSAUNEE
+country.homeland.JBR,THE EMIRATE OF AL-HASA
+country.homeland.JNP,THE SULTANATE
+country.homeland.JOS,HANGUK
+country.homeland.KAR,THE BEYLIK
+country.homeland.KBR,THE EMPIRE
+country.homeland.KKY,THE REALM
+country.homeland.KLW,THE SWAHILI COAST
+country.homeland.KMR,THE KINGDOM
+country.homeland.KNG,THE KINGDOM
+country.homeland.KNI,THE ORDER
+country.homeland.KOT,THE KINGDOM
+country.homeland.KRM,THE KHANATE
+country.homeland.KSH,THE SULTANATE
+country.homeland.KZN,THE KHANATE
+country.homeland.LEZ,ALBANIA
+country.homeland.LIV,THE ORDER
+country.homeland.LNA,THE KINGDOM
+country.homeland.LTH,THE HOMELAND
+country.homeland.LUB,THE KINGDOM OF LUBA
+country.homeland.LUS,THE KINGDOM
+country.homeland.LXG,THE KINGDOM
+country.homeland.MAD,THE MALAGASY LANDS
+country.homeland.MAJ,THE EMPIRE
+country.homeland.MAL,THE EMPIRE
+country.homeland.MAM,THE SULTANATE
+country.homeland.MAP,THE MAPUCHE LANDS
+country.homeland.MAY,THE CONFEDERACY
+country.homeland.MEW,THE KINGDOM
+country.homeland.MGD,THE SULTANATE
+country.homeland.MGL,THE KHANATE
+country.homeland.MID,THE REALM
+country.homeland.MIL,THE DUCHY
+country.homeland.MLC,THE SULTANATE
+country.homeland.MLD,THE SULTANATE
+country.homeland.MLW,THE SULTANATE
+country.homeland.MOG,THE KHANATE
+country.homeland.MOL,THE PRINCIPALITY
+country.homeland.MOR,THE SULTANATE
+country.homeland.MOS,THE MOSSI KINGDOMS
+country.homeland.MRC,NIPPON
+country.homeland.MUI,THE MUISCA CONFEDERATION
+country.homeland.MVY,MOTHERLAND
+country.homeland.MYN,THE MIDDLE KINGDOM
+country.homeland.NAP,LA PATRIA
+country.homeland.NAV,THE KINGDOM
+country.homeland.NBH,THE KINGDOM OF OMAN
+country.homeland.NEP,THE KINGDOM
+country.homeland.NVD,THE REPUBLIC
+country.homeland.ORI,THE KINGDOM
+country.homeland.OTT,THE SULTANATE
+country.homeland.OYO,THE OYO EMPIRE
+country.homeland.PAL,THE PALATINATE
+country.homeland.PAP,THE HOLY SEE
+country.homeland.PEG,THE KINGDOM
+country.homeland.POL,THE HOMELAND
+country.homeland.PRT,THE REALM
+country.homeland.PSI,THE SULTANATE
+country.homeland.PSK,THE REPUBLIC
+country.homeland.PUE,THE PUEBLO LANDS
+country.homeland.RAM,THE BEYLIK
+country.homeland.RYA,THE PRINCIPALITY
+country.homeland.RYU,THE ISLANDS
+country.homeland.SAV,THE DUCHY
+country.homeland.SAX,THE ELECTORATE
+country.homeland.SCT,THE HOMELAND
+country.homeland.SHV,THE SHIRVANSHAHS
+country.homeland.SIB,THE KHANATE
+country.homeland.SND,THE SULTANATE
+country.homeland.SON,THE EMPIRE
+country.homeland.SRB,THE HOMELAND
+country.homeland.STE,THE HORDE
+country.homeland.SUL,THE SULTANATE
+country.homeland.SWD,THE HOMELAND
+country.homeland.TAH,THE SULTANATE OF YEMEN
+country.homeland.TAI,THE TAINO LANDS
+country.homeland.TAR,THE TARASCAN STATE
+country.homeland.TEU,THE ORDER
+country.homeland.TIB,THE PLATEAU
+country.homeland.TIM,THE REALM
+country.homeland.TLX,THE TLAXCALAN CONFEDERACY
+country.homeland.TND,THE KINGDOM
+country.homeland.TRE,THE EMPIRE
+country.homeland.TVR,THE PRINCIPALITY
+country.homeland.UZB,THE UZBEK KHANATE
+country.homeland.VIJ,BHARAT
+country.homeland.VNC,LA SERENISSIMA
+country.homeland.WAL,THE PRINCIPALITY
+country.homeland.WUR,THE COUNTY
+country.homeland.ZAP,THE ZAPOTEC KINGDOM
+country.homeland.ZAY,THE KINGDOM OF TLEMCEN
+country.homeland.ZIM,THE KINGDOM
+country.name.ABY,Ethiopian Empire
+country.name.ADA,Adal Sultanate
+country.name.AKK,Ak Koyunlu
+country.name.ARA,Crown of Aragon
+country.name.ARK,Kingdom of Mrauk U
+country.name.AVA,Kingdom of Ava
+country.name.AYU,Ayutthaya Kingdom
+country.name.AZT,Aztec Empire
+country.name.BAH,Bahmani Sultanate
+country.name.BAV,Duchy of Bavaria
+country.name.BNG,Bengal Sultanate
+country.name.BNK,Kingdom of Benin
+country.name.BOH,Kingdom of Bohemia
+country.name.BOS,Kingdom of Bosnia
+country.name.BRG,Margraviate of Brandenburg
+country.name.BRU,Sultanate of Brunei
+country.name.BUG,Kingdom of Buganda
+country.name.BUR,Duchy of Burgundy
+country.name.BYZ,Byzantine Empire
+country.name.CAH,Mississippian Chiefdoms (Cahokia)
+country.name.CAS,Crown of Castile
+country.name.CEB,Rajahnate of Cebu
+country.name.CHE,Swiss Confederation
+country.name.CHM,Kingdom of Chimor
+country.name.CND,Candarids
+country.name.COL,Electorate of Cologne
+country.name.CPA,Kingdom of Champa
+country.name.DAN,Kingdom of Denmark
+country.name.DEL,Delhi Sultanate
+country.name.DUL,Dulkadirids
+country.name.DVT,Dai Viet
+country.name.ENG,Kingdom of England
+country.name.FLR,Republic of Florence
+country.name.FNJ,Funj Sultanate of Sennar
+country.name.FRA,Kingdom of France
+country.name.GEN,Republic of Genoa
+country.name.GRG,Kingdom of Georgia
+country.name.GRN,Emirate of Granada
+country.name.GUJ,Sultanate of Gujarat
+country.name.HAB,Duchy of Austria
+country.name.HAU,Hausa City-States
+country.name.HFS,Hafsid Sultanate
+country.name.HRM,Kingdom of Hormuz
+country.name.HUN,Crown of Hungary
+country.name.INC,Inca Empire
+country.name.IRO,Haudenosaunee Confederacy
+country.name.JBR,Jabrid Emirate
+country.name.JNP,Jaunpur Sultanate
+country.name.JOS,Joseon Dynasty
+country.name.KAR,Karamanids
+country.name.KBR,Kanem-Bornu Empire
+country.name.KKY,Kara Koyunlu
+country.name.KLW,Kilwa Sultanate (Swahili Coast)
+country.name.KMR,Khmer Kingdom
+country.name.KNG,Kingdom of Kongo
+country.name.KNI,Knights Hospitaller
+country.name.KOT,Kingdom of Kotte
+country.name.KRM,Khanate of Crimea
+country.name.KSH,Kashmir Sultanate
+country.name.KZN,Khanate of Kazan
+country.name.LEZ,League of Lezhë
+country.name.LIV,Livonian Confederation
+country.name.LNA,Lan Na Kingdom
+country.name.LTH,Grand Duchy of Lithuania
+country.name.LUB,Kingdom of Luba
+country.name.LUS,Kingdom of Cyprus
+country.name.LXG,Kingdom of Lan Xang
+country.name.MAD,Madagascar Chiefdoms
+country.name.MAJ,Majapahit Empire
+country.name.MAL,Mali Empire
+country.name.MAM,Mamluk Sultanate
+country.name.MAP,Mapuche
+country.name.MAY,Maya Confederacy
+country.name.MEW,Kingdom of Mewar
+country.name.MGD,Sultanate of Maguindanao
+country.name.MGL,Oirat Mongol Confederation
+country.name.MID,Kingdom of Middag
+country.name.MIL,Duchy of Milan
+country.name.MLC,Malacca Sultanate
+country.name.MLD,Sultanate of the Maldives
+country.name.MLW,Malwa Sultanate
+country.name.MOG,Moghulistan
+country.name.MOL,Principality of Moldavia
+country.name.MOR,Marinid Morocco
+country.name.MOS,Mossi Kingdoms
+country.name.MRC,Muromachi Shogunate
+country.name.MUI,Muisca Confederation
+country.name.MVY,Duchy of Moscow
+country.name.MYN,Ming Dynasty
+country.name.NAP,Kingdom of Naples
+country.name.NAV,Kingdom of Navarre
+country.name.NBH,Nabhani Kingdom of Oman
+country.name.NEP,Malla Kingdom of Nepal
+country.name.NVD,Novgorod Republic
+country.name.ORI,Gajapati Kingdom of Orissa
+country.name.OTT,Ottoman Empire
+country.name.OYO,Oyo Empire
+country.name.PAL,Electoral Palatinate
+country.name.PAP,Papal States
+country.name.PEG,Hanthawaddy Kingdom of Pegu
+country.name.POL,Crown of Poland
+country.name.PRT,Kingdom of Portugal
+country.name.PSI,Samudra-Pasai Sultanate
+country.name.PSK,Pskov Republic
+country.name.PUE,Pueblo Peoples
+country.name.RAM,Ramadanids
+country.name.RYA,Principality of Ryazan
+country.name.RYU,Ryukyu Kingdom
+country.name.SAV,Duchy of Savoy
+country.name.SAX,Electorate of Saxony
+country.name.SCT,Kingdom of Scotland
+country.name.SHV,Shirvanshahs
+country.name.SIB,Siberian Khanate
+country.name.SND,Samma Sultanate of Sindh
+country.name.SON,Songhai Empire
+country.name.SRB,Serbian Despotate
+country.name.STE,Great Horde
+country.name.SUL,Sultanate of Sulu
+country.name.SWD,Kingdom of Sweden
+country.name.TAH,Tahirid Sultanate of Yemen
+country.name.TAI,Taino Cacicazgos
+country.name.TAR,Tarascan State (Purepecha)
+country.name.TEU,Teutonic Order
+country.name.TIB,Tibet
+country.name.TIM,Timurid Empire
+country.name.TLX,Tlaxcala
+country.name.TND,Kingdom of Tondo
+country.name.TRE,Empire of Trebizond
+country.name.TVR,Principality of Tver
+country.name.UZB,Uzbek Khanate
+country.name.VIJ,Vijayanagara Empire
+country.name.VNC,Republic of Venice
+country.name.WAL,Principality of Wallachia
+country.name.WUR,County of Württemberg
+country.name.ZAP,Zapotec Kingdom
+country.name.ZAY,Zayyanid Kingdom of Tlemcen
+country.name.ZIM,Kingdom of Zimbabwe
+mod.owo.popup.startup.body_no_date,Europe and Asia stand between old feudal orders and rising centralized states.\nTrade routes across the Mediterranean Black Sea Indian Ocean and Silk Road are the arteries of power.\nGunpowder armies are emerging but cavalry levies and fortresses still decide most wars.\n\nYou command one of 120+ historical polities with period-appropriate rulers borders and military posture.\nUse the crown button in the toolbar to reopen this briefing at any time.
+mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand between old feudal orders and rising centralized states.\nTrade routes across the Mediterranean Black Sea Indian Ocean and Silk Road are the arteries of power.\nGunpowder armies are emerging but cavalry levies and fortresses still decide most wars.\n\nYou command one of 120+ historical polities with period-appropriate rulers borders and military posture.\nUse the crown button in the toolbar to reopen this briefing at any time.
+mod.owo.popup.startup.title,""Old World Order, 1450""
+mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
@@ -14,6 +287,292 @@ doctrine.economy.t1.fiscal_discipline,Double-Entry Bookkeeping & Merchant Bankin
 doctrine.economy.t1.fiscal_discipline.desc,Venetian and Florentine double-entry ledgers, bills of exchange, and merchant deposit banks revolutionizing commerce.
 doctrine.economy.t3.commercial_economy,Caravel Hull & Lateen Sail Rigging
 doctrine.economy.t3.commercial_economy.desc,Manoeuvrable shallow-draft hulls combined with triangular lateen sails, enabling ships to tack against head winds.
+owo.doctrine.military.t1,Levy and Retinue
+owo.doctrine.military.t1.question,How are your armies raised?
+owo.doctrine.military.t1.feudal_levies,Feudal Levies
+owo.doctrine.military.t1.feudal_levies.desc,Vassals answer the summons with their peasants and men-at-arms: cheap, plentiful and slow to muster.
+owo.doctrine.military.t2,Battlefield Tactics
+owo.doctrine.military.t2.question,Which tactics win your battles?
+owo.doctrine.military.t2.heavy_cavalry_charge,Heavy Cavalry Charge
+owo.doctrine.military.t2.heavy_cavalry_charge.desc,Armoured knights and sipahis break the enemy line in one thundering charge, at a steep price in horses and armour.
+owo.doctrine.military.t3,Siegecraft
+owo.doctrine.military.t3.question,How do you break walls, or hold them?
+owo.doctrine.military.t3.bastion_fortifications,Bastion Fortifications
+owo.doctrine.military.t3.bastion_fortifications.desc,Low, thick angled bastions shrug off cannon fire and turn every border fortress into a trap for besiegers.
+owo.doctrine.military.t4,Supply and March
+owo.doctrine.military.t4.question,How do you keep armies in the field?
+owo.doctrine.military.t4.baggage_trains,Baggage Trains and Depots
+owo.doctrine.military.t4.baggage_trains.desc,Wagon trains, river barges and fortified depots keep the host fed through long campaigns.
+owo.doctrine.military.t4.living_off_the_land,Living off the Land
+owo.doctrine.military.t4.living_off_the_land.desc,Armies forage and requisition as they march: cheap to keep, bitter for the provinces they cross.
+owo.doctrine.military.t5,Standing Armies
+owo.doctrine.military.t5.question,What will your realm's army become?
+owo.doctrine.military.t5.permanent_standing_army,Permanent Standing Army
+owo.doctrine.military.t5.permanent_standing_army.desc,Salaried companies under the crown's banner stay under arms in peace and war alike.
+owo.doctrine.military.t5.condottieri_contracts,Condottieri Contracts
+owo.doctrine.military.t5.condottieri_contracts.desc,Mercenary captains sell whole companies by contract, ready to march wherever the gold is good.
+owo.doctrine.military.milestone,Military Revolution
+owo.doctrine.military.milestone.desc,Gunpowder, drill and permanent companies have remade how your realm wages war.
+owo.doctrine.economy.t1,Royal Finances
+owo.doctrine.economy.t1.question,How does the crown fill its coffers?
+owo.doctrine.economy.t1.tax_farming,Tax Farming
+owo.doctrine.economy.t1.tax_farming.desc,Collectors buy the right to gather taxes in advance: quick coin for the crown, hard times for the peasantry.
+owo.doctrine.economy.t2,Guilds and Markets
+owo.doctrine.economy.t2.question,Who controls trade in your towns?
+owo.doctrine.economy.t2.chartered_craft_guilds,Chartered Craft Guilds
+owo.doctrine.economy.t2.chartered_craft_guilds.desc,Royal charters grant guilds control over quality, prices and apprentices in every workshop.
+owo.doctrine.economy.t2.free_fairs,Free Fairs and Market Towns
+owo.doctrine.economy.t2.free_fairs.desc,Toll-free seasonal fairs draw merchants from distant lands to your market towns.
+owo.doctrine.economy.t3,Long-Distance Trade
+owo.doctrine.economy.t3.question,Where does your wealth travel?
+owo.doctrine.economy.t3.caravanserai_network,Caravanserai Network
+owo.doctrine.economy.t3.caravanserai_network.desc,Fortified inns a day's ride apart keep the silk and spice caravans moving safely overland.
+owo.doctrine.economy.t4,Granaries and Coinage
+owo.doctrine.economy.t4.question,How do you weather famine and debasement?
+owo.doctrine.economy.t4.royal_granaries,Royal Granaries
+owo.doctrine.economy.t4.royal_granaries.desc,Crown granaries buy grain in good harvests and open their doors in lean years.
+owo.doctrine.economy.t4.sound_coinage,Sound Coinage
+owo.doctrine.economy.t4.sound_coinage.desc,A trusted mint refuses to clip or debase the coin, and lenders reward the crown's good name.
+owo.doctrine.economy.t5,Mercantile Power
+owo.doctrine.economy.t5.question,What kind of economic power will you be?
+owo.doctrine.economy.t5.trading_post_empire,Trading-Post Empire
+owo.doctrine.economy.t5.trading_post_empire.desc,Fortified factories on distant coasts funnel spices, gold and sugar into the royal treasury.
+owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
+owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
+owo.doctrine.economy.milestone,Commercial Revolution
+owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
+owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
+owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury
+owo.goal.basic_first_alliance,Seek a Trusted Ally
+owo.goal.basic_first_alliance.desc,No crown stands alone for long. Win the friendship of a neighbour.
+owo.task.basic_first_alliance.relations,Reach good relations with another realm
+owo.goal.ott_heir_of_rome,Heir of Rome
+owo.goal.ott_heir_of_rome.desc,Take Constantinople and claim the mantle of the Caesars.
+owo.task.ott_heir_of_rome.war,Declare war on the Byzantine Empire
+owo.task.ott_heir_of_rome.army,Muster 20,000 soldiers
+owo.goal.ott_anatolian_unity,Anatolian Unity
+owo.goal.ott_anatolian_unity.desc,Bring Karaman and the other beyliks under the Sultan's authority.
+owo.task.ott_anatolian_unity.karaman,Declare war on the Karamanids
+owo.task.ott_anatolian_unity.candar,Reach good relations with the Candarids
+owo.goal.fra_end_hundred_years_war,End the Hundred Years' War
+owo.goal.fra_end_hundred_years_war.desc,Drive the English crown from Normandy and Guyenne for good.
+owo.task.fra_end_hundred_years_war.war,Declare war on England
+owo.task.fra_end_hundred_years_war.army,Muster 15,000 soldiers
+owo.goal.fra_contain_burgundy,Contain Burgundy
+owo.goal.fra_contain_burgundy.desc,Keep the Grand Dukes of the West from carving a kingdom out of France's borderlands.
+owo.task.fra_contain_burgundy.scotland,Renew the Auld Alliance with Scotland
+owo.goal.cas_reconquista,Complete the Reconquista
+owo.goal.cas_reconquista.desc,Bring down the Emirate of Granada, the last Muslim realm in Iberia.
+owo.task.cas_reconquista.war,Declare war on Granada
+owo.goal.cas_union_with_aragon,Union of the Crowns
+owo.goal.cas_union_with_aragon.desc,Bind Castile and Aragon together into one Spanish monarchy.
+owo.task.cas_union_with_aragon.alliance,Ally with the Crown of Aragon
+owo.goal.ott_danubian_frontier,Fortify the Danubian March
+owo.goal.ott_danubian_frontier.desc,Secure the fortress line along the Danube river against Hungarian and crusader counter-offensives.
+owo.task.ott_danubian_frontier.army,Muster 25,000 soldiers
+owo.task.ott_danubian_frontier.treasury,Hold 800 fl. in the treasury
+owo.goal.fra_compagnies_ordonnance,Compagnies d'Ordonnance
+owo.goal.fra_compagnies_ordonnance.desc,Institutionalize France's first professional standing army financed by a permanent royal tax.
+owo.task.fra_compagnies_ordonnance.standing_army,Muster 15,000 professional soldiers
+owo.task.fra_compagnies_ordonnance.treasury,Hold 600 fl. in the royal treasury
+owo.goal.eng_fortress_calais,Fortress Calais & the Narrow Seas
+owo.goal.eng_fortress_calais.desc,Strengthen the fortifications of the Calais Pale and maintain naval mastery over the English Channel.
+owo.task.eng_fortress_calais.fleet,Muster a fleet of 10 warships
+owo.task.eng_fortress_calais.treasury,Hold 600 fl. in the exchequer
+owo.goal.eng_scottish_border,Guard the Northern Marches
+owo.goal.eng_scottish_border.desc,Secure the Scottish Border Marches and neutralize the threat of a northern Auld Alliance invasion.
+owo.task.eng_scottish_border.scotland,Pacify Scotland through diplomacy
+owo.goal.eng_royal_solvency,Restore Royal Solvency
+owo.goal.eng_royal_solvency.desc,Reorganize the exchequer, manage war debts, and restore parliamentary confidence in the Crown.
+owo.task.eng_royal_solvency.treasury,Accumulate 1,200 fl. in the royal treasury
+owo.goal.cas_western_seas,Chart the Ocean Sea
+owo.goal.cas_western_seas.desc,Sponsor intrepid navigators to seek a westward sea route across the Atlantic.
+owo.task.cas_western_seas.fleet,Build a naval exploration squadron of 10 ships
+owo.task.cas_western_seas.treasury,Fund expeditions with 1,000 fl. in treasury
+owo.goal.prt_chart_african_coast,Chart the African Coast
+owo.goal.prt_chart_african_coast.desc,Push maritime caravels southward past Guinea to map the southern extremity of the African continent.
+owo.task.prt_chart_african_coast.navigation_tech,Advance navigational knowledge by researching 2 doctrine tiers
+owo.task.prt_chart_african_coast.caravels,Muster a caravel fleet of 8 ships
+owo.goal.prt_spice_monopoly,Maritime Spice Monopoly
+owo.goal.prt_spice_monopoly.desc,Establish armed feitorias along the Indian Ocean to secure the exclusive maritime spice trade.
+owo.task.prt_spice_monopoly.fleet,Muster a merchant fleet of 15 ships
+owo.task.prt_spice_monopoly.treasury,Amass 2,000 fl. in commercial reserves
+owo.goal.myn_tumu_crisis_recovery,Overcome the Tumu Crisis
+owo.goal.myn_tumu_crisis_recovery.desc,Rally the imperial court under Minister Yu Qian, fortify Beijing, and repel the Oirat Mongol invaders.
+owo.task.myn_tumu_crisis_recovery.army,Mobilize 50,000 imperial troops
+owo.task.myn_tumu_crisis_recovery.treasury,Hold 1,000 fl. in the imperial treasury
+owo.goal.myn_rebuild_great_wall,Stone Walls of the Ming Frontier
+owo.goal.myn_rebuild_great_wall.desc,Construct contiguous stone and brick watchtowers along the northern frontier passes to ensure enduring peace.
+owo.task.myn_rebuild_great_wall.frontier_army,Garrison the northern marches with 30,000 soldiers
+owo.task.myn_rebuild_great_wall.treasury,Dedicate 2,500 fl. to frontier defenses
+owo.goal.myn_grand_canal,Dredge the Grand Canal
+owo.goal.myn_grand_canal.desc,Reconstruct and dredge the 1,700-kilometer Grand Canal to guarantee continuous grain shipments from the Yangtze to the capital.
+owo.task.myn_grand_canal.treasury,Invest 2,000 fl. in Grand Canal restoration
+owo.doctrine.government.t1,Feudal Oaths & Bailiffs
+owo.doctrine.government.t1.question,How is authority exercised across the realm?
+owo.doctrine.government.t1.feudal_oaths,Feudal Oaths & Vassalage
+owo.doctrine.government.t1.feudal_oaths.desc,Personal fealty and vassal contracts form the bedrock of the realm's military and civil order.
+owo.doctrine.government.t1.centralized_bailiffs,Crown Bailiffs & Sheriffs
+owo.doctrine.government.t1.centralized_bailiffs.desc,Direct royal officers enforce the sovereign's peace and collect crown dues across the provinces.
+owo.doctrine.government.t2,Councils & Assemblies
+owo.doctrine.government.t2.question,Who counsels the crown on law and taxation?
+owo.doctrine.government.t2.privy_council,Privy Council of Magnates
+owo.doctrine.government.t2.privy_council.desc,A select council of trusted lords and prelates guides statecraft with speed and discretion.
+owo.doctrine.government.t2.chartered_parliaments,Estates & Parliaments
+owo.doctrine.government.t2.chartered_parliaments.desc,Regular consultative assemblies of nobility, clergy, and burghers negotiate subsidies and redress grievances.
+owo.doctrine.government.t3,Codified Justice & Records
+owo.doctrine.government.t3.question,How are disputes settled and statutes recorded?
+owo.doctrine.government.t3.codified_customary_law,Codified Customary Law
+owo.doctrine.government.t3.codified_customary_law.desc,Recording local customs and royal decrees into authoritative statute rolls reduces arbitrary injustice.
+owo.doctrine.government.t3.chancery_clerks,Royal Chancery
+owo.doctrine.government.t3.chancery_clerks.desc,A dedicated administrative secretariat drafts charters, letters patent, and tax assessments with professional rigor.
+owo.doctrine.government.t4,Sovereign Ordinances
+owo.doctrine.government.t4.question,How far does royal decree reach?
+owo.doctrine.government.t4.royal_ordinances,Royal Ordinances & Edicts
+owo.doctrine.government.t4.royal_ordinances.desc,Binding sovereign edicts supersede regional feudal customs, establishing uniform royal jurisprudence.
+owo.doctrine.government.t4.provincial_intendants,Provincial Intendants
+owo.doctrine.government.t4.provincial_intendants.desc,Crown commissioners oversee local courts, tax collection, and civic order with full delegated authority.
+owo.doctrine.government.t5,Sovereign Statehood
+owo.doctrine.government.t5.question,What is the ultimate source of crown authority?
+owo.doctrine.government.t5.divine_right_monarchy,Divine Right Monarchy
+owo.doctrine.government.t5.divine_right_monarchy.desc,The crown's mandate is held directly from Providence, elevating the sovereign above all temporal faction.
+owo.doctrine.government.t5.bureaucratic_centralism,Bureaucratic Centralism
+owo.doctrine.government.t5.bureaucratic_centralism.desc,A permanent ministerial administration enforces royal policy from the capital across all crown lands.
+owo.doctrine.government.milestone,Centralized Monarchy
+owo.doctrine.government.milestone.desc,From disparate feudal claims, an enduring, institutional crown governance has been forged.
+owo.doctrine.society.t1,Agrarian Commons
+owo.doctrine.society.t1.question,How is land and labour organized in the countryside?
+owo.doctrine.society.t1.communal_commons,Communal Grazing & Open Fields
+owo.doctrine.society.t1.communal_commons.desc,Village open-field rotations and shared pasture sustain communal harmony and peasant livelihoods.
+owo.doctrine.society.t1.manorial_estates,Manorial Estate Demesnes
+owo.doctrine.society.t1.manorial_estates.desc,Concentrated noble demesnes maximize surplus grain and corvée duties for the crown's war chest.
+owo.doctrine.society.t2,Guilds & Peasant Status
+owo.doctrine.society.t2.question,What rights do urban artisans and rural workers hold?
+owo.doctrine.society.t2.guild_charters,Chartered Trade Guilds
+owo.doctrine.society.t2.guild_charters.desc,Exclusive craft charters regulate manufacturing standards, apprenticeship, and civic stability.
+owo.doctrine.society.t2.free_peasantry,Emancipation of Serfs
+owo.doctrine.society.t2.free_peasantry.desc,Commuting feudal bondages into monetary rents encourages peasant enterprise and population growth.
+owo.doctrine.society.t3,Civic Institutions & Learning
+owo.doctrine.society.t3.question,Who tends the sick and educates the learned?
+owo.doctrine.society.t3.monastic_hospitals,Monastic Infirmaries & Alms
+owo.doctrine.society.t3.monastic_hospitals.desc,Religious orders maintain hospital networks and charitable relief, shielding populations from disease and famine.
+owo.doctrine.society.t3.cathedral_schools,Cathedral Schools & Universities
+owo.doctrine.society.t3.cathedral_schools.desc,Scholastic faculties train jurists, theologians, and medical doctors to serve the realm.
+owo.doctrine.society.t4,Civic Order & Patronage
+owo.doctrine.society.t4.question,How do towns withstand crisis and display prosperity?
+owo.doctrine.society.t4.civic_relief_funds,Town Relief Granaries
+owo.doctrine.society.t4.civic_relief_funds.desc,Municipal grain reserves and emergency charity mitigate popular unrest during lean harvests.
+owo.doctrine.society.t4.burgher_patronage,Burgher Civic Patronage
+owo.doctrine.society.t4.burgher_patronage.desc,Wealthy merchant patricians endow public monuments, guildhalls, and hospitals to display civic renown.
+owo.doctrine.society.t5,Renaissance Flourishing
+owo.doctrine.society.t5.question,What culture defines the spirit of your people?
+owo.doctrine.society.t5.humanist_renaissance,Humanist Renaissance
+owo.doctrine.society.t5.humanist_renaissance.desc,Classical revival, vernacular literature, and natural philosophy ignite an unprecedented era of innovation.
+owo.doctrine.society.t5.estate_harmony,Concord of Estates
+owo.doctrine.society.t5.estate_harmony.desc,Balance among the nobility, clergy, and commons establishes deep social peace and enduring legitimacy.
+owo.doctrine.society.milestone,Renaissance Society
+owo.doctrine.society.milestone.desc,Your society has transitioned from dark insularity into a flourishing, cultured realm.
+owo.doctrine.diplomacy.t1,Heralds & Dynastic Ties
+owo.doctrine.diplomacy.t1.question,How do you initiate contact with foreign courts?
+owo.doctrine.diplomacy.t1.royal_heralds,Royal Heralds & Couriers
+owo.doctrine.diplomacy.t1.royal_heralds.desc,Inviolable royal heralds deliver solemn proclamations, safe conducts, and treaty terms across borders.
+owo.doctrine.diplomacy.t1.dynastic_marriages,Dynastic Royal Marriages
+owo.doctrine.diplomacy.t1.dynastic_marriages.desc,Strategic marital alliances bind princely houses together, cementing fragile peace with royal blood.
+owo.doctrine.diplomacy.t2,Embassies & Subsidies
+owo.doctrine.diplomacy.t2.question,How do you maintain continuous relations abroad?
+owo.doctrine.diplomacy.t2.resident_ambassadors,Permanent Resident Embassies
+owo.doctrine.diplomacy.t2.resident_ambassadors.desc,Stationing permanent diplomatic missions at key capitals ensures constant negotiation and intelligence.
+owo.doctrine.diplomacy.t2.tribute_and_subsidies,Diplomatic Subsidies & Tribute
+owo.doctrine.diplomacy.t2.tribute_and_subsidies.desc,Annual gold pensions keep buffer princes loyal and buy neutrality during major conflicts.
+owo.doctrine.diplomacy.t3,Alliances & Commerce
+owo.doctrine.diplomacy.t3.question,How do you protect your borders and sea lanes?
+owo.doctrine.diplomacy.t3.defensive_leagues,Mutual Defensive Leagues
+owo.doctrine.diplomacy.t3.defensive_leagues.desc,Formal collective defense treaties deter aggressive neighbours from attacking allied territories.
+owo.doctrine.diplomacy.t3.mercantile_treaties,Bilateral Capitulations & Trade Treaties
+owo.doctrine.diplomacy.t3.mercantile_treaties.desc,Reciprocal trading privileges, lowered tolls, and extraterritorial merchant quarters enrich foreign commerce.
+owo.doctrine.diplomacy.t4,Mediation & Coercion
+owo.doctrine.diplomacy.t4.question,How do you handle interstate rivalries?
+owo.doctrine.diplomacy.t4.papal_and_caliphal_mediation,Spiritual & Arbitrated Mediation
+owo.doctrine.diplomacy.t4.papal_and_caliphal_mediation.desc,Calling on venerable spiritual authorities to arbitrate territorial boundaries limits aggressive blowback.
+owo.doctrine.diplomacy.t4.coercive_ultimatums,Sovereign Ultimatums
+owo.doctrine.diplomacy.t4.coercive_ultimatums.desc,Forceful diplomatic ultimatums backed by military posturing compel weaker courts to yield without war.
+owo.doctrine.diplomacy.t5,World Hegemony
+owo.doctrine.diplomacy.t5.question,How do you structure the international order?
+owo.doctrine.diplomacy.t5.concert_of_realms,Concert of Great Powers
+owo.doctrine.diplomacy.t5.concert_of_realms.desc,Multilateral congresses and balance-of-power treaties preserve equilibrium among sovereign nations.
+owo.doctrine.diplomacy.t5.hegemonic_vassal_system,Imperial Suzerainty & Vassalage
+owo.doctrine.diplomacy.t5.hegemonic_vassal_system.desc,Subject princes owe military tribute and diplomatic subservience to the imperial throne.
+owo.doctrine.diplomacy.milestone,Grand Statecraft
+owo.doctrine.diplomacy.milestone.desc,Mastery of diplomacy has made your crown the undisputed arbiter of regional affairs.
+owo.doctrine.intelligence.t1,Court Informants
+owo.doctrine.intelligence.t1.question,How do you uncover plots against the throne?
+owo.doctrine.intelligence.t1.palace_informants,Palace Informants & Watchers
+owo.doctrine.intelligence.t1.palace_informants.desc,Bribery of courtiers and servants exposes treasonous domestic plots before they bear fruit.
+owo.doctrine.intelligence.t1.whispering_networks,Tavern & Port Whispering Networks
+owo.doctrine.intelligence.t1.whispering_networks.desc,Harbor watchers, innkeepers, and vagabonds report on troop movements and foreign agitators.
+owo.doctrine.intelligence.t2,Ciphers & Subversion
+owo.doctrine.intelligence.t2.question,How do you safeguard state secrets and sow discord?
+owo.doctrine.intelligence.t2.cryptographic_ciphers,Polyalphabetic Ciphers
+owo.doctrine.intelligence.t2.cryptographic_ciphers.desc,Mathematical secret writing shields sensitive diplomatic dispatches from interception.
+owo.doctrine.intelligence.t2.covert_provocateurs,Sedition & Provocateurs
+owo.doctrine.intelligence.t2.covert_provocateurs.desc,Covert agents infiltrate rival territories to incite unrest among discontented vassals.
+owo.doctrine.intelligence.t3,The Spymaster
+owo.doctrine.intelligence.t3.question,Who orchestrates the realm's covert reach?
+owo.doctrine.intelligence.t3.master_of_spies,The Master of Spies
+owo.doctrine.intelligence.t3.master_of_spies.desc,A high crown minister coordinates domestic surveillance, overseas safehouses, and black funds.
+owo.doctrine.intelligence.t3.subversive_propaganda,Pamphleteering & Preachers
+owo.doctrine.intelligence.t3.subversive_propaganda.desc,Distributing incendiary woodcuts and sponsoring travelling friars undermines enemy legitimacy.
+owo.doctrine.intelligence.t4,Inquisition & Counter-Spies
+owo.doctrine.intelligence.t4.question,How do you neutralize hostile infiltrators?
+owo.doctrine.intelligence.t4.inquisitorial_apparatus,Inquisitorial Tribunal
+owo.doctrine.intelligence.t4.inquisitorial_apparatus.desc,Systematic investigative tribunals root out foreign heretics, saboteurs, and double agents.
+owo.doctrine.intelligence.t4.intercepted_pigeon_couriers,Carrier Pigeon Interceptions
+owo.doctrine.intelligence.t4.intercepted_pigeon_couriers.desc,Postal censorship and intercepting homing couriers cracks foreign communication chains.
+owo.doctrine.intelligence.t5,Shadow Hegemony
+owo.doctrine.intelligence.t5.question,How do you wield unseen power?
+owo.doctrine.intelligence.t5.black_chamber_statecraft,The Sovereign Black Chamber
+owo.doctrine.intelligence.t5.black_chamber_statecraft.desc,A clandestine royal intelligence bureau capable of forging treaties, bribing regents, and altering successions.
+owo.doctrine.intelligence.t5.covert_dynastic_intrigue,Dynastic Sabotage & Poison
+owo.doctrine.intelligence.t5.covert_dynastic_intrigue.desc,Targeted covert operations eliminate key enemy commanders and heirs at decisive historical moments.
+owo.doctrine.intelligence.milestone,Master of the Shadows
+owo.doctrine.intelligence.milestone.desc,No secret in the known world is kept from your all-seeing intelligence apparatus.
+owo.doctrine.industry.t1,Milling & Forestry
+owo.doctrine.industry.t1.question,How do you harness mechanical power and timber?
+owo.doctrine.industry.t1.water_powered_mills,Water-Powered Mills
+owo.doctrine.industry.t1.water_powered_mills.desc,Waterwheels driving grain mills, fulling mills, and sawmills multiply provincial production output.
+owo.doctrine.industry.t1.timber_and_charcoal_works,Managed Forestry & Charcoal Kilns
+owo.doctrine.industry.t1.timber_and_charcoal_works.desc,Systematic coppicing and earthen charcoal kilns supply the indispensable fuel for medieval metalworking.
+owo.doctrine.industry.t2,Foundries & Stone
+owo.doctrine.industry.t2.question,How do you extract and refine building materials?
+owo.doctrine.industry.t2.guild_metalwork_foundries,Foundry Castings & Smiths
+owo.doctrine.industry.t2.guild_metalwork_foundries.desc,Cooperative foundry furnaces produce durable wrought iron tools, anchors, and armor plates.
+owo.doctrine.industry.t2.quarry_and_masonry_concessions,Royal Quarries & Master Masons
+owo.doctrine.industry.t2.quarry_and_masonry_concessions.desc,Organized quarrying and stonecutters' lodges accelerate cathedral and fortress construction.
+owo.doctrine.industry.t3,Arsenals & Deep Mining
+owo.doctrine.industry.t3.question,How do you equip armies and dig deeper?
+owo.doctrine.industry.t3.arsenal_shipbuilding,State Naval Arsenals
+owo.doctrine.industry.t3.arsenal_shipbuilding.desc,Centralized drydocks and ropewalks build and equip galleys and cogs with modular efficiency.
+owo.doctrine.industry.t3.deep_shaft_mining,Deep-Shaft Mining & Drainage
+owo.doctrine.industry.t3.deep_shaft_mining.desc,Horse-whim drainage pumps and timber shoring unlock rich silver, copper, and tin veins underground.
+owo.doctrine.industry.t4,Blast Furnaces & Armaments
+owo.doctrine.industry.t4.question,How do you modernize heavy metallurgy?
+owo.doctrine.industry.t4.early_blast_furnaces,Early Blast Furnaces
+owo.doctrine.industry.t4.early_blast_furnaces.desc,Tall masonry blast furnaces with water bellows produce continuous cast pig iron at high heat.
+owo.doctrine.industry.t4.royal_arms_manufactories,Royal Armouries & Gunfoundries
+owo.doctrine.industry.t4.royal_arms_manufactories.desc,Consolidated crown workshops forge arquebuses, crossbars, and iron shot at massive scale.
+owo.doctrine.industry.t5,Proto-Industry
+owo.doctrine.industry.t5.question,What will your realm's productive future become?
+owo.doctrine.industry.t5.proto_industrial_workshops,Proto-Industrial Workshops
+owo.doctrine.industry.t5.proto_industrial_workshops.desc,Putting-out systems and regional artisanal clusters pioneer high-volume manufacturing.
+owo.doctrine.industry.t5.standardized_ordnance,Standardized Calibers & Ordnance
+owo.doctrine.industry.t5.standardized_ordnance.desc,Strict metallurgical calibers ensure ammunition interchangeability and devastating battlefield efficiency.
+owo.doctrine.industry.milestone,Proto-Industrial Revolution
+owo.doctrine.industry.milestone.desc,Your furnaces, mines, and arsenals make your realm the mechanical titan of the late medieval age.
+mod.ui.popup.title,Welcome to Old World Order
+mod.ui.popup.body,You lead one of ~120 nations in 1450 AD. Command historically accurate armies, forge alliances, and rewrite the fate of the medieval world. This mod features the Ottoman Empire, Ming Dynasty, Portugal, France, England, Muscovy, the Timurids, and more.
+mod.ui.popup.continue,Continue
+mod.ui.popup.mod_info,Open Mod Info
 doctrine.industry.t1.mass_production_system,Movable Type Printing Press
 doctrine.industry.t1.mass_production_system.desc,Hand mold casting lead alloy type and screw presses that democratize book production and administrative recordkeeping.
 doctrine.industry.t2.continuous_production,Watermill & Windmill Engineering

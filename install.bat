@@ -98,7 +98,7 @@ if errorlevel 1 (
     pause & exit /b 1
 )
 
-if not exist "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.1\OldWorldOrder.ModCSharp.dll" (
+if not exist "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.0\OldWorldOrder.ModCSharp.dll" (
     echo ERROR: Managed build completed but OldWorldOrder.ModCSharp.dll was not produced.
     pause & exit /b 1
 )
@@ -310,7 +310,7 @@ if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on Content\ & pause & exit /
 
 if /I "%BUILD_VARIANT%"=="sdk" (
     if not exist "%TARGET%\Mods" mkdir "%TARGET%\Mods"
-    copy /Y "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.1\OldWorldOrder.ModCSharp.dll" "%TARGET%\Mods\OldWorldOrder.ModCSharp.dll" >nul
+    copy /Y "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.0\OldWorldOrder.ModCSharp.dll" "%TARGET%\Mods\OldWorldOrder.ModCSharp.dll" >nul
     if errorlevel 1 ( echo ERROR: failed to copy managed entrypoint DLL to Mods\ & pause & exit /b 1 )
 
     if exist "%TARGET%\Content\mod.wasm" (

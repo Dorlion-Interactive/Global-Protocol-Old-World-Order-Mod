@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>OldWorldOrder.ModCSharp</AssemblyName>
     <RootNamespace>GlobalProtocol.Mods.OldWorldOrder</RootNamespace>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <!--
-      OUTPUT: bin/Release/netstandard2.1/OldWorldOrder.ModCSharp.dll
+      OUTPUT: bin/Release/netstandard2.0/OldWorldOrder.ModCSharp.dll
 
       This is Variant C — native C# delegate mod (no WASM).
       To activate this variant at runtime:
