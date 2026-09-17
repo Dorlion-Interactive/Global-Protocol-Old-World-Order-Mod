@@ -341,3 +341,30 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
+owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
+owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury
+owo.goal.basic_first_alliance,Seek a Trusted Ally
+owo.goal.basic_first_alliance.desc,No crown stands alone for long. Win the friendship of a neighbour.
+owo.task.basic_first_alliance.relations,Reach good relations with another realm
+owo.goal.ott_heir_of_rome,Heir of Rome
+owo.goal.ott_heir_of_rome.desc,Take Constantinople and claim the mantle of the Caesars.
+owo.task.ott_heir_of_rome.war,Declare war on the Byzantine Empire
+owo.task.ott_heir_of_rome.army,Muster 20,000 soldiers
+owo.goal.ott_anatolian_unity,Anatolian Unity
+owo.goal.ott_anatolian_unity.desc,Bring Karaman and the other beyliks under the Sultan's authority.
+owo.task.ott_anatolian_unity.karaman,Declare war on the Karamanids
+owo.task.ott_anatolian_unity.candar,Reach good relations with the Candarids
+owo.goal.fra_end_hundred_years_war,End the Hundred Years' War
+owo.goal.fra_end_hundred_years_war.desc,Drive the English crown from Normandy and Guyenne for good.
+owo.task.fra_end_hundred_years_war.war,Declare war on England
+owo.task.fra_end_hundred_years_war.army,Muster 15,000 soldiers
+owo.goal.fra_contain_burgundy,Contain Burgundy
+owo.goal.fra_contain_burgundy.desc,Keep the Grand Dukes of the West from carving a kingdom out of France's borderlands.
+owo.task.fra_contain_burgundy.scotland,Renew the Auld Alliance with Scotland
+owo.goal.cas_reconquista,Complete the Reconquista
+owo.goal.cas_reconquista.desc,Bring down the Emirate of Granada, the last Muslim realm in Iberia.
+owo.task.cas_reconquista.war,Declare war on Granada
+owo.goal.cas_union_with_aragon,Union of the Crowns
+owo.goal.cas_union_with_aragon.desc,Bind Castile and Aragon together into one Spanish monarchy.
+owo.task.cas_union_with_aragon.alliance,Ally with the Crown of Aragon

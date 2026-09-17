@@ -341,3 +341,30 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Kraliyet Çiftlikleri
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Kurutulan bataklıklar, yeni köyler ve taç çiftlikleri diyarın servetini topraktan devşirir.
 owo.doctrine.economy.milestone,Ticaret Devrimi
 owo.doctrine.economy.milestone.desc,Bankacılık, poliçeler ve uzak ticaret diyarının servetini onun için çalıştırır hale getirdi.
+owo.goal.basic_fill_the_treasury,Kraliyet Hazinesini Doldur
+owo.goal.basic_fill_the_treasury.desc,Parası olmayan bir diyar ne ordu kurabilir ne de barışı koruyabilir. Korumaya değer bir birikim yap.
+owo.task.basic_fill_the_treasury.treasury,Hazinede 500 fl. biriktir
+owo.goal.basic_first_alliance,Güvenilir Bir Müttefik Ara
+owo.goal.basic_first_alliance.desc,Hiçbir taç uzun süre tek başına ayakta kalamaz. Bir komşunun dostluğunu kazan.
+owo.task.basic_first_alliance.relations,Başka bir diyarla iyi ilişkiler kur
+owo.goal.ott_heir_of_rome,Roma'nın Vârisi
+owo.goal.ott_heir_of_rome.desc,Konstantinopolis'i al ve Kayser-i Rûm unvanını sahiplen.
+owo.task.ott_heir_of_rome.war,Bizans İmparatorluğu'na savaş ilan et
+owo.task.ott_heir_of_rome.army,20.000 asker topla
+owo.goal.ott_anatolian_unity,Anadolu Birliği
+owo.goal.ott_anatolian_unity.desc,Karaman'ı ve diğer beylikleri Sultan'ın otoritesi altına al.
+owo.task.ott_anatolian_unity.karaman,Karamanoğulları'na savaş ilan et
+owo.task.ott_anatolian_unity.candar,Candaroğulları ile iyi ilişkiler kur
+owo.goal.fra_end_hundred_years_war,Yüz Yıl Savaşları'nı Bitir
+owo.goal.fra_end_hundred_years_war.desc,İngiliz tacını Normandiya ve Guyenne'den kesin olarak çıkar.
+owo.task.fra_end_hundred_years_war.war,İngiltere'ye savaş ilan et
+owo.task.fra_end_hundred_years_war.army,15.000 asker topla
+owo.goal.fra_contain_burgundy,Burgonya'yı Dizginle
+owo.goal.fra_contain_burgundy.desc,Batı'nın Büyük Dükleri'nin Fransa'nın sınır topraklarından bir krallık oyup çıkarmasını engelle.
+owo.task.fra_contain_burgundy.scotland,İskoçya ile Eski İttifak'ı yenile
+owo.goal.cas_reconquista,Reconquista'yı Tamamla
+owo.goal.cas_reconquista.desc,İber Yarımadası'ndaki son Müslüman devlet olan Gırnata Emirliği'ni düşür.
+owo.task.cas_reconquista.war,Gırnata'ya savaş ilan et
+owo.goal.cas_union_with_aragon,Tacların Birliği
+owo.goal.cas_union_with_aragon.desc,Kastilya ile Aragon'u tek bir İspanyol monarşisinde birleştir.
+owo.task.cas_union_with_aragon.alliance,Aragon Tacı ile ittifak kur

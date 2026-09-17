@@ -8,7 +8,7 @@
     "gdpScale": 0.001,
     "economicEraLabel": "Florins",
     "currencySymbol": "fl.",
-    "nationalGoalsFile": "Content/goals_old_world_order.json",
+    "nationalGoalsFile": "national_goals.json",
     "clearDiplomaticRelationships": true,
     "clearDiplomacyScope": "extended",
     "rebuildNeutralRelations": true,
