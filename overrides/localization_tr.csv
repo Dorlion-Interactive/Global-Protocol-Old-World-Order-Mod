@@ -287,13 +287,57 @@ doctrine.economy.t1.fiscal_discipline,Çift Taraflı Muhasebe ve Tüccar Bankac�
 doctrine.economy.t1.fiscal_discipline.desc,Ticarette devrim yaratan Venedik ve Floransa usulü çift taraflı defterler, poliçeler ve tüccar mevduat bankaları.
 doctrine.economy.t3.commercial_economy,Karavela Gövdesi ve Latin Yelken Donanımı
 doctrine.economy.t3.commercial_economy.desc,Gemilerin ters rüzgarlara karşı seyredebilmesini sağlayan kıvrak sığ su gövdeleri ve üçgen latin yelkenler.
-doctrine.industry.t1.mass_production_system,Hareketli Harfli Matbaa
-doctrine.industry.t1.mass_production_system.desc,Kitap üretimini ve idari kayıt tutmayı yaygınlaştıran kurşun alaşımlı döküm harfler ve vidalı baskı presleri.
-doctrine.industry.t2.continuous_production,Su ve Rüzgar Değirmeni Mühendisliği
-doctrine.industry.t2.continuous_production.desc,Kırsal vilayetlerde mekanik iş gücünü katlayan gelişmiş dişli miller ve gelgit değirmenleri.
-doctrine.diplomacy.t1.mobile_envoy_service,Diplomatik Şifreler ve Ulak Hattı
-doctrine.diplomacy.t1.mobile_envoy_service.desc,Vilayetler arası güvenli iletişimi sağlayan şifreli diplomatik yazışmalar ve hızlı kraliyet atlı ulak ağları.
-doctrine.intelligence.t1.centralized_intelligence_directorate,Kraliyet Başcasusluğu ve Muhbir Ağları
-doctrine.intelligence.t1.centralized_intelligence_directorate.desc,Yabancı komplolara dair önceden istihbarat sağlayan saray muhbirleri, tüccar casuslar ve liman gözcüleri.
-doctrine.intelligence.t4.defensive_counter_intelligence,Engizisyon ve Hükümdar Gözetimi
-doctrine.intelligence.t4.defensive_counter_intelligence.desc,Yabancı fitneleri tespit etmeye odaklanan kraliyet mahkemeleri, şehir muhafızları ve dini denetim.
+owo.doctrine.military.t1,Levy ve Maiyet
+owo.doctrine.military.t1.question,Ordularını nasıl topluyorsun?
+owo.doctrine.military.t1.feudal_levies,Feodal Levyeler
+owo.doctrine.military.t1.feudal_levies.desc,Vasallar köylüleri ve silahlı adamlarıyla çağrıya uyar: ucuz, bol ama toplanması yavaş.
+owo.doctrine.military.t2,Muharebe Taktikleri
+owo.doctrine.military.t2.question,Savaşları hangi taktiklerle kazanıyorsun?
+owo.doctrine.military.t2.heavy_cavalry_charge,Ağır Süvari Hücumu
+owo.doctrine.military.t2.heavy_cavalry_charge.desc,Zırhlı şövalyeler ve sipahiler düşman hattını tek bir gürleyen hücumla yarar; bedeli at ve zırhla ağır ödenir.
+owo.doctrine.military.t3,Kuşatma Sanatı
+owo.doctrine.military.t3.question,Surları nasıl yıkıyor ya da savunuyorsun?
+owo.doctrine.military.t3.bastion_fortifications,Tabya Tahkimatı
+owo.doctrine.military.t3.bastion_fortifications.desc,Alçak, kalın ve açılı tabyalar top ateşine dayanır ve her sınır kalesini kuşatanlar için bir tuzağa çevirir.
+owo.doctrine.military.t4,İkmal ve Sefer
+owo.doctrine.military.t4.question,Orduları sahada nasıl ayakta tutuyorsun?
+owo.doctrine.military.t4.baggage_trains,Ağırlık Kolları ve Menziller
+owo.doctrine.military.t4.baggage_trains.desc,Araba kolları, nehir mavnaları ve tahkimli menzil hanları uzun seferlerde orduyu besler.
+owo.doctrine.military.t4.living_off_the_land,Yerel Tedarik
+owo.doctrine.military.t4.living_off_the_land.desc,Ordular yürürken yem toplar ve el koyar: beslemesi ucuzdur, geçtiği vilayetler içinse acıdır.
+owo.doctrine.military.t5,Daimi Ordular
+owo.doctrine.military.t5.question,Diyarının ordusu neye dönüşecek?
+owo.doctrine.military.t5.permanent_standing_army,Daimi Ordu
+owo.doctrine.military.t5.permanent_standing_army.desc,Taç sancağı altındaki maaşlı bölükler barışta da savaşta da silah altında kalır.
+owo.doctrine.military.t5.condottieri_contracts,Kondottiyeri Sözleşmeleri
+owo.doctrine.military.t5.condottieri_contracts.desc,Paralı asker kaptanları bütün bölükleri sözleşmeyle satar; altın nerede iyiyse oraya yürümeye hazırdır.
+owo.doctrine.military.milestone,Askeri Devrim
+owo.doctrine.military.milestone.desc,Barut, talim ve daimi bölükler diyarının savaşma biçimini yeniden şekillendirdi.
+owo.doctrine.economy.t1,Kraliyet Maliyesi
+owo.doctrine.economy.t1.question,Taç hazinesini nasıl dolduruyor?
+owo.doctrine.economy.t1.tax_farming,İltizam
+owo.doctrine.economy.t1.tax_farming.desc,Mültezimler vergi toplama hakkını peşin satın alır: taca hızlı gelir, köylüye zor günler.
+owo.doctrine.economy.t2,Loncalar ve Pazarlar
+owo.doctrine.economy.t2.question,Kasabalarında ticareti kim yönetiyor?
+owo.doctrine.economy.t2.chartered_craft_guilds,Beratlı Esnaf Loncaları
+owo.doctrine.economy.t2.chartered_craft_guilds.desc,Kraliyet beratları loncalara her atölyede kalite, fiyat ve çıraklar üzerinde söz hakkı verir.
+owo.doctrine.economy.t2.free_fairs,Serbest Panayırlar ve Pazar Kasabaları
+owo.doctrine.economy.t2.free_fairs.desc,Gümrüksüz mevsimlik panayırlar uzak diyarlardan tüccarları pazar kasabalarına çeker.
+owo.doctrine.economy.t3,Uzak Ticaret
+owo.doctrine.economy.t3.question,Servetin hangi yollardan geçiyor?
+owo.doctrine.economy.t3.caravanserai_network,Kervansaray Ağı
+owo.doctrine.economy.t3.caravanserai_network.desc,Birer günlük mesafedeki tahkimli hanlar ipek ve baharat kervanlarının karadan güvenle ilerlemesini sağlar.
+owo.doctrine.economy.t4,Ambarlar ve Sikke
+owo.doctrine.economy.t4.question,Kıtlığa ve sikke tağşişine nasıl dayanıyorsun?
+owo.doctrine.economy.t4.royal_granaries,Kraliyet Ambarları
+owo.doctrine.economy.t4.royal_granaries.desc,Taç ambarları bereketli yıllarda tahıl alır, kıt yıllarda kapılarını açar.
+owo.doctrine.economy.t4.sound_coinage,Sağlam Sikke
+owo.doctrine.economy.t4.sound_coinage.desc,Güvenilir darphane sikkeyi kırpmayı ve tağşişi reddeder; borç verenler tacın itibarını ödüllendirir.
+owo.doctrine.economy.t5,Ticari Güç
+owo.doctrine.economy.t5.question,Nasıl bir ekonomik güç olacaksın?
+owo.doctrine.economy.t5.trading_post_empire,Ticaret Karakolları İmparatorluğu
+owo.doctrine.economy.t5.trading_post_empire.desc,Uzak kıyılardaki tahkimli ticaret karakolları baharatı, altını ve şekeri kraliyet hazinesine akıtır.
+owo.doctrine.economy.t5.agrarian_crown_estates,Kraliyet Çiftlikleri
+owo.doctrine.economy.t5.agrarian_crown_estates.desc,Kurutulan bataklıklar, yeni köyler ve taç çiftlikleri diyarın servetini topraktan devşirir.
+owo.doctrine.economy.milestone,Ticaret Devrimi
+owo.doctrine.economy.milestone.desc,Bankacılık, poliçeler ve uzak ticaret diyarının servetini onun için çalıştırır hale getirdi.

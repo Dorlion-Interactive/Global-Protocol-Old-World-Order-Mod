@@ -287,13 +287,57 @@ doctrine.economy.t1.fiscal_discipline,Double-Entry Bookkeeping & Merchant Bankin
 doctrine.economy.t1.fiscal_discipline.desc,Venetian and Florentine double-entry ledgers, bills of exchange, and merchant deposit banks revolutionizing commerce.
 doctrine.economy.t3.commercial_economy,Caravel Hull & Lateen Sail Rigging
 doctrine.economy.t3.commercial_economy.desc,Manoeuvrable shallow-draft hulls combined with triangular lateen sails, enabling ships to tack against head winds.
-doctrine.industry.t1.mass_production_system,Movable Type Printing Press
-doctrine.industry.t1.mass_production_system.desc,Hand mold casting lead alloy type and screw presses that democratize book production and administrative recordkeeping.
-doctrine.industry.t2.continuous_production,Watermill & Windmill Engineering
-doctrine.industry.t2.continuous_production.desc,Sophisticated geared drive shafts and tidal mills multiplying mechanical work output across rural provinces.
-doctrine.diplomacy.t1.mobile_envoy_service,Diplomatic Ciphers & Courier Relay
-doctrine.diplomacy.t1.mobile_envoy_service.desc,Encrypted diplomatic dispatches and fast royal horse relay networks ensuring secure communication across provinces.
-doctrine.intelligence.t1.centralized_intelligence_directorate,Royal Spymaster & Informant Rings
-doctrine.intelligence.t1.centralized_intelligence_directorate.desc,Recruitment of court informants, merchant spies, and harbor watchers providing advance intelligence of foreign schemes.
-doctrine.intelligence.t4.defensive_counter_intelligence,Inquisition & Crown Surveillance
-doctrine.intelligence.t4.defensive_counter_intelligence.desc,Royal judicial courts, town watches, and ecclesiastical scrutiny rooted in detecting foreign sedition.
+owo.doctrine.military.t1,Levy and Retinue
+owo.doctrine.military.t1.question,How are your armies raised?
+owo.doctrine.military.t1.feudal_levies,Feudal Levies
+owo.doctrine.military.t1.feudal_levies.desc,Vassals answer the summons with their peasants and men-at-arms: cheap, plentiful and slow to muster.
+owo.doctrine.military.t2,Battlefield Tactics
+owo.doctrine.military.t2.question,Which tactics win your battles?
+owo.doctrine.military.t2.heavy_cavalry_charge,Heavy Cavalry Charge
+owo.doctrine.military.t2.heavy_cavalry_charge.desc,Armoured knights and sipahis break the enemy line in one thundering charge, at a steep price in horses and armour.
+owo.doctrine.military.t3,Siegecraft
+owo.doctrine.military.t3.question,How do you break walls, or hold them?
+owo.doctrine.military.t3.bastion_fortifications,Bastion Fortifications
+owo.doctrine.military.t3.bastion_fortifications.desc,Low, thick angled bastions shrug off cannon fire and turn every border fortress into a trap for besiegers.
+owo.doctrine.military.t4,Supply and March
+owo.doctrine.military.t4.question,How do you keep armies in the field?
+owo.doctrine.military.t4.baggage_trains,Baggage Trains and Depots
+owo.doctrine.military.t4.baggage_trains.desc,Wagon trains, river barges and fortified depots keep the host fed through long campaigns.
+owo.doctrine.military.t4.living_off_the_land,Living off the Land
+owo.doctrine.military.t4.living_off_the_land.desc,Armies forage and requisition as they march: cheap to keep, bitter for the provinces they cross.
+owo.doctrine.military.t5,Standing Armies
+owo.doctrine.military.t5.question,What will your realm's army become?
+owo.doctrine.military.t5.permanent_standing_army,Permanent Standing Army
+owo.doctrine.military.t5.permanent_standing_army.desc,Salaried companies under the crown's banner stay under arms in peace and war alike.
+owo.doctrine.military.t5.condottieri_contracts,Condottieri Contracts
+owo.doctrine.military.t5.condottieri_contracts.desc,Mercenary captains sell whole companies by contract, ready to march wherever the gold is good.
+owo.doctrine.military.milestone,Military Revolution
+owo.doctrine.military.milestone.desc,Gunpowder, drill and permanent companies have remade how your realm wages war.
+owo.doctrine.economy.t1,Royal Finances
+owo.doctrine.economy.t1.question,How does the crown fill its coffers?
+owo.doctrine.economy.t1.tax_farming,Tax Farming
+owo.doctrine.economy.t1.tax_farming.desc,Collectors buy the right to gather taxes in advance: quick coin for the crown, hard times for the peasantry.
+owo.doctrine.economy.t2,Guilds and Markets
+owo.doctrine.economy.t2.question,Who controls trade in your towns?
+owo.doctrine.economy.t2.chartered_craft_guilds,Chartered Craft Guilds
+owo.doctrine.economy.t2.chartered_craft_guilds.desc,Royal charters grant guilds control over quality, prices and apprentices in every workshop.
+owo.doctrine.economy.t2.free_fairs,Free Fairs and Market Towns
+owo.doctrine.economy.t2.free_fairs.desc,Toll-free seasonal fairs draw merchants from distant lands to your market towns.
+owo.doctrine.economy.t3,Long-Distance Trade
+owo.doctrine.economy.t3.question,Where does your wealth travel?
+owo.doctrine.economy.t3.caravanserai_network,Caravanserai Network
+owo.doctrine.economy.t3.caravanserai_network.desc,Fortified inns a day's ride apart keep the silk and spice caravans moving safely overland.
+owo.doctrine.economy.t4,Granaries and Coinage
+owo.doctrine.economy.t4.question,How do you weather famine and debasement?
+owo.doctrine.economy.t4.royal_granaries,Royal Granaries
+owo.doctrine.economy.t4.royal_granaries.desc,Crown granaries buy grain in good harvests and open their doors in lean years.
+owo.doctrine.economy.t4.sound_coinage,Sound Coinage
+owo.doctrine.economy.t4.sound_coinage.desc,A trusted mint refuses to clip or debase the coin, and lenders reward the crown's good name.
+owo.doctrine.economy.t5,Mercantile Power
+owo.doctrine.economy.t5.question,What kind of economic power will you be?
+owo.doctrine.economy.t5.trading_post_empire,Trading-Post Empire
+owo.doctrine.economy.t5.trading_post_empire.desc,Fortified factories on distant coasts funnel spices, gold and sugar into the royal treasury.
+owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
+owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
+owo.doctrine.economy.milestone,Commercial Revolution
+owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.

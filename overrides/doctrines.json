@@ -1,154 +1,375 @@
 {
+  "mode": "replace",
   "branches": [
     {
       "id": "military",
+      "name_key": "doctrine.branch.military",
+      "desc_key": "doctrine.branch.military.desc",
       "tiers": [
         {
+          "name_key": "owo.doctrine.military.t1",
+          "question_key": "owo.doctrine.military.t1.question",
           "doctrines": [
             {
               "id": "professional_armed_forces",
+              "name_key": "doctrine.military.t1.professional_armed_forces",
+              "desc_key": "doctrine.military.t1.professional_armed_forces.desc",
+              "icon": "military_t1a_professional_armed_forces",
               "effects": {
                 "military_defense": 0.08,
                 "unit_build_speed_mult": 0.95,
                 "recruit_cost_mult": 1.1
+              },
+              "ai": {
+                "military": 0.6,
+                "stability": 0.2
+              }
+            },
+            {
+              "id": "feudal_levies",
+              "name_key": "owo.doctrine.military.t1.feudal_levies",
+              "desc_key": "owo.doctrine.military.t1.feudal_levies.desc",
+              "icon": "military_t1b_mass_mobilization",
+              "effects": {
+                "manpower_regen_mult": 1.15,
+                "recruit_cost_mult": 0.9,
+                "readiness_mult": 0.95
+              },
+              "ai": {
+                "military": 0.5,
+                "economy": 0.2
               }
             }
           ]
         },
         {
+          "name_key": "owo.doctrine.military.t2",
+          "question_key": "owo.doctrine.military.t2.question",
           "doctrines": [
             {
               "id": "precision_warfare",
+              "name_key": "doctrine.military.t2.precision_warfare",
+              "desc_key": "doctrine.military.t2.precision_warfare.desc",
+              "icon": "military_t2a_precision_warfare",
               "effects": {
                 "military_attack": 0.06,
                 "military_defense": 0.04
+              },
+              "ai": {
+                "military": 0.6
+              }
+            },
+            {
+              "id": "heavy_cavalry_charge",
+              "name_key": "owo.doctrine.military.t2.heavy_cavalry_charge",
+              "desc_key": "owo.doctrine.military.t2.heavy_cavalry_charge.desc",
+              "icon": "military_t2b_attrition_warfare",
+              "effects": {
+                "military_attack": 0.1,
+                "upkeep_mult": 1.06
+              },
+              "ai": {
+                "military": 0.7
               }
             }
           ]
         },
         {
+          "name_key": "owo.doctrine.military.t3",
+          "question_key": "owo.doctrine.military.t3.question",
           "doctrines": [
             {
               "id": "heavy_firepower",
+              "name_key": "doctrine.military.t3.heavy_firepower",
+              "desc_key": "doctrine.military.t3.heavy_firepower.desc",
+              "icon": "military_t3a_heavy_firepower",
               "effects": {
                 "military_attack": 0.1,
                 "upkeep_mult": 1.08
+              },
+              "ai": {
+                "military": 0.7
+              }
+            },
+            {
+              "id": "bastion_fortifications",
+              "name_key": "owo.doctrine.military.t3.bastion_fortifications",
+              "desc_key": "owo.doctrine.military.t3.bastion_fortifications.desc",
+              "icon": "military_t3c_balanced_modernization",
+              "effects": {
+                "military_defense": 0.12,
+                "construction_speed_mult": 0.95
+              },
+              "ai": {
+                "military": 0.4,
+                "stability": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.military.t4",
+          "question_key": "owo.doctrine.military.t4.question",
+          "doctrines": [
+            {
+              "id": "baggage_trains",
+              "name_key": "owo.doctrine.military.t4.baggage_trains",
+              "desc_key": "owo.doctrine.military.t4.baggage_trains.desc",
+              "icon": "military_t4c_national_logistics_network",
+              "effects": {
+                "readiness_mult": 1.08,
+                "war_exhaustion_mult": 0.92
+              },
+              "ai": {
+                "military": 0.5,
+                "stability": 0.2
+              }
+            },
+            {
+              "id": "living_off_the_land",
+              "name_key": "owo.doctrine.military.t4.living_off_the_land",
+              "desc_key": "owo.doctrine.military.t4.living_off_the_land.desc",
+              "icon": "military_t4a_expeditionary_logistics",
+              "effects": {
+                "upkeep_mult": 0.9,
+                "war_exhaustion_mult": 1.08
+              },
+              "ai": {
+                "military": 0.4,
+                "economy": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.military.t5",
+          "question_key": "owo.doctrine.military.t5.question",
+          "doctrines": [
+            {
+              "id": "permanent_standing_army",
+              "name_key": "owo.doctrine.military.t5.permanent_standing_army",
+              "desc_key": "owo.doctrine.military.t5.permanent_standing_army.desc",
+              "icon": "military_t5b_regional_dominance",
+              "effects": {
+                "military_attack": 0.08,
+                "military_defense": 0.08,
+                "upkeep_mult": 1.12
+              },
+              "ai": {
+                "military": 0.8
+              }
+            },
+            {
+              "id": "condottieri_contracts",
+              "name_key": "owo.doctrine.military.t5.condottieri_contracts",
+              "desc_key": "owo.doctrine.military.t5.condottieri_contracts.desc",
+              "icon": "military_t5a_global_power_projection",
+              "effects": {
+                "manpower_regen_mult": 1.2,
+                "recruit_cost_mult": 1.15
+              },
+              "ai": {
+                "military": 0.5,
+                "economy": 0.2
               }
             }
           ]
         }
-      ]
-    },
-    {
-      "id": "government"
+      ],
+      "milestone": {
+        "id": "military_milestone",
+        "name_key": "owo.doctrine.military.milestone",
+        "desc_key": "owo.doctrine.military.milestone.desc",
+        "icon": "military_milestone",
+        "effects": {
+          "military_attack": 0.05,
+          "military_defense": 0.05
+        }
+      }
     },
     {
       "id": "economy",
+      "name_key": "doctrine.branch.economy",
+      "desc_key": "doctrine.branch.economy.desc",
       "tiers": [
         {
+          "name_key": "owo.doctrine.economy.t1",
+          "question_key": "owo.doctrine.economy.t1.question",
           "doctrines": [
-            {},
-            {},
             {
               "id": "fiscal_discipline",
+              "name_key": "doctrine.economy.t1.fiscal_discipline",
+              "desc_key": "doctrine.economy.t1.fiscal_discipline.desc",
+              "icon": "economy_t1c_fiscal_discipline",
               "effects": {
                 "gdp_modifier": 0.08,
                 "research_speed": 0.05,
                 "tax_efficiency_mult": 1.05
+              },
+              "ai": {
+                "economy": 0.6,
+                "stability": 0.2
+              }
+            },
+            {
+              "id": "tax_farming",
+              "name_key": "owo.doctrine.economy.t1.tax_farming",
+              "desc_key": "owo.doctrine.economy.t1.tax_farming.desc",
+              "icon": "economy_t1a_growth_first_economics",
+              "effects": {
+                "tax_efficiency_mult": 1.1,
+                "stability_delta_monthly": -0.05
+              },
+              "ai": {
+                "economy": 0.6
               }
             }
           ]
         },
-        {},
         {
+          "name_key": "owo.doctrine.economy.t2",
+          "question_key": "owo.doctrine.economy.t2.question",
           "doctrines": [
-            {},
+            {
+              "id": "chartered_craft_guilds",
+              "name_key": "owo.doctrine.economy.t2.chartered_craft_guilds",
+              "desc_key": "owo.doctrine.economy.t2.chartered_craft_guilds.desc",
+              "icon": "economy_t2a_state_led_investment",
+              "effects": {
+                "production_output_mult": 1.08,
+                "trade_income_mult": 0.97
+              },
+              "ai": {
+                "economy": 0.5,
+                "stability": 0.2
+              }
+            },
+            {
+              "id": "free_fairs",
+              "name_key": "owo.doctrine.economy.t2.free_fairs",
+              "desc_key": "owo.doctrine.economy.t2.free_fairs.desc",
+              "icon": "economy_t2b_market_led_investment",
+              "effects": {
+                "trade_income_mult": 1.1,
+                "tax_efficiency_mult": 0.97
+              },
+              "ai": {
+                "economy": 0.6
+              }
+            }
+          ]
+        },
+        {
+          "name_key": "owo.doctrine.economy.t3",
+          "question_key": "owo.doctrine.economy.t3.question",
+          "doctrines": [
             {
               "id": "commercial_economy",
+              "name_key": "doctrine.economy.t3.commercial_economy",
+              "desc_key": "doctrine.economy.t3.commercial_economy.desc",
+              "icon": "economy_t3b_commercial_economy",
               "effects": {
                 "gdp_modifier": 0.05,
                 "trade_income_mult": 1.12
+              },
+              "ai": {
+                "economy": 0.7
               }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "industry",
-      "tiers": [
-        {
-          "doctrines": [
+            },
             {
-              "id": "mass_production_system",
+              "id": "caravanserai_network",
+              "name_key": "owo.doctrine.economy.t3.caravanserai_network",
+              "desc_key": "owo.doctrine.economy.t3.caravanserai_network.desc",
+              "icon": "economy_t3c_diversified_economy",
               "effects": {
-                "research_speed": 0.15,
+                "trade_income_mult": 1.06,
                 "gdp_modifier": 0.03,
-                "production_output_mult": 1.05
+                "stockpile_cap_mult": 1.1
+              },
+              "ai": {
+                "economy": 0.6,
+                "stability": 0.1
               }
             }
           ]
         },
         {
+          "name_key": "owo.doctrine.economy.t4",
+          "question_key": "owo.doctrine.economy.t4.question",
           "doctrines": [
             {
-              "id": "continuous_production",
+              "id": "royal_granaries",
+              "name_key": "owo.doctrine.economy.t4.royal_granaries",
+              "desc_key": "owo.doctrine.economy.t4.royal_granaries.desc",
+              "icon": "economy_t4a_strategic_reserves",
               "effects": {
-                "gdp_modifier": 0.06,
-                "production_output_mult": 1.08
+                "stockpile_cap_mult": 1.2,
+                "stability_delta_monthly": 0.05
+              },
+              "ai": {
+                "economy": 0.4,
+                "stability": 0.4
               }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "diplomacy",
-      "tiers": [
-        {
-          "doctrines": [
-            {},
-            {},
+            },
             {
-              "id": "mobile_envoy_service",
+              "id": "sound_coinage",
+              "name_key": "owo.doctrine.economy.t4.sound_coinage",
+              "desc_key": "owo.doctrine.economy.t4.sound_coinage.desc",
+              "icon": "economy_t4b_adaptive_market_supply",
               "effects": {
-                "policy_speed_mult": 1.12,
-                "intel_confidence": 0.08,
-                "trade_income_mult": 1.06
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "intelligence",
-      "tiers": [
-        {
-          "doctrines": [
-            {
-              "id": "centralized_intelligence_directorate",
-              "effects": {
-                "intel_confidence": 0.12,
-                "espionage_success_bonus": 0.08
+                "inflation_pressure_mult": 0.85,
+                "debt_interest_mult": 0.9
+              },
+              "ai": {
+                "economy": 0.6
               }
             }
           ]
         },
-        {},
-        {},
         {
+          "name_key": "owo.doctrine.economy.t5",
+          "question_key": "owo.doctrine.economy.t5.question",
           "doctrines": [
             {
-              "id": "defensive_counter_intelligence",
+              "id": "trading_post_empire",
+              "name_key": "owo.doctrine.economy.t5.trading_post_empire",
+              "desc_key": "owo.doctrine.economy.t5.trading_post_empire.desc",
+              "icon": "economy_t5a_global_economic_integration",
               "effects": {
-                "counterintel_detection": 0.12,
-                "stability_delta_monthly": 0.1
+                "trade_income_mult": 1.15,
+                "gdp_modifier": 0.05
+              },
+              "ai": {
+                "economy": 0.8
+              }
+            },
+            {
+              "id": "agrarian_crown_estates",
+              "name_key": "owo.doctrine.economy.t5.agrarian_crown_estates",
+              "desc_key": "owo.doctrine.economy.t5.agrarian_crown_estates.desc",
+              "icon": "economy_t5c_strategic_economic_sovereignty",
+              "effects": {
+                "pop_growth_mult": 1.08,
+                "tax_efficiency_mult": 1.06
+              },
+              "ai": {
+                "economy": 0.5,
+                "stability": 0.3
               }
             }
           ]
         }
-      ]
+      ],
+      "milestone": {
+        "id": "economy_milestone",
+        "name_key": "owo.doctrine.economy.milestone",
+        "desc_key": "owo.doctrine.economy.milestone.desc",
+        "icon": "economy_milestone",
+        "effects": {
+          "gdp_modifier": 0.03,
+          "trade_income_mult": 1.05
+        }
+      }
     }
   ]
 }

@@ -39,10 +39,5 @@
     ],
     "buildingsOverrideFile": "buildings_override.json",
     "resourcesOverrideFile": "resources_override.json",
-    "currenciesFile": "currencies.json",
-    "disabledDoctrineBranches": [
-        "cyber",
-        "space",
-        "energy"
-    ]
+    "currenciesFile": "currencies.json"
 }
