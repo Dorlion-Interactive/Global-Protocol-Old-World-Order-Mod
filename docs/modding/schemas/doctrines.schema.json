@@ -7,6 +7,11 @@
   "required": ["settings", "branches", "legacy_tech_map", "legacy_tech_order", "starting_grants"],
   "additionalProperties": false,
   "properties": {
+    "mode": {
+      "type": "string",
+      "enum": ["merge", "replace"],
+      "description": "Mod override files only (overrides/doctrines.json). \"merge\" (default) patches the base tree index-wise: values, effects and text, never new entries. \"replace\" rebuilds the branches the file lists (matched by id, nothing inherited, same tier count as the base, 1-3 doctrines per tier) and hides every base branch it leaves out. A replace file lists only its branches; settings merge sparsely, starting_grants replace, legacy_tech_map/legacy_tech_order are always the base game's."
+    },
     "settings": { "$ref": "#/definitions/settings" },
     "branches": {
       "type": "array",

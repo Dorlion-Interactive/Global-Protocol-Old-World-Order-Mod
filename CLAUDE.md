@@ -25,13 +25,13 @@ scenario/                        ← split scenario files (authoritative)
   units_override.json            ← unit roster replacement (mode: replace)
   resources_override.json        ← resource commodity overrides (disabled modern list)
   currencies.json                ← scenario currencies definition
+  national_goals.json            ← national goals / agendas (nationalGoalsFile, replaces the base goals)
 Content/
-  goals_old_world_order.json     ← national goals (path relative to mod root)
   localization/                  ← localization CSV additions (en.csv, tr.csv)
 overrides/
   localization_en.csv            ← English display strings
   localization_tr.csv            ← Turkish display strings
-  doctrines.json                 ← sparse doctrine card overrides
+  doctrines.json                 ← replace-mode doctrine tree (military + economy; other branches hidden)
   military_markers.json          ← UI military marker overrides
   game_flow.json                 ← game flow overrides
   Art/Units/                     ← unit artwork (map-marker art)
