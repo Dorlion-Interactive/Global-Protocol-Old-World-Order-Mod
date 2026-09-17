@@ -1,5 +1,11 @@
 {
   "mode": "replace",
+  "disabled": [
+    "airfield",
+    "submarine_pen",
+    "cyber_ops_center",
+    "satellite_launch_facility"
+  ],
   "buildings": [
     {
       "id": "factory",
