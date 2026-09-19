@@ -668,6 +668,111 @@
           "minimum": 0,
           "maximum": 1
         },
+        "ai_air_mission_min_readiness": {
+          "type": "number",
+          "description": "Readiness percentage the AI requires before tasking an air wing; stricter than the command floor of 10",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "naval_transit_engagement_progress": {
+          "type": "number",
+          "description": "Hop progress at which a moving fleet also counts as present in its destination sea zone for combat",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "air_strike_army_damage_per_attack": {
+          "type": "number",
+          "description": "Army HP removed per point of air strike power",
+          "minimum": 0
+        },
+        "air_strike_army_damage_max_fraction_of_power": {
+          "type": "number",
+          "description": "Per-sortie air strike damage ceiling, as a fraction of the attacking wing's own strike power",
+          "minimum": 0
+        },
+        "army_antiair_reduction_per_point": {
+          "type": "number",
+          "description": "Air strike damage reduction per point of a defending army's AVERAGE anti_air per regiment (summed anti_air / regiments), so an air-defence escort matters and army size does not",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "air_defense_max_reduction": {
+          "type": "number",
+          "description": "Ceiling on any single air-defence damage reduction (army anti-air, fleet anti-air, air-defence building)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "air_strike_aircraft_loss_per_antiair_point": {
+          "type": "number",
+          "description": "Fraction of an attacking wing's aircraft shot down per point of AVERAGE anti_air per regiment across the hostile armies in the struck province",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "air_strike_aircraft_loss_max_fraction": {
+          "type": "number",
+          "description": "Ceiling on the fraction of a wing's aircraft lost to ground fire in one sortie",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "air_interception_base_rate": {
+          "type": "number",
+          "description": "Base interception rate multiplier for air-to-air combat",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "air_interception_min_damage": {
+          "type": "number",
+          "description": "Floor applied to the computed interception rate",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "air_bombing_devastation_per_attack": {
+          "type": "number",
+          "description": "Province devastation per point of strategic bombing power",
+          "minimum": 0
+        },
+        "air_bombing_infra_damage_per_attack": {
+          "type": "number",
+          "description": "Province infrastructure damage per point of strategic bombing power",
+          "minimum": 0
+        },
+        "air_defense_reduction_per_point": {
+          "type": "number",
+          "description": "Bombing damage reduction per point of province air-defence building level",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "air_naval_strike_damage_per_attack": {
+          "type": "number",
+          "description": "Fleet HP removed per point of naval strike power",
+          "minimum": 0
+        },
+        "air_fleet_antiair_reduction_per_point": {
+          "type": "number",
+          "description": "Naval strike damage reduction per point of a fleet's AVERAGE anti_air per ship (summed anti_air / ships), so escorts matter and fleet size does not",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "army_hp_recovery_air_strike_block_ticks": {
+          "type": "integer",
+          "description": "Military ticks after an air strike during which the struck army does not recover HP. Without it, garrison recovery out-healed any sustained bombing of an army not in battle",
+          "minimum": 0
+        },
+        "air_rebase_ticks_default": {
+          "type": "integer",
+          "description": "Military ticks an air wing spends rebasing to a land airfield (player rally and AI rebase)",
+          "minimum": 1
+        },
+        "air_wing_morale_loss_per_casualty_ratio": {
+          "type": "number",
+          "description": "Air-wing morale lost per unit of casualty ratio in air-to-air combat",
+          "minimum": 0
+        },
+        "fleet_morale_loss_per_casualty_ratio": {
+          "type": "number",
+          "description": "Fleet morale lost per unit of casualty ratio from a naval strike",
+          "minimum": 0
+        },
         "unit_creation_cost_multiplier": {
           "type": "number",
           "description": "Global multiplier for unit creation costs",
@@ -1567,6 +1672,18 @@
           "minimum": 1,
           "maximum": 12
         },
+        "alliance_cooldown_ticks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3600,
+          "description": "Days a country waits after proposing or breaking an alliance (player proposals and every break). Also the base of the cooldown after a human declines an alliance request."
+        },
+        "ai_alliance_cooldown_ticks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3600,
+          "description": "Days an AI country waits after an alliance proposal before it may propose again, to anyone. 360 = one attempt a year."
+        },
         "relation_decay_rate": {
           "type": "number",
           "description": "Fraction of the remaining gap to the equilibrium (regional base + opinion modifiers) a relation closes each month. 0.10 = 10 points at a gap of 100, 1 point at a gap of 10; always at least 1 point and never past the equilibrium.",
@@ -1937,6 +2054,24 @@
           "type": "number",
           "description": "Peace demand budget granted when the proposer occupies 100% of the target's provinces",
           "minimum": 50,
+          "maximum": 100
+        },
+        "peace_side_deficit_desperation": {
+          "type": "number",
+          "description": "Whole-war side-pool deficit (points) at which a losing PRIMARY belligerent offers concessions and accepts a pooled tribute instead of spamming pairwise white-peace offers its side cannot back. 0 = use the formula default (30).",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "peace_side_pool_fraction": {
+          "type": "number",
+          "description": "Share of a winning side's whole-war pool lead (see peace_side_deficit_desperation) that a winning PRIMARY may spend on top of its own pair-level executable budget. Never funds province transfer, which stays pair-only.",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "peace_side_pool_cap": {
+          "type": "number",
+          "description": "Hard ceiling on the whole-war side-pool budget a winning PRIMARY may draw on top of its pair-level executable budget. 0 = use the formula default (60).",
+          "minimum": 0,
           "maximum": 100
         },
         "truce_duration_months": {
@@ -2372,6 +2507,24 @@
               "description": "Minimum utility to form alliance",
               "minimum": 0,
               "maximum": 20
+            },
+            "court_max_targets": {
+              "type": "integer",
+              "description": "How many of its best alliance candidates an AI keeps Improve Relations missions running toward until the relation floor is met in both directions. -1 turns this pursuit off (allies that sank below the honor threshold are still courted back); 0 is reserved for an out-of-date bake and reads as the default 2.",
+              "minimum": -1,
+              "maximum": 10
+            },
+            "small_state_pair_bonus": {
+              "type": "number",
+              "description": "Added to both the alliance offer and the acceptance score when both countries are small (see small_state_gdp_rank_fraction) and neither has a military alliance, defense pact or collective-defense membership. -1 turns it off; 0 is reserved for an out-of-date bake and reads as the default 1.5.",
+              "minimum": -1,
+              "maximum": 5
+            },
+            "small_state_gdp_rank_fraction": {
+              "type": "number",
+              "description": "The bottom share of the world GDP ranking that counts as a small state for the pair bonus (0.5 = bottom half).",
+              "minimum": 0.01,
+              "maximum": 1
             }
           }
         },
@@ -3070,6 +3223,18 @@
               "minimum": 1,
               "maximum": 5000
             },
+            "max_air_wings_per_ground_unit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5,
+              "description": "Ratio of air wings (unit count, same LiveCount+PendingCount currency GroundCount sums for ground) to ground units, used to cap the AI's air-domain top-up in AIForcePlanningUtility.EvaluateTargets / AIRecruitmentExecutionUtility.CanPurchase; the air analogue of max_ground_units. 0 disables the cap (legacy: the unbounded air top-up that let a 5-year soak grow world air wings 181 to 1142). Default 0.08, calibrated so the world-wide cap at game start is ~2x the authored 181 air wings: T0 total_regiments (the ground unit-count base) sums to 4718, so (2 x 181) / 4718 = 0.0767, rounded to two decimals."
+            },
+            "min_air_wings": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Floor on the air-domain cap (max_air_wings_per_ground_unit) so a small country with few ground units can still field a minimal air wing. Only applies when max_air_wings_per_ground_unit > 0. Default 2."
+            },
             "max_batch_per_month": {
               "type": "integer",
               "minimum": 1,
@@ -3497,7 +3662,7 @@
             },
             "peace_relief": {
               "type": "number",
-              "description": "ShouldAcceptAIPeaceOffer: eases the acceptance pressure threshold per point of trust toward the enemy, tightens it per point of distrust.",
+              "description": "ShouldAcceptAIPeaceOffer: eases the acceptance pressure threshold per point of trust toward the enemy, tightens it per point of distrust. 0 disables the trust term (shipped default since 2026-09-15).",
               "minimum": 0,
               "maximum": 5
             },
@@ -3646,6 +3811,12 @@
               "type": "integer",
               "minimum": 1,
               "maximum": 200
+            },
+            "move_army_unreachable_cooldown_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 720,
+              "description": "Failure cooldown (ticks) stamped on an AI MoveArmy order whose destination is unroutable with no fallback province, instead of the generic action_failure_cooldown. Default 30."
             }
           }
         }
@@ -4897,9 +5068,9 @@
             "truce_kept_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the truce_kept modifier." },
             "commitments_upheld_per_commitment": { "type": "number", "minimum": 0, "maximum": 5, "description": "Trust gain per upheld standing commitment." },
             "commitments_upheld_per_year": { "type": "number", "minimum": 0, "maximum": 5, "description": "Trust gain per year of a standing commitment upheld." },
-            "commitments_upheld_cap": { "type": "number", "minimum": 0, "maximum": 100, "description": "Cap on the commitments-upheld trust bonus." },
+            "commitments_upheld_cap": { "type": "number", "minimum": 0, "maximum": 100, "description": "Cap on the commitments-upheld trust bonus. At 30, commitments kept long enough can reach the defense-pact trust floor peacefully." },
             "commitments_upheld_min_age_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Minimum commitment age before it counts toward the bonus." },
-            "commitments_upheld_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Lifetime of the commitments-upheld trust bonus." }
+            "commitments_upheld_decay_ticks": { "type": "integer", "minimum": 1, "maximum": 36500, "description": "Safety-net expiry of the commitments-upheld trust row. The row holds its full value while commitments stand (refreshed monthly) and is removed when the last one ends; this only expires a row that stopped being refreshed." }
           }
         },
         "embassy": {
@@ -4972,7 +5143,7 @@
               "type": "integer",
               "minimum": -100,
               "maximum": 100,
-              "description": "Minimum bilateral relation required to propose hosting an embassy."
+              "description": "Minimum bilateral relation required to propose hosting an embassy. 0 since 2026-09-15 (was -20): an AI does not open an embassy in a country it dislikes."
             },
             "propose_min_trust": {
               "type": "integer",
@@ -4984,7 +5155,7 @@
               "type": "integer",
               "minimum": -100,
               "maximum": 100,
-              "description": "Minimum relation the target needs before accepting an embassy proposal."
+              "description": "Minimum relation the target needs before accepting an embassy proposal. 0 since 2026-09-15 (was -10)."
             },
             "host_accept_min_trust": {
               "type": "integer",
@@ -5075,6 +5246,60 @@
               "minimum": -100,
               "maximum": 100,
               "description": "Minimum relation for a great power's seeded embassy to be placed."
+            },
+            "ai_close_min_age_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "An AI closes only an embassy at least this many ticks old (since it opened or last changed status). With closed_decay_ticks blocking re-proposal, 720 allows at most two close/reopen cycles per pair in five years."
+            },
+            "ai_close_score_margin": {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 5,
+              "description": "An AI at its embassy cap closes a redundant embassy (one whose channel survives through a shared organisation or the partner's own embassy) for a better embassy-only candidate only when that candidate out-scores it by this much. A waiting alliance always qualifies."
+            },
+            "proposal_reject_cooldown_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 36500,
+              "description": "Ticks a sender waits before re-proposing an embassy a host declined, that the player rejected, or that expired unanswered in the player inbox. One knob for all three paths (2026-09-15); 360 = one game year."
+            },
+            "human_max_pending_proposals": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "At most this many AI embassy proposals wait unanswered in one human player inbox; the AI planner and EmbassyCommand both refuse beyond it (2026-09-15, after a five-year soak in which Angola received one every other day)."
+            },
+            "human_proposal_spacing_ticks": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 3600,
+              "description": "Minimum ticks between two AI embassy proposals into the same human player inbox; a refused sender waits one window before trying again."
+            }
+          }
+        },
+        "nap": {
+          "type": "object",
+          "description": "Non-aggression pacts (2026-09-16). A pact is insurance against a war that could plausibly happen, so the AI proposes one only to a neighbour, a tracked threat or a country it has already fought, inside the relation window below and while both sides are under the cap. Without these, a five-year run produced 403 pacts world-wide (IRL 40, DEU 39) between countries with no border and no history.",
+          "properties": {
+            "propose_min_relation": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "Below this relation the two are not on speaking terms and no pact is proposed."
+            },
+            "propose_max_relation": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "Above this relation the two are friends who need no pact to keep the peace; 196 of the 806 pact rows in the 2026-09-16 run sat at relation 60 or better."
+            },
+            "max_active": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000,
+              "description": "Most non-aggression pacts one country may hold at once. Both the proposer and the target are checked, by the AI lane and by DiplomaticAccess."
             }
           }
         },
@@ -5227,12 +5452,32 @@
         },
         "trade_blocs": {
           "type": "object",
-          "description": "Trade blocs: membership limits, the trade and GDP bonuses of joining, and the cost of leaving."
+          "description": "Trade blocs: membership limits, the trade and GDP bonuses of joining, and the cost of leaving.",
+          "properties": {
+            "max_memberships_per_country": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20,
+              "description": "Most trade blocs one country can belong to at once. The AI stops founding blocs at this count, and a founding fails when either founder is already at it. Each membership multiplies the member's whole trade by the bloc's internal multiplier, so this also caps how far blocs stack. 0 is reserved for a stale bake and reads as 3."
+            }
+          }
         },
         "treaties": {
           "type": "object",
           "description": "Arms-limitation, non-proliferation, climate and defence treaties: their benefits and the penalty for violating them.",
           "properties": {
+            "defense_pact_min_relation": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Relation the target needs toward the proposer before a defense pact can be proposed, and the AI's own relation floor for accepting one."
+            },
+            "defense_pact_accept_min_willingness": {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 1,
+              "description": "The AI accepts a defense pact only when its willingness, (relation - 20) / 80 x ai_weights.treaty_compliance_weight, is above this. 0.5 at the shipped compliance 0.8 means relation 71 (66 with a full embassy channel)."
+            },
             "treaty_reject_cooldown_multiplier": {
               "type": "integer",
               "minimum": 1,
@@ -5249,11 +5494,51 @@
         },
         "economic_warfare": {
           "type": "object",
-          "description": "Economic weapons short of war: currency manipulation, trade wars, aid packages and debt traps."
+          "description": "Economic weapons short of war: currency manipulation, trade wars, aid packages and debt traps.",
+          "properties": {
+            "currency_manipulation_detection_chance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Chance each currency-manipulation launch is exposed. An exposed attack costs the attacker the victim's trust (step42_diplomacy.trust_modifiers.econ_attack_detected)."
+            },
+            "trade_war_initiator_share_floor": {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 1,
+              "description": "Smallest share of a trade war's tariff cut the country that STARTS it pays on its own trade (0.05 = 5 %), so a trade war is never free. The target always takes the full cut."
+            },
+            "trade_war_initiator_share_ceiling": {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 1,
+              "description": "Largest share of the tariff cut the initiator pays (0.5 = half of what the target pays). Between floor and ceiling the share is the target's share of the rest of world GDP."
+            },
+            "trade_war_initiator_top_partner_share": {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 1,
+              "description": "Share of the tariff cut the initiator pays at least when the target is one of its baked top-5 trade partners."
+            }
+          }
         },
         "ai_weights": {
           "type": "object",
-          "description": "Thresholds that decide how readily the AI uses sanctions, blocs, treaties and economic warfare."
+          "description": "Thresholds that decide how readily the AI uses sanctions, blocs, treaties and economic warfare.",
+          "properties": {
+            "econ_ops_crisis_inflation": {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 1,
+              "description": "The AI sends no aid package, currency manipulation, trade war or debt-trap loan while its own inflation is above this share (0.15 = 15 %). AI-controlled countries only."
+            },
+            "econ_ops_min_treasury_headroom": {
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 1,
+              "description": "The same AI economic operations also pause while the treasury holds less than this share of economy.spot_market.auto_buy_headroom_revenue_months of revenue above its auto-buy floor (0.25 of 6 months = 1.5 months)."
+            }
+          }
         }
       }
     },

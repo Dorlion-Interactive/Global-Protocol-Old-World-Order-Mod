@@ -419,7 +419,12 @@
             "type": "object",
             "properties": {
                 "capital": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Capital city display name. Written by step 10.6 from the curated province_population/<ISO3>.json capital_city."
+                },
+                "capital_province": {
+                    "type": "string",
+                    "description": "Exact registry name of the capital province. Written by step 10.6 (fix_capitals.py) only; runtime resolves the capital by this name."
                 },
                 "area_km2": {
                     "type": "number"
@@ -521,6 +526,10 @@
                 },
                 "un_security_council": {
                     "type": "boolean"
+                },
+                "neutral": {
+                    "type": "boolean",
+                    "description": "Militarily neutral (baked from diplomacy_2026.json neutral_states). While AI-controlled the country neither offers nor accepts military alliances or defense pacts. Omitted when false."
                 }
             }
         },

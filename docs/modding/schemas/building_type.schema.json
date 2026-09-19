@@ -67,6 +67,9 @@
                 "defense_bonus": {
                     "type": "number"
                 },
+                "air_defense_bonus": {
+                    "type": "number"
+                },
                 "population_growth": {
                     "type": "number"
                 },
