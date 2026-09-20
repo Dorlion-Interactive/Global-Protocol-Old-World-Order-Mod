@@ -583,3 +583,129 @@ doctrine.intelligence.t1.centralized_intelligence_directorate,Kraliyet Başcasus
 doctrine.intelligence.t1.centralized_intelligence_directorate.desc,Yabancı komplolara dair önceden istihbarat sağlayan saray muhbirleri, tüccar casuslar ve liman gözcüleri.
 doctrine.intelligence.t4.defensive_counter_intelligence,Engizisyon ve Hükümdar Gözetimi
 doctrine.intelligence.t4.defensive_counter_intelligence.desc,Yabancı fitneleri tespit etmeye odaklanan kraliyet mahkemeleri, şehir muhafızları ve dini denetim.
+owo.doctrine.military.directive.chevauchee,Yağma Akını
+owo.doctrine.military.directive.chevauchee.desc,Düşman topraklarının derinliğine dalıp her şeyi ateşe verin: savaş kendi masrafını yağma ve dehşetle öder, karşılığında bunu duyan her sarayın iyi niyetini kaybedersiniz.
+owo.doctrine.military.directive.fortress_realm,Kaleler Ülkesi
+owo.doctrine.military.directive.fortress_realm.desc,Sınırdaki her kasabaya bir garnizon ve bir duvar ustası sözleşmesi. Ordular daha yavaş ilerler ve daha hafif vurur; ama kimse toprağınızı ucuza almaz.
+owo.doctrine.military.directive.mercenary_retainers,Paralı Asker Sözleşmeleri
+owo.doctrine.military.directive.mercenary_retainers.desc,Condottieri ve serbest bölükleri sürekli maaşa bağlayın. Para sayılır sayılmaz toplanırlar, savaş aralarında da hazineyi kuruturlar.
+owo.doctrine.military.hidden.corned_powder,Tanelenmiş Barut
+owo.doctrine.military.hidden.corned_powder.desc,Barutu ıslatıp keklemek ve tanelere öğütmek onu sıcak ve düzenli yakar. Eskiden kendi namlusunu çatlatan toplar artık sur perdelerini indiriyor.
+owo.doctrine.military.hidden.trace_italienne,İtalyan Tarzı Tabya
+owo.doctrine.military.hidden.trace_italienne.desc,Topraktan ve tuğladan alçak açılı tabyalar gülleyi parçalanmak yerine yutar; her yaklaşma hattı bir sonraki tabyanın yan ateşiyle taranır.
+owo.doctrine.military.hidden.janissary_corps,Yeniçeri Ocağı
+owo.doctrine.military.hidden.janissary_corps.desc,Çocukluktan yetiştirilen, nakit maaş alan ve yalnızca tahta sadık daimî bir kapıkulu ocağı. Hiçbir feodal levyenin erişemeyeceği bir disiplin ve asla maaşını geciktiremeyeceğiniz bir ödeme defteri.
+owo.doctrine.military.hidden.longbow_yeomanry,Uzun Yaylı Yeomanlar
+owo.doctrine.military.hidden.longbow_yeomanry.desc,Kanun, her toprak sahibini pazar günleri atış talimine mecbur eder. Bir kuşak sonra hiçbir kıta ordusunun satın alamayacağı okçular çıkarırsınız; çünkü onlar satın alınmaz, yetiştirilir.
+owo.doctrine.military.hidden.wagenburg,Savaş Arabası Tabyası
+owo.doctrine.military.hidden.wagenburg.desc,Savaş arabalarını zincirleyip çember kurun, el kumbaracılarını kalasların arkasına yerleştirin ve şövalyeler kendilerini bu duvara parçalasın. Artık süvariden korkmayan piyade.
+owo.doctrine.military.hidden.galleass_squadrons,Mavna Filoları
+owo.doctrine.military.hidden.galleass_squadrons.desc,Bir yan ateş bataryası taşıyacak kadar ağır kürekli tekneler. Yuvarlak gemilerin sürüklendiği durgun havada hattı tutar ve hiçbir kadırganın kaldıramayacağı topları taşırlar.
+owo.doctrine.economy.directive.bullionist_crown,Külçeci Taç
+owo.doctrine.economy.directive.bullionist_crown.desc,Ülkeden çıkan gümüş, kaybedilmiş gümüştür. Gümrükleri sıkın, her ihracatı ruhsata bağlayın ve tüccarlar söylenirken darphanenin dolmasını izleyin.
+owo.doctrine.economy.directive.free_trade_charters,Serbest Ticaret Beratları
+owo.doctrine.economy.directive.free_trade_charters.desc,Gemisi olan herkese serbest geçiş beratı satın. Resimler düşer, rıhtımlar dolar ve taç çok daha büyük bir ticaretten payını alır.
+owo.doctrine.economy.directive.crown_credit,Taç Kredisi
+owo.doctrine.economy.directive.crown_credit.desc,Gelecek yılın gümrük gelirini bir bankacı faiziyle rehin verin. Ordular vaktinde yürür, bunun bedeli olan tağşiş ise sessizce gelir.
+owo.doctrine.economy.hidden.bills_of_exchange,Poliçeler
+owo.doctrine.economy.hidden.bills_of_exchange.desc,Bir tüccar Bruges'te öder, temsilcisi Venedik'te tahsil eder ve hiçbir sikke haydut yolundan geçmez. Kredi artık bir ulağın hızıyla hareket eder.
+owo.doctrine.economy.hidden.branch_banking,Şubeli Bankacılık
+owo.doctrine.economy.hidden.branch_banking.desc,Tek bir hane, her büyük şehirde bir defter ve tümünden sorumlu bir ortak. Onlarla çalışan taç ucuza borçlanır ve onlardan bir daha tam kurtulamaz.
+owo.doctrine.economy.hidden.hanseatic_kontor,Hansa Kontoru
+owo.doctrine.economy.hidden.hanseatic_kontor.desc,Kendi hukuku, kendi ambarı ve içinde bulunduğu şehirle kendi kavgası olan surlu bir ticaret kompleksi. Tahıl ve kürk artık Hansa şartlarıyla akar.
+owo.doctrine.economy.hidden.silver_strike,Gümüş Damarı
+owo.doctrine.economy.hidden.silver_strike.desc,Yeni bir damar açılır ve darphane çift vardiya çalışır. Ülke birdenbire zengindir; içindeki her fiyat da tırmanmaya başlar.
+owo.doctrine.economy.hidden.salt_monopoly,Tuz Tekeli
+owo.doctrine.economy.hidden.salt_monopoly.desc,Kimse sizin izniniz olmadan kışlık etini tuzlayamaz. Ülkenin en güvenilir geliri ve köylüyü yaba ile yola dökme ihtimali en yüksek olanı.
+owo.doctrine.economy.hidden.consignment_fleet,Ortak Sefer Filosu
+owo.doctrine.economy.hidden.consignment_fleet.desc,Yükü ortaklaştırın, riski ortaklaştırın ve mevsimin ticaretini tek bayrak altında yollayın. Kaybedilen tek gemi artık bir haneyi batırmıyor.
+owo.doctrine.government.directive.rule_by_ordinance,Fermanla Yönetim
+owo.doctrine.government.directive.rule_by_ordinance.desc,Kralın mühürlenip ilan edilen sözü cumaya kalmadan kanundur. Kararlar hızla gelir, zümreler de her birini tek tek hatırlar.
+owo.doctrine.government.directive.consult_the_estates,Zümrelere Danışma
+owo.doctrine.government.directive.consult_the_estates.desc,Üç zümre dinlenmeden hiçbir şey geçmez. Yavaş, kavgacı ve ardından isyan etmesi neredeyse imkânsız.
+owo.doctrine.government.directive.crown_patrimony,Taç Hasları
+owo.doctrine.government.directive.crown_patrimony.desc,Kraliyet topraklarını doğrudan kralın eline alın ve her kâhyayı teftiş edin. Dağıtacak daha az iltimas, kasaya uzanan çok daha az el.
+owo.doctrine.government.hidden.pragmatic_sanction,Veraset Fermanı
+owo.doctrine.government.hidden.pragmatic_sanction.desc,Kral daha hayattayken verasetini yazıya dökün. Öldüğü gün üç kaleden daha değerlidir.
+owo.doctrine.government.hidden.royal_progress,Kraliyet Seyahati
+owo.doctrine.government.hidden.royal_progress.desc,Saray bütün yaz taşrayı dolaşır, masrafı magnatlara yükler ve onlara bir kralın neye benzediğini hatırlatır.
+owo.doctrine.government.hidden.cadastral_survey,Tahrir Defteri
+owo.doctrine.government.hidden.cadastral_survey.desc,Her tarla, ocak ve değirmen deftere yazılır. Ülkenin ne ettiğini nihayet bilirsiniz; her tahsildar da bilir.
+owo.doctrine.government.hidden.venality_of_office,Makam Satışı
+owo.doctrine.government.hidden.venality_of_office.desc,Makamları doğrudan satın. Hazine bu öğleden sonra dolar ve mevkiini satın alan adamlar bedelini geri kazanmayı bekler.
+owo.doctrine.government.hidden.coronation_oath,Taç Giyme Yemini
+owo.doctrine.government.hidden.coronation_oath.desc,Taç giymiş, kutsanmış ve ülkenin huzurunda yemin etmiş. Size isyan artık sadece ihanet değil, kutsala saygısızlıktır.
+owo.doctrine.government.hidden.chancery_archive,Divan Arşivi
+owo.doctrine.government.hidden.chancery_archive.desc,Defterleri tutun, suretleri tutun ve bir kâtibin bulabileceği yerde tutun. Yazıyla ispatlayabildiğiniz bir iddia, kazanabileceğiniz bir iddiadır.
+owo.doctrine.society.directive.pious_realm,Dindar Ülke
+owo.doctrine.society.directive.pious_realm.desc,Vakıfları donatın, yortu günlerini gözetin ve yönetmeyi kürsüye bırakın. Yeni soru sormayan, sessiz ve itaatkâr bir ülke.
+owo.doctrine.society.directive.patron_of_letters,İlim Hamisi
+owo.doctrine.society.directive.patron_of_letters.desc,Yazmaları satın alın, âlimleri tutun, müstensihlere ödeyin. Saray ün kazanır, hazine de bunu fark eder.
+owo.doctrine.society.directive.bread_and_charity,Ekmek ve Sadaka
+owo.doctrine.society.directive.bread_and_charity.desc,Açlar kendi aralarında örgütlenmeden ambarları açın ve imarethaneleri fonlayın. Çok ucuz bir isyana karşı pahalı bir sigorta.
+owo.doctrine.society.hidden.printing_workshop,Matbaa Atölyesi
+owo.doctrine.society.hidden.printing_workshop.desc,Bir pres, bir harf kasası ve iki adam, kırk kişilik bir istinsah odasını geçer. Hoşunuza giden fikirler hızlanır; diğerleri de.
+owo.doctrine.society.hidden.lazaretto_quarantine,Karantina Adası
+owo.doctrine.society.hidden.lazaretto_quarantine.desc,Hiçbir tekne rıhtıma değmeden önce kırk gün açıkta bekler. Tüccarlar gerekmediği her mevsim söylenir, gerektiği tek mevsimde dua eder.
+owo.doctrine.society.hidden.vernacular_scripture,Halk Dilinde Kutsal Kitap
+owo.doctrine.society.hidden.vernacular_scripture.desc,Kitabı insanların gerçekten konuştuğu dile taşıyın. İman derinleşir, okuryazarlık yayılır ve ulema tartışma üzerindeki tekelini kaybeder.
+owo.doctrine.society.hidden.civic_confraternities,Lonca Kardeşlikleri
+owo.doctrine.society.hidden.civic_confraternities.desc,Cenaze sandıkları, çeyiz kasaları ve arkasında yürünecek bir lonca sancağı. Şehir, suçlayacak birini aramadan önce kendi insanına bakar.
+owo.doctrine.society.hidden.studia_humanitatis,Beşerî İlimler
+owo.doctrine.society.hidden.studia_humanitatis.desc,Gramer, belagat, tarih ve ahlak felsefesi, yeniden bulunan kadimlerden okutulur. Daha iyi kâtipler yetiştirir; çok daha tehlikeli olanlarını da.
+owo.doctrine.society.hidden.apprentice_statutes,Çıraklık Nizamnamesi
+owo.doctrine.society.hidden.apprentice_statutes.desc,Yedi yıl bağlı, sonra bir şaheser ve ustalık. Hüner tam olarak korunur; bu da onun çok yavaş değiştiği anlamına gelir.
+owo.doctrine.diplomacy.directive.marriage_diplomacy,Evlilik Diplomasisi
+owo.doctrine.diplomacy.directive.marriage_diplomacy.desc,Bırakın başkaları savaşsın; siz evlendirin. Yerleştirilen her kız, tartışmayı bırakan bir sınır ve torununuzun tahsil edebileceği bir iddiadır.
+owo.doctrine.diplomacy.directive.tribute_and_threat,Haraç ve Tehdit
+owo.doctrine.diplomacy.directive.tribute_and_threat.desc,Demirleme yerine donanmayla girin ve şartları önceden yazılmış olarak sunun. İmzalarlar ve unutmazlar.
+owo.doctrine.diplomacy.directive.broker_of_peace,Barışın Aracısı
+owo.doctrine.diplomacy.directive.broker_of_peace.desc,Görüşmelere ev sahipliği yapın, kalemi elinizde tutun ve her iki taraf da anlaşmayı size borçlu kalsın. İtibar, eyaletlerden ucuzdur.
+owo.doctrine.diplomacy.hidden.golden_bull_charter,Altın Mühürlü Ferman
+owo.doctrine.diplomacy.hidden.golden_bull_charter.desc,Altın mühür altında verilmiş, geri alınamaz ve son derece alenî bir imtiyaz. Böyle verilen ayrıcalıkları geri almak çok zordur; maksat da budur.
+owo.doctrine.diplomacy.hidden.hostage_exchange,Rehine Değişimi
+owo.doctrine.diplomacy.hidden.hostage_exchange.desc,Onların vârisi sizin sarayınızda, sizinki onlarınkinde büyür. Nabzı atan bir antlaşma ve parşömenden çok daha zor bozulur.
+owo.doctrine.diplomacy.hidden.papal_dispensation,Papalık Muafiyeti
+owo.doctrine.diplomacy.hidden.papal_dispensation.desc,Engel kaldırılır, evlilik geçerli olur ve iddia da onunla birlikte. Pahalı, yavaş ve bir kez verildi mi itiraz edilemez.
+owo.doctrine.diplomacy.hidden.capitulations,Kapitülasyonlar
+owo.doctrine.diplomacy.hidden.capitulations.desc,Yabancı tüccarlar kendi mahallesini, kendi konsolosunu ve kendi hukukunu alır. Ticaret sel gibi akar; yerleşik bir yabancı çıkar da öyle.
+owo.doctrine.diplomacy.hidden.italic_league,İtalyan Birliği
+owo.doctrine.diplomacy.hidden.italic_league.desc,Haritayı dondurmak için daimî bir ahit: ilk kim kımıldarsa, herkes ona karşı kımıldar. Karşılıklı şüpheyle korunan barış.
+owo.doctrine.diplomacy.hidden.heralds_truce,Münadi Mütarekesi
+owo.doctrine.diplomacy.hidden.heralds_truce.desc,Fidye cetvelleri, yol emannameleri ve iki tarafın münadilerinin kendi prenslerine dayatacağı bir mütareke. Kuralı olan savaş, bitirebileceğiniz savaştır.
+owo.doctrine.intelligence.directive.black_chamber,Kara Oda
+owo.doctrine.intelligence.directive.black_chamber.desc,Her diplomatik çanta açılır, istinsah edilir, yeniden mühürlenir ve hiç dokunulmamış gibi yoluna devam eder. Her şeyi öğrenir, dışarıda hiçbir şey riske atmazsınız.
+owo.doctrine.intelligence.directive.agents_abroad,Yurtdışındaki Ajanlar
+owo.doctrine.intelligence.directive.agents_abroad.desc,Kendi adamlarınızı onların divanlarına yerleştirin ve iyi ödeyin. Kendi haneniz üzerinde zayıf bir nöbet pahasına elde edilen erişim.
+owo.doctrine.intelligence.directive.court_whispers,Saray Fısıltıları
+owo.doctrine.intelligence.directive.court_whispers.desc,Dikkatle yerleştirilmiş bir söylenti bir ordunun işini görür. Ucuz, inkâr edilebilir ve tam olarak nişan alınması imkânsız.
+owo.doctrine.intelligence.hidden.cipher_disk,Şifre Diski
+owo.doctrine.intelligence.hidden.cipher_disk.desc,İç içe iki alfabe ve dönen bir gösterge harfi. Zeki bir kâtibin uzun bir öğleden sonrada artık çözemeyeceği yazışmalar.
+owo.doctrine.intelligence.hidden.council_of_ten,Onlar Meclisi
+owo.doctrine.intelligence.hidden.council_of_ten.desc,Önce hareket edip sonra izah etme yetkisi olan küçük ve daimî bir heyet. Sahip olan her cumhuriyette en çok korkulan kurum.
+owo.doctrine.intelligence.hidden.bought_clerk,Satın Alınmış Kâtip
+owo.doctrine.intelligence.hidden.bought_clerk.desc,Antlaşmaları temize çeken adam iki kere maaş alır. Avrupa'nın en ucuz istihbaratı ve kaybedildiğinde yerine konması en zor olanı.
+owo.doctrine.intelligence.hidden.pilgrim_networks,Hacı Ağları
+owo.doctrine.intelligence.hidden.pilgrim_networks.desc,Kimse bir hacının yolunu, bir dervişin konağını ya da bir seyyar satıcının denkini sorgulamaz. Hristiyan âleminin her sınırını kendi ayağıyla geçen bir örtü.
+owo.doctrine.intelligence.hidden.apothecary_arts,Aktarın Hüneri
+owo.doctrine.intelligence.hidden.apothecary_arts.desc,Rakip bir sarayda hekim, bir alaya bedeldir ve ara sıra bir alayın işini görür. Hiçbir şey asla ispatlanamaz.
+owo.doctrine.intelligence.hidden.intercepted_bag,Ele Geçirilen Çanta
+owo.doctrine.intelligence.hidden.intercepted_bag.desc,Ulak, keseyi ve ne yazık ki evrakı da alan haydutlarca soyulur. İttifakları imzalanmadan önce bilinir.
+owo.doctrine.industry.directive.arsenal_priority,Tersane Önceliği
+owo.doctrine.industry.directive.arsenal_priority.desc,Tersane önce yer: kereste, demir, halat ve her usta el. Donanmalar ve toplar erken gelir, diğer her şey bekler.
+owo.doctrine.industry.directive.public_works,Bayındırlık İşleri
+owo.doctrine.industry.directive.public_works.desc,Köprüler, mendirekler, su kemerleri ve yollar. Getirisini toptan daha geç gösterir ve iki yüzyıl boyunca göstermeye devam eder.
+owo.doctrine.industry.directive.stockpile_the_realm,Ülkeyi Stoklamak
+owo.doctrine.industry.directive.stockpile_the_realm.desc,Kötü yıla karşı cephanelikleri, ambarları ve kereste avlularını doldurun. Sermaye sundurmalarda atıl bekler ve kötü yıl her zaman gelir.
+owo.doctrine.industry.hidden.blast_furnace,Yüksek Fırın
+owo.doctrine.industry.hidden.blast_furnace.desc,Daha yüksek bacalar ve su gücüyle çalışan körükler şarjı erimiş tutar; böylece demir dövülmek yerine dökülür. Çubukla değil, tonla üretim.
+owo.doctrine.industry.hidden.arsenal_assembly,Tersane Montajı
+owo.doctrine.industry.hidden.arsenal_assembly.desc,Standart iskeletler, hazırlanmış keresteler ve teknenin çekildiği bir donatım kanalı. Sipariş üzerine bir günde tamamlanan kadırga.
+owo.doctrine.industry.hidden.saigerprozess,Gümüş Ayırma Usulü
+owo.doctrine.industry.hidden.saigerprozess.desc,Gümüşlü bakırı kurşunla eritin, gümüş ayrışsın. Değersiz sayılan cevher birdenbire bir darphaneye dönüşür.
+owo.doctrine.industry.hidden.overshot_wheel,Üstten Savaklı Çark
+owo.doctrine.industry.hidden.overshot_wheel.desc,Su, çarkın altına değil üstüne verilir. Bir bent kurulabilen her yerde aynı dereden iki katı güç.
+owo.doctrine.industry.hidden.wire_drawing_mill,Tel Çekme Değirmeni
+owo.doctrine.industry.hidden.wire_drawing_mill.desc,Su gücüyle çalışan çekme tezgâhları bütün gün çubuğu tele dönüştürür. Hiçbir el tezgâhının ulaşamayacağı miktarda zırh, iğne, toplu iğne ve halat.
+owo.doctrine.industry.hidden.dry_dock,Kuru Havuz
+owo.doctrine.industry.hidden.dry_dock.desc,İçeri alın, kapağı kapatın, suyu boşaltın ve tekneyi kuruda çalışın. Kalafat mevsimi artık gelgitle oynanan bir kumar olmaktan çıkar.

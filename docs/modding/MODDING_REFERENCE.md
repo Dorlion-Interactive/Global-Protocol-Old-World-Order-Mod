@@ -484,6 +484,11 @@ Two constraints worth knowing before you edit:
   edited from the Settings screen). A mod override of that section is ignored, which is why the
   in-game Mod Builder hides it.
 
+The Mod Builder's **GOALS** tab edits the scenario's `nationalGoalsFile`: one set of goals per
+country, with `type` and `priority` offered as dropdowns of exactly the values the loader accepts.
+A value outside those lists is read as `economic`, so the AI pursues the goal on the wrong terms;
+the Mods panel warns about it, and the editor will not let you author one.
+
 `overrides/laws.json` **is applied at runtime**: it merges onto the shipped `laws.json`
 (sparse, index-wise) and the laws blob is re-baked at boot. Mods may retune values on
 existing categories/options AND append new ones at the tail — appends are save-stable by
@@ -499,6 +504,19 @@ Law names/descriptions come from `politics.law.*` keys in the mod's
 Add `Content/localization/<language>.csv` with plain `key,value` rows (UTF-8, no BOM, no header).
 The 13 shipped languages are `cz, de, en, es, es-419, fr, ja, ko, pt, pt-br, ru, tr, zh`. Keys you
 define override the base game's; keys you omit fall back to the shipped string.
+
+A row is split at its **first** comma, so a value may contain commas and does not need quoting.
+
+**There is no fallback between languages for a key only your mod defines.** The game layers the
+base-game CSV, then the player's language CSV, then your mod's CSV *for that one language*. A key
+you put in `en.csv` and nowhere else therefore renders as the raw key — `mymod.some.key` — for
+every player not running English. Ship every key you define in all 13 files, even if some values
+start out as English placeholders.
+
+The Mod Builder's **TEXT** tab edits these files: pick a language, filter, edit values in place,
+and add or remove a key across all 13 locales at once. Rows whose value still matches the English
+one are flagged "same as English", with a count per language, so placeholder text is visible
+rather than silent.
 
 ### 8.4 Icons
 

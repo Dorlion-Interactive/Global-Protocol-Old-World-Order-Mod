@@ -1,0 +1,307 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "national_goals.schema.json",
+  "title": "National Goals 2026",
+  "description": "Defines per-country national goals that drive AI decision-making, territorial ambitions, and economic strategies. Each country has 1-3 goals with priority tiers.",
+  "type": "object",
+  "properties": {
+    "_description": {
+      "type": "string"
+    },
+    "_version": {
+      "type": "string"
+    },
+    "_goal_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "_priority_tiers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "_BASIC": {
+      "type": "object",
+      "required": [
+        "goals"
+      ],
+      "properties": {
+        "goals": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "$ref": "#/definitions/goal"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "patternProperties": {
+    "^[A-Z]{3}$": {
+      "type": "object",
+      "required": [
+        "goals"
+      ],
+      "properties": {
+        "goals": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 25,
+          "items": {
+            "$ref": "#/definitions/goal"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "goal": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "priority",
+        "ai_weight"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(basic_|[a-z]{3}_)[a-z0-9_]+$",
+          "description": "Unique goal identifier: {iso3_lowercase}_{snake_case_name} or basic_{snake_case_name}"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 80
+        },
+        "title_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9_.-]+$",
+          "maxLength": 160,
+          "description": "Localization key for goal title"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 500
+        },
+        "description_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9_.-]+$",
+          "maxLength": 180,
+          "description": "Localization key for goal description"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "expansion",
+            "territorial",
+            "economic",
+            "unification",
+            "defense",
+            "prestige",
+            "diplomatic",
+            "ideological",
+            "technology",
+            "intelligence"
+          ]
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "starter",
+            "primary",
+            "secondary",
+            "aspirational"
+          ]
+        },
+        "target_countries": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "description": "ISO3 codes of countries this goal targets"
+        },
+        "agenda_panel_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "description": "Optional panel route hint for agenda tasks, e.g. quickrecruit:air, quickbuild, diplomacy"
+        },
+        "agenda_subject": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "Optional explicit subject text shown in generated agenda task copy"
+        },
+        "ai_weight": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "How strongly the AI pursues this goal (0=ignore, 1=all-in)"
+        },
+        "incompatible_with": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(basic_|[a-z]{3}_)[a-z0-9_]+$"
+          },
+          "description": "Goal IDs that are mutually exclusive with this goal"
+        },
+        "on_complete_effects": {
+          "type": "object",
+          "properties": {
+            "prestige": {
+              "type": "number"
+            },
+            "stability": {
+              "type": "number"
+            },
+            "aggression_modifier": {
+              "type": "number"
+            },
+            "economy_boost": {
+              "type": "number"
+            },
+            "military_modifier": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false,
+          "description": "Stat effects applied when the goal is achieved"
+        },
+        "tasks": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/definitions/task"
+          },
+          "description": "Custom ECS-condition tasks. When present, overrides the type-based auto-generated tasks."
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "title"
+          ]
+        },
+        {
+          "required": [
+            "title_key"
+          ]
+        }
+      ],
+      "description": "Text fields accept either the literal or the '<field>_key' localization key; supply one of title or title_key."
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "id",
+        "condition"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "description": "Unique task identifier within the goal"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 100
+        },
+        "title_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9_.-]+$",
+          "maxLength": 180,
+          "description": "Localization key for task title"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 300
+        },
+        "description_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9_.-]+$",
+          "maxLength": 200,
+          "description": "Localization key for task description"
+        },
+        "panel_id": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "Optional panel route hint for UI navigation"
+        },
+        "required_count": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 1,
+          "description": "How many times the condition must be met, or the absolute total it compares against for counting conditions such as military_units_above (default 1). No upper bound: CountryAgendaService reads it into a plain int, the 1450 scenario asks for 50,000 men, and a bounded integer would render as an unusable slider in the Mod Builder."
+        },
+        "condition": {
+          "$ref": "#/definitions/task_condition"
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "title"
+          ]
+        },
+        {
+          "required": [
+            "title_key"
+          ]
+        }
+      ],
+      "description": "Text fields accept either the literal or the '<field>_key' localization key; supply one of title or title_key."
+    },
+    "task_condition": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "tutorial_objective",
+            "own_provinces",
+            "alliance_with",
+            "improve_relations",
+            "build_in_provinces",
+            "recruit_units",
+            "research_tech",
+            "treasury_above",
+            "gdp_above",
+            "declare_war_on",
+            "espionage_on",
+            "embassy_with",
+            "trade_agreement_with",
+            "guarantee_independence",
+            "sphere_member",
+            "defensive_pact_with",
+            "military_units_above"
+          ]
+        },
+        "params": {
+          "type": "object",
+          "description": "Condition-specific parameters (target_iso3, province_owner, min_value, objective_id, etc.)",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

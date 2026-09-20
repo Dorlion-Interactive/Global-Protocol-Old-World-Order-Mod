@@ -267,7 +267,7 @@
         "title_key": "owo.goal.fra_compagnies_ordonnance",
         "description": "Institutionalize France's first professional standing army financed by a permanent royal tax.",
         "description_key": "owo.goal.fra_compagnies_ordonnance.desc",
-        "type": "military",
+        "type": "defense",
         "priority": "secondary",
         "ai_weight": 0.7,
         "on_complete_effects": {
@@ -597,7 +597,7 @@
         "title_key": "owo.goal.myn_tumu_crisis_recovery",
         "description": "Rally the imperial court under Minister Yu Qian, fortify Beijing, and repel the Oirat Mongol invaders.",
         "description_key": "owo.goal.myn_tumu_crisis_recovery.desc",
-        "type": "military",
+        "type": "defense",
         "priority": "primary",
         "ai_weight": 0.95,
         "target_countries": [

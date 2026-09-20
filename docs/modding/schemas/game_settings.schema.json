@@ -763,6 +763,11 @@
           "description": "Military ticks an air wing spends rebasing to a land airfield (player rally and AI rebase)",
           "minimum": 1
         },
+        "air_capacity_per_wing_slot": {
+          "type": "integer",
+          "description": "Airfield air_capacity consumed by one based air wing. A province hosts floor(air_capacity / this) wings, at least one; over-capacity wings from the scenario start are grandfathered, only new arrivals are refused",
+          "minimum": 1
+        },
         "air_wing_morale_loss_per_casualty_ratio": {
           "type": "number",
           "description": "Air-wing morale lost per unit of casualty ratio in air-to-air combat",

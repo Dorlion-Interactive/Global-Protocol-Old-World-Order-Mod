@@ -583,3 +583,129 @@ doctrine.intelligence.t1.centralized_intelligence_directorate,Royal Spymaster & 
 doctrine.intelligence.t1.centralized_intelligence_directorate.desc,Recruitment of court informants, merchant spies, and harbor watchers providing advance intelligence of foreign schemes.
 doctrine.intelligence.t4.defensive_counter_intelligence,Inquisition & Crown Surveillance
 doctrine.intelligence.t4.defensive_counter_intelligence.desc,Royal judicial courts, town watches, and ecclesiastical scrutiny rooted in detecting foreign sedition.
+owo.doctrine.military.directive.chevauchee,Chevauchee
+owo.doctrine.military.directive.chevauchee.desc,Ride deep into enemy country and burn it: the war pays for itself in plunder and terror, and costs you the goodwill of every court that hears of it.
+owo.doctrine.military.directive.fortress_realm,Fortress Realm
+owo.doctrine.military.directive.fortress_realm.desc,Every march town gets a garrison and a mason's contract. Armies move slower and strike softer, but nothing takes your ground cheaply.
+owo.doctrine.military.directive.mercenary_retainers,Mercenary Retainers
+owo.doctrine.military.directive.mercenary_retainers.desc,Keep condottieri and free companies on standing retainer. They muster the moment the coin is counted, and they drink the treasury dry between wars.
+owo.doctrine.military.hidden.corned_powder,Corned Powder
+owo.doctrine.military.hidden.corned_powder.desc,Wetting, caking and grinding the powder into grains makes it burn hot and even. Guns that used to crack their own barrels now bring down curtain walls.
+owo.doctrine.military.hidden.trace_italienne,Trace Italienne
+owo.doctrine.military.hidden.trace_italienne.desc,Low angled bastions of earth and brick swallow cannon shot instead of shattering, and every approach is swept by flanking fire from the next bastion along.
+owo.doctrine.military.hidden.janissary_corps,Janissary Corps
+owo.doctrine.military.hidden.janissary_corps.desc,A standing household corps raised from boyhood, paid in cash and loyal to the throne alone. Discipline no feudal levy can match, and a paymaster who can never fall behind.
+owo.doctrine.military.hidden.longbow_yeomanry,Longbow Yeomanry
+owo.doctrine.military.hidden.longbow_yeomanry.desc,Statute obliges every freeholder to the butts on Sundays. A generation later you field archers no continental levy can buy, because they cannot be bought, only raised.
+owo.doctrine.military.hidden.wagenburg,Wagenburg
+owo.doctrine.military.hidden.wagenburg.desc,Chain the war wagons into a laager, load the hand-gunners behind the boards, and let the knights break themselves against it. Infantry that no longer fears cavalry.
+owo.doctrine.military.hidden.galleass_squadrons,Galleass Squadrons
+owo.doctrine.military.hidden.galleass_squadrons.desc,Oared hulls heavy enough to carry a broadside. They hold a line in a calm where the round ships drift, and they carry guns no galley could bear.
+owo.doctrine.economy.directive.bullionist_crown,Bullionist Crown
+owo.doctrine.economy.directive.bullionist_crown.desc,Silver that leaves the realm is silver lost. Tighten the customs, licence every export, and watch the mint fill while the merchants complain.
+owo.doctrine.economy.directive.free_trade_charters,Free Trade Charters
+owo.doctrine.economy.directive.free_trade_charters.desc,Sell charters of free passage to anyone with a hull. The tolls fall, the quaysides fill, and the crown takes its cut of a far larger trade.
+owo.doctrine.economy.directive.crown_credit,Crown Credit
+owo.doctrine.economy.directive.crown_credit.desc,Borrow against next year's customs at a banker's rate. The armies march on time, and the debasement that pays for it arrives quietly.
+owo.doctrine.economy.hidden.bills_of_exchange,Bills of Exchange
+owo.doctrine.economy.hidden.bills_of_exchange.desc,A merchant pays in Bruges and his factor is paid in Venice, and no coin crosses a bandit road. Credit moves at the speed of a courier.
+owo.doctrine.economy.hidden.branch_banking,Branch Banking
+owo.doctrine.economy.hidden.branch_banking.desc,One house, a ledger in every great city, and a partner who answers for the whole. The crown that banks with them borrows cheaply and is never quite free of them.
+owo.doctrine.economy.hidden.hanseatic_kontor,Hanseatic Kontor
+owo.doctrine.economy.hidden.hanseatic_kontor.desc,A walled trading compound with its own law, its own warehouse and its own quarrel with the town it sits in. Grain and furs move on Hansa terms.
+owo.doctrine.economy.hidden.silver_strike,Silver Strike
+owo.doctrine.economy.hidden.silver_strike.desc,A new seam opens and the mint works double shifts. The realm is suddenly rich, and every price in it begins to climb.
+owo.doctrine.economy.hidden.salt_monopoly,Salt Monopoly
+owo.doctrine.economy.hidden.salt_monopoly.desc,Nobody can cure a winter's meat without you. The most dependable revenue in the realm, and the one most likely to put peasants on the road with pitchforks.
+owo.doctrine.economy.hidden.consignment_fleet,Consignment Fleet
+owo.doctrine.economy.hidden.consignment_fleet.desc,Pool the cargo, pool the risk, and send the season's venture out under one flag. One lost hull no longer ruins a house.
+owo.doctrine.government.directive.rule_by_ordinance,Rule by Ordinance
+owo.doctrine.government.directive.rule_by_ordinance.desc,The king's word, sealed and proclaimed, is law by Friday. Decisions arrive fast and the estates remember every one of them.
+owo.doctrine.government.directive.consult_the_estates,Consult the Estates
+owo.doctrine.government.directive.consult_the_estates.desc,Nothing passes until the three estates have been heard. Slow, quarrelsome, and almost impossible to rebel against afterwards.
+owo.doctrine.government.directive.crown_patrimony,Crown Patrimony
+owo.doctrine.government.directive.crown_patrimony.desc,Take the royal demesne back into the king's own hand and audit every steward. Fewer favours to hand out, far fewer hands in the box.
+owo.doctrine.government.hidden.pragmatic_sanction,Pragmatic Sanction
+owo.doctrine.government.hidden.pragmatic_sanction.desc,Settle the succession in writing while the king still lives. Worth more than three fortresses on the day he dies.
+owo.doctrine.government.hidden.royal_progress,Royal Progress
+owo.doctrine.government.hidden.royal_progress.desc,The court moves through the provinces all summer, eating at the magnates' expense and reminding them what a king looks like.
+owo.doctrine.government.hidden.cadastral_survey,Cadastral Survey
+owo.doctrine.government.hidden.cadastral_survey.desc,Every field, hearth and mill written into the register. You finally know what the realm is worth, and so does every tax collector.
+owo.doctrine.government.hidden.venality_of_office,Venality of Office
+owo.doctrine.government.hidden.venality_of_office.desc,Sell the offices outright. The treasury fills this afternoon and the men who bought their posts expect to earn the price back.
+owo.doctrine.government.hidden.coronation_oath,Coronation Oath
+owo.doctrine.government.hidden.coronation_oath.desc,Crowned, anointed and sworn before the realm. Rebellion against you is no longer merely treason, it is sacrilege.
+owo.doctrine.government.hidden.chancery_archive,Chancery Archive
+owo.doctrine.government.hidden.chancery_archive.desc,Keep the rolls, keep the copies, keep them where a clerk can find them. A claim you can produce in writing is a claim you can win.
+owo.doctrine.society.directive.pious_realm,Pious Realm
+owo.doctrine.society.directive.pious_realm.desc,Endow the chantries, keep the feast days, and let the pulpit do the governing. A quiet, obedient realm that asks few new questions.
+owo.doctrine.society.directive.patron_of_letters,Patron of Letters
+owo.doctrine.society.directive.patron_of_letters.desc,Buy the manuscripts, keep the scholars, pay the copyists. The court becomes famous and the treasury notices.
+owo.doctrine.society.directive.bread_and_charity,Bread and Charity
+owo.doctrine.society.directive.bread_and_charity.desc,Open the granaries and fund the alms-houses before the hungry organise themselves. Expensive insurance against a very cheap riot.
+owo.doctrine.society.hidden.printing_workshop,Printing Workshop
+owo.doctrine.society.hidden.printing_workshop.desc,A press, a case of type and two men can outrun a scriptorium of forty. Ideas you like travel faster, and so do the others.
+owo.doctrine.society.hidden.lazaretto_quarantine,Lazaretto Quarantine
+owo.doctrine.society.hidden.lazaretto_quarantine.desc,Forty days offshore before any hull touches the quay. The merchants curse it every season it is not needed, and bless it the one season it is.
+owo.doctrine.society.hidden.vernacular_scripture,Vernacular Scripture
+owo.doctrine.society.hidden.vernacular_scripture.desc,Put the book in the language people actually speak. Devotion deepens, literacy spreads, and the clergy lose their monopoly on the argument.
+owo.doctrine.society.hidden.civic_confraternities,Civic Confraternities
+owo.doctrine.society.hidden.civic_confraternities.desc,Burial funds, dowry chests and a guild banner to march behind. The town looks after its own before it looks for someone to blame.
+owo.doctrine.society.hidden.studia_humanitatis,Studia Humanitatis
+owo.doctrine.society.hidden.studia_humanitatis.desc,Grammar, rhetoric, history and moral philosophy, taught from the recovered ancients. It produces better secretaries and much more dangerous ones.
+owo.doctrine.society.hidden.apprentice_statutes,Apprentice Statutes
+owo.doctrine.society.hidden.apprentice_statutes.desc,Seven years bound, then a masterpiece and a mastership. Skill is preserved exactly, which is also to say it changes very slowly.
+owo.doctrine.diplomacy.directive.marriage_diplomacy,Marriage Diplomacy
+owo.doctrine.diplomacy.directive.marriage_diplomacy.desc,Let others wage war; you will wed. Every daughter placed is a border that stops arguing, and a claim your grandson may collect.
+owo.doctrine.diplomacy.directive.tribute_and_threat,Tribute and Threat
+owo.doctrine.diplomacy.directive.tribute_and_threat.desc,Arrive with the fleet in the roadstead and the terms already written. They will sign, and they will remember.
+owo.doctrine.diplomacy.directive.broker_of_peace,Broker of Peace
+owo.doctrine.diplomacy.directive.broker_of_peace.desc,Host the talks, hold the pen, and let both sides owe you the settlement. Prestige is cheaper than provinces.
+owo.doctrine.diplomacy.hidden.golden_bull_charter,Golden Bull Charter
+owo.doctrine.diplomacy.hidden.golden_bull_charter.desc,A grant under the golden seal, irrevocable and very public. Privileges given this way are extremely hard to take back, which is the point.
+owo.doctrine.diplomacy.hidden.hostage_exchange,Hostage Exchange
+owo.doctrine.diplomacy.hidden.hostage_exchange.desc,Their heir is raised at your court and yours at theirs. A treaty with a pulse, and far harder to break than parchment.
+owo.doctrine.diplomacy.hidden.papal_dispensation,Papal Dispensation
+owo.doctrine.diplomacy.hidden.papal_dispensation.desc,The impediment is lifted, the marriage stands and the claim with it. Expensive, slow, and unanswerable once granted.
+owo.doctrine.diplomacy.hidden.capitulations,Capitulations
+owo.doctrine.diplomacy.hidden.capitulations.desc,Foreign merchants get their own quarter, their own consul and their own law. Trade floods in, and so does a resident foreign interest.
+owo.doctrine.diplomacy.hidden.italic_league,Italic League
+owo.doctrine.diplomacy.hidden.italic_league.desc,A standing pact to freeze the map: whoever moves first, everyone else moves against. Peace maintained by universal suspicion.
+owo.doctrine.diplomacy.hidden.heralds_truce,Herald's Truce
+owo.doctrine.diplomacy.hidden.heralds_truce.desc,Ransom tables, safe-conducts and a truce the heralds of both sides will enforce on their own princes. War with rules is war you can end.
+owo.doctrine.intelligence.directive.black_chamber,Black Chamber
+owo.doctrine.intelligence.directive.black_chamber.desc,Every diplomatic bag opened, copied, resealed and sent on unchanged. You learn everything and risk nothing abroad.
+owo.doctrine.intelligence.directive.agents_abroad,Agents Abroad
+owo.doctrine.intelligence.directive.agents_abroad.desc,Put your own men in their chanceries and pay them well. Reach at the price of a thin watch on your own house.
+owo.doctrine.intelligence.directive.court_whispers,Court Whispers
+owo.doctrine.intelligence.directive.court_whispers.desc,Rumour, placed carefully, does the work of an army. Cheap, deniable, and impossible to aim precisely.
+owo.doctrine.intelligence.hidden.cipher_disk,Cipher Disk
+owo.doctrine.intelligence.hidden.cipher_disk.desc,Two concentric alphabets and a turning index letter. Correspondence that a clever clerk can no longer read over a long afternoon.
+owo.doctrine.intelligence.hidden.council_of_ten,Council of Ten
+owo.doctrine.intelligence.hidden.council_of_ten.desc,A small standing committee with the power to act first and explain later. The most feared institution in any republic that has one.
+owo.doctrine.intelligence.hidden.bought_clerk,Bought Clerk
+owo.doctrine.intelligence.hidden.bought_clerk.desc,The man who copies the treaties is paid twice. The cheapest intelligence in Europe and the hardest to replace once lost.
+owo.doctrine.intelligence.hidden.pilgrim_networks,Pilgrim Networks
+owo.doctrine.intelligence.hidden.pilgrim_networks.desc,Nobody questions a pilgrim's road, a friar's lodging or a pedlar's pack. Cover that walks itself across every border in Christendom.
+owo.doctrine.intelligence.hidden.apothecary_arts,Apothecary's Arts
+owo.doctrine.intelligence.hidden.apothecary_arts.desc,A physician at a rival court is worth a regiment, and occasionally does the work of one. Nothing is ever proven.
+owo.doctrine.intelligence.hidden.intercepted_bag,Intercepted Bag
+owo.doctrine.intelligence.hidden.intercepted_bag.desc,The courier is robbed by bandits who take the purse and, regrettably, the despatches. Their alliance is known before it is signed.
+owo.doctrine.industry.directive.arsenal_priority,Arsenal Priority
+owo.doctrine.industry.directive.arsenal_priority.desc,The arsenal eats first: timber, iron, rope and every skilled hand. Fleets and guns arrive early and everything else waits.
+owo.doctrine.industry.directive.public_works,Public Works
+owo.doctrine.industry.directive.public_works.desc,Bridges, moles, aqueducts and roads. Slower to show a return than ordnance, and it shows it for two centuries.
+owo.doctrine.industry.directive.stockpile_the_realm,Stockpile the Realm
+owo.doctrine.industry.directive.stockpile_the_realm.desc,Fill the magazines, the granaries and the timber yards against the bad year. Capital sits idle in sheds, and the bad year always comes.
+owo.doctrine.industry.hidden.blast_furnace,Blast Furnace
+owo.doctrine.industry.hidden.blast_furnace.desc,Taller stacks and water-driven bellows keep the charge molten, so the iron is cast rather than beaten. Output by the ton instead of the bar.
+owo.doctrine.industry.hidden.arsenal_assembly,Arsenal Assembly
+owo.doctrine.industry.hidden.arsenal_assembly.desc,Standard frames, prepared timbers and a fitting-out canal the hull is towed along. A galley finished in a day, to order.
+owo.doctrine.industry.hidden.saigerprozess,Saigerprozess
+owo.doctrine.industry.hidden.saigerprozess.desc,Liquate the argentiferous copper with lead and the silver separates out. Ore that was worthless is suddenly a mint.
+owo.doctrine.industry.hidden.overshot_wheel,Overshot Wheel
+owo.doctrine.industry.hidden.overshot_wheel.desc,Water delivered to the top of the wheel instead of the bottom. Twice the power from the same stream, wherever a head can be built.
+owo.doctrine.industry.hidden.wire_drawing_mill,Wire-Drawing Mill
+owo.doctrine.industry.hidden.wire_drawing_mill.desc,Water-driven draw-benches pull rod into wire all day. Mail, pins, needles and cable in quantities no hand-bench could reach.
+owo.doctrine.industry.hidden.dry_dock,Dry Dock
+owo.doctrine.industry.hidden.dry_dock.desc,Float her in, shut the gate, pump out and work the hull dry. Careening season stops being a gamble with the tide.
