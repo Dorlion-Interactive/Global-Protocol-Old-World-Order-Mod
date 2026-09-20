@@ -9,11 +9,11 @@
   },
   "fleet": {
     "subcategory_icons": {
-      "destroyer": "overrides/Art/Units/naval_mod.png",
+      "destroyer": "overrides/Art/Units/destroyer.png",
       "frigate": "overrides/Art/Units/galley_mod.png",
-      "carrier": "overrides/Art/Units/naval_mod.png",
-      "patrol_boat": "overrides/Art/Units/galley_mod.png",
-      "amphibious": "overrides/Art/Units/naval_mod.png"
+      "carrier": "overrides/Art/Units/carrier.png",
+      "patrol_boat": "overrides/Art/Units/patrol_boat.png",
+      "amphibious": "overrides/Art/Units/amphibious.png"
     }
   }
 }

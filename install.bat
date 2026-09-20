@@ -304,6 +304,12 @@ echo   Copying flags\...
 robocopy "%SCRIPT_DIR%flags"      "%TARGET%\flags"      /E /NFL /NDL /NJH /NJS /R:1 /W:1
 if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on flags\ & pause & exit /b 1 )
 
+if exist "%SCRIPT_DIR%icons\" (
+    echo   Copying icons\...
+    robocopy "%SCRIPT_DIR%icons"      "%TARGET%\icons"      /E /NFL /NDL /NJH /NJS /R:1 /W:1
+    if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on icons\ & pause & exit /b 1 )
+)
+
 echo   Copying Content\ (runtime assets only, no source files)...
 robocopy "%SCRIPT_DIR%Content" "%TARGET%\Content" /E /NFL /NDL /NJH /NJS /R:1 /W:1 /XD wasm-as wasm-dotnet mod-csharp /XF *.ts *.cs *.csproj *.c *.h *.a *.rsp
 if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on Content\ & pause & exit /b 1 )
