@@ -191,7 +191,7 @@ Each entry maps to `ScenarioCountryDefinition`. Required field: `iso3`.
 | `governmentType` | string | See §8.1 |
 | `governmentSubtype` | string | Free-form subtype label |
 | `ideology` | string | See §8.2 |
-| `militaryUnitTypeIds` | string[] | **Not enforced yet** — the game does not read it. To give a country its own units, set `ownerIso3` on the unit types (§6.1). |
+| `militaryUnitTypeIds` | string[] | The country's **unit roster** (§6.1). Non-empty: the country recruits only these unit types plus any it owns. Empty or omitted: the default set. |
 | `neighbors` | string[] | Land-adjacent ISO3 codes |
 | `seaNeighbors` | string[] | Sea-adjacent ISO3 codes |
 | `leaderTitle` | string | Override leader title (e.g. `"Chancellor"`) |
@@ -222,6 +222,7 @@ An array of ISO3 strings: `["XXX", "YYY"]`
 | `manpower` | int | Available manpower (thousands) |
 | `reserve` | int | Reserve pool (thousands) |
 | `neutral` | bool | Sets (`true`) or clears (`false`) military neutrality; omitted keeps the baked flag (see §4.1) |
+| `militaryUnitTypeIds` | string[] | Gives an existing country a unit roster (§6.1); replaces an `addCountries` roster for the same country |
 
 ---
 
@@ -268,6 +269,20 @@ and cavalry, `artillery`, `armor` and `special_forces` from their namesakes, `fr
 `fighter` for air — and the fields above replace that unit's name, stats and terrain modifiers. A
 field you leave out keeps the base unit's value. When a content file does define the id, that
 definition is used and these stats are ignored; set costs or requirements there.
+
+**Who can recruit a unit type**, in this order:
+
+1. A disabled category or unit id (§3.3) is never available.
+2. A country always has the unit types it owns (`ownerIso3`).
+3. A country with a **roster** — a non-empty `militaryUnitTypeIds` in `addCountries` (§4.1) or
+   `countryStateOverrides` (§4.3) — recruits only the unit types its roster lists. A roster is an
+   explicit grant: it may list another country's exclusive unit (e.g. Tver's roster granting
+   Muscovy's streltsy).
+4. With `restrictOwnersToOwnedUnits` (§3.3), a country that owns unit types recruits nothing else.
+5. Otherwise a country has every unit type except the ones exclusive to other countries.
+
+Roster ids are matched case-insensitively. Ids no unit definition has, and rosters for countries the
+game does not contain, are reported as warnings at game start.
 
 ### 6.2 Stack Unit Entry (shared by armies/fleets/air)
 

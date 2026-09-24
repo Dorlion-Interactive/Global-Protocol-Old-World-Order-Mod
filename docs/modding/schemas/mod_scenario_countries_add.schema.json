@@ -81,8 +81,8 @@
                 },
                 "militaryUnitTypeIds": {
                     "type": "array",
-                    "items": { "type": "string" },
-                    "description": "IDs of unit types available to this country"
+                    "items": { "type": "string", "minLength": 1, "format": "content-id:units" },
+                    "description": "The country's unit roster. When non-empty the country recruits ONLY these unit types, plus any it owns (units_define ownerIso3); the list may grant another country's exclusive unit. Disabled categories and ids still apply. Empty or omitted keeps the default set."
                 },
                 "neighbors": {
                     "type": "array",

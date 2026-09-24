@@ -80,6 +80,11 @@
                 "neutral": {
                     "type": "boolean",
                     "description": "Sets (true) or clears (false) the country's military neutrality. Omitted keeps the baked value. Applies to AI control only; see mod_scenario_countries_add."
+                },
+                "militaryUnitTypeIds": {
+                    "type": "array",
+                    "items": { "type": "string", "minLength": 1, "format": "content-id:units" },
+                    "description": "The country's unit roster. When non-empty the country recruits ONLY these unit types, plus any it owns (units_define ownerIso3); the list may grant another country's exclusive unit. Disabled categories and ids still apply. Empty or omitted keeps the default set. Replaces an addCountries roster for the same country."
                 }
             },
             "additionalProperties": false
