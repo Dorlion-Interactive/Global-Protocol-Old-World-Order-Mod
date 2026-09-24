@@ -100,6 +100,11 @@
       },
       "description": "Specific unit type ids removed from availability, recruitment UI, and build eligibility for the whole scenario."
     },
+    "restrictOwnersToOwnedUnits": {
+      "type": "boolean",
+      "default": false,
+      "description": "A unit type with an ownerIso3 is exclusive to that country. When true, a country that owns unit types may recruit ONLY those (a historical scenario giving each nation its own roster). When false, owners keep every other available unit too."
+    },
     "disabledBuildingCategories": {
       "type": "array",
       "uniqueItems": true,

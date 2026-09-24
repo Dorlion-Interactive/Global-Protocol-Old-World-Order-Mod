@@ -1,6 +1,6 @@
 # NewWorldOrder – Modding Reference
 
-Last updated: 2026-09-17
+Last updated: 2026-09-23
 
 This document is the authoritative reference for mod authors. It covers folder layout, the manifest, all data override types, scenario split files, permissions, and enum values.
 
@@ -17,7 +17,7 @@ This document is the authoritative reference for mod authors. It covers folder l
     resources.json           ← resource overrides and disables (§8.1)
     currencies.json          ← national currencies money is shown in, display-only (§8.5)
     localization/            ← CSV localization additions (<language>.csv)
-    events/                  ← scripted event JSON (one event per file)
+    events/                  ← event JSON: a bare array, a single object, or { "events": [...] } (§8.7)
     ui/                      ← USS/icon overrides
   icons/                     ← replacement icons by id: buildings/, units/, resources/, doctrines/ (§8.4)
   overrides/                 ← sparse config overrides (see §9)
@@ -161,6 +161,7 @@ Each file is optional; missing files are skipped. Lists from all files are **app
 | `techOverrideFile` | string | `""` | **Ignored.** The tech tree was replaced by the Knowledge Network — use `overrides/doctrines.json` and `disabledDoctrineBranches`. |
 | `disabledUnitCategories` | string[] | `[]` | Unit categories (§9.5) removed from recruitment and build eligibility. |
 | `disabledUnitTypeIds` | string[] | `[]` | Specific unit ids, same effect. |
+| `restrictOwnersToOwnedUnits` | bool | false | A unit type with an `ownerIso3` (§6.1) is exclusive to that country. When true, a country that owns unit types may recruit **only** those — each nation gets its own roster. When false, owners keep every other available unit too. |
 | `disabledBuildingCategories` | string[] | `[]` | `Economic`, `Military`, `Infrastructure`, `Research`, `Social`, `Defense`, `Intelligence` — removed from every build menu, starting seeding, the AI and the build command. |
 | `disabledBuildingIds` | string[] | `[]` | Specific building ids, same effect. To drop most of the base roster, use `"mode": "replace"` (§8.1) instead. |
 | `disabledDoctrineBranches` | string[] | `[]` | Knowledge Network branches hidden from research: `military`, `government`, `economy`, `industry`, `diplomacy`, `intelligence`, `cyber`, `space`, `energy`, `society`. Their tier gates never open, so everything gated behind them stays locked. |
@@ -190,7 +191,7 @@ Each entry maps to `ScenarioCountryDefinition`. Required field: `iso3`.
 | `governmentType` | string | See §8.1 |
 | `governmentSubtype` | string | Free-form subtype label |
 | `ideology` | string | See §8.2 |
-| `militaryUnitTypeIds` | string[] | IDs of available unit types |
+| `militaryUnitTypeIds` | string[] | Unit type ids (§6.1) this country owns: a listed type without an `ownerIso3` becomes exclusive to it |
 | `neighbors` | string[] | Land-adjacent ISO3 codes |
 | `seaNeighbors` | string[] | Sea-adjacent ISO3 codes |
 | `leaderTitle` | string | Override leader title (e.g. `"Chancellor"`) |
@@ -198,6 +199,7 @@ Each entry maps to `ScenarioCountryDefinition`. Required field: `iso3`.
 | `homelandTerm` | string | Override homeland noun (e.g. `"Federation"`) |
 | `continent` | string | See §8.3 |
 | `region` | string | See §8.4 |
+| `neutral` | bool | Military neutrality. Omitted keeps the template's flag. An AI-controlled neutral forms no military alliances or defense pacts, gives no guarantees, joins no coalitions and answers no calls to arms (it still honors guarantees it already holds, and calls its own allies when attacked). A human player is unrestricted. |
 
 ### 4.2 Removing Countries (`removeCountries` / `countries_remove.json`)
 
@@ -219,6 +221,7 @@ An array of ISO3 strings: `["XXX", "YYY"]`
 | `gdp` | number | Annual GDP in USD millions |
 | `manpower` | int | Available manpower (thousands) |
 | `reserve` | int | Reserve pool (thousands) |
+| `neutral` | bool | Sets (`true`) or clears (`false`) military neutrality; omitted keeps the baked flag (see §4.1) |
 
 ---
 
@@ -249,14 +252,22 @@ Region names match the `WorldRegion` enum — see §8.4.
 
 | Field | Type | Description |
 |---|---|---|
-| `id` | string | **Required.** Unique type ID |
-| `category` | string | **Required.** See §8.5 |
-| `ownerIso3` | string | Country-exclusive unit (optional) |
+| `id` | string | **Required.** Unique type ID, at most 29 bytes |
+| `category` | string | **Required.** `infantry`, `cavalry`, `artillery`, `armor`, `special_forces`, `naval` or `air` |
+| `ownerIso3` | string | Optional. Only this country can recruit the unit; everyone else is denied it. The owner keeps every other unit unless the scenario sets `restrictOwnersToOwnedUnits` (§3.3). |
 | `displayName` | string | |
 | `attack / defense / hp / speed` | float | Base stats |
 | `manpower` | int | Manpower cost |
 | `airAttack / antiAir / range` | float | Air-specific stats |
 | `terrainPlains/Mountain/Desert/Forest/Urban` | float | Terrain modifiers (1.0 = neutral) |
+
+A unit type whose `id` no content file defines (`Content/units.json` or the scenario's
+`unitsOverrideFile`, §8.1) becomes a real, recruitable unit. It copies cost, upkeep, required
+building, prerequisites and equipment from a base unit of its category — `infantry` for infantry
+and cavalry, `artillery`, `armor` and `special_forces` from their namesakes, `frigate` for naval,
+`fighter` for air — and the fields above replace that unit's name, stats and terrain modifiers. A
+field you leave out keeps the base unit's value. When a content file does define the id, that
+definition is used and these stats are ignored; set costs or requirements there.
 
 ### 6.2 Stack Unit Entry (shared by armies/fleets/air)
 
@@ -300,7 +311,7 @@ Declare required permissions in `mod.json`:
 | `ReadEconomy` | Read-access to country economic state |
 | `WriteTreasury` | Modify treasury via hook callbacks |
 | `FireTriggers` | Trigger scripted events |
-| `WriteFlags` | Override flag textures at runtime |
+| `WriteFlags` | Set or clear a country's event flags, the flags that `has_flag` / `not_has_flag` event conditions test. It has nothing to do with flag or banner images. |
 | `InjectUI` | Add UI elements to the HUD |
 
 The game will reject mods that call gated APIs without the required permission.
@@ -633,6 +644,221 @@ agenda, and a file without `_BASIC` has no starter goals. It uses the base game'
 A file that is not an object, uses a key that is not a country code, or has a goal without an id or
 with a repeated id is rejected and the base goals stay; the Mods panel says why. The goals file is
 part of the multiplayer lobby check.
+
+### 8.7 Events (`Content/events/*.json`)
+
+Every `*.json` file in `Content/events/` can hold any number of events, in any of three shapes:
+
+```json
+[ { "id": "my_event_a", ... }, { "id": "my_event_b", ... } ]
+```
+```json
+{ "id": "my_event_a", ... }
+```
+```json
+{ "events": [ { "id": "my_event_a", ... }, { "id": "my_event_b", ... } ] }
+```
+
+The envelope form is what the Mod Builder writes. Files load in file-name order (ordinal), mods in
+mod-id order, and events in the order they appear in a file. Validate each event against
+[`event.schema.json`](./schemas/event.schema.json).
+
+#### Engine events and legacy events
+
+An object **with a `type` field** (`scripted`, `procedural` or `reactive`) is an **engine event**.
+At game start it is appended to the base game's event table and runs through the same engine as
+the built-in events: monthly evaluation, conditions, the popup, AI choices, effects, chains, and
+saves.
+
+An object **without `type`** is a **legacy event**, and it behaves as before. It only appears when
+a script fires it (`gp.fire_event` / `ModHookBus.FireEvent`), shows a popup whose buttons just
+close it, and never fires on its own. Add `type` when you want the engine to run the event.
+
+The effects decide too: an object that has `type` but writes any option effect as a string (the
+old `"effects": ["stability:0.10"]` form) still loads as a legacy event, with a warning. Write
+effects as objects (`{ "type": "modify_stat", ... }`) to run it in the event engine.
+
+#### Ids
+
+- Use lower-case ids (`a-z`, `0-9`, `_`), prefixed with your mod, e.g. `atlas_01`. The Mod Builder
+  enforces this rule.
+- An engine event whose id matches a base-game event, or an event that another mod loaded first, is
+  **skipped**. It never replaces the other event. Use a new id to add an event.
+- Saves store events by id, so renaming an event breaks it in existing saves.
+
+#### Additions for mod events
+
+| Field | Where | Meaning |
+|---|---|---|
+| `immediate: true` | event | No random roll. The event is eligible at the first monthly evaluation where all its conditions pass (MTTH 0). It can still lose: if other events are eligible for the same country in that evaluation, one is picked at random, weighted by `priority`. Use `priority: 10` for the best odds. If it loses, it tries again at a later evaluation, once the other event is answered and its cooldown has passed. Without `immediate`, `mean_time_to_happen_months` (default 12) sets the monthly chance, `1 - e^(-1/MTTH)`. |
+| `target: "player"` | event | Only human-controlled countries can get the event. AI countries never roll it. In multiplayer, every human player can get it. |
+| `fire_event` + `chain_event` + `delay_months` | option effect | Queues the event named by `chain_event` to fire `delay_months` later. `0` or no value uses the default (`chain_event_delay_months`, 1 month). The minimum is 1 month and the maximum is 600 months; a longer delay (or `chain_delay_months`) is cut to 600, with a warning. A month is 30 days. |
+| `flag` | condition / effect | Same as `flag_name`. |
+| `target` | condition / effect | Same as `target_country`. ISO3 codes are upper-cased. |
+| `title_key`, `description_key`, option `text_key` / `tooltip_key` | event / option | Localization keys, looked up in your `Content/localization/<language>.csv`. The plain `title` / `description` / `text` / `tooltip` are the fallback. |
+
+`change_government` accepts a government name as its `value`: `democracy`, `authoritarian`,
+`hybrid`, `monarchy`, `theocracy`, `military_junta`, `one_party`, `communist_state` or
+`transitional`.
+
+#### When events fire
+
+- **Monthly check.** Events are evaluated once per in-game month, on day 6–8, for every country.
+  A game or scenario that starts after that day gets its first check on the first day it runs.
+- **AI countries are staggered.** Each AI country rolls scripted and procedural events in about
+  2.4 months per year: the countries are split into 5 groups, and one group rolls each month.
+  Player countries roll every month. An `immediate` event for AI countries therefore arrives
+  within the first few months after its conditions pass, not exactly on the first day.
+- **One event at a time.** A country with an unanswered event gets no new scripted or procedural
+  event that month.
+- **Cooldown.** After a scripted or procedural event fires, that country gets no other scripted
+  or procedural event for 60 days (`generated_post_event_cooldown_days`). After a reactive event the
+  wait is 3 days (`reactive_post_event_cooldown_days`). `cooldown_months` adds a cooldown for one
+  event.
+- **Ties.** When several events are eligible in the same month, one is picked at random, weighted
+  by `priority` (1–10).
+- **Reactive events** fire from their `triggers` (`on_war_declared`, `on_coup`, …). A reactive
+  event **without** triggers never fires on its own. It fires only as a chain target or from a
+  script.
+- **Choices.** AI countries choose an option automatically (`ai_weight` and the personality
+  factors). The player sees a popup. If the player doesn't answer, the game picks an option after
+  30 days (`player_event_auto_decide_days`).
+- **Notification setting.** Players can hide less important popups. At "Important only",
+  `social_cultural` and `technology_breakthrough` events are resolved with their **first option**
+  and moved to the event log. At "Critical only", only `geopolitical_crisis`, `military_incident`,
+  `natural_disaster` and `internal_politics` events show as popups. Use one of those four categories
+  for story events the player must see.
+
+#### Chains
+
+A chain is an event-level `chain_event` (with `chain_delay_months`), or a `fire_event` effect on
+one option. The effect form queues the follow-up only when the player or AI picks that option.
+
+- **Recipient.** If the chained event is `specific_country`, it goes to that country. Otherwise it
+  goes to the country that made the choice.
+- **Conditions.** The chained event's own conditions are checked on the recipient when the chain
+  comes due and the recipient can take it, not when it was queued. If they fail, the chain is
+  dropped.
+- **Fire once.** A chained `fire_once` event that the recipient has already had is dropped. A
+  chained `target: "player"` event is dropped if the recipient is an AI country.
+- **Busy recipient.** If the recipient already has an unanswered event, the chain waits. As soon
+  as the queue is free, its conditions are checked and it fires.
+- **No cooldown.** A chain ignores the 60-day cooldown, but it starts a new one when it fires.
+- **Lookup order.** `chain_event` looks for your mod's events first, then the base game's. An id that
+  matches neither is reported and the chain is dropped.
+
+#### Condition support
+
+| Condition | Works? | Notes |
+|---|---|---|
+| `date_after` | yes | `"YYYY-MM"` (a day part is ignored). Counts by month and includes the month itself: `"2026-06"` passes from June 2026. |
+| `date_before` | yes | `"YYYY-MM"`, excludes the month itself. |
+| `country_stat_gt` / `country_stat_lt` | yes | `field` + numeric `value`. Fields that work are listed below. Any other known field is always 0. |
+| `at_war` / `not_at_war` | yes | Optional `target_country`: at war with that country. |
+| `has_nuclear` | yes | The country has nuclear warheads. |
+| `has_flag` / `not_has_flag` | yes | `flag_name` (or `flag`), set by `set_flag` or `gp.set_country_flag`. |
+| `government_type` | yes | The same names as `change_government` above. |
+| `continent` / `not_continent` | yes | `africa`, `americas`, `asia`, `europe`, `oceania`, `antarctica`. |
+| `region` / `not_region` | yes | `northern_africa`, `sub_saharan_africa`, `latin_america_caribbean`, `northern_america`, `central_asia`, `east_asia`, `south_asia`, `southeast_asia`, `western_asia`, `eastern_europe`, `northern_europe`, `southern_europe`, `western_europe`, `australia_new_zealand`, `melanesia`, `micronesia`, `polynesia`. |
+| `country_unrest_gt` / `country_unrest_lt` | yes | Average national unrest, 0–100. |
+| `owns_province` / `not_owns_province` | yes | `value`: a province id (a whole number, e.g. `2276`). True when the country is the province's **legal owner**. Optional `target_country`: test that country instead. See [Province conditions](#province-conditions). |
+| `controls_province` / `not_controls_province` | yes | `value`: a province id. True when the country **controls** the province: it occupies it, or owns it and nobody occupies it. Optional `target_country`. See [Province conditions](#province-conditions). |
+| `has_tech`, `province_stat_gt`, `alliance_member`, `relation_above` / `relation_gt` / `relation_below` / `relation_lt`, `defcon_level` | **no** | Accepted, but the engine doesn't check them yet. They always fail, or compare against 0. You get a warning at load. |
+| `active_law_is` | **no** | Rejected in mod events for now. |
+
+Stat fields that `country_stat_gt` / `country_stat_lt` read: `economy.gdp`,
+`economy.gdp_per_capita`, `economy.gdp_growth_rate`, `economy.inflation_rate`,
+`economy.debt_to_gdp`, `economy.unemployment`, `economy.hdi`, `government.stability`,
+`government.corruption`, `government.economic_stance`, `government.social_stance`,
+`military.manpower`, `military.reserve`, `military.defense_budget`, `military.tanks`,
+`military.aircraft`, `military.ships`, `military.nuclear_warheads`, `budget.tax_rate`,
+`budget.treasury`, `budget.military_pct`, `budget.research_pct`.
+
+#### Province conditions
+
+`owns_province`, `not_owns_province`, `controls_province` and `not_controls_province` let an event
+fire when a province changes hands. `value` is the province id from the game's province registry
+(the Mod Builder's province picker shows it as "Name (id)").
+
+```json
+{ "type": "controls_province", "value": 2276, "target_country": "OTT" }
+```
+
+- **Owns** means the legal owner. It changes only when the province is transferred, for example
+  by a peace deal. Taking the province with an army does **not** change the owner.
+- **Controls** means the occupier, if the province is occupied, otherwise the owner. It changes as
+  soon as an army captures the province, before any peace deal.
+- **Subject.** Without `target_country` the condition tests the country that would get the event.
+  With it, the condition tests the named country instead. The example above is true for **every**
+  country once the Ottomans (`OTT`) control İstanbul (2276). An `any_country` event with it and
+  `{ "type": "continent", "value": "europe" }` therefore goes to every European country. Add
+  `{ "type": "not_controls_province", "value": 2276 }` to leave out the Ottomans themselves.
+- A `target_country` that no longer exists owns and controls nothing, and so does any country for an
+  unknown province id. The `not_` variants are then true.
+- **Timing.** Conditions are checked at the monthly evaluation, not at the moment of capture. A
+  player country is checked every month. An AI country rolls scripted events about 1 month in 5,
+  so an AI recipient can get the event a few months after the capture. `immediate: true` removes the
+  random roll, but still waits for that country's next evaluation.
+- An event that should fire once per country when a province changes hands needs `fire_once: true`.
+  Otherwise it can fire again every time its conditions pass, after its cooldowns.
+
+#### Effect support
+
+| Effect | Works? |
+|---|---|
+| `modify_stat`, `add_relation`, `set_flag`, `clear_flag`, `add_treasury`, `modify_unrest`, `impose_sanction`, `lift_sanction`, `engage_diplomatically`, `withdraw_forces`, `change_government`, `modify_resource_price` (alias `global_modifier`), `fire_event` | yes |
+| `declare_war`, `create_unit`, `annex_province`, `start_research` | **no**: accepted, but they do nothing yet (warning at load) |
+
+#### Errors
+
+Mod events are checked strictly. These problems **skip the whole event**:
+- an unknown `type`, `category`, `target`, condition, effect or trigger type;
+- an unknown stat `field`;
+- a date that isn't `"YYYY-MM"`;
+- a province condition whose `value` isn't a whole number of 1 or more;
+- an unknown continent, region or government name;
+- a `specific_country` event without `target_country`;
+- fewer than 1 or more than 6 options;
+- a `fire_event` without `chain_event`, or a flag effect or condition without a flag name.
+
+A duplicate id skips the later event. An unknown chain target keeps the event and drops the chain.
+Text longer than its field is cut off, with a warning: 125 bytes for titles, keys and option
+labels, 509 bytes for tooltips.
+
+Where problems appear:
+- the Loadout screen's error bar;
+- the Mods panel;
+- the Mod Builder's Reload & Test;
+- `Player.log`.
+
+Each message names the mod, the file, the event id and the reason. Two problems are found only
+when your events are added to the game's event table, once per session shortly after the mods
+load: an id that matches a base-game event, and a chain target that matches no event. They appear
+in the Loadout screen's error bar and in `Player.log`, but not in the Mod Builder's Reload & Test.
+Restart the game to check them again after a fix. A text that is cut off at that point is a
+warning only: it is logged, but the mod is not marked as failing.
+
+#### Firing from a script
+
+`gp.fire_event(country, "event_id")` (and `ModHookBus.FireEvent`) looks the id up among the base
+game's events and every active mod's engine events. A match is added to that country's queue
+**immediately**, without checking conditions, `target`, `fire_once` or cooldowns: the script
+decides. If the id isn't an engine event, a legacy event with that id is shown instead. See the
+[WASM Scripting Guide](./WASM_SCRIPTING_GUIDE.md).
+
+#### Saves and multiplayer
+
+- Mod events are saved by id. If you load a save after removing or renaming an event, its pending
+  entries for that event are dropped, with one warning.
+- Every `Content/events/*.json` file is part of the multiplayer lobby check. Players with
+  different event files can't join the same game.
+
+#### Example
+
+[`examples/atlantis/`](./examples/atlantis/) is a complete two-event chain. `atlas_01` fires once
+for the player from June 2026. Its "Send an expedition" option sets a flag and queues `atlas_02`
+one month later. The "Leave it" option sets a different flag, so `atlas_02` never comes. The example
+includes English and Turkish text.
 
 ---
 

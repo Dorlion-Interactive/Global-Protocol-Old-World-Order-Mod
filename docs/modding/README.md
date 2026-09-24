@@ -9,6 +9,10 @@ Use this as the root page for your wiki import.
 - [UI Injection Guide](./UI_INJECTION_GUIDE.md)
 - [Province Reference](./PROVINCE_REFERENCE.md)
 
+## Examples
+
+- [Project Atlantis: an event chain mod](./examples/atlantis/README.md)
+
 ## Scenario Split JSON Schemas
 
 - [Schema README](./schemas/README.md)

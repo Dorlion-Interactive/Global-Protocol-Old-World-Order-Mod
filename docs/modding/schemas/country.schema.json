@@ -335,7 +335,11 @@
                 "dominant_religion": { "type": "string", "description": "Largest religion by population share (drives kinship relations/AI restraint)" },
                 "dominant_ethnicity": { "type": "string", "description": "Largest ethnic group by population share (drives kinship relations/AI restraint)" },
                 "primary_culture": { "type": "string", "description": "Primary cultural identity of the country" },
-                "ethnic_homogeneity": { "type": "number", "minimum": 0, "maximum": 1, "description": "0 = highly diverse, 1 = ethnically homogeneous" }
+                "ethnic_homogeneity": { "type": "number", "minimum": 0, "maximum": 1, "description": "0 = highly diverse, 1 = ethnically homogeneous" },
+                "age_0_17": { "type": "number", "minimum": 0, "maximum": 1, "description": "Share of population aged 0-17 (youth cohort)" },
+                "age_18_35": { "type": "number", "minimum": 0, "maximum": 1, "description": "Share of population aged 18-35 (young adult cohort)" },
+                "age_36_55": { "type": "number", "minimum": 0, "maximum": 1, "description": "Share of population aged 36-55 (middle-age cohort)" },
+                "age_56_plus": { "type": "number", "minimum": 0, "maximum": 1, "description": "Share of population aged 56 and older (senior cohort)" }
             }
         },
         "military": {

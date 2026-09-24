@@ -16,6 +16,7 @@
     "definitions": {
         "ScenarioUnitTypeDefinition": {
             "type": "object",
+            "description": "A unit type. When no content file (Content/units.json or the scenario's unitsOverrideFile) defines this id, it becomes a recruitable unit that copies cost, upkeep, required building and prerequisites from a base unit of its category, with the stats below laid on top.",
             "required": ["id", "category"],
             "properties": {
                 "id": {
@@ -26,7 +27,7 @@
                 "ownerIso3": {
                     "type": "string",
                     "pattern": "^[A-Z]{3}$",
-                    "description": "If set, this unit type is exclusive to the given country"
+                    "description": "If set, only this country can recruit this unit type; every other country keeps its own units. Leave empty for all countries. See the scenario's restrictOwnersToOwnedUnits."
                 },
                 "displayName": {
                     "type": "string"
@@ -34,7 +35,7 @@
                 "category": {
                     "type": "string",
                     "enum": ["infantry","cavalry","artillery","naval","air","armor","special_forces"],
-                    "description": "Broad unit category used for combat resolution"
+                    "description": "Broad unit category. A unit type nothing else defines copies its cost and requirements from this base unit: infantry and cavalry from infantry, artillery, armor and special_forces from their namesakes, naval from frigate, air from fighter."
                 },
                 "attack": { "type": "number", "minimum": 0 },
                 "defense": { "type": "number", "minimum": 0 },

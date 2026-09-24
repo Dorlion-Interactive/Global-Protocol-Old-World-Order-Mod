@@ -165,6 +165,132 @@
           "description": "Absolute sanity ceiling on a single province's population. Not the primary runaway control (per-month percentage bounds in the growth/migration systems are); this is a final defensive clamp.",
           "minimum": 1000000,
           "maximum": 10000000000
+        },
+        "age_transition_years_youth": {
+          "type": "number",
+          "description": "Years for the Youth band (0-17) to fully transition into Young. Monthly aging rate = 1/(years*12); 0 = no aging (stale bake/legacy).",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "age_transition_years_young": {
+          "type": "number",
+          "description": "Years for the Young band (18-35) to fully transition into Middle. Monthly aging rate = 1/(years*12); 0 = no aging (stale bake/legacy).",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "age_transition_years_middle": {
+          "type": "number",
+          "description": "Years for the Middle band (36-55) to fully transition into Senior. Monthly aging rate = 1/(years*12); 0 = no aging (stale bake/legacy).",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "age_mortality_weight_youth": {
+          "type": "number",
+          "description": "Relative per-capita death risk of the Youth band, used to split a country's monthly deaths across age bands. All-zero weights fall back to a proportional (share-weighted) split.",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "age_mortality_weight_young": {
+          "type": "number",
+          "description": "Relative per-capita death risk of the Young band, used to split a country's monthly deaths across age bands. All-zero weights fall back to a proportional (share-weighted) split.",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "age_mortality_weight_middle": {
+          "type": "number",
+          "description": "Relative per-capita death risk of the Middle band, used to split a country's monthly deaths across age bands. All-zero weights fall back to a proportional (share-weighted) split.",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "age_mortality_weight_senior": {
+          "type": "number",
+          "description": "Relative per-capita death risk of the Senior band, used to split a country's monthly deaths across age bands. All-zero weights fall back to a proportional (share-weighted) split.",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "migrant_age_profile_youth": {
+          "type": "number",
+          "description": "Share of net migrants (implicit + cross-border) assigned to the Youth band. A zero-sum profile across all four bands falls back to a proportional (share-weighted) split.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "migrant_age_profile_young": {
+          "type": "number",
+          "description": "Share of net migrants (implicit + cross-border) assigned to the Young band. A zero-sum profile across all four bands falls back to a proportional (share-weighted) split.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "migrant_age_profile_middle": {
+          "type": "number",
+          "description": "Share of net migrants (implicit + cross-border) assigned to the Middle band. A zero-sum profile across all four bands falls back to a proportional (share-weighted) split.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "migrant_age_profile_senior": {
+          "type": "number",
+          "description": "Share of net migrants (implicit + cross-border) assigned to the Senior band. A zero-sum profile across all four bands falls back to a proportional (share-weighted) split.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "birth_age_structure_weight": {
+          "type": "number",
+          "description": "Momentum weight applying a country's Young+half-Middle age share to its birth rate (0 = feedback disabled, matching the pre-momentum formula exactly).",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "birth_age_structure_reference": {
+          "type": "number",
+          "description": "World-average reference value for the birth age-structure momentum term (Young + 0.5*Middle of CountryAgeStructure.WorldAverageFractions = 0.3945), against which a country's actual share is compared.",
+          "minimum": 0.05,
+          "maximum": 1
+        },
+        "death_age_structure_weight": {
+          "type": "number",
+          "description": "Momentum weight applying a country's mortality-weighted age share to its death rate (0 = feedback disabled, matching the pre-momentum formula exactly).",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "death_age_structure_reference": {
+          "type": "number",
+          "description": "World-average reference value for the death age-structure momentum term (WorldAverageFractions dot age_mortality_weight_* = 2.1032), against which a country's actual weighted share is compared.",
+          "minimum": 0.1,
+          "maximum": 50
+        },
+        "youth_bulge_unrest_weight": {
+          "type": "number",
+          "description": "Unrest points per month added to a country's pressure channel at full youth-bulge excess and full unemployment factor (0 = coupling off). 0.5 is about half of one strong law; 1.0 is the loud setting.",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "youth_bulge_reference": {
+          "type": "number",
+          "description": "World-average young-adult (18-35) share of the ADULT population the youth-bulge excess is measured against (WorldAverageFractions.Young / (Young + Middle + Senior) = 0.3835).",
+          "minimum": 0.05,
+          "maximum": 1
+        },
+        "youth_bulge_unemployment_threshold": {
+          "type": "number",
+          "description": "Unemployment rate below which a youth bulge adds no unrest.",
+          "minimum": 0,
+          "maximum": 0.4
+        },
+        "youth_bulge_unemployment_scale": {
+          "type": "number",
+          "description": "Unemployment span above the threshold over which the youth-bulge factor ramps from 0 to 1.",
+          "minimum": 0.01,
+          "maximum": 0.5
+        },
+        "emigration_age_structure_weight": {
+          "type": "number",
+          "description": "Weight applying a source country's 18-35 share (vs emigration_age_structure_reference) to its cross-border and negative implicit emigration as a bounded multiplier around 1 (0 = coupling off).",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "emigration_age_structure_reference": {
+          "type": "number",
+          "description": "World-average young-adult share the emigration multiplier is centred on (WorldAverageFractions.Young = 0.2702).",
+          "minimum": 0.05,
+          "maximum": 1
         }
       }
     },
@@ -868,6 +994,24 @@
           "minimum": 0,
           "maximum": 0.5
         },
+        "growth_to_reserve_ratio": {
+          "type": "number",
+          "description": "Fraction of monthly population growth that enters the reserve pool (only positive growth contributes).",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "recruit_age_structure_weight": {
+          "type": "number",
+          "description": "Weight applying a country's 18-35 share (vs recruit_age_structure_reference) to reserve intake and the monthly manpower regeneration rate as a bounded multiplier around 1 (0 = coupling off).",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "recruit_age_structure_reference": {
+          "type": "number",
+          "description": "World-average young-adult share the recruit multiplier is centred on (WorldAverageFractions.Young = 0.2702).",
+          "minimum": 0.05,
+          "maximum": 1
+        },
         "siege_defense_base": {
           "type": "number",
           "description": "Base defense points each province has at siege start (before pop/infra modifiers)",
@@ -1175,6 +1319,24 @@
           "description": "Power-law exponent for GDP diminishing returns (lower = weaker effect).",
           "minimum": 0.01,
           "maximum": 1.0
+        },
+        "growth_age_structure_weight": {
+          "type": "number",
+          "description": "Weight applying a country's working-age share (18-55, vs growth_age_structure_reference) to the whole pre-difficulty GDP growth rate as a bounded multiplier around 1 (0 = coupling off).",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "growth_age_structure_reference": {
+          "type": "number",
+          "description": "World-average working-age share the growth multiplier is centred on (WorldAverageFractions.Young + Middle = 0.5188).",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "growth_age_structure_clamp": {
+          "type": "number",
+          "description": "Half-width of the growth multiplier band: 0.10 keeps it within [0.90, 1.10].",
+          "minimum": 0,
+          "maximum": 0.5
         },
         "base_annual_interest_rate": {
           "type": "number",
@@ -1893,6 +2055,12 @@
           "minimum": 0,
           "maximum": 1
         },
+        "war_score_collapse_battle_fill": {
+          "type": "number",
+          "description": "Ceiling of the graded battle-term fill a collapsed war (enemy overrun/outmatched) receives, ramped from 0 at the collapse-eligibility occupation share up to this value at full occupation, so a total conqueror's battle term does not stall at whatever intensity happened to accumulate from won battles alone. 0 = use the formula default",
+          "minimum": 0,
+          "maximum": 1
+        },
         "war_score_coalition_influence": {
           "type": "number",
           "description": "RETIRED, ships at 0. Legacy multiplier on earned war score, superseded by war_score_strength_weight. A multiplier is the wrong shape on an additive scale. 0 here means retired, NOT unset",
@@ -2078,6 +2246,84 @@
           "description": "Hard ceiling on the whole-war side-pool budget a winning PRIMARY may draw on top of its pair-level executable budget. 0 = use the formula default (60).",
           "minimum": 0,
           "maximum": 100
+        },
+        "reparations_gdp_share": {
+          "type": "number",
+          "description": "War Reparations one-time payment: share of the payer's GDP that sets the reparations base amount (base = reparations_gdp_share * GDP). 0 = use the formula default (0.03)",
+          "exclusiveMinimum": 0,
+          "maximum": 0.25
+        },
+        "reparations_floor_months_revenue": {
+          "type": "number",
+          "description": "War Reparations: months of the payer's monthly revenue that set the reparations floor (floor = reparations_floor_months_revenue * MonthlyRevenue). 0 = use the formula default (1.0)",
+          "exclusiveMinimum": 0,
+          "maximum": 12
+        },
+        "reparations_treasury_cap_share": {
+          "type": "number",
+          "description": "War Reparations: share of the payer's positive treasury that feeds the reparations cap. 0 = use the formula default (0.5)",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "reparations_debt_headroom_gdp_share": {
+          "type": "number",
+          "description": "War Reparations: share of the payer's GDP added to the cap as borrowable headroom, so a broke loser (treasury <= 0) can still pay a small sum and go into debt at month end. 0 = use the formula default (0.01)",
+          "exclusiveMinimum": 0,
+          "maximum": 0.1
+        },
+        "humiliation_stability_penalty": {
+          "type": "number",
+          "description": "Humiliation peace demand: flat stability points [0, 100] subtracted once from the humiliated country, clamped at 0. 0 = use the formula default (10)",
+          "exclusiveMinimum": 0,
+          "maximum": 50
+        },
+        "peace_demand_cost_war_reparations": {
+          "type": "number",
+          "description": "War score cost of the WarReparations peace demand. 0 = use the formula default (20)",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "peace_demand_cost_humiliation": {
+          "type": "number",
+          "description": "War score cost of the Humiliation peace demand. 0 = use the formula default (15)",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "peace_demand_cost_province_transfer": {
+          "type": "number",
+          "description": "Flat/placeholder war score cost of the ProvinceTransfer peace demand, shown before any province is selected. The real cost charged by PeaceDealCommand is always the per-province sum from ProvinceTransferCostUtil (province_transfer_min_cost..province_transfer_max_cost); this knob is overridden per province in practice. 0 = use the formula default (30)",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "peace_demand_cost_regime_change": {
+          "type": "number",
+          "description": "War score cost of the RegimeChange peace demand. 0 = use the formula default (60)",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "peace_demand_cost_liberation": {
+          "type": "number",
+          "description": "War score cost of the Liberation peace demand. 0 = use the formula default (50)",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "prestige_modifier_decay_ticks": {
+          "type": "integer",
+          "description": "B24 (2026-09-22): default lifetime (ticks) a flat PrestigeModifierElement row (declare-war dishonor, broken guarantee, national goal bonus, treaty compliance, nuclear use, UN resolution) decays linearly to 0 over, once its writer stops refreshing it. 0 = use the formula default (1080)",
+          "exclusiveMinimum": 0,
+          "maximum": 3600
+        },
+        "humiliation_prestige_penalty": {
+          "type": "number",
+          "description": "B24 (2026-09-22): Humiliation peace demand: flat prestige points [0, 100] subtracted once from the humiliated country. 0 = use the formula default (15)",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "humiliation_prestige_decay_ticks": {
+          "type": "integer",
+          "description": "B24 (2026-09-22): lifetime (ticks) the Humiliated prestige modifier decays linearly to 0 over. 0 = use the formula default (1080)",
+          "exclusiveMinimum": 0,
+          "maximum": 3600
         },
         "truce_duration_months": {
           "type": "integer",
@@ -2455,6 +2701,48 @@
               "description": "Negative war-utility weight for expected multilateral-sanction trade loss when warring without a casus belli (0 disables)",
               "minimum": 0,
               "maximum": 20
+            },
+            "trade_top_partner_weight": {
+              "type": "number",
+              "description": "B23 economic interdependence: dependence credited when the target is our #1 export or import partner (rank r earns max(0, this - r x trade_partner_rank_falloff)). Default 0.5.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "trade_partner_rank_falloff": {
+              "type": "number",
+              "description": "Credit lost per rank below #1 among the top-5 export / import partners. Default 0.1.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "trade_reverse_dependence_share": {
+              "type": "number",
+              "description": "Share of the TARGET's dependence on us (its partner lists naming us) that counts toward ours. Default 0.5.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "trade_agreement_bonus": {
+              "type": "number",
+              "description": "Dependence added by an active trade agreement between the pair. Default 0.25.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "trade_dependence_damping": {
+              "type": "number",
+              "description": "War-score damping per unit of trade dependence (dependence saturates at 1). 0 switches the trade term off. Default 0.5.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "shared_economic_bloc_damping": {
+              "type": "number",
+              "description": "War-score damping when the pair shares a trade bloc. Default 0.3.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "interdependence_max_damping": {
+              "type": "number",
+              "description": "Ceiling on the total interdependence damping; a casus belli does not lift it. Default 0.6.",
+              "minimum": 0.0,
+              "maximum": 1.0
             }
           }
         },
@@ -3802,6 +4090,24 @@
               "minimum": 1,
               "maximum": 120
             },
+            "action_deferred_cooldown_ticks": {
+              "description": "Cooldown stamped when the per-country action cap drops a request, so the planner does not rebuild the identical one on its next monthly slot.",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 360
+            },
+            "diplomacy_contact_success_cooldown_ticks": {
+              "description": "Cooldown after a successful diplomatic contact that has no authored window of its own. MUST exceed the 30-tick planner cadence or it throttles nothing.",
+              "type": "integer",
+              "minimum": 31,
+              "maximum": 720
+            },
+            "diplomacy_contact_failure_min_ticks": {
+              "description": "Floor for a failed diplomatic attempt. MUST exceed the 30-tick planner cadence or an impossible proposal retries every game month.",
+              "type": "integer",
+              "minimum": 31,
+              "maximum": 720
+            },
             "warning_throttle_ticks": {
               "type": "integer",
               "minimum": 1,
@@ -3822,6 +4128,294 @@
               "minimum": 1,
               "maximum": 720,
               "description": "Failure cooldown (ticks) stamped on an AI MoveArmy order whose destination is unroutable with no fallback province, instead of the generic action_failure_cooldown. Default 30."
+            }
+          }
+        },
+        "peace": {
+          "type": "object",
+          "description": "AI peace-timing knobs (2026-09-22, B16 war-score-peace fix): minimum war duration, its per-war jitter, the ScorePeaceDeal timeFactor ramp, and the post-war re-declare cooldown. 0 on any field falls back to the AIFormulas code default.",
+          "properties": {
+            "min_war_duration_ticks": {
+              "type": "integer",
+              "description": "Ticks a war must last before either side may sue for peace (ScorePeaceDeal's hard gate, and the combat gate at 2x this). 0 or out-of-range falls back to the code default (180 = 6 months at 1 tick/day).",
+              "minimum": 0,
+              "maximum": 3600
+            },
+            "min_war_duration_jitter_ticks": {
+              "type": "integer",
+              "description": "Extra ticks (0..this, deterministically seeded from the war's StartedAtTick) added on top of min_war_duration_ticks so every war on the map does not become peace-eligible on the same tick. 0 or out-of-range falls back to the code default (90).",
+              "minimum": 0,
+              "maximum": 3600
+            },
+            "time_factor_ramp_ticks": {
+              "type": "integer",
+              "description": "Ticks after the resolved minimum duration over which ScorePeaceDeal's timeFactor ramps from 0 to 1. 0 or out-of-range falls back to the code default (540 = 2 years).",
+              "minimum": 0,
+              "maximum": 3600
+            },
+            "post_war_redeclare_cooldown_ticks": {
+              "type": "integer",
+              "description": "Extra ticks added on top of the truce duration before either side of a concluded war may declare war on the other again, for ANY casus belli (a wildcard DeclareWar cooldown row — see AIActionCooldownUtility.AnyParamKey). 0 or out-of-range falls back to the code default (720 = 2 years).",
+              "minimum": 0,
+              "maximum": 3600
+            }
+          }
+        },
+        "casus_belli": {
+          "type": "object",
+          "description": "Casus-belli generation (2026-09-23, B23): the thresholds, strengths and lifetimes AICasusBelliGenerationSystem used as C# literals, at the same values. cb_expiry_ticks 0 falls back to the AIFormulas code defaults for the whole section.",
+          "properties": {
+            "cb_expiry_ticks": {
+              "type": "integer",
+              "description": "Base lifetime of a generated casus belli, in ticks (720 = 2 years). 0 falls back to the AIFormulas code defaults for the whole section (a stale bake). Default 720.",
+              "minimum": 0,
+              "maximum": 7200
+            },
+            "max_cbs_per_country": {
+              "type": "integer",
+              "description": "Casus belli a country holds at once; a new one replaces the weakest when full. Default 15.",
+              "minimum": 1,
+              "maximum": 64
+            },
+            "defend_ally_strength_base": {
+              "type": "number",
+              "description": "DefendAlly casus belli strength before alliance loyalty. Default 0.5.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "defend_ally_strength_loyalty_scale": {
+              "type": "number",
+              "description": "DefendAlly strength added per point of AIPersonality.AllianceLoyalty. Default 0.3.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "defend_ally_strength_min": {
+              "type": "number",
+              "description": "Lower clamp of DefendAlly strength. Default 0.3.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "defend_ally_strength_max": {
+              "type": "number",
+              "description": "Upper clamp of DefendAlly strength. Default 1.0.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "defend_ally_expiry_multiplier": {
+              "type": "number",
+              "description": "DefendAlly lifetime as a multiple of cb_expiry_ticks. Default 0.5.",
+              "minimum": 0.0,
+              "maximum": 10.0
+            },
+            "preemptive_min_military_threat": {
+              "type": "number",
+              "description": "PreemptiveStrike needs at least this military threat... Default 5.0.",
+              "minimum": 0.0,
+              "maximum": 10.0
+            },
+            "preemptive_min_threat_score": {
+              "type": "number",
+              "description": "...and at least this overall threat score. Default 4.0.",
+              "minimum": 0.0,
+              "maximum": 10.0
+            },
+            "preemptive_strength_per_military_threat": {
+              "type": "number",
+              "description": "PreemptiveStrike strength per point of military threat (then times aggression). Default 0.1.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "preemptive_strength_min": {
+              "type": "number",
+              "description": "Lower clamp of PreemptiveStrike strength before aggression. Default 0.2.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "preemptive_strength_max": {
+              "type": "number",
+              "description": "Upper clamp of PreemptiveStrike strength before aggression. Default 0.9.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "regional_min_threat_score": {
+              "type": "number",
+              "description": "RegionalStability needs at least this overall threat score... Default 5.0.",
+              "minimum": 0.0,
+              "maximum": 10.0
+            },
+            "regional_min_proximity_threat": {
+              "type": "number",
+              "description": "...and at least this proximity threat. Default 1.5.",
+              "minimum": 0.0,
+              "maximum": 10.0
+            },
+            "regional_strength_per_threat": {
+              "type": "number",
+              "description": "RegionalStability strength per point of threat score. Default 0.08.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "regional_strength_min": {
+              "type": "number",
+              "description": "Lower clamp of RegionalStability strength. Default 0.2.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "regional_strength_max": {
+              "type": "number",
+              "description": "Upper clamp of RegionalStability strength. Default 0.8.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "revenge_strength_base": {
+              "type": "number",
+              "description": "Revenge casus belli strength before aggression. Default 0.3.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "revenge_strength_aggression_scale": {
+              "type": "number",
+              "description": "Revenge strength added per point of AIPersonality.Aggression. Default 0.3.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "revenge_strength_min": {
+              "type": "number",
+              "description": "Lower clamp of Revenge strength. Default 0.2.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "revenge_strength_max": {
+              "type": "number",
+              "description": "Upper clamp of Revenge strength. Default 0.9.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "revenge_expiry_multiplier": {
+              "type": "number",
+              "description": "Revenge lifetime as a multiple of cb_expiry_ticks. Default 2.0.",
+              "minimum": 0.0,
+              "maximum": 10.0
+            },
+            "territorial_strength_base": {
+              "type": "number",
+              "description": "TerritorialClaim (failed invasion) strength before aggression. Default 0.4.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "territorial_strength_aggression_scale": {
+              "type": "number",
+              "description": "TerritorialClaim strength added per point of aggression. Default 0.3.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "territorial_strength_min": {
+              "type": "number",
+              "description": "Lower clamp of TerritorialClaim strength. Default 0.3.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "territorial_strength_max": {
+              "type": "number",
+              "description": "Upper clamp of TerritorialClaim strength. Default 1.0.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "territorial_failure_strength_step": {
+              "type": "number",
+              "description": "TerritorialClaim strength lost per earlier failed invasion of the same target. Default 0.25.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "territorial_failure_strength_floor": {
+              "type": "number",
+              "description": "Lowest multiplier repeated failures can reduce TerritorialClaim strength to. Default 0.3.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "territorial_expiry_multiplier": {
+              "type": "number",
+              "description": "TerritorialClaim lifetime as a multiple of cb_expiry_ticks. Default 3.0.",
+              "minimum": 0.0,
+              "maximum": 10.0
+            },
+            "ideological_max_relation": {
+              "type": "integer",
+              "description": "IdeologicalConflict needs a relation at or below this. Default -50.",
+              "minimum": -100,
+              "maximum": 100
+            },
+            "ideological_min_opposition": {
+              "type": "number",
+              "description": "IdeologicalConflict needs an ideology opposition above this (0-1). Default 0.75.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "ideological_opposition_scale": {
+              "type": "number",
+              "description": "IdeologicalConflict strength per unit of opposition. Default 0.5.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "ideological_crusader_bonus": {
+              "type": "number",
+              "description": "Extra IdeologicalConflict strength for an IdeologicalCrusader grand strategy. Default 0.3.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "ideological_strength_min": {
+              "type": "number",
+              "description": "Lower clamp of IdeologicalConflict strength. Default 0.2.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "ideological_strength_max": {
+              "type": "number",
+              "description": "Upper clamp of IdeologicalConflict strength. Default 0.9.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "scenario_expiry_multiplier": {
+              "type": "number",
+              "description": "Lifetime of the scenario-seeded 2026 casus belli as a multiple of cb_expiry_ticks. Default 2.0.",
+              "minimum": 0.0,
+              "maximum": 10.0
+            },
+            "revenge_half_life_ticks": {
+              "type": "integer",
+              "description": "Ticks for a concluded war's revenge grievance to halve (1800 = 5 years). 0 falls back to the code defaults for the six revenge fields. Default 1800.",
+              "minimum": 0,
+              "maximum": 36000
+            },
+            "revenge_weight_loss": {
+              "type": "number",
+              "description": "Starting grievance after a war this country lost (conceded a real demand). Default 1.0.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "revenge_weight_white_peace": {
+              "type": "number",
+              "description": "Starting grievance after a white peace. Default 0.5.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "revenge_weight_win": {
+              "type": "number",
+              "description": "Starting grievance after a war this country won. Default 0.25.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "revenge_co_belligerent_weight": {
+              "type": "number",
+              "description": "Grievance multiplier when the war was fought through a co-belligerent (either side not Primary); 0 means joiners never hold a grudge. Default 0.35.",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "revenge_min_strength": {
+              "type": "number",
+              "description": "A Revenge casus belli weaker than this is dropped (the same 0.1 floor as the war-declaration intent gate). Default 0.1.",
+              "minimum": 0.0,
+              "maximum": 1.0
             }
           }
         }
@@ -4639,6 +5233,96 @@
           "description": "Extra parliament support margin above the pass threshold an AI democracy requires",
           "minimum": 0,
           "maximum": 0.5
+        },
+        "cohort_drift_rate": {
+          "type": "number",
+          "description": "Overall monthly scale of voter-cohort bloc drift (0 freezes the cohorts; legacy default 0.05)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "cohort_responsiveness_young": {
+          "type": "number",
+          "description": "Drift-speed multiplier for the 18-35 cohort",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "cohort_responsiveness_middle": {
+          "type": "number",
+          "description": "Drift-speed multiplier for the 36-55 cohort",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "cohort_responsiveness_senior": {
+          "type": "number",
+          "description": "Drift-speed multiplier for the 56+ cohort",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "cohort_unemployment_socialist_weight": {
+          "type": "number",
+          "description": "How strongly excess unemployment grows the Socialist/Communist bloc",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "cohort_inflation_nationalist_weight": {
+          "type": "number",
+          "description": "How strongly excess inflation grows the Nationalist/Conservative bloc",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "cohort_unrest_authoritarian_weight": {
+          "type": "number",
+          "description": "How strongly excess unrest grows the Authoritarian/Theocratic bloc",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "cohort_growth_liberal_weight": {
+          "type": "number",
+          "description": "How strongly positive growth grows the Liberal/Capitalist bloc",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "cohort_unemployment_natural": {
+          "type": "number",
+          "description": "Unemployment fraction considered natural (no pressure below it)",
+          "minimum": 0,
+          "maximum": 0.5
+        },
+        "cohort_inflation_threshold": {
+          "type": "number",
+          "description": "Inflation fraction above which populist pressure applies",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "cohort_unrest_threshold01": {
+          "type": "number",
+          "description": "Country unrest (0-1) above which authoritarian pressure applies",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "cohort_incumbent_performance_weight": {
+          "type": "number",
+          "description": "Weight of retrospective voting: economic performance credits or punishes the incumbent bloc",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "cohort_growth_expectation": {
+          "type": "number",
+          "description": "GDP growth fraction the electorate treats as par (above credits the incumbent, below punishes)",
+          "minimum": -0.1,
+          "maximum": 0.2
+        },
+        "cohort_mean_reversion_rate": {
+          "type": "number",
+          "description": "Monthly fraction of the gap to each cohort's structural target that springs back (partisan loyalty)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "cohort_max_performance_swing": {
+          "type": "number",
+          "description": "Symmetric clamp on the per-month incumbent performance score",
+          "minimum": 0,
+          "maximum": 1
         }
       }
     },

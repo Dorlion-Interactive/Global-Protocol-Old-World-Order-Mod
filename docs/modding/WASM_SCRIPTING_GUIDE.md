@@ -101,6 +101,8 @@ The host calls these functions if they are exported. All are optional.
   (param $country1 i32) (param $country2 i32))
 ```
 
+**`on_ui_action` in multiplayer.** A button click runs `on_ui_action` on the clicking player's game only. Every other hook is raised by the simulation and runs the same way on every player's game. So in a multiplayer session, calls made from `on_ui_action` that would change the game are refused: `country_set_treasury`, `add_treasury`, `fire_event` and `fire_trigger` (and, for C# mods, the same writes through `ModHookBus` / `ModGameActionRequest`, including country flags). Each mod gets one warning in the log. `show_mod_popup` and `log` still work, because they only affect the local screen. Changes to the game must come from sim hooks such as `on_game_tick` or `on_economy_tick`. Don't store the click and apply it later from a sim hook: the stored click exists on one player's game only, so the sessions would still drift apart. Single-player is not affected; there, `on_ui_action` can change the game as before.
+
 ---
 
 ## 4. Imported Functions (host provides to WASM)
@@ -135,7 +137,9 @@ Your WASM module may `import` these host-provided functions:
 
 Strings are passed as `(ptr, len)` pairs pointing into the WASM linear memory. Strings from host to WASM are UTF-8, not null-terminated.
 
-`fire_event` is currently a compatibility shim. The host maps a small set of known event IDs onto existing trigger families before dispatching into the ECS event pipeline. Arbitrary event-ID execution is not implemented yet, so mods should not assume full component/modern ABI parity here.
+`fire_event` looks the id up among the base game's events and the engine events of every active mod: `Content/events/*.json` objects with a `type` field, which the game adds to the event table at game start (see §8.7 of the [Modding Reference](./MODDING_REFERENCE.md)). A match goes straight into that country's event queue, through the normal event pipeline: popup or AI choice, effects, chains and saves.
+
+The script decides when the event fires, so the event's own conditions and cooldowns are **not** checked. Two rules still apply: a `target: "player"` event is refused for a country no human controls, and a `fire_once` event is refused once it has fired (or while it is still pending); the same event is never queued twice for one country. If the id is not an engine event, a legacy event (no `type`) with that id is shown as a popup whose buttons just close it. An unknown id is ignored, with a one-time warning in the log.
 
 ---
 
@@ -144,6 +148,7 @@ Strings are passed as `(ptr, len)` pairs pointing into the WASM linear memory. S
 - The host allocates no memory inside the WASM module. All buffers are owned by the WASM module.
 - For strings returned **to** the host (e.g. event IDs), write the UTF-8 bytes into WASM linear memory and pass the pointer + length to the import function.
 - The host does not call `free` — manage memory in your module's allocator.
+- The host checks every `(ptr, len)` pair against your module's linear memory before reading it. A string that falls outside that memory (or has a negative pointer or length) is ignored, with a one-time warning in the log. The host reads at most 64 KB of any one string.
 
 ---
 

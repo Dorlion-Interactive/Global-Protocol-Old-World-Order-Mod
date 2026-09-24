@@ -76,6 +76,10 @@
                     "type": "integer",
                     "minimum": 0,
                     "description": "Military reserve pool in people (not thousands). 0 or omitted keeps the starting value."
+                },
+                "neutral": {
+                    "type": "boolean",
+                    "description": "Sets (true) or clears (false) the country's military neutrality. Omitted keeps the baked value. Applies to AI control only; see mod_scenario_countries_add."
                 }
             },
             "additionalProperties": false

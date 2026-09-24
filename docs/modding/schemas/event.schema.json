@@ -30,11 +30,12 @@
     },
     "image": {
       "type": "string",
-      "description": "Event illustration path (relative to StreamingAssets/Events/)"
+      "description": "Name of a built-in event illustration: a file name without extension from the game's Resources/UI/Events folder (e.g. 'event_airstrike'). Not a file path; an unknown name shows no picture."
     },
     "type": {
       "type": "string",
-      "enum": ["scripted", "procedural", "reactive"]
+      "enum": ["scripted", "procedural", "reactive"],
+      "description": "Also decides how the engine runs a mod file's object: with 'type' it is an engine event; without it, a legacy script-fired event. A 'reactive' event fires from its 'triggers'; with no 'triggers' it never fires on its own and is only reachable as a chain_event / fire_event target or from a script (gp.fire_event / ModHookBus.FireEvent)."
     },
     "category": {
       "type": "string",
@@ -55,7 +56,7 @@
       "minimum": 1,
       "maximum": 10,
       "default": 5,
-      "description": "Higher priority events are evaluated first and take precedence"
+      "description": "Relative weight (1-10) in a weighted random pick: when several events are eligible for the same country in the same evaluation, one of them is chosen at random, weighted by priority. It does not make an event evaluate first."
     },
     "fire_once": {
       "type": "boolean",
@@ -69,7 +70,8 @@
     },
     "target": {
       "type": "string",
-      "enum": ["player", "any_country", "specific_country", "all", "random_matching"]
+      "enum": ["player", "any_country", "specific_country", "all", "random_matching"],
+      "description": "Who can get the event. 'player': only human-controlled countries (every human in multiplayer); AI countries never roll it, and a chain that would deliver it to an AI country is dropped. 'specific_country': only target_country. 'any_country' / 'all' / 'random_matching': any country whose conditions pass. Chain recipients follow the rule in chain_event, not this field."
     },
     "target_country": {
       "type": "string",
@@ -148,7 +150,11 @@
               "not_region",
               "country_unrest_gt",
               "country_unrest_lt",
-              "active_law_is"
+              "active_law_is",
+              "owns_province",
+              "not_owns_province",
+              "controls_province",
+              "not_controls_province"
             ]
           },
           "field": {
@@ -156,11 +162,19 @@
             "description": "Dot-path to stat field (e.g., 'military.active_personnel', 'government.stability')"
           },
           "value": {
-            "description": "Comparison value. Numbers for stat conditions (country_unrest_gt/lt compare 0-100 average national unrest); string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before. For active_law_is, prefer law_category/law_option (or a 'categoryId/optionId' value string)."
+            "description": "Comparison value. Numbers for stat conditions (country_unrest_gt/lt compare 0-100 average national unrest); string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before. For active_law_is, prefer law_category/law_option (or a 'categoryId/optionId' value string). For owns_province / not_owns_province / controls_province / not_controls_province: the province id from province_registry.json (a whole number of 1 or more, e.g. 2276). 'owns' = the legal owner (changes with a peace deal or territory transfer); 'controls' = the occupier if the province is occupied, otherwise the owner (changes on capture). An unknown province is owned / controlled by no one, so the not_ variants are true for it."
           },
           "target_country": {
             "type": "string",
-            "description": "ISO3 for conditions targeting a specific country"
+            "description": "ISO3 for conditions targeting a specific country. at_war / not_at_war: at war with that country. owns_province / not_owns_province / controls_province / not_controls_province: test that country instead of the event's recipient (e.g. { \"type\": \"controls_province\", \"value\": 2276, \"target_country\": \"OTT\" }); a country that no longer exists owns and controls nothing."
+          },
+          "flag_name": {
+            "type": "string",
+            "description": "has_flag / not_has_flag only: the flag name set by a set_flag effect."
+          },
+          "flag": {
+            "type": "string",
+            "description": "Alias of flag_name, accepted in mod events (Content/events/*.json) only. The base game importers read flag_name."
           },
           "law_category": {
             "type": "string",
@@ -177,6 +191,11 @@
       "type": "number",
       "minimum": 0.1,
       "description": "Average months until event fires. P(month) = 1 - e^(-1/MTTH)."
+    },
+    "immediate": {
+      "type": "boolean",
+      "default": false,
+      "description": "Mod events (Content/events/*.json) only: skip the mean_time_to_happen_months roll and fire at the first monthly evaluation where the event is eligible (all conditions pass, no other event pending, no cooldown). AI countries are evaluated in rotating groups, so for them this means within a few months. The base game importers ignore this field."
     },
     "options": {
       "type": "array",
@@ -267,7 +286,25 @@
                   "description": "Stat field path for modify_stat"
                 },
                 "value": {
-                  "description": "Effect value (number, string, etc.)"
+                  "description": "Effect value (number, string, etc.). change_government: a GovernmentType number, or in mod events a name such as 'democracy'. fire_event: prefer delay_months; a numeric value here is used as the delay only when delay_months is absent."
+                },
+                "flag_name": {
+                  "type": "string",
+                  "description": "set_flag / clear_flag only: the country event flag to set or clear (tested by has_flag / not_has_flag)."
+                },
+                "flag": {
+                  "type": "string",
+                  "description": "Alias of flag_name, accepted in mod events (Content/events/*.json) only. The base game importers read flag_name."
+                },
+                "chain_event": {
+                  "type": "string",
+                  "description": "fire_event only: id of the event to queue when this option is chosen. In mod events it is looked up among mod events first, then base events. The recipient rule of the top-level chain_event applies."
+                },
+                "delay_months": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 0,
+                  "description": "fire_event only: months (of 30 days) before the chained event fires. 0 or absent uses the engine default (game_settings events.chain_event_delay_months); the minimum is 1."
                 }
               }
             }
@@ -285,7 +322,7 @@
     },
     "chain_event": {
       "type": "string",
-      "description": "Event ID to fire after this event resolves"
+      "description": "Event ID to fire chain_delay_months after this event resolves, whichever option was chosen (use a fire_event effect to chain from one option only). Recipient rule: if the chained event is 'specific_country' it goes to that country, otherwise to the country that made the choice. The chained event's own conditions are checked on the recipient when the chain comes due, not when it was queued; if they fail, the chain is dropped. In mod events the id is looked up among mod events first, then base events."
     },
     "chain_delay_months": {
       "type": "integer",

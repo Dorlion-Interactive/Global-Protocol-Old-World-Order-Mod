@@ -48,7 +48,7 @@ envelope. The schema below describes **one entry**, not the whole file.
 | `Content/units.json` | `unit_type.schema.json` |
 | `Content/resources.json` | `resource_type.schema.json` |
 | `Content/tech_tree.json` | `tech_tree.schema.json` |
-| `Content/events/*.json` | `event.schema.json` (one event per file) |
+| `Content/events/*.json` | `event.schema.json` (a bare array, a single object, or `{ "events": [...] }` — any number of events per file) |
 
 ## Config overrides (`overrides/`)
 

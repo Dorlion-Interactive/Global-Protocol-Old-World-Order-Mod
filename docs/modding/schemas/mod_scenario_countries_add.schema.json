@@ -134,6 +134,10 @@
                         "WesternEurope"
                     ],
                     "description": "WorldRegion enum value"
+                },
+                "neutral": {
+                    "type": "boolean",
+                    "description": "Military neutrality (true/false). Omitted keeps the template country's flag. An AI-controlled neutral forms no military alliances or defense pacts, gives no guarantees, joins no coalitions and answers no calls to arms; a human player is unrestricted."
                 }
             },
             "additionalProperties": false
