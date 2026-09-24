@@ -37,7 +37,6 @@
         "amphibious",
         "mobile_launcher"
     ],
-    "restrictOwnersToOwnedUnits": true,
     "buildingsOverrideFile": "buildings_override.json",
     "resourcesOverrideFile": "resources_override.json",
     "currenciesFile": "currencies.json",
