@@ -191,7 +191,7 @@ Each entry maps to `ScenarioCountryDefinition`. Required field: `iso3`.
 | `governmentType` | string | See §8.1 |
 | `governmentSubtype` | string | Free-form subtype label |
 | `ideology` | string | See §8.2 |
-| `militaryUnitTypeIds` | string[] | Unit type ids (§6.1) this country owns: a listed type without an `ownerIso3` becomes exclusive to it |
+| `militaryUnitTypeIds` | string[] | **Not enforced yet** — the game does not read it. To give a country its own units, set `ownerIso3` on the unit types (§6.1). |
 | `neighbors` | string[] | Land-adjacent ISO3 codes |
 | `seaNeighbors` | string[] | Sea-adjacent ISO3 codes |
 | `leaderTitle` | string | Override leader title (e.g. `"Chancellor"`) |
