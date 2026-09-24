@@ -6,20 +6,70 @@
     "category": "geopolitical_crisis",
     "priority": 10,
     "fire_once": true,
+    "target": "specific_country",
+    "target_country": "OTT",
+    "immediate": true,
     "description": "On 29 May 1453, after a 53-day siege, Sultan Mehmed II's forces have breached the ancient Theodosian Walls. The Eastern Roman Empire has fallen, ending over a millennium of Byzantine civilization. Constantinople is claimed as the grand capital of the Ottoman Empire, and the historic trade routes linking the Mediterranean to the Black Sea are now firmly under imperial Ottoman control.",
+    "conditions": [
+      {
+        "type": "controls_province",
+        "value": 2276
+      }
+    ],
     "options": [
       {
         "text": "Kostantiniyye shall shine as the crown jewel of our empire!",
         "effects": [
-          "stability:0.10",
-          "treasury:1000",
-          "prestige:50"
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "add_treasury",
+            "value": 500
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "constantinople_conquered"
+          }
         ]
+      }
+    ]
+  },
+  {
+    "id": "fall_of_constantinople_1453_christendom",
+    "title": "The Fall of Constantinople",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 10,
+    "fire_once": true,
+    "target": "any_country",
+    "mean_time_to_happen_months": 2,
+    "description": "On 29 May 1453, after a 53-day siege, Sultan Mehmed II's forces have breached the ancient Theodosian Walls. The Eastern Roman Empire has fallen, ending over a millennium of Byzantine civilization. Constantinople is claimed as the grand capital of the Ottoman Empire, and the historic trade routes linking the Mediterranean to the Black Sea are now firmly under imperial Ottoman control.",
+    "conditions": [
+      {
+        "type": "continent",
+        "value": "europe"
       },
+      {
+        "type": "controls_province",
+        "value": 2276,
+        "target_country": "OTT"
+      },
+      {
+        "type": "not_controls_province",
+        "value": 2276
+      }
+    ],
+    "options": [
       {
         "text": "A tragic twilight for the Christian Roman world.",
         "effects": [
-          "unrest:0.05"
+          {
+            "type": "modify_unrest",
+            "value": 5
+          }
         ]
       }
     ]
@@ -31,20 +81,64 @@
     "category": "military_incident",
     "priority": 9,
     "fire_once": true,
+    "target": "specific_country",
+    "target_country": "FRA",
+    "immediate": true,
     "description": "In July 1453, Jean Bureau's French field artillery decisively crushed John Talbot's English knights at the Battle of Castillon. Following the battle, the French crown recovered Bordeaux and the entire Duchy of Guyenne. After 116 years of devastating dynastic war, English arms have been expelled from all continental lands with the sole exception of Calais.",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1453-07"
+      }
+    ],
     "options": [
       {
         "text": "France stands sovereign and united at last!",
         "effects": [
-          "stability:0.15",
-          "gdp_modifier:0.05"
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 15
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "end_hundred_years_war_1453_england",
+    "title": "Battle of Castillon: End of the Hundred Years' War",
+    "type": "scripted",
+    "category": "military_incident",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "ENG",
+    "immediate": true,
+    "description": "In July 1453, Jean Bureau's French field artillery decisively crushed John Talbot's English knights at the Battle of Castillon. Following the battle, the French crown recovered Bordeaux and the entire Duchy of Guyenne. After 116 years of devastating dynastic war, English arms have been expelled from all continental lands with the sole exception of Calais.",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1453-07"
+      }
+    ],
+    "options": [
       {
         "text": "A painful retreat across the English Channel.",
         "effects": [
-          "unrest:0.10",
-          "stability:-0.05"
+          {
+            "type": "modify_unrest",
+            "value": 10
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          }
         ]
       }
     ]
@@ -56,13 +150,28 @@
     "category": "technology_breakthrough",
     "priority": 8,
     "fire_once": true,
+    "target": "any_country",
+    "mean_time_to_happen_months": 6,
     "description": "In the German city of Mainz, master goldsmith Johannes Gutenberg has successfully combined movable lead alloy type, an oil-based ink formula, and an adapted wooden screw press to produce the 42-Line Gutenberg Bible. The invention promises to accelerate the dissemination of religious, legal, and classical humanistic knowledge at an unimaginable speed.",
+    "conditions": [
+      {
+        "type": "continent",
+        "value": "europe"
+      },
+      {
+        "type": "date_after",
+        "value": "1455-01"
+      }
+    ],
     "options": [
       {
         "text": "Sponsor the establishment of printing presses throughout our cities.",
         "effects": [
-          "research_speed:0.15",
-          "gdp_modifier:0.03"
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.01
+          }
         ]
       }
     ]
@@ -74,13 +183,29 @@
     "category": "internal_politics",
     "priority": 8,
     "fire_once": true,
+    "target": "specific_country",
+    "target_country": "ENG",
+    "immediate": true,
     "description": "In the wake of military defeat in France and the mental incapacitation of King Henry VI, bitter rivalry between the rival royal branches—the House of Lancaster (the Red Rose) and the House of York (the White Rose)—has erupted into violence at the First Battle of St Albans. England enters a generation of bloody civil strife for the Crown.",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1455-05"
+      }
+    ],
     "options": [
       {
         "text": "May God preserve the realm from civil chaos.",
         "effects": [
-          "stability:-0.15",
-          "unrest:0.15"
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -15
+          },
+          {
+            "type": "modify_unrest",
+            "value": 15
+          }
         ]
       }
     ]
@@ -92,13 +217,29 @@
     "category": "diplomatic_opportunity",
     "priority": 7,
     "fire_once": true,
+    "target": "specific_country",
+    "target_country": "PRT",
+    "immediate": true,
     "description": "Under the patronage of Prince Henry the Navigator, Portuguese caravels have rounded Cape Verde and pushed past the Bijagós archipelago, entering the Gulf of Guinea. Direct maritime trade in West African gold dust, malagueta pepper, and ivory bypasses the traditional trans-Saharan overland routes, bringing immense wealth to Lisbon.",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1460-01"
+      }
+    ],
     "options": [
       {
         "text": "Expand our fortified trading posts along the African coast!",
         "effects": [
-          "treasury:800",
-          "gdp_modifier:0.06"
+          {
+            "type": "add_treasury",
+            "value": 80
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          }
         ]
       }
     ]
