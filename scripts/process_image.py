@@ -3,11 +3,7 @@ import numpy as np
 import os
 import sys
 
-def process_and_save(src_path, dest_id, category="units"):
-    targets = [
-        f"icons/{category}/{dest_id}.png",
-        f"Content/icons/{category}/{dest_id}.png"
-    ]
+def process_and_save(src_path, category, dest_ids):
     bg_color = (12, 16, 22) # BGR: (22, 16, 12)
 
     im_bgr = cv2.imread(src_path)
@@ -28,7 +24,7 @@ def process_and_save(src_path, dest_id, category="units"):
             combined_mask[mask_l] = 1.0
 
     if np.any(combined_mask > 0):
-        print(f"Cleaned outer border white components for {dest_id}")
+        print(f"Cleaned outer border white components for {dest_ids[0]}")
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
         dilated = cv2.dilate(combined_mask, kernel)
         smooth_mask = cv2.GaussianBlur(dilated, (3, 3), 0.5)
@@ -36,18 +32,23 @@ def process_and_save(src_path, dest_id, category="units"):
         bg_bgr = np.array([bg_color[2], bg_color[1], bg_color[0]], dtype=np.float32)
         im_bgr = (im_bgr.astype(np.float32) * alpha + bg_bgr * (1.0 - alpha)).clip(0, 255).astype(np.uint8)
     else:
-        print(f"No border white found for {dest_id}")
+        print(f"No border white found for {dest_ids[0]}")
 
-    for t in targets:
-        os.makedirs(os.path.dirname(t), exist_ok=True)
-        cv2.imwrite(t, im_bgr)
-    print(f"Successfully saved {dest_id} to targets.")
+    for dest_id in dest_ids:
+        targets = [
+            f"icons/{category}/{dest_id}.png",
+            f"Content/icons/{category}/{dest_id}.png"
+        ]
+        for t in targets:
+            os.makedirs(os.path.dirname(t), exist_ok=True)
+            cv2.imwrite(t, im_bgr)
+        print(f"Successfully saved {dest_id} to targets.")
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: python process_image.py <src_path> <dest_id> [category]")
+    if len(sys.argv) < 4:
+        print("Usage: python process_image.py <src_path> <category> <dest_id1> [dest_id2] ...")
         sys.exit(1)
     src = sys.argv[1]
-    dest = sys.argv[2]
-    cat = sys.argv[3] if len(sys.argv) > 3 else "units"
-    process_and_save(src, dest, cat)
+    cat = sys.argv[2]
+    dests = sys.argv[3:]
+    process_and_save(src, cat, dests)

@@ -582,6 +582,42 @@
       "terrainDesert": 1.0,
       "terrainForest": 1.0,
       "terrainUrban": 1.0
+    },
+    {
+      "id": "medieval_bombard",
+      "displayName": "Bombard",
+      "category": "artillery",
+      "attack": 11.0,
+      "defense": 3.0,
+      "hp": 70.0,
+      "speed": 0.5,
+      "manpower": 200,
+      "airAttack": 0.0,
+      "antiAir": 0.0,
+      "range": 2.5,
+      "terrainPlains": 1.0,
+      "terrainMountain": 0.3,
+      "terrainDesert": 0.9,
+      "terrainForest": 0.4,
+      "terrainUrban": 1.1
+    },
+    {
+      "id": "medieval_crossbowman",
+      "displayName": "Crossbowman",
+      "category": "infantry",
+      "attack": 8.0,
+      "defense": 5.0,
+      "hp": 85.0,
+      "speed": 0.9,
+      "manpower": 800,
+      "airAttack": 0.0,
+      "antiAir": 0.0,
+      "range": 2.0,
+      "terrainPlains": 1.0,
+      "terrainMountain": 0.8,
+      "terrainDesert": 0.8,
+      "terrainForest": 0.9,
+      "terrainUrban": 1.0
     }
   ]
 }
