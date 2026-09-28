@@ -291,6 +291,204 @@
           "description": "World-average young-adult share the emigration multiplier is centred on (WorldAverageFractions.Young = 0.2702).",
           "minimum": 0.05,
           "maximum": 1
+        },
+        "le_relax_months": {
+          "type": "number",
+          "description": "Bound demographic model (spec .ai/knowledge/demography_model_spec.md §7): months over which a province's life expectancy relaxes toward its clamped target.",
+          "minimum": 1,
+          "maximum": 240
+        },
+        "le_max_step_up_per_month": {
+          "type": "number",
+          "description": "Maximum life-expectancy gain applied in a single month (years).",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "le_max_step_down_per_month": {
+          "type": "number",
+          "description": "Maximum life-expectancy loss applied in a single month (years).",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "le_min": {
+          "type": "number",
+          "description": "Absolute floor on a province's life expectancy (years).",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "le_max": {
+          "type": "number",
+          "description": "Absolute ceiling on a province's life expectancy (years), except a seed already above this stays valid.",
+          "minimum": 0,
+          "maximum": 120
+        },
+        "le_target_max_gain": {
+          "type": "number",
+          "description": "Maximum years the life-expectancy target may rise above the 2026 seed.",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "le_target_max_loss": {
+          "type": "number",
+          "description": "Maximum years the life-expectancy target may fall below the 2026 seed.",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "le_headroom_cap": {
+          "type": "number",
+          "description": "Life-expectancy value at which the headroom weight H reaches its floor (spec §7).",
+          "minimum": 0,
+          "maximum": 120
+        },
+        "le_headroom_span": {
+          "type": "number",
+          "description": "Span below le_headroom_cap over which the headroom weight H ramps from 1 down to its floor.",
+          "minimum": 0.1,
+          "maximum": 100
+        },
+        "le_education_years_per_unit": {
+          "type": "number",
+          "description": "Life-expectancy years gained per unit of education change, before the headroom weight.",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "le_healthcare_years_per_unit": {
+          "type": "number",
+          "description": "Life-expectancy years gained per unit of healthcare change, before the headroom weight.",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "le_gdp_preston_weight": {
+          "type": "number",
+          "description": "Weight on the Preston-curve GDP-per-capita delta in the life-expectancy gain.",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "le_policy_bonus_cap_years": {
+          "type": "number",
+          "description": "Cap on the combined policy + building life-expectancy bonus (years).",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "tfr_relax_months": {
+          "type": "number",
+          "description": "Months over which a province's TFR relaxes toward its clamped target.",
+          "minimum": 1,
+          "maximum": 240
+        },
+        "tfr_max_step_per_month": {
+          "type": "number",
+          "description": "Maximum TFR change applied in a single month.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "tfr_min": {
+          "type": "number",
+          "description": "Absolute floor on a province's TFR.",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "tfr_max": {
+          "type": "number",
+          "description": "Absolute ceiling on a province's TFR.",
+          "minimum": 0,
+          "maximum": 15
+        },
+        "tfr_education_log_slope": {
+          "type": "number",
+          "description": "Log-driver slope applying education change to the fertility multiplier exponent x (spec §7).",
+          "minimum": -10,
+          "maximum": 10
+        },
+        "tfr_gdp_log_slope": {
+          "type": "number",
+          "description": "Log-driver slope applying the GDP-per-capita ratio (vs seed) to x.",
+          "minimum": -10,
+          "maximum": 10
+        },
+        "tfr_urbanization_log_slope": {
+          "type": "number",
+          "description": "Log-driver slope applying urbanization change to x.",
+          "minimum": -10,
+          "maximum": 10
+        },
+        "tfr_log_driver_min": {
+          "type": "number",
+          "description": "Lower clamp on the fertility log driver x.",
+          "minimum": -10,
+          "maximum": 0
+        },
+        "tfr_log_driver_max": {
+          "type": "number",
+          "description": "Upper clamp on the fertility log driver x.",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "tfr_building_mult_cap": {
+          "type": "number",
+          "description": "Cap on the combined building fertility multiplier.",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "tfr_driver_floor": {
+          "type": "number",
+          "description": "Low-fertility floor: a province's fertility target cannot fall below min(this, T_seed).",
+          "minimum": 0,
+          "maximum": 15
+        },
+        "tfr_floor_band": {
+          "type": "number",
+          "description": "Smoothing band above the floor over which the target curves asymptotically down to it.",
+          "minimum": 0,
+          "maximum": 15
+        },
+        "crisis_excess_cap": {
+          "type": "number",
+          "description": "Ceiling on the crisis excess-death multiplier x_p (spec §7).",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "radiation_excess_at_100": {
+          "type": "number",
+          "description": "Excess-death multiplier contribution at 100% radiation.",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "devastation_excess_at_100": {
+          "type": "number",
+          "description": "Excess-death multiplier contribution at 100% devastation.",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "food_insecurity_threshold": {
+          "type": "number",
+          "description": "Food-insecurity index above which the crisis multiplier's food term starts ramping.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "food_insecurity_seed_margin": {
+          "type": "number",
+          "description": "Margin added to the seeded food-insecurity index before it can raise the threshold.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "food_insecurity_span": {
+          "type": "number",
+          "description": "Span over which the food-insecurity excess term ramps from 0 to 1.",
+          "minimum": 0.01,
+          "maximum": 2
+        },
+        "food_excess_max": {
+          "type": "number",
+          "description": "Maximum excess-death multiplier contribution from food insecurity. Ships 0 (feature off).",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "food_insecurity_seed_warmup_months": {
+          "type": "number",
+          "description": "Months the food-insecurity seed warms up (tracking that month's import-aware flow reading) before freezing.",
+          "minimum": 1,
+          "maximum": 120
         }
       }
     },
@@ -1010,6 +1208,12 @@
           "type": "number",
           "description": "World-average young-adult share the recruit multiplier is centred on (WorldAverageFractions.Young = 0.2702).",
           "minimum": 0.05,
+          "maximum": 1
+        },
+        "recruit_share_of_male_18": {
+          "type": "number",
+          "description": "Bound demographic model reserve intake (spec .ai/knowledge/demography_model_spec.md 'Military'): share of men turning 18 this month who enter the reserve pool.",
+          "minimum": 0,
           "maximum": 1
         },
         "siege_defense_base": {

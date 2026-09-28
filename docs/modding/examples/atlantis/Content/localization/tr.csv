@@ -1,0 +1,9 @@
+event.atlas_01.description,"Sismik istasyonlar, Azor Adaları'nın batısında ani bir yükselme bildiriyor. Uydular, dün açık okyanus olan yerde yeni bir kara parçası gösteriyor; üzerinde yıkık taş teraslara benzeyen yapılar var."
+event.atlas_01.option1.text,Bir keşif heyeti gönderin
+event.atlas_01.option1.tooltip,Keşif heyeti bir ay içinde rapor verecek.
+event.atlas_01.option2.text,Bunu bilim insanlarına bırakın
+event.atlas_01.option2.tooltip,Başka bir şey olmayacak.
+event.atlas_01.title,Bir Kıta Yükseliyor
+event.atlas_02.description,"Keşif heyetimiz yeni adadan döndü. Teraslar gerçek: bilinen tüm uygarlıklardan daha eski, sokakları yıldızlara göre hizalanmış bir şehir."
+event.atlas_02.option1.text,İnanılmaz
+event.atlas_02.title,Keşif Heyeti Döndü

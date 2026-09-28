@@ -118,7 +118,7 @@
     },
     "conditions": {
       "type": "array",
-      "description": "All conditions must be true (AND logic) for the event to be eligible.",
+      "description": "All conditions must be true (AND logic) for the event to be eligible, EXCEPT 'stakeholder': multiple stakeholder conditions on the same event are OR-ed together first (any one satisfied is enough), then that result is AND-ed with everything else.",
       "items": {
         "type": "object",
         "required": ["type"],
@@ -154,7 +154,8 @@
               "owns_province",
               "not_owns_province",
               "controls_province",
-              "not_controls_province"
+              "not_controls_province",
+              "stakeholder"
             ]
           },
           "field": {
@@ -162,11 +163,15 @@
             "description": "Dot-path to stat field (e.g., 'military.active_personnel', 'government.stability')"
           },
           "value": {
-            "description": "Comparison value. Numbers for stat conditions (country_unrest_gt/lt compare 0-100 average national unrest); string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before. For active_law_is, prefer law_category/law_option (or a 'categoryId/optionId' value string). For owns_province / not_owns_province / controls_province / not_controls_province: the province id from province_registry.json (a whole number of 1 or more, e.g. 2276). 'owns' = the legal owner (changes with a peace deal or territory transfer); 'controls' = the occupier if the province is occupied, otherwise the owner (changes on capture). An unknown province is owned / controlled by no one, so the not_ variants are true for it."
+            "description": "Comparison value. Numbers for stat conditions (country_unrest_gt/lt compare 0-100 average national unrest); string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before. relation_above/gt/below/lt: the relation threshold (-100 to 100) to compare against target_country. stakeholder: a non-negative relation-magnitude threshold — the evaluating country qualifies if it IS target_country, is at war with it, is allied with it, or |relation| >= this value. For active_law_is, prefer law_category/law_option (or a 'categoryId/optionId' value string). For owns_province / not_owns_province / controls_province / not_controls_province: the province id from province_registry.json (a whole number of 1 or more, e.g. 2276). 'owns' = the legal owner (changes with a peace deal or territory transfer); 'controls' = the occupier if the province is occupied, otherwise the owner (changes on capture). An unknown province is owned / controlled by no one, so the not_ variants are true for it."
           },
           "target_country": {
             "type": "string",
-            "description": "ISO3 for conditions targeting a specific country. at_war / not_at_war: at war with that country. owns_province / not_owns_province / controls_province / not_controls_province: test that country instead of the event's recipient (e.g. { \"type\": \"controls_province\", \"value\": 2276, \"target_country\": \"OTT\" }); a country that no longer exists owns and controls nothing."
+            "description": "ISO3 for conditions targeting a specific country. at_war / not_at_war: at war with that country. alliance_member: allied with that country. relation_above/gt/below/lt: the evaluating country's relation TOWARD that country. stakeholder: the country whose situation is being tested (required). owns_province / not_owns_province / controls_province / not_controls_province: test that country instead of the event's recipient (e.g. { \"type\": \"controls_province\", \"value\": 2276, \"target_country\": \"OTT\" }); a country that no longer exists owns and controls nothing."
+          },
+          "target": {
+            "type": "string",
+            "description": "Alias of target_country, accepted in mod events (Content/events/*.json) and — since W6.4 — the base game importers."
           },
           "flag_name": {
             "type": "string",

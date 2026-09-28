@@ -172,7 +172,19 @@
         },
         "pop_growth_mult": {
           "type": "number", "minimum": 0.5, "maximum": 1.5,
-          "description": "Multiplies population growth."
+          "description": "DEPRECATED — renamed to immigration_mult 2026-09-25 (bound demography model). Still accepted as an alias so mods written against the old key keep their exact behaviour; new data should use immigration_mult instead."
+        },
+        "immigration_mult": {
+          "type": "number", "minimum": 0.5, "maximum": 1.5,
+          "description": "Multiplies POSITIVE implicit migration only (spec §7's bound demography model). Renamed from pop_growth_mult."
+        },
+        "fertility_mult": {
+          "type": "number", "minimum": 0.5, "maximum": 1.5,
+          "description": "Multiplies the fertility driver's target TFR (DemographyFormulas.FertilityDriver's lawFert term, spec §7)."
+        },
+        "life_expectancy_years": {
+          "type": "number", "minimum": -3, "maximum": 3,
+          "description": "Additive years applied to the life-expectancy driver's target (DemographyFormulas.LifeExpectancyDriver's policyYears term, spec §7; capped alongside building bonuses by le_policy_bonus_cap_years)."
         },
         "stability_delta_monthly": {
           "type": "number", "minimum": -1, "maximum": 1,

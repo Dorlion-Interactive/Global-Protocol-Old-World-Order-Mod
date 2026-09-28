@@ -1,0 +1,7 @@
+{
+  "id": "example.atlantis",
+  "displayName": "Project Atlantis (example)",
+  "version": "1.0.0",
+  "description": "Example of data-driven mod events: a two-event chain for the player on top of the standard 2026 campaign. No scripts and no permissions needed.",
+  "enabledByDefault": false
+}

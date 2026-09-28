@@ -1,0 +1,66 @@
+{
+  "events": [
+    {
+      "id": "atlas_01",
+      "type": "scripted",
+      "category": "geopolitical_crisis",
+      "target": "player",
+      "priority": 10,
+      "fire_once": true,
+      "immediate": true,
+      "title": "A Continent Rises",
+      "title_key": "event.atlas_01.title",
+      "description": "Seismic stations report a sudden uplift west of the Azores. Satellites show a new landmass where there was open ocean yesterday, with what look like ruined stone terraces on it.",
+      "description_key": "event.atlas_01.description",
+      "conditions": [
+        { "type": "date_after", "value": "2026-06" }
+      ],
+      "options": [
+        {
+          "text": "Send an expedition",
+          "text_key": "event.atlas_01.option1.text",
+          "tooltip": "The expedition reports back in one month.",
+          "tooltip_key": "event.atlas_01.option1.tooltip",
+          "ai_weight": 1.0,
+          "effects": [
+            { "type": "set_flag", "flag_name": "atlantis_investigated" },
+            { "type": "fire_event", "chain_event": "atlas_02", "delay_months": 1 }
+          ]
+        },
+        {
+          "text": "Leave it to the scientists",
+          "text_key": "event.atlas_01.option2.text",
+          "tooltip": "Nothing further happens.",
+          "tooltip_key": "event.atlas_01.option2.tooltip",
+          "ai_weight": 1.0,
+          "effects": [
+            { "type": "set_flag", "flag_name": "atlantis_ignored" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "atlas_02",
+      "type": "reactive",
+      "category": "geopolitical_crisis",
+      "target": "player",
+      "priority": 10,
+      "fire_once": true,
+      "title": "The Expedition Returns",
+      "title_key": "event.atlas_02.title",
+      "description": "Our expedition is back from the new island. The terraces are real: a city older than any known civilization, its streets aligned with the stars.",
+      "description_key": "event.atlas_02.description",
+      "conditions": [
+        { "type": "has_flag", "flag_name": "atlantis_investigated" }
+      ],
+      "options": [
+        {
+          "text": "Astonishing",
+          "text_key": "event.atlas_02.option1.text",
+          "ai_weight": 1.0,
+          "effects": []
+        }
+      ]
+    }
+  ]
+}

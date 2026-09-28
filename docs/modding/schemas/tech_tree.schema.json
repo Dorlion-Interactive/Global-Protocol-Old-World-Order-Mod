@@ -94,9 +94,6 @@
                             "military_defense": {
                                 "type": "number"
                             },
-                            "population_growth": {
-                                "type": "number"
-                            },
                             "cyber_attack": {
                                 "type": "number"
                             },

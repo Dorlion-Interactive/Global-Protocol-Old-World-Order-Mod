@@ -1,0 +1,9 @@
+event.atlas_01.description,"Seismic stations report a sudden uplift west of the Azores. Satellites show a new landmass where there was open ocean yesterday, with what look like ruined stone terraces on it."
+event.atlas_01.option1.text,Send an expedition
+event.atlas_01.option1.tooltip,The expedition reports back in one month.
+event.atlas_01.option2.text,Leave it to the scientists
+event.atlas_01.option2.tooltip,Nothing further happens.
+event.atlas_01.title,A Continent Rises
+event.atlas_02.description,"Our expedition is back from the new island. The terraces are real: a city older than any known civilization, its streets aligned with the stars."
+event.atlas_02.option1.text,Astonishing
+event.atlas_02.title,The Expedition Returns

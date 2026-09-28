@@ -71,7 +71,26 @@
                     "type": "number"
                 },
                 "population_growth": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "DEPRECATED (bound demography model, Phase 5.2) — no vanilla building carries this any more; validate_all warns if one does. Use life_expectancy_years, fertility_mult, or education_growth_mult instead. Still parsed for the legacy path and for mods."
+                },
+                "life_expectancy_years": {
+                    "type": "number",
+                    "minimum": -3,
+                    "maximum": 3,
+                    "description": "Additive years contributed to the province's life-expectancy driver target (spec §7's buildingYears term; the driver applies headroom H and le_policy_bonus_cap_years itself), before the level multiplier and stacking weight."
+                },
+                "fertility_mult": {
+                    "type": "number",
+                    "minimum": 0.5,
+                    "maximum": 2,
+                    "description": "Fertility-driver multiplier contributed by this building (spec §7's buildingFert term; the driver applies tfr_building_mult_cap itself), before the level multiplier and stacking weight."
+                },
+                "education_growth_mult": {
+                    "type": "number",
+                    "minimum": 0.5,
+                    "maximum": 2,
+                    "description": "Multiplies the province's education growth rate on the live demography path only, before the level multiplier and stacking weight."
                 },
                 "unrest_reduction": {
                     "type": "number"
