@@ -21,8 +21,12 @@ jobs:
         with:
           dotnet-version: "10.0.x"
 
+      - name: Validate scenario fragments
+        shell: pwsh
+        run: ./dev/validate_scenario.ps1 -ScenarioDir scenario
+
       - name: Build SDK managed mod
-        run: dotnet build "Content/mod-csharp/OldWorldOrder.ModCSharp.csproj" -c Release
+        run: dotnet build "Content/mod-csharp/OldWorldOrder.ModCSharp.csproj" -c Release -o build/mod-csharp
 
       - name: Package mod (SDK primary)
         run: |
@@ -41,6 +45,13 @@ jobs:
           [ -d scenario ] && cp -r scenario "$STAGING/"
           [ -d overrides ] && cp -r overrides "$STAGING/"
           [ -d flags ] && cp -r flags "$STAGING/"
+          [ -d icons ] && cp -r icons "$STAGING/"
+
+          # Marker/icon loaders read Art/ at the mod root (same mirror as install.bat)
+          if [ -d overrides/Art ]; then
+            mkdir -p "$STAGING/Art"
+            cp -r overrides/Art/. "$STAGING/Art/"
+          fi
 
           # Copy Content but exclude source/build files and the large pre-built wasm
           rsync -a \
@@ -58,7 +69,7 @@ jobs:
             Content/ "$STAGING/Content/"
 
           # Copy built DLL to Mods/
-          cp "Content/mod-csharp/bin/Release/netstandard2.1/OldWorldOrder.ModCSharp.dll" "$STAGING/Mods/"
+          cp "build/mod-csharp/OldWorldOrder.ModCSharp.dll" "$STAGING/Mods/"
 
           # Patch mod.json for SDK variant using jq
           jq '.runtimePolicy = "csharp_only" | .enableComponentRuntime = false | del(.entrypoints.wasm)' "$STAGING/mod.json" > "$STAGING/mod.json.tmp" && mv "$STAGING/mod.json.tmp" "$STAGING/mod.json"
@@ -83,14 +94,18 @@ jobs:
           body: |
             ## Old World Order ${{ github.ref_name }}
 
-            Historical total conversion mod for Global Protocol — 1450 AD.
+            Historical total conversion mod for Global Protocol — 1450 AD. Requires Global Protocol v0.5.10 or later.
 
             ### Install (players)
+
+            Easiest: subscribe on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3724318324).
+
+            Manual install:
 
             1. Download **old-world-order-${{ github.ref_name }}.zip** below
             2. Extract the contents into:
                ```
-               %LOCALAPPDATA%\NewWorldOrder\Mods\globalprotocol.old_world_order\
+               %USERPROFILE%\AppData\LocalLow\Dorlion Interactive\Global Protocol\Mods\globalprotocol.old_world_order\
                ```
             3. Launch Global Protocol → Mods screen → enable **Old World Order** → start the 1450 scenario
 
@@ -98,8 +113,8 @@ jobs:
 
             ```bat
             git clone https://github.com/Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod
-            cd old-world-order
-            install.bat
+            cd Global-Protocol-Old-World-Order-Mod
+            install.bat /local
             ```
 
             `install.bat` defaults to the SDK path (`/sdk`).
