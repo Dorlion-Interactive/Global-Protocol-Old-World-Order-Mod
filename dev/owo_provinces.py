@@ -1,8 +1,9 @@
 """Shared helpers for province ownership curation tooling (Old World Order mod).
 
-Read-only access to the engine's province registry plus the mod's curation source.
-Nothing here writes to the engine/vanilla data — only the mod repo is ever written
-(by build_province_ownership.py).
+Read-only access to the game's province registry plus the mod's curation source.
+The registry is dev/province_registry.json, a slim copy (id, name, country_iso3,
+area_km2, centroid) exported from the game by its modding-docs sync; set OWO_REGISTRY
+to read another copy. Only the mod repo is ever written (by build_province_ownership.py).
 """
 import json
 import os
@@ -17,7 +18,7 @@ except (AttributeError, ValueError):
 MOD_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REGISTRY_PATH = os.environ.get(
     "OWO_REGISTRY",
-    r"C:/Personal/Genel/Projeler/NewWorldOrder/.ai/configs/data/provinces/province_registry.json",
+    os.path.join(MOD_ROOT, "dev", "province_registry.json"),
 )
 CURATION_PATH = os.path.join(MOD_ROOT, "dev", "province_curation.json")
 COUNTRIES_PATH = os.path.join(MOD_ROOT, "scenario", "countries_add.json")

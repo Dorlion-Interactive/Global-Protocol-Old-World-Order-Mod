@@ -59,10 +59,14 @@ scratch/
 dev/*
 # ...except the authoritative province-ownership curation source + build/audit tooling
 !dev/province_curation.json
+!dev/province_registry.json
 !dev/build_province_ownership.py
 !dev/audit_ownership.py
 !dev/curate_browse.py
 !dev/owo_provinces.py
+# ...and the helpers install.bat runs
+!dev/validate_scenario.ps1
+!dev/set-runtime-settings.ps1
 
 # Wiki build dirs (not part of main repo)
 .wiki-temp/
