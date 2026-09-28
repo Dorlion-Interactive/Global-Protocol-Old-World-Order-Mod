@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.event.fall_of_constantinople_1453.title,Падение Константинополя
+owo.event.fall_of_constantinople_1453.description,29 мая 1453 года, после 53-дневной осады, войска султана Мехмеда II прорвали древние Феодосиевы стены. Восточная Римская империя пала, завершив более чем тысячелетнюю историю византийской цивилизации. Константинополь провозглашен столицей Османской империи.
+owo.event.fall_of_constantinople_1453.option_1,Костантинийе воссияет как жемчужина в короне нашей империи!
+owo.event.fall_of_constantinople_1453_christendom.title,Падение Константинополя
+owo.event.fall_of_constantinople_1453_christendom.description,29 мая 1453 года, после 53-дневной осады, войска султана Мехмеда II прорвали древние Феодосиевы стены. Восточная Римская империя пала, завершив более чем тысячелетнюю историю византийской цивилизации. Константинополь провозглашен столицей Османской империи.
+owo.event.fall_of_constantinople_1453_christendom.option_1,Трагический закат христианского римского мира.
+owo.event.end_hundred_years_war_1453.title,Битва при Кастийоне: конец Столетней войны
+owo.event.end_hundred_years_war_1453.description,В июле 1453 года французская артиллерия Жана Бюро разбила войско Джона Тальбота в битве при Кастийоне. Франция вернула Бордо и Гиень. Спустя 116 лет Столетней войны англичане изгнаны с континента, за исключением Кале.
+owo.event.end_hundred_years_war_1453.option_1,Франция наконец суверенна и едина!
+owo.event.end_hundred_years_war_1453_england.title,Битва при Кастийоне: конец Столетней войны
+owo.event.end_hundred_years_war_1453_england.description,В июле 1453 года французская артиллерия Жана Бюро разбила войско Джона Тальбота в битве при Кастийоне. Франция вернула Бордо и Гиень. Спустя 116 лет Столетней войны англичане изгнаны с континента, за исключением Кале.
+owo.event.end_hundred_years_war_1453_england.option_1,Болезненное отступление через Ла-Манш.
+owo.event.gutenberg_printing_press_1455.title,Революция печатного станка Гутенберга
+owo.event.gutenberg_printing_press_1455.description,В Майнце Иоганн Гутенберг объединил подвижные металлические литеры, масляные чернила и деревянный винтовой пресс для печати 42-строчной Библии, открыв эпоху массового книгопечатания.
+owo.event.gutenberg_printing_press_1455.option_1,Поддержать открытие печатных мастерских в наших городах.
+owo.event.wars_of_the_roses_1455.title,Начало войны Алой и Белой розы
+owo.event.wars_of_the_roses_1455.description,После поражения во Франции и душевной болезни короля Генриха VI вражда между Ланкастерами и Йорками переросла в битву при Сент-Олбансе. Англия погружается в многолетнюю междоусобную войну за корону.
+owo.event.wars_of_the_roses_1455.option_1,Да хранит Господь королевство от смуты.
+owo.event.portuguese_african_voyages_1460.title,Каравеллы Океанского моря
+owo.event.portuguese_african_voyages_1460.description,Под покровительством принца Генриха Мореплавателя португальские каравеллы обогнули Зеленый мыс и вошли в Гвинейский залив. Прямая морская торговля африканским золотом и слоновой костью приносит в Лиссабон несметные богатства.
+owo.event.portuguese_african_voyages_1460.option_1,Расширять укрепленные фактории вдоль африканского побережья!
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury

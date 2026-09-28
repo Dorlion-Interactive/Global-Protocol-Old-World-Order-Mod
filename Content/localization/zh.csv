@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.event.fall_of_constantinople_1453.title,君士坦丁堡的陷落
+owo.event.fall_of_constantinople_1453.description,1453年5月29日，在经历了53天的围城后，苏丹穆罕默德二世的军队攻破了古老的狄奥多西城墙。东罗马帝国灭亡，宣告延续千年的拜占庭文明落幕。君士坦丁堡成为奥斯曼帝国的宏伟新都。
+owo.event.fall_of_constantinople_1453.option_1,君士坦丁耶必将作为帝国皇冠上的明珠熠熠生辉！
+owo.event.fall_of_constantinople_1453_christendom.title,君士坦丁堡的陷落
+owo.event.fall_of_constantinople_1453_christendom.description,1453年5月29日，在经历了53天的围城后，苏丹穆罕默德二世的军队攻破了古老的狄奥多西城墙。东罗马帝国灭亡，宣告延续千年的拜占庭文明落幕。君士坦丁堡成为奥斯曼帝国的宏伟新都。
+owo.event.fall_of_constantinople_1453_christendom.option_1,基督教罗马世界的悲剧性黄昏。
+owo.event.end_hundred_years_war_1453.title,卡斯蒂永战役：百年战争终结
+owo.event.end_hundred_years_war_1453.description,1453年7月，让·比罗统领的法军野战炮兵在卡斯蒂永战役中决定性地击溃了英军骑士。战后法国王室收复波尔多与阿基坦公国。历经116年的惨烈战争，英军除加来港外已被逐出欧陆全境。
+owo.event.end_hundred_years_war_1453.option_1,法兰西终获主权与统一！
+owo.event.end_hundred_years_war_1453_england.title,卡斯蒂永战役：百年战争终结
+owo.event.end_hundred_years_war_1453_england.description,1453年7月，让·比罗统领的法军野战炮兵在卡斯蒂永战役中决定性地击溃了英军骑士。战后法国王室收复波尔多与阿基坦公国。历经116年的惨烈战争，英军除加来港外已被逐出欧陆全境。
+owo.event.end_hundred_years_war_1453_england.option_1,渡过英吉利海峡的痛苦撤退。
+owo.event.gutenberg_printing_press_1455.title,古腾堡印刷革命
+owo.event.gutenberg_printing_press_1455.description,在德意志城市美因茨，金匠约翰内斯·古腾堡融合活字铅合金字模、油性油墨与木制螺旋压印机，成功印制出42行圣经，使人类知识得以以前所未有的速度传播。
+owo.event.gutenberg_printing_press_1455.option_1,资助在我国诸城广设印刷工坊。
+owo.event.wars_of_the_roses_1455.title,玫瑰战争爆发
+owo.event.wars_of_the_roses_1455.description,在法兰西战败及国王亨利六世精神失常的阴影下，兰开斯特家族（红玫瑰）与约克家族（白玫瑰）的宿怨在第一次圣奥尔本斯战役中升级为流血冲突，英格兰陷入争夺王位的漫长内战。
+owo.event.wars_of_the_roses_1455.option_1,愿上帝保佑王国免受内乱涂炭。
+owo.event.portuguese_african_voyages_1460.title,大洋之海的卡拉维尔帆船
+owo.event.portuguese_african_voyages_1460.description,在航海家亨利王子的赞助下，葡萄牙卡拉维尔帆船绕过佛得角并驶入几内亚湾。西非砂金、马拉盖塔胡椒及象牙的直航海运贸易绕过了传统的跨撒哈拉陆上商路，为里斯本注入无尽财富。
+owo.event.portuguese_african_voyages_1460.option_1,拓建沿非洲海岸的要塞化商站！
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury

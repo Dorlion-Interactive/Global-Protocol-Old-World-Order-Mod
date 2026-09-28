@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.event.fall_of_constantinople_1453.title,Pád Konstantinopole
+owo.event.fall_of_constantinople_1453.description,Dne 29. května 1453, po 53denním obléhání, vojska sultána Mehmeda II. prolomila starobylé Theodosiánské hradby. Východořímská říše padla a ukončila více než tisíciletou byzantskou civilizaci. Konstantinopol se stává velkolepým hlavním městem Osmanské říše a obchodní cesty spojující Středomoří s Černým mořem jsou pevně pod osmanskou kontrolou.
+owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye bude zářit jako klenot naší říše!
+owo.event.fall_of_constantinople_1453_christendom.title,Pád Konstantinopole
+owo.event.fall_of_constantinople_1453_christendom.description,Dne 29. května 1453, po 53denním obléhání, vojska sultána Mehmeda II. prolomila starobylé Theodosiánské hradby. Východořímská říše padla a ukončila více než tisíciletou byzantskou civilizaci. Konstantinopol se stává velkolepým hlavním městem Osmanské říše a obchodní cesty spojující Středomoří s Černým mořem jsou pevně pod osmanskou kontrolou.
+owo.event.fall_of_constantinople_1453_christendom.option_1,Tragický soumrak pro křesťanský římský svět.
+owo.event.end_hundred_years_war_1453.title,Bitva u Castillonu: Konec stoleté války
+owo.event.end_hundred_years_war_1453.description,V červenci 1453 francouzské polní dělostřelectvo Jeana Bureaua v bitvě u Castillonu rozhodně porazilo anglické rytíře Johna Talbota. Francouzská koruna poté získala zpět Bordeaux a celou Guyenne. Po 116 letech ničivé války byli Angličané vyhnáni z celého kontinentu s výjimkou Calais.
+owo.event.end_hundred_years_war_1453.option_1,Francie je konečně suverénní a sjednocená!
+owo.event.end_hundred_years_war_1453_england.title,Bitva u Castillonu: Konec stoleté války
+owo.event.end_hundred_years_war_1453_england.description,V červenci 1453 francouzské polní dělostřelectvo Jeana Bureaua v bitvě u Castillonu rozhodně porazilo anglické rytíře Johna Talbota. Francouzská koruna poté získala zpět Bordeaux a celou Guyenne. Po 116 letech ničivé války byli Angličané vyhnáni z celého kontinentu s výjimkou Calais.
+owo.event.end_hundred_years_war_1453_england.option_1,Bolestný ústup přes Lamanšský průliv.
+owo.event.gutenberg_printing_press_1455.title,Gutenbergova tisková revoluce
+owo.event.gutenberg_printing_press_1455.description,V Mohuči zlatník Johannes Gutenberg spojil pohyblivé litinové litery, tiskařskou čerň a dřevěný lis, aby vytiskl slavnou 42řádkovou Bibli. Tento vynález slibuje šířit vědění a myšlenky nevídanou rychlostí.
+owo.event.gutenberg_printing_press_1455.option_1,Podpořte zřizování tiskáren v našich městech.
+owo.event.wars_of_the_roses_1455.title,Vypuknutí válek růží
+owo.event.wars_of_the_roses_1455.description,Po porážce ve Francii a v důsledku nemoci krále Jindřicha VI. vyústilo soupeření mezi rodem Lancasterů a rodem Yorků v krvavou první bitvu u St Albans. Anglie vstupuje do vleklé občanské války o korunu.
+owo.event.wars_of_the_roses_1455.option_1,Kéž Bůh ochrání zemi před zmatkem občanské války.
+owo.event.portuguese_african_voyages_1460.title,Karavely širého oceánu
+owo.event.portuguese_african_voyages_1460.description,Pod záštitou prince Jindřicha Mořeplavce portugalské karavely obepluly Kapverdy a pronikly do Guinejského zálivu. Přímý námořní obchod se zlatem, pepřem a slonovinou obchází saharské cesty a přináší Lisabonu nesmírné bohatství.
+owo.event.portuguese_african_voyages_1460.option_1,Rozšiřte naše opevněné obchodní stanice podél afrického pobřeží!
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury

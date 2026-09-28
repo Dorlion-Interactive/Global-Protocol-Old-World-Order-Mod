@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.event.fall_of_constantinople_1453.title,A Queda de Constantinopla
+owo.event.fall_of_constantinople_1453.description,Em 29 de maio de 1453, após um cerco de 53 dias, as forças do sultão Mehmed II romperam as antigas muralhas teodosianas. O Império Romano do Oriente sucumbiu, encerrando mais de um milênio de civilização bizantina. Constantinopla torna-se a grandiosa capital do Império Otomano.
+owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye brilhará como a joia da coroa do nosso império!
+owo.event.fall_of_constantinople_1453_christendom.title,A Queda de Constantinopla
+owo.event.fall_of_constantinople_1453_christendom.description,Em 29 de maio de 1453, após um cerco de 53 dias, as forças do sultão Mehmed II romperam as antigas muralhas teodosianas. O Império Romano do Oriente sucumbiu, encerrando mais de um milênio de civilização bizantina. Constantinopla torna-se a grandiosa capital do Império Otomano.
+owo.event.fall_of_constantinople_1453_christendom.option_1,Um trágico crepúsculo para o mundo romano cristão.
+owo.event.end_hundred_years_war_1453.title,Batalha de Castillon: O Fim da Guerra dos Cem Anos
+owo.event.end_hundred_years_war_1453.description,Em julho de 1453, a artilharia francesa de Jean Bureau derrotou os cavaleiros ingleses em Castillon. A coroa francesa recuperou Bordéus e a Guiena, expulsando as armas inglesas de todo o continente europeu, com exceção de Calais.
+owo.event.end_hundred_years_war_1453.option_1,A França ergue-se enfim soberana e unida!
+owo.event.end_hundred_years_war_1453_england.title,Batalha de Castillon: O Fim da Guerra dos Cem Anos
+owo.event.end_hundred_years_war_1453_england.description,Em julho de 1453, a artilharia francesa de Jean Bureau derrotou os cavaleiros ingleses em Castillon. A coroa francesa recuperou Bordéus e a Guiena, expulsando as armas inglesas de todo o continente europeu, com exceção de Calais.
+owo.event.end_hundred_years_war_1453_england.option_1,Uma dolorosa retirada através do Canal da Mancha.
+owo.event.gutenberg_printing_press_1455.title,A Revolução da Imprensa de Gutenberg
+owo.event.gutenberg_printing_press_1455.description,Na cidade alemã de Mainz, Johannes Gutenberg combinou tipos móveis de chumbo, tinta a óleo e uma prensa de madeira para produzir a Bíblia de 42 linhas, disseminando o conhecimento em velocidade sem precedentes.
+owo.event.gutenberg_printing_press_1455.option_1,Patrocinai a fundação de prensas tipográficas em nossas cidades.
+owo.event.wars_of_the_roses_1455.title,Eclosão da Guerra das Rosas
+owo.event.wars_of_the_roses_1455.description,Após a derrota na França e a debilidade do rei Henrique VI, a rivalidade entre as casas de Lancaster e York culminou em violência em St Albans, mergulhando a Inglaterra em uma guerra civil dinástica.
+owo.event.wars_of_the_roses_1455.option_1,Que Deus guarde o reino do caos da discórdia civil.
+owo.event.portuguese_african_voyages_1460.title,Caravelas do Mar Oceano
+owo.event.portuguese_african_voyages_1460.description,Sob o patrocínio do infante Dom Henrique, caravelas portuguesas dobraram o Cabo Verde e alcançaram o Golfo da Guiné. O comércio marítimo de ouro, pimenta e marfim enriquece Lisboa contornando as velhas rotas terrestres.
+owo.event.portuguese_african_voyages_1460.option_1,Ampliai as nossas feitorias fortificadas ao longo da costa africana!
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury

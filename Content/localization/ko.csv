@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.event.fall_of_constantinople_1453.title,콘스탄티노폴리스의 함락
+owo.event.fall_of_constantinople_1453.description,1453년 5월 29일, 53일간의 포위 공격 끝에 술탄 메흐메트 2세의 군대가 고대 테오도시우스 성벽을 돌파했습니다. 동로마 제국이 멸망하여 천 년 넘게 이어진 비잔티움 문명이 종언을 고했습니다. 콘스탄티노폴리스는 오스만 제국의 장엄한 수도가 되었습니다.
+owo.event.fall_of_constantinople_1453.option_1,코스탄티니예는 우리 제국의 가장 빛나는 보석이 될 것이다!
+owo.event.fall_of_constantinople_1453_christendom.title,콘스탄티노폴리스의 함락
+owo.event.fall_of_constantinople_1453_christendom.description,1453년 5월 29일, 53일간의 포위 공격 끝에 술탄 메흐메트 2세의 군대가 고대 테오도시우스 성벽을 돌파했습니다. 동로마 제국이 멸망하여 천 년 넘게 이어진 비잔티움 문명이 종언을 고했습니다. 콘스탄티노폴리스는 오스만 제국의 장엄한 수도가 되었습니다.
+owo.event.fall_of_constantinople_1453_christendom.option_1,기독교 로마 세계의 비극적인 황혼이로다.
+owo.event.end_hundred_years_war_1453.title,카스티용 전투: 백년전쟁의 종결
+owo.event.end_hundred_years_war_1453.description,1453년 7월, 카스티용 전투에서 프랑스의 장 뷔로가 이끄는 야포 부대가 잉글랜드 기사단을 격파했습니다. 프랑스 왕실은 보르도와 기옌 공국 전역을 수복했습니다. 116년간의 전쟁 끝에 칼레를 제외한 모든 대륙 영토에서 잉글랜드군이 축출되었습니다.
+owo.event.end_hundred_years_war_1453.option_1,프랑스가 마침내 온전한 주권을 되찾고 하나가 되었다!
+owo.event.end_hundred_years_war_1453_england.title,카스티용 전투: 백년전쟁의 종결
+owo.event.end_hundred_years_war_1453_england.description,1453년 7월, 카스티용 전투에서 프랑스의 장 뷔로가 이끄는 야포 부대가 잉글랜드 기사단을 격파했습니다. 프랑스 왕실은 보르도와 기옌 공국 전역을 수복했습니다. 116년간의 전쟁 끝에 칼레를 제외한 모든 대륙 영토에서 잉글랜드군이 축출되었습니다.
+owo.event.end_hundred_years_war_1453_england.option_1,영국 해협을 건너는 뼈아픈 퇴각이로다.
+owo.event.gutenberg_printing_press_1455.title,구텐베르크의 인쇄 혁명
+owo.event.gutenberg_printing_press_1455.description,마인츠의 금세공사 요하네스 구텐베르크가 금속 활자와 유성 잉크, 나사식 압착기를 결합하여 42행 성경을 인쇄하는 데 성공했습니다. 이 발명은 지식의 보급을 혁명적으로 가속할 것입니다.
+owo.event.gutenberg_printing_press_1455.option_1,우리 도시 전역에 인쇄소 설립을 장려하라.
+owo.event.wars_of_the_roses_1455.title,장미 전쟁의 발발
+owo.event.wars_of_the_roses_1455.description,프랑스에서의 패배와 헨리 6세의 건강 악화 속에서 랭커스터 가문(붉은 장미)과 요크 가문(흰 장미)의 갈등이 제1차 세인트 올번스 전투에서 무력 충돌로 폭발했습니다. 잉글랜드는 왕관을 둘러싼 유혈 내전으로 접어듭니다.
+owo.event.wars_of_the_roses_1455.option_1,신이여, 이 나라를 내전의 혼란에서 구원하소서.
+owo.event.portuguese_african_voyages_1460.title,대양의 카라벨선
+owo.event.portuguese_african_voyages_1460.description,항해왕 엔히크 왕자의 후원 아래 포르투갈의 카라벨선들이 베르데 곶을 돌아 기니만에 진입했습니다. 서아프리카의 사금, 후추, 상아를 직접 실어 나르는 해상 무역은 사하라 종단 육로를 우회하여 리스본에 막대한 부를 안겨줍니다.
+owo.event.portuguese_african_voyages_1460.option_1,아프리카 해안을 따라 요새화된 교역소를 확장하라!
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury

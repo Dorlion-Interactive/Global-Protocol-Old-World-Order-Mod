@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.event.fall_of_constantinople_1453.title,La chute de Constantinople
+owo.event.fall_of_constantinople_1453.description,Le 29 mai 1453, après un siège de 53 jours, les armées du sultan Mehmed II ont forcé les antiques murailles théodosiennes. L'Empire romain d'Orient est tombé, achevant plus d'un millénaire de civilisation byzantine. Constantinople devient la prestigieuse capitale de l'Empire ottoman.
+owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye brillera comme le joyau de la couronne de notre empire !
+owo.event.fall_of_constantinople_1453_christendom.title,La chute de Constantinople
+owo.event.fall_of_constantinople_1453_christendom.description,Le 29 mai 1453, après un siège de 53 jours, les armées du sultan Mehmed II ont forcé les antiques murailles théodosiennes. L'Empire romain d'Orient est tombé, achevant plus d'un millénaire de civilisation byzantine. Constantinople devient la prestigieuse capitale de l'Empire ottoman.
+owo.event.fall_of_constantinople_1453_christendom.option_1,Un crépuscule tragique pour le monde romain chrétien.
+owo.event.end_hundred_years_war_1453.title,Bataille de Castillon : Fin de la guerre de Cent Ans
+owo.event.end_hundred_years_war_1453.description,En juillet 1453, l'artillerie de Jean Bureau a anéanti les chevaliers anglais de John Talbot à Castillon. La couronne de France a repris Bordeaux et toute la Guyenne. Après 116 ans de guerre, les Anglais sont chassés du continent à la seule exception de Calais.
+owo.event.end_hundred_years_war_1453.option_1,La France se dresse enfin souveraine et unie !
+owo.event.end_hundred_years_war_1453_england.title,Bataille de Castillon : Fin de la guerre de Cent Ans
+owo.event.end_hundred_years_war_1453_england.description,En juillet 1453, l'artillerie de Jean Bureau a anéanti les chevaliers anglais de John Talbot à Castillon. La couronne de France a repris Bordeaux et toute la Guyenne. Après 116 ans de guerre, les Anglais sont chassés du continent à la seule exception de Calais.
+owo.event.end_hundred_years_war_1453_england.option_1,Une douloureuse retraite de l'autre côté de la Manche.
+owo.event.gutenberg_printing_press_1455.title,La révolution de l'imprimerie de Gutenberg
+owo.event.gutenberg_printing_press_1455.description,À Mayence, l'orfèvre Johannes Gutenberg a combiné caractères mobiles en plomb, encre grasse et presse à bras pour imprimer sa Bible à 42 lignes, promettant une diffusion du savoir sans précédent.
+owo.event.gutenberg_printing_press_1455.option_1,Encouragez l'installation d'ateliers d'imprimerie dans nos cités.
+owo.event.wars_of_the_roses_1455.title,Déclenchement de la guerre des Deux-Roses
+owo.event.wars_of_the_roses_1455.description,Au lendemain de la défaite en France et face à la folie du roi Henri VI, la rivalité entre la maison de Lancastre et la maison d'York dégénère lors de la première bataille de Saint-Albans. L'Angleterre plonge dans une guerre civile sanglante.
+owo.event.wars_of_the_roses_1455.option_1,Que Dieu préserve le royaume du désordre civil.
+owo.event.portuguese_african_voyages_1460.title,Caravelles de la mer Océane
+owo.event.portuguese_african_voyages_1460.description,Sous l'impulsion du prince Henri le Navigateur, les caravelles portugaises ont doublé le cap Vert et atteint le golfe de Guinée. Le commerce direct de l'or, de la malaguette et de l'ivoire contourne les pistes caravanières, enrichissant Lisbonne.
+owo.event.portuguese_african_voyages_1460.option_1,Développez nos comptoirs fortifiés le long des côtes africaines !
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury

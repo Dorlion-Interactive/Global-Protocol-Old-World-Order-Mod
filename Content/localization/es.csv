@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.event.fall_of_constantinople_1453.title,La caída de Constantinopla
+owo.event.fall_of_constantinople_1453.description,El 29 de mayo de 1453, tras 53 días de asedio, las fuerzas del sultán Mehmed II han quebrado las milenarias murallas teodosianas. El Imperio romano de Oriente ha sucumbido, poniendo fin a un milenio de civilización bizantina. Constantinopla pasa a ser la insigne capital del Imperio otomano.
+owo.event.fall_of_constantinople_1453.option_1,¡Kostantiniyye brillará como la joya de la corona de nuestro imperio!
+owo.event.fall_of_constantinople_1453_christendom.title,La caída de Constantinopla
+owo.event.fall_of_constantinople_1453_christendom.description,El 29 de mayo de 1453, tras 53 días de asedio, las fuerzas del sultán Mehmed II han quebrado las milenarias murallas teodosianas. El Imperio romano de Oriente ha sucumbido, poniendo fin a un milenio de civilización bizantina. Constantinopla pasa a ser la insigne capital del Imperio otomano.
+owo.event.fall_of_constantinople_1453_christendom.option_1,Un trágico ocaso para el mundo romano cristiano.
+owo.event.end_hundred_years_war_1453.title,Batalla de Castillon: Fin de la guerra de los Cien Años
+owo.event.end_hundred_years_war_1453.description,En julio de 1453, la artillería de campaña francesa de Jean Bureau aplastó a las huestes inglesas de John Talbot en Castillon. Tras la batalla, la corona gala recuperó Burdeos y Guyena. Tras 116 años de conflicto, las armas inglesas quedan expulsadas del continente salvo en Calais.
+owo.event.end_hundred_years_war_1453.option_1,¡Francia se alza por fin soberana y unida!
+owo.event.end_hundred_years_war_1453_england.title,Batalla de Castillon: Fin de la guerra de los Cien Años
+owo.event.end_hundred_years_war_1453_england.description,En julio de 1453, la artillería de campaña francesa de Jean Bureau aplastó a las huestes inglesas de John Talbot en Castillon. Tras la batalla, la corona gala recuperó Burdeos y Guyena. Tras 116 años de conflicto, las armas inglesas quedan expulsadas del continente salvo en Calais.
+owo.event.end_hundred_years_war_1453_england.option_1,Una dolorosa retirada a través del canal de la Mancha.
+owo.event.gutenberg_printing_press_1455.title,La revolución de la imprenta de Gutenberg
+owo.event.gutenberg_printing_press_1455.description,En la ciudad de Maguncia, el orfebre Johannes Gutenberg ha combinado tipos móviles de plomo, tinta oleosa y una prensa de husillo de madera para imprimir la Biblia de 42 líneas. El invento promete difundir el saber a una velocidad inusitada.
+owo.event.gutenberg_printing_press_1455.option_1,Patrocinad el establecimiento de imprentas en nuestras ciudades.
+owo.event.wars_of_the_roses_1455.title,Estallido de la guerra de las Dos Rosas
+owo.event.wars_of_the_roses_1455.description,Tras la derrota en Francia y la demencia del rey Enrique VI, la rivalidad entre los Lancaster (la rosa roja) y los York (la rosa blanca) ha estallado en la primera batalla de St Albans, sumiendo a Inglaterra en una cruenta guerra civil.
+owo.event.wars_of_the_roses_1455.option_1,Que Dios libre al reino del caos civil.
+owo.event.portuguese_african_voyages_1460.title,Carabelas del mar Océano
+owo.event.portuguese_african_voyages_1460.description,Con el patrocinio del infante don Enrique el Navegante, las carabelas portuguesas han doblado Cabo Verde y penetrado en el golfo de Guinea. El tráfico directo de oro, pimienta y marfil soslaya las rutas transaharianas y colma Lisboa de riquezas.
+owo.event.portuguese_african_voyages_1460.option_1,¡Ampliad nuestras factorías fortificadas a lo largo de la costa africana!
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury

@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.event.fall_of_constantinople_1453.title,The Fall of Constantinople
+owo.event.fall_of_constantinople_1453.description,On 29 May 1453, after a 53-day siege, Sultan Mehmed II's forces have breached the ancient Theodosian Walls. The Eastern Roman Empire has fallen, ending over a millennium of Byzantine civilization. Constantinople is claimed as the grand capital of the Ottoman Empire, and the historic trade routes linking the Mediterranean to the Black Sea are now firmly under imperial Ottoman control.
+owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye shall shine as the crown jewel of our empire!
+owo.event.fall_of_constantinople_1453_christendom.title,The Fall of Constantinople
+owo.event.fall_of_constantinople_1453_christendom.description,On 29 May 1453, after a 53-day siege, Sultan Mehmed II's forces have breached the ancient Theodosian Walls. The Eastern Roman Empire has fallen, ending over a millennium of Byzantine civilization. Constantinople is claimed as the grand capital of the Ottoman Empire, and the historic trade routes linking the Mediterranean to the Black Sea are now firmly under imperial Ottoman control.
+owo.event.fall_of_constantinople_1453_christendom.option_1,A tragic twilight for the Christian Roman world.
+owo.event.end_hundred_years_war_1453.title,Battle of Castillon: End of the Hundred Years' War
+owo.event.end_hundred_years_war_1453.description,In July 1453, Jean Bureau's French field artillery decisively crushed John Talbot's English knights at the Battle of Castillon. Following the battle, the French crown recovered Bordeaux and the entire Duchy of Guyenne. After 116 years of devastating dynastic war, English arms have been expelled from all continental lands with the sole exception of Calais.
+owo.event.end_hundred_years_war_1453.option_1,France stands sovereign and united at last!
+owo.event.end_hundred_years_war_1453_england.title,Battle of Castillon: End of the Hundred Years' War
+owo.event.end_hundred_years_war_1453_england.description,In July 1453, Jean Bureau's French field artillery decisively crushed John Talbot's English knights at the Battle of Castillon. Following the battle, the French crown recovered Bordeaux and the entire Duchy of Guyenne. After 116 years of devastating dynastic war, English arms have been expelled from all continental lands with the sole exception of Calais.
+owo.event.end_hundred_years_war_1453_england.option_1,A painful retreat across the English Channel.
+owo.event.gutenberg_printing_press_1455.title,The Gutenberg Printing Revolution
+owo.event.gutenberg_printing_press_1455.description,In the German city of Mainz, master goldsmith Johannes Gutenberg has successfully combined movable lead alloy type, an oil-based ink formula, and an adapted wooden screw press to produce the 42-Line Gutenberg Bible. The invention promises to accelerate the dissemination of religious, legal, and classical humanistic knowledge at an unimaginable speed.
+owo.event.gutenberg_printing_press_1455.option_1,Sponsor the establishment of printing presses throughout our cities.
+owo.event.wars_of_the_roses_1455.title,Outbreak of the Wars of the Roses
+owo.event.wars_of_the_roses_1455.description,In the wake of military defeat in France and the mental incapacitation of King Henry VI, bitter rivalry between the rival royal branches—the House of Lancaster (the Red Rose) and the House of York (the White Rose)—has erupted into violence at the First Battle of St Albans. England enters a generation of bloody civil strife for the Crown.
+owo.event.wars_of_the_roses_1455.option_1,May God preserve the realm from civil chaos.
+owo.event.portuguese_african_voyages_1460.title,Caravels of the Ocean Sea
+owo.event.portuguese_african_voyages_1460.description,Under the patronage of Prince Henry the Navigator, Portuguese caravels have rounded Cape Verde and pushed past the Bijagós archipelago, entering the Gulf of Guinea. Direct maritime trade in West African gold dust, malagueta pepper, and ivory bypasses the traditional trans-Saharan overland routes, bringing immense wealth to Lisbon.
+owo.event.portuguese_african_voyages_1460.option_1,Expand our fortified trading posts along the African coast!
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury

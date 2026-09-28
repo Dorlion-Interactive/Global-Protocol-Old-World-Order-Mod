@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.event.fall_of_constantinople_1453.title,コンスタンティノープルの陥落
+owo.event.fall_of_constantinople_1453.description,1453年5月29日、53日間に及ぶ攻囲戦の末、スルタン・メフメト2世の軍勢が古代テオドシウスの城壁を突破した。東ローマ帝国は滅亡し、千年以上にわたるビザンツ文明が幕を閉じた。コンスタンティノープルはオスマン帝国の新たな首都として宣言された。
+owo.event.fall_of_constantinople_1453.option_1,コスタンティニエは我が帝国の宝冠として輝くであろう！
+owo.event.fall_of_constantinople_1453_christendom.title,コンスタンティノープルの陥落
+owo.event.fall_of_constantinople_1453_christendom.description,1453年5月29日、53日間に及ぶ攻囲戦の末、スルタン・メフメト2世の軍勢が古代テオドシウスの城壁を突破した。東ローマ帝国は滅亡し、千年以上にわたるビザンツ文明が幕を閉じた。コンスタンティノープルはオスマン帝国の新たな首都として宣言された。
+owo.event.fall_of_constantinople_1453_christendom.option_1,キリスト教ローマ世界にとって悲劇的な黄昏。
+owo.event.end_hundred_years_war_1453.title,カスティヨンの戦い：百年戦争の終結
+owo.event.end_hundred_years_war_1453.description,1453年7月、カスティヨンの戦いにおいてジャン・ビュロー率いるフランス野戦砲兵部隊がイングランド軍を撃破した。フランス王冠はボルドーとギュイエンヌ全土を奪還した。116年に及ぶ戦乱の末、カレーを除く全大陸領土からイングランド軍が駆逐された。
+owo.event.end_hundred_years_war_1453.option_1,フランスはついに主権を取り戻し、団結した！
+owo.event.end_hundred_years_war_1453_england.title,カスティヨンの戦い：百年戦争の終結
+owo.event.end_hundred_years_war_1453_england.description,1453年7月、カスティヨンの戦いにおいてジャン・ビュロー率いるフランス野戦砲兵部隊がイングランド軍を撃破した。フランス王冠はボルドーとギュイエンヌ全土を奪還した。116年に及ぶ戦乱の末、カレーを除く全大陸領土からイングランド軍が駆逐された。
+owo.event.end_hundred_years_war_1453_england.option_1,イギリス海峡を越える苦渋の撤退。
+owo.event.gutenberg_printing_press_1455.title,グーテンベルクの印刷革命
+owo.event.gutenberg_printing_press_1455.description,マインツにおいて金細工師ヨハネス・グーテンベルクが可動式活字、油性インク、木製圧搾機を組み合わせ、42行聖書の印刷に成功した。この発明は知識の普及を前例のない速度で加速させる。
+owo.event.gutenberg_printing_press_1455.option_1,都市の随所に印刷工房の設立を奨励しよう。
+owo.event.wars_of_the_roses_1455.title,薔薇戦争の勃発
+owo.event.wars_of_the_roses_1455.description,フランスでの敗戦と国王ヘンリー6世の精神错乱の最中、ランカスター家（赤薔薇）とヨーク家（白薔薇）の対立が第1次セント・オールバンズの戦いにおいて武力衝突へと発展した。王冠をめぐる血みどろの内乱が幕を開ける。
+owo.event.wars_of_the_roses_1455.option_1,神よ、内乱の混乱より王国を守りたまえ。
+owo.event.portuguese_african_voyages_1460.title,大洋のキャラベル船
+owo.event.portuguese_african_voyages_1460.description,エンリケ航海王子の後援の下、ポルトガルのキャラベル船群はヴェルデ岬を回りビジャゴ諸島を越えてギニア湾に進入した。西アフリカの砂金、胡椒、象牙の直接海上交易はリスボンに莫大な富をもたらす。
+owo.event.portuguese_african_voyages_1460.option_1,アフリカ沿岸の要塞化された商館を拡張せよ！
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury

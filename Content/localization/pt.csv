@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
+owo.event.fall_of_constantinople_1453.title,A Queda de Constantinopla
+owo.event.fall_of_constantinople_1453.description,A 29 de maio de 1453, após 53 dias de cerco, as forças do sultão Mehmed II romperam as antigas muralhas teodosianas. O Império Romano do Oriente sucumbiu, encerrando mais de um milénio de civilização bizantina. Constantinopla torna-se a grandiosa capital do Império Otomano.
+owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye brilhará como a joia da coroa do nosso império!
+owo.event.fall_of_constantinople_1453_christendom.title,A Queda de Constantinopla
+owo.event.fall_of_constantinople_1453_christendom.description,A 29 de maio de 1453, após 53 dias de cerco, as forças do sultão Mehmed II romperam as antigas muralhas teodosianas. O Império Romano do Oriente sucumbiu, encerrando mais de um milénio de civilização bizantina. Constantinopla torna-se a grandiosa capital do Império Otomano.
+owo.event.fall_of_constantinople_1453_christendom.option_1,Um trágico crepúsculo para a cristandade romana.
+owo.event.end_hundred_years_war_1453.title,Batalha de Castillon: O Fim da Guerra dos Cem Anos
+owo.event.end_hundred_years_war_1453.description,Em julho de 1453, a artilharia francesa de Jean Bureau desbaratou os cavaleiros ingleses de John Talbot em Castillon. A coroa francesa reconquistou Bordéus e a Guiena. Após 116 anos de guerra, os ingleses foram expulsos de todo o continente, exceto Calais.
+owo.event.end_hundred_years_war_1453.option_1,A França ergue-se enfim soberana e unida!
+owo.event.end_hundred_years_war_1453_england.title,Batalha de Castillon: O Fim da Guerra dos Cem Anos
+owo.event.end_hundred_years_war_1453_england.description,Em julho de 1453, a artilharia francesa de Jean Bureau desbaratou os cavaleiros ingleses de John Talbot em Castillon. A coroa francesa reconquistou Bordéus e a Guiena. Após 116 anos de guerra, os ingleses foram expulsos de todo o continente, exceto Calais.
+owo.event.end_hundred_years_war_1453_england.option_1,Uma dolorosa retirada através do Canal da Mancha.
+owo.event.gutenberg_printing_press_1455.title,A Revolução da Imprensa de Gutenberg
+owo.event.gutenberg_printing_press_1455.description,Na cidade alemã de Mainz, Johannes Gutenberg combinou tipos móveis de chumbo, tinta a óleo e uma prensa de madeira para imprimir a Bíblia de 42 linhas, revolucionando a difusão do conhecimento.
+owo.event.gutenberg_printing_press_1455.option_1,Patrocinai a instalação de oficinas tipográficas nas nossas cidades.
+owo.event.wars_of_the_roses_1455.title,Eclosão da Guerra das Rosas
+owo.event.wars_of_the_roses_1455.description,Após o revés em França e a incapacidade do rei Henrique VI, a rivalidade entre as casas de Lencastre e de Iorque descambou em conflito aberto na Batalha de St Albans, arrastando Inglaterra para uma sangrenta guerra civil.
+owo.event.wars_of_the_roses_1455.option_1,Que Deus proteja o reino do caos da guerra civil.
+owo.event.portuguese_african_voyages_1460.title,Caravelas do Mar Oceano
+owo.event.portuguese_african_voyages_1460.description,Sob o patronato do Infante D. Henrique, as caravelas portuguesas dobraram o Cabo Verde e alcançaram o Golfo da Guiné. O trato marítimo direto de ouro em pó, malagueta e marfim desvia-se das rotas transarianas, trazendo imensa riqueza a Lisboa.
+owo.event.portuguese_african_voyages_1460.option_1,Expandi as nossas feitorias fortificadas ao longo da costa africana!
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury

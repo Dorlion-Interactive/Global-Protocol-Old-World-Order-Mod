@@ -1,7 +1,6 @@
 [
   {
     "id": "fall_of_constantinople_1453",
-    "title": "The Fall of Constantinople",
     "type": "scripted",
     "category": "geopolitical_crisis",
     "priority": 10,
@@ -9,7 +8,6 @@
     "target": "specific_country",
     "target_country": "OTT",
     "immediate": true,
-    "description": "On 29 May 1453, after a 53-day siege, Sultan Mehmed II's forces have breached the ancient Theodosian Walls. The Eastern Roman Empire has fallen, ending over a millennium of Byzantine civilization. Constantinople is claimed as the grand capital of the Ottoman Empire, and the historic trade routes linking the Mediterranean to the Black Sea are now firmly under imperial Ottoman control.",
     "conditions": [
       {
         "type": "controls_province",
@@ -18,7 +16,6 @@
     ],
     "options": [
       {
-        "text": "Kostantiniyye shall shine as the crown jewel of our empire!",
         "effects": [
           {
             "type": "modify_stat",
@@ -33,20 +30,21 @@
             "type": "set_flag",
             "flag_name": "constantinople_conquered"
           }
-        ]
+        ],
+        "text_key": "owo.event.fall_of_constantinople_1453.option_1"
       }
-    ]
+    ],
+    "title_key": "owo.event.fall_of_constantinople_1453.title",
+    "description_key": "owo.event.fall_of_constantinople_1453.description"
   },
   {
     "id": "fall_of_constantinople_1453_christendom",
-    "title": "The Fall of Constantinople",
     "type": "scripted",
     "category": "geopolitical_crisis",
     "priority": 10,
     "fire_once": true,
     "target": "any_country",
     "mean_time_to_happen_months": 2,
-    "description": "On 29 May 1453, after a 53-day siege, Sultan Mehmed II's forces have breached the ancient Theodosian Walls. The Eastern Roman Empire has fallen, ending over a millennium of Byzantine civilization. Constantinople is claimed as the grand capital of the Ottoman Empire, and the historic trade routes linking the Mediterranean to the Black Sea are now firmly under imperial Ottoman control.",
     "conditions": [
       {
         "type": "continent",
@@ -64,19 +62,20 @@
     ],
     "options": [
       {
-        "text": "A tragic twilight for the Christian Roman world.",
         "effects": [
           {
             "type": "modify_unrest",
             "value": 5
           }
-        ]
+        ],
+        "text_key": "owo.event.fall_of_constantinople_1453_christendom.option_1"
       }
-    ]
+    ],
+    "title_key": "owo.event.fall_of_constantinople_1453_christendom.title",
+    "description_key": "owo.event.fall_of_constantinople_1453_christendom.description"
   },
   {
     "id": "end_hundred_years_war_1453",
-    "title": "Battle of Castillon: End of the Hundred Years' War",
     "type": "scripted",
     "category": "military_incident",
     "priority": 9,
@@ -84,7 +83,6 @@
     "target": "specific_country",
     "target_country": "FRA",
     "immediate": true,
-    "description": "In July 1453, Jean Bureau's French field artillery decisively crushed John Talbot's English knights at the Battle of Castillon. Following the battle, the French crown recovered Bordeaux and the entire Duchy of Guyenne. After 116 years of devastating dynastic war, English arms have been expelled from all continental lands with the sole exception of Calais.",
     "conditions": [
       {
         "type": "date_after",
@@ -93,7 +91,6 @@
     ],
     "options": [
       {
-        "text": "France stands sovereign and united at last!",
         "effects": [
           {
             "type": "modify_stat",
@@ -105,13 +102,15 @@
             "field": "economy.gdp_growth_rate",
             "value": 0.02
           }
-        ]
+        ],
+        "text_key": "owo.event.end_hundred_years_war_1453.option_1"
       }
-    ]
+    ],
+    "title_key": "owo.event.end_hundred_years_war_1453.title",
+    "description_key": "owo.event.end_hundred_years_war_1453.description"
   },
   {
     "id": "end_hundred_years_war_1453_england",
-    "title": "Battle of Castillon: End of the Hundred Years' War",
     "type": "scripted",
     "category": "military_incident",
     "priority": 9,
@@ -119,7 +118,6 @@
     "target": "specific_country",
     "target_country": "ENG",
     "immediate": true,
-    "description": "In July 1453, Jean Bureau's French field artillery decisively crushed John Talbot's English knights at the Battle of Castillon. Following the battle, the French crown recovered Bordeaux and the entire Duchy of Guyenne. After 116 years of devastating dynastic war, English arms have been expelled from all continental lands with the sole exception of Calais.",
     "conditions": [
       {
         "type": "date_after",
@@ -128,7 +126,6 @@
     ],
     "options": [
       {
-        "text": "A painful retreat across the English Channel.",
         "effects": [
           {
             "type": "modify_unrest",
@@ -139,20 +136,21 @@
             "field": "government.stability",
             "value": -5
           }
-        ]
+        ],
+        "text_key": "owo.event.end_hundred_years_war_1453_england.option_1"
       }
-    ]
+    ],
+    "title_key": "owo.event.end_hundred_years_war_1453_england.title",
+    "description_key": "owo.event.end_hundred_years_war_1453_england.description"
   },
   {
     "id": "gutenberg_printing_press_1455",
-    "title": "The Gutenberg Printing Revolution",
     "type": "scripted",
     "category": "technology_breakthrough",
     "priority": 8,
     "fire_once": true,
     "target": "any_country",
     "mean_time_to_happen_months": 6,
-    "description": "In the German city of Mainz, master goldsmith Johannes Gutenberg has successfully combined movable lead alloy type, an oil-based ink formula, and an adapted wooden screw press to produce the 42-Line Gutenberg Bible. The invention promises to accelerate the dissemination of religious, legal, and classical humanistic knowledge at an unimaginable speed.",
     "conditions": [
       {
         "type": "continent",
@@ -165,20 +163,21 @@
     ],
     "options": [
       {
-        "text": "Sponsor the establishment of printing presses throughout our cities.",
         "effects": [
           {
             "type": "modify_stat",
             "field": "economy.gdp_growth_rate",
             "value": 0.01
           }
-        ]
+        ],
+        "text_key": "owo.event.gutenberg_printing_press_1455.option_1"
       }
-    ]
+    ],
+    "title_key": "owo.event.gutenberg_printing_press_1455.title",
+    "description_key": "owo.event.gutenberg_printing_press_1455.description"
   },
   {
     "id": "wars_of_the_roses_1455",
-    "title": "Outbreak of the Wars of the Roses",
     "type": "scripted",
     "category": "internal_politics",
     "priority": 8,
@@ -186,7 +185,6 @@
     "target": "specific_country",
     "target_country": "ENG",
     "immediate": true,
-    "description": "In the wake of military defeat in France and the mental incapacitation of King Henry VI, bitter rivalry between the rival royal branches—the House of Lancaster (the Red Rose) and the House of York (the White Rose)—has erupted into violence at the First Battle of St Albans. England enters a generation of bloody civil strife for the Crown.",
     "conditions": [
       {
         "type": "date_after",
@@ -195,7 +193,6 @@
     ],
     "options": [
       {
-        "text": "May God preserve the realm from civil chaos.",
         "effects": [
           {
             "type": "modify_stat",
@@ -206,13 +203,15 @@
             "type": "modify_unrest",
             "value": 15
           }
-        ]
+        ],
+        "text_key": "owo.event.wars_of_the_roses_1455.option_1"
       }
-    ]
+    ],
+    "title_key": "owo.event.wars_of_the_roses_1455.title",
+    "description_key": "owo.event.wars_of_the_roses_1455.description"
   },
   {
     "id": "portuguese_african_voyages_1460",
-    "title": "Caravels of the Ocean Sea",
     "type": "scripted",
     "category": "diplomatic_opportunity",
     "priority": 7,
@@ -220,7 +219,6 @@
     "target": "specific_country",
     "target_country": "PRT",
     "immediate": true,
-    "description": "Under the patronage of Prince Henry the Navigator, Portuguese caravels have rounded Cape Verde and pushed past the Bijagós archipelago, entering the Gulf of Guinea. Direct maritime trade in West African gold dust, malagueta pepper, and ivory bypasses the traditional trans-Saharan overland routes, bringing immense wealth to Lisbon.",
     "conditions": [
       {
         "type": "date_after",
@@ -229,7 +227,6 @@
     ],
     "options": [
       {
-        "text": "Expand our fortified trading posts along the African coast!",
         "effects": [
           {
             "type": "add_treasury",
@@ -240,8 +237,11 @@
             "field": "economy.gdp_growth_rate",
             "value": 0.02
           }
-        ]
+        ],
+        "text_key": "owo.event.portuguese_african_voyages_1460.option_1"
       }
-    ]
+    ],
+    "title_key": "owo.event.portuguese_african_voyages_1460.title",
+    "description_key": "owo.event.portuguese_african_voyages_1460.description"
   }
 ]

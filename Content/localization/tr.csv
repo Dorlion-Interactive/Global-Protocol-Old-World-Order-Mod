@@ -310,6 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Kraliyet Çiftlikleri
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Kurutulan bataklıklar, yeni köyler ve taç çiftlikleri diyarın servetini topraktan devşirir.
 owo.doctrine.economy.milestone,Ticaret Devrimi
 owo.doctrine.economy.milestone.desc,Bankacılık, poliçeler ve uzak ticaret diyarının servetini onun için çalıştırır hale getirdi.
+owo.event.fall_of_constantinople_1453.title,Konstantinopolis'in Fethi
+owo.event.fall_of_constantinople_1453.description,29 Mayıs 1453'te, 53 günlük bir kuşatmanın ardından Sultan II. Mehmed'in orduları kadim Theodosius Surlarını aştı. Doğu Roma İmparatorluğu yıkıldı ve bin yılı aşkın Bizans medeniyeti sona erdi. Kostantiniyye, Osmanlı İmparatorluğu'nun ulu başkenti ilan edildi ve Akdeniz'i Karadeniz'e bağlayan tarihi ticaret yolları artık bütünüyle imparatorluk kontrolüne geçti.
+owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye, imparatorluğumuzun taç mücevheri olarak parıldayacak!
+owo.event.fall_of_constantinople_1453_christendom.title,Konstantinopolis'in Fethi
+owo.event.fall_of_constantinople_1453_christendom.description,29 Mayıs 1453'te, 53 günlük bir kuşatmanın ardından Sultan II. Mehmed'in orduları kadim Theodosius Surlarını aştı. Doğu Roma İmparatorluğu yıkıldı ve bin yılı aşkın Bizans medeniyeti sona erdi. Kostantiniyye, Osmanlı İmparatorluğu'nun ulu başkenti ilan edildi ve Akdeniz'i Karadeniz'e bağlayan tarihi ticaret yolları artık bütünüyle imparatorluk kontrolüne geçti.
+owo.event.fall_of_constantinople_1453_christendom.option_1,Hristiyan Roma dünyası için hazin bir günbatımı.
+owo.event.end_hundred_years_war_1453.title,Castillon Muharebesi: Yüz Yıl Savaşı'nın Sonu
+owo.event.end_hundred_years_war_1453.description,Temmuz 1453'te, Jean Bureau'nun Fransız sahra topçusu, Castillon Muharebesi'nde John Talbot'un İngiliz şövalyelerini kesin bir yenilgiye uğrattı. Muharebenin ardından Fransız tacı Bordeaux'yu ve tüm Guyenne Dükalığı'nı geri aldı. 116 yıllık yıkıcı hanedan savaşının ardından, İngiliz orduları Calais hariç tüm kıta topraklarından çıkarıldı.
+owo.event.end_hundred_years_war_1453.option_1,Fransa nihayet egemen ve birleşmiş olarak ayakta!
+owo.event.end_hundred_years_war_1453_england.title,Castillon Muharebesi: Yüz Yıl Savaşı'nın Sonu
+owo.event.end_hundred_years_war_1453_england.description,Temmuz 1453'te, Jean Bureau'nun Fransız sahra topçusu, Castillon Muharebesi'nde John Talbot'un İngiliz şövalyelerini kesin bir yenilgiye uğrattı. Muharebenin ardından Fransız tacı Bordeaux'yu ve tüm Guyenne Dükalığı'nı geri aldı. 116 yıllık yıkıcı hanedan savaşının ardından, İngiliz orduları Calais hariç tüm kıta topraklarından çıkarıldı.
+owo.event.end_hundred_years_war_1453_england.option_1,Manş Denizi üzerinden acı bir geri çekilme.
+owo.event.gutenberg_printing_press_1455.title,Gutenberg Matbaa Devrimi
+owo.event.gutenberg_printing_press_1455.description,Mainz şehrinde usta kuyumcu Johannes Gutenberg; hareketli kurşun alaşımlı harfleri, yağ bazlı mürekkebi ve uyarlanmış ahşap mengene presini birleştirerek 42 satırlık Gutenberg İncili'ni bastı. Bu buluş, dini, hukuki ve klasik hümanist bilginin yayılmasını hayal bile edilemeyecek bir hızla ivmelendirmeyi vaat ediyor.
+owo.event.gutenberg_printing_press_1455.option_1,Şehirlerimizde matbaaların kurulmasını destekleyin.
+owo.event.wars_of_the_roses_1455.title,Güller Savaşı'nın Patlak Vermesi
+owo.event.wars_of_the_roses_1455.description,Fransa'daki askeri yenilginin ve Kral VI. Henry'nin zihinsel rahatsızlığının ardından, rakip hanedan kolları—Lancaster Hanedanı (Kırmızı Gül) ile York Hanedanı (Beyaz Gül)—arasındaki kıyasıya rekabet, Birinci St Albans Muharebesi ile kanlı bir çatışmaya dönüştü. İngiltere, taht için nesiller boyu sürecek kanlı bir iç savaşa sürükleniyor.
+owo.event.wars_of_the_roses_1455.option_1,Tanrı ülkeyi iç kargaşadan korusun.
+owo.event.portuguese_african_voyages_1460.title,Okyanus Denizinin Karavelleri
+owo.event.portuguese_african_voyages_1460.description,Denizci Prens Henrique'nin himayesinde Portekiz karavelleri Cabo Verde'yi dolaştı ve Bijagós takımadalarını geçerek Gine Körfezi'ne girdi. Batı Afrika altın tozu, malagueta biberi ve fildişinin doğrudan deniz ticareti, geleneksel Sahra ötesi kara yollarını devre dışı bırakarak Lizbon'a muazzam bir zenginlik kazandırıyor.
+owo.event.portuguese_african_voyages_1460.option_1,Afrika kıyısı boyunca müstahkem ticaret karakollarımızı genişletin!
 owo.goal.basic_fill_the_treasury,Kraliyet Hazinesini Doldur
 owo.goal.basic_fill_the_treasury.desc,Parası olmayan bir diyar ne ordu kurabilir ne de barışı koruyabilir. Korumaya değer bir birikim yap.
 owo.task.basic_fill_the_treasury.treasury,Hazinede 500 fl. biriktir
