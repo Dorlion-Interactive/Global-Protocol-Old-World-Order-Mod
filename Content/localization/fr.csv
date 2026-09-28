@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+building.factory.name,Atelier corporatif
+building.factory.description,Ateliers de corporation et forges produisant des biens manufacturés, des textiles et des armures.
+building.commercial_district.name,Place du marché
+building.commercial_district.description,Place pavée et étals de marchands facilitant le commerce régional, les foires et les revenus de péage.
+building.trade_port.name,Port et quais
+building.trade_port.description,Mouillage côtier abrité et quais de pierre accueillant caraques, galères et fret maritime.
+building.tech_park.name,Scriptorium et bibliothèque
+building.tech_park.description,Scriptorium monastique ou municipal conservant manuscrits enluminés, cartes marines et traités savants.
+building.barracks.name,Garnison et place d'armes
+building.barracks.description,Champ d'exercice, armurerie et casernements pour la milice urbaine, le guet et les gens d'armes.
+building.military_base.name,Château et donjon
+building.military_base.description,Imposante forteresse de pierre avec courtines, tours et douves affirmant l'autorité seigneuriale.
+building.arms_factory.name,Fonderie de canons et cloches
+building.arms_factory.description,Fonderie coulant bombardes de bronze, boulets de fer, arquebuses et engins de siège.
+building.highway.name,Chaussée royale pavée
+building.highway.description,Voie royale empierrée pourvue de ponts de pierre et de relais de poste pour messagers et gens de guerre.
+building.power_plant.name,Moulins à eau et à vent
+building.power_plant.description,Roues à aubes et ailes de moulin actionnant minoteries, scieries et martinets de forge.
+building.hospital.name,Hôtel-Dieu et apothicairerie
+building.hospital.description,Établissement tenu par des religieux ou maîtres apothicaires offrant remèdes à base de plantes et asile aux infirmes.
+building.university.name,Université médiévale
+building.university.description,Centre d'érudition renommé formant clercs et juristes à la théologie, au droit civil, à la rhétorique et à la médecine.
+building.naval_base.name,Arsenal naval et chantier naval
+building.naval_base.description,Chantier d'État et cales de construction assemblant galères de guerre, caraques et gréements militaires.
+building.radar_station.name,Réseau de tours de guet et fanaux
+building.radar_station.description,Dispositif de tours de guet et de feux de signalisation alertant de la marche des armées adverses.
+building.intelligence_hq.name,Cabinet du grand espion
+building.intelligence_hq.description,Chambre d'espionnage et quartier général postal dépêchant informateurs et interceptant missives diplomatiques.
+building.counterintel_bureau.name,Tribunal de l'Inquisition
+building.counterintel_bureau.description,Tribunal judiciaire et guet pourchassant agitateurs étrangers, sédition et espions par de rudes interrogatoires.
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
 doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations

@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+building.factory.name,行会作坊
+building.factory.description,生产金属器具、纺织品和盔甲并雇佣市民的行会作坊与铁匠铺。
+building.commercial_district.name,市场广场
+building.commercial_district.description,铺石市场广场与商人摊位，促进区域贸易、定期集市与关税收入。
+building.trade_port.name,港口与码头
+building.trade_port.description,容纳商用柯克船、桨帆船及国际海运货物的避风锚地与石质泊位。
+building.tech_park.name,抄经室与图书馆
+building.tech_park.description,收藏泥金手抄本、航海图卷及学术专著的修道院或市政抄经所。
+building.barracks.name,卫戍营与点兵场
+building.barracks.description,供城市民兵、守夜巡役及常备披甲军士集结的校场、武库与营房。
+building.military_base.name,城堡与主楼
+building.military_base.description,筑有厚重城垣、望楼与护城河的石砌坚城，确立领主权威。
+building.arms_factory.name,火炮与铸钟工场
+building.arms_factory.description,铸造重型青铜臼炮、铁弹、火绳铳与攻城器具的冶铸工场。
+building.highway.name,铺石王家官道
+building.highway.description,配备石桥与驿站的平整官道，供快马急递与大军调动。
+building.power_plant.name,水磨与风车
+building.power_plant.description,驱动粮食研磨、木材锯切与水力锻锤的河流水车与风磨坊。
+building.hospital.name,医馆与百草铺
+building.hospital.description,由医药行会工匠或修会设立、提供本草调理并收容病患的医局与药肆。
+building.university.name,中世纪大学
+building.university.description,培养教士与法学学者修习神学、民法、修辞学及医学的著名经院学府。
+building.naval_base.name,水师工部与船坞
+building.naval_base.description,筑造战桨船、大帆船并配备舰炮兵器的官营船厂与船台。
+building.radar_station.name,烽燧与望楼台网
+building.radar_station.description,依托山峦烽燧与了望岗哨、对敌寇进犯实施预警的传令防线。
+building.intelligence_hq.name,御前密探按察署
+building.intelligence_hq.description,督率宫廷耳目、截获外务密函并在邦外策动隐秘谍报的总署。
+building.counterintel_bureau.name,审判庭与纠察司
+building.counterintel_bureau.description,设庭严加勘问、排查外敌策动、内乱谋逆及潜行间谍的司法监察官署。
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
 doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations

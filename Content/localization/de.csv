@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+building.factory.name,Zunftwerkstatt
+building.factory.description,Zunftwerkstätten und Schmieden zur Herstellung von Metallwaren, Textilien und Rüstungen.
+building.commercial_district.name,Marktplatz
+building.commercial_district.description,Pflastermarktplatz und Händlerstände zur Förderung des regionalen Handels und der Zolleinnahmen.
+building.trade_port.name,Hafen & Kaianlagen
+building.trade_port.description,Geschützter Ankerplatz und Steinkais für Hansekoggen, Galeeren und Seefracht.
+building.tech_park.name,Skriptorium & Bibliothek
+building.tech_park.description,Klösterliches oder städtisches Skriptorium zur Verwahrung von Handschriften und Seekarten.
+building.barracks.name,Garnison & Musterplatz
+building.barracks.description,Aufmarschplatz, Waffenarsenal und Unterkünfte für Stadtmilizen, Wachen und Reisige.
+building.military_base.name,Burg & Bergfried
+building.military_base.description,Imposante Wehranlage mit Ringmauern, Türmen und Wassergräben zur Festigung landesherrlicher Macht.
+building.arms_factory.name,Geschütz- & Glockengießerei
+building.arms_factory.description,Gießerei zur Herstellung schwerer Bronzebombarden, Eisenkugeln, Hakenbüchsen und Belagerungsgerät.
+building.highway.name,Gepflasterte Königsstraße
+building.highway.description,Befestigte Königsstraße mit Steinbrücken und Poststationen für Kuriere und Heereszüge.
+building.power_plant.name,Wasser- & Windmühlen
+building.power_plant.description,Mühlräder und Windmühlen für Getreidemahlen, Sägewerke und Schmiedehämmer.
+building.hospital.name,Hospiz & Kräuterapotheke
+building.hospital.description,Von Mönchsorden oder Meistern geführtes Hospital mit Kräuterheilmitteln zur Pflege der Siechen.
+building.university.name,Mittelalterliche Universität
+building.university.description,Berühmte Gelehrtenstätte zur Unterweisung in Theologie, Kanonischem Recht, Rhetorik und Medizin.
+building.naval_base.name,See-Arsenal & Schiffswerft
+building.naval_base.description,Staatliches Arsenal und Werfthellingen zum Bau von Kriegsgaleeren, Karacken und Bordbewaffnung.
+building.radar_station.name,Wachturm- & Feuersignalkette
+building.radar_station.description,System aus Signalfeuern und Wachtürmen zur Frühwarnung vor anrückenden Feindheeren.
+building.intelligence_hq.name,Amt des königlichen Spions
+building.intelligence_hq.description,Zentrale Kanzlei zur Lenkung von Spionen, Abfangen fremder Depeschen und Vorbereitung geheimer Umtriebe.
+building.counterintel_bureau.name,Inquisitionstribunal
+building.counterintel_bureau.description,Gerichtshof und Stadtwache zur Aufdeckung fremder Aufwiegler, Umstürzler und geheimer Agenten.
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
 doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations

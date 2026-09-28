@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+building.factory.name,Oficina de Guilda
+building.factory.description,Oficinas de corporações de ofício e ferrarias que produzem artefatos de metal, tecidos e armaduras.
+building.commercial_district.name,Praça do Mercado
+building.commercial_district.description,Praça calçada com bancas de mercadores para o comércio regional, feiras e tarifas de pedágio.
+building.trade_port.name,Porto e Docas
+building.trade_port.description,Fondeadouro abrigado e cais de pedra para receber carracas comerciais, galés e cargas marítimas.
+building.tech_park.name,Escribania e Biblioteca
+building.tech_park.description,Escribania monástica ou municipal guardando manuscritos iluminados, cartas náuticas e tratados.
+building.barracks.name,Guarnição e Praça de Armas
+building.barracks.description,Campo de treino, armaria e quartéis para milícias urbanas, guardas e soldados de infantaria.
+building.military_base.name,Castelo e Torre de Menagem
+building.military_base.description,Imponente fortaleza de pedra com muralhas, torres e fossos afirmando a autoridade senhorial.
+building.arms_factory.name,Fundição de Canhões e Sinos
+building.arms_factory.description,Fundição que forja bombardas de bronze, balas de ferro, arcabuzes e maquinários de cerco.
+building.highway.name,Estrada Real Calçada
+building.highway.description,Estrada real calçada com pontes de pedra e estações de correio para mensageiros e tropas.
+building.power_plant.name,Moinhos de Água e Vento
+building.power_plant.description,Rodas d'água e moinhos de vento movendo moagens de grãos, serrarias e martelos de forja.
+building.hospital.name,Enfermaria e Botica de Ervas
+building.hospital.description,Hospital administrado por ordens religiosas ou mestres boticários fornecendo unguentos e abrigo aos doentes.
+building.university.name,Universidade Medieval
+building.university.description,Renomado centro escolástico educando clérigos e juristas em teologia, direito civil, retórica e medicina.
+building.naval_base.name,Arsenal Naval e Estaleiro
+building.naval_base.description,Arsenal régio e estaleiros náuticos construindo galés de guerra, carracas e aparelhos navais.
+building.radar_station.name,Rede de Torres de Vigia e Almenaras
+building.radar_station.description,Sistema de atalaias e fogueiras de alerta que detectam o avanço de tropas inimigas.
+building.intelligence_hq.name,Gabinete do Mestre de Espiões
+building.intelligence_hq.description,Gabinete central de espionagem que comanda informantes da corte, intercepta cartas e conduz tramas secretas.
+building.counterintel_bureau.name,Tribunal da Inquisição
+building.counterintel_bureau.description,Tribunal judiciário e guarda municipal eliminando agitadores estrangeiros, motins e infiltrações secretas.
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
 doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations

@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+building.factory.name,Taller gremial
+building.factory.description,Talleres gremiales y herrerías que producen artículos de metal, textiles y armaduras.
+building.commercial_district.name,Plaza del mercado
+building.commercial_district.description,Plaza empedrada y puestos de comerciantes para el comercio regional, ferias e ingresos de peaje.
+building.trade_port.name,Puerto y muelles
+building.trade_port.description,Fondeadero protegido y muelles de piedra para cocas mercantes, galeras y carga marítima.
+building.tech_park.name,Escriptorio y biblioteca
+building.tech_park.description,Escriptorio monástico o civil que preserva manuscritos iluminados, cartas náuticas y tratados.
+building.barracks.name,Guarnición y plaza de armas
+building.barracks.description,Campo de armas, arsenal y cuarteles para milicias locales, vigías y soldados.
+building.military_base.name,Castillo y torreón
+building.military_base.description,Imponente fortaleza de piedra con murallas, torres y fosos que consolida el poder señorial.
+building.arms_factory.name,Fundición de cañones y campanas
+building.arms_factory.description,Fundición que manufactura bombardas de bronce, proyectiles de hierro y equipo de asedio.
+building.highway.name,Calzada real empedrada
+building.highway.description,Camino real empedrado con puentes de piedra y postas para mensajeros y tropas.
+building.power_plant.name,Molinos de agua y viento
+building.power_plant.description,Ruedas de agua y aspas de viento que accionan la molienda de grano, aserraderos y fraguas.
+building.hospital.name,Hospital y botica de hierbas
+building.hospital.description,Hospital administrado por religiosos o maestros boticarios para el cuidado y curación de enfermos.
+building.university.name,Universidad medieval
+building.university.description,Centro escolástico que instruye a eruditos y legistas en teología, derecho, retórica y medicina.
+building.naval_base.name,Arsenal naval y astillero
+building.naval_base.description,Arsenal naval y atarazanas donde se ensamblan galeras, carracas y artillería marítima.
+building.radar_station.name,Red de atalayas y almenaras
+building.radar_station.description,Sistema de torres de vigilancia y fogatas de señales para avistar tropas enemigas en marcha.
+building.intelligence_hq.name,Oficina del maestro de espías
+building.intelligence_hq.description,Centro secreto de intrigas y correos que dirige informantes y vigila misiones extranjeras.
+building.counterintel_bureau.name,Tribunal de la Inquisición
+building.counterintel_bureau.description,Tribunal judicial y guardia urbana que persigue conspiradores foráneos, sedición e infiltraciones.
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
 doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations

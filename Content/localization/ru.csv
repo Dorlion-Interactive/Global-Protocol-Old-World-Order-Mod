@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+building.factory.name,Ремесленная мастерская
+building.factory.description,Цеховые мастерские и кузницы, производящие металлические изделия, ткани и доспехи.
+building.commercial_district.name,Рыночная площадь
+building.commercial_district.description,Мощеная площадь с торговыми рядами для региональной торговли, ярмарок и сбора пошлин.
+building.trade_port.name,Гавань и причалы
+building.trade_port.description,Защищенная якорная стоянка и каменные набережные для торговых коггов, галер и грузов.
+building.tech_park.name,Скрипторий и библиотека
+building.tech_park.description,Монастырский или городской скрипторий с иллюминированными рукописями, морскими картами и трактатами.
+building.barracks.name,Гарнизон и плац
+building.barracks.description,Место сбора, оружейный склад и казармы для городского ополчения, стражи и ратников.
+building.military_base.name,Замок и цитадель
+building.military_base.description,Могучая каменная крепость со стенами, башнями и рвами, утверждающая власть феодала.
+building.arms_factory.name,Пушечный и колокольный двор
+building.arms_factory.description,Литейная мастерская для отливки тяжелых бронзовых бомбард, железных ядер, аркебуз и осадных орудий.
+building.highway.name,Мощеный царский тракт
+building.highway.description,Мощеный тракт с каменными мостами и станциями ямской гоньбы для гонцов и войск.
+building.power_plant.name,Водяные и ветряные мельницы
+building.power_plant.description,Речные водяные колеса и ветряки для помола зерна, лесопилок и кузнечных молотов.
+building.hospital.name,Богадельня и травяная аптека
+building.hospital.description,Лечебница при монастыре или цехе лекарей, обеспечивающая уход за больными и траволечение.
+building.university.name,Средневековый университет
+building.university.description,Известный центр схоластики, обучающий клириков и юристов богословию, праву, риторике и медицине.
+building.naval_base.name,Адмиралтейство и верфь
+building.naval_base.description,Государственный арсенал и стапели для постройки боевых галер, каракк и корабельной оснастки.
+building.radar_station.name,Сторожевые башни и сигнальные огни
+building.radar_station.description,Сеть сторожевых вышек и сигнальных костров на холмах для раннего обнаружения войск врага.
+building.intelligence_hq.name,Канцелярия королевского лазутчика
+building.intelligence_hq.description,Тайный приказ и узел связи, руководящий осведомителями, перехватом писем и тайными делами.
+building.counterintel_bureau.name,Инквизиционный трибунал
+building.counterintel_bureau.description,Судебный трибунал и городская стража, пресекающие крамолу, мятежи и лазутчиков суровыми допросами.
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
 doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations

@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+building.factory.name,Taller gremial
+building.factory.description,Talleres gremiales y herrerías que producen manufacturas metálicas, telas y armaduras empleando artesanos.
+building.commercial_district.name,Plaza del mercado
+building.commercial_district.description,Plaza empedrada y puestos de mercaderes que facilitan el comercio regional, ferias e ingresos por peajes.
+building.trade_port.name,Puerto y muelles
+building.trade_port.description,Fondeadero costero protegido y muelles de piedra que reciben cocas mercantes, galeras y carga marítima.
+building.tech_park.name,Escriptorio y biblioteca
+building.tech_park.description,Escriptorio monástico o municipal que preserva manuscritos iluminados, cartas náuticas y tratados eruditos.
+building.barracks.name,Guarnición y plaza de armas
+building.barracks.description,Campo de instrucción, armería y barracones para milicias urbanas, guardias y hombres de armas.
+building.military_base.name,Castillo y torre del homenaje
+building.military_base.description,Imponente fortaleza de piedra con murallas, torres y fosos que asienta la autoridad señorial.
+building.arms_factory.name,Fundición de cañones y campanas
+building.arms_factory.description,Fundición que manufactura bombardas de bronce, balas de hierro, arcabuces y pertrechos de asedio.
+building.highway.name,Calzada real empedrada
+building.highway.description,Camino real empedrado con puentes de piedra y postas que acelera estafetas y tropas.
+building.power_plant.name,Molinos de agua y de viento
+building.power_plant.description,Ruedas hidráulicas y molinos de viento que accionan moliendas de grano, aserraderos y batanes.
+building.hospital.name,Hospital y botica de hierbas
+building.hospital.description,Hospital regentado por órdenes religiosas o maestros boticarios que dispensa remedios herbales.
+building.university.name,Universidad medieval
+building.university.description,Célebre centro escolástico que instruye a clérigos y letrados en teología, leyes, retórica y medicina.
+building.naval_base.name,Arsenal naval y atarazanas
+building.naval_base.description,Arsenal público y gradas de carpinteros de ribera donde se construyen galeras, naos y pertrechos navales.
+building.radar_station.name,Atalayas y red de almenaras
+building.radar_station.description,Red de torres de vigía y fuegos de alarma en cumbres que avisan del avance de huestes enemigas.
+building.intelligence_hq.name,Gabinete del maestro de espías
+building.intelligence_hq.description,Cámara central de espionaje y correos que dirige informantes, intercepta despachos y trama intrigas foráneas.
+building.counterintel_bureau.name,Tribunal de la Inquisición
+building.counterintel_bureau.description,Tribunal judicial y ronda concejil que desenmascara agitadores extranjeros, sediciones e infiltraciones.
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
 doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations

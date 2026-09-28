@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+building.factory.name,Cechovní dílna
+building.factory.description,Cechovní dílny a kovárny vyrábějící kovové zboží, textil a zbroj, zaměstnávající měšťany.
+building.commercial_district.name,Tržiště
+building.commercial_district.description,Dlážděné náměstí s kupeckými stánky pro regionální obchod, výroční trhy a výběr mýta.
+building.trade_port.name,Přístav a nábřeží
+building.trade_port.description,Chráněné kotviště a kamenná nábřeží pro obchodní kogy, galéry a námořní náklad.
+building.tech_park.name,Skriptorium a knihovna
+building.tech_park.description,Klášterní nebo městské skriptorium uchovávající iluminované rukopisy, mapy a učené spisy.
+building.barracks.name,Posádka a shromaždiště
+building.barracks.description,Shromaždiště, zbrojnice a kasárna pro městskou hotovost, strážce a zbrojnoše.
+building.military_base.name,Hrad a donjon
+building.military_base.description,Impozantní kamenná pevnost s hradbami, věžemi a příkopy upevňující panskou moc.
+building.arms_factory.name,Slévárna děl a zvonů
+building.arms_factory.description,Slévárna odlévající těžké bronzové bombardy, kule, arkebuzy a obléhací výzbroj.
+building.highway.name,Dlážděná královská cesta
+building.highway.description,Dlážděná zemská cesta s kamennými mosty a přepřahacími stanicemi usnadňující pohyb poslů a vojsk.
+building.power_plant.name,Vodní a větrné mlýny
+building.power_plant.description,Říční vodní kola a větrné mlýny pohánějící mletí obilí, pily a kovářské hamry.
+building.hospital.name,Špitál a bylinná lékárna
+building.hospital.description,Špitál spravovaný lékařským cechem nebo řeholními řády nabízející bylinnou léčbu a útulek nemocným.
+building.university.name,Středověká univerzita
+building.university.description,Proslulé učené centrum vzdělávající kleriky a právníky v teologii, právu, rétorice a lékařství.
+building.naval_base.name,Zbrojnice a loděnice
+building.naval_base.description,Státní arzenál a lodní skluzy pro stavbu válečných galér, karak a vystrojování flotily.
+building.radar_station.name,Síť strážních věží a majáků
+building.radar_station.description,Soustava vyvýšených strážních věží a signálních ohňů varující před pochodem nepřátelských vojsk.
+building.intelligence_hq.name,Úřad královského špehýře
+building.intelligence_hq.description,Ústřední síť vyzvědačů a poslů řídící informátory, zachycující depeše a vedoucí tajné operace.
+building.counterintel_bureau.name,Inkviziční tribunál
+building.counterintel_bureau.description,Soudní tribunál a městská hlídka odhalující cizí agitátory, buřičství a špionáž přísnými výslechy.
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
 doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations

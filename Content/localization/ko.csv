@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+building.factory.name,길드 공방
+building.factory.description,금속 제품, 직물, 갑옷을 생산하고 도시민을 고용하는 동업 조합 공방 및 대장간.
+building.commercial_district.name,시장 광장
+building.commercial_district.description,지역 교역, 정기 장터, 통행세 징수를 원활하게 하는 포장된 시장 광장과 상인 가판대.
+building.trade_port.name,항구 및 부두
+building.trade_port.description,무역 코그선, 갤리선, 해상 화물을 처리하는 안전한 정박지와 석조 부두.
+building.tech_park.name,사자실 및 도서관
+building.tech_park.description,채색 필사본, 해도, 학술 문헌을 보관하는 수도원 또는 도시의 사자실.
+building.barracks.name,주둔지 및 연병장
+building.barracks.description,도시 민병대, 경비병, 상비 무장병을 위한 소집 광장, 무기고, 막사.
+building.military_base.name,성곽 및 아성
+building.military_base.description,성벽, 탑, 해자를 갖추고 영주의 확고한 권위를 확립하는 웅장한 석조 요새.
+building.arms_factory.name,대포 및 종 주조소
+building.arms_factory.description,중형 청동 구포, 철제 포탄, 아르케부스총, 공성 장비를 주조하는 제작소.
+building.highway.name,포장된 왕도
+building.highway.description,석교와 역참을 갖추어 전령 왕래와 군대 이동을 촉진하는 포장된 왕실 도로.
+building.power_plant.name,수차 및 풍차
+building.power_plant.description,제분, 제목, 단조 수력 해머를 작동시키는 하천 수차와 풍차.
+building.hospital.name,구제원 및 약초원
+building.hospital.description,약초 치료를 제공하고 병자를 돌보는 의사 길드나 수도회가 운영하는 병원.
+building.university.name,중세 대학
+building.university.description,신학, 시민법, 수사학, 의학 분야에서 서기와 법학자를 양성하는 명망 있는 학문 중심지.
+building.naval_base.name,해군 공창 및 조선소
+building.naval_base.description,군용 갤리선과 카락선을 건조하고 함포 및 의장을 갖추는 국영 조선소와 선대.
+building.radar_station.name,망루 및 봉수대 연결망
+building.radar_station.description,적군의 진격을 조기에 탐지하는 산꼭대기 감시탑과 봉화 체계.
+building.intelligence_hq.name,왕실 첩보관 집무실
+building.intelligence_hq.description,궁정 밀정을 지휘하고 외교 서신을 가로채며 해외 공작을 지휘하는 중앙 첩보실.
+building.counterintel_bureau.name,종교재판소
+building.counterintel_bureau.description,엄중한 심문을 통해 외국의 선동가, 반역 음모, 비밀 침투 세력을 색출하는 재판소 및 순찰대.
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
 doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations

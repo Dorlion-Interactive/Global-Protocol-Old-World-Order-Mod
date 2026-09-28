@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Date: {0}-{1}\n\nEurope and Asia stand betw
 mod.owo.popup.startup.title,""Old World Order, 1450""
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
 ui.button.ok,OK
+building.factory.name,ギルド工房
+building.factory.description,金属製品、織物、甲冑を生産し市民を雇用する同職ギルドの工房および鍛冶場。
+building.commercial_district.name,市場広場
+building.commercial_district.description,交易、定期市、通行税収入を支える石畳の市場広場と商人の露店。
+building.trade_port.name,港と波止場
+building.trade_port.description,商業コグ船、ガレー船、国際海上貨物を扱う保護された投錨地と石造りの埠頭。
+building.tech_park.name,写字室と図書館
+building.tech_park.description,装飾写本、海図、学術書を保管する修道院または都市の写字室。
+building.barracks.name,守備隊と練兵場
+building.barracks.description,都市民兵、警備兵、常備兵のための集合地、武器庫、兵舎。
+building.military_base.name,城と天守
+building.military_base.description,幕壁、監視塔、堀を備え領主の確固たる支配権を誇示する石造要塞。
+building.arms_factory.name,大砲と鐘の鋳造所
+building.arms_factory.description,青銅射石砲、鉄製砲弾、火縄銃、攻城兵器を鋳造する鍛造所。
+building.highway.name,石畳の王道
+building.highway.description,早馬の中継所と石橋を備え伝令や軍勢の進軍を支える石畳の王道。
+building.power_plant.name,水車と風車
+building.power_plant.description,製粉、製材、鍛造ハンマーを稼働させる河川の水車および風車。
+building.hospital.name,施療院と薬草局
+building.hospital.description,薬草療法を提供し病人を保護する医師ギルドや修道会が運営する病院。
+building.university.name,中世大学
+building.university.description,神学、市民法、修辞学、医学を聖職者や法学者に教授する名高き学術拠点。
+building.naval_base.name,海軍工廠と造船所
+building.naval_base.description,軍用ガレー船やキャラック船を建造し装を施す国家工廠および船台。
+building.radar_station.name,監視塔と烽火網
+building.radar_station.description,敵軍の進軍をいち早く察知するための高台の物見櫓と狼煙網。
+building.intelligence_hq.name,密偵頭府
+building.intelligence_hq.description,宮廷密偵を指揮し、外交使節の書状を傍受し、国外工作を主導する諜報拠点。
+building.counterintel_bureau.name,異端審問所
+building.counterintel_bureau.description,厳格な尋問を通じて外国の煽動者、扇動、秘密の潜入分子を摘発する法廷および巡邏隊。
 doctrine.military.t1.professional_armed_forces,Plate Armor & Blast Furnaces
 doctrine.military.t1.professional_armed_forces.desc,Hydraulic-powered bellows in blast furnaces produce superior tempered steel for articulated plate armor.
 doctrine.military.t2.precision_warfare,Crossbow & Pavise Formations

@@ -216,6 +216,36 @@ mod.owo.popup.startup.body_with_date,Tarih: {0}-{1}\n\nAvrupa ve Asya eski feoda
 mod.owo.popup.startup.title,Eski Dünya Düzeni 1450
 mod.ui.toolbar.welcome_tooltip,Stratejik Bilgilendirmeyi Aç
 ui.button.ok,TAMAM
+building.factory.name,Lonca Atölyesi
+building.factory.description,Kentli zanaatkarları istihdam ederek metal eşyalar, tekstil ve zırh üreten lonca atölyeleri ve demirci ocakları.
+building.commercial_district.name,Pazar Meydanı
+building.commercial_district.description,Bölgesel ticareti, takas panayırlarını ve geçiş vergisi gelirini kolaylaştıran taş döşeli pazar meydanı ve tüccar tezgahları.
+building.trade_port.name,Liman ve İskeleler
+building.trade_port.description,Tüccar kogları, kadırgaları ve uluslararası deniz yüklerini idare eden korunaklı kıyı demirleme yeri ve taş rıhtımlar.
+building.tech_park.name,Yazıhane ve Kütüphane
+building.tech_park.description,Tezhibli el yazmalarını, deniz haritalarını ve ilmi risaleleri koruyan manastır veya şehir yazıhanesi.
+building.barracks.name,Garnizon ve Toplanma Alanı
+building.barracks.description,Şehir milisleri, bekçiler ve daimi silahlı muhafızlar için toplanma alanı, silah deposu ve kışlalar.
+building.military_base.name,Kale ve İç Kale
+building.military_base.description,Tartışmasız derebeyi otoritesini tesis eden, sur duvarları, kuleleri ve hendekleri olan heybetli taş kale.
+building.arms_factory.name,Top ve Çan Dökümhanesi
+building.arms_factory.description,Ağır bronz bombardalar, demir gülleler, arkebüzler ve kuşatma ekipmanları döken dökümhane.
+building.highway.name,Taş Döşeli Kral Yolu
+building.highway.description,Ulak posta hatlarını ve birlik hareketini kolaylaştıran, taş köprüleri ve menzilleri olan taş döşeli krallık yolu.
+building.power_plant.name,Su ve Rüzgar Değirmenleri
+building.power_plant.description,Tahıl öğütmeyi, kereste biçmeyi ve demirci tokmaklarını işleten nehir su çarkları ve yeldeğirmenleri.
+building.hospital.name,Darüşşifa ve Bitkisel Eczane
+building.hospital.description,Tabip loncası ustaları veya dini cemaatler tarafından işletilen, şifalı ot tedavileri sunan ve hastaları barındıran şifahane.
+building.university.name,Ortaçağ Medresesi ve Üniversitesi
+building.university.description,Katipleri ve fakihleri ilahiyat, medeni hukuk, belagat ve tıp alanlarında eğiten meşhur ilim merkezi.
+building.naval_base.name,Tersane ve Donanma Cephaneliği
+building.naval_base.description,Savaş kadırgaları, kalyonlar inşa eden ve deniz silahlarını donatan devlet tersanesi ve kızaklar.
+building.radar_station.name,Gözetleme Kulesi ve Ateş Kulesi Hattı
+building.radar_station.description,Düşman ordularının yürüyüşüne karşı erken uyarı sağlayan tepe gözetleme kuleleri ve işaret ateşleri sistemi.
+building.intelligence_hq.name,Kraliyet İstihbarat Dairesi
+building.intelligence_hq.description,Saray muhbirlerini yöneten, diplomatik mektupları ele geçiren ve gizli yabancı operasyonlar düzenleyen merkezi casusluk odası ve ulak merkezi.
+building.counterintel_bureau.name,Engizisyon Mahkemesi
+building.counterintel_bureau.description,Sıkı sorgulamalar yoluyla yabancı kışkırtıcıları, isyanı ve gizli sızmaları kökünden kazıyan adli mahkeme ve şehir muhafızlığı.
 doctrine.military.t1.professional_armed_forces,Plaka Zırh ve Yüksek Fırınlar
 doctrine.military.t1.professional_armed_forces.desc,Yüksek fırınlardaki hidrolik körükler, eklemli plaka zırhlar için üstün sertleştirilmiş çelik üretir.
 doctrine.military.t2.precision_warfare,Kundaklı Yay ve Pavise Düzenleri
