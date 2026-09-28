@@ -35,14 +35,10 @@ def process_and_save(src_path, category, dest_ids):
         print(f"No border white found for {dest_ids[0]}")
 
     for dest_id in dest_ids:
-        targets = [
-            f"icons/{category}/{dest_id}.png",
-            f"Content/icons/{category}/{dest_id}.png"
-        ]
-        for t in targets:
-            os.makedirs(os.path.dirname(t), exist_ok=True)
-            cv2.imwrite(t, im_bgr)
-        print(f"Successfully saved {dest_id} to targets.")
+        target = f"icons/{category}/{dest_id}.png"
+        os.makedirs(os.path.dirname(target), exist_ok=True)
+        cv2.imwrite(target, im_bgr)
+        print(f"Successfully saved {dest_id} to {target}.")
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:

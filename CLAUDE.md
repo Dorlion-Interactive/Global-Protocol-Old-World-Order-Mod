@@ -32,7 +32,6 @@ scenario/                        ← split scenario files (authoritative)
 Content/
   localization/<lang>.csv        ← 13 locales: cz de en es es-419 fr ja ko pt pt-br ru tr zh
   events/historical_events_1450.json ← 7 engine events (Constantinople, Hundred Years' War, …)
-  icons/{buildings,doctrines,resources,units}/ ← runtime icons
   ui/                            ← UI injection: inject.json (3 HUD toolbar buttons + a province row), owo_styles.uss
   shared/OldWorldOrder.cs        ← shared mod logic (briefing / Historian's Archive popups)
   mod-csharp/ wasm-as/ wasm-dotnet/ ← the three runtime variants' sources
@@ -41,7 +40,7 @@ overrides/
   military_markers.json          ← map-marker overrides
   game_flow.json                 ← ignored by the engine for mods (player settings)
   Art/Units/                     ← map-marker art (install.bat mirrors it to Art/)
-icons/{buildings,doctrines,units}/ ← icon art (16 / 47 / 16; mirrored in Content/icons — scripts/process_image.py writes both)
+icons/{buildings,doctrines,units}/ ← icon art (written by scripts/process_image.py)
 flags/                           ← flag PNGs (128×80, named by ISO3)
 docs/modding/                    ← engine reference + schemas — synced copies, never hand-edit
 docs/images/screenshots/         ← README screenshots
