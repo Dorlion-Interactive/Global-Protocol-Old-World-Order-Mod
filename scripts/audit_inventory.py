@@ -102,18 +102,11 @@ def audit():
     if os.path.exists('scenario/resources_override.json'):
         with open('scenario/resources_override.json', 'r', encoding='utf-8') as f:
             res_data = json.load(f)
-        res_existing = {os.path.splitext(f)[0] for f in os.listdir('icons/resources') if f.endswith('.png')} if os.path.exists('icons/resources') else set()
-        print(f"\n6. RESOURCES:")
-        commodities = res_data.get('commodities', [])
-        for c in commodities:
-            cid = c.get('id')
-            cicon = c.get('icon') or cid
-            status = "[OK]" if cicon in res_existing else "[NO ICON - USING DEFAULT/TEXT]"
-            print(f"  {status} Resource: {cid} (icon: {cicon})")
+        disabled = res_data.get('disabled', [])
+        print(f"\n6. RESOURCES ({len(disabled)} modern resources disabled):")
+        for r in disabled:
+            print(f"  [DISABLED] {r}")
 
-    # 5. CODE / RUNTIME WIRING CHECK
-    print("\n7. RUNTIME WIRING & LOGIC CHECK:")
-    print("Checking C# and JS/WASM source files for unit, building, and doctrine references...")
 
 if __name__ == '__main__':
     audit()
