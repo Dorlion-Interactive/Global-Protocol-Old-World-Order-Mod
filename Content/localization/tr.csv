@@ -213,7 +213,7 @@ country.name.ZAY,Zeyyani Tilimsan Krallığı
 country.name.ZIM,Zimbabwe Krallığı
 mod.owo.popup.startup.body_no_date,Avrupa ve Asya eski feodal düzenler ile yükselen merkezi devletler arasında sıkışmış durumda.\nAkdeniz Karadeniz Hint Okyanusu ve İpek Yolu üzerindeki ticaret hatları gücün atardamarlarını oluşturuyor.\nBarutlu ordular yükseliyor ancak süvari birlikleri levazım düzeni ve kaleler hala savaşların kaderini belirliyor.\n\nDöneme uygun hükümdarlar sınırlar ve askeri düzenlerle tanımlanan 137 tarihsel siyasi oluşumdan birini yönetiyorsun.\nBu bilgilendirmeyi istediğin zaman tekrar açmak için araç çubuğundaki bilgilendirme düğmesini kullan.
 mod.owo.popup.startup.body_with_date,Tarih: {0}-{1}\n\nAvrupa ve Asya eski feodal düzenler ile yükselen merkezi devletler arasında sıkışmış durumda.\nAkdeniz Karadeniz Hint Okyanusu ve İpek Yolu üzerindeki ticaret hatları gücün atardamarlarını oluşturuyor.\nBarutlu ordular yükseliyor ancak süvari birlikleri levazım düzeni ve kaleler hala savaşların kaderini belirliyor.\n\nDöneme uygun hükümdarlar sınırlar ve askeri düzenlerle tanımlanan 137 tarihsel siyasi oluşumdan birini yönetiyorsun.\nBu bilgilendirmeyi istediğin zaman tekrar açmak için araç çubuğundaki bilgilendirme düğmesini kullan.
-mod.owo.popup.startup.title,Eski Dünya Düzeni, 1450
+mod.owo.popup.startup.title,Old World Order, 1450
 mod.ui.toolbar.welcome_tooltip,Stratejik Bilgilendirmeyi Aç
 ui.button.ok,TAMAM
 building.factory.name,Lonca Atölyesi
