@@ -1,50 +1,45 @@
 ---
-applyTo: "overrides/localization_en.csv,overrides/localization_tr.csv"
+applyTo: "Content/localization/*.csv"
 ---
 
 # Localization Editor Instructions
 
-You are editing CSV localization files for the 1450 scenario mod.
+You are editing CSV localization files for the 1450 scenario mod (`docs/modding/MODDING_REFERENCE.md` §8.3).
 
 ## File Format
 
-- **No header row** — the file starts directly with data rows
-- Format: `key,value` (one per line)
-- Only quote values if they contain a comma
-- Both `localization_en.csv` (English) and `localization_tr.csv` (Turkish) must have matching keys
+- 13 files: `cz, de, en, es, es-419, fr, ja, ko, pt, pt-br, ru, tr, zh` in `Content/localization/`
+- UTF-8, no BOM, **no header row** — the file starts directly with data rows
+- Format: `key,value` (one per line). A row splits at its **first** comma, so values may contain commas and need no quoting.
+- **All 13 files must carry the same keys.** There is no fallback between languages for keys only the mod defines — a key missing from a locale renders as the raw key for those players.
 
 ## Key Naming Conventions
 
 | Key Pattern | Example | Description |
 |---|---|---|
-| `country.name.ISO3` | `country.name.OTT` | Country display name |
-| `country.homeland.ISO3` | `country.homeland.OTT` | Homeland noun (UPPERCASE) |
-| `country.leader_title.ISO3` | `country.leader_title.OTT` | Leader title displayed in UI |
+| `country.name.<ISO3>` | `country.name.OTT` | Country display name |
+| `country.leader_title.<token>` | `country.leader_title.grand_prince` | Translation of a `leaderTitle` value |
+| `country.homeland.term.<token>` | `country.homeland.term.the_sultanate` | Translation of a `homelandTerm` value (UPPERCASE) |
+| `owo.doctrine.*`, `owo.goal.*`, `owo.task.*` | `owo.goal.…` | Mod doctrines and national goals |
+| `doctrine.*` | | Re-skins of the base doctrine cards the mod keeps — intended |
+| `mod.ui.*`, `mod.owo.popup.*` | `mod.ui.toolbar.welcome_tooltip` | Mod UI |
 
-## Homeland Term Rules
-- **Must be UPPERCASE** — they are displayed directly in the UI
-- Examples: `THE SULTANATE`, `THE MIDDLE KINGDOM`, `THE REALM`, `MOTHERLAND`, `LA PATRIA`
-- If a homeland term is already in the CSV, do not change it without user confirmation
+`<token>` = the value lowercased, apostrophes dropped, every other non-alphanumeric run → `_`. Both title and homeland keys are optional; without one the engine shows the raw value, and the base game already translates common titles such as `king` and `sultan`.
+
+`country.homeland.<ISO3>` is only read for a country **without** a `homelandTerm`. Every country in this mod has one, so the existing `country.homeland.<ISO3>` rows are not shown in game.
 
 ## Adding a New Country
 
-When adding a new country, append three lines to BOTH CSV files:
+Append the name row to ALL 13 files, translated per language:
 ```
-country.name.ISO3,Name in English
-country.homeland.ISO3,THE HOMELAND TERM
-country.leader_title.ISO3,Sultan
+country.name.ISO3,Name in that language
 ```
+If its `leaderTitle` / `homelandTerm` is new to the mod, also add `country.leader_title.<token>` / `country.homeland.term.<token>` rows to all 13.
 
-For Turkish (`localization_tr.csv`), provide the Turkish equivalents:
-```
-country.name.ISO3,Türkçe İsim
-country.homeland.ISO3,VATAN TERİMİ
-country.leader_title.ISO3,Sultan
-```
+## Status
 
-## Existing ISO3 Codes in This Mod
+en and tr are translated; the other 11 files currently hold English copies. Write real translations for new keys where you can.
 
-The following codes are currently used (do not invent new ones without updating countries_add.json):
-OTT, MYN, ENG, CAS, ARA, MVY, VNC, MAM, TIM, JOS, VIJ, AZT, INC, BUR, PAP, NAP, SCT, HAB, BOH, TEU, DAN, SWD, NVD, GEN, MIL, BYZ, WAL, MOL, LTH, MAL, SON, ABY, BNK, ZIM, AKK, DEL, MAJ, AYU, MRC, TIB, MAY, GRN, FLR, SAV, NAV, SRB, MOR, HFS, KKY, KZN, KRM, GUJ, BAH, BNG, MLC, DVT, KNG, KBR, RYU
+## ISO3 Codes
 
-Plus base-game codes that remain active: FRA, PRT, CHE, POL, HUN, and others not in `countries_remove.json`.
+`scenario/countries_add.json` defines all 137 codes the mod uses; every modern base-game country is removed (`countries_remove.json`). Do not invent codes.

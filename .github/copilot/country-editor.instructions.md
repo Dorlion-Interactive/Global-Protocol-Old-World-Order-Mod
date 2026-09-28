@@ -4,57 +4,64 @@ applyTo: "scenario/countries_add.json"
 
 # Country Editor Instructions
 
-You are editing `scenario/countries_add.json` — the list of all custom country definitions for the 1450 scenario.
+You are editing `scenario/countries_add.json` — the 137 country definitions for the 1450 scenario.
 
 ## Schema Reference
 Full field list: `docs/modding/schemas/mod_scenario_countries_add.schema.json`
-Field descriptions: `docs/modding/MODDING_REFERENCE.md` §4.1
+Field descriptions: `docs/modding/MODDING_REFERENCE.md` §4.1 (enums in §9)
 
-## Required Fields Per Entry
+## Entry Shape
+
+Only `iso3` is required by the schema; every country in this mod also sets the fields below.
 ```json
 {
   "iso3": "XXX",
   "name": "Display Name",
   "mapColor": "#RRGGBB",
-  "governmentType": "...",
-  "continent": "...",
-  "region": "..."
+  "capital": "City",
+  "capitalProvince": "Province name or id",
+  "population": 1000000,
+  "areaKm2": 100000,
+  "governmentType": "Monarchy",
+  "governmentSubtype": "FeudalMonarchy",
+  "ideology": "Conservative",
+  "militaryUnitTypeIds": ["medieval_infantry", "medieval_cavalry"],
+  "flagPngPath": "flags/XXX.png",
+  "leaderName": "Name",
+  "leaderTitle": "King",
+  "continent": "Europe",
+  "region": "WesternEurope",
+  "homelandTerm": "THE REALM"
 }
 ```
 
-## Leader Title by Government Type (1450 AD)
+## Enums (PascalCase, from the schema)
 
-| `governmentType` | `governmentSubtype` | Typical `leaderTitle` |
-|---|---|---|
-| `monarchy` | `FeudalMonarchy` | `"King"` |
-| `monarchy` | `AbsoluteMonarchy` | `"King"` |
-| `monarchy` | `Empire` | `"Emperor"` |
-| `monarchy` | `Duchy` | `"Duke"` |
-| `monarchy` | `Principality` | `"Prince"` |
-| `monarchy` | `GrandPrincipality` | `"Grand Prince"` |
-| `monarchy` | `Shogunate` | `"Shogun"` |
-| `authoritarian` | `Sultanate` | `"Sultan"` |
-| `authoritarian` | `Emirate` | `"Emir"` |
-| `authoritarian` | `Khanate` | `"Khan"` |
-| `authoritarian` | `Empire` | `"Emperor"` |
-| `theocracy` | *(Rome)* | `"Pope"` |
-| `theocracy` | `MilitaryOrder` | `"Grand Master"` |
-| `theocracy` | `Sultanate` | `"Sultan"` |
-| `democracy` | `CityState` (Venice/Genoa) | `"Doge"` |
-| `democracy` | `CityState` (Florence) | `"Gonfaloniere"` |
-| `democracy` | `CityState` (Swiss) | `"Diet"` |
+- `governmentType`: `Unknown`, `Democracy`, `Authoritarian`, `Hybrid`, `Monarchy`, `Theocracy`, `MilitaryJunta`, `OneParty`, `CommunistState`, `Transitional`
+- `governmentSubtype` used here: `FeudalMonarchy`, `AbsoluteMonarchy`, `Empire`, `Duchy`, `Sultanate`, `Emirate`, `Khanate`, `Shogunate`, `CityState`, `Theocracy`, `Tribe`, `Chiefdom` (full list in the schema)
+- `ideology` used here: `Conservative`, `Islamist`, `Liberal`
+- **Continents:** `Africa`, `Americas`, `Antarctica`, `Asia`, `Europe`, `Oceania`, `Unknown`
+- **Regions:**
+  - Europe: `WesternEurope`, `NorthernEurope`, `SouthernEurope`, `EasternEurope`
+  - Asia: `WesternAsia`, `CentralAsia`, `EastAsia`, `SouthAsia`, `SoutheastAsia`
+  - Africa: `NorthernAfrica`, `SubSaharanAfrica`
+  - Americas: `NorthernAmerica`, `LatinAmericaCaribbean`
+  - Pacific: `AustraliaNewZealand`, `Melanesia`, `Micronesia`, `Polynesia`
+  - Fallback: `Unknown`
 
-## Continent + Region Enum Values
+## Leader Titles (as used in this mod)
 
-**Continents:** `Africa`, `Americas`, `Asia`, `Europe`, `Oceania`, `Unknown`
-
-**Regions:**
-- Europe: `WesternEurope`, `NorthernEurope`, `SouthernEurope`, `EasternEurope`
-- Asia: `WesternAsia`, `CentralAsia`, `EastAsia`, `SouthAsia`, `SoutheastAsia`
-- Africa: `NorthernAfrica`, `SubSaharanAfrica`
-- Americas: `NorthernAmerica`, `LatinAmericaCaribbean`
-- Pacific: `AustraliaNewZealand`, `Melanesia`, `Micronesia`, `Polynesia`
-- Fallback: `Unknown`
+| `governmentType` / `governmentSubtype` | `leaderTitle` examples |
+|---|---|
+| `Monarchy` / `FeudalMonarchy` | `"King"`, `"Grand Prince"` (MVY), `"Grand Duke"` (LTH), `"Prince"`, `"Despot"`, `"Raja"`, `"Shah"` |
+| `Monarchy` / `Empire` | `"Emperor"`, `"Mansa"` (MAL) |
+| `Monarchy` / `Duchy` | `"Duke"`, `"Margrave"`, `"Elector"`, `"Count"` |
+| `Monarchy` / `Sultanate` · `Emirate` · `Khanate` | `"Sultan"`, `"Emir"`, `"Khan"` |
+| `Monarchy` / `Shogunate` | `"Shogun"` |
+| `Authoritarian` / `Empire` · `Sultanate` | `"Emperor"` (MYN), `"Sultan"` (TIM, MAM, DEL) |
+| `Democracy` / `CityState` | `"Doge"` (VNC, GEN), `"Gonfaloniere"` (FLR), `"Diet"` (CHE), `"Posadnik"` (PSK) |
+| `Theocracy` / `Empire` | `"Pope"` (PAP), `"Grand Master"` (TEU), `"Sapa Inca"` (INC), `"Dalai Lama"` (TIB) |
+| `Theocracy` / `Sultanate` | `"Sultan"` (OTT), `"Emir"` (GRN) |
 
 ## Common Country-Region Assignments (1450 AD)
 
@@ -92,6 +99,7 @@ Field descriptions: `docs/modding/MODDING_REFERENCE.md` §4.1
 | BYZ | Byzantine | Europe | SouthernEurope |
 
 ## Important Notes
-- `homelandTerm` is the uppercase string shown in the UI homeland panel (e.g. `"THE SULTANATE"`) — check `overrides/localization_en.csv` for existing values
 - `leaderName` (not `rulerName`) sets the starting leader's name
-- `militaryUnitTypeIds` must reference IDs defined in `scenario/units_define.json` or the base game
+- `homelandTerm` is the uppercase string shown in the UI homeland panel; translate it with `country.homeland.term.<token>` rows in `Content/localization/*.csv`
+- `militaryUnitTypeIds` is an **enforced roster**: the country recruits only these ids plus the units it owns (`ownerIso3` in `units_define.json`). Every id must exist in `units_define.json` + `units_override.json` — base-game units are disabled. Unknown ids are reported as warnings at game start.
+- A new country also needs `country.name.<ISO3>` in all 13 `Content/localization/*.csv` files and a 128×80 `flags/<ISO3>.png`

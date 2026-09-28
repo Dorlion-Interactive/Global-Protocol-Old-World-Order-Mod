@@ -1,5 +1,5 @@
 ---
-applyTo: "scenario/units_define.json,scenario/units_deploy_armies.json,scenario/units_deploy_fleets.json,scenario/units_deploy_air.json"
+applyTo: "scenario/units_define.json,scenario/units_override.json,scenario/units_deploy_armies.json,scenario/units_deploy_fleets.json,scenario/units_deploy_air.json"
 ---
 
 # Unit Designer Instructions
@@ -7,41 +7,36 @@ applyTo: "scenario/units_define.json,scenario/units_deploy_armies.json,scenario/
 You are editing unit definitions or deployment files for the 1450 scenario.
 
 ## Schema References
-- Unit types: `docs/modding/schemas/mod_scenario_units_define.schema.json`
-- Armies: `docs/modding/schemas/mod_scenario_units_deploy_armies.schema.json`
-- Field descriptions: `docs/modding/MODDING_REFERENCE.md` §6
+- Unit ids: `docs/modding/schemas/mod_scenario_units_define.schema.json`
+- Unit roster entries (`units_override.json`): `docs/modding/schemas/unit_type.schema.json`
+- Armies / fleets: `mod_scenario_units_deploy_armies.schema.json`, `mod_scenario_units_deploy_fleets.schema.json`
+- Field descriptions: `docs/modding/MODDING_REFERENCE.md` §6 and §8.1
 
-## Unit Type Fields (`units_define.json`)
+## Two Files Per Unit
+
+- `units_define.json` — the unit id, its `category`, and optional `ownerIso3`
+- `units_override.json` (replace mode, the scenario's `unitsOverrideFile`) — the same id with its **real** stats, costs and requirements
+
+Because `units_override.json` defines every id, **stats written in `units_define.json` are ignored**. Change stats in `units_override.json`.
 
 ```json
 {
-  "id": "unique_unit_id",
-  "displayName": "Human-Readable Name",
+  "id": "ottoman_janissary",
+  "displayName": "Janissary",
   "category": "infantry",
-  "ownerIso3": "",
-  "attack": 6.0,
-  "defense": 6.0,
-  "hp": 100.0,
-  "speed": 2.0,
-  "manpower": 1000
+  "ownerIso3": "OTT"
 }
 ```
 
-**`category` values:** `infantry`, `cavalry`, `artillery`, `naval`, `air`, `armor`, `special_forces`
+**`category` values:** `infantry`, `cavalry`, `artillery`, `armor`, `special_forces`, `naval`, `air` — this mod uses only infantry, cavalry, artillery and naval.
 
-**Medieval unit naming conventions:**
-- Generic: `medieval_infantry`, `medieval_cavalry`, `medieval_artillery`
-- Country-specific: `{iso3lower}_{type}` e.g. `ott_janissary`, `myn_footsoldier`, `fra_knight`
+**`ownerIso3`:** makes the unit exclusive to that country. Omit the field for shared units — `""` fails the schema.
 
-**Stat ranges for 1450 AD medieval units:**
-| Type | attack | defense | hp | speed | manpower |
-|---|---|---|---|---|---|
-| Heavy infantry | 7–9 | 8–10 | 100 | 1.5–2.0 | 1000–1500 |
-| Light infantry | 4–6 | 4–6 | 80 | 2.5–3.0 | 800–1200 |
-| Heavy cavalry | 10–14 | 7–9 | 120 | 3.5–4.5 | 500–800 |
-| Light cavalry | 8–10 | 5–7 | 90 | 4.5–6.0 | 400–600 |
-| Artillery (cannon) | 12–18 | 3–5 | 80 | 1.0–1.5 | 200–500 |
-| Naval (warship) | 8–12 | 8–12 | 150 | 2.0–3.0 | 300–600 |
+**Existing ids:** shared `medieval_infantry`, `medieval_cavalry`, `war_elephant`, `med_galley`, `med_cog`, `med_carrack`; country-specific `{nation}_{type}` such as `ottoman_janissary`, `france_knight`, `england_longbowman`, `mrc_samurai`, `ming_treasure_ship`, `portuguese_caravel`. Ids are unique and at most 29 bytes.
+
+## Rosters
+
+Each country's `militaryUnitTypeIds` in `countries_add.json` is an **enforced roster**: the country recruits only those ids plus the units it owns. A roster may grant another country's exclusive unit. A new unit is recruitable only by its owner and by countries whose roster lists it — add it to the right rosters. Landlocked nations deliberately list no ships.
 
 ## Army Deployment Fields (`units_deploy_armies.json`)
 
@@ -51,18 +46,18 @@ You are editing unit definitions or deployment files for the 1450 scenario.
   "provinceId": 12345,
   "morale": -1,
   "units": [
-    { "unitTypeId": "ott_janissary", "count": 5 },
+    { "unitTypeId": "ottoman_janissary", "count": 5 },
     { "unitTypeId": "medieval_cavalry", "count": 3 }
   ]
 }
 ```
 
 - `morale`: -1 means full morale (recommended for initial deployment)
-- `provinceId`: integer province ID — verify against the province map
+- `provinceId`: integer province ID — look it up in `docs/modding/PROVINCE_REFERENCE.md` or with `python dev/curate_browse.py`
 - `count`: number of regiment slots of that type in the stack
 
 ## Important Rules
-1. Unit IDs must be **globally unique** across the entire `units_define.json` array
-2. Units referenced in `units_deploy_armies.json` must be defined in `units_define.json` or exist in the base game
-3. `ownerIso3` in unit definitions makes the unit exclusive — only that country can build it
-4. No air, armor, or modern unit types appropriate for 1450 AD
+1. Unit IDs must be **unique** across `units_define.json`, and each must also exist in `units_override.json`
+2. Deployments may only use the mod's own ids — base-game units are disabled by the replace-mode roster and `scenario.json`'s disabled lists
+3. The deploying country must be allowed the unit (owner or roster)
+4. No air, armor, missile or other modern unit types for 1450 AD
