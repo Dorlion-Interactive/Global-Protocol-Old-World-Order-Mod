@@ -26,7 +26,7 @@ You are editing CSV localization files for the 1450 scenario mod (`docs/modding/
 
 `<token>` = the value lowercased, apostrophes dropped, every other non-alphanumeric run → `_`. Both title and homeland keys are optional; without one the engine shows the raw value, and the base game already translates common titles such as `king` and `sultan`.
 
-`country.homeland.<ISO3>` is only read for a country **without** a `homelandTerm`. Every country in this mod has one, so the existing `country.homeland.<ISO3>` rows are not shown in game.
+Homeland terms are localized through `country.homeland.term.<token>`. The legacy `country.homeland.<ISO3>` fallback rows have been removed.
 
 ## Adding a New Country
 
@@ -38,7 +38,7 @@ If its `leaderTitle` / `homelandTerm` is new to the mod, also add `country.leade
 
 ## Status
 
-en and tr are translated; the other 11 files currently hold English copies. Write real translations for new keys where you can.
+en and tr are fully translated. Rows added from 2026-09-28 (homeland terms, leader titles, buildings, events) are translated in all 13 locales; older rows in the remaining 11 files currently hold English copies. Write real translations for new keys where you can.
 
 ## ISO3 Codes
 

@@ -44,7 +44,7 @@ This file defines named agent roles for Claude Code. Use `@agent-name` in your p
 
 **Primary files:**
 - `scenario/units_define.json` — each unit id's `category` and optional `ownerIso3`
-- `scenario/units_override.json` — the same 31 ids with their real stats, costs and requirements
+- `scenario/units_override.json` — the same 33 ids with their real stats, costs and requirements
 - `scenario/units_deploy_armies.json` — 42 initial armies
 - `scenario/units_deploy_fleets.json` — 20 initial fleets
 - `countries_add.json` → `militaryUnitTypeIds` — per-country rosters
@@ -61,7 +61,7 @@ This file defines named agent roles for Claude Code. Use `@agent-name` in your p
 - `units_override.json` defines every id, so **stats in `units_define.json` are ignored** — change stats there
 - `ownerIso3` makes a unit exclusive to one country; omit the field for shared units (`""` fails the schema)
 - A non-empty `militaryUnitTypeIds` roster is enforced: the country recruits only those ids plus the ones it owns. A roster may grant another country's exclusive unit.
-- Base-game units are not available: the roster is replace-mode and `scenario.json` disables the modern ids and the Air/Missile/Special categories. Deployments may only reference the mod's 31 ids.
+- Base-game units are not available: the roster is replace-mode and `scenario.json` disables the modern ids and the Air/Missile/Special categories. Deployments may only reference the mod's 33 ids.
 - Army/fleet stacks reference `provinceId` (integer) — look ids up in `docs/modding/PROVINCE_REFERENCE.md` or `python dev/curate_browse.py`
 
 ---
@@ -85,12 +85,12 @@ country.homeland.term.the_sultanate,THE SULTANATE
 **Key naming conventions:**
 - Country names: `country.name.<ISO3>`
 - Leader titles: `country.leader_title.<token>` — token = the `leaderTitle` value lowercased, apostrophes dropped, other non-alphanumerics → `_`
-- Homeland terms: `country.homeland.term.<token>` of the `homelandTerm` value (keep values UPPERCASE). `country.homeland.<ISO3>` is only read for a country without a `homelandTerm`; all 137 have one, so the existing `country.homeland.<ISO3>` rows are not shown.
+- Homeland terms: `country.homeland.term.<token>` of the `homelandTerm` value (keep values UPPERCASE). The dead legacy `country.homeland.<ISO3>` fallback rows have been removed.
 - Mod families: `owo.doctrine.*`, `owo.goal.*`, `owo.task.*`, `mod.ui.*`, `mod.owo.popup.*`; `doctrine.*` rows re-skin the base doctrine cards the mod keeps
 
 **Key rules:**
 - Leader title / homeland localization is optional — the engine falls back to the raw `leaderTitle` / `homelandTerm`; the base game already translates common titles such as `king` and `sultan`
-- en and tr are translated; the other 11 files are currently English copies — when adding a key, write real translations where you can
+- en and tr are fully translated; rows added from 2026-09-28 (homeland terms, leader titles, buildings, events) are translated in all 13 files; older rows in the other 11 files are currently English copies — when adding a key, write real translations where you can
 
 ---
 

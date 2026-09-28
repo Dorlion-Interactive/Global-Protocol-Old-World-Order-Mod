@@ -21,8 +21,8 @@ scenario/                        ← split scenario files (authoritative)
   countries_remove.json          ← the 266 base-game countries removed
   countries_state.json           ← stability/corruption/economy overrides
   provinces_ownership.json       ← province + region ownership (authoritative — see Province tools)
-  units_define.json              ← 31 unit ids: category + ownerIso3 (stats here are ignored, see below)
-  units_override.json            ← unit roster, mode: replace — the 31 units' real stats/costs
+  units_define.json              ← 33 unit ids: category + ownerIso3 (8 shared + 25 unique; stats here are ignored, see below)
+  units_override.json            ← unit roster, mode: replace — the 33 units' real stats/costs
   units_deploy_armies.json       ← 42 starting armies
   units_deploy_fleets.json       ← 20 starting fleets
   buildings_override.json        ← building roster, mode: replace (15 kept, 4 disabled)
@@ -104,7 +104,7 @@ All ISO3 codes are **uppercase, 3 characters**. Custom codes avoid conflicts wit
 - There is no religion/culture field — the engine shows its defaults for those.
 
 ### Units and Rosters (MR §6.1)
-- `units_define.json` supplies each id's `category` and `ownerIso3`. Because `units_override.json` defines all 31 ids, **the stats in `units_define.json` are ignored** — edit stats/costs in `units_override.json`.
+- `units_define.json` supplies each id's `category` and `ownerIso3`. Because `units_override.json` defines all 33 ids, **the stats in `units_define.json` are ignored** — edit stats/costs in `units_override.json`.
 - `ownerIso3` makes a unit **exclusive**: only the owner (or a country whose roster lists it) can recruit it. Omit the field for shared units — `""` fails the schema pattern.
 - `militaryUnitTypeIds` in `countries_add.json` is an **enforced roster**: a non-empty list means the country recruits only those ids plus the ones it owns. All 137 countries set one; landlocked nations list no ships on purpose.
 - `restrictOwnersToOwnedUnits` exists in the header schema but this mod leaves it off (owners keep the shared medieval units).
@@ -122,8 +122,8 @@ All ISO3 codes are **uppercase, 3 characters**. Custom codes avoid conflicts wit
 ### Localization (MR §8.3)
 - `Content/localization/<lang>.csv`, all 13 files, same keys in each. UTF-8, no BOM, **no header row**, `key,value` split at the first comma (no quoting).
 - **No cross-language fallback** for keys only the mod defines — a key missing from a locale renders raw.
-- Key forms the engine reads: `country.name.<ISO3>`; `country.leader_title.<token>` and `country.homeland.term.<token>`, where token = the `leaderTitle`/`homelandTerm` value lowercased, apostrophes dropped, other non-alphanumerics → `_` (e.g. `grand_prince`, `the_sultanate`). `country.homeland.<ISO3>` is only a fallback for a country with **no** `homelandTerm` — every country here has one, so those rows are currently unused.
-- Status: en and tr are real; the other 11 files are English copies (known gap).
+- Key forms the engine reads: `country.name.<ISO3>`; `country.leader_title.<token>` and `country.homeland.term.<token>`, where token = the `leaderTitle`/`homelandTerm` value lowercased, apostrophes dropped, other non-alphanumerics → `_` (e.g. `grand_prince`, `the_sultanate`). The dead legacy `country.homeland.<ISO3>` fallback rows have been removed.
+- Status: en and tr are fully translated; rows added from 2026-09-28 (homeland terms, leader titles, buildings, events) are translated across all 13 locales; older rows in the other 11 files remain English copies.
 
 ### Province tools
 `dev/province_curation.json` is the curation source. `build_province_ownership.py` expands it into `scenario/provinces_ownership.json`.

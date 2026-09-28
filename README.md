@@ -28,7 +28,7 @@ A historical total conversion mod for **[Global Protocol: New World Order](https
 ## What's in the Mod
 
 - **The world of 1450.** 137 nations drawn on historical footprints, from Castile and Muscovy to the Mali Empire, Vijayanagara and the Inca. All 266 modern countries are removed.
-- **Medieval armies and fleets.** 42 starting armies and 20 fleets built from 31 period units, including knights, longbowmen, war elephants, galleys, cogs and carracks. 25 of them are unique to one nation, such as the Janissary, the Swiss pike square, the samurai or the Ming treasure ship. Each nation recruits from its own roster, so landlocked powers build no ships. Modern units and the air, missile and special categories are switched off.
+- **Medieval armies and fleets.** 42 starting armies and 20 fleets built from 33 period units (8 shared + 25 unique), including knights, men-at-arms, crossbowmen, bombards, longbowmen, war elephants, galleys, cogs and carracks. 25 of them are unique to one nation, such as the Janissary, the Swiss pike square, the samurai or the Ming treasure ship. Each nation recruits from its own roster, so landlocked powers build no ships. Modern units and the air, missile and special categories are switched off.
 - **A new Knowledge Network.** Seven doctrine branches are replaced wholesale with 1450 doctrines (Military, Economy, Government, Society, Diplomacy, Intelligence, Industry). Cyber, Space and Energy are disabled.
 - **A pre-industrial economy.** 15 medieval buildings replace the modern roster. 19 modern resources are disabled. Money is counted in florins, with 12 period currencies such as the akçe, liang, pound sterling and livre tournois.
 - **National goals.** Scenario goals for the Ottomans, France, Castile, England, Portugal and the Ming, plus starter goals for everyone.
@@ -52,7 +52,7 @@ A historical total conversion mod for **[Global Protocol: New World Order](https
 
 No build step is needed.
 
-**Languages:** the mod's own text is translated into English and Turkish. The other 11 game languages show the mod's text in English for now.
+**Languages:** English and Turkish are fully translated. Rows added from 2026-09-28 (homeland terms, leader titles, buildings, historical events) are translated across all 13 supported languages; older mod strings in the remaining 11 locales currently show English text.
 
 ---
 
