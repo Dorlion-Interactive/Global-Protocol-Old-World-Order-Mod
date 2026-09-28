@@ -10,8 +10,8 @@ country.homeland.term.the_confederacy,KONFEDERASYON
 country.homeland.term.the_confederation,KONFEDERASYON
 country.homeland.term.the_county,KONTLUK
 country.homeland.term.the_duchy,DÜKALIK
-country.homeland.term.the_electorate,SEÇMENLİK
-country.homeland.term.the_emirate,ENDELÜSİYE
+country.homeland.term.the_electorate,SEÇİCİ PRENSLİK
+country.homeland.term.the_emirate,EMİRLİK
 country.homeland.term.the_empire,İMPARATORLUK
 country.homeland.term.the_funj_sultanate,FUNC SULTANLIĞI
 country.homeland.term.the_haudenosaunee,HAUDENOSAUNEE KONFEDERASYONU
@@ -38,7 +38,7 @@ country.homeland.term.the_pueblo_lands,PUEBLO TOPRAKLARI
 country.homeland.term.the_rajahnate,RACALIK
 country.homeland.term.the_realm,KRALLIK
 country.homeland.term.the_republic,CUMHURİYET
-country.homeland.term.the_sultanate,SALTANAT
+country.homeland.term.the_sultanate,SULTANLIK
 country.homeland.term.the_sultanate_of_adal,ADAL SULTANLIĞI
 country.homeland.term.the_swahili_coast,SVAHİLİ SAHİLİ
 country.homeland.term.the_taino_lands,TAİNO TOPRAKLARI
@@ -49,7 +49,7 @@ country.leader_title.chief,Şef
 country.leader_title.count,Kont
 country.leader_title.dalai_lama,Dalay Lama
 country.leader_title.despot,Despot
-country.leader_title.diet,Diyet
+country.leader_title.diet,Meclis
 country.leader_title.doge,Doç
 country.leader_title.duke,Dük
 country.leader_title.elector,Elektör
@@ -71,7 +71,7 @@ country.leader_title.prince_archbishop,Prens-Başpiskopos
 country.leader_title.raja,Raca
 country.leader_title.rajah,Raca
 country.leader_title.regent,Naip
-country.leader_title.sapa_inca,Sapa İnkası
+country.leader_title.sapa_inca,Sapa İnka
 country.leader_title.shah,Şah
 country.leader_title.shogun,Şogun
 country.name.ABY,Habeş İmparatorluğu
