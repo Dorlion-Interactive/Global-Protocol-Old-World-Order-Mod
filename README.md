@@ -91,8 +91,6 @@ Run these from the repository root.
 | `scripts/audit_inventory.py` | Lists buildings, units, doctrines and resources that have no icon | Python 3 |
 | `scripts/process_image.py` | Cleans an art file's white border and saves it as `icons/<category>/<id>.png` and `Content/icons/<category>/<id>.png` | Python 3, `opencv-python`, `numpy` |
 
-> **Province ownership:** only run `build_province_ownership.py --check` for now. `dev/province_curation.json` predates the 12 nations added in v0.4.0, so writing would strip their territory. `scenario/provinces_ownership.json` is the authoritative file until the curation catches up.
-
 The province tools read `dev/province_registry.json`, a slim copy of the game's province registry: id, name, modern country, area and centroid. [`docs/modding/PROVINCE_REFERENCE.md`](docs/modding/PROVINCE_REFERENCE.md) lists every province id.
 
 ---

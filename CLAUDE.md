@@ -49,7 +49,7 @@ dev/                             ← gitignored except the tracked tools/data li
   validate_scenario.ps1          ← fragment-shape check (install.bat + release.yml run it)
   set-runtime-settings.ps1       ← rewrites deployed mod.json runtimePolicy per build variant
   province_registry.json         ← slim engine province table (id, name, country_iso3, area_km2, centroid)
-  province_curation.json         ← hand-curated ISO3 → provinceIds (STALE, see below)
+  province_curation.json         ← hand-curated ISO3 → provinceIds (curation source)
   owo_provinces.py, curate_browse.py, audit_ownership.py, build_province_ownership.py
 scripts/                         ← audit_inventory.py (missing icons), process_image.py (art → icons)
 sdk/                             ← GlobalProtocol.ModSdk (native C# SDK)
@@ -126,7 +126,7 @@ All ISO3 codes are **uppercase, 3 characters**. Custom codes avoid conflicts wit
 - Status: en and tr are real; the other 11 files are English copies (known gap).
 
 ### Province tools
-`scenario/provinces_ownership.json` is authoritative. `dev/province_curation.json` predates the 12 nations added in v0.4.0 (CEB, KNI, LEZ, MGD, MID, MOG, PSK, RYA, SIB, STE, TND, TVR), so **only run `build_province_ownership.py --check`** — a write strips their territory.
+`dev/province_curation.json` is the curation source. `build_province_ownership.py` expands it into `scenario/provinces_ownership.json`.
 
 ---
 
@@ -134,7 +134,7 @@ All ISO3 codes are **uppercase, 3 characters**. Custom codes avoid conflicts wit
 
 ```powershell
 powershell -NoProfile -File dev\validate_scenario.ps1        # fragment shapes (install.bat runs this)
-python dev\build_province_ownership.py --check               # curation sanity (never without --check, see above)
+python dev\build_province_ownership.py --check               # curation sanity
 python dev\audit_ownership.py                                # area / continent audit
 python scripts\audit_inventory.py                            # missing icons (run from repo root)
 ```

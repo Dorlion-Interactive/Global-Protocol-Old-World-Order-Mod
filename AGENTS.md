@@ -34,7 +34,7 @@ This file defines named agent roles for Claude Code. Use `@agent-name` in your p
 - Enum values are case-sensitive in the schema (MR §9): `governmentType` is PascalCase (`Monarchy`, `Theocracy`, …)
 - `stability` and `corruption` are floats 0.0–1.0 in countries_state.json
 - `nationalGoalsFile` and the other `*File` header fields are relative to the **scenario folder**
-- Province ownership: edit `provinces_ownership.json` directly. `dev/build_province_ownership.py` may only run with `--check` — its curation source lacks the 12 nations added in v0.4.0.
+- Province ownership: `dev/province_curation.json` is the curation source expanded into `provinces_ownership.json` by `dev/build_province_ownership.py`.
 
 ---
 
