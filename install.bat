@@ -98,8 +98,12 @@ if errorlevel 1 (
     pause & exit /b 1
 )
 
-if not exist "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.0\OldWorldOrder.ModCSharp.dll" (
-    echo ERROR: Managed build completed but OldWorldOrder.ModCSharp.dll was not produced.
+set "MANAGED_DLL="
+if exist "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.0\OldWorldOrder.ModCSharp.dll" set "MANAGED_DLL=%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.0\OldWorldOrder.ModCSharp.dll"
+if exist "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.1\OldWorldOrder.ModCSharp.dll" set "MANAGED_DLL=%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.1\OldWorldOrder.ModCSharp.dll"
+
+if not defined MANAGED_DLL (
+    echo ERROR: Managed build completed but OldWorldOrder.ModCSharp.dll was not found in netstandard2.0 or netstandard2.1.
     pause & exit /b 1
 )
 
@@ -316,7 +320,14 @@ if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on Content\ & pause & exit /
 
 if /I "%BUILD_VARIANT%"=="sdk" (
     if not exist "%TARGET%\Mods" mkdir "%TARGET%\Mods"
-    copy /Y "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.0\OldWorldOrder.ModCSharp.dll" "%TARGET%\Mods\OldWorldOrder.ModCSharp.dll" >nul
+    if not defined MANAGED_DLL (
+        if exist "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.0\OldWorldOrder.ModCSharp.dll" set "MANAGED_DLL=%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.0\OldWorldOrder.ModCSharp.dll"
+        if exist "%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.1\OldWorldOrder.ModCSharp.dll" set "MANAGED_DLL=%SCRIPT_DIR%Content\mod-csharp\bin\Release\netstandard2.1\OldWorldOrder.ModCSharp.dll"
+    )
+    if not defined MANAGED_DLL (
+        echo ERROR: OldWorldOrder.ModCSharp.dll not found in netstandard2.0 or netstandard2.1 & pause & exit /b 1
+    )
+    copy /Y "!MANAGED_DLL!" "%TARGET%\Mods\OldWorldOrder.ModCSharp.dll" >nul
     if errorlevel 1 ( echo ERROR: failed to copy managed entrypoint DLL to Mods\ & pause & exit /b 1 )
 
     if exist "%TARGET%\Content\mod.wasm" (
