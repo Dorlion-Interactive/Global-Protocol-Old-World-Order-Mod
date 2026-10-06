@@ -13,6 +13,18 @@
       "hookName": "owo.archive"
     },
     {
+      "id": "owo.chronicle_btn",
+      "iconPath": "Content/ui/icons/archive.png",
+      "tooltip": "mod.ui.toolbar.chronicle_tooltip",
+      "hookName": "owo.chronicle"
+    },
+    {
+      "id": "owo.balance_of_power_btn",
+      "iconPath": "Content/ui/icons/info.png",
+      "tooltip": "mod.ui.toolbar.balance_of_power_tooltip",
+      "hookName": "owo.balance_of_power"
+    },
+    {
       "id": "owo.info_btn",
       "iconPath": "Content/ui/icons/info.png",
       "tooltip": "mod.ui.toolbar.info_tooltip",

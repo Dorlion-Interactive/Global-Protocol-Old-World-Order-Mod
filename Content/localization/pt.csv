@@ -822,3 +822,8 @@ owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.title,Andean Rivalry: Cusco 
 owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.description,As Pachacuti expands the Inca realm along the Andean spine, the wealthy coastal Kingdom of Chimor watches from its adobe capital of Chan Chan with mounting apprehension.
 owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_1,Mobilize Inca armies along the mountain valleys toward the northern coast!
 owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_2,Consolidate the imperial capital of Cusco and build sacred temples.
+mod.ui.toolbar.archive_tooltip,Historian's Intelligence Archive
+mod.ui.toolbar.info_tooltip,Mod Overview & Status
+mod.ui.toolbar.chronicle_tooltip,1450 World Chronicle
+mod.ui.toolbar.balance_of_power_tooltip,Balance of Power & Alliances
+mod.ui.province.historical_sig,Historical Significance

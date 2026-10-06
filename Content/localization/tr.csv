@@ -822,3 +822,8 @@ owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.title,And Rekabeti: Cusco ve
 owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.description,Pachacuti İnka egemenliğini And Dağları boyunca genişletirken, kıyıdaki zengin Chimor Krallığı başkenti Chan Chan'dan İnka ordularının ilerleyişini kaygıyla izliyor.
 owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_1,İnka ordularını kuzey kıyılarına doğru dağ vadilerinden yürüt!
 owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_2,Cusco başkentini güçlendir ve kutsal tapınaklar inşa et.
+mod.ui.toolbar.archive_tooltip,Tarihçi İstihbarat Arşivi
+mod.ui.toolbar.info_tooltip,Mod Genel Bakış ve Durum
+mod.ui.toolbar.chronicle_tooltip,1450 Dünya Vakayinamesi
+mod.ui.toolbar.balance_of_power_tooltip,Güç Dengesi ve İttifaklar
+mod.ui.province.historical_sig,Tarihi Önemi

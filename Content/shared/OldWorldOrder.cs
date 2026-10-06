@@ -24,6 +24,8 @@ public sealed class OldWorldOrder
     public const string ModId = "globalprotocol.old_world_order";
     public const string WelcomeHook = "owo.welcome";
     public const string ArchiveHook = "owo.archive";
+    public const string ChronicleHook = "owo.chronicle";
+    public const string BalanceOfPowerHook = "owo.balance_of_power";
     public const string InfoHook = "owo.info";
 
     private readonly IModHost _host;
@@ -38,6 +40,8 @@ public sealed class OldWorldOrder
     private int _lastYear;
     private int _lastMonth;
     private bool _startupShown;
+    private bool _constantinopleFallen;
+    private readonly System.Collections.Generic.Dictionary<int, int> _warAggressors = new();
 
     public OldWorldOrder(IModHost host)
     {
@@ -57,6 +61,8 @@ public sealed class OldWorldOrder
         _lastYear = 0;
         _lastMonth = 0;
         _startupShown = false;
+        _constantinopleFallen = false;
+        _warAggressors.Clear();
         _host.Log("OWO initialized shared logic with ABI 3 diplomacy hooks.");
     }
 
@@ -76,6 +82,13 @@ public sealed class OldWorldOrder
     public void OnWarDeclared(int attacker, int defender, int tick)
     {
         _warsObserved++;
+        int count = _warAggressors.TryGetValue(attacker, out int existing) ? existing + 1 : 1;
+        _warAggressors[attacker] = count;
+
+        if (count >= 3)
+        {
+            _host.Log($"OWO: Grand Coalition Alert: Nation #{attacker} has initiated {count} aggressive wars!");
+        }
     }
 
     public void OnPeaceSigned(int proposer, int target)
@@ -105,6 +118,19 @@ public sealed class OldWorldOrder
     {
         _provincesCaptured++;
         _host.Log($"OWO: Province #{provinceId} transferred from #{oldOwner} to #{newOwner}");
+
+        // Province 2276 = Constantinople (Istanbul)
+        if (provinceId == 2276 && !_constantinopleFallen)
+        {
+            _constantinopleFallen = true;
+            _host.ShowPopup(
+                "Geopolitical Shock: Fall of Constantinople",
+                "With the fall of Constantinople, the Ottoman Empire secures uncontested mastery over the Bosporus straits.\n\n"
+              + "The traditional Silk Road and Levantine spice trade corridors face heavy imperial tariffs and blockades, "
+              + "compelling Western European crowns to accelerate oceanic navigation around Africa and across the Atlantic."
+            );
+            _host.Log("OWO: Constantinople captured! Spice trade disruption bulletin dispatched.");
+        }
     }
 
     public void OnEconomyTick(int year, int month)
@@ -150,6 +176,16 @@ public sealed class OldWorldOrder
                 _host.Log("OWO: archive popup shown via UI action");
                 break;
 
+            case ChronicleHook:
+                _host.ShowPopup("1450 World Chronicle", BuildChronicleBody());
+                _host.Log("OWO: chronicle popup shown via UI action");
+                break;
+
+            case BalanceOfPowerHook:
+                _host.ShowPopup("Balance of Power & Alliances", BuildBalanceOfPowerBody());
+                _host.Log("OWO: balance of power popup shown via UI action");
+                break;
+
             case InfoHook:
                 _host.ShowPopup("Mod Information", BuildInfoBody());
                 _host.Log("OWO: info popup shown via UI action");
@@ -183,6 +219,41 @@ public sealed class OldWorldOrder
              + "Observed building projects: " + _buildingsObserved + "\n"
              + "Observed scripted events: " + _eventsObserved + "\n\n"
              + "Maintain dynastic legitimacy, secure trade choke points, and honor defensive pacts.";
+    }
+
+    private string BuildChronicleBody()
+    {
+        string spiceStatus = _constantinopleFallen
+            ? "SEVERED — Constantinople in Ottoman hands; oceanic trade imperative active."
+            : "OPEN — Byzantine Bosporus intact; Venetian-Mamluk Alexandria spice route flowing.";
+
+        return "1450 WORLD CHRONICLE\n\n"
+             + "• Year of Epoch: 1450 AD\n"
+             + "• Levantine Spice Route Status: " + spiceStatus + "\n"
+             + "• Continental Campaigns Recorded: " + _warsObserved + "\n"
+             + "• Diplomatic Alliances Formed: " + _alliancesObserved + "\n"
+             + "• Treaties Dissolved / Broken: " + _alliancesBroken + "\n"
+             + "• Commercial Trade Agreements: " + _tradeAgreementsObserved + "\n"
+             + "• Provinces Changed Sovereignty: " + _provincesCaptured + "\n\n"
+             + "The world transitions from medieval chivalric levies into early modern sovereign states.";
+    }
+
+    private string BuildBalanceOfPowerBody()
+    {
+        return "BALANCE OF POWER & ALLIANCE NETWORKS (1450)\n\n"
+             + "1. Western Christendom:\n"
+             + "   • Kingdom of France (FRA) & Kingdom of Scotland (SCT) — The Auld Alliance\n"
+             + "   • Kingdom of England (ENG) & Duchy of Burgundy (BUR) — Anglo-Burgundian ties\n"
+             + "   • Crown of Castile (CAS) & Crown of Aragon (ARA) — Trastámara dynastic accord\n\n"
+             + "2. Central & Eastern Europe:\n"
+             + "   • Crown of Poland (POL) & Grand Duchy of Lithuania (LTH) — Jagiellonian Union\n"
+             + "   • Crown of Hungary (HUN) & League of Lezhë (LEZ) — Anti-Ottoman Danubian front\n"
+             + "   • Grand Duchy of Moscow (MVY) & Pskov (PSK) — Defense against the Great Horde (STE)\n\n"
+             + "3. Eastern Empires:\n"
+             + "   • Ming Dynasty (MYN) & Joseon Dynasty (JOS) — Confucian Tributary Pact\n"
+             + "   • Vijayanagara Empire (VIJ) vs. Bahmani Sultanate (BAH) — Deccan balance of power\n\n"
+             + "4. Maritime Republics:\n"
+             + "   • Republic of Venice (VNC) vs. Republic of Genoa (GEN) — Mediterranean trade rivalry";
     }
 
     private string BuildInfoBody()

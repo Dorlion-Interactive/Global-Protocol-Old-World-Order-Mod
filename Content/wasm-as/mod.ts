@@ -5,6 +5,8 @@ const MOD_ID = "globalprotocol.old_world_order";
 
 const WELCOME_HOOK = "owo.welcome";
 const ARCHIVE_HOOK = "owo.archive";
+const CHRONICLE_HOOK = "owo.chronicle";
+const BALANCE_OF_POWER_HOOK = "owo.balance_of_power";
 const INFO_HOOK = "owo.info";
 
 let warsObserved = 0;
@@ -81,6 +83,10 @@ export function on_ui_action(
         showPopup("Strategic Briefing: 1450 AD", buildBriefingBody(lastYear, lastMonth));
     } else if (hookName == ARCHIVE_HOOK) {
         showPopup("Historian's Archive", buildArchiveBody());
+    } else if (hookName == CHRONICLE_HOOK) {
+        showPopup("1450 World Chronicle", buildChronicleBody());
+    } else if (hookName == BALANCE_OF_POWER_HOOK) {
+        showPopup("Balance of Power & Alliances", buildBalanceOfPowerBody());
     } else if (hookName == INFO_HOOK) {
         showPopup("Mod Information", buildInfoBody());
     }
@@ -109,6 +115,33 @@ function buildArchiveBody(): string {
         + "Observed alliances formed: " + alliancesObserved.toString() + "\n"
         + "Observed trade agreements: " + tradeAgreementsObserved.toString() + "\n\n"
         + "Model your strategy around legitimacy, supply corridors, and defensible terrain.";
+}
+
+function buildChronicleBody(): string {
+    return "1450 WORLD CHRONICLE\n\n"
+        + "• Year of Epoch: 1450 AD\n"
+        + "• Continental Campaigns Recorded: " + warsObserved.toString() + "\n"
+        + "• Diplomatic Alliances Formed: " + alliancesObserved.toString() + "\n"
+        + "• Commercial Trade Pacts: " + tradeAgreementsObserved.toString() + "\n"
+        + "• Provinces Changed Sovereignty: " + provincesCapturedObserved.toString() + "\n\n"
+        + "The world transitions from medieval chivalric levies into early modern sovereign states.";
+}
+
+function buildBalanceOfPowerBody(): string {
+    return "BALANCE OF POWER & ALLIANCE NETWORKS (1450)\n\n"
+        + "1. Western Christendom:\n"
+        + "   • France (FRA) & Scotland (SCT) — The Auld Alliance\n"
+        + "   • England (ENG) & Burgundy (BUR) — Anglo-Burgundian ties\n"
+        + "   • Castile (CAS) & Aragon (ARA) — Trastámara accord\n\n"
+        + "2. Central & Eastern Europe:\n"
+        + "   • Poland (POL) & Lithuania (LTH) — Jagiellonian Union\n"
+        + "   • Hungary (HUN) & Albania (LEZ) — Danubian Anti-Ottoman front\n"
+        + "   • Moscow (MVY) & Pskov (PSK) — Defense against the Great Horde\n\n"
+        + "3. Eastern Empires:\n"
+        + "   • Ming (MYN) & Joseon (JOS) — Confucian Tributary Pact\n"
+        + "   • Vijayanagara (VIJ) vs. Bahmani (BAH) — Deccan balance of power\n\n"
+        + "4. Maritime Republics:\n"
+        + "   • Venice (VNC) vs. Genoa (GEN) — Mediterranean trade rivalry";
 }
 
 function buildInfoBody(): string {
