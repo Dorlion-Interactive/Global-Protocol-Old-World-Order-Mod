@@ -1313,5 +1313,271 @@
     ],
     "title_key": "owo.event.marriage_of_the_catholic_monarchs_1469.title",
     "description_key": "owo.event.marriage_of_the_catholic_monarchs_1469.description"
+  },
+  {
+    "id": "hussite_king_of_bohemia_1458",
+    "type": "scripted",
+    "category": "internal_politics",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "BOH",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1458-03"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "modify_unrest",
+            "value": -10
+          },
+          {
+            "type": "add_treasury",
+            "value": 250
+          },
+          {
+            "type": "add_relation",
+            "target": "PAP",
+            "value": -60
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "hussite_compacts_defended"
+          }
+        ],
+        "text_key": "owo.event.hussite_king_of_bohemia_1458.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "PAP",
+            "value": 50
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -10
+          },
+          {
+            "type": "modify_unrest",
+            "value": 15
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "papal_submission_pledged"
+          }
+        ],
+        "text_key": "owo.event.hussite_king_of_bohemia_1458.option_2"
+      }
+    ],
+    "title_key": "owo.event.hussite_king_of_bohemia_1458.title",
+    "description_key": "owo.event.hussite_king_of_bohemia_1458.description"
+  },
+  {
+    "id": "third_rome_doctrine_1453",
+    "type": "scripted",
+    "category": "social_cultural",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "MVY",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1453-06"
+      },
+      {
+        "type": "has_flag",
+        "flag_name": "constantinople_conquered"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 15
+          },
+          {
+            "type": "add_treasury",
+            "value": 300
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "third_rome_proclaimed"
+          }
+        ],
+        "text_key": "owo.event.third_rome_doctrine_1453.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "muscovy_boyar_cavalry",
+            "count": 1,
+            "province_id": 916,
+            "target": "MVY"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "russian_steppes_focus"
+          }
+        ],
+        "text_key": "owo.event.third_rome_doctrine_1453.option_2"
+      }
+    ],
+    "title_key": "owo.event.third_rome_doctrine_1453.title",
+    "description_key": "owo.event.third_rome_doctrine_1453.description"
+  },
+  {
+    "id": "vatican_library_founded_1451",
+    "type": "scripted",
+    "category": "social_cultural",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "PAP",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1451-01"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": -150
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.025
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "vatican_library_endowed"
+          }
+        ],
+        "text_key": "owo.event.vatican_library_founded_1451.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "medieval_infantry",
+            "count": 1,
+            "province_id": 555,
+            "target": "PAP"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "rome_citadel_rebuilt"
+          }
+        ],
+        "text_key": "owo.event.vatican_library_founded_1451.option_2"
+      }
+    ],
+    "title_key": "owo.event.vatican_library_founded_1451.title",
+    "description_key": "owo.event.vatican_library_founded_1451.description"
+  },
+  {
+    "id": "bhakti_devotional_movement_1455",
+    "type": "scripted",
+    "category": "social_cultural",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "VIJ",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1455-01"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 15
+          },
+          {
+            "type": "modify_unrest",
+            "value": -15
+          },
+          {
+            "type": "add_treasury",
+            "value": 200
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "bhakti_patronage_flourishing"
+          }
+        ],
+        "text_key": "owo.event.bhakti_devotional_movement_1455.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 400
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          },
+          {
+            "type": "modify_unrest",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "temple_endowments_taxed"
+          }
+        ],
+        "text_key": "owo.event.bhakti_devotional_movement_1455.option_2"
+      }
+    ],
+    "title_key": "owo.event.bhakti_devotional_movement_1455.title",
+    "description_key": "owo.event.bhakti_devotional_movement_1455.description"
   }
 ]
