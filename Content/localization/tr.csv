@@ -929,3 +929,19 @@ owo.task.son_niger_river_imperium.army,25.000 savaşçıdan oluşan bir imparato
 owo.goal.son_sankore_learning,Timbuktu Medreseleri
 owo.goal.son_sankore_learning.desc,Sankore Camii'ndeki İslam hukukçularını, matematikçilerini ve yazmalarını himaye et.
 owo.task.son_sankore_learning.treasury,Altın kervanlarından elde edilen 800 florini hazinede biriktir
+owo.event.prussian_confederation_revolt_1454.title,Prusya Konfederasyonu İsyanı
+owo.event.prussian_confederation_revolt_1454.description,Danzig, Thorn ve Elbing burjuvaları Töton Şövalyeleri'nin ağır vergilerini ve keyfi yönetimini reddetti. Prusya Konfederasyonu'nu kurarak dış destek aramaya başladılar.
+owo.event.prussian_confederation_revolt_1454.option_1,Sıkıyönetim İlan Et ve İsyancıları Cezalandır
+owo.event.prussian_confederation_revolt_1454.option_2,Danzig'e Ayrıcalıklar Tanı ve Uzlaş
+owo.event.casimir_incorporation_of_prussia_1454.title,Kraliyet Prusyası'nın İntihakı
+owo.event.casimir_incorporation_of_prussia_1454.description,Prusya Konfederasyonu heyeti Krakow'da Kral IV. Casimir Jagiellon'un huzuruna çıkarak Prusya'yı Polonya Krallığı'na bağlamasını ve şehirlere askeri koruma sağlamasını talep etti.
+owo.event.casimir_incorporation_of_prussia_1454.option_1,Kraliyet Prusyası'nı İlhak Et ve Şövalyelere Savaş Aç
+owo.event.casimir_incorporation_of_prussia_1454.option_2,Barışı Korumak İçin Talebi Reddet
+owo.event.battle_of_towton_1461.title,Towton Kar Fırtınası
+owo.event.battle_of_towton_1461.description,Yorkshire'daki kör edici bir kar fırtınasında York ve Lancaster hanedanı orduları İngiltere topraklarının en kanlı savaşında karşı karşıya geldi. Tahtın kaderi bu meydanda belirleniyor.
+owo.event.battle_of_towton_1461.option_1,Beyaz Gül Kazandı: IV. Edward'ı Kral İlan Et
+owo.event.battle_of_towton_1461.option_2,Kızıl Gül Direndi: VI. Henry'nin Tahtını Güvenceye Al
+owo.event.marriage_of_the_catholic_monarchs_1469.title,Katolik Hükümdarların Düğünü
+owo.event.marriage_of_the_catholic_monarchs_1469.description,Kastilya Prensesi Isabel ile Aragon Prensi Ferdinand Valladolid'de gizlice evlenerek birleşik bir İspanyol krallığının hanedan temelini attı.
+owo.event.marriage_of_the_catholic_monarchs_1469.option_1,Kastilya ve Aragon Trastamara Birliğini Onayla
+owo.event.marriage_of_the_catholic_monarchs_1469.option_2,Portekiz ile Alternatif Bir İttifak Kur

@@ -305,6 +305,10 @@
           {
             "type": "modify_unrest",
             "value": 15
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "wars_of_the_roses_begun"
           }
         ],
         "text_key": "owo.event.wars_of_the_roses_1455.option_1"
@@ -323,6 +327,10 @@
             "type": "modify_stat",
             "field": "government.stability",
             "value": -5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "wars_of_the_roses_begun"
           }
         ],
         "text_key": "owo.event.wars_of_the_roses_1455.option_2"
@@ -1052,5 +1060,258 @@
     ],
     "title_key": "owo.event.medici_fugger_banking_accord_1460.title",
     "description_key": "owo.event.medici_fugger_banking_accord_1460.description"
+  },
+  {
+    "id": "prussian_confederation_revolt_1454",
+    "type": "scripted",
+    "category": "internal_politics",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "TEU",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1454-02"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -10
+          },
+          {
+            "type": "modify_unrest",
+            "value": 15
+          },
+          {
+            "type": "add_treasury",
+            "value": 200
+          },
+          {
+            "type": "fire_event",
+            "chain_event": "casimir_incorporation_of_prussia_1454",
+            "delay_months": 1
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "teutonic_martial_law"
+          }
+        ],
+        "text_key": "owo.event.prussian_confederation_revolt_1454.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "add_treasury",
+            "value": -150
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.015
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "teutonic_burgher_charter"
+          }
+        ],
+        "text_key": "owo.event.prussian_confederation_revolt_1454.option_2"
+      }
+    ],
+    "title_key": "owo.event.prussian_confederation_revolt_1454.title",
+    "description_key": "owo.event.prussian_confederation_revolt_1454.description"
+  },
+  {
+    "id": "casimir_incorporation_of_prussia_1454",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "POL",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1454-03"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "declare_war",
+            "target": "TEU"
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "add_treasury",
+            "value": -200
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "thirteen_years_war_ignited"
+          }
+        ],
+        "text_key": "owo.event.casimir_incorporation_of_prussia_1454.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "TEU",
+            "value": 40
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "prussian_plea_rejected"
+          }
+        ],
+        "text_key": "owo.event.casimir_incorporation_of_prussia_1454.option_2"
+      }
+    ],
+    "title_key": "owo.event.casimir_incorporation_of_prussia_1454.title",
+    "description_key": "owo.event.casimir_incorporation_of_prussia_1454.description"
+  },
+  {
+    "id": "battle_of_towton_1461",
+    "type": "scripted",
+    "category": "military_incident",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "ENG",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1461-03"
+      },
+      {
+        "type": "has_flag",
+        "flag_name": "wars_of_the_roses_begun"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 15
+          },
+          {
+            "type": "modify_unrest",
+            "value": -15
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "yorkist_ascendancy"
+          }
+        ],
+        "text_key": "owo.event.battle_of_towton_1461.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "add_treasury",
+            "value": 300
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "lancastrian_restoration"
+          }
+        ],
+        "text_key": "owo.event.battle_of_towton_1461.option_2"
+      }
+    ],
+    "title_key": "owo.event.battle_of_towton_1461.title",
+    "description_key": "owo.event.battle_of_towton_1461.description"
+  },
+  {
+    "id": "marriage_of_the_catholic_monarchs_1469",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "CAS",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1469-10"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "ARA",
+            "value": 75
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "add_treasury",
+            "value": 300
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "catholic_monarchs_united"
+          }
+        ],
+        "text_key": "owo.event.marriage_of_the_catholic_monarchs_1469.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "PRT",
+            "value": 60
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "portuguese_dynastic_pact"
+          }
+        ],
+        "text_key": "owo.event.marriage_of_the_catholic_monarchs_1469.option_2"
+      }
+    ],
+    "title_key": "owo.event.marriage_of_the_catholic_monarchs_1469.title",
+    "description_key": "owo.event.marriage_of_the_catholic_monarchs_1469.description"
   }
 ]

@@ -929,3 +929,19 @@ owo.task.son_niger_river_imperium.army,Muster an imperial army of 25,000 warrior
 owo.goal.son_sankore_learning,The Madrasahs of Timbuktu
 owo.goal.son_sankore_learning.desc,Patronize Islamic jurists, mathematicians, and bookbinders at Sankore Mosque.
 owo.task.son_sankore_learning.treasury,Store 800 fl. from gold caravans in the royal treasury
+owo.event.prussian_confederation_revolt_1454.title,The Prussian Confederation Revolt
+owo.event.prussian_confederation_revolt_1454.description,The burghers of Danzig, Thorn, and Elbing reject the Teutonic Order's crushing taxes and arbitrary justice. They have banded together into the Prussian Confederation, seeking outside deliverance.
+owo.event.prussian_confederation_revolt_1454.option_1,Impose Martial Law and Denounce the Traitors
+owo.event.prussian_confederation_revolt_1454.option_2,Grant Charters to Danzig and Compromise
+owo.event.casimir_incorporation_of_prussia_1454.title,Incorporation of Royal Prussia
+owo.event.casimir_incorporation_of_prussia_1454.description,A delegation from the Prussian Confederation offers solemn homage to King Casimir IV Jagiellon in Krakow, imploring the Polish Crown to accept Prussia into its realm and defend its cities against the Knights.
+owo.event.casimir_incorporation_of_prussia_1454.option_1,Incorporate Royal Prussia and Declare War on the Order
+owo.event.casimir_incorporation_of_prussia_1454.option_2,Decline Homage to Uphold the Peace
+owo.event.battle_of_towton_1461.title,The Blizzard of Towton
+owo.event.battle_of_towton_1461.description,Amid a blinding snowstorm in Yorkshire, the Yorkist and Lancastrian hosts clash in the bloodiest engagement on English soil. The fate of the English Crown hangs upon the field.
+owo.event.battle_of_towton_1461.option_1,The White Rose Triumphs: Proclaim Edward IV
+owo.event.battle_of_towton_1461.option_2,The Red Rose Holds: Secure Henry VI's Throne
+owo.event.marriage_of_the_catholic_monarchs_1469.title,The Nuptials of the Catholic Monarchs
+owo.event.marriage_of_the_catholic_monarchs_1469.description,Princess Isabella of Castile and Prince Ferdinand of Aragon celebrate their secret marriage in Valladolid, laying the dynastic foundation for a unified Spanish realm.
+owo.event.marriage_of_the_catholic_monarchs_1469.option_1,Confirm the Trastamara Union of Castile and Aragon
+owo.event.marriage_of_the_catholic_monarchs_1469.option_2,Pursue an Alternative Alliance with Portugal
