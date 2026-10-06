@@ -21,7 +21,7 @@
                 "templateISO3": {
                     "type": "string",
                     "pattern": "^[A-Z]{3}$",
-                    "description": "ISO3 of the base country to copy stats from. Leave empty for a fully custom country."
+                    "description": "ISO3 of an existing country to copy from: its economy, military, AI personality, political starting state and every field this entry leaves out. There is no fully custom country: when omitted, the game falls back to the existing country with the alphabetically first ISO3 (ABW, Aruba, in the base game) and logs a warning, but does not copy that fallback's dominantReligion, dominantEthnicity, primaryCulture or ethnicHomogeneity. Ignored when iso3 already exists (the entry then re-skins that country)."
                 },
                 "iso3": {
                     "type": "string",
@@ -49,7 +49,7 @@
                 },
                 "flagPngPath": {
                     "type": "string",
-                    "description": "Relative path (from mod root) to a 128×80 flag PNG"
+                    "description": "Path to a 128×80 flag PNG. A relative path is looked up in the mod folder (the one holding mod.json) first, then in the scenario folder."
                 },
                 "capital": {
                     "type": "string",
@@ -138,6 +138,27 @@
                 "neutral": {
                     "type": "boolean",
                     "description": "Military neutrality (true/false). Omitted keeps the template country's flag. An AI-controlled neutral forms no military alliances or defense pacts, gives no guarantees, joins no coalitions and answers no calls to arms; a human player is unrestricted."
+                },
+                "dominantReligion": {
+                    "type": "string",
+                    "maxLength": 29,
+                    "description": "Largest religion. Two countries with the same label are kin: relations warm, and the AI is slower to attack and quicker to ally. Common base-game labels: Christianity, Islam, Buddhism, Hinduism, Judaism, Shintoism, Sikhism, Taoism, None (non-religious). Any label works and is kin only to the same label; generic labels (None, Other, Mixed, Unknown) are never kin. Omitted keeps the template's value, or stays empty (no kinship) when templateISO3 is omitted. At most 29 bytes of UTF-8 (29 ASCII letters, fewer accented or non-Latin ones); a longer label is cut short with a warning."
+                },
+                "dominantEthnicity": {
+                    "type": "string",
+                    "maxLength": 29,
+                    "description": "Largest ethnic group, e.g. 'Turkish'. Same kinship rule as dominantReligion; generic labels (Other, Mixed, None, Unknown, European, ...) are never kin. Omitted keeps the template's value, or stays empty when templateISO3 is omitted. At most 29 bytes of UTF-8 (29 ASCII letters, fewer accented or non-Latin ones); a longer label is cut short with a warning."
+                },
+                "primaryCulture": {
+                    "type": "string",
+                    "maxLength": 29,
+                    "description": "Primary culture shown on the country overview, e.g. 'Ottoman'. Omitted keeps the template's value, or stays empty when templateISO3 is omitted. At most 29 bytes of UTF-8 (29 ASCII letters, fewer accented or non-Latin ones); a longer label is cut short with a warning."
+                },
+                "ethnicHomogeneity": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "0 = very diverse, 1 = homogeneous; shown on the country overview when a culture or ethnicity is set. Omitted keeps the template's value, or 0 when templateISO3 is omitted."
                 }
             },
             "additionalProperties": false

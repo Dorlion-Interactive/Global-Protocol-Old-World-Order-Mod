@@ -36,7 +36,7 @@
         "version": {
             "type": "string",
             "minLength": 1,
-            "description": "Mod version string (semver recommended)"
+            "description": "Mod version, semver MAJOR.MINOR.PATCH (e.g. 1.0.0). Dependencies written as id@range are matched against it, and Validate reports a version that is not semver."
         },
         "description": {
             "type": "string"
@@ -112,6 +112,38 @@
             },
             "uniqueItems": true,
             "description": "Requested mod permissions"
+        },
+        "author": {
+            "type": "string",
+            "description": "Author name shown to players. Informational."
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minLength": 1
+            },
+            "uniqueItems": true,
+            "description": "Free-form category tags (e.g. \"scenario\", \"balance\"). Informational: they never change how the mod loads."
+        },
+        "gameVersion": {
+            "type": "string",
+            "description": "Semver range of game versions the mod was made for, e.g. \"^0.5.0\" or \">=0.5.0 <0.7.0\". Outside it the Mods panel warns and the mod still loads."
+        },
+        "dependencies": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^@\\s]+(@.+)?$"
+            },
+            "uniqueItems": true,
+            "description": "Mods that must be enabled for this one to load: a mod id, or id@range to require a version range (e.g. \"example.base@^1.2.0\"). Dependencies always load first. A dependency that is not installed, not enabled, outside the range or unable to load stops this mod from loading and is reported on the Mods panel; so is a dependency cycle."
+        },
+        "loadOrderHint": {
+            "type": "integer",
+            "default": 0,
+            "description": "Load position among mods that do not depend on each other: lower loads first, higher loads later and wins conflicting overrides. An engine event id is the exception: it stays with the first mod in load order, and a later mod's event with the same id is skipped. Ties load in mod id order. Default 0."
         }
     },
     "additionalProperties": false

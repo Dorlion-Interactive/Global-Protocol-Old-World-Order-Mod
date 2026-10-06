@@ -297,7 +297,7 @@
         },
         "params": {
           "type": "object",
-          "description": "Condition-specific parameters (target_iso3, province_owner, min_value, objective_id, etc.)",
+          "description": "Condition-specific parameters (target_iso3, partners, province_owner, min_value, objective_id, etc.). alliance_with needs target_iso3 (one country) or partners (comma-separated ISO3 list, or \"*\" for any country); it counts distinct countries holding a bilateral alliance or Defense Pact with the owner. military_units_above: min_value is the requirement when required_count is absent.",
           "additionalProperties": true
         }
       },

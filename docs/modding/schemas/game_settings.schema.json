@@ -1216,6 +1216,39 @@
           "minimum": 0,
           "maximum": 1
         },
+        "fleet_repair_harbor_fraction_per_tick": {
+          "type": "number",
+          "description": "Fraction of missing HP a docked fleet in one of its own naval-base harbours heals per military tick. Config plumbing only as of the B-0928 batch's B0 step; FleetRepairSystem (N3) is a later commit.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "fleet_repair_home_waters_fraction_per_tick": {
+          "type": "number",
+          "description": "Fraction of missing HP a fleet idle in its own coastal sea zone (not docked, not at sea abroad) heals per military tick. Config plumbing only; read by FleetRepairSystem (N3).",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "fleet_repair_at_sea_fraction_per_tick": {
+          "type": "number",
+          "description": "Fraction of missing HP a fleet heals per military tick while at sea away from home waters. 0 by default: only harbour and home-water repair heal. Config plumbing only; read by FleetRepairSystem (N3).",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "fleet_repair_block_ticks_after_damage": {
+          "type": "integer",
+          "description": "Military ticks after taking damage during which a fleet recovers no HP, mirroring army_hp_recovery_air_strike_block_ticks. Config plumbing only; read by FleetRepairSystem (N3).",
+          "minimum": 0
+        },
+        "fleet_morale_recovery_per_tick": {
+          "type": "number",
+          "description": "Fleet morale recovered per military tick while idle and unblocked, the naval analogue of army_idle_morale_recovery_per_tick. Config plumbing only; read by FleetRepairSystem (N3).",
+          "minimum": 0
+        },
+        "ai_fleet_return_home_max_orders_per_pass": {
+          "type": "integer",
+          "description": "Maximum AICommandRequest MoveFleet orders AIFleetMovementSystem's return-home layer issues per country per pass, so a peace with many idle foreign-water fleets cannot spike the command budget. 0 disables the layer. Config plumbing only; read by the AI fleet return-home pass (N5).",
+          "minimum": 0
+        },
         "siege_defense_base": {
           "type": "number",
           "description": "Base defense points each province has at siege start (before pop/infra modifiers)",
@@ -3022,6 +3055,24 @@
               "description": "The bottom share of the world GDP ranking that counts as a small state for the pair bonus (0.5 = bottom half).",
               "minimum": 0.01,
               "maximum": 1
+            },
+            "acceptance_threshold": {
+              "type": "number",
+              "description": "The score a country needs to ACCEPT an alliance offered to it (threshold stays the bar for proposing one). Lower than threshold because acceptance scores the offer through the target's own reluctant personality: at 2.0 no Middle East country could ever accept the USA. 0 is reserved for an out-of-date bake and reads as the default 1.4.",
+              "minimum": 0.1,
+              "maximum": 20
+            },
+            "acceptance_shared_rival_bonus": {
+              "type": "number",
+              "description": "Added to the acceptance score per rival both countries share (relation -50 or worse on both sides), outside the personality multiplier: a common enemy is a reason to ally. -1 turns it off; 0 is reserved for an out-of-date bake and reads as the default 0.15.",
+              "minimum": -1,
+              "maximum": 5
+            },
+            "acceptance_shared_rival_bonus_cap": {
+              "type": "number",
+              "description": "The most acceptance_shared_rival_bonus can add in total. 0 is reserved for an out-of-date bake and reads as the default 0.3.",
+              "minimum": 0.01,
+              "maximum": 10
             }
           }
         },
@@ -4058,6 +4109,28 @@
             "ally_weight_economic": {
               "type": "number",
               "description": "Fraction counted for Economic/TradeAgreement/InternationalOrg ties. Should normally be 0: a trade bloc is not a defensive commitment.",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "execute_max_declare_attempts": {
+              "type": "integer",
+              "description": "Daily Execute-phase attempts a war plan gets before it is forced to PostWar even without a WarRelation having formed. Config plumbing only as of the B-0928 batch's B0 step; the daily follow-through pass (S9) is a later commit.",
+              "minimum": 1
+            },
+            "ultimatum_refusal_opinion": {
+              "type": "number",
+              "description": "Opinion modifier applied to the refuser toward the issuer when an ultimatum is refused (or expires unanswered, which counts as a refusal). Config plumbing only; read by the refusal-consequence pass (S10).",
+              "minimum": -100,
+              "maximum": 0
+            },
+            "ultimatum_refusal_justification_days": {
+              "type": "integer",
+              "description": "Days the ultimatum-refusal opinion modifier lives, which is also how long it justifies the war it triggers. Config plumbing only; read by the refusal-consequence pass (S10).",
+              "minimum": 0
+            },
+            "ultimatum_refusal_aggression_mult": {
+              "type": "number",
+              "description": "Share of aggressive-expansion weight credited from the refusal opinion modifier rather than the raw war plan. Config plumbing only; read by the refusal-consequence pass (S10).",
               "minimum": 0,
               "maximum": 1
             }
@@ -5305,6 +5378,150 @@
           "description": "Maximum disruptive government changes that can fire globally in a single month; 0 disables the cap",
           "minimum": 0,
           "maximum": 32
+        },
+        "stability_recovery_rate_peace": {
+          "type": "number",
+          "description": "Legacy stability model only (read while stability_target_convergence_rate is 0 or missing): monthly passive stability recovery in peacetime while stability is below stability_recovery_baseline",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "stability_recovery_rate_war": {
+          "type": "number",
+          "description": "Legacy stability model only (read while stability_target_convergence_rate is 0 or missing): monthly passive stability recovery at war while stability is below stability_recovery_baseline",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "stability_recovery_baseline": {
+          "type": "number",
+          "description": "Legacy stability model only (read while stability_target_convergence_rate is 0 or missing): stability level passive recovery climbs to; no passive recovery above it",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "social_spending_stability_rate": {
+          "type": "number",
+          "description": "Legacy stability model only (read while stability_target_convergence_rate is 0 or missing): monthly stability added per unit of social budget share (0-1), with no ceiling below 100",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "stability_target_convergence_rate": {
+          "type": "number",
+          "description": "Stability target model: fraction of the gap between stability and its per-country target closed each month. 0 or missing = legacy model (passive recovery + uncapped social push; the other stability_target_* keys are ignored). While above 0, law and doctrine stability_delta_monthly raise the target instead of writing stability, and the treasury welfare stability bonus is off",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "stability_target_base": {
+          "type": "number",
+          "description": "Stability target before any positive or negative term; a missing key reads as 0",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_min": {
+          "type": "number",
+          "description": "Lower clamp on the stability target (0-100)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_max": {
+          "type": "number",
+          "description": "Upper clamp on the stability target (0-100, never below stability_target_min); a missing key reads as 0, which pins the target to the minimum",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_max_rise_per_month": {
+          "type": "number",
+          "description": "Largest monthly stability rise toward the target, in stability points; 0 or missing = stability never drifts up toward the target",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_max_fall_per_month": {
+          "type": "number",
+          "description": "Largest monthly stability fall toward the target, in stability points; 0 or missing = stability never drifts down toward the target",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_war_rise_multiplier": {
+          "type": "number",
+          "description": "Multiplier on stability_target_max_rise_per_month while at war (1 = same as peace; 0 or missing = no drift up toward the target while at war)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "stability_target_social_weight": {
+          "type": "number",
+          "description": "Target points per unit of social budget share (0-1); 0 or missing disables this term",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_policy_weight": {
+          "type": "number",
+          "description": "Target points per +1.0/month of combined law + doctrine stability_delta_monthly (negative deltas lower the target); 0 or missing disables this term",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_policy_cap": {
+          "type": "number",
+          "description": "Absolute cap, in target points, on the law + doctrine contribution in either direction; 0 or missing = laws and doctrines do not move the target",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_inflation_threshold": {
+          "type": "number",
+          "description": "Inflation (fraction, 0.05 = 5%) tolerated before it lowers the target",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "stability_target_inflation_weight": {
+          "type": "number",
+          "description": "Target points lost per percentage point of inflation above stability_target_inflation_threshold; 0 or missing disables this term",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "stability_target_inflation_cap": {
+          "type": "number",
+          "description": "Cap, in target points, on the inflation penalty; 0 or missing = no inflation penalty",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_unemployment_slack": {
+          "type": "number",
+          "description": "Unemployment (fraction) tolerated above the country's own natural unemployment rate before it lowers the target",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "stability_target_unemployment_weight": {
+          "type": "number",
+          "description": "Target points lost per percentage point of unemployment above the natural rate plus stability_target_unemployment_slack; 0 or missing disables this term",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "stability_target_unrest_threshold": {
+          "type": "number",
+          "description": "Average owned-province unrest (0-100) tolerated before it lowers the target",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_unrest_weight": {
+          "type": "number",
+          "description": "Target points lost per unrest point above stability_target_unrest_threshold; 0 or missing disables this term",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "stability_target_war_exhaustion_weight": {
+          "type": "number",
+          "description": "Target points lost per war-exhaustion point (0-100); 0 or missing disables this term",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "stability_target_debt_threshold": {
+          "type": "number",
+          "description": "Debt-to-GDP ratio tolerated before it lowers the target; the effective threshold is the larger of this and the country's own anchor debt ratio",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "stability_target_debt_weight": {
+          "type": "number",
+          "description": "Target points lost per 1.0 of debt-to-GDP above the effective threshold; 0 or missing disables this term",
+          "minimum": 0,
+          "maximum": 100
         },
         "peaceful_transition_stability_threshold": {
           "type": "number",

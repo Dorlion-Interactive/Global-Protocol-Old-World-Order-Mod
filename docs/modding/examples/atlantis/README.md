@@ -22,11 +22,10 @@ JSON are the fallback for other languages.
    `%USERPROFILE%/Documents/GlobalProtocol/Mods/example.atlantis/`.
 2. Enable **Project Atlantis (example)** on the Loadout screen.
 3. Start a 2026 campaign as any country. `atlas_01` appears at the first monthly check in June
-   2026 (days 6–8). If another event is still open, or one fired in the last 60 days, it comes
-   at the first monthly check after that. `immediate` removes the random roll but not the
-   competition: if another event is also eligible at that check, one of them is picked at random,
-   weighted by `priority`. `atlas_01` uses `priority: 10` for the best odds; if it still loses,
-   it comes at a later check.
+   2026 (days 6–8). `immediate` removes the random roll, ignores the 60-day wait after an earlier
+   event and beats any ordinary event eligible at the same check. The one thing that still delays
+   it is an event you have not answered yet: it then comes at the first monthly check after you
+   answer.
 
 See §8.7 of [`MODDING_REFERENCE.md`](../../MODDING_REFERENCE.md) for how events are loaded,
 evaluated and chained.

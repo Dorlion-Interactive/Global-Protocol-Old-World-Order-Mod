@@ -188,7 +188,7 @@
         },
         "stability_delta_monthly": {
           "type": "number", "minimum": -1, "maximum": 1,
-          "description": "Monthly stability delta (StabilityLawDelta ledger channel)."
+          "description": "Stability effect of this option. While political_drift.stability_target_convergence_rate > 0 (the stability target model), it raises the country's stability target by stability_target_policy_weight × value; the combined law + doctrine total is capped at ±stability_target_policy_cap. Otherwise it is added to stability every month (StabilityLawDelta ledger channel)."
         }
       }
     }

@@ -44,7 +44,8 @@
                 "techLevel": {
                     "type": "integer",
                     "minimum": 0,
-                    "maximum": 10
+                    "maximum": 10,
+                    "description": "Starting Knowledge Network level: tiers 1 to techLevel of every doctrine branch start completed (doctrine A of each tier), except branches the scenario hides with disabledDoctrineBranches. A branch has 5 tiers, so values above 5 act as 5. Tiers the country already starts with are kept. Applied once when a new game starts. 0 or omitted grants nothing."
                 },
                 "stability": {
                     "type": "number",
@@ -77,6 +78,11 @@
                     "minimum": 0,
                     "description": "Military reserve pool in people (not thousands). 0 or omitted keeps the starting value."
                 },
+                "population": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Starting population in people. It is spread over the country's provinces once the ownership overrides are done (in proportion to their baked populations, summing exactly to this figure), so the monthly population update keeps it. Wins over an addCountries population for the same country. 0 or omitted keeps the starting value."
+                },
                 "neutral": {
                     "type": "boolean",
                     "description": "Sets (true) or clears (false) the country's military neutrality. Omitted keeps the baked value. Applies to AI control only; see mod_scenario_countries_add."
@@ -85,6 +91,27 @@
                     "type": "array",
                     "items": { "type": "string", "minLength": 1, "format": "content-id:units" },
                     "description": "The country's unit roster. When non-empty the country recruits ONLY these unit types, plus any it owns (units_define ownerIso3); the list may grant another country's exclusive unit. Disabled categories and ids still apply. Empty or omitted keeps the default set. Replaces an addCountries roster for the same country."
+                },
+                "dominantReligion": {
+                    "type": "string",
+                    "maxLength": 29,
+                    "description": "Largest religion; see mod_scenario_countries_add. Omitted keeps the current value."
+                },
+                "dominantEthnicity": {
+                    "type": "string",
+                    "maxLength": 29,
+                    "description": "Largest ethnic group; see mod_scenario_countries_add. Omitted keeps the current value."
+                },
+                "primaryCulture": {
+                    "type": "string",
+                    "maxLength": 29,
+                    "description": "Primary culture shown on the country overview. Omitted keeps the current value."
+                },
+                "ethnicHomogeneity": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "0 = very diverse, 1 = homogeneous. Omitted keeps the current value."
                 }
             },
             "additionalProperties": false

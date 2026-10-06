@@ -71,7 +71,13 @@
       "type": "number",
       "exclusiveMinimum": 0,
       "default": 1.0,
-      "description": "Multiplies every country's GDP, GDP per capita, exports, imports, foreign reserves and treasury once, when a new game starts. countryStateOverrides values are absolute and are applied after it."
+      "description": "Multiplies every country's GDP, GDP per capita, exports, imports, foreign reserves, treasury and opening monthly budgets (revenue, expenses, defense, research) once, when a new game starts. Tutorial treasury rewards are paid times this scale too, capped at economy.max_single_event_treasury_gdp_fraction of the player's GDP (5%, the cap event treasury effects get). countryStateOverrides values are absolute and are applied after it; a country whose gdp is overridden has its opening monthly budgets and its trade (exports, imports and the tariff and commercial-hub revenue they bring) re-based on that GDP."
+    },
+    "unownedProvincePopulationScale": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "default": 1.0,
+      "description": "Multiplies the population of every province that is still unowned after removeCountries and the ownership overrides, once, when a new game starts. Provinces are baked with 2026 headcounts, and unowned land brings them back when it is colonised; a historical scenario sets this to roughly its declared world population divided by the 2026 population of the provinces its countries own. A scaled province keeps at least 100 people (or its own population, if smaller). 1 or omitted leaves unowned provinces alone. Owned provinces follow each country's declared population instead."
     },
     "economicEraLabel": {
       "type": "string",

@@ -30,7 +30,7 @@
     },
     "image": {
       "type": "string",
-      "description": "Name of a built-in event illustration: a file name without extension from the game's Resources/UI/Events folder (e.g. 'event_airstrike'). Not a file path; an unknown name shows no picture."
+      "description": "Name of the event's picture, a file name without extension. A file with that name in an active mod's images/events/ (then Content/images/events/) folder is used first (.png before .jpg/.jpeg; when several active mods ship it, the one that loads last wins), then the base game's Resources/UI/Events pictures (e.g. 'event_airstrike'). Not a path: a name with '/', '\\', ':' or '..' matches nothing. A name that matches nothing shows the category's default picture. The popup shows it about 180 px tall, cropped to fill its width."
     },
     "type": {
       "type": "string",
@@ -160,14 +160,14 @@
           },
           "field": {
             "type": "string",
-            "description": "Dot-path to stat field (e.g., 'military.active_personnel', 'government.stability')"
+            "description": "Dot-path to stat field (e.g., 'military.active_personnel', 'government.stability'). province_stat_gt: one of 'province.population', 'province.infrastructure', 'province.unrest', 'province.dev_level', 'province.radiation'."
           },
           "value": {
-            "description": "Comparison value. Numbers for stat conditions (country_unrest_gt/lt compare 0-100 average national unrest); string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before. relation_above/gt/below/lt: the relation threshold (-100 to 100) to compare against target_country. stakeholder: a non-negative relation-magnitude threshold — the evaluating country qualifies if it IS target_country, is at war with it, is allied with it, or |relation| >= this value. For active_law_is, prefer law_category/law_option (or a 'categoryId/optionId' value string). For owns_province / not_owns_province / controls_province / not_controls_province: the province id from province_registry.json (a whole number of 1 or more, e.g. 2276). 'owns' = the legal owner (changes with a peace deal or territory transfer); 'controls' = the occupier if the province is occupied, otherwise the owner (changes on capture). An unknown province is owned / controlled by no one, so the not_ variants are true for it."
+            "description": "Comparison value. Numbers for stat conditions (country_unrest_gt/lt compare 0-100 average national unrest); string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before. relation_above/gt/below/lt: the relation threshold (-100 to 100) to compare against target_country. stakeholder: a non-negative relation-magnitude threshold — the evaluating country qualifies if it IS target_country, is at war with it, is allied with it, or |relation| >= this value. For active_law_is, prefer law_category/law_option (or a 'categoryId/optionId' value string). For owns_province / not_owns_province / controls_province / not_controls_province: the province id from province_registry.json (a whole number of 1 or more, e.g. 2276). 'owns' = the legal owner (changes with a peace deal or territory transfer); 'controls' = the occupier if the province is occupied, otherwise the owner (changes on capture). An unknown province is owned / controlled by no one, so the not_ variants are true for it. has_tech: a doctrine tier '<branch>_t<tier>' with a tier from 1 to 5 (e.g. 'cyber_t2'); true when the evaluating country has completed that tier (branch ids as in doctrines.json; an unknown branch never passes). province_stat_gt: a number; true when at least one province the evaluating country legally owns has the 'field' stat above it (a country without provinces never passes). defcon_level: a whole number from 0 to 5; true when the evaluating country's DEFCON is at that level or more severe (5 = peace, 0 = nuclear exchange; a country without nuclear capability is at 5)."
           },
           "target_country": {
             "type": "string",
-            "description": "ISO3 for conditions targeting a specific country. at_war / not_at_war: at war with that country. alliance_member: allied with that country. relation_above/gt/below/lt: the evaluating country's relation TOWARD that country. stakeholder: the country whose situation is being tested (required). owns_province / not_owns_province / controls_province / not_controls_province: test that country instead of the event's recipient (e.g. { \"type\": \"controls_province\", \"value\": 2276, \"target_country\": \"OTT\" }); a country that no longer exists owns and controls nothing."
+            "description": "ISO3 for conditions targeting a specific country. at_war / not_at_war: at war with that country. alliance_member: allied with that country. relation_above/gt/below/lt: the evaluating country's relation TOWARD that country. stakeholder: the country whose situation is being tested (required). owns_province / not_owns_province / controls_province / not_controls_province: test that country instead of the event's recipient (e.g. { \"type\": \"controls_province\", \"value\": 2276, \"target_country\": \"OTT\" }); a country that no longer exists owns and controls nothing. has_tech / province_stat_gt / defcon_level take none: they always check the evaluating country (mod events reject a target_country on them)."
           },
           "target": {
             "type": "string",
@@ -195,12 +195,12 @@
     "mean_time_to_happen_months": {
       "type": "number",
       "minimum": 0.1,
-      "description": "Average months until event fires. P(month) = 1 - e^(-1/MTTH)."
+      "description": "Sets the chance of each monthly check once the conditions pass: P = 1 - e^(-1/MTTH). AI countries are checked one month in five and human players every month at 5 x MTTH, so an any_country event takes about 5 x MTTH months on average for both. Target player and specific_country events are checked every month for a human player at MTTH as written."
     },
     "immediate": {
       "type": "boolean",
       "default": false,
-      "description": "Mod events (Content/events/*.json) only: skip the mean_time_to_happen_months roll and fire at the first monthly evaluation where the event is eligible (all conditions pass, no other event pending, no cooldown). AI countries are evaluated in rotating groups, so for them this means within a few months. The base game importers ignore this field."
+      "description": "Mod events (Content/events/*.json) only: skip the mean_time_to_happen_months roll and fire at the first monthly evaluation where all conditions pass and no other event is pending. It ignores the 60-day cooldown left by an earlier event and always beats ordinary events in the same evaluation; among several immediate events the highest priority fires first, then the one loaded first. Its own cooldown_months, fire_once and target still apply. One that can repeat (no fire_once) and has no cooldown_months waits the 60-day cooldown after each of its own firings, and wins over ordinary events every time while its conditions hold, so give it fire_once, cooldown_months or a condition that stops passing. A mod event that writes mean_time_to_happen_months 0 without this field is treated the same way (the loader adds a note). AI countries are evaluated in rotating groups, so for them this means within six months. The base game importers ignore this field (base data writes mean_time_to_happen_months 0 instead)."
     },
     "options": {
       "type": "array",
@@ -279,12 +279,31 @@
                     "engage_diplomatically",
                     "withdraw_forces",
                     "modify_resource_price",
-                    "global_modifier"
+                    "global_modifier",
+                    "annex_country"
                   ]
                 },
                 "target": {
                   "type": "string",
-                  "description": "Target ISO3 or province ID"
+                  "description": "Target country ISO3 (mod events also accept target_country, which wins when both are set). add_relation, the sanction effects, engage_diplomatically, withdraw_forces: the other country. annex_province: the country that receives the province (absent = the event's recipient; a named country that no longer exists skips the effect). annex_country (required): the country whose provinces the event's recipient takes; it is then eliminated as after a full peace annexation. create_unit: the country that receives the units (absent = the event's recipient; a named country that no longer exists skips the effect). A province id no longer goes here: use province_id."
+                },
+                "province_id": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 5000,
+                  "description": "annex_province (required): the land province's id from province_registry.json (e.g. 2276). Sea zones (5001 and up) are rejected. The receiver becomes its owner and controller at once; occupation and siege end, with no resistance and no added unrest. For older data, a whole-number value is read as the id when province_id is absent. create_unit (optional): where the new stack starts, a land province the receiver owns and controls (coastal for a naval unit, with an airfield for an air unit); absent or unsuitable = the receiver's capital, else its lowest-numbered suitable province."
+                },
+                "unit_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 29,
+                  "description": "create_unit (required): the id of a unit type from units.json, a mod's Content/units.json or the scenario's unit types (case is ignored; at most 29 UTF-8 bytes). The receiver gets one new stack of these units, free and at full strength. An unknown id, a missile unit, a unit the scenario disables, or a receiver with no suitable province skips the effect with a warning when it runs."
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "default": 1,
+                  "description": "create_unit only: how many units of unit_id the new stack gets. Absent = 1. There is no hard maximum: the game cuts a count above 100 to 100 and says so in a load note (the Mod Builder offers 1 to 100). For older data, a whole-number value is read as the count when count is absent."
                 },
                 "field": {
                   "type": "string",
