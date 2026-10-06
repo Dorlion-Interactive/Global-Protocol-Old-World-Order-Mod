@@ -430,5 +430,190 @@
     ],
     "title_key": "owo.event.fall_of_trebizond_1461.title",
     "description_key": "owo.event.fall_of_trebizond_1461.description"
+  },
+  {
+    "id": "tumu_crisis_beijing_1450",
+    "type": "scripted",
+    "category": "military_incident",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "MYN",
+    "immediate": true,
+    "image": "tumu_crisis_beijing",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1450-06"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "modify_unrest",
+            "value": -5
+          },
+          {
+            "type": "add_treasury",
+            "value": -100
+          },
+          {
+            "type": "create_unit",
+            "unit_type_id": "ming_fire_lance",
+            "count": 2,
+            "province_id": 107,
+            "target": "MYN"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "beijing_defended_1450"
+          }
+        ],
+        "text_key": "owo.event.tumu_crisis_beijing_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": -300
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          }
+        ],
+        "text_key": "owo.event.tumu_crisis_beijing_1450.option_2"
+      }
+    ],
+    "title_key": "owo.event.tumu_crisis_beijing_1450.title",
+    "description_key": "owo.event.tumu_crisis_beijing_1450.description"
+  },
+  {
+    "id": "rise_of_tawantinsuyu_1450",
+    "type": "scripted",
+    "category": "internal_politics",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "INC",
+    "immediate": true,
+    "image": "rise_of_tawantinsuyu",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1450-01"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          },
+          {
+            "type": "create_unit",
+            "unit_type_id": "medieval_infantry",
+            "count": 2,
+            "province_id": 5,
+            "target": "INC"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "tawantinsuyu_proclaimed"
+          }
+        ],
+        "text_key": "owo.event.rise_of_tawantinsuyu_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "add_treasury",
+            "value": 150
+          }
+        ],
+        "text_key": "owo.event.rise_of_tawantinsuyu_1450.option_2"
+      }
+    ],
+    "title_key": "owo.event.rise_of_tawantinsuyu_1450.title",
+    "description_key": "owo.event.rise_of_tawantinsuyu_1450.description"
+  },
+  {
+    "id": "songhai_ascendancy_1464",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "SON",
+    "immediate": true,
+    "image": "songhai_ascendancy",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1464-01"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 250
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "create_unit",
+            "unit_type_id": "medieval_cavalry",
+            "count": 2,
+            "province_id": 1150,
+            "target": "SON"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "songhai_golden_age"
+          }
+        ],
+        "text_key": "owo.event.songhai_ascendancy_1464.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "add_treasury",
+            "value": 100
+          }
+        ],
+        "text_key": "owo.event.songhai_ascendancy_1464.option_2"
+      }
+    ],
+    "title_key": "owo.event.songhai_ascendancy_1464.title",
+    "description_key": "owo.event.songhai_ascendancy_1464.description"
   }
 ]

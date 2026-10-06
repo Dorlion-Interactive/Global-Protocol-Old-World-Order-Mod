@@ -746,3 +746,15 @@ owo.task.mam_custodian_holy_sanctuaries.treasury,Kahire kalesi hazinesinde 1.000
 owo.goal.mam_syrian_bulwark,Suriye Seddi
 owo.goal.mam_syrian_bulwark.desc,Kuzey tehditlerine karşı Halep ve Şam'da güçlü bir süvari ordusu bulundur.
 owo.task.mam_syrian_bulwark.army,30.000 Memlük savaşçısı topla
+owo.event.tumu_crisis_beijing_1450.title,Tumu Krizi ve Pekin Savunması
+owo.event.tumu_crisis_beijing_1450.description,İmparator Zhengtong'un Tumu'da Oyrat Moğolları tarafından esir alınmasının ardından düşman ordusu Pekin surlarına dayandı. Savaş Bakanı Yu Qian, Jingtai İmparatoru'nu tahta çıkararak başkenti savundu; surlara ateş mızrakları ve ağır toplar yerleştirerek kuzey kuşatmasını püskürttü.
+owo.event.tumu_crisis_beijing_1450.option_1,Yu Qian önderliğinde direnin; başkentten bir karış toprak verilmeyecek!
+owo.event.tumu_crisis_beijing_1450.option_2,Kuzeyle ateşkes için gümüş ve ipek haraç teklif et.
+owo.event.rise_of_tawantinsuyu_1450.title,Pachacuti ve Tawantinsuyu'nun Yükselişi
+owo.event.rise_of_tawantinsuyu_1450.description,Cusco'yu Chanca istilasına karşı başarıyla savunan Sapa İnka Pachacuti Yupanqui, Tawantinsuyu'nun (Dört Bölgenin Diyarı) kuruluşunu ilan etti. Cusco'yu anıtsal taş yapılarla yeniden inşa ettirip And yamaçlarını teraslayan Pachacuti, dağ vadilerini Güneş Tanrısı İnti sancağı altında birleştirmek üzere sefere çıkıyor.
+owo.event.rise_of_tawantinsuyu_1450.option_1,Tawantinsuyu'yu ilan et ve And Dağları'nda sefere çık!
+owo.event.rise_of_tawantinsuyu_1450.option_2,Kutsal Vadi'yi tahkim et ve Coricancha tapınağını zenginleştir.
+owo.event.songhai_ascendancy_1464.title,Sonni Ali ve Songhay Yükselişi
+owo.event.songhai_ascendancy_1464.description,1464'te Gao tahtına çıkan Sonni Ali Ber, Songhay krallığını durdurulamaz bir imparatorluğa dönüştürdü. Nijer Nehri üzerindeki savaş kanoları filosu ve Sahel'deki zırhlı süvarileriyle Sonni Ali, Timbuktu'yu Tuareglerden alarak Sahra ötesi altın ve tuz ticaret yollarını ele geçirmeye hazırlanıyor.
+owo.event.songhai_ascendancy_1464.option_1,Nijer donanmasını sefere çıkar ve Sahel'e hükmet!
+owo.event.songhai_ascendancy_1464.option_2,Gao kapılarını koru ve nehir boyunca barış içinde ticaret yap.

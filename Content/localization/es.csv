@@ -746,3 +746,15 @@ owo.task.mam_custodian_holy_sanctuaries.treasury,Hold 1,000 fl. in the Cairo cit
 owo.goal.mam_syrian_bulwark,Fortify the Syrian Frontier
 owo.goal.mam_syrian_bulwark.desc,Maintain a formidable cavalry army in Aleppo and Damascus to deter northern aggression.
 owo.task.mam_syrian_bulwark.army,Muster 30,000 Mamluk warriors
+owo.event.tumu_crisis_beijing_1450.title,La Crisis de Tumu y la Defensa de Pekín
+owo.event.tumu_crisis_beijing_1450.description,Tras la captura del emperador Zhengtong en Tumu por los oirates, los mongoles sitiaron Pekín. El ministro de guerra Yu Qian proclamó al emperador Jingtai y repelió el asedio con artillería pesada y lanzas de fuego.
+owo.event.tumu_crisis_beijing_1450.option_1,¡Defender Pekín bajo el mando de Yu Qian; ni un palmo al invasor!
+owo.event.tumu_crisis_beijing_1450.option_2,Ofrecer tributo de plata y seda para pactar una tregua.
+owo.event.rise_of_tawantinsuyu_1450.title,Pachacútec y el Surgimiento del Tawantinsuyu
+owo.event.rise_of_tawantinsuyu_1450.description,Tras vencer a los chancas en el Cusco, el Sapa Inca Pachacútec proclamó la fundación del Tawantinsuyu, las Cuatro Regiones. Reconstruyendo el Cusco en piedra pulida y terrazas andinas, marcha para unificar los Andes bajo el dios Inti.
+owo.event.rise_of_tawantinsuyu_1450.option_1,¡Proclamar el Tawantinsuyu y marchar por los Andes!
+owo.event.rise_of_tawantinsuyu_1450.option_2,Consolidar el Valle Sagrado y enriquecer el Coricancha.
+owo.event.songhai_ascendancy_1464.title,Sonni Alí y la Hegemonía Songhai
+owo.event.songhai_ascendancy_1464.description,Al asumir el trono de Gao en 1464, Sonni Alí Ber convirtió al reino Songhai en un imperio dominante en África occidental. Con canoas de guerra en el río Níger y caballería en el Sahel, toma Tombuctú y domina las rutas transaharianas.
+owo.event.songhai_ascendancy_1464.option_1,¡Desplegar la flota del río Níger y dominar el Sahel!
+owo.event.songhai_ascendancy_1464.option_2,Proteger Gao y mantener el comercio fluvial pacífico.

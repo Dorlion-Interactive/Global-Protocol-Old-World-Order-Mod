@@ -746,3 +746,15 @@ owo.task.mam_custodian_holy_sanctuaries.treasury,Hold 1,000 fl. in the Cairo cit
 owo.goal.mam_syrian_bulwark,Fortify the Syrian Frontier
 owo.goal.mam_syrian_bulwark.desc,Maintain a formidable cavalry army in Aleppo and Damascus to deter northern aggression.
 owo.task.mam_syrian_bulwark.army,Muster 30,000 Mamluk warriors
+owo.event.tumu_crisis_beijing_1450.title,土木堡之变与北京保卫战
+owo.event.tumu_crisis_beijing_1450.description,土木堡之变明英宗蒙尘瓦剌，也先大军直逼京师九门。兵部尚书于谦力排南迁之议，拥立景泰帝，调集勤王军民于城下架设大炮火铳、神机铳矢，决死击退瓦剌铁骑，力挽狂澜！
+owo.event.tumu_crisis_beijing_1450.option_1,社稷为重！听于谦号令死守京师，寸土不让！
+owo.event.tumu_crisis_beijing_1450.option_2,犒赏金银绸缎，暂缓北方战事求得停战。
+owo.event.rise_of_tawantinsuyu_1450.title,帕查库蒂与印加帝国的兴起
+owo.event.rise_of_tawantinsuyu_1450.description,击溃昌卡人进犯后，萨帕·印加帕查库蒂宣布建立塔万廷苏尤（四方之地）。他以巨石重修库斯科圣城，开辟安第斯梯田水渠，率军出征，将太阳神因蒂的荣耀普照群山。
+owo.event.rise_of_tawantinsuyu_1450.option_1,建立四方帝国，挥师征战安第斯诸部！
+owo.event.rise_of_tawantinsuyu_1450.option_2,营建圣谷梯田，修葺太阳神殿柯里坎查。
+owo.event.songhai_ascendancy_1464.title,桑尼·阿里与桑海帝国的崛起
+owo.event.songhai_ascendancy_1464.description,1464年桑尼·阿里即位于加奥，迅速将桑海推向帝国鼎盛。凭借尼日尔河上的战船舰队与萨赫勒重骑兵，桑海大军进逼廷巴克图，掌控跨撒哈拉黄金与食盐贸易商道。
+owo.event.songhai_ascendancy_1464.option_1,调集尼日尔水师与骑兵，横扫萨赫勒！
+owo.event.songhai_ascendancy_1464.option_2,镇守加奥重镇，维系沿河商旅往来。

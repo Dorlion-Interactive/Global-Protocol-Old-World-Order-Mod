@@ -746,3 +746,15 @@ owo.task.mam_custodian_holy_sanctuaries.treasury,Hold 1,000 fl. in the Cairo cit
 owo.goal.mam_syrian_bulwark,Fortify the Syrian Frontier
 owo.goal.mam_syrian_bulwark.desc,Maintain a formidable cavalry army in Aleppo and Damascus to deter northern aggression.
 owo.task.mam_syrian_bulwark.army,Muster 30,000 Mamluk warriors
+owo.event.tumu_crisis_beijing_1450.title,La Crise de Tumu et la Défense de Pékin
+owo.event.tumu_crisis_beijing_1450.description,Après la capture de l'empereur Zhengtong à Tumu par les Oïrats, les Mongols assiègent Pékin. Le ministre de la guerre Yu Qian intronise l'empereur Jingtai et repousse victorieusement le siège à coups de canons et de lances à feu.
+owo.event.tumu_crisis_beijing_1450.option_1,Défendre Pékin sous les ordres de Yu Qian; ne rien céder !
+owo.event.tumu_crisis_beijing_1450.option_2,Offrir tribut d'argent et de soie pour négocier une trêve.
+owo.event.rise_of_tawantinsuyu_1450.title,Pachacuti et l'Essor du Tawantinsuyu
+owo.event.rise_of_tawantinsuyu_1450.description,Après avoir sauvé Cuzco des Chancas, le Sapa Inca Pachacuti proclame l'empire du Tawantinsuyu. Il rebâtit Cuzco en pierre de taille et entreprend d'unifier les Andes sous l'égide du dieu Soleil Inti.
+owo.event.rise_of_tawantinsuyu_1450.option_1,Proclamer le Tawantinsuyu et conquérir les Andes !
+owo.event.rise_of_tawantinsuyu_1450.option_2,Embellir la Vallée Sacrée et le temple du Coricancha.
+owo.event.songhai_ascendancy_1464.title,Sonni Ali et l'Ascension Songhaï
+owo.event.songhai_ascendancy_1464.description,Couronné à Gao en 1464, Sonni Ali Ber transforme le royaume songhaï en un puissant empire. Disposant d'une flotte de pirogues sur le Niger et d'une cavalerie redoutable, il s'empare de Tombouctou et des routes transsahariennes.
+owo.event.songhai_ascendancy_1464.option_1,Mobiliser la flotte du Niger et dominer le Sahel !
+owo.event.songhai_ascendancy_1464.option_2,Fortifier Gao et commercer en paix le long du fleuve.

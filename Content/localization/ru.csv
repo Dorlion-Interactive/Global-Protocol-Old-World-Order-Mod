@@ -746,3 +746,15 @@ owo.task.mam_custodian_holy_sanctuaries.treasury,Hold 1,000 fl. in the Cairo cit
 owo.goal.mam_syrian_bulwark,Fortify the Syrian Frontier
 owo.goal.mam_syrian_bulwark.desc,Maintain a formidable cavalry army in Aleppo and Damascus to deter northern aggression.
 owo.task.mam_syrian_bulwark.army,Muster 30,000 Mamluk warriors
+owo.event.tumu_crisis_beijing_1450.title,Тумуская катастрофа и оборона Пекина
+owo.event.tumu_crisis_beijing_1450.description,После пленения императора ойратами при Туму монголы подошли к Пекину. Военный министр Юй Цянь посадил на трон императора Цзинтая и отстоял столицу, сокрушив врага артиллерией со стен города.
+owo.event.tumu_crisis_beijing_1450.option_1,Защищать столицу под началом Юй Цяня до последнего!
+owo.event.tumu_crisis_beijing_1450.option_2,Отправить серебро и шелка ради перемирия.
+owo.event.rise_of_tawantinsuyu_1450.title,Пачакутек и рождение Тауантинсуйу
+owo.event.rise_of_tawantinsuyu_1450.description,Разгромив племя чанка, Сапа Инка Пачакутек провозгласил создание империи Тауантинсуйу. Перестроив Куско из камня и возведя террасы в Андах, он начал объединение горных долин под знаменем бога Инти.
+owo.event.rise_of_tawantinsuyu_1450.option_1,Провозгласить Тауантинсуйу и начать поход по Андам!
+owo.event.rise_of_tawantinsuyu_1450.option_2,Укрепить Священную долину и храм Кориканча.
+owo.event.songhai_ascendancy_1464.title,Сонни Али и возвышение Сонгай
+owo.event.songhai_ascendancy_1464.description,Взойдя на престол Гао в 1464 году, Сонни Али Бер превратил царство Сонгай в могущественную империю. Располагая флотом боевых пирог на реке Нигер и кавалерией, он подчинил Тимбукту и транссахарские пути.
+owo.event.songhai_ascendancy_1464.option_1,Спустить флот на реку Нигер и покорить Сахель!
+owo.event.songhai_ascendancy_1464.option_2,Защищать Гао и развивать торговлю на реке.

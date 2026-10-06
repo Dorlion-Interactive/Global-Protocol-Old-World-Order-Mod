@@ -746,3 +746,15 @@ owo.task.mam_custodian_holy_sanctuaries.treasury,Hold 1,000 fl. in the Cairo cit
 owo.goal.mam_syrian_bulwark,Fortify the Syrian Frontier
 owo.goal.mam_syrian_bulwark.desc,Maintain a formidable cavalry army in Aleppo and Damascus to deter northern aggression.
 owo.task.mam_syrian_bulwark.army,Muster 30,000 Mamluk warriors
+owo.event.tumu_crisis_beijing_1450.title,Die Tumu-Krise und Verteidigung von Peking
+owo.event.tumu_crisis_beijing_1450.description,Nach der Gefangennahme des Zhengtong-Kaisers durch die Oiraten bei Tumu rückten die Mongolen vor die Tore Pekings vor. Kriegsminister Yu Qian krönte den Jingtai-Kaiser und verteidigte die Hauptstadt mit Kanonen und Feuerlanzen erfolgreich gegen die Belagerung.
+owo.event.tumu_crisis_beijing_1450.option_1,Peking unter Yu Qian verteidigen; keinen Fußbreit weichen!
+owo.event.tumu_crisis_beijing_1450.option_2,Silber und Seide bieten, um einen Waffenstillstand zu erkaufen.
+owo.event.rise_of_tawantinsuyu_1450.title,Pachacuti und der Aufstieg von Tawantinsuyu
+owo.event.rise_of_tawantinsuyu_1450.description,Nach der Abwehr der Chanca gründete Sapa Inka Pachacuti Yupanqui das Reich Tawantinsuyu. Er baute Cusco mit monumentalen Steinbauten aus und marschierte aus, um die Anden unter dem Sonnengott Inti zu vereinen.
+owo.event.rise_of_tawantinsuyu_1450.option_1,Tawantinsuyu ausrufen und die Anden erobern!
+owo.event.rise_of_tawantinsuyu_1450.option_2,Das Heilige Tal stärken und den Coricancha-Tempel bereichern.
+owo.event.songhai_ascendancy_1464.title,Sunni Ali und der Aufstieg des Songhai-Reiches
+owo.event.songhai_ascendancy_1464.description,1464 bestieg Sunni Ali Ber den Thron von Gao und machte Songhai zur führenden Macht Westafrikas. Mit einer Kriegsflotte auf dem Niger und Reitertruppen eroberte er Timbuktu und die Transsahara-Handelsrouten.
+owo.event.songhai_ascendancy_1464.option_1,Die Flussflotte entsenden und den Sahel beherrschen!
+owo.event.songhai_ascendancy_1464.option_2,Gao schützen und friedlichen Handel am Niger treiben.

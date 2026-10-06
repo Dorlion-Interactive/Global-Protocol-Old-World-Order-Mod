@@ -746,3 +746,15 @@ owo.task.mam_custodian_holy_sanctuaries.treasury,Hold 1,000 fl. in the Cairo cit
 owo.goal.mam_syrian_bulwark,Fortify the Syrian Frontier
 owo.goal.mam_syrian_bulwark.desc,Maintain a formidable cavalry army in Aleppo and Damascus to deter northern aggression.
 owo.task.mam_syrian_bulwark.army,Muster 30,000 Mamluk warriors
+owo.event.tumu_crisis_beijing_1450.title,The Tumu Crisis and Defense of Beijing
+owo.event.tumu_crisis_beijing_1450.description,Following the disastrous capture of Emperor Zhengtong by the Oirat Mongols at Tumu, the enemy host has advanced to the gates of Beijing. Minister of War Yu Qian has enthroned the Jingtai Emperor and rallied the imperial garrison, mounting heavy artillery and fire-lances along the capital's battlements to break the northern siege.
+owo.event.tumu_crisis_beijing_1450.option_1,Rally under Yu Qian; not an inch of the capital shall yield!
+owo.event.tumu_crisis_beijing_1450.option_2,Offer silver and silks to negotiate an immediate northern truce.
+owo.event.rise_of_tawantinsuyu_1450.title,Pachacuti and the Rise of Tawantinsuyu
+owo.event.rise_of_tawantinsuyu_1450.description,Having defended Cusco against the ferocious Chanca invasion, Sapa Inca Pachacuti Yupanqui has proclaimed the founding of Tawantinsuyu—the Realm of the Four Parts. Ordering the rebuilding of Cusco with monumental stonework and terracing the Andean slopes, Pachacuti marches to unify the mountain valleys under the mantle of the Sun God Inti.
+owo.event.rise_of_tawantinsuyu_1450.option_1,Proclaim Tawantinsuyu and march across the Andes!
+owo.event.rise_of_tawantinsuyu_1450.option_2,Consolidate the Sacred Valley and enrich the Coricancha.
+owo.event.songhai_ascendancy_1464.title,Sunni Ali and the Songhai Ascendancy
+owo.event.songhai_ascendancy_1464.description,Ascending the throne of Gao in 1464, Sunni Ali Ber has transformed the Songhai kingdom into an unstoppable imperial force. Commanding an armada of war canoes along the Niger River and swift armored cavalry across the Sahel, Sunni Ali prepares to liberate Timbuktu from the Tuareg and seize dominion over the lucrative trans-Saharan trade routes.
+owo.event.songhai_ascendancy_1464.option_1,Launch the Niger river fleet and claim the Sahel!
+owo.event.songhai_ascendancy_1464.option_2,Guard the gates of Gao and trade peacefully along the river.
