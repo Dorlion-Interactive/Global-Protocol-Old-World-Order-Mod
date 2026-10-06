@@ -892,3 +892,40 @@ owo.event.medici_fugger_banking_accord_1460.title,Renaissance Merchant Banking a
 owo.event.medici_fugger_banking_accord_1460.description,The Medici Banco in Florence and early Fugger mining financiers pioneer double-entry bookkeeping, bills of exchange (lettere di cambio), and cross-border currency credits, weaving an intricate financial web across Europe.
 owo.event.medici_fugger_banking_accord_1460.option_1,Expand Transnational Credit and Humanist Patronage
 owo.event.medici_fugger_banking_accord_1460.option_2,Invest Capital into City-State Mercenaries
+owo.goal.bur_grand_dukes_of_the_west,The Grand Dukes of the West
+owo.goal.bur_grand_dukes_of_the_west.desc,Connect the rich Flemish textile marts of Ghent, Bruges, and Antwerp with the ducal seat of Dijon.
+owo.task.bur_grand_dukes_of_the_west.treasury,Accumulate 1,200 fl. in the ducal treasury
+owo.goal.bur_lotharingian_crown,The Crown of Lotharingia
+owo.goal.bur_lotharingian_crown.desc,Establish modern Ordonnance companies and consolidate the Low Countries into a sovereign Burgundian kingdom.
+owo.task.bur_lotharingian_crown.army,Muster an army of 25,000 men-at-arms and crossbowmen
+owo.goal.swd_break_kalmar_union,Sever the Kalmar Union
+owo.goal.swd_break_kalmar_union.desc,Defend Swedish sovereign liberties and defy Danish Oldenburg hegemony over Stockholm and the Baltic.
+owo.task.swd_break_kalmar_union.army,Mobilize 15,000 Swedish yeomen and town militia
+owo.goal.swd_bergslagen_iron_and_copper,Falu Copper & Bergslagen Iron
+owo.goal.swd_bergslagen_iron_and_copper.desc,Expand the great copper mine at Falun and timber exports across the Baltic Sea.
+owo.task.swd_bergslagen_iron_and_copper.treasury,Amass 600 fl. in the royal treasury
+owo.goal.azt_flower_wars_tribute,The Flower Wars
+owo.goal.azt_flower_wars_tribute.desc,Wage ritual warfare across the Valley of Mexico to secure captives and assert Triple Alliance supremacy.
+owo.task.azt_flower_wars_tribute.army,Muster 30,000 warrior retinues
+owo.goal.azt_tenochtitlan_chinampas,The Chinampas of Tenochtitlan
+owo.goal.azt_tenochtitlan_chinampas.desc,Construct floating garden causeways and expand the great market of Tlatelolco.
+owo.task.azt_tenochtitlan_chinampas.treasury,Gather 800 fl. worth of tribute in the imperial treasury
+owo.goal.maj_oath_of_palapa,The Oath of Palapa
+owo.goal.maj_oath_of_palapa.desc,Reassert maritime authority over the spice routes of Java, Sumatra, and the Moluccas.
+owo.task.maj_oath_of_palapa.fleet,Muster 15,000 maritime warriors and naval crews
+owo.goal.maj_trowulan_sanctuary,Splendour of Trowulan
+owo.goal.maj_trowulan_sanctuary.desc,Restore the monumental brick gates, canals, and royal water reservoirs of the imperial capital.
+owo.task.maj_trowulan_sanctuary.treasury,Amass 700 fl. in the imperial treasury
+owo.goal.sct_auld_alliance_bastion,The Auld Alliance Bastion
+owo.goal.sct_auld_alliance_bastion.desc,Strengthen mutual defense treaties with France and fortify the border marches against English incursions.
+owo.task.sct_auld_alliance_bastion.relations,Maintain warm relations (+60) with the Kingdom of France
+owo.task.sct_auld_alliance_bastion.army,Maintain a border watch of 15,000 Scottish pikes
+owo.goal.sct_st_andrews_scholars,The Scholars of St Andrews
+owo.goal.sct_st_andrews_scholars.desc,Endow collegiate faculties and royal libraries at the University of St Andrews.
+owo.task.sct_st_andrews_scholars.treasury,Hold 500 fl. in the royal treasury
+owo.goal.son_niger_river_imperium,The Niger Flotilla Imperium
+owo.goal.son_niger_river_imperium.desc,Build war canoes along the Niger bend to link the commercial hubs of Gao, Timbuktu, and Jenne.
+owo.task.son_niger_river_imperium.army,Muster an imperial army of 25,000 warriors
+owo.goal.son_sankore_learning,The Madrasahs of Timbuktu
+owo.goal.son_sankore_learning.desc,Patronize Islamic jurists, mathematicians, and bookbinders at Sankore Mosque.
+owo.task.son_sankore_learning.treasury,Store 800 fl. from gold caravans in the royal treasury

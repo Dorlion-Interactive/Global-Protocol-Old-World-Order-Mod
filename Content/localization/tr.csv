@@ -892,3 +892,40 @@ owo.event.medici_fugger_banking_accord_1460.title,Rönesans Tüccar Bankacılı�
 owo.event.medici_fugger_banking_accord_1460.description,Floransa'daki Medici Bankası ve erken dönem Fugger madencilik finansörleri; çift taraflı defter tutma, poliçeler (lettere di cambio) ve sınır ötesi kredi ağlarıyla Avrupa çapında modern bankacılığın temelini atıyor.
 owo.event.medici_fugger_banking_accord_1460.option_1,Uluslararası Krediyi ve Hümanist Sanatı Destekle
 owo.event.medici_fugger_banking_accord_1460.option_2,Bankacılık Sermayesini Paralı Askerlere Yönlendir
+owo.goal.bur_grand_dukes_of_the_west,Batı'nın Büyük Dükleri
+owo.goal.bur_grand_dukes_of_the_west.desc,Gent, Brugge ve Anvers'in zengin Flaman kumaş pazarlarını Dijon'daki dükalık makamına bağla.
+owo.task.bur_grand_dukes_of_the_west.treasury,Dükalık hazinesinde 1.200 florin biriktir
+owo.goal.bur_lotharingian_crown,Lotharingiya Tacı
+owo.goal.bur_lotharingian_crown.desc,Modern Ordonnance birlikleri kur ve Alçak Ülkeleri egemen bir Burgonya krallığında birleştir.
+owo.task.bur_lotharingian_crown.army,25.000 zırhlı süvari ve arbaletçi topla
+owo.goal.swd_break_kalmar_union,Kalmar Birliği'ni Dağıt
+owo.goal.swd_break_kalmar_union.desc,İsveç'in egemenliğini savun ve Danimarka'nın Stockholm ile Baltık üzerindeki hakimiyetine karşı dur.
+owo.task.swd_break_kalmar_union.army,15.000 İsveçli milis ve köylü savaşçı seferber et
+owo.goal.swd_bergslagen_iron_and_copper,Falu Bakırı ve Bergslagen Demiri
+owo.goal.swd_bergslagen_iron_and_copper.desc,Falun'daki büyük bakır madenini ve Baltık Denizi üzerinden kereste ihracatını genişlet.
+owo.task.swd_bergslagen_iron_and_copper.treasury,Kraliyet hazinesinde 600 florin biriktir
+owo.goal.azt_flower_wars_tribute,Çiçek Savaşları
+owo.goal.azt_flower_wars_tribute.desc,Meksika Vadisi'nde ritüel savaşlar yürüterek esirler al ve Üçlü İttifak üstünlüğünü kur.
+owo.task.azt_flower_wars_tribute.army,30.000 jaguar ve kartal savaşçısı topla
+owo.goal.azt_tenochtitlan_chinampas,Tenochtitlan Çinampaları
+owo.goal.azt_tenochtitlan_chinampas.desc,Yüzen bahçe su yolları inşa et ve büyük Tlatelolco pazarını genişlet.
+owo.task.azt_tenochtitlan_chinampas.treasury,İmparatorluk hazinesinde 800 florinlik haraç topla
+owo.goal.maj_oath_of_palapa,Palapa Yemini
+owo.goal.maj_oath_of_palapa.desc,Cava, Sumatra ve Maluku baharat yolları üzerinde deniz hakimiyetini yeniden tesis et.
+owo.task.maj_oath_of_palapa.fleet,15.000 deniz savaşçısı ve kadırga mürettebatı hazırla
+owo.goal.maj_trowulan_sanctuary,Trowulan İhtişamı
+owo.goal.maj_trowulan_sanctuary.desc,İmparatorluk başkentinin anıtsal tuğla kapılarını, kanallarını ve su havuzlarını onar.
+owo.task.maj_trowulan_sanctuary.treasury,İmparatorluk hazinesinde 700 florin biriktir
+owo.goal.sct_auld_alliance_bastion,Kadim İttifak Kalesi
+owo.goal.sct_auld_alliance_bastion.desc,Fransa ile karşılıklı savunma anlaşmalarını güçlendir ve İngiliz akınlarına karşı sınırları tahkim et.
+owo.task.sct_auld_alliance_bastion.relations,Fransa Krallığı ile sıcak ilişkileri (+60) koru
+owo.task.sct_auld_alliance_bastion.army,Sınırlarda 15.000 İskoç kargıcısı konuşlandır
+owo.goal.sct_st_andrews_scholars,St Andrews Alimleri
+owo.goal.sct_st_andrews_scholars.desc,St Andrews Üniversitesi'nde kolej fakülteleri ve kraliyet kütüphaneleri kur.
+owo.task.sct_st_andrews_scholars.treasury,Kraliyet hazinesinde 500 florin tut
+owo.goal.son_niger_river_imperium,Nijer Nehri Donanma Hakimiyeti
+owo.goal.son_niger_river_imperium.desc,Nijer kıvrımı boyunca Gao, Timbuktu ve Jenne ticaret merkezlerini bağlayan savaş kanoları inşa et.
+owo.task.son_niger_river_imperium.army,25.000 savaşçıdan oluşan bir imparatorluk ordusu topla
+owo.goal.son_sankore_learning,Timbuktu Medreseleri
+owo.goal.son_sankore_learning.desc,Sankore Camii'ndeki İslam hukukçularını, matematikçilerini ve yazmalarını himaye et.
+owo.task.son_sankore_learning.treasury,Altın kervanlarından elde edilen 800 florini hazinede biriktir

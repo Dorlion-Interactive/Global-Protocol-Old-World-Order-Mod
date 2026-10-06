@@ -1562,5 +1562,359 @@
         ]
       }
     ]
+  },
+  "BUR": {
+    "goals": [
+      {
+        "id": "bur_grand_dukes_of_the_west",
+        "title": "The Grand Dukes of the West",
+        "title_key": "owo.goal.bur_grand_dukes_of_the_west",
+        "description": "Connect the rich Flemish textile marts of Ghent, Bruges, and Antwerp with the ducal seat of Dijon.",
+        "description_key": "owo.goal.bur_grand_dukes_of_the_west.desc",
+        "type": "economic",
+        "priority": "starter",
+        "ai_weight": 0.85,
+        "on_complete_effects": {
+          "prestige": 35,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.bur_grand_dukes_of_the_west.treasury",
+            "title": "Accumulate 1,200 fl. in the ducal treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1200"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "bur_lotharingian_crown",
+        "title": "The Crown of Lotharingia",
+        "title_key": "owo.goal.bur_lotharingian_crown",
+        "description": "Establish modern Ordonnance companies and consolidate the Low Countries into a sovereign Burgundian kingdom.",
+        "description_key": "owo.goal.bur_lotharingian_crown.desc",
+        "type": "unification",
+        "priority": "primary",
+        "ai_weight": 0.8,
+        "on_complete_effects": {
+          "prestige": 45,
+          "military_modifier": 10
+        },
+        "tasks": [
+          {
+            "id": "army",
+            "title_key": "owo.task.bur_lotharingian_crown.army",
+            "title": "Muster an army of 25,000 men-at-arms and crossbowmen",
+            "condition": {
+              "type": "military_units_above"
+            },
+            "required_count": 25000
+          }
+        ]
+      }
+    ]
+  },
+  "SWD": {
+    "goals": [
+      {
+        "id": "swd_break_kalmar_union",
+        "title": "Sever the Kalmar Union",
+        "title_key": "owo.goal.swd_break_kalmar_union",
+        "description": "Defend Swedish sovereign liberties and defy Danish Oldenburg hegemony over Stockholm and the Baltic.",
+        "description_key": "owo.goal.swd_break_kalmar_union.desc",
+        "type": "defense",
+        "priority": "primary",
+        "ai_weight": 0.85,
+        "target_countries": [
+          "DAN"
+        ],
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 10
+        },
+        "tasks": [
+          {
+            "id": "army",
+            "title_key": "owo.task.swd_break_kalmar_union.army",
+            "title": "Mobilize 15,000 Swedish yeomen and town militia",
+            "condition": {
+              "type": "military_units_above"
+            },
+            "required_count": 15000
+          }
+        ]
+      },
+      {
+        "id": "swd_bergslagen_iron_and_copper",
+        "title": "Falu Copper & Bergslagen Iron",
+        "title_key": "owo.goal.swd_bergslagen_iron_and_copper",
+        "description": "Expand the great copper mine at Falun and timber exports across the Baltic Sea.",
+        "description_key": "owo.goal.swd_bergslagen_iron_and_copper.desc",
+        "type": "economic",
+        "priority": "starter",
+        "ai_weight": 0.8,
+        "on_complete_effects": {
+          "prestige": 25,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.swd_bergslagen_iron_and_copper.treasury",
+            "title": "Amass 600 fl. in the royal treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "600"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "AZT": {
+    "goals": [
+      {
+        "id": "azt_flower_wars_tribute",
+        "title": "The Flower Wars",
+        "title_key": "owo.goal.azt_flower_wars_tribute",
+        "description": "Wage ritual warfare across the Valley of Mexico to secure captives and assert Triple Alliance supremacy.",
+        "description_key": "owo.goal.azt_flower_wars_tribute.desc",
+        "type": "expansion",
+        "priority": "primary",
+        "ai_weight": 0.9,
+        "on_complete_effects": {
+          "prestige": 50,
+          "military_modifier": 15
+        },
+        "tasks": [
+          {
+            "id": "army",
+            "title_key": "owo.task.azt_flower_wars_tribute.army",
+            "title": "Muster 30,000 warrior retinues",
+            "condition": {
+              "type": "military_units_above"
+            },
+            "required_count": 30000
+          }
+        ]
+      },
+      {
+        "id": "azt_tenochtitlan_chinampas",
+        "title": "The Chinampas of Tenochtitlan",
+        "title_key": "owo.goal.azt_tenochtitlan_chinampas",
+        "description": "Construct floating garden causeways and expand the great market of Tlatelolco.",
+        "description_key": "owo.goal.azt_tenochtitlan_chinampas.desc",
+        "type": "economic",
+        "priority": "starter",
+        "ai_weight": 0.8,
+        "on_complete_effects": {
+          "prestige": 30,
+          "stability": 10
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.azt_tenochtitlan_chinampas.treasury",
+            "title": "Gather 800 fl. worth of tribute in the imperial treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "800"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "MAJ": {
+    "goals": [
+      {
+        "id": "maj_oath_of_palapa",
+        "title": "The Oath of Palapa",
+        "title_key": "owo.goal.maj_oath_of_palapa",
+        "description": "Reassert maritime authority over the spice routes of Java, Sumatra, and the Moluccas.",
+        "description_key": "owo.goal.maj_oath_of_palapa.desc",
+        "type": "territorial",
+        "priority": "primary",
+        "ai_weight": 0.85,
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "fleet",
+            "title_key": "owo.task.maj_oath_of_palapa.fleet",
+            "title": "Muster 15,000 maritime warriors and naval crews",
+            "condition": {
+              "type": "military_units_above"
+            },
+            "required_count": 15000
+          }
+        ]
+      },
+      {
+        "id": "maj_trowulan_sanctuary",
+        "title": "Splendour of Trowulan",
+        "title_key": "owo.goal.maj_trowulan_sanctuary",
+        "description": "Restore the monumental brick gates, canals, and royal water reservoirs of the imperial capital.",
+        "description_key": "owo.goal.maj_trowulan_sanctuary.desc",
+        "type": "economic",
+        "priority": "starter",
+        "ai_weight": 0.75,
+        "on_complete_effects": {
+          "prestige": 30,
+          "stability": 10
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.maj_trowulan_sanctuary.treasury",
+            "title": "Amass 700 fl. in the imperial treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "700"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "SCT": {
+    "goals": [
+      {
+        "id": "sct_auld_alliance_bastion",
+        "title": "The Auld Alliance Bastion",
+        "title_key": "owo.goal.sct_auld_alliance_bastion",
+        "description": "Strengthen mutual defense treaties with France and fortify the border marches against English incursions.",
+        "description_key": "owo.goal.sct_auld_alliance_bastion.desc",
+        "type": "diplomatic",
+        "priority": "primary",
+        "ai_weight": 0.85,
+        "target_countries": [
+          "FRA"
+        ],
+        "on_complete_effects": {
+          "prestige": 35,
+          "stability": 10
+        },
+        "tasks": [
+          {
+            "id": "relations",
+            "title_key": "owo.task.sct_auld_alliance_bastion.relations",
+            "title": "Maintain warm relations (+60) with the Kingdom of France",
+            "condition": {
+              "type": "improve_relations",
+              "params": {
+                "target_iso3": "FRA",
+                "min_value": "60"
+              }
+            }
+          },
+          {
+            "id": "army",
+            "title_key": "owo.task.sct_auld_alliance_bastion.army",
+            "title": "Maintain a border watch of 15,000 Scottish pikes",
+            "condition": {
+              "type": "military_units_above"
+            },
+            "required_count": 15000
+          }
+        ]
+      },
+      {
+        "id": "sct_st_andrews_scholars",
+        "title": "The Scholars of St Andrews",
+        "title_key": "owo.goal.sct_st_andrews_scholars",
+        "description": "Endow collegiate faculties and royal libraries at the University of St Andrews.",
+        "description_key": "owo.goal.sct_st_andrews_scholars.desc",
+        "type": "prestige",
+        "priority": "starter",
+        "ai_weight": 0.75,
+        "on_complete_effects": {
+          "prestige": 30,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.sct_st_andrews_scholars.treasury",
+            "title": "Hold 500 fl. in the royal treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "500"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "SON": {
+    "goals": [
+      {
+        "id": "son_niger_river_imperium",
+        "title": "The Niger Flotilla Imperium",
+        "title_key": "owo.goal.son_niger_river_imperium",
+        "description": "Build war canoes along the Niger bend to link the commercial hubs of Gao, Timbuktu, and Jenne.",
+        "description_key": "owo.goal.son_niger_river_imperium.desc",
+        "type": "territorial",
+        "priority": "primary",
+        "ai_weight": 0.9,
+        "on_complete_effects": {
+          "prestige": 45,
+          "military_modifier": 10
+        },
+        "tasks": [
+          {
+            "id": "army",
+            "title_key": "owo.task.son_niger_river_imperium.army",
+            "title": "Muster an imperial army of 25,000 warriors",
+            "condition": {
+              "type": "military_units_above"
+            },
+            "required_count": 25000
+          }
+        ]
+      },
+      {
+        "id": "son_sankore_learning",
+        "title": "The Madrasahs of Timbuktu",
+        "title_key": "owo.goal.son_sankore_learning",
+        "description": "Patronize Islamic jurists, mathematicians, and bookbinders at Sankore Mosque.",
+        "description_key": "owo.goal.son_sankore_learning.desc",
+        "type": "prestige",
+        "priority": "starter",
+        "ai_weight": 0.8,
+        "on_complete_effects": {
+          "prestige": 35,
+          "stability": 10
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.son_sankore_learning.treasury",
+            "title": "Store 800 fl. from gold caravans in the royal treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "800"
+              }
+            }
+          }
+        ]
+      }
+    ]
   }
 }
