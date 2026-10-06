@@ -27,6 +27,11 @@
             "value": 500
           },
           {
+            "type": "annex_province",
+            "province_id": 2276,
+            "target": "OTT"
+          },
+          {
             "type": "set_flag",
             "flag_name": "constantinople_conquered"
           }

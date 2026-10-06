@@ -6,6 +6,7 @@
     "startMonth": 1,
     "startDay": 1,
     "gdpScale": 0.001,
+    "unownedProvincePopulationScale": 0.035,
     "economicEraLabel": "Florins",
     "currencySymbol": "fl.",
     "nationalGoalsFile": "national_goals.json",

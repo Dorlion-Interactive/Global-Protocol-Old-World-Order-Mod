@@ -11,12 +11,15 @@ let warsObserved = 0;
 let techsObserved = 0;
 let buildingsObserved = 0;
 let eventsObserved = 0;
+let provincesCapturedObserved = 0;
+let alliancesObserved = 0;
+let tradeAgreementsObserved = 0;
 let lastYear = 0;
 let lastMonth = 0;
 let startupShown = false;
 
 export function on_init(): void {
-    log("OWO init (AS)");
+    log("OWO init (AS ABI 3)");
 }
 
 export function on_game_tick(tick: i32, year: i32, month: i32): void {
@@ -43,6 +46,26 @@ export function on_building_completed(provinceId: i32, buildingDefIndex: i32): v
 
 export function on_event_fired(countryIndex: i32, eventIndex: i32): void {
     eventsObserved++;
+}
+
+export function on_province_captured(provinceId: i32, newOwner: i32, oldOwner: i32): void {
+    provincesCapturedObserved++;
+}
+
+export function on_alliance_formed(country1: i32, country2: i32): void {
+    alliancesObserved++;
+}
+
+export function on_alliance_broken(country1: i32, country2: i32): void {
+    // alliance dissolved
+}
+
+export function on_economy_tick(year: i32, month: i32): void {
+    // monthly economy tick
+}
+
+export function on_trade_agreement_signed(country1: i32, country2: i32): void {
+    tradeAgreementsObserved++;
 }
 
 export function on_ui_action(
@@ -77,7 +100,10 @@ function buildArchiveBody(): string {
         + "Observed wars: " + warsObserved.toString() + "\n"
         + "Observed technologies: " + techsObserved.toString() + "\n"
         + "Observed building completions: " + buildingsObserved.toString() + "\n"
-        + "Observed scripted events: " + eventsObserved.toString() + "\n\n"
+        + "Observed scripted events: " + eventsObserved.toString() + "\n"
+        + "Observed territorial changes: " + provincesCapturedObserved.toString() + "\n"
+        + "Observed alliances formed: " + alliancesObserved.toString() + "\n"
+        + "Observed trade agreements: " + tradeAgreementsObserved.toString() + "\n\n"
         + "Model your strategy around legitimacy, supply corridors, and defensible terrain.";
 }
 

@@ -10,7 +10,7 @@
   "description": "A historical scenario set in 1450 AD. Play as one of 137 nations from the late medieval period, commanding historically accurate armies, fleets, governments, and ambitions. Featuring the Ottoman Empire, Ming Dynasty, Portugal, France, England, Muscovy, the Timurids, and more.",
   "scenarioFolder": "scenario",
   "enabledByDefault": false,
-  "wasmAbiVersion": 2,
+  "wasmAbiVersion": 3,
   "runtimePolicy": "coexist",
   "enableComponentRuntime": true,
   "permissions": ["InjectUI", "FireTriggers"],

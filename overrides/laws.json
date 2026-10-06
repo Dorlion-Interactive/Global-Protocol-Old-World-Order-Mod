@@ -1,0 +1,215 @@
+{
+  "country_overrides": {
+    "OTT": {
+      "conscription": "selective",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press",
+      "tax_regime": "balanced_tax",
+      "labor_law": "corporatist_unions"
+    },
+    "PAP": {
+      "conscription": "militia_system",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press",
+      "tax_regime": "flat_tax"
+    },
+    "TEU": {
+      "conscription": "militia_system",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press",
+      "tax_regime": "flat_tax"
+    },
+    "LIV": {
+      "conscription": "militia_system",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press",
+      "tax_regime": "flat_tax"
+    },
+    "KNI": {
+      "conscription": "militia_system",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press",
+      "tax_regime": "flat_tax"
+    },
+    "MAM": {
+      "conscription": "selective",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press",
+      "tax_regime": "balanced_tax"
+    },
+    "GRN": {
+      "conscription": "militia_system",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press"
+    },
+    "AZT": {
+      "conscription": "mandatory",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press"
+    },
+    "INC": {
+      "conscription": "mandatory",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press"
+    },
+    "FRA": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "flat_tax",
+      "labor_law": "corporatist_unions"
+    },
+    "ENG": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "flat_tax",
+      "labor_law": "corporatist_unions"
+    },
+    "CAS": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "flat_tax",
+      "labor_law": "corporatist_unions"
+    },
+    "ARA": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "flat_tax"
+    },
+    "PRT": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "balanced_tax"
+    },
+    "BUR": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "balanced_tax",
+      "labor_law": "corporatist_unions"
+    },
+    "HAB": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "flat_tax"
+    },
+    "POL": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "flat_tax"
+    },
+    "HUN": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "flat_tax"
+    },
+    "MVY": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "state_press",
+      "tax_regime": "flat_tax"
+    },
+    "BYZ": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "balanced_tax"
+    },
+    "CHE": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "flat_tax"
+    },
+    "VNC": {
+      "conscription": "volunteer",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "balanced_tax",
+      "labor_law": "corporatist_unions"
+    },
+    "GEN": {
+      "conscription": "volunteer",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "balanced_tax",
+      "labor_law": "corporatist_unions"
+    },
+    "FLR": {
+      "conscription": "volunteer",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "balanced_tax",
+      "labor_law": "corporatist_unions"
+    },
+    "MYN": {
+      "conscription": "mandatory",
+      "religion_state": "religious_influence",
+      "press_freedom": "state_press",
+      "tax_regime": "flat_tax",
+      "immigration": "closed_borders"
+    },
+    "JOS": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "state_press",
+      "tax_regime": "flat_tax"
+    },
+    "MRC": {
+      "conscription": "mandatory",
+      "religion_state": "religious_influence",
+      "press_freedom": "state_press",
+      "tax_regime": "flat_tax"
+    },
+    "TIM": {
+      "conscription": "mandatory",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press",
+      "tax_regime": "flat_tax"
+    },
+    "DEL": {
+      "conscription": "selective",
+      "religion_state": "religious_law",
+      "press_freedom": "state_press",
+      "tax_regime": "flat_tax"
+    },
+    "VIJ": {
+      "conscription": "militia_system",
+      "religion_state": "religious_influence",
+      "press_freedom": "regulated_press",
+      "tax_regime": "flat_tax"
+    },
+    "STE": {
+      "conscription": "mandatory",
+      "religion_state": "religious_influence",
+      "tax_regime": "low_tax"
+    },
+    "KZN": {
+      "conscription": "mandatory",
+      "religion_state": "religious_law",
+      "tax_regime": "flat_tax"
+    },
+    "KRM": {
+      "conscription": "mandatory",
+      "religion_state": "religious_law",
+      "tax_regime": "flat_tax"
+    },
+    "UZB": {
+      "conscription": "mandatory",
+      "religion_state": "religious_law",
+      "tax_regime": "flat_tax"
+    },
+    "MGL": {
+      "conscription": "mandatory",
+      "religion_state": "religious_influence",
+      "tax_regime": "low_tax"
+    }
+  }
+}

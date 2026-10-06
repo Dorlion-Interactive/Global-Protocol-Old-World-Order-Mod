@@ -41,6 +41,23 @@ namespace GlobalProtocol.Core.Mods
         /// <summary>Fired when a mod UI button is clicked. Parameters: hookName, modId.</summary>
         public static event Action<string, string>? OnUiAction;
 
+        // ─── Extended hooks (ABI 3+) ───────────────────────────────────────────
+
+        /// <summary>Fired once per province whose owner changes through a peace deal or annexation effect. Parameters: provinceId, newOwnerCountryIndex, oldOwnerCountryIndex.</summary>
+        public static event Action<int, int, int>? OnProvinceCaptured;
+
+        /// <summary>Fired when two countries form an alliance. Parameters: proposerIndex, partnerIndex.</summary>
+        public static event Action<int, int>? OnAllianceFormed;
+
+        /// <summary>Fired when an alliance is dissolved. Parameters: country1Index (breaker), country2Index.</summary>
+        public static event Action<int, int>? OnAllianceBroken;
+
+        /// <summary>Fired each monthly economy tick. Parameters: year, month.</summary>
+        public static event Action<int, int>? OnEconomyTick;
+
+        /// <summary>Fired when a bilateral trade agreement is signed. Parameters: country1Index, country2Index.</summary>
+        public static event Action<int, int>? OnTradeAgreementSigned;
+
         // ─── Inbound calls (mod → game) ────────────────────────────────────────
 
         /// <summary>

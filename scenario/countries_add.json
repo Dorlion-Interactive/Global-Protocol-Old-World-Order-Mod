@@ -30,7 +30,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Turkish",
+      "primaryCulture": "Ottoman",
+      "ethnicHomogeneity": 0.65
     },
     {
       "iso3": "FRA",
@@ -58,7 +62,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "THE REALM"
+      "homelandTerm": "THE REALM",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "French",
+      "primaryCulture": "French",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "PRT",
@@ -87,7 +95,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "THE REALM"
+      "homelandTerm": "THE REALM",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Portuguese",
+      "primaryCulture": "Portuguese",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "CHE",
@@ -112,7 +124,11 @@
       "leaderTitle": "Diet",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "THE CONFEDERATION"
+      "homelandTerm": "THE CONFEDERATION",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Swiss",
+      "primaryCulture": "Swiss",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "POL",
@@ -139,7 +155,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE HOMELAND"
+      "homelandTerm": "THE HOMELAND",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Polish",
+      "primaryCulture": "Polish",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "HUN",
@@ -166,7 +186,11 @@
       "leaderTitle": "Regent",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE REALM"
+      "homelandTerm": "THE REALM",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Hungarian",
+      "primaryCulture": "Hungarian",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "MYN",
@@ -196,7 +220,11 @@
       "leaderTitle": "Emperor",
       "continent": "Asia",
       "region": "EastAsia",
-      "homelandTerm": "THE MIDDLE KINGDOM"
+      "homelandTerm": "THE MIDDLE KINGDOM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Han",
+      "primaryCulture": "Chinese",
+      "ethnicHomogeneity": 0.95
     },
     {
       "iso3": "ENG",
@@ -222,7 +250,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "NorthernEurope",
-      "homelandTerm": "BRITAIN"
+      "homelandTerm": "BRITAIN",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "English",
+      "primaryCulture": "English",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "CAS",
@@ -249,7 +281,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "LA PATRIA"
+      "homelandTerm": "LA PATRIA",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Castilian",
+      "primaryCulture": "Castilian",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "ARA",
@@ -276,7 +312,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "LA PATRIA"
+      "homelandTerm": "LA PATRIA",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Aragonese",
+      "primaryCulture": "Aragonese",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "MVY",
@@ -304,7 +344,11 @@
       "leaderTitle": "Grand Prince",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "MOTHERLAND"
+      "homelandTerm": "MOTHERLAND",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Russian",
+      "primaryCulture": "Muscovite",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "VNC",
@@ -332,7 +376,11 @@
       "leaderTitle": "Doge",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "LA SERENISSIMA"
+      "homelandTerm": "LA SERENISSIMA",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Venetian",
+      "primaryCulture": "Venetian",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "MAM",
@@ -359,7 +407,11 @@
       "leaderTitle": "Sultan",
       "continent": "Africa",
       "region": "NorthernAfrica",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Arab",
+      "primaryCulture": "Mamluk",
+      "ethnicHomogeneity": 0.75
     },
     {
       "iso3": "TIM",
@@ -386,7 +438,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "CentralAsia",
-      "homelandTerm": "THE REALM"
+      "homelandTerm": "THE REALM",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Turco-Mongol",
+      "primaryCulture": "Persianate",
+      "ethnicHomogeneity": 0.6
     },
     {
       "iso3": "JOS",
@@ -413,7 +469,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "EastAsia",
-      "homelandTerm": "HANGUK"
+      "homelandTerm": "HANGUK",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Korean",
+      "primaryCulture": "Joseon",
+      "ethnicHomogeneity": 0.95
     },
     {
       "iso3": "VIJ",
@@ -441,7 +501,11 @@
       "leaderTitle": "Emperor",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "BHARAT"
+      "homelandTerm": "BHARAT",
+      "dominantReligion": "Hinduism",
+      "dominantEthnicity": "Kannada",
+      "primaryCulture": "Vijayanagara",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "AZT",
@@ -466,7 +530,11 @@
       "leaderTitle": "Emperor",
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
-      "homelandTerm": "THE REALM"
+      "homelandTerm": "THE REALM",
+      "dominantReligion": "Mesoamerican",
+      "dominantEthnicity": "Nahua",
+      "primaryCulture": "Aztec",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "INC",
@@ -491,7 +559,11 @@
       "leaderTitle": "Sapa Inca",
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
-      "homelandTerm": "TAWANTINSUYU"
+      "homelandTerm": "TAWANTINSUYU",
+      "dominantReligion": "Andean",
+      "dominantEthnicity": "Quechua",
+      "primaryCulture": "Inca",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "BUR",
@@ -519,7 +591,11 @@
       "leaderTitle": "Duke",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "LA PATRIE"
+      "homelandTerm": "LA PATRIE",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Burgundian",
+      "primaryCulture": "Burgundian",
+      "ethnicHomogeneity": 0.75
     },
     {
       "iso3": "PAP",
@@ -545,7 +621,11 @@
       "leaderTitle": "Pope",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "THE HOLY SEE"
+      "homelandTerm": "THE HOLY SEE",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Italian",
+      "primaryCulture": "Roman",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "NAP",
@@ -571,7 +651,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "LA PATRIA"
+      "homelandTerm": "LA PATRIA",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Neapolitan",
+      "primaryCulture": "Neapolitan",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "SCT",
@@ -597,7 +681,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "NorthernEurope",
-      "homelandTerm": "THE HOMELAND"
+      "homelandTerm": "THE HOMELAND",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Scottish",
+      "primaryCulture": "Scottish",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "HAB",
@@ -623,7 +711,11 @@
       "leaderTitle": "Duke",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "FATHERLAND"
+      "homelandTerm": "FATHERLAND",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "German",
+      "primaryCulture": "Austrian",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "BOH",
@@ -646,7 +738,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Czech",
+      "primaryCulture": "Bohemian",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "TEU",
@@ -672,7 +768,11 @@
       "leaderTitle": "Grand Master",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE ORDER"
+      "homelandTerm": "THE ORDER",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "German",
+      "primaryCulture": "Teutonic",
+      "ethnicHomogeneity": 0.7
     },
     {
       "iso3": "DAN",
@@ -698,7 +798,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "NorthernEurope",
-      "homelandTerm": "THE HOMELAND"
+      "homelandTerm": "THE HOMELAND",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Danish",
+      "primaryCulture": "Danish",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "SWD",
@@ -724,7 +828,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "NorthernEurope",
-      "homelandTerm": "THE HOMELAND"
+      "homelandTerm": "THE HOMELAND",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Swedish",
+      "primaryCulture": "Swedish",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "NVD",
@@ -750,7 +858,11 @@
       "leaderTitle": "Mayor",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE REPUBLIC"
+      "homelandTerm": "THE REPUBLIC",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Russian",
+      "primaryCulture": "Novgorodian",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "GEN",
@@ -776,7 +888,11 @@
       "leaderTitle": "Doge",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "LA SUPERBA"
+      "homelandTerm": "LA SUPERBA",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Genoese",
+      "primaryCulture": "Genoese",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "MIL",
@@ -803,7 +919,11 @@
       "leaderTitle": "Duke",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "THE DUCHY"
+      "homelandTerm": "THE DUCHY",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Lombard",
+      "primaryCulture": "Lombard",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "BYZ",
@@ -830,7 +950,11 @@
       "leaderTitle": "Emperor",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "THE EMPIRE"
+      "homelandTerm": "THE EMPIRE",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Greek",
+      "primaryCulture": "Byzantine",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "WAL",
@@ -856,7 +980,11 @@
       "leaderTitle": "Prince",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE PRINCIPALITY"
+      "homelandTerm": "THE PRINCIPALITY",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Romanian",
+      "primaryCulture": "Wallachian",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "MOL",
@@ -879,7 +1007,11 @@
       "leaderTitle": "Prince",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE PRINCIPALITY"
+      "homelandTerm": "THE PRINCIPALITY",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Romanian",
+      "primaryCulture": "Moldavian",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "LTH",
@@ -905,7 +1037,11 @@
       "leaderTitle": "Grand Duke",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE HOMELAND"
+      "homelandTerm": "THE HOMELAND",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Lithuanian",
+      "primaryCulture": "Lithuanian",
+      "ethnicHomogeneity": 0.6
     },
     {
       "iso3": "MAL",
@@ -931,7 +1067,11 @@
       "leaderTitle": "Mansa",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE EMPIRE"
+      "homelandTerm": "THE EMPIRE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Mandinka",
+      "primaryCulture": "Mandinka",
+      "ethnicHomogeneity": 0.7
     },
     {
       "iso3": "SON",
@@ -954,7 +1094,11 @@
       "leaderTitle": "Emperor",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE EMPIRE"
+      "homelandTerm": "THE EMPIRE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Songhai",
+      "primaryCulture": "Songhai",
+      "ethnicHomogeneity": 0.7
     },
     {
       "iso3": "ABY",
@@ -980,7 +1124,11 @@
       "leaderTitle": "Emperor",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "ETHIOPIA"
+      "homelandTerm": "ETHIOPIA",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Amhara",
+      "primaryCulture": "Ethiopian",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "BNK",
@@ -1005,7 +1153,11 @@
       "leaderTitle": "King",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Edo",
+      "primaryCulture": "Benin",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "ZIM",
@@ -1030,7 +1182,11 @@
       "leaderTitle": "King",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Shona",
+      "primaryCulture": "Shona",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "AKK",
@@ -1053,7 +1209,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE CONFEDERATION"
+      "homelandTerm": "THE CONFEDERATION",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Turkoman",
+      "primaryCulture": "Turkoman",
+      "ethnicHomogeneity": 0.75
     },
     {
       "iso3": "DEL",
@@ -1080,7 +1240,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Hindustani",
+      "primaryCulture": "Indo-Muslim",
+      "ethnicHomogeneity": 0.5
     },
     {
       "iso3": "MAJ",
@@ -1107,7 +1271,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE EMPIRE"
+      "homelandTerm": "THE EMPIRE",
+      "dominantReligion": "Hinduism",
+      "dominantEthnicity": "Javanese",
+      "primaryCulture": "Javanese",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "AYU",
@@ -1134,7 +1302,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Thai",
+      "primaryCulture": "Siamese",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "MRC",
@@ -1162,7 +1334,11 @@
       "leaderTitle": "Shogun",
       "continent": "Asia",
       "region": "EastAsia",
-      "homelandTerm": "NIPPON"
+      "homelandTerm": "NIPPON",
+      "dominantReligion": "Shintoism",
+      "dominantEthnicity": "Japanese",
+      "primaryCulture": "Japanese",
+      "ethnicHomogeneity": 0.95
     },
     {
       "iso3": "TIB",
@@ -1185,7 +1361,11 @@
       "leaderTitle": "Dalai Lama",
       "continent": "Asia",
       "region": "EastAsia",
-      "homelandTerm": "THE PLATEAU"
+      "homelandTerm": "THE PLATEAU",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Tibetan",
+      "primaryCulture": "Tibetan",
+      "ethnicHomogeneity": 0.95
     },
     {
       "iso3": "MAY",
@@ -1210,7 +1390,11 @@
       "leaderTitle": "Chief",
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
-      "homelandTerm": "THE CONFEDERACY"
+      "homelandTerm": "THE CONFEDERACY",
+      "dominantReligion": "Mesoamerican",
+      "dominantEthnicity": "Maya",
+      "primaryCulture": "Maya",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "GRN",
@@ -1236,7 +1420,11 @@
       "leaderTitle": "Emir",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "THE EMIRATE"
+      "homelandTerm": "THE EMIRATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Andalusian",
+      "primaryCulture": "Andalusian Arab",
+      "ethnicHomogeneity": 0.75
     },
     {
       "iso3": "FLR",
@@ -1263,7 +1451,11 @@
       "leaderTitle": "Gonfaloniere",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "THE REPUBLIC"
+      "homelandTerm": "THE REPUBLIC",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Tuscan",
+      "primaryCulture": "Florentine",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "SAV",
@@ -1286,7 +1478,11 @@
       "leaderTitle": "Duke",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "THE DUCHY"
+      "homelandTerm": "THE DUCHY",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Savoyard",
+      "primaryCulture": "Savoyard",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "NAV",
@@ -1312,7 +1508,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "THE REALM"
+      "homelandTerm": "THE REALM",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Basque",
+      "primaryCulture": "Navarrese",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "SRB",
@@ -1338,7 +1538,11 @@
       "leaderTitle": "Despot",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE PRINCIPALITY"
+      "homelandTerm": "THE PRINCIPALITY",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Serbian",
+      "primaryCulture": "Serbian",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "MOR",
@@ -1364,7 +1568,11 @@
       "leaderTitle": "Sultan",
       "continent": "Africa",
       "region": "NorthernAfrica",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Moroccan",
+      "primaryCulture": "Maghrebi",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "HFS",
@@ -1390,7 +1598,11 @@
       "leaderTitle": "Sultan",
       "continent": "Africa",
       "region": "NorthernAfrica",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Tunisian",
+      "primaryCulture": "Hafsid",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "KKY",
@@ -1416,7 +1628,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE CONFEDERATION"
+      "homelandTerm": "THE CONFEDERATION",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Turkoman",
+      "primaryCulture": "Turkoman",
+      "ethnicHomogeneity": 0.75
     },
     {
       "iso3": "KZN",
@@ -1439,7 +1655,11 @@
       "leaderTitle": "Khan",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE KHANATE"
+      "homelandTerm": "THE KHANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Tatar",
+      "primaryCulture": "Kazan Tatar",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "KRM",
@@ -1465,7 +1685,11 @@
       "leaderTitle": "Khan",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE KHANATE"
+      "homelandTerm": "THE KHANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Crimean Tatar",
+      "primaryCulture": "Crimean",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "GUJ",
@@ -1492,7 +1716,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Gujarati",
+      "primaryCulture": "Gujarati",
+      "ethnicHomogeneity": 0.6
     },
     {
       "iso3": "BAH",
@@ -1519,7 +1747,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Deccani",
+      "primaryCulture": "Deccani",
+      "ethnicHomogeneity": 0.55
     },
     {
       "iso3": "BNG",
@@ -1546,7 +1778,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Bengali",
+      "primaryCulture": "Bengali",
+      "ethnicHomogeneity": 0.65
     },
     {
       "iso3": "MLC",
@@ -1572,7 +1808,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Malay",
+      "primaryCulture": "Melayu",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "DVT",
@@ -1598,7 +1838,11 @@
       "leaderTitle": "Emperor",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE REALM"
+      "homelandTerm": "THE REALM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Vietnamese",
+      "primaryCulture": "Dai Viet",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "KNG",
@@ -1623,7 +1867,11 @@
       "leaderTitle": "King",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Kongo",
+      "primaryCulture": "Kongo",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "KBR",
@@ -1649,7 +1897,11 @@
       "leaderTitle": "Sultan",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE EMPIRE"
+      "homelandTerm": "THE EMPIRE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Kanuri",
+      "primaryCulture": "Kanuri",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "RYU",
@@ -1674,7 +1926,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "EastAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Ryukyuan",
+      "primaryCulture": "Ryukyuan",
+      "ethnicHomogeneity": 0.95
     },
     {
       "iso3": "KAR",
@@ -1697,7 +1953,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Turkish",
+      "primaryCulture": "Karamanid",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "CND",
@@ -1723,7 +1983,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Turkish",
+      "primaryCulture": "Candarid",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "DUL",
@@ -1746,7 +2010,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Turkish",
+      "primaryCulture": "Dulkadirid",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "RAM",
@@ -1772,7 +2040,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Turkish",
+      "primaryCulture": "Ramazanid",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "TRE",
@@ -1798,7 +2070,11 @@
       "leaderTitle": "Emperor",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE EMPIRE"
+      "homelandTerm": "THE EMPIRE",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Greek",
+      "primaryCulture": "Pontic",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "SAX",
@@ -1825,7 +2101,11 @@
       "leaderTitle": "Elector",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "THE ELECTORATE"
+      "homelandTerm": "THE ELECTORATE",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "German",
+      "primaryCulture": "Saxon",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "BRG",
@@ -1852,7 +2132,11 @@
       "leaderTitle": "Margrave",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "THE MARGRAVIATE"
+      "homelandTerm": "THE MARGRAVIATE",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "German",
+      "primaryCulture": "Brandenburg",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "BAV",
@@ -1876,7 +2160,11 @@
       "leaderTitle": "Duke",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "THE DUCHY"
+      "homelandTerm": "THE DUCHY",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "German",
+      "primaryCulture": "Bavarian",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "PAL",
@@ -1900,7 +2188,11 @@
       "leaderTitle": "Elector",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "THE PALATINATE"
+      "homelandTerm": "THE PALATINATE",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "German",
+      "primaryCulture": "Palatine",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "COL",
@@ -1924,7 +2216,11 @@
       "leaderTitle": "Prince-Archbishop",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "THE ARCHBISHOPRIC"
+      "homelandTerm": "THE ARCHBISHOPRIC",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "German",
+      "primaryCulture": "Rhenish",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "WUR",
@@ -1948,7 +2244,11 @@
       "leaderTitle": "Count",
       "continent": "Europe",
       "region": "WesternEurope",
-      "homelandTerm": "THE COUNTY"
+      "homelandTerm": "THE COUNTY",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "German",
+      "primaryCulture": "Swabian",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "LIV",
@@ -1975,7 +2275,11 @@
       "leaderTitle": "Grand Master",
       "continent": "Europe",
       "region": "NorthernEurope",
-      "homelandTerm": "THE ORDER"
+      "homelandTerm": "THE ORDER",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "German",
+      "primaryCulture": "Livonian",
+      "ethnicHomogeneity": 0.65
     },
     {
       "iso3": "BOS",
@@ -2002,7 +2306,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Bosnian",
+      "primaryCulture": "Bosnian",
+      "ethnicHomogeneity": 0.7
     },
     {
       "iso3": "LUS",
@@ -2029,7 +2337,11 @@
       "leaderTitle": "King",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Greek",
+      "primaryCulture": "Cypriot",
+      "ethnicHomogeneity": 0.7
     },
     {
       "iso3": "TAH",
@@ -2056,7 +2368,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Arab",
+      "primaryCulture": "Yemeni",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "NBH",
@@ -2083,7 +2399,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Arab",
+      "primaryCulture": "Omani",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "HRM",
@@ -2110,7 +2430,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Persian",
+      "primaryCulture": "Hormuzi",
+      "ethnicHomogeneity": 0.75
     },
     {
       "iso3": "JBR",
@@ -2137,7 +2461,11 @@
       "leaderTitle": "Emir",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE EMIRATE"
+      "homelandTerm": "THE EMIRATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Arab",
+      "primaryCulture": "Jabrid",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "SHV",
@@ -2164,7 +2492,11 @@
       "leaderTitle": "Shah",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE REALM"
+      "homelandTerm": "THE REALM",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Azerbaijani",
+      "primaryCulture": "Shirvani",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "GRG",
@@ -2191,7 +2523,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "WesternAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Georgian",
+      "primaryCulture": "Georgian",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "ZAY",
@@ -2218,7 +2554,11 @@
       "leaderTitle": "Sultan",
       "continent": "Africa",
       "region": "NorthernAfrica",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Berber",
+      "primaryCulture": "Tlemcen",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "UZB",
@@ -2245,7 +2585,11 @@
       "leaderTitle": "Khan",
       "continent": "Asia",
       "region": "CentralAsia",
-      "homelandTerm": "THE KHANATE"
+      "homelandTerm": "THE KHANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Uzbek",
+      "primaryCulture": "Uzbek",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "MLW",
@@ -2270,7 +2614,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Malwi",
+      "primaryCulture": "Malwi",
+      "ethnicHomogeneity": 0.55
     },
     {
       "iso3": "MEW",
@@ -2295,7 +2643,11 @@
       "leaderTitle": "Maharana",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Hinduism",
+      "dominantEthnicity": "Rajput",
+      "primaryCulture": "Rajput",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "JNP",
@@ -2320,7 +2672,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Hindustani",
+      "primaryCulture": "Jaunpuri",
+      "ethnicHomogeneity": 0.55
     },
     {
       "iso3": "ORI",
@@ -2348,7 +2704,11 @@
       "leaderTitle": "Gajapati",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Hinduism",
+      "dominantEthnicity": "Odia",
+      "primaryCulture": "Gajapati",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "KSH",
@@ -2372,7 +2732,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Kashmiri",
+      "primaryCulture": "Kashmiri",
+      "ethnicHomogeneity": 0.7
     },
     {
       "iso3": "NEP",
@@ -2396,7 +2760,11 @@
       "leaderTitle": "Raja",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Hinduism",
+      "dominantEthnicity": "Newar",
+      "primaryCulture": "Nepali",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "KOT",
@@ -2423,7 +2791,11 @@
       "leaderTitle": "Raja",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Sinhalese",
+      "primaryCulture": "Sinhalese",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "MLD",
@@ -2449,7 +2821,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Maldivian",
+      "primaryCulture": "Dhivehi",
+      "ethnicHomogeneity": 0.95
     },
     {
       "iso3": "SND",
@@ -2476,7 +2852,11 @@
       "leaderTitle": "Jam",
       "continent": "Asia",
       "region": "SouthAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Sindhi",
+      "primaryCulture": "Sindhi",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "AVA",
@@ -2501,7 +2881,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Burmese",
+      "primaryCulture": "Burmese",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "PEG",
@@ -2528,7 +2912,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Mon",
+      "primaryCulture": "Mon",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "ARK",
@@ -2555,7 +2943,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Rakhine",
+      "primaryCulture": "Arakanese",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "LNA",
@@ -2579,7 +2971,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Lanna Thai",
+      "primaryCulture": "Lan Na",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "LXG",
@@ -2603,7 +2999,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Lao",
+      "primaryCulture": "Lan Xang",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "KMR",
@@ -2630,7 +3030,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Buddhism",
+      "dominantEthnicity": "Khmer",
+      "primaryCulture": "Khmer",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "CPA",
@@ -2657,7 +3061,11 @@
       "leaderTitle": "King",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Hinduism",
+      "dominantEthnicity": "Cham",
+      "primaryCulture": "Champa",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "BRU",
@@ -2683,7 +3091,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Bruneian",
+      "primaryCulture": "Bruneian",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "PSI",
@@ -2709,7 +3121,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Acehnese",
+      "primaryCulture": "Pasai",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "SUL",
@@ -2735,7 +3151,11 @@
       "leaderTitle": "Sultan",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Tausug",
+      "primaryCulture": "Sulu",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "MGL",
@@ -2759,7 +3179,11 @@
       "leaderTitle": "Khan",
       "continent": "Asia",
       "region": "EastAsia",
-      "homelandTerm": "THE KHANATE"
+      "homelandTerm": "THE KHANATE",
+      "dominantReligion": "Tengrism",
+      "dominantEthnicity": "Oirat",
+      "primaryCulture": "Oirat Mongol",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "MOS",
@@ -2786,7 +3210,11 @@
       "leaderTitle": "King",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE MOSSI KINGDOMS"
+      "homelandTerm": "THE MOSSI KINGDOMS",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Mossi",
+      "primaryCulture": "Mossi",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "HAU",
@@ -2810,7 +3238,11 @@
       "leaderTitle": "Emir",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE HAUSA LANDS"
+      "homelandTerm": "THE HAUSA LANDS",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Hausa",
+      "primaryCulture": "Hausa",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "OYO",
@@ -2837,7 +3269,11 @@
       "leaderTitle": "King",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE OYO EMPIRE"
+      "homelandTerm": "THE OYO EMPIRE",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Yoruba",
+      "primaryCulture": "Yoruba",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "LUB",
@@ -2861,7 +3297,11 @@
       "leaderTitle": "King",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE KINGDOM OF LUBA"
+      "homelandTerm": "THE KINGDOM OF LUBA",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Luba",
+      "primaryCulture": "Luba",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "ADA",
@@ -2888,7 +3328,11 @@
       "leaderTitle": "Sultan",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE SULTANATE OF ADAL"
+      "homelandTerm": "THE SULTANATE OF ADAL",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Somali",
+      "primaryCulture": "Adal",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "FNJ",
@@ -2912,7 +3356,11 @@
       "leaderTitle": "Sultan",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE FUNJ SULTANATE"
+      "homelandTerm": "THE FUNJ SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Nubian",
+      "primaryCulture": "Funj",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "KLW",
@@ -2939,7 +3387,11 @@
       "leaderTitle": "Sultan",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE SWAHILI COAST"
+      "homelandTerm": "THE SWAHILI COAST",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Swahili",
+      "primaryCulture": "Swahili",
+      "ethnicHomogeneity": 0.8
     },
     {
       "iso3": "BUG",
@@ -2966,7 +3418,11 @@
       "leaderTitle": "King",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE KINGDOM OF BUGANDA"
+      "homelandTerm": "THE KINGDOM OF BUGANDA",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Ganda",
+      "primaryCulture": "Ganda",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "MAD",
@@ -2993,7 +3449,11 @@
       "leaderTitle": "King",
       "continent": "Africa",
       "region": "SubSaharanAfrica",
-      "homelandTerm": "THE MALAGASY LANDS"
+      "homelandTerm": "THE MALAGASY LANDS",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Malagasy",
+      "primaryCulture": "Malagasy",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "TAR",
@@ -3020,7 +3480,11 @@
       "leaderTitle": "King",
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
-      "homelandTerm": "THE TARASCAN STATE"
+      "homelandTerm": "THE TARASCAN STATE",
+      "dominantReligion": "Mesoamerican",
+      "dominantEthnicity": "Purepecha",
+      "primaryCulture": "Tarascan",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "TLX",
@@ -3044,7 +3508,11 @@
       "leaderTitle": "Prince",
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
-      "homelandTerm": "THE TLAXCALAN CONFEDERACY"
+      "homelandTerm": "THE TLAXCALAN CONFEDERACY",
+      "dominantReligion": "Mesoamerican",
+      "dominantEthnicity": "Nahua",
+      "primaryCulture": "Tlaxcalan",
+      "ethnicHomogeneity": 0.95
     },
     {
       "iso3": "ZAP",
@@ -3071,7 +3539,11 @@
       "leaderTitle": "King",
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
-      "homelandTerm": "THE ZAPOTEC KINGDOM"
+      "homelandTerm": "THE ZAPOTEC KINGDOM",
+      "dominantReligion": "Mesoamerican",
+      "dominantEthnicity": "Zapotec",
+      "primaryCulture": "Zapotec",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "CHM",
@@ -3098,7 +3570,11 @@
       "leaderTitle": "King",
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
-      "homelandTerm": "THE KINGDOM OF CHIMOR"
+      "homelandTerm": "THE KINGDOM OF CHIMOR",
+      "dominantReligion": "Andean",
+      "dominantEthnicity": "Chimu",
+      "primaryCulture": "Chimu",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "MUI",
@@ -3125,7 +3601,11 @@
       "leaderTitle": "King",
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
-      "homelandTerm": "THE MUISCA CONFEDERATION"
+      "homelandTerm": "THE MUISCA CONFEDERATION",
+      "dominantReligion": "Chibchan",
+      "dominantEthnicity": "Muisca",
+      "primaryCulture": "Muisca",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "MAP",
@@ -3152,7 +3632,11 @@
       "leaderTitle": "Prince",
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
-      "homelandTerm": "THE MAPUCHE LANDS"
+      "homelandTerm": "THE MAPUCHE LANDS",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Mapuche",
+      "primaryCulture": "Mapuche",
+      "ethnicHomogeneity": 0.95
     },
     {
       "iso3": "IRO",
@@ -3179,7 +3663,11 @@
       "leaderTitle": "Prince",
       "continent": "Americas",
       "region": "NorthernAmerica",
-      "homelandTerm": "THE HAUDENOSAUNEE"
+      "homelandTerm": "THE HAUDENOSAUNEE",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Iroquois",
+      "primaryCulture": "Haudenosaunee",
+      "ethnicHomogeneity": 0.95
     },
     {
       "iso3": "PUE",
@@ -3203,7 +3691,12 @@
       "leaderTitle": "Prince",
       "continent": "Americas",
       "region": "NorthernAmerica",
-      "homelandTerm": "THE PUEBLO LANDS"
+      "homelandTerm": "THE PUEBLO LANDS",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Pueblo",
+      "primaryCulture": "Puebloan",
+      "ethnicHomogeneity": 0.95,
+      "neutral": true
     },
     {
       "iso3": "CAH",
@@ -3227,7 +3720,11 @@
       "leaderTitle": "King",
       "continent": "Americas",
       "region": "NorthernAmerica",
-      "homelandTerm": "THE MISSISSIPPIAN LANDS"
+      "homelandTerm": "THE MISSISSIPPIAN LANDS",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Mississippian",
+      "primaryCulture": "Cahokian",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "TAI",
@@ -3254,7 +3751,12 @@
       "leaderTitle": "Prince",
       "continent": "Americas",
       "region": "LatinAmericaCaribbean",
-      "homelandTerm": "THE TAINO LANDS"
+      "homelandTerm": "THE TAINO LANDS",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Taino",
+      "primaryCulture": "Taino",
+      "ethnicHomogeneity": 0.95,
+      "neutral": true
     },
     {
       "iso3": "TND",
@@ -3281,7 +3783,11 @@
       "flagPngPath": "flags/TND.png",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE KINGDOM"
+      "homelandTerm": "THE KINGDOM",
+      "dominantReligion": "Hinduism",
+      "dominantEthnicity": "Tagalog",
+      "primaryCulture": "Luzon",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "CEB",
@@ -3308,7 +3814,11 @@
       "flagPngPath": "flags/CEB.png",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE RAJAHNATE"
+      "homelandTerm": "THE RAJAHNATE",
+      "dominantReligion": "Hinduism",
+      "dominantEthnicity": "Cebuano",
+      "primaryCulture": "Visayan",
+      "ethnicHomogeneity": 0.85
     },
     {
       "iso3": "MGD",
@@ -3335,7 +3845,11 @@
       "flagPngPath": "flags/MGD.png",
       "continent": "Asia",
       "region": "SoutheastAsia",
-      "homelandTerm": "THE SULTANATE"
+      "homelandTerm": "THE SULTANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Maguindanao",
+      "primaryCulture": "Moro",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "MID",
@@ -3362,7 +3876,12 @@
       "flagPngPath": "flags/MID.png",
       "continent": "Asia",
       "region": "EastAsia",
-      "homelandTerm": "THE REALM"
+      "homelandTerm": "THE REALM",
+      "dominantReligion": "Animism",
+      "dominantEthnicity": "Papora",
+      "primaryCulture": "Formosan",
+      "ethnicHomogeneity": 0.9,
+      "neutral": true
     },
     {
       "iso3": "LEZ",
@@ -3389,7 +3908,11 @@
       "flagPngPath": "flags/LEZ.png",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "ALBANIA"
+      "homelandTerm": "ALBANIA",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Albanian",
+      "primaryCulture": "Albanian",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "STE",
@@ -3416,7 +3939,11 @@
       "flagPngPath": "flags/STE.png",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE HORDE"
+      "homelandTerm": "THE HORDE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Turco-Mongol",
+      "primaryCulture": "Steppe Nomadic",
+      "ethnicHomogeneity": 0.75
     },
     {
       "iso3": "TVR",
@@ -3442,7 +3969,11 @@
       "flagPngPath": "flags/TVR.png",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE PRINCIPALITY"
+      "homelandTerm": "THE PRINCIPALITY",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Russian",
+      "primaryCulture": "Tverian",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "RYA",
@@ -3468,7 +3999,11 @@
       "flagPngPath": "flags/RYA.png",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE PRINCIPALITY"
+      "homelandTerm": "THE PRINCIPALITY",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Russian",
+      "primaryCulture": "Ryazanian",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "PSK",
@@ -3493,7 +4028,11 @@
       "flagPngPath": "flags/PSK.png",
       "continent": "Europe",
       "region": "EasternEurope",
-      "homelandTerm": "THE REPUBLIC"
+      "homelandTerm": "THE REPUBLIC",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Russian",
+      "primaryCulture": "Pskovian",
+      "ethnicHomogeneity": 0.9
     },
     {
       "iso3": "MOG",
@@ -3518,7 +4057,11 @@
       "flagPngPath": "flags/MOG.png",
       "continent": "Asia",
       "region": "CentralAsia",
-      "homelandTerm": "THE KHANATE"
+      "homelandTerm": "THE KHANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Turco-Mongol",
+      "primaryCulture": "Chagatai",
+      "ethnicHomogeneity": 0.75
     },
     {
       "iso3": "SIB",
@@ -3542,7 +4085,11 @@
       "flagPngPath": "flags/SIB.png",
       "continent": "Asia",
       "region": "CentralAsia",
-      "homelandTerm": "THE KHANATE"
+      "homelandTerm": "THE KHANATE",
+      "dominantReligion": "Islam",
+      "dominantEthnicity": "Siberian Tatar",
+      "primaryCulture": "Siberian",
+      "ethnicHomogeneity": 0.75
     },
     {
       "iso3": "KNI",
@@ -3570,7 +4117,11 @@
       "flagPngPath": "flags/KNI.png",
       "continent": "Europe",
       "region": "SouthernEurope",
-      "homelandTerm": "THE ORDER"
+      "homelandTerm": "THE ORDER",
+      "dominantReligion": "Christianity",
+      "dominantEthnicity": "Occitan",
+      "primaryCulture": "Hospitaller",
+      "ethnicHomogeneity": 0.65
     }
   ]
 }
