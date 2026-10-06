@@ -34,7 +34,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Turkish",
       "primaryCulture": "Ottoman",
-      "ethnicHomogeneity": 0.65
+      "ethnicHomogeneity": 0.65,
+      "mapColorVibrant": "#F1220E",
+      "mapColorGloomy": "#79433E"
     },
     {
       "iso3": "FRA",
@@ -66,7 +68,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "French",
       "primaryCulture": "French",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#3265FF",
+      "mapColorGloomy": "#455994"
     },
     {
       "iso3": "PRT",
@@ -99,7 +103,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Portuguese",
       "primaryCulture": "Portuguese",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#20EC20",
+      "mapColorGloomy": "#437D43"
     },
     {
       "iso3": "CHE",
@@ -128,7 +134,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Swiss",
       "primaryCulture": "Swiss",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#FF0D0D",
+      "mapColorGloomy": "#8F3030"
     },
     {
       "iso3": "POL",
@@ -159,7 +167,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Polish",
       "primaryCulture": "Polish",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#FF5C74",
+      "mapColorGloomy": "#B83D50"
     },
     {
       "iso3": "HUN",
@@ -190,7 +200,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Hungarian",
       "primaryCulture": "Hungarian",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#FF7157",
+      "mapColorGloomy": "#B7503D"
     },
     {
       "iso3": "MYN",
@@ -224,7 +236,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Han",
       "primaryCulture": "Chinese",
-      "ethnicHomogeneity": 0.95
+      "ethnicHomogeneity": 0.95,
+      "mapColorVibrant": "#FFC643",
+      "mapColorGloomy": "#A08447"
     },
     {
       "iso3": "ENG",
@@ -254,7 +268,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "English",
       "primaryCulture": "English",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#E42727",
+      "mapColorGloomy": "#7A4545"
     },
     {
       "iso3": "CAS",
@@ -285,7 +301,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Castilian",
       "primaryCulture": "Castilian",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#F3B901",
+      "mapColorGloomy": "#766838"
     },
     {
       "iso3": "ARA",
@@ -316,7 +334,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Aragonese",
       "primaryCulture": "Aragonese",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#F55F15",
+      "mapColorGloomy": "#7F543F"
     },
     {
       "iso3": "MVY",
@@ -348,7 +368,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Russian",
       "primaryCulture": "Muscovite",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#CC0000",
+      "mapColorGloomy": "#4E1A1A"
     },
     {
       "iso3": "VNC",
@@ -380,7 +402,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Venetian",
       "primaryCulture": "Venetian",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#158ABA",
+      "mapColorGloomy": "#35535F"
     },
     {
       "iso3": "MAM",
@@ -411,7 +435,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Arab",
       "primaryCulture": "Mamluk",
-      "ethnicHomogeneity": 0.75
+      "ethnicHomogeneity": 0.75,
+      "mapColorVibrant": "#E2AD44",
+      "mapColorGloomy": "#84724E"
     },
     {
       "iso3": "TIM",
@@ -442,7 +468,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Turco-Mongol",
       "primaryCulture": "Persianate",
-      "ethnicHomogeneity": 0.6
+      "ethnicHomogeneity": 0.6,
+      "mapColorVibrant": "#7B65C4",
+      "mapColorGloomy": "#615A7A"
     },
     {
       "iso3": "JOS",
@@ -473,7 +501,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Korean",
       "primaryCulture": "Joseon",
-      "ethnicHomogeneity": 0.95
+      "ethnicHomogeneity": 0.95,
+      "mapColorVibrant": "#2C8AA5",
+      "mapColorGloomy": "#3B535A"
     },
     {
       "iso3": "VIJ",
@@ -505,7 +535,9 @@
       "dominantReligion": "Hinduism",
       "dominantEthnicity": "Kannada",
       "primaryCulture": "Vijayanagara",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#F37401",
+      "mapColorGloomy": "#765638"
     },
     {
       "iso3": "AZT",
@@ -534,7 +566,9 @@
       "dominantReligion": "Mesoamerican",
       "dominantEthnicity": "Nahua",
       "primaryCulture": "Aztec",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#19B36E",
+      "mapColorGloomy": "#325746"
     },
     {
       "iso3": "INC",
@@ -563,7 +597,9 @@
       "dominantReligion": "Andean",
       "dominantEthnicity": "Quechua",
       "primaryCulture": "Inca",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#DFA800",
+      "mapColorGloomy": "#776428"
     },
     {
       "iso3": "BUR",
@@ -595,7 +631,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Burgundian",
       "primaryCulture": "Burgundian",
-      "ethnicHomogeneity": 0.75
+      "ethnicHomogeneity": 0.75,
+      "mapColorVibrant": "#4A19B3",
+      "mapColorGloomy": "#3E3258"
     },
     {
       "iso3": "PAP",
@@ -625,7 +663,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Italian",
       "primaryCulture": "Roman",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#FFD90D",
+      "mapColorGloomy": "#8F8030"
     },
     {
       "iso3": "NAP",
@@ -655,7 +695,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Neapolitan",
       "primaryCulture": "Neapolitan",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#1942BD",
+      "mapColorGloomy": "#384262"
     },
     {
       "iso3": "SCT",
@@ -685,7 +727,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Scottish",
       "primaryCulture": "Scottish",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#0691C6",
+      "mapColorGloomy": "#284752"
     },
     {
       "iso3": "HAB",
@@ -715,7 +759,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "German",
       "primaryCulture": "Austrian",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#CC0000",
+      "mapColorGloomy": "#632929"
     },
     {
       "iso3": "BOH",
@@ -742,7 +788,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Czech",
       "primaryCulture": "Bohemian",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#EA2121",
+      "mapColorGloomy": "#7C4343"
     },
     {
       "iso3": "TEU",
@@ -772,7 +820,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "German",
       "primaryCulture": "Teutonic",
-      "ethnicHomogeneity": 0.7
+      "ethnicHomogeneity": 0.7,
+      "mapColorVibrant": "#ADADAD",
+      "mapColorGloomy": "#7A7A7A"
     },
     {
       "iso3": "DAN",
@@ -802,7 +852,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Danish",
       "primaryCulture": "Danish",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#EA2121",
+      "mapColorGloomy": "#7C4343"
     },
     {
       "iso3": "SWD",
@@ -832,7 +884,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Swedish",
       "primaryCulture": "Swedish",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#285FBE",
+      "mapColorGloomy": "#3F4D65"
     },
     {
       "iso3": "NVD",
@@ -862,7 +916,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Russian",
       "primaryCulture": "Novgorodian",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#5C2AA8",
+      "mapColorGloomy": "#483B5B"
     },
     {
       "iso3": "GEN",
@@ -892,7 +948,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Genoese",
       "primaryCulture": "Genoese",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#ADADAD",
+      "mapColorGloomy": "#7A7A7A"
     },
     {
       "iso3": "MIL",
@@ -923,7 +981,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Lombard",
       "primaryCulture": "Lombard",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#0BC189",
+      "mapColorGloomy": "#2B5448"
     },
     {
       "iso3": "BYZ",
@@ -954,7 +1014,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Greek",
       "primaryCulture": "Byzantine",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#CA02B6",
+      "mapColorGloomy": "#5C2C57"
     },
     {
       "iso3": "WAL",
@@ -984,7 +1046,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Romanian",
       "primaryCulture": "Wallachian",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#F76403",
+      "mapColorGloomy": "#795339"
     },
     {
       "iso3": "MOL",
@@ -1011,7 +1075,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Romanian",
       "primaryCulture": "Moldavian",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#19B355",
+      "mapColorGloomy": "#325740"
     },
     {
       "iso3": "LTH",
@@ -1041,7 +1107,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Lithuanian",
       "primaryCulture": "Lithuanian",
-      "ethnicHomogeneity": 0.6
+      "ethnicHomogeneity": 0.6,
+      "mapColorVibrant": "#19B323",
+      "mapColorGloomy": "#325734"
     },
     {
       "iso3": "MAL",
@@ -1071,7 +1139,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Mandinka",
       "primaryCulture": "Mandinka",
-      "ethnicHomogeneity": 0.7
+      "ethnicHomogeneity": 0.7,
+      "mapColorVibrant": "#F38001",
+      "mapColorGloomy": "#765838"
     },
     {
       "iso3": "SON",
@@ -1098,7 +1168,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Songhai",
       "primaryCulture": "Songhai",
-      "ethnicHomogeneity": 0.7
+      "ethnicHomogeneity": 0.7,
+      "mapColorVibrant": "#FFB601",
+      "mapColorGloomy": "#7D6A3A"
     },
     {
       "iso3": "ABY",
@@ -1128,7 +1200,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Amhara",
       "primaryCulture": "Ethiopian",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#ED1F1B",
+      "mapColorGloomy": "#7C4241"
     },
     {
       "iso3": "BNK",
@@ -1157,7 +1231,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Edo",
       "primaryCulture": "Benin",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#CC6600",
+      "mapColorGloomy": "#4D3319"
     },
     {
       "iso3": "ZIM",
@@ -1186,7 +1262,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Shona",
       "primaryCulture": "Shona",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#CC5500",
+      "mapColorGloomy": "#523725"
     },
     {
       "iso3": "AKK",
@@ -1213,7 +1291,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Turkoman",
       "primaryCulture": "Turkoman",
-      "ethnicHomogeneity": 0.75
+      "ethnicHomogeneity": 0.75,
+      "mapColorVibrant": "#E8460C",
+      "mapColorGloomy": "#734A3B"
     },
     {
       "iso3": "DEL",
@@ -1244,7 +1324,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Hindustani",
       "primaryCulture": "Indo-Muslim",
-      "ethnicHomogeneity": 0.5
+      "ethnicHomogeneity": 0.5,
+      "mapColorVibrant": "#329A80",
+      "mapColorGloomy": "#38504A"
     },
     {
       "iso3": "MAJ",
@@ -1275,7 +1357,9 @@
       "dominantReligion": "Hinduism",
       "dominantEthnicity": "Javanese",
       "primaryCulture": "Javanese",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#F1AD0E",
+      "mapColorGloomy": "#79673E"
     },
     {
       "iso3": "AYU",
@@ -1306,7 +1390,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Thai",
       "primaryCulture": "Siamese",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#A52AA8",
+      "mapColorGloomy": "#5A3B5B"
     },
     {
       "iso3": "MRC",
@@ -1338,7 +1424,9 @@
       "dominantReligion": "Shintoism",
       "dominantEthnicity": "Japanese",
       "primaryCulture": "Japanese",
-      "ethnicHomogeneity": 0.95
+      "ethnicHomogeneity": 0.95,
+      "mapColorVibrant": "#F71B03",
+      "mapColorGloomy": "#794039"
     },
     {
       "iso3": "TIB",
@@ -1365,7 +1453,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Tibetan",
       "primaryCulture": "Tibetan",
-      "ethnicHomogeneity": 0.95
+      "ethnicHomogeneity": 0.95,
+      "mapColorVibrant": "#FFB40D",
+      "mapColorGloomy": "#8F7230"
     },
     {
       "iso3": "MAY",
@@ -1394,7 +1484,9 @@
       "dominantReligion": "Mesoamerican",
       "dominantEthnicity": "Maya",
       "primaryCulture": "Maya",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#19B34B",
+      "mapColorGloomy": "#32573E"
     },
     {
       "iso3": "GRN",
@@ -1424,7 +1516,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Andalusian",
       "primaryCulture": "Andalusian Arab",
-      "ethnicHomogeneity": 0.75
+      "ethnicHomogeneity": 0.75,
+      "mapColorVibrant": "#1EAE5E",
+      "mapColorGloomy": "#345743"
     },
     {
       "iso3": "FLR",
@@ -1455,7 +1549,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Tuscan",
       "primaryCulture": "Florentine",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#CC0000",
+      "mapColorGloomy": "#4E1A1A"
     },
     {
       "iso3": "SAV",
@@ -1482,7 +1578,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Savoyard",
       "primaryCulture": "Savoyard",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#ADADAD",
+      "mapColorGloomy": "#7A7A7A"
     },
     {
       "iso3": "NAV",
@@ -1512,7 +1610,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Basque",
       "primaryCulture": "Navarrese",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#D60000",
+      "mapColorGloomy": "#732626"
     },
     {
       "iso3": "SRB",
@@ -1542,7 +1642,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Serbian",
       "primaryCulture": "Serbian",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#CC0000",
+      "mapColorGloomy": "#4D1919"
     },
     {
       "iso3": "MOR",
@@ -1572,7 +1674,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Moroccan",
       "primaryCulture": "Maghrebi",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#00CC00",
+      "mapColorGloomy": "#194D19"
     },
     {
       "iso3": "HFS",
@@ -1602,7 +1706,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Tunisian",
       "primaryCulture": "Hafsid",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#CC9200",
+      "mapColorGloomy": "#524525"
     },
     {
       "iso3": "KKY",
@@ -1632,7 +1738,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Turkoman",
       "primaryCulture": "Turkoman",
-      "ethnicHomogeneity": 0.75
+      "ethnicHomogeneity": 0.75,
+      "mapColorVibrant": "#25A725",
+      "mapColorGloomy": "#283F28"
     },
     {
       "iso3": "KZN",
@@ -1659,7 +1767,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Tatar",
       "primaryCulture": "Kazan Tatar",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#7600CC",
+      "mapColorGloomy": "#37194D"
     },
     {
       "iso3": "KRM",
@@ -1689,7 +1799,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Crimean Tatar",
       "primaryCulture": "Crimean",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#966AF1",
+      "mapColorGloomy": "#6E569F"
     },
     {
       "iso3": "GUJ",
@@ -1720,7 +1832,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Gujarati",
       "primaryCulture": "Gujarati",
-      "ethnicHomogeneity": 0.6
+      "ethnicHomogeneity": 0.6,
+      "mapColorVibrant": "#FF920D",
+      "mapColorGloomy": "#8F6430"
     },
     {
       "iso3": "BAH",
@@ -1751,7 +1865,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Deccani",
       "primaryCulture": "Deccani",
-      "ethnicHomogeneity": 0.55
+      "ethnicHomogeneity": 0.55,
+      "mapColorVibrant": "#759F2D",
+      "mapColorGloomy": "#3D452F"
     },
     {
       "iso3": "BNG",
@@ -1782,7 +1898,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Bengali",
       "primaryCulture": "Bengali",
-      "ethnicHomogeneity": 0.65
+      "ethnicHomogeneity": 0.65,
+      "mapColorVibrant": "#10BC10",
+      "mapColorGloomy": "#2D552D"
     },
     {
       "iso3": "MLC",
@@ -1812,7 +1930,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Malay",
       "primaryCulture": "Melayu",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#00D8DB",
+      "mapColorGloomy": "#277476"
     },
     {
       "iso3": "DVT",
@@ -1842,7 +1962,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Vietnamese",
       "primaryCulture": "Dai Viet",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#D66B00",
+      "mapColorGloomy": "#734D26"
     },
     {
       "iso3": "KNG",
@@ -1871,7 +1993,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Kongo",
       "primaryCulture": "Kongo",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#CC5500",
+      "mapColorGloomy": "#523725"
     },
     {
       "iso3": "KBR",
@@ -1901,7 +2025,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Kanuri",
       "primaryCulture": "Kanuri",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#EA8B30",
+      "mapColorGloomy": "#826447"
     },
     {
       "iso3": "RYU",
@@ -1930,7 +2056,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Ryukyuan",
       "primaryCulture": "Ryukyuan",
-      "ethnicHomogeneity": 0.95
+      "ethnicHomogeneity": 0.95,
+      "mapColorVibrant": "#FF5CAD",
+      "mapColorGloomy": "#B83D7A"
     },
     {
       "iso3": "KAR",
@@ -1957,7 +2085,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Turkish",
       "primaryCulture": "Karamanid",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#83BB11",
+      "mapColorGloomy": "#49562E"
     },
     {
       "iso3": "CND",
@@ -1987,7 +2117,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Turkish",
       "primaryCulture": "Candarid",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#2773C4",
+      "mapColorGloomy": "#405368"
     },
     {
       "iso3": "DUL",
@@ -2014,7 +2146,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Turkish",
       "primaryCulture": "Dulkadirid",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#CC5500",
+      "mapColorGloomy": "#523725"
     },
     {
       "iso3": "RAM",
@@ -2044,7 +2178,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Turkish",
       "primaryCulture": "Ramazanid",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#EA8B30",
+      "mapColorGloomy": "#826447"
     },
     {
       "iso3": "TRE",
@@ -2074,7 +2210,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Greek",
       "primaryCulture": "Pontic",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#7F28A4",
+      "mapColorGloomy": "#3F2E47"
     },
     {
       "iso3": "SAX",
@@ -2105,7 +2243,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "German",
       "primaryCulture": "Saxon",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#359760",
+      "mapColorGloomy": "#3B5245"
     },
     {
       "iso3": "BRG",
@@ -2136,7 +2276,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "German",
       "primaryCulture": "Brandenburg",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#6A809C",
+      "mapColorGloomy": "#4F5C6B"
     },
     {
       "iso3": "BAV",
@@ -2164,7 +2306,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "German",
       "primaryCulture": "Bavarian",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#4396EA",
+      "mapColorGloomy": "#4C6B8B"
     },
     {
       "iso3": "PAL",
@@ -2192,7 +2336,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "German",
       "primaryCulture": "Palatine",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#DC6801",
+      "mapColorGloomy": "#6B4D32"
     },
     {
       "iso3": "COL",
@@ -2220,7 +2366,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "German",
       "primaryCulture": "Rhenish",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#E72410",
+      "mapColorGloomy": "#74413C"
     },
     {
       "iso3": "WUR",
@@ -2248,7 +2396,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "German",
       "primaryCulture": "Swabian",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#F7B300",
+      "mapColorGloomy": "#7C6835"
     },
     {
       "iso3": "LIV",
@@ -2279,7 +2429,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "German",
       "primaryCulture": "Livonian",
-      "ethnicHomogeneity": 0.65
+      "ethnicHomogeneity": 0.65,
+      "mapColorVibrant": "#9079D6",
+      "mapColorGloomy": "#6D618E"
     },
     {
       "iso3": "BOS",
@@ -2310,7 +2462,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Bosnian",
       "primaryCulture": "Bosnian",
-      "ethnicHomogeneity": 0.7
+      "ethnicHomogeneity": 0.7,
+      "mapColorVibrant": "#BF4E18",
+      "mapColorGloomy": "#624537"
     },
     {
       "iso3": "LUS",
@@ -2341,7 +2495,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Greek",
       "primaryCulture": "Cypriot",
-      "ethnicHomogeneity": 0.7
+      "ethnicHomogeneity": 0.7,
+      "mapColorVibrant": "#F7CF61",
+      "mapColorGloomy": "#A38D52"
     },
     {
       "iso3": "TAH",
@@ -2372,7 +2528,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Arab",
       "primaryCulture": "Yemeni",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#34984F",
+      "mapColorGloomy": "#3A5241"
     },
     {
       "iso3": "NBH",
@@ -2403,7 +2561,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Arab",
       "primaryCulture": "Omani",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#B1651B",
+      "mapColorGloomy": "#564432"
     },
     {
       "iso3": "HRM",
@@ -2434,7 +2594,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Persian",
       "primaryCulture": "Hormuzi",
-      "ethnicHomogeneity": 0.75
+      "ethnicHomogeneity": 0.75,
+      "mapColorVibrant": "#07ACC5",
+      "mapColorGloomy": "#2F5960"
     },
     {
       "iso3": "JBR",
@@ -2465,7 +2627,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Arab",
       "primaryCulture": "Jabrid",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#DCB041",
+      "mapColorGloomy": "#7E704D"
     },
     {
       "iso3": "SHV",
@@ -2496,7 +2660,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Azerbaijani",
       "primaryCulture": "Shirvani",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#5367D7",
+      "mapColorGloomy": "#535A82"
     },
     {
       "iso3": "GRG",
@@ -2527,7 +2693,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Georgian",
       "primaryCulture": "Georgian",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#D42438",
+      "mapColorGloomy": "#6F4247"
     },
     {
       "iso3": "ZAY",
@@ -2558,7 +2726,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Berber",
       "primaryCulture": "Tlemcen",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#F99720",
+      "mapColorGloomy": "#876842"
     },
     {
       "iso3": "UZB",
@@ -2589,7 +2759,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Uzbek",
       "primaryCulture": "Uzbek",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#7FAC73",
+      "mapColorGloomy": "#5E7657"
     },
     {
       "iso3": "MLW",
@@ -2618,7 +2790,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Malwi",
       "primaryCulture": "Malwi",
-      "ethnicHomogeneity": 0.55
+      "ethnicHomogeneity": 0.55,
+      "mapColorVibrant": "#A1D522",
+      "mapColorGloomy": "#626F42"
     },
     {
       "iso3": "MEW",
@@ -2647,7 +2821,9 @@
       "dominantReligion": "Hinduism",
       "dominantEthnicity": "Rajput",
       "primaryCulture": "Rajput",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#FCAE3E",
+      "mapColorGloomy": "#987749"
     },
     {
       "iso3": "JNP",
@@ -2676,7 +2852,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Hindustani",
       "primaryCulture": "Jaunpuri",
-      "ethnicHomogeneity": 0.55
+      "ethnicHomogeneity": 0.55,
+      "mapColorVibrant": "#57BB96",
+      "mapColorGloomy": "#537166"
     },
     {
       "iso3": "ORI",
@@ -2708,7 +2886,9 @@
       "dominantReligion": "Hinduism",
       "dominantEthnicity": "Odia",
       "primaryCulture": "Gajapati",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#E94C14",
+      "mapColorGloomy": "#764D3F"
     },
     {
       "iso3": "KSH",
@@ -2736,7 +2916,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Kashmiri",
       "primaryCulture": "Kashmiri",
-      "ethnicHomogeneity": 0.7
+      "ethnicHomogeneity": 0.7,
+      "mapColorVibrant": "#7097EB",
+      "mapColorGloomy": "#596E9C"
     },
     {
       "iso3": "NEP",
@@ -2764,7 +2946,9 @@
       "dominantReligion": "Hinduism",
       "dominantEthnicity": "Newar",
       "primaryCulture": "Nepali",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#C84844",
+      "mapColorGloomy": "#724F4D"
     },
     {
       "iso3": "KOT",
@@ -2795,7 +2979,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Sinhalese",
       "primaryCulture": "Sinhalese",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#F5B930",
+      "mapColorGloomy": "#8B7646"
     },
     {
       "iso3": "MLD",
@@ -2825,7 +3011,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Maldivian",
       "primaryCulture": "Dhivehi",
-      "ethnicHomogeneity": 0.95
+      "ethnicHomogeneity": 0.95,
+      "mapColorVibrant": "#2BC8BB",
+      "mapColorGloomy": "#436B68"
     },
     {
       "iso3": "SND",
@@ -2856,7 +3044,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Sindhi",
       "primaryCulture": "Sindhi",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#BD9554",
+      "mapColorGloomy": "#706553"
     },
     {
       "iso3": "AVA",
@@ -2885,7 +3075,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Burmese",
       "primaryCulture": "Burmese",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#E6A92D",
+      "mapColorGloomy": "#7E6C47"
     },
     {
       "iso3": "PEG",
@@ -2916,7 +3108,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Mon",
       "primaryCulture": "Mon",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#55BD56",
+      "mapColorGloomy": "#537154"
     },
     {
       "iso3": "ARK",
@@ -2947,7 +3141,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Rakhine",
       "primaryCulture": "Arakanese",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#A86AC3",
+      "mapColorGloomy": "#725B7C"
     },
     {
       "iso3": "LNA",
@@ -2975,7 +3171,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Lanna Thai",
       "primaryCulture": "Lan Na",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#EE7E30",
+      "mapColorGloomy": "#856047"
     },
     {
       "iso3": "LXG",
@@ -3003,7 +3201,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Lao",
       "primaryCulture": "Lan Xang",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#D73726",
+      "mapColorGloomy": "#714844"
     },
     {
       "iso3": "KMR",
@@ -3034,7 +3234,9 @@
       "dominantReligion": "Buddhism",
       "dominantEthnicity": "Khmer",
       "primaryCulture": "Khmer",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#E6B22D",
+      "mapColorGloomy": "#7E6F47"
     },
     {
       "iso3": "CPA",
@@ -3065,7 +3267,9 @@
       "dominantReligion": "Hinduism",
       "dominantEthnicity": "Cham",
       "primaryCulture": "Champa",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#5399C6",
+      "mapColorGloomy": "#536876"
     },
     {
       "iso3": "BRU",
@@ -3095,7 +3299,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Bruneian",
       "primaryCulture": "Bruneian",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#FCD63E",
+      "mapColorGloomy": "#988849"
     },
     {
       "iso3": "PSI",
@@ -3125,7 +3331,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Acehnese",
       "primaryCulture": "Pasai",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#2EB86F",
+      "mapColorGloomy": "#416451"
     },
     {
       "iso3": "SUL",
@@ -3155,7 +3363,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Tausug",
       "primaryCulture": "Sulu",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#BC7BDE",
+      "mapColorGloomy": "#826094"
     },
     {
       "iso3": "MGL",
@@ -3183,7 +3393,9 @@
       "dominantReligion": "Tengrism",
       "dominantEthnicity": "Oirat",
       "primaryCulture": "Oirat Mongol",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#9DA8B3",
+      "mapColorGloomy": "#66788A"
     },
     {
       "iso3": "MOS",
@@ -3214,7 +3426,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Mossi",
       "primaryCulture": "Mossi",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#DC6801",
+      "mapColorGloomy": "#6B4D32"
     },
     {
       "iso3": "HAU",
@@ -3242,7 +3456,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Hausa",
       "primaryCulture": "Hausa",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#A9EC20",
+      "mapColorGloomy": "#6A7D43"
     },
     {
       "iso3": "OYO",
@@ -3273,7 +3489,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Yoruba",
       "primaryCulture": "Yoruba",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#EA8B30",
+      "mapColorGloomy": "#826447"
     },
     {
       "iso3": "LUB",
@@ -3301,7 +3519,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Luba",
       "primaryCulture": "Luba",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#B1641B",
+      "mapColorGloomy": "#564432"
     },
     {
       "iso3": "ADA",
@@ -3332,7 +3552,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Somali",
       "primaryCulture": "Adal",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#26D574",
+      "mapColorGloomy": "#437057"
     },
     {
       "iso3": "FNJ",
@@ -3360,7 +3582,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Nubian",
       "primaryCulture": "Funj",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#FFB807",
+      "mapColorGloomy": "#816D3B"
     },
     {
       "iso3": "KLW",
@@ -3391,7 +3615,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Swahili",
       "primaryCulture": "Swahili",
-      "ethnicHomogeneity": 0.8
+      "ethnicHomogeneity": 0.8,
+      "mapColorVibrant": "#05D7CC",
+      "mapColorGloomy": "#336A67"
     },
     {
       "iso3": "BUG",
@@ -3422,7 +3648,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Ganda",
       "primaryCulture": "Ganda",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#83BB11",
+      "mapColorGloomy": "#49562E"
     },
     {
       "iso3": "MAD",
@@ -3453,7 +3681,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Malagasy",
       "primaryCulture": "Malagasy",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#E70091",
+      "mapColorGloomy": "#74315B"
     },
     {
       "iso3": "TAR",
@@ -3484,7 +3714,9 @@
       "dominantReligion": "Mesoamerican",
       "dominantEthnicity": "Purepecha",
       "primaryCulture": "Tarascan",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#FF885C",
+      "mapColorGloomy": "#B85E3D"
     },
     {
       "iso3": "TLX",
@@ -3512,7 +3744,9 @@
       "dominantReligion": "Mesoamerican",
       "dominantEthnicity": "Nahua",
       "primaryCulture": "Tlaxcalan",
-      "ethnicHomogeneity": 0.95
+      "ethnicHomogeneity": 0.95,
+      "mapColorVibrant": "#FD865D",
+      "mapColorGloomy": "#A6654F"
     },
     {
       "iso3": "ZAP",
@@ -3543,7 +3777,9 @@
       "dominantReligion": "Mesoamerican",
       "dominantEthnicity": "Zapotec",
       "primaryCulture": "Zapotec",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#F16A96",
+      "mapColorGloomy": "#9F566E"
     },
     {
       "iso3": "CHM",
@@ -3574,7 +3810,9 @@
       "dominantReligion": "Andean",
       "dominantEthnicity": "Chimu",
       "primaryCulture": "Chimu",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#368AD0",
+      "mapColorGloomy": "#496072"
     },
     {
       "iso3": "MUI",
@@ -3605,7 +3843,9 @@
       "dominantReligion": "Chibchan",
       "dominantEthnicity": "Muisca",
       "primaryCulture": "Muisca",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#FFD90D",
+      "mapColorGloomy": "#8F8030"
     },
     {
       "iso3": "MAP",
@@ -3636,7 +3876,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Mapuche",
       "primaryCulture": "Mapuche",
-      "ethnicHomogeneity": 0.95
+      "ethnicHomogeneity": 0.95,
+      "mapColorVibrant": "#1EAE5E",
+      "mapColorGloomy": "#345743"
     },
     {
       "iso3": "IRO",
@@ -3667,7 +3909,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Iroquois",
       "primaryCulture": "Haudenosaunee",
-      "ethnicHomogeneity": 0.95
+      "ethnicHomogeneity": 0.95,
+      "mapColorVibrant": "#CC0000",
+      "mapColorGloomy": "#4D1919"
     },
     {
       "iso3": "PUE",
@@ -3696,7 +3940,9 @@
       "dominantEthnicity": "Pueblo",
       "primaryCulture": "Puebloan",
       "ethnicHomogeneity": 0.95,
-      "neutral": true
+      "neutral": true,
+      "mapColorVibrant": "#E55353",
+      "mapColorGloomy": "#8D5252"
     },
     {
       "iso3": "CAH",
@@ -3724,7 +3970,9 @@
       "dominantReligion": "Animism",
       "dominantEthnicity": "Mississippian",
       "primaryCulture": "Cahokian",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#BF4E18",
+      "mapColorGloomy": "#624537"
     },
     {
       "iso3": "TAI",
@@ -3756,7 +4004,9 @@
       "dominantEthnicity": "Taino",
       "primaryCulture": "Taino",
       "ethnicHomogeneity": 0.95,
-      "neutral": true
+      "neutral": true,
+      "mapColorVibrant": "#3BECE6",
+      "mapColorGloomy": "#4A8987"
     },
     {
       "iso3": "TND",
@@ -3787,7 +4037,9 @@
       "dominantReligion": "Hinduism",
       "dominantEthnicity": "Tagalog",
       "primaryCulture": "Luzon",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#2C78A5",
+      "mapColorGloomy": "#3B4F5A"
     },
     {
       "iso3": "CEB",
@@ -3818,7 +4070,9 @@
       "dominantReligion": "Hinduism",
       "dominantEthnicity": "Cebuano",
       "primaryCulture": "Visayan",
-      "ethnicHomogeneity": 0.85
+      "ethnicHomogeneity": 0.85,
+      "mapColorVibrant": "#E9AB6E",
+      "mapColorGloomy": "#9B7A5A"
     },
     {
       "iso3": "MGD",
@@ -3849,7 +4103,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Maguindanao",
       "primaryCulture": "Moro",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#C2720A",
+      "mapColorGloomy": "#56442C"
     },
     {
       "iso3": "MID",
@@ -3881,7 +4137,9 @@
       "dominantEthnicity": "Papora",
       "primaryCulture": "Formosan",
       "ethnicHomogeneity": 0.9,
-      "neutral": true
+      "neutral": true,
+      "mapColorVibrant": "#418F58",
+      "mapColorGloomy": "#3F5546"
     },
     {
       "iso3": "LEZ",
@@ -3912,7 +4170,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Albanian",
       "primaryCulture": "Albanian",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#CB0107",
+      "mapColorGloomy": "#5F2D2E"
     },
     {
       "iso3": "STE",
@@ -3943,7 +4203,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Turco-Mongol",
       "primaryCulture": "Steppe Nomadic",
-      "ethnicHomogeneity": 0.75
+      "ethnicHomogeneity": 0.75,
+      "mapColorVibrant": "#F2C226",
+      "mapColorGloomy": "#847544"
     },
     {
       "iso3": "TVR",
@@ -3973,7 +4235,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Russian",
       "primaryCulture": "Tverian",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#CD9200",
+      "mapColorGloomy": "#6A5729"
     },
     {
       "iso3": "RYA",
@@ -4003,7 +4267,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Russian",
       "primaryCulture": "Ryazanian",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#EA8B30",
+      "mapColorGloomy": "#826447"
     },
     {
       "iso3": "PSK",
@@ -4032,7 +4298,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Russian",
       "primaryCulture": "Pskovian",
-      "ethnicHomogeneity": 0.9
+      "ethnicHomogeneity": 0.9,
+      "mapColorVibrant": "#58B1B4",
+      "mapColorGloomy": "#516D6E"
     },
     {
       "iso3": "MOG",
@@ -4061,7 +4329,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Turco-Mongol",
       "primaryCulture": "Chagatai",
-      "ethnicHomogeneity": 0.75
+      "ethnicHomogeneity": 0.75,
+      "mapColorVibrant": "#1EAE5E",
+      "mapColorGloomy": "#345743"
     },
     {
       "iso3": "SIB",
@@ -4089,7 +4359,9 @@
       "dominantReligion": "Islam",
       "dominantEthnicity": "Siberian Tatar",
       "primaryCulture": "Siberian",
-      "ethnicHomogeneity": 0.75
+      "ethnicHomogeneity": 0.75,
+      "mapColorVibrant": "#368AD0",
+      "mapColorGloomy": "#496072"
     },
     {
       "iso3": "KNI",
@@ -4121,7 +4393,9 @@
       "dominantReligion": "Christianity",
       "dominantEthnicity": "Occitan",
       "primaryCulture": "Hospitaller",
-      "ethnicHomogeneity": 0.65
+      "ethnicHomogeneity": 0.65,
+      "mapColorVibrant": "#CC0000",
+      "mapColorGloomy": "#4D1919"
     }
   ]
 }
