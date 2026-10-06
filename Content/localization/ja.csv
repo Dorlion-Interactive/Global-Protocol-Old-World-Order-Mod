@@ -699,3 +699,14 @@ owo.doctrine.industry.hidden.wire_drawing_mill,Wire-Drawing Mill
 owo.doctrine.industry.hidden.wire_drawing_mill.desc,Water-driven draw-benches pull rod into wire all day. Mail, pins, needles and cable in quantities no hand-bench could reach.
 owo.doctrine.industry.hidden.dry_dock,Dry Dock
 owo.doctrine.industry.hidden.dry_dock.desc,Float her in, shut the gate, pump out and work the hull dry. Careening season stops being a gamble with the tide.
+owo.event.peace_of_lodi_1454.title,The Peace of Lodi
+owo.event.peace_of_lodi_1454.description,On 9 April 1454 at Lodi in Lombardy, envoys of Milan, Venice, and Florence put an end to the destructive Wars in Lombardy. Establishing the Most Holy League (Lega Italica), the treaty establishes a balance of power among the five major Italian powers and guarantees mutual non-aggression across the peninsula.
+owo.event.peace_of_lodi_1454.option_1,Ratify the treaty and safeguard the peace of Italy.
+owo.event.peace_of_lodi_1454.option_2,Refuse the accord; our ambitions in Lombardy cannot be bound.
+owo.event.corvinus_black_army_1458.title,The Black Army of Matthias Corvinus
+owo.event.corvinus_black_army_1458.description,Rising to the Hungarian throne in 1458, King Matthias Corvinus has broken with feudal reliance on rebellious noble levies to establish the Fekete Sereg (The Black Army)—one of Europe's first permanent professional mercenary standing armies, equipped with heavy plate, pavises, and firearms.
+owo.event.corvinus_black_army_1458.option_1,Commission the Black Army to defend the realm and Christendom!
+owo.event.corvinus_black_army_1458.option_2,The treasury cannot sustain mercenaries; rely on the noble banderia.
+owo.event.fall_of_trebizond_1461.title,The Fall of Trebizond
+owo.event.fall_of_trebizond_1461.description,In August 1461, after a determined combined land siege and naval blockade led by Sultan Mehmed II, Emperor David Megas Komnenos has surrendered the fortified coastal city of Trebizond. With the fall of the Komnenian bastion on the Black Sea, the final surviving successor state of the Roman Empire is absorbed into the Ottoman realm.
+owo.event.fall_of_trebizond_1461.option_1,The Black Sea is now firmly an Ottoman lake.

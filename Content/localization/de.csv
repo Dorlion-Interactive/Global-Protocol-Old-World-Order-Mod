@@ -699,3 +699,14 @@ owo.doctrine.industry.hidden.wire_drawing_mill,Wire-Drawing Mill
 owo.doctrine.industry.hidden.wire_drawing_mill.desc,Water-driven draw-benches pull rod into wire all day. Mail, pins, needles and cable in quantities no hand-bench could reach.
 owo.doctrine.industry.hidden.dry_dock,Dry Dock
 owo.doctrine.industry.hidden.dry_dock.desc,Float her in, shut the gate, pump out and work the hull dry. Careening season stops being a gamble with the tide.
+owo.event.peace_of_lodi_1454.title,Der Frieden von Lodi
+owo.event.peace_of_lodi_1454.description,Am 9. April 1454 beendeten Gesandte aus Mailand, Venedig und Florenz in Lodi die verheerenden Mailänder Kriege. Der Vertrag begründet die Heilige Liga (Lega Italica) und sichert ein Gleichgewicht der Kräfte in Italien.
+owo.event.peace_of_lodi_1454.option_1,Ratifiziert den Vertrag und sichert den Frieden Italiens.
+owo.event.peace_of_lodi_1454.option_2,Lehnt das Abkommen ab; unsere Ambitionen dulden keine Schranken.
+owo.event.corvinus_black_army_1458.title,Die Schwarze Armee von Matthias Corvinus
+owo.event.corvinus_black_army_1458.description,Nach seiner Thronbesteigung 1458 gründete König Matthias Corvinus die Schwarze Armee (Fekete Sereg) – eines der ersten ständigen Berufsheere Europas.
+owo.event.corvinus_black_army_1458.option_1,Stellt die Schwarze Armee zur Verteidigung des Reiches auf!
+owo.event.corvinus_black_army_1458.option_2,Die Schatzkammer verträgt keine Söldner; vertraut auf den Adel.
+owo.event.fall_of_trebizond_1461.title,Der Fall von Trapezunt
+owo.event.fall_of_trebizond_1461.description,Im August 1461 kapitulierte Kaiser David Komnenos vor Sultan Mehmed II. Damit fällt der letzte überlebende Nachfolgestaat des Römischen Reiches an das Osmanische Reich.
+owo.event.fall_of_trebizond_1461.option_1,Das Schwarze Meer ist nun ein osmanischer See.

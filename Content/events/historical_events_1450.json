@@ -40,7 +40,8 @@
       }
     ],
     "title_key": "owo.event.fall_of_constantinople_1453.title",
-    "description_key": "owo.event.fall_of_constantinople_1453.description"
+    "description_key": "owo.event.fall_of_constantinople_1453.description",
+    "image": "fall_of_constantinople"
   },
   {
     "id": "fall_of_constantinople_1453_christendom",
@@ -77,7 +78,8 @@
       }
     ],
     "title_key": "owo.event.fall_of_constantinople_1453_christendom.title",
-    "description_key": "owo.event.fall_of_constantinople_1453_christendom.description"
+    "description_key": "owo.event.fall_of_constantinople_1453_christendom.description",
+    "image": "fall_of_constantinople"
   },
   {
     "id": "end_hundred_years_war_1453",
@@ -179,7 +181,8 @@
       }
     ],
     "title_key": "owo.event.gutenberg_printing_press_1455.title",
-    "description_key": "owo.event.gutenberg_printing_press_1455.description"
+    "description_key": "owo.event.gutenberg_printing_press_1455.description",
+    "image": "gutenberg_press"
   },
   {
     "id": "wars_of_the_roses_1455",
@@ -248,5 +251,184 @@
     ],
     "title_key": "owo.event.portuguese_african_voyages_1460.title",
     "description_key": "owo.event.portuguese_african_voyages_1460.description"
+  },
+  {
+    "id": "peace_of_lodi_1454",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "MIL",
+    "immediate": true,
+    "image": "peace_of_lodi",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1454-04"
+      },
+      {
+        "type": "not_at_war"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "add_relation",
+            "target": "VNC",
+            "value": 30
+          },
+          {
+            "type": "add_relation",
+            "target": "FLR",
+            "value": 25
+          },
+          {
+            "type": "add_relation",
+            "target": "PAP",
+            "value": 20
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "peace_of_lodi_ratified"
+          }
+        ],
+        "text_key": "owo.event.peace_of_lodi_1454.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_unrest",
+            "value": 10
+          },
+          {
+            "type": "add_treasury",
+            "value": 100
+          }
+        ],
+        "text_key": "owo.event.peace_of_lodi_1454.option_2"
+      }
+    ],
+    "title_key": "owo.event.peace_of_lodi_1454.title",
+    "description_key": "owo.event.peace_of_lodi_1454.description"
+  },
+  {
+    "id": "corvinus_black_army_1458",
+    "type": "scripted",
+    "category": "military_incident",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "HUN",
+    "immediate": true,
+    "image": "black_army_hungary",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1458-01"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "create_unit",
+            "unit_id": "medieval_infantry",
+            "count": 2,
+            "target": "HUN"
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "medieval_cavalry",
+            "count": 1,
+            "target": "HUN"
+          },
+          {
+            "type": "add_treasury",
+            "value": -150
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "black_army_commissioned"
+          }
+        ],
+        "text_key": "owo.event.corvinus_black_army_1458.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          },
+          {
+            "type": "add_treasury",
+            "value": 100
+          }
+        ],
+        "text_key": "owo.event.corvinus_black_army_1458.option_2"
+      }
+    ],
+    "title_key": "owo.event.corvinus_black_army_1458.title",
+    "description_key": "owo.event.corvinus_black_army_1458.description"
+  },
+  {
+    "id": "fall_of_trebizond_1461",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "OTT",
+    "immediate": true,
+    "image": "fall_of_trebizond",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1461-08"
+      },
+      {
+        "type": "has_flag",
+        "flag_name": "constantinople_conquered"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "annex_province",
+            "province_id": 2415,
+            "target": "OTT"
+          },
+          {
+            "type": "add_treasury",
+            "value": 250
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "trebizond_annexed"
+          }
+        ],
+        "text_key": "owo.event.fall_of_trebizond_1461.option_1"
+      }
+    ],
+    "title_key": "owo.event.fall_of_trebizond_1461.title",
+    "description_key": "owo.event.fall_of_trebizond_1461.description"
   }
 ]

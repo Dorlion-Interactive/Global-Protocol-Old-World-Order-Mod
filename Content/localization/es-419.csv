@@ -699,3 +699,14 @@ owo.doctrine.industry.hidden.wire_drawing_mill,Wire-Drawing Mill
 owo.doctrine.industry.hidden.wire_drawing_mill.desc,Water-driven draw-benches pull rod into wire all day. Mail, pins, needles and cable in quantities no hand-bench could reach.
 owo.doctrine.industry.hidden.dry_dock,Dry Dock
 owo.doctrine.industry.hidden.dry_dock.desc,Float her in, shut the gate, pump out and work the hull dry. Careening season stops being a gamble with the tide.
+owo.event.peace_of_lodi_1454.title,La Paz de Lodi
+owo.event.peace_of_lodi_1454.description,El 9 de abril de 1454 en Lodi, Milán, Venecia y Florencia pusieron fin a las guerras de Lombardía fundando la Liga Itálica para mantener el equilibrio de poder en Italia.
+owo.event.peace_of_lodi_1454.option_1,Ratificar el tratado y salvaguardar la paz de Italia.
+owo.event.peace_of_lodi_1454.option_2,Rechazar el acuerdo; nuestras ambiciones en Lombardía no tienen límites.
+owo.event.corvinus_black_army_1458.title,El Ejército Negro de Matías Corvino
+owo.event.corvinus_black_army_1458.description,Al asumir el trono en 1458, el rey Matías Corvino creó el Fekete Sereg (Ejército Negro), uno de los primeros ejércitos permanentes profesionales de Europa.
+owo.event.corvinus_black_army_1458.option_1,¡Comisionar al Ejército Negro para defender el reino y la cristiandad!
+owo.event.corvinus_black_army_1458.option_2,El tesoro no puede sostener mercenarios; confiemos en la nobleza.
+owo.event.fall_of_trebizond_1461.title,La Caída de Trebisonda
+owo.event.fall_of_trebizond_1461.description,En agosto de 1461, tras el asedio del sultán Mehmed II, el emperador David capituló en Trebisonda. El último estado sucesor romano queda absorbido por los otomanos.
+owo.event.fall_of_trebizond_1461.option_1,El mar Negro es ahora un lago otomano.
