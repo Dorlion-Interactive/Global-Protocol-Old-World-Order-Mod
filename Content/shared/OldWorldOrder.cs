@@ -26,6 +26,8 @@ public sealed class OldWorldOrder
     public const string ArchiveHook = "owo.archive";
     public const string ChronicleHook = "owo.chronicle";
     public const string BalanceOfPowerHook = "owo.balance_of_power";
+    public const string DynastiesHook = "owo.dynasties";
+    public const string FaithsHook = "owo.faiths";
     public const string InfoHook = "owo.info";
 
     private readonly IModHost _host;
@@ -228,6 +230,16 @@ public sealed class OldWorldOrder
                 _host.Log("OWO: balance of power popup shown via UI action");
                 break;
 
+            case DynastiesHook:
+                _host.ShowPopup("Great Dynasties & Ruling Houses (1450)", BuildDynastiesBody());
+                _host.Log("OWO: dynasties popup shown via UI action");
+                break;
+
+            case FaithsHook:
+                _host.ShowPopup("Holy Sees & Spiritual Centers (1450)", BuildFaithsBody());
+                _host.Log("OWO: faiths popup shown via UI action");
+                break;
+
             case InfoHook:
                 _host.ShowPopup("Mod Information", BuildInfoBody());
                 _host.Log("OWO: info popup shown via UI action");
@@ -313,6 +325,48 @@ public sealed class OldWorldOrder
              + "   • Vijayanagara Empire (VIJ) vs. Bahmani Sultanate (BAH) — Deccan balance of power\n\n"
              + "4. Maritime Republics:\n"
              + "   • Republic of Venice (VNC) vs. Republic of Genoa (GEN) — Mediterranean trade rivalry";
+    }
+
+    private string BuildDynastiesBody()
+    {
+        return "GREAT HOUSES & RULING DYNASTIES (1450 AD)\n\n"
+             + "1. Western Christendom:\n"
+             + "   • House of Valois (FRA): King Charles VII — Consolidating post-Hundred Years' War royal realm.\n"
+             + "   • House of Lancaster vs. York (ENG): King Henry VI & Richard of York — The Wars of the Roses.\n"
+             + "   • House of Trastámara (CAS / ARA): King John II & Alfonso V — Divided Iberian crowns approaching union.\n"
+             + "   • House of Valois-Burgundy (BUR): Duke Philip the Good — Grand Dukes of the West in the Low Countries.\n\n"
+             + "2. Central & Northern Europe:\n"
+             + "   • House of Habsburg (HAB): Duke Friedrich III — Inner Austria and Imperial Roman Crown.\n"
+             + "   • House of Jagiellon (POL / LTH): Casimir IV — Dual monarchy across the Baltic to the Black Sea.\n"
+             + "   • House of Oldenburg (DAN / SWD): King Christian I — The Scandinavian Kalmar Union.\n\n"
+             + "3. Eastern Empires:\n"
+             + "   • House of Osman (OTT): Sultan Murad II & Mehmed II — Padishahs of the Ottoman realm.\n"
+             + "   • Great Ming (MYN): Emperor Jingtai (Zhu Qiyu) — Ming imperial recovery following Tumu.\n"
+             + "   • House of Timur (TIM): Sultan Abu Sa'id — Gurkani sovereignty over Transoxiana and Herat.\n"
+             + "   • Sangama Dynasty (VIJ): Deva Raya II / Mallikarjuna Raya — Lords of the Southern Ocean.\n\n"
+             + "4. The Americas:\n"
+             + "   • Acamapichtli Lineage (AZT): Huey Tlatoani Moctezuma I — Sovereign of Tenochtitlan.\n"
+             + "   • Hanan Cusco Dynasty (INC): Sapa Inca Pachacuti — Earthshaker and Architect of Tawantinsuyu.";
+    }
+
+    private string BuildFaithsBody()
+    {
+        return "HOLY SEES & SPIRITUAL AUTHORITIES (1450 AD)\n\n"
+             + "1. Western Christendom (Catholicism):\n"
+             + "   • Holy See of Rome: Pope Nicholas V — Seat of the Bishop of Rome and St. Peter's Basilica.\n"
+             + "   • Pilgrimage Shrines: Santiago de Compostela, Canterbury, Cologne Cathedral of the Three Kings.\n\n"
+             + "2. Eastern Christendom (Eastern Orthodoxy):\n"
+             + "   • Ecumenical Patriarchate of Constantinople: Hagia Sophia — Imperial Mother Church.\n"
+             + "   • Holy Mount Athos & Serbian Peć Patriarchate — Monastic bastions against expansion.\n\n"
+             + "3. Dar al-Islam (Sunni & Shia):\n"
+             + "   • Holy Sanctuaries of Mecca & Medina: Guarded by the Mamluk Sultanate of Cairo (MAM).\n"
+             + "   • Al-Azhar Mosque & Madrasah: Premier seat of Islamic jurisprudence and theology in Cairo.\n"
+             + "   • Great Mosque of Samarkand (Bibi-Khanym) & Timbuktu Sankore Mosque — Scholastic centers.\n\n"
+             + "4. Dharmic, East Asian & Indigenous Faiths:\n"
+             + "   • Varanasi & Hampi Virupaksha: Sacred tirthas along the Ganges and Tungabhadra rivers.\n"
+             + "   • Temple of Heaven (Beijing) & Ise Grand Shrine (Japan): Mandate of Heaven and Shinto rites.\n"
+             + "   • Potala & Jokhang (Lhasa): Sacred heart of Tibetan Vajrayana Buddhism.\n"
+             + "   • Great Teocalli (Tenochtitlan) & Coricancha (Cusco): Solar temples of the Sun Gods.";
     }
 
     private string BuildInfoBody()

@@ -7,6 +7,8 @@ const WELCOME_HOOK = "owo.welcome";
 const ARCHIVE_HOOK = "owo.archive";
 const CHRONICLE_HOOK = "owo.chronicle";
 const BALANCE_OF_POWER_HOOK = "owo.balance_of_power";
+const DYNASTIES_HOOK = "owo.dynasties";
+const FAITHS_HOOK = "owo.faiths";
 const INFO_HOOK = "owo.info";
 
 let warsObserved = 0;
@@ -121,6 +123,10 @@ export function on_ui_action(
         showPopup("1450 World Chronicle", buildChronicleBody());
     } else if (hookName == BALANCE_OF_POWER_HOOK) {
         showPopup("Balance of Power & Alliances", buildBalanceOfPowerBody());
+    } else if (hookName == DYNASTIES_HOOK) {
+        showPopup("Great Dynasties & Ruling Houses (1450)", buildDynastiesBody());
+    } else if (hookName == FAITHS_HOOK) {
+        showPopup("Holy Sees & Spiritual Centers (1450)", buildFaithsBody());
     } else if (hookName == INFO_HOOK) {
         showPopup("Mod Information", buildInfoBody());
     }
@@ -198,6 +204,46 @@ function buildBalanceOfPowerBody(): string {
         + "   • Vijayanagara (VIJ) vs. Bahmani (BAH) — Deccan balance of power\n\n"
         + "4. Maritime Republics:\n"
         + "   • Venice (VNC) vs. Genoa (GEN) — Mediterranean trade rivalry";
+}
+
+function buildDynastiesBody(): string {
+    return "GREAT HOUSES & RULING DYNASTIES (1450 AD)\n\n"
+        + "1. Western Christendom:\n"
+        + "   • House of Valois (FRA): King Charles VII — Consolidating the French realm.\n"
+        + "   • House of Lancaster vs. York (ENG): King Henry VI & Richard of York.\n"
+        + "   • House of Trastámara (CAS / ARA): King John II & Alfonso V of Aragon.\n"
+        + "   • House of Valois-Burgundy (BUR): Duke Philip the Good — Grand Dukes of the West.\n\n"
+        + "2. Central & Northern Europe:\n"
+        + "   • House of Habsburg (HAB): Duke Friedrich III — Archduke and Roman King.\n"
+        + "   • House of Jagiellon (POL / LTH): Casimir IV — Baltic-Pontic dual monarchy.\n"
+        + "   • House of Oldenburg (DAN / SWD): King Christian I — Scandinavian Kalmar Union.\n\n"
+        + "3. Eastern Empires:\n"
+        + "   • House of Osman (OTT): Sultan Murad II & Mehmed II.\n"
+        + "   • Great Ming (MYN): Emperor Jingtai — Imperial recovery.\n"
+        + "   • House of Timur (TIM): Sultan Abu Sa'id — Transoxiana sovereignty.\n"
+        + "   • Sangama Dynasty (VIJ): Deva Raya II — Lords of the Southern Ocean.\n\n"
+        + "4. The Americas:\n"
+        + "   • Acamapichtli Lineage (AZT): Moctezuma I of Tenochtitlan.\n"
+        + "   • Hanan Cusco Dynasty (INC): Sapa Inca Pachacuti of Tawantinsuyu.";
+}
+
+function buildFaithsBody(): string {
+    return "HOLY SEES & SPIRITUAL AUTHORITIES (1450 AD)\n\n"
+        + "1. Western Christendom:\n"
+        + "   • Holy See of Rome: Pope Nicholas V — St. Peter's Basilica.\n"
+        + "   • Major Shrines: Santiago de Compostela, Canterbury, Cologne.\n\n"
+        + "2. Eastern Christendom:\n"
+        + "   • Ecumenical Patriarchate of Constantinople: Hagia Sophia.\n"
+        + "   • Holy Mount Athos & Serbian Peć Patriarchate.\n\n"
+        + "3. Dar al-Islam:\n"
+        + "   • Holy Sanctuaries of Mecca & Medina: Guarded by Cairo Mamluks (MAM).\n"
+        + "   • Al-Azhar Mosque & Madrasah: Islamic jurisprudence in Cairo.\n"
+        + "   • Great Mosque of Samarkand & Timbuktu Sankore Mosque.\n\n"
+        + "4. Eastern & Indigenous Faiths:\n"
+        + "   • Varanasi & Hampi Virupaksha: Sacred tirthas along sacred rivers.\n"
+        + "   • Temple of Heaven (Beijing) & Ise Grand Shrine (Japan).\n"
+        + "   • Potala & Jokhang (Lhasa): Tibetan Vajrayana Buddhism.\n"
+        + "   • Great Teocalli (Tenochtitlan) & Coricancha (Cusco): Sun temples.";
 }
 
 function buildInfoBody(): string {

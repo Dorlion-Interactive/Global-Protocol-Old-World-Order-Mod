@@ -25,6 +25,18 @@
       "hookName": "owo.balance_of_power"
     },
     {
+      "id": "owo.dynasties_btn",
+      "iconPath": "Content/ui/icons/welcome.png",
+      "tooltip": "mod.ui.toolbar.dynasties_tooltip",
+      "hookName": "owo.dynasties"
+    },
+    {
+      "id": "owo.faiths_btn",
+      "iconPath": "Content/ui/icons/archive.png",
+      "tooltip": "mod.ui.toolbar.faiths_tooltip",
+      "hookName": "owo.faiths"
+    },
+    {
       "id": "owo.info_btn",
       "iconPath": "Content/ui/icons/info.png",
       "tooltip": "mod.ui.toolbar.info_tooltip",
