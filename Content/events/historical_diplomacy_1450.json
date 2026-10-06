@@ -14,7 +14,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "black_army_hungary",
     "title_key": "owo.event.diplomacy_union_of_poland_lithuania_1450.title",
     "description_key": "owo.event.diplomacy_union_of_poland_lithuania_1450.description",
     "options": [
@@ -86,7 +85,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "peace_of_lodi",
     "title_key": "owo.event.diplomacy_auld_alliance_1450.title",
     "description_key": "owo.event.diplomacy_auld_alliance_1450.description",
     "options": [
@@ -163,7 +161,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "black_army_hungary",
     "title_key": "owo.event.diplomacy_hundred_years_war_england_1450.title",
     "description_key": "owo.event.diplomacy_hundred_years_war_england_1450.description",
     "options": [
@@ -240,7 +237,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "peace_of_lodi",
     "title_key": "owo.event.diplomacy_venice_genoa_rivalry_1450.title",
     "description_key": "owo.event.diplomacy_venice_genoa_rivalry_1450.description",
     "options": [
@@ -317,7 +313,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "fall_of_constantinople",
     "title_key": "owo.event.diplomacy_byzantine_diplomatic_plea_1450.title",
     "description_key": "owo.event.diplomacy_byzantine_diplomatic_plea_1450.description",
     "options": [
@@ -399,7 +394,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "peace_of_lodi",
     "title_key": "owo.event.diplomacy_iberian_trastamara_concord_1450.title",
     "description_key": "owo.event.diplomacy_iberian_trastamara_concord_1450.description",
     "options": [
@@ -475,7 +469,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "peace_of_lodi",
     "title_key": "owo.event.diplomacy_kalmar_union_accord_1450.title",
     "description_key": "owo.event.diplomacy_kalmar_union_accord_1450.description",
     "options": [
@@ -543,7 +536,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "tumu_crisis_beijing",
     "title_key": "owo.event.diplomacy_ming_joseon_tributary_pact_1450.title",
     "description_key": "owo.event.diplomacy_ming_joseon_tributary_pact_1450.description",
     "options": [
@@ -614,7 +606,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "black_army_hungary",
     "title_key": "owo.event.diplomacy_deccan_rivalry_1450.title",
     "description_key": "owo.event.diplomacy_deccan_rivalry_1450.description",
     "options": [
@@ -687,7 +678,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "black_army_hungary",
     "title_key": "owo.event.diplomacy_muscovy_novgorod_struggle_1450.title",
     "description_key": "owo.event.diplomacy_muscovy_novgorod_struggle_1450.description",
     "options": [
@@ -769,7 +759,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "black_army_hungary",
     "title_key": "owo.event.diplomacy_ottoman_hungarian_frontier_1450.title",
     "description_key": "owo.event.diplomacy_ottoman_hungarian_frontier_1450.description",
     "options": [
@@ -852,7 +841,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "peace_of_lodi",
     "title_key": "owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.title",
     "description_key": "owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.description",
     "options": [
@@ -932,7 +920,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "peace_of_lodi",
     "title_key": "owo.event.diplomacy_italian_balance_milan_florence_1450.title",
     "description_key": "owo.event.diplomacy_italian_balance_milan_florence_1450.description",
     "options": [
@@ -1009,7 +996,6 @@
         "value": "1450-03"
       }
     ],
-    "image": "rise_of_tawantinsuyu",
     "title_key": "owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.title",
     "description_key": "owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.description",
     "options": [
