@@ -710,3 +710,39 @@ owo.event.corvinus_black_army_1458.option_2,Die Schatzkammer verträgt keine Sö
 owo.event.fall_of_trebizond_1461.title,Der Fall von Trapezunt
 owo.event.fall_of_trebizond_1461.description,Im August 1461 kapitulierte Kaiser David Komnenos vor Sultan Mehmed II. Damit fällt der letzte überlebende Nachfolgestaat des Römischen Reiches an das Osmanische Reich.
 owo.event.fall_of_trebizond_1461.option_1,Das Schwarze Meer ist nun ein osmanischer See.
+owo.goal.mvy_gather_russian_lands,Gather the Russian Lands
+owo.goal.mvy_gather_russian_lands.desc,Unify the divided principalities of Rus under the leadership of Moscow.
+owo.task.mvy_gather_russian_lands.army,Muster 15,000 soldiers
+owo.task.mvy_gather_russian_lands.novgorod,Declare war on the Novgorod Republic
+owo.goal.mvy_stand_against_the_horde,Stand Against the Horde
+owo.goal.mvy_stand_against_the_horde.desc,Cast off the Tatar yoke and refuse all further tribute to the Great Horde.
+owo.task.mvy_stand_against_the_horde.treasury,Amass 800 fl. in the treasury
+owo.task.mvy_stand_against_the_horde.army,Field an army of 25,000 men
+owo.goal.vnc_queen_of_the_adriatic,Queen of the Adriatic
+owo.goal.vnc_queen_of_the_adriatic.desc,Enrich the republic through unrivaled maritime commerce across the eastern Mediterranean.
+owo.task.vnc_queen_of_the_adriatic.treasury,Accumulate 1,200 fl. in the ducal treasury
+owo.task.vnc_queen_of_the_adriatic.trade,Establish bilateral trade agreements
+owo.goal.vnc_defend_stato_da_mar,Defend the Stato da Màr
+owo.goal.vnc_defend_stato_da_mar.desc,Protect Venetian island outposts and sea lanes against Ottoman maritime expansion.
+owo.task.vnc_defend_stato_da_mar.fleet,Maintain a formidable naval armada
+owo.goal.hun_bastion_of_christendom,Bastion of Christendom
+owo.goal.hun_bastion_of_christendom.desc,Defend the southern frontier against Ottoman incursions along the Danube and Sava rivers.
+owo.task.hun_bastion_of_christendom.army,Muster a border defense army of 25,000 soldiers
+owo.task.hun_bastion_of_christendom.allies,Seek alliances with Central European crowns
+owo.goal.hun_corvinus_hegemony,The Corvinus Renaissance
+owo.goal.hun_corvinus_hegemony.desc,Modernize royal finances, patronize humanist culture, and expand royal sovereignty.
+owo.task.hun_corvinus_hegemony.treasury,Hold 700 fl. in royal reserves
+owo.goal.pol_personal_union,The Jagiellonian Union
+owo.goal.pol_personal_union.desc,Cement the dynastic partnership with the Grand Duchy of Lithuania.
+owo.task.pol_personal_union.alliance,Secure an alliance with Lithuania
+owo.task.pol_personal_union.relations,Cultivate good relations with Vilnius
+owo.goal.pol_thirteen_years_war,Reclaim the Baltic Coast
+owo.goal.pol_thirteen_years_war.desc,Challenge the Teutonic Knights to restore Polish access to the Baltic Sea.
+owo.task.pol_thirteen_years_war.war,Declare war on the Teutonic Order
+owo.task.pol_thirteen_years_war.army,Muster 20,000 crown soldiers
+owo.goal.mam_custodian_holy_sanctuaries,Protector of the Holy Cities
+owo.goal.mam_custodian_holy_sanctuaries.desc,Safeguard Mecca, Medina, and Jerusalem while dominating Red Sea trade routes.
+owo.task.mam_custodian_holy_sanctuaries.treasury,Hold 1,000 fl. in the Cairo citadel treasury
+owo.goal.mam_syrian_bulwark,Fortify the Syrian Frontier
+owo.goal.mam_syrian_bulwark.desc,Maintain a formidable cavalry army in Aleppo and Damascus to deter northern aggression.
+owo.task.mam_syrian_bulwark.army,Muster 30,000 Mamluk warriors

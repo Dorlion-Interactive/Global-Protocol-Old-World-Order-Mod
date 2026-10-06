@@ -710,3 +710,39 @@ owo.event.corvinus_black_army_1458.option_2,Hazine paralı askerleri kaldıramaz
 owo.event.fall_of_trebizond_1461.title,Trabzon'un Fethi
 owo.event.fall_of_trebizond_1461.description,Ağustos 1461'de Sultan II. Mehmed komutasındaki kara ve deniz kuşatması sonucunda İmparator David Megas Komnenos müstahkem Trabzon kentini teslim etti. Karadeniz'deki son Roma ardıl devleti de Osmanlı topraklarına katıldı.
 owo.event.fall_of_trebizond_1461.option_1,Karadeniz artık tamamen bir Osmanlı gölüdür.
+owo.goal.mvy_gather_russian_lands,Rus Topraklarını Birleştir
+owo.goal.mvy_gather_russian_lands.desc,Bölünmüş Rus prensliklerini Moskova'nın liderliğinde tek bir sancak altında topla.
+owo.task.mvy_gather_russian_lands.army,15.000 asker topla
+owo.task.mvy_gather_russian_lands.novgorod,Novgorod Cumhuriyeti'ne savaş ilan et
+owo.goal.mvy_stand_against_the_horde,Orda'ya Karşı Direniş
+owo.goal.mvy_stand_against_the_horde.desc,Tatar boyunduruğunu kır ve Büyük Orda'ya ödenen haracı reddet.
+owo.task.mvy_stand_against_the_horde.treasury,Hazinede 800 fl. biriktir
+owo.task.mvy_stand_against_the_horde.army,25.000 kişilik bir ordu kur
+owo.goal.vnc_queen_of_the_adriatic,Adriyatik'in Kraliçesi
+owo.goal.vnc_queen_of_the_adriatic.desc,Doğu Akdeniz'deki rakipsiz deniz ticaretiyle cumhuriyeti zenginleştir.
+owo.task.vnc_queen_of_the_adriatic.treasury,Dükalık hazinesinde 1.200 fl. biriktir
+owo.task.vnc_queen_of_the_adriatic.trade,İkili ticaret antlaşmaları yap
+owo.goal.vnc_defend_stato_da_mar,Stato da Màr'ı Koru
+owo.goal.vnc_defend_stato_da_mar.desc,Osmanlı deniz genişlemesine karşı Venedik ada karakollarını ve deniz yollarını savun.
+owo.task.vnc_defend_stato_da_mar.fleet,Güçlü bir donanma kur
+owo.goal.hun_bastion_of_christendom,Hristiyanlığın Kalesi
+owo.goal.hun_bastion_of_christendom.desc,Tuna ve Sava nehirleri boyunca güney sınırını Osmanlı akınlarına karşı koru.
+owo.task.hun_bastion_of_christendom.army,25.000 kişilik sınır savunma ordusu topla
+owo.task.hun_bastion_of_christendom.allies,Orta Avrupa krallıklarıyla ittifak ara
+owo.goal.hun_corvinus_hegemony,Corvinus Rönesansı
+owo.goal.hun_corvinus_hegemony.desc,Kraliyet maliyesini modernize et ve hümanist kültürü destekle.
+owo.task.hun_corvinus_hegemony.treasury,Kraliyet kasasında 700 fl. tut
+owo.goal.pol_personal_union,Jagiellon Birliği
+owo.goal.pol_personal_union.desc,Litvanya Büyük Dükalığı ile hanedan ortaklığını güçlendir.
+owo.task.pol_personal_union.alliance,Litvanya ile ittifak kur
+owo.task.pol_personal_union.relations,Vilnius ile ilişkileri geliştir
+owo.goal.pol_thirteen_years_war,Baltık Kıyılarını Geri Al
+owo.goal.pol_thirteen_years_war.desc,Töton Şövalyeleri'ne meydan okuyarak Baltık Denizi'ne erişimi yeniden sağla.
+owo.task.pol_thirteen_years_war.war,Töton Tarikatı'na savaş ilan et
+owo.task.pol_thirteen_years_war.army,20.000 kraliyet askeri topla
+owo.goal.mam_custodian_holy_sanctuaries,Kutsal Şehirlerin Koruyucusu
+owo.goal.mam_custodian_holy_sanctuaries.desc,Mekke, Medine ve Kudüs'ü korurken Kızıldeniz ticaretini elinde tut.
+owo.task.mam_custodian_holy_sanctuaries.treasury,Kahire kalesi hazinesinde 1.000 fl. tut
+owo.goal.mam_syrian_bulwark,Suriye Seddi
+owo.goal.mam_syrian_bulwark.desc,Kuzey tehditlerine karşı Halep ve Şam'da güçlü bir süvari ordusu bulundur.
+owo.task.mam_syrian_bulwark.army,30.000 Memlük savaşçısı topla

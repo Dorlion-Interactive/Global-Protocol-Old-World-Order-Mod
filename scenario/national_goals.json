@@ -700,5 +700,397 @@
         ]
       }
     ]
+  },
+  "MVY": {
+    "goals": [
+      {
+        "id": "mvy_gather_russian_lands",
+        "title": "Gather the Russian Lands",
+        "title_key": "owo.goal.mvy_gather_russian_lands",
+        "description": "Unify the divided principalities of Rus under the leadership of Moscow.",
+        "description_key": "owo.goal.mvy_gather_russian_lands.desc",
+        "type": "expansion",
+        "priority": "primary",
+        "ai_weight": 0.85,
+        "target_countries": [
+          "NVD",
+          "TVR",
+          "RYA"
+        ],
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "army",
+            "title_key": "owo.task.mvy_gather_russian_lands.army",
+            "title": "Muster 15,000 soldiers",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel",
+                "min_value": "15000"
+              }
+            },
+            "required_count": 15000
+          },
+          {
+            "id": "novgorod",
+            "title_key": "owo.task.mvy_gather_russian_lands.novgorod",
+            "title": "Declare war on the Novgorod Republic",
+            "condition": {
+              "type": "declare_war_on",
+              "params": {
+                "target_iso3": "NVD"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "mvy_stand_against_the_horde",
+        "title": "Stand Against the Horde",
+        "title_key": "owo.goal.mvy_stand_against_the_horde",
+        "description": "Cast off the Tatar yoke and refuse all further tribute to the Great Horde.",
+        "description_key": "owo.goal.mvy_stand_against_the_horde.desc",
+        "type": "defense",
+        "priority": "secondary",
+        "ai_weight": 0.75,
+        "target_countries": [
+          "STE"
+        ],
+        "on_complete_effects": {
+          "prestige": 35,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.mvy_stand_against_the_horde.treasury",
+            "title": "Amass 800 fl. in the treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "800"
+              }
+            }
+          },
+          {
+            "id": "army",
+            "title_key": "owo.task.mvy_stand_against_the_horde.army",
+            "title": "Field an army of 25,000 men",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel",
+                "min_value": "25000"
+              }
+            },
+            "required_count": 25000
+          }
+        ]
+      }
+    ]
+  },
+  "VNC": {
+    "goals": [
+      {
+        "id": "vnc_queen_of_the_adriatic",
+        "title": "Queen of the Adriatic",
+        "title_key": "owo.goal.vnc_queen_of_the_adriatic",
+        "description": "Enrich the republic through unrivaled maritime commerce across the eastern Mediterranean.",
+        "description_key": "owo.goal.vnc_queen_of_the_adriatic.desc",
+        "type": "economic",
+        "priority": "primary",
+        "ai_weight": 0.85,
+        "on_complete_effects": {
+          "prestige": 30,
+          "economy_boost": 0.05
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.vnc_queen_of_the_adriatic.treasury",
+            "title": "Accumulate 1,200 fl. in the ducal treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1200"
+              }
+            }
+          },
+          {
+            "id": "trade",
+            "title_key": "owo.task.vnc_queen_of_the_adriatic.trade",
+            "title": "Establish bilateral trade agreements",
+            "condition": {
+              "type": "trade_agreement_with",
+              "params": {
+                "partners": "*"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "vnc_defend_stato_da_mar",
+        "title": "Defend the Stato da Màr",
+        "title_key": "owo.goal.vnc_defend_stato_da_mar",
+        "description": "Protect Venetian island outposts and sea lanes against Ottoman maritime expansion.",
+        "description_key": "owo.goal.vnc_defend_stato_da_mar.desc",
+        "type": "defense",
+        "priority": "secondary",
+        "ai_weight": 0.75,
+        "target_countries": [
+          "OTT"
+        ],
+        "on_complete_effects": {
+          "prestige": 25,
+          "military_modifier": 0.05
+        },
+        "tasks": [
+          {
+            "id": "fleet",
+            "title_key": "owo.task.vnc_defend_stato_da_mar.fleet",
+            "title": "Maintain a formidable naval armada",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "naval",
+                "min_value": "15"
+              }
+            },
+            "required_count": 15
+          }
+        ]
+      }
+    ]
+  },
+  "HUN": {
+    "goals": [
+      {
+        "id": "hun_bastion_of_christendom",
+        "title": "Bastion of Christendom",
+        "title_key": "owo.goal.hun_bastion_of_christendom",
+        "description": "Defend the southern frontier against Ottoman incursions along the Danube and Sava rivers.",
+        "description_key": "owo.goal.hun_bastion_of_christendom.desc",
+        "type": "defense",
+        "priority": "primary",
+        "ai_weight": 0.9,
+        "target_countries": [
+          "OTT"
+        ],
+        "on_complete_effects": {
+          "prestige": 45,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "army",
+            "title_key": "owo.task.hun_bastion_of_christendom.army",
+            "title": "Muster a border defense army of 25,000 soldiers",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel",
+                "min_value": "25000"
+              }
+            },
+            "required_count": 25000
+          },
+          {
+            "id": "allies",
+            "title_key": "owo.task.hun_bastion_of_christendom.allies",
+            "title": "Seek alliances with Central European crowns",
+            "condition": {
+              "type": "alliance_with",
+              "params": {
+                "partners": "POL,HAB,BOH"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "hun_corvinus_hegemony",
+        "title": "The Corvinus Renaissance",
+        "title_key": "owo.goal.hun_corvinus_hegemony",
+        "description": "Modernize royal finances, patronize humanist culture, and expand royal sovereignty.",
+        "description_key": "owo.goal.hun_corvinus_hegemony.desc",
+        "type": "prestige",
+        "priority": "secondary",
+        "ai_weight": 0.65,
+        "on_complete_effects": {
+          "prestige": 30,
+          "economy_boost": 0.03
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.hun_corvinus_hegemony.treasury",
+            "title": "Hold 700 fl. in royal reserves",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "700"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "POL": {
+    "goals": [
+      {
+        "id": "pol_personal_union",
+        "title": "The Jagiellonian Union",
+        "title_key": "owo.goal.pol_personal_union",
+        "description": "Cement the dynastic partnership with the Grand Duchy of Lithuania.",
+        "description_key": "owo.goal.pol_personal_union.desc",
+        "type": "diplomatic",
+        "priority": "primary",
+        "ai_weight": 0.85,
+        "target_countries": [
+          "LTH"
+        ],
+        "on_complete_effects": {
+          "prestige": 35,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "alliance",
+            "title_key": "owo.task.pol_personal_union.alliance",
+            "title": "Secure an alliance with Lithuania",
+            "condition": {
+              "type": "alliance_with",
+              "params": {
+                "target_iso3": "LTH"
+              }
+            }
+          },
+          {
+            "id": "relations",
+            "title_key": "owo.task.pol_personal_union.relations",
+            "title": "Cultivate good relations with Vilnius",
+            "condition": {
+              "type": "improve_relations",
+              "params": {
+                "target_iso3": "LTH",
+                "min_value": "70"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "pol_thirteen_years_war",
+        "title": "Reclaim the Baltic Coast",
+        "title_key": "owo.goal.pol_thirteen_years_war",
+        "description": "Challenge the Teutonic Knights to restore Polish access to the Baltic Sea.",
+        "description_key": "owo.goal.pol_thirteen_years_war.desc",
+        "type": "territorial",
+        "priority": "secondary",
+        "ai_weight": 0.8,
+        "target_countries": [
+          "TEU"
+        ],
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "war",
+            "title_key": "owo.task.pol_thirteen_years_war.war",
+            "title": "Declare war on the Teutonic Order",
+            "condition": {
+              "type": "declare_war_on",
+              "params": {
+                "target_iso3": "TEU"
+              }
+            }
+          },
+          {
+            "id": "army",
+            "title_key": "owo.task.pol_thirteen_years_war.army",
+            "title": "Muster 20,000 crown soldiers",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel",
+                "min_value": "20000"
+              }
+            },
+            "required_count": 20000
+          }
+        ]
+      }
+    ]
+  },
+  "MAM": {
+    "goals": [
+      {
+        "id": "mam_custodian_holy_sanctuaries",
+        "title": "Protector of the Holy Cities",
+        "title_key": "owo.goal.mam_custodian_holy_sanctuaries",
+        "description": "Safeguard Mecca, Medina, and Jerusalem while dominating Red Sea trade routes.",
+        "description_key": "owo.goal.mam_custodian_holy_sanctuaries.desc",
+        "type": "prestige",
+        "priority": "primary",
+        "ai_weight": 0.8,
+        "on_complete_effects": {
+          "prestige": 50,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.mam_custodian_holy_sanctuaries.treasury",
+            "title": "Hold 1,000 fl. in the Cairo citadel treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1000"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "mam_syrian_bulwark",
+        "title": "Fortify the Syrian Frontier",
+        "title_key": "owo.goal.mam_syrian_bulwark",
+        "description": "Maintain a formidable cavalry army in Aleppo and Damascus to deter northern aggression.",
+        "description_key": "owo.goal.mam_syrian_bulwark.desc",
+        "type": "defense",
+        "priority": "secondary",
+        "ai_weight": 0.75,
+        "target_countries": [
+          "OTT"
+        ],
+        "on_complete_effects": {
+          "prestige": 30,
+          "military_modifier": 0.05
+        },
+        "tasks": [
+          {
+            "id": "army",
+            "title_key": "owo.task.mam_syrian_bulwark.army",
+            "title": "Muster 30,000 Mamluk warriors",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel",
+                "min_value": "30000"
+              }
+            },
+            "required_count": 30000
+          }
+        ]
+      }
+    ]
   }
 }

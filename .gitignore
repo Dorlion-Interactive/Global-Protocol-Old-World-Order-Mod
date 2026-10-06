@@ -66,6 +66,7 @@ dev/*
 !dev/owo_provinces.py
 !dev/curate_cultural_identities.py
 !dev/add_event_localization.py
+!dev/add_national_goals.py
 # ...and the helpers install.bat runs
 !dev/validate_scenario.ps1
 !dev/set-runtime-settings.ps1
