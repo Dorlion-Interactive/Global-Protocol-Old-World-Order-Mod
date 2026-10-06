@@ -117,7 +117,8 @@
       "associatedCountries": [
         "CAS",
         "ARA",
-        "NAV"
+        "NAV",
+        "GRN"
       ],
       "symbolPosition": "suffix"
     },
@@ -192,11 +193,40 @@
       "exchangeRateToBase": 200.0,
       "standard": "silver",
       "fineMetalGrams": 0.78,
-      "description": "Silver denga coins minted in Moscow and Novgorod; 200 denga made up the ruble of account (~1 florin).",
+      "description": "Silver denga coins minted in Moscow, Novgorod, and Tver; 200 denga made up the ruble of account (~1 florin).",
       "associatedCountries": [
         "MVY",
         "PSK",
-        "RYA"
+        "RYA",
+        "NVD",
+        "TVR"
+      ],
+      "symbolPosition": "suffix"
+    },
+    {
+      "id": "lubeck_mark",
+      "name": "Lübeck / Nordic Mark",
+      "symbol": "mk.",
+      "exchangeRateToBase": 3.0,
+      "standard": "silver",
+      "fineMetalGrams": 1.2,
+      "description": "Silver mark of the Hanseatic League and the Wendish Coinage Union; standard unit across Denmark, Sweden, and the Baltic littoral.",
+      "associatedCountries": [
+        "DAN",
+        "SWD",
+        "LIV"
+      ],
+      "symbolPosition": "suffix"
+    },
+    {
+      "id": "mon_ryo",
+      "name": "Japanese Mon / Ryō",
+      "symbol": "文",
+      "exchangeRateToBase": 1000.0,
+      "standard": "copper_cash",
+      "description": "Imported copper cash (Torasen) and gold banryō circulating across Muromachi Japan under the Ashikaga shogunate.",
+      "associatedCountries": [
+        "MRC"
       ],
       "symbolPosition": "suffix"
     }

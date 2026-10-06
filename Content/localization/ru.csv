@@ -827,3 +827,52 @@ mod.ui.toolbar.info_tooltip,Mod Overview & Status
 mod.ui.toolbar.chronicle_tooltip,1450 World Chronicle
 mod.ui.toolbar.balance_of_power_tooltip,Balance of Power & Alliances
 mod.ui.province.historical_sig,Historical Significance
+owo.goal.byz_defend_constantinople,Survive the Ottoman Onslaught
+owo.goal.byz_defend_constantinople.desc,Muster crown defenders behind the Theodosian Walls and appeal to Western Christendom for naval and financial aid.
+owo.task.byz_defend_constantinople.army,Muster 10,000 imperial defenders
+owo.task.byz_defend_constantinople.allies,Seek alliance with Hungary
+owo.goal.byz_restore_morea,Reclaim the Peloponnese
+owo.goal.byz_restore_morea.desc,Reassert direct Roman sovereignty across southern Greece and consolidate the Despotate of Morea.
+owo.task.byz_restore_morea.treasury,Amass 500 fl. in imperial reserves
+owo.goal.hab_imperial_diadem,Consolidate the Imperial Crown
+owo.goal.hab_imperial_diadem.desc,Maintain the Holy Roman Empire's crown in Vienna and foster alliances with the prince-electors.
+owo.task.hab_imperial_diadem.treasury,Amass 1,000 fl. in the Vienna treasury
+owo.task.hab_imperial_diadem.allies,Secure alliance with Bohemia
+owo.goal.hab_dynastic_marriage,The Imperial Marriage Policy
+owo.goal.hab_dynastic_marriage.desc,Let others wage war; you, happy Austria, marry. Secure dynastic ties and expand Danubian influence.
+owo.task.hab_dynastic_marriage.relations,Cultivate good relations with Hungary
+owo.task.hab_dynastic_marriage.army,Field an army of 20,000 men
+owo.goal.dan_kalmar_hegemony,Enforce the Kalmar Union
+owo.goal.dan_kalmar_hegemony.desc,Assert the authority of the Danish crown over the rebellious Swedish council in Stockholm.
+owo.task.dan_kalmar_hegemony.army,Muster 20,000 royal soldiers
+owo.task.dan_kalmar_hegemony.sweden,Subdue Swedish defiance
+owo.goal.dan_sound_tolls,Dominate the Sound Tolls
+owo.goal.dan_sound_tolls.desc,Levy customs dues on all merchant ships entering the Baltic and command the northern seas.
+owo.task.dan_sound_tolls.fleet,Maintain an armada of 12 warships
+owo.task.dan_sound_tolls.treasury,Accumulate 800 fl. in toll revenue
+owo.goal.vij_raichur_bastion,Fortify the Raichur Doab
+owo.goal.vij_raichur_bastion.desc,Garrison the Tungabhadra river bastions to deter northern invasions from the Bahmani Sultanate.
+owo.task.vij_raichur_bastion.army,Muster 35,000 warriors
+owo.task.vij_raichur_bastion.bahmani,Contain the Bahmani Sultanate
+owo.goal.vij_monuments_of_hampi,Glory of Hampi
+owo.goal.vij_monuments_of_hampi.desc,Construct monumental temple gopurams, expand bazaars, and dominate Indian Ocean trade.
+owo.task.vij_monuments_of_hampi.treasury,Accumulate 1,500 fl. in the royal treasury
+owo.goal.inc_tawantinsuyu_expansion,Unify Tawantinsuyu
+owo.goal.inc_tawantinsuyu_expansion.desc,Unify the Andean mountain valleys from Cusco under the mantle of the Sun God Inti.
+owo.task.inc_tawantinsuyu_expansion.army,Muster 25,000 Andean warriors
+owo.goal.inc_qhapaq_nan,Engineer the Qhapaq Ñan
+owo.goal.inc_qhapaq_nan.desc,Pave the royal road network, terrace the mountain valleys, and store grain in state tambos.
+owo.task.inc_qhapaq_nan.treasury,Amass 700 fl. in storehouse reserves
+owo.goal.jos_hangul_enlightenment,Promulgate the Hunminjeongeum
+owo.goal.jos_hangul_enlightenment.desc,Spread King Sejong's scientific Hangul alphabet, encouraging literacy and righteous civil governance.
+owo.task.jos_hangul_enlightenment.treasury,Hold 600 fl. in the royal treasury
+owo.task.jos_hangul_enlightenment.relations,Maintain harmonious relations with Ming
+owo.goal.jos_northern_frontier,Fortify the Northern Frontier
+owo.goal.jos_northern_frontier.desc,Secure the Yalu and Tumen rivers with border fortresses against northern Jurchen incursions.
+owo.task.jos_northern_frontier.army,Muster 20,000 frontier troops
+owo.goal.tim_timurid_renaissance,The Timurid Renaissance
+owo.goal.tim_timurid_renaissance.desc,Sponsor astronomy, poetry, and monumental architecture in Samarkand and Herat under the House of Timur.
+owo.task.tim_timurid_renaissance.treasury,Maintain 1,000 fl. in the imperial treasury
+owo.goal.tim_defend_samarkand,Shield Transoxiana
+owo.goal.tim_defend_samarkand.desc,Field armored horse archers and defend Samarkand against nomadic Uzbek and Kara Koyunlu raids.
+owo.task.tim_defend_samarkand.army,Muster an imperial army of 30,000 warriors

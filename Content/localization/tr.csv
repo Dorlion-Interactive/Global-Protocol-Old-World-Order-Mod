@@ -827,3 +827,52 @@ mod.ui.toolbar.info_tooltip,Mod Genel Bakış ve Durum
 mod.ui.toolbar.chronicle_tooltip,1450 Dünya Vakayinamesi
 mod.ui.toolbar.balance_of_power_tooltip,Güç Dengesi ve İttifaklar
 mod.ui.province.historical_sig,Tarihi Önemi
+owo.goal.byz_defend_constantinople,Osmanlı Kuşatmasına Diren
+owo.goal.byz_defend_constantinople.desc,Theodosius Surları ardında savunmayı toparla ve Batı Hristiyanlığından acil Haçlı yardımı iste.
+owo.task.byz_defend_constantinople.army,10.000 imparatorluk muhafızı topla
+owo.task.byz_defend_constantinople.allies,Macaristan ile ittifak kur
+owo.goal.byz_restore_morea,Mora Despotluğu'nu Güçlendir
+owo.goal.byz_restore_morea.desc,Güney Yunanistan'da Roma egemenliğini yeniden kur ve Mora Despotluğu'nu pekiştir.
+owo.task.byz_restore_morea.treasury,Hazinede 500 fl. imparatorluk rezervi tut
+owo.goal.hab_imperial_diadem,İmparatorluk Tacını Pekiştir
+owo.goal.hab_imperial_diadem.desc,Kutsal Roma İmparatorluğu tacını Viyana'da tut ve elektör prenslerle ittifaklar kur.
+owo.task.hab_imperial_diadem.treasury,Viyana hazinesinde 1.000 fl. biriktir
+owo.task.hab_imperial_diadem.allies,Bohemya ile ittifak sağla
+owo.goal.hab_dynastic_marriage,İmparatorluk Evlilik Diplomasisi
+owo.goal.hab_dynastic_marriage.desc,Bırak başkaları savaşsın; sen, mutlu Avusturya, evlen. Tuna boyunca hanedan bağlarını genişlet.
+owo.task.hab_dynastic_marriage.relations,Macaristan ile iyi ilişkiler geliştir
+owo.task.hab_dynastic_marriage.army,20.000 kişilik ordu topla
+owo.goal.dan_kalmar_hegemony,Kalmar Birliği'ni Muhafaza Et
+owo.goal.dan_kalmar_hegemony.desc,Danimarka kraliyet otoritesini Stockholm'deki asi İsveç konseyine kabul ettir.
+owo.task.dan_kalmar_hegemony.army,20.000 kraliyet askeri topla
+owo.task.dan_kalmar_hegemony.sweden,İsveç muhalefetini dize getir
+owo.goal.dan_sound_tolls,Øresund Boğazı Vergilerine Hükmet
+owo.goal.dan_sound_tolls.desc,Baltık'a giren tüm ticaret gemilerinden gümrük vergisi al ve güçlü bir donanma kur.
+owo.task.dan_sound_tolls.fleet,12 savaş gemisinden oluşan donanma hazırla
+owo.task.dan_sound_tolls.treasury,Boğaz vergisinden 800 fl. biriktir
+owo.goal.vij_raichur_bastion,Raichur Doabını Tahkim Et
+owo.goal.vij_raichur_bastion.desc,Tungabhadra nehir boyundaki kaleleri güçlendirerek Behmani akınlarını püskürt.
+owo.task.vij_raichur_bastion.army,35.000 savaşçı topla
+owo.task.vij_raichur_bastion.bahmani,Behmani Sultanlığı'nı sınırla
+owo.goal.vij_monuments_of_hampi,Hampi'nin İhtişamı
+owo.goal.vij_monuments_of_hampi.desc,Görkemli tapınak kuleleri inşa et, pazarları genişlet ve Hint Okyanusu ticaretine hükmet.
+owo.task.vij_monuments_of_hampi.treasury,Kraliyet hazinesinde 1.500 fl. biriktir
+owo.goal.inc_tawantinsuyu_expansion,Tawantinsuyu'yu Birleştir
+owo.goal.inc_tawantinsuyu_expansion.desc,And dağ vadilerini Cusco'dan yöneterek Güneş Tanrısı İnti sancağı altında birleştir.
+owo.task.inc_tawantinsuyu_expansion.army,25.000 And savaşçısı topla
+owo.goal.inc_qhapaq_nan,Qhapaq Ñan Kral Yolu
+owo.goal.inc_qhapaq_nan.desc,Kraliyet yol ağını taşla döşe, dağ yamaçlarını terasla ve devlet ambarlarını doldur.
+owo.task.inc_qhapaq_nan.treasury,Devlet ambarlarında 700 fl. değerinde rezerv depola
+owo.goal.jos_hangul_enlightenment,Hunminjeongeum'u İlan Et
+owo.goal.jos_hangul_enlightenment.desc,Kral Sejong'un bilimsel Hangul alfabesini yayarak okuryazarlığı ve Konfüçyüsçü yönetimi güçlendir.
+owo.task.jos_hangul_enlightenment.treasury,Kraliyet hazinesinde 600 fl. tut
+owo.task.jos_hangul_enlightenment.relations,Ming Hanedanı ile uyumlu ilişkileri koru
+owo.goal.jos_northern_frontier,Kuzey Sınırını Güçlendir
+owo.goal.jos_northern_frontier.desc,Yalu ve Tumen nehirleri boyunca Cürçen akınlarına karşı sınır garnizonları inşa et.
+owo.task.jos_northern_frontier.army,20.000 sınır muhafızı topla
+owo.goal.tim_timurid_renaissance,Timurlu Rönesansı
+owo.goal.tim_timurid_renaissance.desc,Semerkant ve Herat'ta astronomi, sanat ve anıtsal mimariyi Timur Hanedanı altında destekle.
+owo.task.tim_timurid_renaissance.treasury,İmparatorluk hazinesinde 1.000 fl. muhafaza et
+owo.goal.tim_defend_samarkand,Maveraünnehir'i Koru
+owo.goal.tim_defend_samarkand.desc,Zırhlı atlı okçuları topla ve Semerkant'ı göçebe Özbek akınlarına karşı savun.
+owo.task.tim_defend_samarkand.army,30.000 kişilik imparatorluk ordusu topla
