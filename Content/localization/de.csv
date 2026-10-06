@@ -766,3 +766,59 @@ owo.event.gutenberg_printing_press_1455.option_2,Druckereien unter königliche Z
 owo.event.wars_of_the_roses_1455.option_2,Die Weiße Rose von York und Herzog Richard unterstützen!
 owo.event.portuguese_african_voyages_1460.option_2,Handelsstützpunkte an der Küste sichern.
 owo.event.fall_of_trebizond_1461.option_2,Timare an Reiter vergeben, um die Küste zu sichern.
+owo.event.diplomacy_union_of_poland_lithuania_1450.title,The Jagiellonian Personal Union
+owo.event.diplomacy_union_of_poland_lithuania_1450.description,King Casimir IV Jagiellon unites the Crown of Poland and the Grand Duchy of Lithuania in personal union. The royal council debates whether to bind both realms in unbreakable mutual defense or grant greater autonomy to crown magnates.
+owo.event.diplomacy_union_of_poland_lithuania_1450.option_1,Affirm the unbreakable Union of Poland and Lithuania!
+owo.event.diplomacy_union_of_poland_lithuania_1450.option_2,Grant regional privileges and prioritize crown treasury reserves.
+owo.event.diplomacy_auld_alliance_1450.title,The Auld Alliance: Mutual Defense
+owo.event.diplomacy_auld_alliance_1450.description,Since 1295, the ancient pact between France and Scotland has contained English continental ambitions. As French forces drive the Plantagenets from Normandy, Charles VII considers reaffirming the military alliance with the Scots.
+owo.event.diplomacy_auld_alliance_1450.option_1,Renew the Auld Alliance and press England on two fronts!
+owo.event.diplomacy_auld_alliance_1450.option_2,Focus solely on Normandy and Aquitaine reconquest.
+owo.event.diplomacy_hundred_years_war_england_1450.title,The Hundred Years' War: English Desperation
+owo.event.diplomacy_hundred_years_war_england_1450.description,Henry VI faces disaster as Normandy crumbles under French siege and Jack Cade's revolt stirs Kent. London must decide whether to pour desperate levies into continental defense or withdraw to secure the British realm.
+owo.event.diplomacy_hundred_years_war_england_1450.option_1,Levy veteran troops and defend continental possessions to the last!
+owo.event.diplomacy_hundred_years_war_england_1450.option_2,Retrench to the British Isles and restore domestic order.
+owo.event.diplomacy_venice_genoa_rivalry_1450.title,Venetian-Genoese Maritime Cold War
+owo.event.diplomacy_venice_genoa_rivalry_1450.description,The Serene Republic of Venice commands the Adriatic and Levant, while Genoa clings stubbornly to Chios, Galata, and Black Sea outposts. Doge Francesco Foscari deliberates on maritime trade supremacy.
+owo.event.diplomacy_venice_genoa_rivalry_1450.option_1,Assert complete Venetian naval hegemony across the Levant!
+owo.event.diplomacy_venice_genoa_rivalry_1450.option_2,Seek a pragmatic commercial entente with the Genoese.
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.title,Desperate Envoys from Constantinople
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.description,Emperor Constantine XI Palaiologos stands behind the Theodosian Walls as Ottoman fortresses tighten around the Bosporus. Constantinople must appeal to the Papacy and Western princes for an urgent Christian crusade.
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_1,Proclaim the Union of Churches in Rome and summon Western relief!
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_2,Reject papal submission; stand firm in Orthodox faith and fortify the walls.
+owo.event.diplomacy_iberian_trastamara_concord_1450.title,The Iberian Trastámara Concord
+owo.event.diplomacy_iberian_trastamara_concord_1450.description,King John II guides Castile amid dynastic ties with Aragon and Portugal. To the south, the Nasrid Emirate of Granada watches warily along the Andalusian frontier as Iberian crowns deliberate on common policy.
+owo.event.diplomacy_iberian_trastamara_concord_1450.option_1,Affirm fraternal Trastámara accords and preserve Iberian friendship.
+owo.event.diplomacy_iberian_trastamara_concord_1450.option_2,Demand heavy silver tribute from the Emirate of Granada.
+owo.event.diplomacy_kalmar_union_accord_1450.title,The Kalmar Union and Treaty of Halmstad
+owo.event.diplomacy_kalmar_union_accord_1450.description,King Christian I reigns over Denmark and Norway while Swedish aristocrats support Karl Knutsson. The Halmstad negotiations attempt to reconcile the three Nordic crowns under a stable union.
+owo.event.diplomacy_kalmar_union_accord_1450.option_1,Ratify the Halmstad Compact to preserve Nordic peace.
+owo.event.diplomacy_kalmar_union_accord_1450.option_2,Assert Danish royal supremacy over the Swedish council.
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.title,Ming-Joseon Imperial Brotherhood
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.description,Following the Tumu Crisis, Joseon Korea dispatches condolences and supplies to Beijing. The Ming court must decide whether to honor this bond with highest diplomatic prestige or levy frontier defense taxes.
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_1,Grant Joseon premier tributary status and cement mutual defense!
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_2,Impose wartime tributary levies to replenish the imperial treasury.
+owo.event.diplomacy_deccan_rivalry_1450.title,The Deccan Crucible: Raichur Frontier
+owo.event.diplomacy_deccan_rivalry_1450.description,The fertile Raichur Doab between the Krishna and Tungabhadra rivers remains bitterly contested between the Hindu empire of Vijayanagara and the Bahmani Sultanate.
+owo.event.diplomacy_deccan_rivalry_1450.option_1,Garrison the Tungabhadra frontier and prepare for sultanate incursions!
+owo.event.diplomacy_deccan_rivalry_1450.option_2,Expand maritime trade through western ports and hire foreign mercenaries.
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.title,Moscow and the Gathering of Rus
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.description,Having consolidated his power, Grand Prince Vasily II looks toward the commercial wealth of the Novgorod Republic and the looming remnants of the Great Horde.
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_1,Offer protection to Pskov and challenge Novgorod's northern dominance!
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_2,Secure trade treaties with Novgorod to fund royal consolidation.
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.title,Danubian Bastion: The Hungarian Frontier
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.description,Regent John Hunyadi reorganizes the southern banates to resist Ottoman campaigns along the Danube, seeking common cause with Skanderbeg's League of Lezhë and the Papacy.
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_1,Stand with Skanderbeg and hold the Danube as Shield of Christendom!
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_2,Reconcile with the Austrian Habsburgs to stabilize royal finances.
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.title,The Levantine Spice Capitulations
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.description,Controlling Alexandria and Cairo, the Mamluk Sultanate holds the gateway to Eastern spice routes. Venetian envoys petition the citadel for guaranteed trading privileges and lower customs duties.
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_1,Renew Venetian capitulations to maximize commercial customs volume.
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_2,Levy hefty imperial tariffs on Italian merchant warehouses.
+owo.event.diplomacy_italian_balance_milan_florence_1450.title,The Sforza-Medici Axis of Lombardy
+owo.event.diplomacy_italian_balance_milan_florence_1450.description,Francesco Sforza, freshly established as Duke of Milan, receives financial and diplomatic backing from Cosimo de' Medici in Florence, balancing against Venetian ambitions.
+owo.event.diplomacy_italian_balance_milan_florence_1450.option_1,Formalize the Milanese-Florentine league to deter Venetian expansion!
+owo.event.diplomacy_italian_balance_milan_florence_1450.option_2,Maintain flexible neutrality and preserve mercantile independence.
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.title,Andean Rivalry: Cusco and Chimor
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.description,As Pachacuti expands the Inca realm along the Andean spine, the wealthy coastal Kingdom of Chimor watches from its adobe capital of Chan Chan with mounting apprehension.
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_1,Mobilize Inca armies along the mountain valleys toward the northern coast!
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_2,Consolidate the imperial capital of Cusco and build sacred temples.

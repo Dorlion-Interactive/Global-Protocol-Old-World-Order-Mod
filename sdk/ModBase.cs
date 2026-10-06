@@ -33,20 +33,30 @@ public abstract class ModBase : IModEntrypoint
         ModHookBus.OnEventFired        += OnEventFired;
         ModHookBus.OnCountryEliminated += OnCountryEliminated;
         ModHookBus.OnUiAction          += OnUiAction;
+        ModHookBus.OnProvinceCaptured      += OnProvinceCaptured;
+        ModHookBus.OnAllianceFormed        += OnAllianceFormed;
+        ModHookBus.OnAllianceBroken        += OnAllianceBroken;
+        ModHookBus.OnEconomyTick           += OnEconomyTick;
+        ModHookBus.OnTradeAgreementSigned  += OnTradeAgreementSigned;
         OnInitialize(services);
     }
 
     // Called by the engine — do not override. Use OnDispose instead.
     public void Dispose()
     {
-        ModHookBus.OnGameTick          -= OnTick;
-        ModHookBus.OnWarDeclared       -= OnWarDeclared;
-        ModHookBus.OnPeaceSigned       -= OnPeaceSigned;
-        ModHookBus.OnTechResearched    -= OnTechResearched;
-        ModHookBus.OnBuildingCompleted -= OnBuildingCompleted;
-        ModHookBus.OnEventFired        -= OnEventFired;
-        ModHookBus.OnCountryEliminated -= OnCountryEliminated;
-        ModHookBus.OnUiAction          -= OnUiAction;
+        ModHookBus.OnGameTick              -= OnTick;
+        ModHookBus.OnWarDeclared           -= OnWarDeclared;
+        ModHookBus.OnPeaceSigned           -= OnPeaceSigned;
+        ModHookBus.OnTechResearched        -= OnTechResearched;
+        ModHookBus.OnBuildingCompleted     -= OnBuildingCompleted;
+        ModHookBus.OnEventFired            -= OnEventFired;
+        ModHookBus.OnCountryEliminated     -= OnCountryEliminated;
+        ModHookBus.OnUiAction              -= OnUiAction;
+        ModHookBus.OnProvinceCaptured      -= OnProvinceCaptured;
+        ModHookBus.OnAllianceFormed        -= OnAllianceFormed;
+        ModHookBus.OnAllianceBroken        -= OnAllianceBroken;
+        ModHookBus.OnEconomyTick           -= OnEconomyTick;
+        ModHookBus.OnTradeAgreementSigned  -= OnTradeAgreementSigned;
         OnDispose();
     }
 
@@ -78,6 +88,21 @@ public abstract class ModBase : IModEntrypoint
 
     /// <summary>Called when a country is fully eliminated from the game.</summary>
     protected virtual void OnCountryEliminated(int countryIndex) { }
+
+    /// <summary>Fired once per province whose owner changes through a peace deal or annexation effect.</summary>
+    protected virtual void OnProvinceCaptured(int provinceId, int newOwner, int oldOwner) { }
+
+    /// <summary>Fired when two countries form an alliance.</summary>
+    protected virtual void OnAllianceFormed(int proposerIndex, int partnerIndex) { }
+
+    /// <summary>Fired when an alliance is dissolved.</summary>
+    protected virtual void OnAllianceBroken(int breakerIndex, int partnerIndex) { }
+
+    /// <summary>Fired each monthly economy tick.</summary>
+    protected virtual void OnEconomyTick(int year, int month) { }
+
+    /// <summary>Fired when a bilateral trade agreement is signed.</summary>
+    protected virtual void OnTradeAgreementSigned(int country1Index, int country2Index) { }
 
     /// <summary>
     /// Called when a mod UI button is clicked.

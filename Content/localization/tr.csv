@@ -766,3 +766,59 @@ owo.event.gutenberg_printing_press_1455.option_2,Matbaaları kraliyet denetimine
 owo.event.wars_of_the_roses_1455.option_2,York'un Beyaz Gülü ve Dük Richard'ı destekleyin!
 owo.event.portuguese_african_voyages_1460.option_2,Gine ticaret merkezlerini pekiştir ve ticaret gelirini topla.
 owo.event.fall_of_trebizond_1461.option_2,Kıyı güvenliği için yerel süvarilere tımarlar bağışla.
+owo.event.diplomacy_union_of_poland_lithuania_1450.title,Jagiellon Kişisel Birliği
+owo.event.diplomacy_union_of_poland_lithuania_1450.description,Kral IV. Casimir Jagiellon, Polonya Krallığı ile Litvanya Büyük Dükalığı'nı kişisel birlik altında birleştirdi. Kraliyet meclisi iki diyarı sarsılmaz bir ittifakla bağlamayı tartışıyor.
+owo.event.diplomacy_union_of_poland_lithuania_1450.option_1,Polonya ve Litvanya'nın sarsılmaz birliğini tasdik et!
+owo.event.diplomacy_union_of_poland_lithuania_1450.option_2,Bölgesel imtiyazlar tanı ve kraliyet hazinesini koru.
+owo.event.diplomacy_auld_alliance_1450.title,Kadim İttifak: Karşılıklı Savunma
+owo.event.diplomacy_auld_alliance_1450.description,1295'ten beri Fransa ile İskoçya arasındaki Kadim İttifak İngiliz emellerini dengeledi. Fransız orduları Normandiya'yı geri alırken VII. Charles İskoçlarla ittifakı pekiştiriyor.
+owo.event.diplomacy_auld_alliance_1450.option_1,Kadim İttifak'ı yenile ve İngiltere'yi iki cephede sıkıştır!
+owo.event.diplomacy_auld_alliance_1450.option_2,Yalnızca Normandiya ve Akitanya'nın fethine odaklan.
+owo.event.diplomacy_hundred_years_war_england_1450.title,Yüzyıl Savaşları: İngiliz Çaresizliği
+owo.event.diplomacy_hundred_years_war_england_1450.description,Normandiya Fransız kuşatması altında düşerken ve Kent'te isyan başlarken VI. Henry çaresizlikle karşı karşıya. Londra kıta topraklarını savunmak ya da geri çekilmek arasında seçim yapmalı.
+owo.event.diplomacy_hundred_years_war_england_1450.option_1,Tecrübeli birlikleri topla ve kıta topraklarını sonuna kadar savun!
+owo.event.diplomacy_hundred_years_war_england_1450.option_2,Britanya Adaları'na çekil ve iç düzeni yeniden sağla.
+owo.event.diplomacy_venice_genoa_rivalry_1450.title,Venedik-Ceneviz Deniz Rekabeti
+owo.event.diplomacy_venice_genoa_rivalry_1450.description,Venedik Cumhuriyeti Adriyatik ve Levant'a hükmederken Ceneviz Sakız, Galata ve Karadeniz ticaret üslerine tutunuyor. Doç Francesco Foscari deniz ticaretinde üstünlük kurmayı değerlendiriyor.
+owo.event.diplomacy_venice_genoa_rivalry_1450.option_1,Levant sularında mutlak Venedik deniz hakimiyetini ilan et!
+owo.event.diplomacy_venice_genoa_rivalry_1450.option_2,Cenevizlilerle pragmatik bir ticari uzlaşı ara.
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.title,Konstantinopolis'ten Umutsuz Elçiler
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.description,Osmanlı hisarları Boğaz'ı sararken İmparator XI. Konstantinos Palaiologos Theodosius surlarının ardında direniyor. Konstantinopolis Papalık ve Batı prenslerinden acil Haçlı yardımı istiyor.
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_1,Roma'da Kiliselerin Birliği'ni ilan et ve Batı'yı yardıma çağır!
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_2,Papalık şartlarını reddet; Ortodoks inancına ve surlara güven.
+owo.event.diplomacy_iberian_trastamara_concord_1450.title,İber Trastámara Mutabakatı
+owo.event.diplomacy_iberian_trastamara_concord_1450.description,Kral II. John, Aragon ve Portekiz ile hanedan bağları arasında Kastilya'yı yönetiyor. Güneyde Nasriler İber krallıklarının adımlarını endişeyle takip ediyor.
+owo.event.diplomacy_iberian_trastamara_concord_1450.option_1,Kardeş Trastámara paktlarını tasdik et ve dostluğu koru.
+owo.event.diplomacy_iberian_trastamara_concord_1450.option_2,Gırnata Emirliği'nden ağır gümüş vergisi talep et.
+owo.event.diplomacy_kalmar_union_accord_1450.title,Kalmar Birliği ve Halmstad Antlaşması
+owo.event.diplomacy_kalmar_union_accord_1450.description,Kral I. Christian Danimarka ve Norveç'i yönetirken İsveç soyluları Karl Knutsson'u destekliyor. Halmstad müzakereleri üç İskandinav tacını birlik altında tutmayı hedefliyor.
+owo.event.diplomacy_kalmar_union_accord_1450.option_1,Kuzey barışını korumak için Halmstad Mutabakatı'nı onayla.
+owo.event.diplomacy_kalmar_union_accord_1450.option_2,İsveç konseyi üzerinde Danimarka kraliyet otoritesini kur.
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.title,Ming-Joseon İmparatorluk Kardeşliği
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.description,Tumu Krizi'nin ardından Joseon Hanedanı Pekin'e taziyeler ve erzak gönderdi. Ming sarayı bu Konfüçyüsçü ittifakı en yüksek diplomatik itibarla onurlandırmayı değerlendiriyor.
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_1,Joseon'a en yüksek imtiyazı ver ve karşılıklı savunmayı pekiştir!
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_2,İmparatorluk hazinesini doldurmak için savaş vergisi talep et.
+owo.event.diplomacy_deccan_rivalry_1450.title,Dekkan Çatışması: Raichur Sınırı
+owo.event.diplomacy_deccan_rivalry_1450.description,Krishna ve Tungabhadra nehirleri arasındaki verimli Raichur Doab bölgesi, Vijayanagara İmparatorluğu ile Behmani Sultanlığı arasında amansız bir mücadeleye sahne oluyor.
+owo.event.diplomacy_deccan_rivalry_1450.option_1,Tungabhadra sınırını tahkim et ve sultanlık akınlarına hazırlan!
+owo.event.diplomacy_deccan_rivalry_1450.option_2,Batı limanlarından deniz ticaretini genişlet ve süvari kirala.
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.title,Moskova ve Rus Topraklarının Birleşmesi
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.description,İç savaşı kazanan Büyük Prens II. Vasili, Novgorod Cumhuriyeti'nin ticari zenginliğine ve Büyük Orda'nın kalan baskısına karşı hamle yapmaya hazırlanıyor.
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_1,Pskov'a himaye sağla ve Novgorod'un kuzey üstünlüğüne meydan oku!
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_2,Moskova hazinesini güçlendirmek için Novgorod ile ticaret yap.
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.title,Tuna Kalkanı: Macar Serhaddi
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.description,Naip János Hunyadi, Tuna boyunca Osmanlı seferlerine direnmek için güney sancaklarını tahkim ediyor; İskender Bey'in Lezhë Ligi ve Papalık ile ortak cephe kuruyor.
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_1,İskender Bey ile omuz omuza dur; Tuna'yı Hristiyanlığın Kalkanı yap!
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_2,Kraliyet maliyesini düzeltmek için Avusturya Habsburgları ile anlaş.
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.title,Levant Baharat Kapitülasyonları
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.description,İskenderiye ve Kahire'yi kontrol eden Memlük Sultanlığı, Doğu baharat yollarının kapısını tutuyor. Venedik elçileri gümrük kolaylığı ve ticaret imtiyazı talep ediyor.
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_1,Ticaret hacmini artırmak için Venedik imtiyazlarını yenile.
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_2,İtalyan tüccar depolarına yüksek imparatorluk vergisi koy.
+owo.event.diplomacy_italian_balance_milan_florence_1450.title,Lombardiya'nın Sforza-Medici Ekseni
+owo.event.diplomacy_italian_balance_milan_florence_1450.description,Milano Dükü olan Francesco Sforza, Floransa'da Cosimo de' Medici'nin mali ve diplomatik desteğini alarak Venedik hırslarına karşı denge kuruyor.
+owo.event.diplomacy_italian_balance_milan_florence_1450.option_1,Venedik yayılmasını durdurmak için Milano-Floransa birliğini kur!
+owo.event.diplomacy_italian_balance_milan_florence_1450.option_2,Esnek bir tarafsızlık sürdür ve ticari bağımsızlığı koru.
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.title,And Rekabeti: Cusco ve Chimor
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.description,Pachacuti İnka egemenliğini And Dağları boyunca genişletirken, kıyıdaki zengin Chimor Krallığı başkenti Chan Chan'dan İnka ordularının ilerleyişini kaygıyla izliyor.
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_1,İnka ordularını kuzey kıyılarına doğru dağ vadilerinden yürüt!
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_2,Cusco başkentini güçlendir ve kutsal tapınaklar inşa et.

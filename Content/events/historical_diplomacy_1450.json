@@ -1,0 +1,1065 @@
+[
+  {
+    "id": "diplomacy_union_of_poland_lithuania_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "POL",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "black_army_hungary",
+    "title_key": "owo.event.diplomacy_union_of_poland_lithuania_1450.title",
+    "description_key": "owo.event.diplomacy_union_of_poland_lithuania_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "LTH",
+            "value": 85
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "LTH"
+          },
+          {
+            "type": "add_relation",
+            "target": "TEU",
+            "value": -70
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "jagiellonian_union_affirmed"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_union_of_poland_lithuania_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "LTH",
+            "value": 30
+          },
+          {
+            "type": "add_treasury",
+            "value": 350
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.corruption",
+            "value": -5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "polish_crown_autonomy"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_union_of_poland_lithuania_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_auld_alliance_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "FRA",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "peace_of_lodi",
+    "title_key": "owo.event.diplomacy_auld_alliance_1450.title",
+    "description_key": "owo.event.diplomacy_auld_alliance_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "SCT",
+            "value": 80
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "SCT"
+          },
+          {
+            "type": "add_relation",
+            "target": "ENG",
+            "value": -85
+          },
+          {
+            "type": "add_relation",
+            "target": "BUR",
+            "value": -45
+          },
+          {
+            "type": "modify_stat",
+            "field": "military.morale_recovery",
+            "value": 0.05
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "auld_alliance_renewed"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_auld_alliance_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "SCT",
+            "value": 25
+          },
+          {
+            "type": "add_relation",
+            "target": "ENG",
+            "value": -50
+          },
+          {
+            "type": "add_treasury",
+            "value": 300
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "french_isolationist_reconquest"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_auld_alliance_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_hundred_years_war_england_1450",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "ENG",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "black_army_hungary",
+    "title_key": "owo.event.diplomacy_hundred_years_war_england_1450.title",
+    "description_key": "owo.event.diplomacy_hundred_years_war_england_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "FRA",
+            "value": -90
+          },
+          {
+            "type": "add_relation",
+            "target": "SCT",
+            "value": -70
+          },
+          {
+            "type": "add_relation",
+            "target": "BUR",
+            "value": 40
+          },
+          {
+            "type": "modify_unrest",
+            "value": 10
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "medieval_infantry",
+            "count": 2
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "england_claims_france"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_hundred_years_war_england_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "FRA",
+            "value": -40
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "add_treasury",
+            "value": 400
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "england_continental_retrenchment"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_hundred_years_war_england_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_venice_genoa_rivalry_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "VNC",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "peace_of_lodi",
+    "title_key": "owo.event.diplomacy_venice_genoa_rivalry_1450.title",
+    "description_key": "owo.event.diplomacy_venice_genoa_rivalry_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "GEN",
+            "value": -75
+          },
+          {
+            "type": "add_relation",
+            "target": "ARA",
+            "value": 50
+          },
+          {
+            "type": "add_relation",
+            "target": "OTT",
+            "value": -50
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "ARA"
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "venice_naval_dominance"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_venice_genoa_rivalry_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "GEN",
+            "value": 20
+          },
+          {
+            "type": "add_treasury",
+            "value": 450
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "italian_maritime_accord"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_venice_genoa_rivalry_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_byzantine_diplomatic_plea_1450",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "BYZ",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "fall_of_constantinople",
+    "title_key": "owo.event.diplomacy_byzantine_diplomatic_plea_1450.title",
+    "description_key": "owo.event.diplomacy_byzantine_diplomatic_plea_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "PAP",
+            "value": 75
+          },
+          {
+            "type": "add_relation",
+            "target": "HUN",
+            "value": 60
+          },
+          {
+            "type": "add_relation",
+            "target": "VNC",
+            "value": 50
+          },
+          {
+            "type": "add_relation",
+            "target": "OTT",
+            "value": -95
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "PAP"
+          },
+          {
+            "type": "modify_unrest",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "council_of_florence_proclaimed"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "PAP",
+            "value": -30
+          },
+          {
+            "type": "add_relation",
+            "target": "MVY",
+            "value": 70
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "orthodox_defiance_byzantium"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_iberian_trastamara_concord_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "CAS",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "peace_of_lodi",
+    "title_key": "owo.event.diplomacy_iberian_trastamara_concord_1450.title",
+    "description_key": "owo.event.diplomacy_iberian_trastamara_concord_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "ARA",
+            "value": 65
+          },
+          {
+            "type": "add_relation",
+            "target": "PRT",
+            "value": 55
+          },
+          {
+            "type": "add_relation",
+            "target": "GRN",
+            "value": -75
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "ARA"
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "PRT"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "iberian_trastamara_pact"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_iberian_trastamara_concord_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "GRN",
+            "value": -85
+          },
+          {
+            "type": "add_treasury",
+            "value": 500
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.corruption",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "granada_tribute_extracted"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_iberian_trastamara_concord_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_kalmar_union_accord_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "DAN",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "peace_of_lodi",
+    "title_key": "owo.event.diplomacy_kalmar_union_accord_1450.title",
+    "description_key": "owo.event.diplomacy_kalmar_union_accord_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "SWD",
+            "value": 40
+          },
+          {
+            "type": "add_relation",
+            "target": "ENG",
+            "value": 25
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "SWD"
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "halmstad_treaty_signed"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_kalmar_union_accord_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "SWD",
+            "value": -65
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "medieval_infantry",
+            "count": 1
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "danish_nordic_hegemony"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_kalmar_union_accord_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_ming_joseon_tributary_pact_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "MYN",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "tumu_crisis_beijing",
+    "title_key": "owo.event.diplomacy_ming_joseon_tributary_pact_1450.title",
+    "description_key": "owo.event.diplomacy_ming_joseon_tributary_pact_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "JOS",
+            "value": 85
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "JOS"
+          },
+          {
+            "type": "add_relation",
+            "target": "MGL",
+            "value": -95
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "ming_joseon_brotherhood"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "JOS",
+            "value": 35
+          },
+          {
+            "type": "add_treasury",
+            "value": 600
+          },
+          {
+            "type": "modify_unrest",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "tributary_tribute_levied"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_deccan_rivalry_1450",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "VIJ",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "black_army_hungary",
+    "title_key": "owo.event.diplomacy_deccan_rivalry_1450.title",
+    "description_key": "owo.event.diplomacy_deccan_rivalry_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "BAH",
+            "value": -85
+          },
+          {
+            "type": "add_relation",
+            "target": "ORI",
+            "value": -50
+          },
+          {
+            "type": "modify_stat",
+            "field": "military.morale_recovery",
+            "value": 0.05
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "medieval_infantry",
+            "count": 2
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "raichur_doab_fortified"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_deccan_rivalry_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "BAH",
+            "value": -40
+          },
+          {
+            "type": "add_treasury",
+            "value": 500
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "vijayanagara_maritime_trade"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_deccan_rivalry_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_muscovy_novgorod_struggle_1450",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "MVY",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "black_army_hungary",
+    "title_key": "owo.event.diplomacy_muscovy_novgorod_struggle_1450.title",
+    "description_key": "owo.event.diplomacy_muscovy_novgorod_struggle_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "PSK",
+            "value": 70
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "PSK"
+          },
+          {
+            "type": "add_relation",
+            "target": "NVD",
+            "value": -80
+          },
+          {
+            "type": "add_relation",
+            "target": "STE",
+            "value": -70
+          },
+          {
+            "type": "add_relation",
+            "target": "TVR",
+            "value": -40
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "moscow_gatherer_of_lands"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "NVD",
+            "value": 25
+          },
+          {
+            "type": "add_treasury",
+            "value": 400
+          },
+          {
+            "type": "add_relation",
+            "target": "STE",
+            "value": -30
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "moscow_novgorod_trade_pact"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_ottoman_hungarian_frontier_1450",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "HUN",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "black_army_hungary",
+    "title_key": "owo.event.diplomacy_ottoman_hungarian_frontier_1450.title",
+    "description_key": "owo.event.diplomacy_ottoman_hungarian_frontier_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "LEZ",
+            "value": 80
+          },
+          {
+            "type": "add_relation",
+            "target": "OTT",
+            "value": -90
+          },
+          {
+            "type": "add_relation",
+            "target": "PAP",
+            "value": 65
+          },
+          {
+            "type": "add_relation",
+            "target": "HAB",
+            "value": 50
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "LEZ"
+          },
+          {
+            "type": "modify_stat",
+            "field": "military.morale_recovery",
+            "value": 0.05
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "hungary_shield_of_christendom"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "HAB",
+            "value": 60
+          },
+          {
+            "type": "add_relation",
+            "target": "OTT",
+            "value": -50
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "danubian_habsburg_concord"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_mamluk_venetian_trade_treaty_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "MAM",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "peace_of_lodi",
+    "title_key": "owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.title",
+    "description_key": "owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "VNC",
+            "value": 75
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "VNC"
+          },
+          {
+            "type": "add_relation",
+            "target": "OTT",
+            "value": -45
+          },
+          {
+            "type": "add_treasury",
+            "value": 600
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "mamluk_venetian_spice_treaty"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "VNC",
+            "value": -35
+          },
+          {
+            "type": "add_relation",
+            "target": "GEN",
+            "value": -35
+          },
+          {
+            "type": "add_treasury",
+            "value": 1000
+          },
+          {
+            "type": "modify_unrest",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "mamluk_spice_tariffs_imposed"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_italian_balance_milan_florence_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "MIL",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "peace_of_lodi",
+    "title_key": "owo.event.diplomacy_italian_balance_milan_florence_1450.title",
+    "description_key": "owo.event.diplomacy_italian_balance_milan_florence_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "FLR",
+            "value": 70
+          },
+          {
+            "type": "add_relation",
+            "target": "SAV",
+            "value": 40
+          },
+          {
+            "type": "add_relation",
+            "target": "VNC",
+            "value": -50
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "FLR"
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "sforza_medici_axis"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_italian_balance_milan_florence_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "VNC",
+            "value": -20
+          },
+          {
+            "type": "add_relation",
+            "target": "FLR",
+            "value": 30
+          },
+          {
+            "type": "add_treasury",
+            "value": 350
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "milan_armed_neutrality"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_italian_balance_milan_florence_1450.option_2"
+      }
+    ]
+  },
+  {
+    "id": "diplomacy_andean_tawantinsuyu_chimor_1450",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 10,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "INC",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "image": "rise_of_tawantinsuyu",
+    "title_key": "owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.title",
+    "description_key": "owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.description",
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "CHM",
+            "value": -75
+          },
+          {
+            "type": "modify_stat",
+            "field": "military.morale_recovery",
+            "value": 0.05
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "medieval_infantry",
+            "count": 2
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "tawantinsuyu_march_north"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "CHM",
+            "value": -30
+          },
+          {
+            "type": "add_treasury",
+            "value": 400
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "cusco_temple_expansion"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_2"
+      }
+    ]
+  }
+]

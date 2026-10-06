@@ -1,0 +1,15 @@
+{
+  "diplomacy": {
+    "alliance_form_min_relation": 50,
+    "alliance_break_relation_penalty": -50,
+    "alliance_honor_threshold": 20,
+    "truce_duration_months": 60,
+    "religion_relation_drift": 0.35,
+    "ethnicity_relation_drift": 0.45,
+    "relation_decay_rate": 0.04,
+    "allied_to_friend_bonus": 0.30,
+    "allied_to_rival_penalty": -0.35,
+    "hostile_relation_threshold": -50,
+    "friendly_relation_threshold": 50
+  }
+}

@@ -88,10 +88,14 @@ export function on_ui_action(
 
 function buildBriefingBody(year: i32, month: i32): string {
     const monthText = month < 10 ? "0" + month.toString() : month.toString();
-    return "Date: " + year.toString() + "-" + monthText + "\n\n"
-        + "Europe and Asia stand between old feudal orders and rising centralized states.\n"
-        + "Trade routes across the Mediterranean, Black Sea, Indian Ocean, and Silk Road are the arteries of power.\n"
-        + "Gunpowder armies are emerging, but cavalry, levies, and fortresses still decide most wars.\n\n"
+    return "Era: 1450 AD (Current Date: " + year.toString() + "-" + monthText + ")\n\n"
+        + "THE 1450 DIPLOMATIC WEB:\n"
+        + "• The Jagiellonian Union: Poland (POL) and Lithuania (LTH) united under Casimir IV against the Teutonic Order.\n"
+        + "• The Auld Alliance: France (FRA) and Scotland (SCT) press the English crown (ENG) in the Hundred Years' War.\n"
+        + "• The Balkan Bastion: Hungary (HUN), Albania (LEZ), and the Papacy (PAP) confront Ottoman expansion (OTT).\n"
+        + "• Italian Pentarchy: Maritime rivalry divides Venice (VNC) and Genoa (GEN); Milan (MIL) and Florence (FLR) balance Lombardy.\n"
+        + "• The Iberian Concord: Castile (CAS), Aragon (ARA), and Portugal (PRT) maintain fragile peace on the Granada (GRN) frontier.\n"
+        + "• Eastern Pacts: Ming China (MYN) rebuilds after Tumu with Joseon (JOS) tributary support; Vijayanagara (VIJ) contests the Deccan.\n\n"
         + "Use the buttons in the toolbar to access reports and mod information.";
 }
 

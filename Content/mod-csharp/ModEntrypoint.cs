@@ -95,6 +95,36 @@ public sealed class ModEntrypoint : ModBase, IModHost
         _shared?.OnCountryEliminated(countryIndex);
     }
 
+    // Called when two countries form an alliance.
+    protected override void OnAllianceFormed(int proposerIndex, int partnerIndex)
+    {
+        _shared?.OnAllianceFormed(proposerIndex, partnerIndex);
+    }
+
+    // Called when an alliance is broken.
+    protected override void OnAllianceBroken(int breakerIndex, int partnerIndex)
+    {
+        _shared?.OnAllianceBroken(breakerIndex, partnerIndex);
+    }
+
+    // Called when a bilateral trade agreement is signed.
+    protected override void OnTradeAgreementSigned(int country1Index, int country2Index)
+    {
+        _shared?.OnTradeAgreementSigned(country1Index, country2Index);
+    }
+
+    // Called when a province changes ownership.
+    protected override void OnProvinceCaptured(int provinceId, int newOwner, int oldOwner)
+    {
+        _shared?.OnProvinceCaptured(provinceId, newOwner, oldOwner);
+    }
+
+    // Called each monthly economy tick.
+    protected override void OnEconomyTick(int year, int month)
+    {
+        _shared?.OnEconomyTick(year, month);
+    }
+
     // Called when a toolbar button (registered in mod.json entrypoints.ui) is clicked.
     // Always check modId first — other mods fire this hook too.
     protected override void OnUiAction(string hookName, string modId)

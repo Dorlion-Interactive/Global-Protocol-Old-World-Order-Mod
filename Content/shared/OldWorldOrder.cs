@@ -28,6 +28,10 @@ public sealed class OldWorldOrder
 
     private readonly IModHost _host;
     private int _warsObserved;
+    private int _alliancesObserved;
+    private int _alliancesBroken;
+    private int _tradeAgreementsObserved;
+    private int _provincesCaptured;
     private int _techsObserved;
     private int _buildingsObserved;
     private int _eventsObserved;
@@ -43,13 +47,17 @@ public sealed class OldWorldOrder
     public void OnInitialize()
     {
         _warsObserved = 0;
+        _alliancesObserved = 0;
+        _alliancesBroken = 0;
+        _tradeAgreementsObserved = 0;
+        _provincesCaptured = 0;
         _techsObserved = 0;
         _buildingsObserved = 0;
         _eventsObserved = 0;
         _lastYear = 0;
         _lastMonth = 0;
         _startupShown = false;
-        _host.Log("OWO initialized shared logic.");
+        _host.Log("OWO initialized shared logic with ABI 3 diplomacy hooks.");
     }
 
     public void OnTick(int tick, int year, int month)
@@ -73,6 +81,36 @@ public sealed class OldWorldOrder
     public void OnPeaceSigned(int proposer, int target)
     {
         // Showcase hook: triggered when peace is signed between two countries
+    }
+
+    public void OnAllianceFormed(int proposerIndex, int partnerIndex)
+    {
+        _alliancesObserved++;
+        _host.Log($"OWO: Alliance formed between #{proposerIndex} and #{partnerIndex}");
+    }
+
+    public void OnAllianceBroken(int breakerIndex, int partnerIndex)
+    {
+        _alliancesBroken++;
+        _host.Log($"OWO: Alliance dissolved between #{breakerIndex} and #{partnerIndex}");
+    }
+
+    public void OnTradeAgreementSigned(int country1Index, int country2Index)
+    {
+        _tradeAgreementsObserved++;
+        _host.Log($"OWO: Trade agreement concluded between #{country1Index} and #{country2Index}");
+    }
+
+    public void OnProvinceCaptured(int provinceId, int newOwner, int oldOwner)
+    {
+        _provincesCaptured++;
+        _host.Log($"OWO: Province #{provinceId} transferred from #{oldOwner} to #{newOwner}");
+    }
+
+    public void OnEconomyTick(int year, int month)
+    {
+        _lastYear = year;
+        _lastMonth = month;
     }
 
     public void OnTechResearched(int countryIndex, int techIndex)
@@ -122,21 +160,29 @@ public sealed class OldWorldOrder
     private string BuildBriefingBody(int year, int month)
     {
         string monthText = (month >= 1 && month <= 12) ? month.ToString("00") : "--";
-        return "Date: " + year + "-" + monthText + "\n\n"
-             + "Europe and Asia stand between old feudal orders and rising centralized states.\n"
-             + "Trade routes across the Mediterranean, Black Sea, Indian Ocean, and Silk Road are the arteries of power.\n"
-             + "Gunpowder armies are emerging, but cavalry, levies, and fortresses still decide most wars.\n\n"
-             + "Use the buttons in the toolbar to access reports and mod information.";
+        return "Era: 1450 AD (Current Date: " + year + "-" + monthText + ")\n\n"
+             + "THE 1450 DIPLOMATIC WEB:\n"
+             + "• The Jagiellonian Union: Poland (POL) and Lithuania (LTH) united under Casimir IV against the Teutonic Order.\n"
+             + "• The Auld Alliance: France (FRA) and Scotland (SCT) press the English crown (ENG) in the final stage of the Hundred Years' War.\n"
+             + "• The Balkan Bastion: Hungary (HUN), Skanderbeg's Albania (LEZ), and the Papacy (PAP) confront Ottoman expansion (OTT).\n"
+             + "• Italian Pentarchy: Maritime rivalry divides Venice (VNC) and Genoa (GEN); Milan (MIL) and Florence (FLR) hold the balance.\n"
+             + "• The Iberian Concord: Castile (CAS), Aragon (ARA), and Portugal (PRT) maintain fragile peace on the Granada (GRN) frontier.\n"
+             + "• Eastern Pacts: Ming China (MYN) rebuilds after Tumu with Joseon (JOS) tributary support; Vijayanagara (VIJ) contests the Deccan.\n\n"
+             + "Use the toolbar buttons to inspect intelligence, military chronicles, and mod status.";
     }
 
     private string BuildArchiveBody()
     {
-        return "1450 Intelligence Report\n\n"
-             + "Observed wars: " + _warsObserved + "\n"
-             + "Observed technologies: " + _techsObserved + "\n"
-             + "Observed building completions: " + _buildingsObserved + "\n"
+        return "1450 Geopolitical & Intelligence Ledger\n\n"
+             + "Observed wars declared: " + _warsObserved + "\n"
+             + "Observed alliances formed: " + _alliancesObserved + "\n"
+             + "Observed alliances dissolved: " + _alliancesBroken + "\n"
+             + "Observed trade pacts: " + _tradeAgreementsObserved + "\n"
+             + "Observed territorial conquests: " + _provincesCaptured + "\n"
+             + "Observed doctrines researched: " + _techsObserved + "\n"
+             + "Observed building projects: " + _buildingsObserved + "\n"
              + "Observed scripted events: " + _eventsObserved + "\n\n"
-             + "Model your strategy around legitimacy, supply corridors, and defensible terrain.";
+             + "Maintain dynastic legitimacy, secure trade choke points, and honor defensive pacts.";
     }
 
     private string BuildInfoBody()
@@ -144,8 +190,8 @@ public sealed class OldWorldOrder
         string version = _host.GetModVersion();
         return "Global Protocol: Old World Order\n"
              + "Version: " + version + "\n\n"
-             + "A historical scenario mod focusing on the late medieval era.\n"
-             + "Showcasing UI injection across SDK, WASM.NET, and AS paths.\n\n"
+             + "A historical scenario mod focusing on the late medieval and early Renaissance era (1450 AD).\n"
+             + "Features deep diplomatic networks, cultural affinities, dynamic events, and Knowledge Network doctrines.\n\n"
              + "Project: Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod";
     }
 }
