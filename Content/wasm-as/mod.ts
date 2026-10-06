@@ -19,6 +19,10 @@ let tradeAgreementsObserved = 0;
 let lastYear = 0;
 let lastMonth = 0;
 let startupShown = false;
+let constantinopleFallen = false;
+let soundDuesCaptured = false;
+let malaccaCaptured = false;
+let gibraltarCaptured = false;
 
 export function on_init(): void {
     log("OWO init (AS ABI 3)");
@@ -52,6 +56,36 @@ export function on_event_fired(countryIndex: i32, eventIndex: i32): void {
 
 export function on_province_captured(provinceId: i32, newOwner: i32, oldOwner: i32): void {
     provincesCapturedObserved++;
+
+    if (provinceId == 2276 && !constantinopleFallen) {
+        constantinopleFallen = true;
+        showPopup(
+            "Geopolitical Shock: Fall of Constantinople",
+            "With the fall of Constantinople, the Ottoman Empire secures uncontested mastery over the Bosporus straits.\n\n"
+            + "The traditional Silk Road and Levantine spice trade corridors face heavy imperial tariffs and blockades."
+        );
+    } else if (provinceId == 162 && !soundDuesCaptured) {
+        soundDuesCaptured = true;
+        showPopup(
+            "Maritime Chokepoint: Sound Dues Control",
+            "Control over the Øresund straits (Zealand/Copenhagen) has shifted!\n\n"
+            + "The sovereign master of the Sound commands the maritime tolls between the North Sea and the Baltic."
+        );
+    } else if (provinceId == 545 && !malaccaCaptured) {
+        malaccaCaptured = true;
+        showPopup(
+            "Global Trade Hub: Fall of Malacca",
+            "The great maritime emporium of Malacca has been captured!\n\n"
+            + "Sitting between the Indian Ocean and the South China Sea, the new conqueror controls the vital spice fleet choke point."
+        );
+    } else if (provinceId == 2289 && !gibraltarCaptured) {
+        gibraltarCaptured = true;
+        showPopup(
+            "Naval Gateway: Strait of Gibraltar",
+            "The Rock of Gibraltar has changed hands!\n\n"
+            + "As the gateway between the Mediterranean Sea and the Atlantic Ocean, mastery over the strait controls naval access."
+        );
+    }
 }
 
 export function on_alliance_formed(country1: i32, country2: i32): void {
@@ -118,12 +152,34 @@ function buildArchiveBody(): string {
 }
 
 function buildChronicleBody(): string {
-    return "1450 WORLD CHRONICLE\n\n"
-        + "• Year of Epoch: 1450 AD\n"
-        + "• Continental Campaigns Recorded: " + warsObserved.toString() + "\n"
-        + "• Diplomatic Alliances Formed: " + alliancesObserved.toString() + "\n"
+    const spiceStatus = constantinopleFallen
+        ? "SEVERED — Constantinople in Ottoman hands; oceanic exploration underway."
+        : "OPEN — Byzantine Bosporus intact; Alexandria spice corridor active.";
+
+    const soundStatus = soundDuesCaptured
+        ? "CONTESTED — Øresund Sound sovereignty has shifted under war."
+        : "SECURE — Danish Crown collects tolls; Baltic shipping clear.";
+
+    const malaccaStatus = malaccaCaptured
+        ? "CONQUERED — Malacca strait seized by new master."
+        : "FLOURISHING — Malacca Sultanate welcomes Asian fleets.";
+
+    const gibraltarStatus = gibraltarCaptured
+        ? "CAPTURED — Pillars of Hercules occupied."
+        : "GUARDED — Iberian & Moroccan squadrons patrol.";
+
+    return "1450 WORLD CHRONICLE & MARITIME ARTERIES\n\n"
+        + "• Year of Epoch: 1450 AD\n\n"
+        + "GLOBAL CHOKEPOINTS:\n"
+        + "1. Bosporus (Constantinople): " + spiceStatus + "\n"
+        + "2. Sound Dues (Copenhagen): " + soundStatus + "\n"
+        + "3. Straits of Malacca: " + malaccaStatus + "\n"
+        + "4. Gibraltar Gateway: " + gibraltarStatus + "\n\n"
+        + "CAMPAIGNS LEDGER:\n"
+        + "• Continental Wars: " + warsObserved.toString() + "\n"
+        + "• Diplomatic Alliances: " + alliancesObserved.toString() + "\n"
         + "• Commercial Trade Pacts: " + tradeAgreementsObserved.toString() + "\n"
-        + "• Provinces Changed Sovereignty: " + provincesCapturedObserved.toString() + "\n\n"
+        + "• Provinces Changed Hands: " + provincesCapturedObserved.toString() + "\n\n"
         + "The world transitions from medieval chivalric levies into early modern sovereign states.";
 }
 

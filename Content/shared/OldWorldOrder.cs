@@ -41,6 +41,9 @@ public sealed class OldWorldOrder
     private int _lastMonth;
     private bool _startupShown;
     private bool _constantinopleFallen;
+    private bool _soundDuesCaptured;
+    private bool _malaccaCaptured;
+    private bool _gibraltarCaptured;
     private readonly System.Collections.Generic.Dictionary<int, int> _warAggressors = new();
 
     public OldWorldOrder(IModHost host)
@@ -62,6 +65,9 @@ public sealed class OldWorldOrder
         _lastMonth = 0;
         _startupShown = false;
         _constantinopleFallen = false;
+        _soundDuesCaptured = false;
+        _malaccaCaptured = false;
+        _gibraltarCaptured = false;
         _warAggressors.Clear();
         _host.Log("OWO initialized shared logic with ABI 3 diplomacy hooks.");
     }
@@ -119,7 +125,7 @@ public sealed class OldWorldOrder
         _provincesCaptured++;
         _host.Log($"OWO: Province #{provinceId} transferred from #{oldOwner} to #{newOwner}");
 
-        // Province 2276 = Constantinople (Istanbul)
+        // Province 2276 = Constantinople (Bosporus & Dardanelles)
         if (provinceId == 2276 && !_constantinopleFallen)
         {
             _constantinopleFallen = true;
@@ -130,6 +136,42 @@ public sealed class OldWorldOrder
               + "compelling Western European crowns to accelerate oceanic navigation around Africa and across the Atlantic."
             );
             _host.Log("OWO: Constantinople captured! Spice trade disruption bulletin dispatched.");
+        }
+        // Province 162 = Copenhagen / Zealand (Sound Dues)
+        else if (provinceId == 162 && !_soundDuesCaptured)
+        {
+            _soundDuesCaptured = true;
+            _host.ShowPopup(
+                "Maritime Chokepoint: Sound Dues Control",
+                "Control over the Øresund straits (Zealand/Copenhagen) has shifted!\n\n"
+              + "The sovereign master of the Sound commands the maritime tolls between the North Sea and the Baltic, "
+              + "deeply influencing Hanseatic merchant profits and Scandinavian naval supremacy."
+            );
+            _host.Log("OWO: Sound Dues sovereignty altered! Baltic shipping bulletin dispatched.");
+        }
+        // Province 545 = Malacca (Straits of Malacca)
+        else if (provinceId == 545 && !_malaccaCaptured)
+        {
+            _malaccaCaptured = true;
+            _host.ShowPopup(
+                "Global Trade Hub: Fall of Malacca",
+                "The great maritime emporium of Malacca has been captured!\n\n"
+              + "Sitting between the Indian Ocean and the South China Sea, the new conqueror controls the vital choke point "
+              + "for the spice fleets of the Moluccas, Persian carpets, and Ming porcelain."
+            );
+            _host.Log("OWO: Malacca captured! Spice route bulletin dispatched.");
+        }
+        // Province 2289 = Gibraltar (Pillars of Hercules)
+        else if (provinceId == 2289 && !_gibraltarCaptured)
+        {
+            _gibraltarCaptured = true;
+            _host.ShowPopup(
+                "Naval Gateway: Strait of Gibraltar",
+                "The Rock of Gibraltar has changed hands!\n\n"
+              + "As the gateway between the Mediterranean Sea and the Atlantic Ocean, mastery over the strait controls "
+              + "naval access between the Italian maritime republics, Iberia, and the oceanic trade lanes."
+            );
+            _host.Log("OWO: Gibraltar captured! Mediterranean gateway bulletin dispatched.");
         }
     }
 
@@ -224,13 +266,30 @@ public sealed class OldWorldOrder
     private string BuildChronicleBody()
     {
         string spiceStatus = _constantinopleFallen
-            ? "SEVERED — Constantinople in Ottoman hands; oceanic trade imperative active."
+            ? "SEVERED — Constantinople under Ottoman control; oceanic exploration imperative active."
             : "OPEN — Byzantine Bosporus intact; Venetian-Mamluk Alexandria spice route flowing.";
 
-        return "1450 WORLD CHRONICLE\n\n"
-             + "• Year of Epoch: 1450 AD\n"
-             + "• Levantine Spice Route Status: " + spiceStatus + "\n"
-             + "• Continental Campaigns Recorded: " + _warsObserved + "\n"
+        string soundStatus = _soundDuesCaptured
+            ? "CONTESTED — Sovereignty over the Øresund has shifted under wartime occupation."
+            : "SECURE — Danish Crown collects Sound Dues; Hanseatic Kontors trade freely.";
+
+        string malaccaStatus = _malaccaCaptured
+            ? "CONQUERED — Malacca strait seized; Southeast Asian spice fleet flow altered."
+            : "FLOURISHING — Sultanate of Malacca welcomes Indian and Ming merchantmen.";
+
+        string gibraltarStatus = _gibraltarCaptured
+            ? "CAPTURED — Pillars of Hercules occupied; Mediterranean gateway controlled."
+            : "GUARDED — Iberian & Moorish naval squadrons watch the Atlantic strait.";
+
+        return "1450 WORLD CHRONICLE & MARITIME ARTERIES\n\n"
+             + "• Current Date: " + _lastYear + " AD\n\n"
+             + "GLOBAL CHOKEPOINTS:\n"
+             + "1. Bosporus & Dardanelles (Constantinople): " + spiceStatus + "\n"
+             + "2. Øresund Sound Dues (Copenhagen): " + soundStatus + "\n"
+             + "3. Straits of Malacca (Malacca): " + malaccaStatus + "\n"
+             + "4. Pillars of Hercules (Gibraltar): " + gibraltarStatus + "\n\n"
+             + "LEDGER OF CAMPAIGNS:\n"
+             + "• Continental Wars Observed: " + _warsObserved + "\n"
              + "• Diplomatic Alliances Formed: " + _alliancesObserved + "\n"
              + "• Treaties Dissolved / Broken: " + _alliancesBroken + "\n"
              + "• Commercial Trade Agreements: " + _tradeAgreementsObserved + "\n"
