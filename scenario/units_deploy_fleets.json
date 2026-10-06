@@ -275,6 +275,114 @@
           "count": 2
         }
       ]
+    },
+    {
+      "ownerISO3": "KNI",
+      "provinceId": 2832,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "ownerISO3": "TRE",
+      "provinceId": 244,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "ownerISO3": "FRA",
+      "provinceId": 432,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2
+        },
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BUR",
+      "provinceId": 201,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_cog",
+          "count": 2
+        },
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MOR",
+      "provinceId": 248,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MRC",
+      "provinceId": 2138,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2
+        },
+        {
+          "unitTypeId": "med_cog",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BRU",
+      "provinceId": 1221,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2
+        },
+        {
+          "unitTypeId": "med_cog",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "PSI",
+      "provinceId": 1829,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2
+        },
+        {
+          "unitTypeId": "med_cog",
+          "count": 1
+        }
+      ]
     }
   ]
 }

@@ -599,6 +599,278 @@
           "count": 1
         }
       ]
+    },
+    {
+      "ownerISO3": "MGL",
+      "provinceId": 106,
+      "units": [
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 4
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BAH",
+      "provinceId": 2238,
+      "units": [
+        {
+          "unitTypeId": "war_elephant",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "ownerISO3": "INC",
+      "provinceId": 5,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "ownerISO3": "CHM",
+      "provinceId": 1305,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "ownerISO3": "AZT",
+      "provinceId": 2097,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "ownerISO3": "SON",
+      "provinceId": 1150,
+      "units": [
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MAL",
+      "provinceId": 346,
+      "units": [
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "ownerISO3": "NVD",
+      "provinceId": 439,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 3
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "ownerISO3": "GRN",
+      "provinceId": 1234,
+      "units": [
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "ownerISO3": "DEL",
+      "provinceId": 43,
+      "units": [
+        {
+          "unitTypeId": "war_elephant",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KZN",
+      "provinceId": 1390,
+      "units": [
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 3
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KRM",
+      "provinceId": 211,
+      "units": [
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 3
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MOR",
+      "provinceId": 54,
+      "units": [
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MIL",
+      "provinceId": 391,
+      "units": [
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "ownerISO3": "FLR",
+      "provinceId": 554,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 3
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "PAP",
+      "provinceId": 431,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 3
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BOH",
+      "provinceId": 117,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 4
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "AYU",
+      "provinceId": 519,
+      "units": [
+        {
+          "unitTypeId": "war_elephant",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "ownerISO3": "DVT",
+      "provinceId": 194,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 4
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "TRE",
+      "provinceId": 244,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        }
+      ]
     }
   ]
 }
