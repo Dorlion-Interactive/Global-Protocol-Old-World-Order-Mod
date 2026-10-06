@@ -649,7 +649,7 @@
               "icon": "government_t1a_centralized_administration",
               "effects": {
                 "tax_efficiency_mult": 1.08,
-                "corruption_delta": -0.04
+                "corruption_delta": -4
               },
               "ai": {
                 "economy": 0.6,
@@ -700,8 +700,8 @@
               "desc_key": "owo.doctrine.government.t3.codified_customary_law.desc",
               "icon": "government_t3a_professional_civil_service",
               "effects": {
-                "corruption_delta": -0.06,
-                "institutional_resilience": 0.1
+                "corruption_delta": -6,
+                "institutional_resilience": 4
               },
               "ai": {
                 "stability": 0.7
@@ -747,7 +747,7 @@
               "icon": "government_t4b_social_compact",
               "effects": {
                 "tax_efficiency_mult": 1.1,
-                "corruption_delta": -0.05
+                "corruption_delta": -5
               },
               "ai": {
                 "economy": 0.6,
@@ -825,8 +825,8 @@
           "name_key": "owo.doctrine.government.directive.crown_patrimony",
           "desc_key": "owo.doctrine.government.directive.crown_patrimony.desc",
           "effects": {
-            "corruption_delta": -0.02,
-            "integration_capacity": 1.0
+            "corruption_delta": -2,
+            "integration_capacity": 1
           }
         }
       ],
@@ -867,7 +867,7 @@
           "desc_key": "owo.doctrine.government.hidden.cadastral_survey.desc",
           "icon": "government_hidden_c_national_emergency_authority",
           "effects": {
-            "corruption_delta": -0.015,
+            "corruption_delta": -2,
             "tax_efficiency_mult": 1.12
           },
           "weight": 1.0,
@@ -882,7 +882,7 @@
           "desc_key": "owo.doctrine.government.hidden.venality_of_office.desc",
           "icon": "government_hidden_d_regulatory_sandbox_governance",
           "effects": {
-            "corruption_delta": 0.025,
+            "corruption_delta": 3,
             "tax_efficiency_mult": 1.16
           },
           "weight": 1.0,
@@ -1004,7 +1004,7 @@
               "desc_key": "owo.doctrine.society.t3.monastic_hospitals.desc",
               "icon": "society_t3a_public_health_and_human_development",
               "effects": {
-                "disaster_resilience": 0.15,
+                "disaster_resilience": 5,
                 "pop_growth_mult": 1.05
               },
               "ai": {
@@ -1018,7 +1018,7 @@
               "icon": "society_t3b_economic_inclusion_and_opportunity",
               "effects": {
                 "research_speed": 0.06,
-                "institutional_resilience": 0.08
+                "institutional_resilience": 4
               },
               "ai": {
                 "economy": 0.4,
@@ -1121,7 +1121,7 @@
           "effects": {
             "prestige_gain_mult": 1.08,
             "research_speed": 0.08,
-            "social_spending_drain": 0.15
+            "social_spending_drain": 0.015
           }
         },
         {
@@ -1129,7 +1129,7 @@
           "name_key": "owo.doctrine.society.directive.bread_and_charity",
           "desc_key": "owo.doctrine.society.directive.bread_and_charity.desc",
           "effects": {
-            "social_spending_drain": 0.2,
+            "social_spending_drain": 0.018,
             "unrest_pressure_delta": -0.8
           }
         }
@@ -1242,7 +1242,7 @@
               "desc_key": "owo.doctrine.diplomacy.t1.royal_heralds.desc",
               "icon": "diplomacy_t1c_mobile_envoy_service",
               "effects": {
-                "diplomatic_capacity_delta": 1.0,
+                "diplomatic_capacity_delta": 1,
                 "relation_drift_delta": 0.05
               },
               "ai": {
@@ -1274,7 +1274,7 @@
               "desc_key": "owo.doctrine.diplomacy.t2.resident_ambassadors.desc",
               "icon": "diplomacy_t1a_permanent_diplomatic_network",
               "effects": {
-                "diplomatic_capacity_delta": 2.0,
+                "diplomatic_capacity_delta": 2,
                 "relation_drift_delta": 0.06
               },
               "ai": {
@@ -1307,7 +1307,7 @@
               "desc_key": "owo.doctrine.diplomacy.t3.defensive_leagues.desc",
               "icon": "diplomacy_t3b_security_diplomacy",
               "effects": {
-                "deterrence_credibility": 0.15,
+                "deterrence_credibility": 4,
                 "military_defense": 0.05
               },
               "ai": {
@@ -1322,7 +1322,7 @@
               "icon": "diplomacy_t3a_economic_diplomacy",
               "effects": {
                 "trade_income_mult": 1.12,
-                "diplomatic_capacity_delta": 1.0
+                "diplomatic_capacity_delta": 1
               },
               "ai": {
                 "economy": 0.7
@@ -1353,7 +1353,7 @@
               "desc_key": "owo.doctrine.diplomacy.t4.coercive_ultimatums.desc",
               "icon": "diplomacy_t2c_coercive_diplomacy",
               "effects": {
-                "deterrence_credibility": 0.2,
+                "deterrence_credibility": 5,
                 "prestige_gain_mult": 1.15
               },
               "ai": {
@@ -1372,7 +1372,7 @@
               "desc_key": "owo.doctrine.diplomacy.t5.concert_of_realms.desc",
               "icon": "diplomacy_t5a_multilateral_internationalism",
               "effects": {
-                "diplomatic_capacity_delta": 3.0,
+                "diplomatic_capacity_delta": 3,
                 "relation_drift_delta": 0.12
               },
               "ai": {
@@ -1402,7 +1402,7 @@
         "desc_key": "owo.doctrine.diplomacy.milestone.desc",
         "icon": "diplomacy_milestone",
         "effects": {
-          "diplomatic_capacity_delta": 1.0,
+          "diplomatic_capacity_delta": 1,
           "relation_drift_delta": 0.05
         }
       },
@@ -1430,7 +1430,7 @@
           "name_key": "owo.doctrine.diplomacy.directive.broker_of_peace",
           "desc_key": "owo.doctrine.diplomacy.directive.broker_of_peace.desc",
           "effects": {
-            "diplomatic_capacity_delta": 2.0,
+            "diplomatic_capacity_delta": 2,
             "prestige_gain_mult": 1.1
           }
         }
@@ -1518,7 +1518,7 @@
           "icon": "diplomacy_hidden_f_issue_specific_coalitions",
           "effects": {
             "ae_gain_mult": 0.85,
-            "diplomatic_capacity_delta": 1.0
+            "diplomatic_capacity_delta": 1
           },
           "weight": 1.0,
           "ai": {
@@ -1642,7 +1642,7 @@
               "icon": "intelligence_t4a_defensive_counter_intelligence",
               "effects": {
                 "counterintel_detection": 0.25,
-                "corruption_delta": -0.05
+                "corruption_delta": -5
               },
               "ai": {
                 "stability": 0.7
@@ -1791,7 +1791,7 @@
           "icon": "intelligence_hidden_d_operational_cover_structures",
           "effects": {
             "espionage_success_bonus": 0.09,
-            "surveillance_range": 1.0
+            "surveillance_range": 1
           },
           "weight": 1.0,
           "ai": {

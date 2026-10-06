@@ -465,7 +465,7 @@
           },
           {
             "type": "create_unit",
-            "unit_type_id": "ming_fire_lance",
+            "unit_id": "ming_fire_lance",
             "count": 2,
             "province_id": 107,
             "target": "MYN"
@@ -526,7 +526,7 @@
           },
           {
             "type": "create_unit",
-            "unit_type_id": "medieval_infantry",
+            "unit_id": "medieval_infantry",
             "count": 2,
             "province_id": 5,
             "target": "INC"
@@ -586,7 +586,7 @@
           },
           {
             "type": "create_unit",
-            "unit_type_id": "medieval_cavalry",
+            "unit_id": "medieval_cavalry",
             "count": 2,
             "province_id": 1150,
             "target": "SON"
