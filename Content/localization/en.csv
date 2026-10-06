@@ -876,3 +876,19 @@ owo.task.tim_timurid_renaissance.treasury,Maintain 1,000 fl. in the imperial tre
 owo.goal.tim_defend_samarkand,Shield Transoxiana
 owo.goal.tim_defend_samarkand.desc,Field armored horse archers and defend Samarkand against nomadic Uzbek and Kara Koyunlu raids.
 owo.task.tim_defend_samarkand.army,Muster an imperial army of 30,000 warriors
+owo.event.hanseatic_league_kontor_1455.title,The Hanseatic League and Sound Dues Friction
+owo.event.hanseatic_league_kontor_1455.description,The Hanseatic Kontors of Lübeck, Danzig, and Bergen dominate Northern sea commerce. As Denmark asserts control over Øresund shipping tolls and English merchants demand royal protection against Hanseatic monopolies, a merchant crisis unfolds.
+owo.event.hanseatic_league_kontor_1455.option_1,Enforce Sound Dues and Restrict Hanseatic Guilds
+owo.event.hanseatic_league_kontor_1455.option_2,Renew Kontor Charters and Lower Maritime Tariffs
+owo.event.trans_saharan_gold_boom_1456.title,Trans-Saharan Gold and Salt Caravans
+owo.event.trans_saharan_gold_boom_1456.description,Camel caravans carrying Taghaza rock salt, Akan gold, and Saharan copper converge upon the great river marts of Gao and Timbuktu. Merchant houses and Islamic scholars bring extraordinary wealth and renown to the Sahel.
+owo.event.trans_saharan_gold_boom_1456.option_1,Patronize Sankore Scholars and Caravanserais
+owo.event.trans_saharan_gold_boom_1456.option_2,Levy Heavy Trans-Saharan Transit Dues
+owo.event.malacca_spice_entrepot_1458.title,The Entrepôt of Malacca and the Spice Route
+owo.event.malacca_spice_entrepot_1458.description,Sitting astride the vital maritime strait between the Indian Ocean and the South China Sea, Malacca has become the premier emporium for Moluccan cloves, nutmeg, Persian tapestries, and Ming silks.
+owo.event.malacca_spice_entrepot_1458.option_1,Expand Shahbandar Facilities and Welcome Foreign Merchants
+owo.event.malacca_spice_entrepot_1458.option_2,Fortify Strait Approaches and Commission War Junks
+owo.event.medici_fugger_banking_accord_1460.title,Renaissance Merchant Banking and Letters of Exchange
+owo.event.medici_fugger_banking_accord_1460.description,The Medici Banco in Florence and early Fugger mining financiers pioneer double-entry bookkeeping, bills of exchange (lettere di cambio), and cross-border currency credits, weaving an intricate financial web across Europe.
+owo.event.medici_fugger_banking_accord_1460.option_1,Expand Transnational Credit and Humanist Patronage
+owo.event.medici_fugger_banking_accord_1460.option_2,Invest Capital into City-State Mercenaries

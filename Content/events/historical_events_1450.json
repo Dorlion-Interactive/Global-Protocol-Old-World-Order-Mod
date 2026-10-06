@@ -766,5 +766,291 @@
     ],
     "title_key": "owo.event.songhai_ascendancy_1464.title",
     "description_key": "owo.event.songhai_ascendancy_1464.description"
+  },
+  {
+    "id": "hanseatic_league_kontor_1455",
+    "type": "scripted",
+    "category": "economic_shock",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "DAN",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1455-01"
+      },
+      {
+        "type": "controls_province",
+        "value": 162
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 400
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.015
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "sound_dues_enforced"
+          }
+        ],
+        "text_key": "owo.event.hanseatic_league_kontor_1455.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 150
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.025
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "hanseatic_charter_renewed"
+          }
+        ],
+        "text_key": "owo.event.hanseatic_league_kontor_1455.option_2"
+      }
+    ],
+    "title_key": "owo.event.hanseatic_league_kontor_1455.title",
+    "description_key": "owo.event.hanseatic_league_kontor_1455.description"
+  },
+  {
+    "id": "trans_saharan_gold_boom_1456",
+    "type": "scripted",
+    "category": "economic_shock",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "SON",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1456-01"
+      },
+      {
+        "type": "controls_province",
+        "value": 1150
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 350
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "sankore_patronage"
+          }
+        ],
+        "text_key": "owo.event.trans_saharan_gold_boom_1456.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 600
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "medieval_cavalry",
+            "count": 1,
+            "province_id": 1150,
+            "target": "SON"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "sahel_tolls_levied"
+          }
+        ],
+        "text_key": "owo.event.trans_saharan_gold_boom_1456.option_2"
+      }
+    ],
+    "title_key": "owo.event.trans_saharan_gold_boom_1456.title",
+    "description_key": "owo.event.trans_saharan_gold_boom_1456.description"
+  },
+  {
+    "id": "malacca_spice_entrepot_1458",
+    "type": "scripted",
+    "category": "economic_shock",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "MLC",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1458-01"
+      },
+      {
+        "type": "controls_province",
+        "value": 545
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 450
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.03
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "malacca_shahbandar_system"
+          }
+        ],
+        "text_key": "owo.event.malacca_spice_entrepot_1458.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 200
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "med_carrack",
+            "count": 1,
+            "province_id": 545,
+            "target": "MLC"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "malacca_straits_fortified"
+          }
+        ],
+        "text_key": "owo.event.malacca_spice_entrepot_1458.option_2"
+      }
+    ],
+    "title_key": "owo.event.malacca_spice_entrepot_1458.title",
+    "description_key": "owo.event.malacca_spice_entrepot_1458.description"
+  },
+  {
+    "id": "medici_fugger_banking_accord_1460",
+    "type": "scripted",
+    "category": "economic_shock",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "FLR",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1460-01"
+      },
+      {
+        "type": "controls_province",
+        "value": 554
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 500
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.025
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "medici_international_credit"
+          }
+        ],
+        "text_key": "owo.event.medici_fugger_banking_accord_1460.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 250
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "medieval_infantry",
+            "count": 1,
+            "province_id": 554,
+            "target": "FLR"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "florentine_condottieri_hired"
+          }
+        ],
+        "text_key": "owo.event.medici_fugger_banking_accord_1460.option_2"
+      }
+    ],
+    "title_key": "owo.event.medici_fugger_banking_accord_1460.title",
+    "description_key": "owo.event.medici_fugger_banking_accord_1460.description"
   }
 ]

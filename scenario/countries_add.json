@@ -568,7 +568,8 @@
       "primaryCulture": "Aztec",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#19B36E",
-      "mapColorGloomy": "#325746"
+      "mapColorGloomy": "#325746",
+      "leaderName": "Moctezuma I"
     },
     {
       "iso3": "INC",
@@ -599,7 +600,8 @@
       "primaryCulture": "Inca",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#DFA800",
-      "mapColorGloomy": "#776428"
+      "mapColorGloomy": "#776428",
+      "leaderName": "Pachacuti"
     },
     {
       "iso3": "BUR",
@@ -665,7 +667,8 @@
       "primaryCulture": "Roman",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#FFD90D",
-      "mapColorGloomy": "#8F8030"
+      "mapColorGloomy": "#8F8030",
+      "leaderName": "Nicholas V"
     },
     {
       "iso3": "NAP",
@@ -697,7 +700,8 @@
       "primaryCulture": "Neapolitan",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#1942BD",
-      "mapColorGloomy": "#384262"
+      "mapColorGloomy": "#384262",
+      "leaderName": "Alfonso V"
     },
     {
       "iso3": "SCT",
@@ -729,7 +733,8 @@
       "primaryCulture": "Scottish",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#0691C6",
-      "mapColorGloomy": "#284752"
+      "mapColorGloomy": "#284752",
+      "leaderName": "James II"
     },
     {
       "iso3": "HAB",
@@ -761,7 +766,8 @@
       "primaryCulture": "Austrian",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#CC0000",
-      "mapColorGloomy": "#632929"
+      "mapColorGloomy": "#632929",
+      "leaderName": "Friedrich III"
     },
     {
       "iso3": "BOH",
@@ -790,7 +796,8 @@
       "primaryCulture": "Bohemian",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#EA2121",
-      "mapColorGloomy": "#7C4343"
+      "mapColorGloomy": "#7C4343",
+      "leaderName": "Ladislaus the Posthumous"
     },
     {
       "iso3": "TEU",
@@ -822,7 +829,8 @@
       "primaryCulture": "Teutonic",
       "ethnicHomogeneity": 0.7,
       "mapColorVibrant": "#ADADAD",
-      "mapColorGloomy": "#7A7A7A"
+      "mapColorGloomy": "#7A7A7A",
+      "leaderName": "Ludwig von Erlichshausen"
     },
     {
       "iso3": "DAN",
@@ -854,7 +862,8 @@
       "primaryCulture": "Danish",
       "ethnicHomogeneity": 0.9,
       "mapColorVibrant": "#EA2121",
-      "mapColorGloomy": "#7C4343"
+      "mapColorGloomy": "#7C4343",
+      "leaderName": "Christian I"
     },
     {
       "iso3": "SWD",
@@ -886,7 +895,8 @@
       "primaryCulture": "Swedish",
       "ethnicHomogeneity": 0.9,
       "mapColorVibrant": "#285FBE",
-      "mapColorGloomy": "#3F4D65"
+      "mapColorGloomy": "#3F4D65",
+      "leaderName": "Karl VIII"
     },
     {
       "iso3": "NVD",
@@ -918,7 +928,8 @@
       "primaryCulture": "Novgorodian",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#5C2AA8",
-      "mapColorGloomy": "#483B5B"
+      "mapColorGloomy": "#483B5B",
+      "leaderName": "Euthymius II"
     },
     {
       "iso3": "GEN",
@@ -950,7 +961,8 @@
       "primaryCulture": "Genoese",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#ADADAD",
-      "mapColorGloomy": "#7A7A7A"
+      "mapColorGloomy": "#7A7A7A",
+      "leaderName": "Pietro Campofregoso"
     },
     {
       "iso3": "MIL",
@@ -1048,7 +1060,8 @@
       "primaryCulture": "Wallachian",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#F76403",
-      "mapColorGloomy": "#795339"
+      "mapColorGloomy": "#795339",
+      "leaderName": "Vladislav II"
     },
     {
       "iso3": "MOL",
@@ -1077,7 +1090,8 @@
       "primaryCulture": "Moldavian",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#19B355",
-      "mapColorGloomy": "#325740"
+      "mapColorGloomy": "#325740",
+      "leaderName": "Bogdan II"
     },
     {
       "iso3": "LTH",
@@ -1109,7 +1123,8 @@
       "primaryCulture": "Lithuanian",
       "ethnicHomogeneity": 0.6,
       "mapColorVibrant": "#19B323",
-      "mapColorGloomy": "#325734"
+      "mapColorGloomy": "#325734",
+      "leaderName": "Casimir IV"
     },
     {
       "iso3": "MAL",
@@ -1141,7 +1156,8 @@
       "primaryCulture": "Mandinka",
       "ethnicHomogeneity": 0.7,
       "mapColorVibrant": "#F38001",
-      "mapColorGloomy": "#765838"
+      "mapColorGloomy": "#765838",
+      "leaderName": "Uli II"
     },
     {
       "iso3": "SON",
@@ -1170,7 +1186,8 @@
       "primaryCulture": "Songhai",
       "ethnicHomogeneity": 0.7,
       "mapColorVibrant": "#FFB601",
-      "mapColorGloomy": "#7D6A3A"
+      "mapColorGloomy": "#7D6A3A",
+      "leaderName": "Sonni Ali"
     },
     {
       "iso3": "ABY",
@@ -1202,7 +1219,8 @@
       "primaryCulture": "Ethiopian",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#ED1F1B",
-      "mapColorGloomy": "#7C4241"
+      "mapColorGloomy": "#7C4241",
+      "leaderName": "Zara Yaqob"
     },
     {
       "iso3": "BNK",
@@ -1233,7 +1251,8 @@
       "primaryCulture": "Benin",
       "ethnicHomogeneity": 0.9,
       "mapColorVibrant": "#CC6600",
-      "mapColorGloomy": "#4D3319"
+      "mapColorGloomy": "#4D3319",
+      "leaderName": "Ewuare"
     },
     {
       "iso3": "ZIM",
@@ -1264,7 +1283,8 @@
       "primaryCulture": "Shona",
       "ethnicHomogeneity": 0.9,
       "mapColorVibrant": "#CC5500",
-      "mapColorGloomy": "#523725"
+      "mapColorGloomy": "#523725",
+      "leaderName": "Nyatsimba Mutota"
     },
     {
       "iso3": "AKK",
@@ -1293,7 +1313,8 @@
       "primaryCulture": "Turkoman",
       "ethnicHomogeneity": 0.75,
       "mapColorVibrant": "#E8460C",
-      "mapColorGloomy": "#734A3B"
+      "mapColorGloomy": "#734A3B",
+      "leaderName": "Jahangir Beg"
     },
     {
       "iso3": "DEL",
@@ -1326,7 +1347,8 @@
       "primaryCulture": "Indo-Muslim",
       "ethnicHomogeneity": 0.5,
       "mapColorVibrant": "#329A80",
-      "mapColorGloomy": "#38504A"
+      "mapColorGloomy": "#38504A",
+      "leaderName": "Bahlul Lodi"
     },
     {
       "iso3": "MAJ",
@@ -1359,7 +1381,8 @@
       "primaryCulture": "Javanese",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#F1AD0E",
-      "mapColorGloomy": "#79673E"
+      "mapColorGloomy": "#79673E",
+      "leaderName": "Kertawijaya"
     },
     {
       "iso3": "AYU",
@@ -1392,7 +1415,8 @@
       "primaryCulture": "Siamese",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#A52AA8",
-      "mapColorGloomy": "#5A3B5B"
+      "mapColorGloomy": "#5A3B5B",
+      "leaderName": "Trailokanat"
     },
     {
       "iso3": "MRC",
@@ -1455,7 +1479,8 @@
       "primaryCulture": "Tibetan",
       "ethnicHomogeneity": 0.95,
       "mapColorVibrant": "#FFB40D",
-      "mapColorGloomy": "#8F7230"
+      "mapColorGloomy": "#8F7230",
+      "leaderName": "Gedun Drupa"
     },
     {
       "iso3": "MAY",
@@ -1486,7 +1511,8 @@
       "primaryCulture": "Maya",
       "ethnicHomogeneity": 0.9,
       "mapColorVibrant": "#19B34B",
-      "mapColorGloomy": "#32573E"
+      "mapColorGloomy": "#32573E",
+      "leaderName": "Tutul Xiu"
     },
     {
       "iso3": "GRN",
@@ -1518,7 +1544,8 @@
       "primaryCulture": "Andalusian Arab",
       "ethnicHomogeneity": 0.75,
       "mapColorVibrant": "#1EAE5E",
-      "mapColorGloomy": "#345743"
+      "mapColorGloomy": "#345743",
+      "leaderName": "Muhammad IX"
     },
     {
       "iso3": "FLR",
@@ -1580,7 +1607,8 @@
       "primaryCulture": "Savoyard",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#ADADAD",
-      "mapColorGloomy": "#7A7A7A"
+      "mapColorGloomy": "#7A7A7A",
+      "leaderName": "Louis"
     },
     {
       "iso3": "NAV",
@@ -1612,7 +1640,8 @@
       "primaryCulture": "Navarrese",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#D60000",
-      "mapColorGloomy": "#732626"
+      "mapColorGloomy": "#732626",
+      "leaderName": "John II"
     },
     {
       "iso3": "SRB",
@@ -1644,7 +1673,8 @@
       "primaryCulture": "Serbian",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#CC0000",
-      "mapColorGloomy": "#4D1919"
+      "mapColorGloomy": "#4D1919",
+      "leaderName": "Durad Brankovic"
     },
     {
       "iso3": "MOR",
@@ -1676,7 +1706,8 @@
       "primaryCulture": "Maghrebi",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#00CC00",
-      "mapColorGloomy": "#194D19"
+      "mapColorGloomy": "#194D19",
+      "leaderName": "Abd al-Haqq II"
     },
     {
       "iso3": "HFS",
@@ -1708,7 +1739,8 @@
       "primaryCulture": "Hafsid",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#CC9200",
-      "mapColorGloomy": "#524525"
+      "mapColorGloomy": "#524525",
+      "leaderName": "Abu Amr Uthman"
     },
     {
       "iso3": "KKY",
@@ -1740,7 +1772,8 @@
       "primaryCulture": "Turkoman",
       "ethnicHomogeneity": 0.75,
       "mapColorVibrant": "#25A725",
-      "mapColorGloomy": "#283F28"
+      "mapColorGloomy": "#283F28",
+      "leaderName": "Jahan Shah"
     },
     {
       "iso3": "KZN",
@@ -1769,7 +1802,8 @@
       "primaryCulture": "Kazan Tatar",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#7600CC",
-      "mapColorGloomy": "#37194D"
+      "mapColorGloomy": "#37194D",
+      "leaderName": "Mahmud bin Ulugh"
     },
     {
       "iso3": "KRM",
@@ -1801,7 +1835,8 @@
       "primaryCulture": "Crimean",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#966AF1",
-      "mapColorGloomy": "#6E569F"
+      "mapColorGloomy": "#6E569F",
+      "leaderName": "Haci I Giray"
     },
     {
       "iso3": "GUJ",
@@ -1834,7 +1869,8 @@
       "primaryCulture": "Gujarati",
       "ethnicHomogeneity": 0.6,
       "mapColorVibrant": "#FF920D",
-      "mapColorGloomy": "#8F6430"
+      "mapColorGloomy": "#8F6430",
+      "leaderName": "Muhammad Shah II"
     },
     {
       "iso3": "BAH",
@@ -1867,7 +1903,8 @@
       "primaryCulture": "Deccani",
       "ethnicHomogeneity": 0.55,
       "mapColorVibrant": "#759F2D",
-      "mapColorGloomy": "#3D452F"
+      "mapColorGloomy": "#3D452F",
+      "leaderName": "Ala-ud-Din Ahmad Shah II"
     },
     {
       "iso3": "BNG",
@@ -1900,7 +1937,8 @@
       "primaryCulture": "Bengali",
       "ethnicHomogeneity": 0.65,
       "mapColorVibrant": "#10BC10",
-      "mapColorGloomy": "#2D552D"
+      "mapColorGloomy": "#2D552D",
+      "leaderName": "Nasiruddin Mahmud Shah"
     },
     {
       "iso3": "MLC",
@@ -1932,7 +1970,8 @@
       "primaryCulture": "Melayu",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#00D8DB",
-      "mapColorGloomy": "#277476"
+      "mapColorGloomy": "#277476",
+      "leaderName": "Muzaffar Shah"
     },
     {
       "iso3": "DVT",
@@ -1964,7 +2003,8 @@
       "primaryCulture": "Dai Viet",
       "ethnicHomogeneity": 0.9,
       "mapColorVibrant": "#D66B00",
-      "mapColorGloomy": "#734D26"
+      "mapColorGloomy": "#734D26",
+      "leaderName": "Le Nhan Tong"
     },
     {
       "iso3": "KNG",
@@ -1995,7 +2035,8 @@
       "primaryCulture": "Kongo",
       "ethnicHomogeneity": 0.9,
       "mapColorVibrant": "#CC5500",
-      "mapColorGloomy": "#523725"
+      "mapColorGloomy": "#523725",
+      "leaderName": "Nkuwu a Ntinu"
     },
     {
       "iso3": "KBR",
@@ -2027,7 +2068,8 @@
       "primaryCulture": "Kanuri",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#EA8B30",
-      "mapColorGloomy": "#826447"
+      "mapColorGloomy": "#826447",
+      "leaderName": "Ali Gaji"
     },
     {
       "iso3": "RYU",
@@ -2058,7 +2100,8 @@
       "primaryCulture": "Ryukyuan",
       "ethnicHomogeneity": 0.95,
       "mapColorVibrant": "#FF5CAD",
-      "mapColorGloomy": "#B83D7A"
+      "mapColorGloomy": "#B83D7A",
+      "leaderName": "Sho Kinpuku"
     },
     {
       "iso3": "KAR",
@@ -2087,7 +2130,8 @@
       "primaryCulture": "Karamanid",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#83BB11",
-      "mapColorGloomy": "#49562E"
+      "mapColorGloomy": "#49562E",
+      "leaderName": "Ibrahim II of Karaman"
     },
     {
       "iso3": "CND",
@@ -2119,7 +2163,8 @@
       "primaryCulture": "Candarid",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#2773C4",
-      "mapColorGloomy": "#405368"
+      "mapColorGloomy": "#405368",
+      "leaderName": "Ismail Bey"
     },
     {
       "iso3": "DUL",
@@ -2148,7 +2193,8 @@
       "primaryCulture": "Dulkadirid",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#CC5500",
-      "mapColorGloomy": "#523725"
+      "mapColorGloomy": "#523725",
+      "leaderName": "Suleiman Beg"
     },
     {
       "iso3": "RAM",
@@ -2180,7 +2226,8 @@
       "primaryCulture": "Ramazanid",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#EA8B30",
-      "mapColorGloomy": "#826447"
+      "mapColorGloomy": "#826447",
+      "leaderName": "Ali Beg"
     },
     {
       "iso3": "TRE",
@@ -2212,7 +2259,8 @@
       "primaryCulture": "Pontic",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#7F28A4",
-      "mapColorGloomy": "#3F2E47"
+      "mapColorGloomy": "#3F2E47",
+      "leaderName": "John IV Megas Komnenos"
     },
     {
       "iso3": "SAX",

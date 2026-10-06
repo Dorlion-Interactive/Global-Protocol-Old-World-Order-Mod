@@ -876,3 +876,19 @@ owo.task.tim_timurid_renaissance.treasury,İmparatorluk hazinesinde 1.000 fl. mu
 owo.goal.tim_defend_samarkand,Maveraünnehir'i Koru
 owo.goal.tim_defend_samarkand.desc,Zırhlı atlı okçuları topla ve Semerkant'ı göçebe Özbek akınlarına karşı savun.
 owo.task.tim_defend_samarkand.army,30.000 kişilik imparatorluk ordusu topla
+owo.event.hanseatic_league_kontor_1455.title,Hanse Birliği ve Boğaz Geçiş Vergisi Krizi
+owo.event.hanseatic_league_kontor_1455.description,Lübeck, Danzig ve Bergen'deki Hanse kontorları Kuzey deniz ticaretine hakim durumdadır. Danimarka'nın Øresund boğaz geçiş vergileri üzerindeki denetimi sıkılaştırması ve tüccarların tekele karşı koruma talep etmesi gerilimi tırmandırıyor.
+owo.event.hanseatic_league_kontor_1455.option_1,Boğaz Geçiş Vergisini Uygula ve Hanse Loncalarını Kısıtla
+owo.event.hanseatic_league_kontor_1455.option_2,Kontor Ayricaliklarini Yenile ve Gümrükleri Düşür
+owo.event.trans_saharan_gold_boom_1456.title,Sahra-Ötesi Altın ve Tuz Kervanları
+owo.event.trans_saharan_gold_boom_1456.description,Taghaza kaya tuzu, Akan altını ve Sahra bakırını taşıyan deve kervanları Gao ve Timbuktu nehir pazarlarına ulaşıyor. Ticaret haneleri ve İslam alimleri Sahel bölgesine muazzam bir zenginlik ve şöhret kazandırıyor.
+owo.event.trans_saharan_gold_boom_1456.option_1,Sankore Alimlerini ve Kervansarayları Destekle
+owo.event.trans_saharan_gold_boom_1456.option_2,Sahra-Ötesi Geçiş Vergilerini Artır
+owo.event.malacca_spice_entrepot_1458.title,Melaka Antreposu ve Baharat Yolu
+owo.event.malacca_spice_entrepot_1458.description,Hint Okyanusu ile Güney Çin Denizi arasındaki kritik boğazda yer alan Melaka; Maluku karanfili, muskat, Fars dokumaları ve Ming ipekleri için dünyanın en büyük ticaret merkezine dönüştü.
+owo.event.malacca_spice_entrepot_1458.option_1,Şahbender Tesislerini Genişlet ve Tüccarları Karşıla
+owo.event.malacca_spice_entrepot_1458.option_2,Boğaz Geçitlerini Tahkim Et ve Savaş Gemileri İnşa Et
+owo.event.medici_fugger_banking_accord_1460.title,Rönesans Tüccar Bankacılığı ve Poliçeler
+owo.event.medici_fugger_banking_accord_1460.description,Floransa'daki Medici Bankası ve erken dönem Fugger madencilik finansörleri; çift taraflı defter tutma, poliçeler (lettere di cambio) ve sınır ötesi kredi ağlarıyla Avrupa çapında modern bankacılığın temelini atıyor.
+owo.event.medici_fugger_banking_accord_1460.option_1,Uluslararası Krediyi ve Hümanist Sanatı Destekle
+owo.event.medici_fugger_banking_accord_1460.option_2,Bankacılık Sermayesini Paralı Askerlere Yönlendir
