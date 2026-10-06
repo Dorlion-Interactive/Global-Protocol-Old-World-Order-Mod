@@ -979,3 +979,18 @@ owo.event.diplomacy_raichur_doab_armistice_1450.title,The Raichur Doab Frontier 
 owo.event.diplomacy_raichur_doab_armistice_1450.description,Across the Krishna and Tungabhadra rivers, the Bahmani Sultanate and the Vijayanagara Empire watch each other over the diamond-rich agricultural heartland of the Deccan.
 owo.event.diplomacy_raichur_doab_armistice_1450.option_1,Fortify Gulbarga and Respect the Deccan Armistice
 owo.event.diplomacy_raichur_doab_armistice_1450.option_2,Raid Across the River into the Diamond Marches
+owo.goal.myn_grand_canal_dredging,The Grand Canal Grain Lifeline
+owo.goal.myn_grand_canal_dredging.desc,Dredge the locks and canal arteries connecting the fertile southern rice paddies of Jiangnan to Beijing.
+owo.task.myn_grand_canal_dredging.treasury,Accumulate 2,500 fl. in the imperial granary treasury
+owo.goal.vij_virupaksha_temple_aqueducts,The Hampi Virupaksha Aqueducts
+owo.goal.vij_virupaksha_temple_aqueducts.desc,Construct monumental granite channels, stepped tanks, and temple courtyards in the capital city of Vijayanagara.
+owo.task.vij_virupaksha_temple_aqueducts.treasury,Amass 1,200 fl. in the royal temple treasury
+owo.goal.pap_renaissance_rome_restoration,Renaissance Restoration of Rome
+owo.goal.pap_renaissance_rome_restoration.desc,Commission master stonecarvers and architects to rebuild Rome's basilicas, bridges, and city walls.
+owo.task.pap_renaissance_rome_restoration.treasury,Endow 1,000 fl. for pontifical public works
+owo.goal.flr_cathedral_dome_of_florence,Brunelleschi's Cathedral Dome
+owo.goal.flr_cathedral_dome_of_florence.desc,Complete the monumental octagonal brick dome of Santa Maria del Fiore, crowning the Florentine skyline.
+owo.task.flr_cathedral_dome_of_florence.treasury,Invest 1,500 fl. in the Opera del Duomo
+owo.goal.inc_royal_estate_machu_picchu,The Urubamba Royal Sanctuaries
+owo.goal.inc_royal_estate_machu_picchu.desc,Carve precision ashlar stone palaces, solar observatories, and terraced estates along the mountain peaks of Urubamba.
+owo.task.inc_royal_estate_machu_picchu.treasury,Amass 900 fl. in the solar sanctuary treasury

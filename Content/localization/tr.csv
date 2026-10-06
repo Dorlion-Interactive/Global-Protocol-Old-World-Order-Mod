@@ -979,3 +979,18 @@ owo.event.diplomacy_raichur_doab_armistice_1450.title,Raichur Doab Sınır Geril
 owo.event.diplomacy_raichur_doab_armistice_1450.description,Krişna ve Tungabhadra nehirleri boyunca Behmani Sultanlığı ve Vijayanagara İmparatorluğu elmas zengini Dekkan havzası üzerinde birbirlerini gözetliyor.
 owo.event.diplomacy_raichur_doab_armistice_1450.option_1,Gulbarga'yı Tahkim Et ve Dekkan Ateşkesine Uy
 owo.event.diplomacy_raichur_doab_armistice_1450.option_2,Nehir Ötesindeki Elmas Havzasına Akın Düzenle
+owo.goal.myn_grand_canal_dredging,Büyük Kanal Tahıl Can Damarı
+owo.goal.myn_grand_canal_dredging.desc,Jiangnan'ın güney pirinç havzalarını Pekin'e bağlayan su kanallarını ve bentlerini derinleştir.
+owo.task.myn_grand_canal_dredging.treasury,İmparatorluk ambarı hazinesinde 2.500 florin biriktir
+owo.goal.vij_virupaksha_temple_aqueducts,Hampi Virupaksha Su Kemerleri
+owo.goal.vij_virupaksha_temple_aqueducts.desc,Vijayanagara başkentinde anıtsal granit su kanalları, basamaklı havuzlar ve tapınak avluları inşa et.
+owo.task.vij_virupaksha_temple_aqueducts.treasury,Kraliyet tapınak hazinesinde 1.200 florin biriktir
+owo.goal.pap_renaissance_rome_restoration,Roma'nın Rönesans İmarı
+owo.goal.pap_renaissance_rome_restoration.desc,Roma'nın bazilikalarını, köprülerini ve surlarını yeniden inşa etmek için usta mimarları ve taş yontucuları görevlendir.
+owo.task.pap_renaissance_rome_restoration.treasury,Papalık bayındırlık işleri için 1.000 florin tahsis et
+owo.goal.flr_cathedral_dome_of_florence,Brunelleschi Katedral Kubbesi
+owo.goal.flr_cathedral_dome_of_florence.desc,Floransa siluetini taçlandıran Santa Maria del Fiore'nin anıtsal sekizgen tuğla kubbesini tamamla.
+owo.task.flr_cathedral_dome_of_florence.treasury,Opera del Duomo vakfına 1.500 florin yatır
+owo.goal.inc_royal_estate_machu_picchu,Urubamba Kraliyet Tapınakları
+owo.goal.inc_royal_estate_machu_picchu.desc,Urubamba dağ zirveleri boyunca kesme taştan saraylar, güneş gözlemevleri ve tarım terasları inşa et.
+owo.task.inc_royal_estate_machu_picchu.treasury,Güneş tapınağı hazinesinde 900 florin biriktir
