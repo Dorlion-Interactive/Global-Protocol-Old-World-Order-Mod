@@ -1150,8 +1150,9 @@
       {
         "effects": [
           {
-            "type": "declare_war",
-            "target": "TEU"
+            "type": "add_relation",
+            "target": "TEU",
+            "value": -100
           },
           {
             "type": "modify_stat",

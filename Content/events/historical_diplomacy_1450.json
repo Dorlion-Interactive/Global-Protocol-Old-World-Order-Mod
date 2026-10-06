@@ -113,8 +113,8 @@
           },
           {
             "type": "modify_stat",
-            "field": "military.morale_recovery",
-            "value": 0.05
+            "field": "military.reserve",
+            "value": 5000
           },
           {
             "type": "set_flag",
@@ -632,8 +632,8 @@
           },
           {
             "type": "modify_stat",
-            "field": "military.morale_recovery",
-            "value": 0.05
+            "field": "military.reserve",
+            "value": 5000
           },
           {
             "type": "create_unit",
@@ -801,8 +801,8 @@
           },
           {
             "type": "modify_stat",
-            "field": "military.morale_recovery",
-            "value": 0.05
+            "field": "military.reserve",
+            "value": 5000
           },
           {
             "type": "set_flag",
@@ -1022,8 +1022,8 @@
           },
           {
             "type": "modify_stat",
-            "field": "military.morale_recovery",
-            "value": 0.05
+            "field": "military.reserve",
+            "value": 5000
           },
           {
             "type": "create_unit",
