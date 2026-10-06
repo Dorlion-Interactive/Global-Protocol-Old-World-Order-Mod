@@ -310,27 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Kraliyet Çiftlikleri
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Kurutulan bataklıklar, yeni köyler ve taç çiftlikleri diyarın servetini topraktan devşirir.
 owo.doctrine.economy.milestone,Ticaret Devrimi
 owo.doctrine.economy.milestone.desc,Bankacılık, poliçeler ve uzak ticaret diyarının servetini onun için çalıştırır hale getirdi.
-owo.event.fall_of_constantinople_1453.title,Konstantinopolis'in Fethi
+owo.event.fall_of_constantinople_1453.title,İstanbul'un Fethi (Osmanlı Zaferi)
 owo.event.fall_of_constantinople_1453.description,29 Mayıs 1453'te, 53 günlük bir kuşatmanın ardından Sultan II. Mehmed'in orduları kadim Theodosius Surlarını aştı. Doğu Roma İmparatorluğu yıkıldı ve bin yılı aşkın Bizans medeniyeti sona erdi. Kostantiniyye, Osmanlı İmparatorluğu'nun ulu başkenti ilan edildi ve Akdeniz'i Karadeniz'e bağlayan tarihi ticaret yolları artık bütünüyle imparatorluk kontrolüne geçti.
-owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye, imparatorluğumuzun taç mücevheri olarak parıldayacak!
-owo.event.fall_of_constantinople_1453_christendom.title,Konstantinopolis'in Fethi
+owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye imparatorluğumuzun başkenti olarak parlayacak!
+owo.event.fall_of_constantinople_1453_christendom.title,Konstantinopolis'in Düşüşü (Hristiyan Dünyasında Yas)
 owo.event.fall_of_constantinople_1453_christendom.description,29 Mayıs 1453'te, 53 günlük bir kuşatmanın ardından Sultan II. Mehmed'in orduları kadim Theodosius Surlarını aştı. Doğu Roma İmparatorluğu yıkıldı ve bin yılı aşkın Bizans medeniyeti sona erdi. Kostantiniyye, Osmanlı İmparatorluğu'nun ulu başkenti ilan edildi ve Akdeniz'i Karadeniz'e bağlayan tarihi ticaret yolları artık bütünüyle imparatorluk kontrolüne geçti.
-owo.event.fall_of_constantinople_1453_christendom.option_1,Hristiyan Roma dünyası için hazin bir günbatımı.
-owo.event.end_hundred_years_war_1453.title,Castillon Muharebesi: Yüz Yıl Savaşı'nın Sonu
+owo.event.fall_of_constantinople_1453_christendom.option_1,Hristiyan Roma dünyası için trajik bir gün batımı.
+owo.event.end_hundred_years_war_1453.title,Yüzyıl Savaşları'nın Sonu (Fransız Zaferi)
 owo.event.end_hundred_years_war_1453.description,Temmuz 1453'te, Jean Bureau'nun Fransız sahra topçusu, Castillon Muharebesi'nde John Talbot'un İngiliz şövalyelerini kesin bir yenilgiye uğrattı. Muharebenin ardından Fransız tacı Bordeaux'yu ve tüm Guyenne Dükalığı'nı geri aldı. 116 yıllık yıkıcı hanedan savaşının ardından, İngiliz orduları Calais hariç tüm kıta topraklarından çıkarıldı.
-owo.event.end_hundred_years_war_1453.option_1,Fransa nihayet egemen ve birleşmiş olarak ayakta!
-owo.event.end_hundred_years_war_1453_england.title,Castillon Muharebesi: Yüz Yıl Savaşı'nın Sonu
+owo.event.end_hundred_years_war_1453.option_1,Fransa nihayet egemen ve birleşik!
+owo.event.end_hundred_years_war_1453_england.title,Yüzyıl Savaşları'nın Sonu (İngiliz Geri Çekilişi)
 owo.event.end_hundred_years_war_1453_england.description,Temmuz 1453'te, Jean Bureau'nun Fransız sahra topçusu, Castillon Muharebesi'nde John Talbot'un İngiliz şövalyelerini kesin bir yenilgiye uğrattı. Muharebenin ardından Fransız tacı Bordeaux'yu ve tüm Guyenne Dükalığı'nı geri aldı. 116 yıllık yıkıcı hanedan savaşının ardından, İngiliz orduları Calais hariç tüm kıta topraklarından çıkarıldı.
-owo.event.end_hundred_years_war_1453_england.option_1,Manş Denizi üzerinden acı bir geri çekilme.
-owo.event.gutenberg_printing_press_1455.title,Gutenberg Matbaa Devrimi
+owo.event.end_hundred_years_war_1453_england.option_1,Manş Denizi'nin ardına acı bir geri çekilme.
+owo.event.gutenberg_printing_press_1455.title,Gutenberg Matbaa Devrimi (1455)
 owo.event.gutenberg_printing_press_1455.description,Mainz şehrinde usta kuyumcu Johannes Gutenberg; hareketli kurşun alaşımlı harfleri, yağ bazlı mürekkebi ve uyarlanmış ahşap mengene presini birleştirerek 42 satırlık Gutenberg İncili'ni bastı. Bu buluş, dini, hukuki ve klasik hümanist bilginin yayılmasını hayal bile edilemeyecek bir hızla ivmelendirmeyi vaat ediyor.
-owo.event.gutenberg_printing_press_1455.option_1,Şehirlerimizde matbaaların kurulmasını destekleyin.
-owo.event.wars_of_the_roses_1455.title,Güller Savaşı'nın Patlak Vermesi
+owo.event.gutenberg_printing_press_1455.option_1,İlim ve kitapların yayılması için matbaaları destekle.
+owo.event.wars_of_the_roses_1455.title,Güller Savaşı'nın Başlangıcı (1455)
 owo.event.wars_of_the_roses_1455.description,Fransa'daki askeri yenilginin ve Kral VI. Henry'nin zihinsel rahatsızlığının ardından, rakip hanedan kolları—Lancaster Hanedanı (Kırmızı Gül) ile York Hanedanı (Beyaz Gül)—arasındaki kıyasıya rekabet, Birinci St Albans Muharebesi ile kanlı bir çatışmaya dönüştü. İngiltere, taht için nesiller boyu sürecek kanlı bir iç savaşa sürükleniyor.
-owo.event.wars_of_the_roses_1455.option_1,Tanrı ülkeyi iç kargaşadan korusun.
-owo.event.portuguese_african_voyages_1460.title,Okyanus Denizinin Karavelleri
+owo.event.wars_of_the_roses_1455.option_1,Lancaster'ın Kırmızı Gülü ve Kral Henry VI'nın arkasında birleşin!
+owo.event.portuguese_african_voyages_1460.title,Prens Henrique ve Afrika Seferleri (1460)
 owo.event.portuguese_african_voyages_1460.description,Denizci Prens Henrique'nin himayesinde Portekiz karavelleri Cabo Verde'yi dolaştı ve Bijagós takımadalarını geçerek Gine Körfezi'ne girdi. Batı Afrika altın tozu, malagueta biberi ve fildişinin doğrudan deniz ticareti, geleneksel Sahra ötesi kara yollarını devre dışı bırakarak Lizbon'a muazzam bir zenginlik kazandırıyor.
-owo.event.portuguese_african_voyages_1460.option_1,Afrika kıyısı boyunca müstahkem ticaret karakollarımızı genişletin!
+owo.event.portuguese_african_voyages_1460.option_1,Güney okyanuslarını haritalandırmak için yeni karaveller gönder.
 owo.goal.basic_fill_the_treasury,Kraliyet Hazinesini Doldur
 owo.goal.basic_fill_the_treasury.desc,Parası olmayan bir diyar ne ordu kurabilir ne de barışı koruyabilir. Korumaya değer bir birikim yap.
 owo.task.basic_fill_the_treasury.treasury,Hazinede 500 fl. biriktir
@@ -707,7 +707,7 @@ owo.event.corvinus_black_army_1458.title,Matyas Corvinus ve Kara Ordu
 owo.event.corvinus_black_army_1458.description,1458 yılında Macaristan tahtına çıkan Kral Matyas Corvinus, asi soyluların feodal birliklerine bel bağlamayı bırakarak Avrupa'nın ilk daimi profesyonel paralı ordularından biri olan Kara Ordu'yu (Fekete Sereg) kurdu.
 owo.event.corvinus_black_army_1458.option_1,Krallığı savunmak için Kara Ordu'yu göreve çağır!
 owo.event.corvinus_black_army_1458.option_2,Hazine paralı askerleri kaldıramaz; soylu birliklerine güven.
-owo.event.fall_of_trebizond_1461.title,Trabzon'un Fethi
+owo.event.fall_of_trebizond_1461.title,Trabzon'un Fethi: Karadeniz Hakimiyeti (1461)
 owo.event.fall_of_trebizond_1461.description,Ağustos 1461'de Sultan II. Mehmed komutasındaki kara ve deniz kuşatması sonucunda İmparator David Megas Komnenos müstahkem Trabzon kentini teslim etti. Karadeniz'deki son Roma ardıl devleti de Osmanlı topraklarına katıldı.
 owo.event.fall_of_trebizond_1461.option_1,Karadeniz artık tamamen bir Osmanlı gölüdür.
 owo.goal.mvy_gather_russian_lands,Rus Topraklarını Birleştir
@@ -758,3 +758,11 @@ owo.event.songhai_ascendancy_1464.title,Sonni Ali ve Songhay Yükselişi
 owo.event.songhai_ascendancy_1464.description,1464'te Gao tahtına çıkan Sonni Ali Ber, Songhay krallığını durdurulamaz bir imparatorluğa dönüştürdü. Nijer Nehri üzerindeki savaş kanoları filosu ve Sahel'deki zırhlı süvarileriyle Sonni Ali, Timbuktu'yu Tuareglerden alarak Sahra ötesi altın ve tuz ticaret yollarını ele geçirmeye hazırlanıyor.
 owo.event.songhai_ascendancy_1464.option_1,Nijer donanmasını sefere çıkar ve Sahel'e hükmet!
 owo.event.songhai_ascendancy_1464.option_2,Gao kapılarını koru ve nehir boyunca barış içinde ticaret yap.
+owo.event.fall_of_constantinople_1453.option_2,Ortodoks Patrikhanesi'nin haklarını tanı ve Karadeniz ticaretini canlandır.
+owo.event.fall_of_constantinople_1453_christendom.option_2,Bizanslı bilgin ve hümanist mültecileri sarayımıza kabul et.
+owo.event.end_hundred_years_war_1453.option_2,Savaşta pişen şövalyelerimizi ve kraliyet komutanlarını ödüllendir.
+owo.event.end_hundred_years_war_1453_england.option_2,Calais'yi tahkim et ve kıdemli uzun yaylıları göreve çağır.
+owo.event.gutenberg_printing_press_1455.option_2,Matbaaları kraliyet denetimine ve sansürüne bağla.
+owo.event.wars_of_the_roses_1455.option_2,York'un Beyaz Gülü ve Dük Richard'ı destekleyin!
+owo.event.portuguese_african_voyages_1460.option_2,Gine ticaret merkezlerini pekiştir ve ticaret gelirini topla.
+owo.event.fall_of_trebizond_1461.option_2,Kıyı güvenliği için yerel süvarilere tımarlar bağışla.

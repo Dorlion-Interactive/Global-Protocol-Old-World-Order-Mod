@@ -310,27 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
-owo.event.fall_of_constantinople_1453.title,La caída de Constantinopla
+owo.event.fall_of_constantinople_1453.title,Conquista de Constantinopla (Triunfo Otomano)
 owo.event.fall_of_constantinople_1453.description,El 29 de mayo de 1453, tras 53 días de asedio, las fuerzas del sultán Mehmed II cruzaron las antiguas murallas teodosianas. El Imperio romano de Oriente ha caído, concluyendo un milenio de civilización bizantina. Constantinopla se convierte en la capital imperial otomana.
-owo.event.fall_of_constantinople_1453.option_1,¡Kostantiniyye brillará como la joya de nuestro imperio!
-owo.event.fall_of_constantinople_1453_christendom.title,La caída de Constantinopla
+owo.event.fall_of_constantinople_1453.option_1,¡Kostantiniyye brillará como joya de nuestro imperio!
+owo.event.fall_of_constantinople_1453_christendom.title,La Caída de Constantinopla (Conmoción en la Cristiandad)
 owo.event.fall_of_constantinople_1453_christendom.description,El 29 de mayo de 1453, tras 53 días de asedio, las fuerzas del sultán Mehmed II cruzaron las antiguas murallas teodosianas. El Imperio romano de Oriente ha caído, concluyendo un milenio de civilización bizantina. Constantinopla se convierte en la capital imperial otomana.
-owo.event.fall_of_constantinople_1453_christendom.option_1,Un trágico ocaso para el mundo romano cristiano.
-owo.event.end_hundred_years_war_1453.title,Batalla de Castillon: Fin de la guerra de los Cien Años
+owo.event.fall_of_constantinople_1453_christendom.option_1,Un trágico crepúsculo para el mundo romano cristiano.
+owo.event.end_hundred_years_war_1453.title,Fin de la Guerra de los Cien Años (Victoria Francesa)
 owo.event.end_hundred_years_war_1453.description,En julio de 1453, la artillería francesa aplastó a los caballeros ingleses en la batalla de Castillon. La corona francesa recuperó Burdeos y Guyena, expulsando a los ingleses del continente con la única excepción de Calais tras 116 años de guerra.
-owo.event.end_hundred_years_war_1453.option_1,¡Francia se alza por fin soberana y unida!
-owo.event.end_hundred_years_war_1453_england.title,Batalla de Castillon: Fin de la guerra de los Cien Años
+owo.event.end_hundred_years_war_1453.option_1,¡Francia se alza soberana y unida al fin!
+owo.event.end_hundred_years_war_1453_england.title,Fin de la Guerra de los Cien Años (Retirada Inglesa)
 owo.event.end_hundred_years_war_1453_england.description,En julio de 1453, la artillería francesa aplastó a los caballeros ingleses en la batalla de Castillon. La corona francesa recuperó Burdeos y Guyena, expulsando a los ingleses del continente con la única excepción de Calais tras 116 años de guerra.
-owo.event.end_hundred_years_war_1453_england.option_1,Una dolorosa retirada a través del canal de la Mancha.
-owo.event.gutenberg_printing_press_1455.title,La revolución de la imprenta de Gutenberg
+owo.event.end_hundred_years_war_1453_england.option_1,Una amarga retirada a través del Canal de la Mancha.
+owo.event.gutenberg_printing_press_1455.title,La Imprenta de Gutenberg (1455)
 owo.event.gutenberg_printing_press_1455.description,En Maguncia, Johannes Gutenberg combinó tipos móviles de plomo, tinta oleosa y una prensa de madera para imprimir la célebre Biblia de 42 líneas, revolucionando la transmisión del conocimiento humano.
-owo.event.gutenberg_printing_press_1455.option_1,Financien el establecimiento de imprentas en nuestras ciudades.
-owo.event.wars_of_the_roses_1455.title,Estallido de la guerra de las Rosas
+owo.event.gutenberg_printing_press_1455.option_1,Patrocinar talleres de imprenta para expandir el saber.
+owo.event.wars_of_the_roses_1455.title,Estallido de la Guerra de las Dos Rosas (1455)
 owo.event.wars_of_the_roses_1455.description,Tras la derrota en Francia y la enfermedad del rey Enrique VI, la enconada rivalidad entre Lancaster y York desató el conflicto en St Albans, empujando a Inglaterra a una sangrienta guerra civil.
-owo.event.wars_of_the_roses_1455.option_1,Que Dios proteja al reino del caos civil.
-owo.event.portuguese_african_voyages_1460.title,Carabelas del mar Océano
+owo.event.wars_of_the_roses_1455.option_1,¡Apoyar la Rosa Roja de Lancaster y al rey Enrique VI!
+owo.event.portuguese_african_voyages_1460.title,Enrique el Navegante y los Viajes Africanos (1460)
 owo.event.portuguese_african_voyages_1460.description,Con el respaldo del príncipe Enrique el Navegante, las carabelas portuguesas doblaron Cabo Verde y alcanzaron el golfo de Guinea. El comercio marítimo directo de oro y marfil enriquece a Lisboa sorteando las rutas saharianas.
-owo.event.portuguese_african_voyages_1460.option_1,¡Amplíen nuestras factorías comerciales a lo largo de la costa africana!
+owo.event.portuguese_african_voyages_1460.option_1,Armar carabelas para explorar el océano meridional.
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury
@@ -707,7 +707,7 @@ owo.event.corvinus_black_army_1458.title,El Ejército Negro de Matías Corvino
 owo.event.corvinus_black_army_1458.description,Al asumir el trono en 1458, el rey Matías Corvino creó el Fekete Sereg (Ejército Negro), uno de los primeros ejércitos permanentes profesionales de Europa.
 owo.event.corvinus_black_army_1458.option_1,¡Comisionar al Ejército Negro para defender el reino y la cristiandad!
 owo.event.corvinus_black_army_1458.option_2,El tesoro no puede sostener mercenarios; confiemos en la nobleza.
-owo.event.fall_of_trebizond_1461.title,La Caída de Trebisonda
+owo.event.fall_of_trebizond_1461.title,Caída de Trebisonda: Dominio del Mar Negro (1461)
 owo.event.fall_of_trebizond_1461.description,En agosto de 1461, tras el asedio del sultán Mehmed II, el emperador David capituló en Trebisonda. El último estado sucesor romano queda absorbido por los otomanos.
 owo.event.fall_of_trebizond_1461.option_1,El mar Negro es ahora un lago otomano.
 owo.goal.mvy_gather_russian_lands,Gather the Russian Lands
@@ -758,3 +758,11 @@ owo.event.songhai_ascendancy_1464.title,Sonni Alí y la Hegemonía Songhai
 owo.event.songhai_ascendancy_1464.description,Al asumir el trono de Gao en 1464, Sonni Alí Ber convirtió al reino Songhai en un imperio dominante en África occidental. Con canoas de guerra en el río Níger y caballería en el Sahel, toma Tombuctú y domina las rutas transaharianas.
 owo.event.songhai_ascendancy_1464.option_1,¡Desplegar la flota del río Níger y dominar el Sahel!
 owo.event.songhai_ascendancy_1464.option_2,Proteger Gao y mantener el comercio fluvial pacífico.
+owo.event.fall_of_constantinople_1453.option_2,Garantizar derechos al patriarcado y revivir el comercio.
+owo.event.fall_of_constantinople_1453_christendom.option_2,Acoger eruditos y humanistas bizantinos en nuestra corte.
+owo.event.end_hundred_years_war_1453.option_2,Recompensar a la caballería leal y capitanes reales.
+owo.event.end_hundred_years_war_1453_england.option_2,Fortificar Calais y reclutar arqueros veteranos.
+owo.event.gutenberg_printing_press_1455.option_2,Someter las imprentas a censura y licencia real.
+owo.event.wars_of_the_roses_1455.option_2,¡Apoyar la Rosa Blanca de York y al duque Ricardo!
+owo.event.portuguese_african_voyages_1460.option_2,Consolidar factorías costeras y asegurar el oro.
+owo.event.fall_of_trebizond_1461.option_2,Otorgar timars a jinetes locales para vigilar la costa.

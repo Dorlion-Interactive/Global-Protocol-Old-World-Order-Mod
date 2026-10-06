@@ -310,27 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
-owo.event.fall_of_constantinople_1453.title,君士坦丁堡的陷落
+owo.event.fall_of_constantinople_1453.title,君士坦丁堡陷落（奥斯曼凯歌）
 owo.event.fall_of_constantinople_1453.description,1453年5月29日，在经历了53天的围城后，苏丹穆罕默德二世的军队攻破了古老的狄奥多西城墙。东罗马帝国灭亡，宣告延续千年的拜占庭文明落幕。君士坦丁堡成为奥斯曼帝国的宏伟新都。
-owo.event.fall_of_constantinople_1453.option_1,君士坦丁耶必将作为帝国皇冠上的明珠熠熠生辉！
-owo.event.fall_of_constantinople_1453_christendom.title,君士坦丁堡的陷落
+owo.event.fall_of_constantinople_1453.option_1,君士坦丁堡将成为帝国永恒闪耀的王冠！
+owo.event.fall_of_constantinople_1453_christendom.title,君士坦丁堡陷落（基督教世界震颤）
 owo.event.fall_of_constantinople_1453_christendom.description,1453年5月29日，在经历了53天的围城后，苏丹穆罕默德二世的军队攻破了古老的狄奥多西城墙。东罗马帝国灭亡，宣告延续千年的拜占庭文明落幕。君士坦丁堡成为奥斯曼帝国的宏伟新都。
-owo.event.fall_of_constantinople_1453_christendom.option_1,基督教罗马世界的悲剧性黄昏。
-owo.event.end_hundred_years_war_1453.title,卡斯蒂永战役：百年战争终结
+owo.event.fall_of_constantinople_1453_christendom.option_1,罗马世界在悲叹中落下了千年帷幕。
+owo.event.end_hundred_years_war_1453.title,百年战争终结（法兰西大捷）
 owo.event.end_hundred_years_war_1453.description,1453年7月，让·比罗统领的法军野战炮兵在卡斯蒂永战役中决定性地击溃了英军骑士。战后法国王室收复波尔多与阿基坦公国。历经116年的惨烈战争，英军除加来港外已被逐出欧陆全境。
-owo.event.end_hundred_years_war_1453.option_1,法兰西终获主权与统一！
-owo.event.end_hundred_years_war_1453_england.title,卡斯蒂永战役：百年战争终结
+owo.event.end_hundred_years_war_1453.option_1,法兰西王国终得光复，重归一统！
+owo.event.end_hundred_years_war_1453_england.title,百年战争终结（英格兰撤军）
 owo.event.end_hundred_years_war_1453_england.description,1453年7月，让·比罗统领的法军野战炮兵在卡斯蒂永战役中决定性地击溃了英军骑士。战后法国王室收复波尔多与阿基坦公国。历经116年的惨烈战争，英军除加来港外已被逐出欧陆全境。
-owo.event.end_hundred_years_war_1453_england.option_1,渡过英吉利海峡的痛苦撤退。
-owo.event.gutenberg_printing_press_1455.title,古腾堡印刷革命
+owo.event.end_hundred_years_war_1453_england.option_1,饮恨撤退，战火暂止于海峡之南。
+owo.event.gutenberg_printing_press_1455.title,古腾堡活字印刷术（1455）
 owo.event.gutenberg_printing_press_1455.description,在德意志城市美因茨，金匠约翰内斯·古腾堡融合活字铅合金字模、油性油墨与木制螺旋压印机，成功印制出42行圣经，使人类知识得以以前所未有的速度传播。
-owo.event.gutenberg_printing_press_1455.option_1,资助在我国诸城广设印刷工坊。
-owo.event.wars_of_the_roses_1455.title,玫瑰战争爆发
+owo.event.gutenberg_printing_press_1455.option_1,资助印刷工坊，广布经籍与新知。
+owo.event.wars_of_the_roses_1455.title,玫瑰战争爆发（1455）
 owo.event.wars_of_the_roses_1455.description,在法兰西战败及国王亨利六世精神失常的阴影下，兰开斯特家族（红玫瑰）与约克家族（白玫瑰）的宿怨在第一次圣奥尔本斯战役中升级为流血冲突，英格兰陷入争夺王位的漫长内战。
-owo.event.wars_of_the_roses_1455.option_1,愿上帝保佑王国免受内乱涂炭。
-owo.event.portuguese_african_voyages_1460.title,大洋之海的卡拉维尔帆船
+owo.event.wars_of_the_roses_1455.option_1,效忠兰开斯特红玫瑰与国王亨利六世！
+owo.event.portuguese_african_voyages_1460.title,恩里克王子与西非远航（1460）
 owo.event.portuguese_african_voyages_1460.description,在航海家亨利王子的赞助下，葡萄牙卡拉维尔帆船绕过佛得角并驶入几内亚湾。西非砂金、马拉盖塔胡椒及象牙的直航海运贸易绕过了传统的跨撒哈拉陆上商路，为里斯本注入无尽财富。
-owo.event.portuguese_african_voyages_1460.option_1,拓建沿非洲海岸的要塞化商站！
+owo.event.portuguese_african_voyages_1460.option_1,增造卡拉维尔帆船，探索未知大洋。
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury
@@ -707,9 +707,9 @@ owo.event.corvinus_black_army_1458.title,The Black Army of Matthias Corvinus
 owo.event.corvinus_black_army_1458.description,Rising to the Hungarian throne in 1458, King Matthias Corvinus has broken with feudal reliance on rebellious noble levies to establish the Fekete Sereg (The Black Army)—one of Europe's first permanent professional mercenary standing armies, equipped with heavy plate, pavises, and firearms.
 owo.event.corvinus_black_army_1458.option_1,Commission the Black Army to defend the realm and Christendom!
 owo.event.corvinus_black_army_1458.option_2,The treasury cannot sustain mercenaries; rely on the noble banderia.
-owo.event.fall_of_trebizond_1461.title,The Fall of Trebizond
+owo.event.fall_of_trebizond_1461.title,特拉比松陷落：黑海霸权（1461）
 owo.event.fall_of_trebizond_1461.description,In August 1461, after a determined combined land siege and naval blockade led by Sultan Mehmed II, Emperor David Megas Komnenos has surrendered the fortified coastal city of Trebizond. With the fall of the Komnenian bastion on the Black Sea, the final surviving successor state of the Roman Empire is absorbed into the Ottoman realm.
-owo.event.fall_of_trebizond_1461.option_1,The Black Sea is now firmly an Ottoman lake.
+owo.event.fall_of_trebizond_1461.option_1,黑海自此尽入奥斯曼帝国版图。
 owo.goal.mvy_gather_russian_lands,Gather the Russian Lands
 owo.goal.mvy_gather_russian_lands.desc,Unify the divided principalities of Rus under the leadership of Moscow.
 owo.task.mvy_gather_russian_lands.army,Muster 15,000 soldiers
@@ -758,3 +758,11 @@ owo.event.songhai_ascendancy_1464.title,桑尼·阿里与桑海帝国的崛起
 owo.event.songhai_ascendancy_1464.description,1464年桑尼·阿里即位于加奥，迅速将桑海推向帝国鼎盛。凭借尼日尔河上的战船舰队与萨赫勒重骑兵，桑海大军进逼廷巴克图，掌控跨撒哈拉黄金与食盐贸易商道。
 owo.event.songhai_ascendancy_1464.option_1,调集尼日尔水师与骑兵，横扫萨赫勒！
 owo.event.songhai_ascendancy_1464.option_2,镇守加奥重镇，维系沿河商旅往来。
+owo.event.fall_of_constantinople_1453.option_2,宽宥东正教牧首特权，复兴黑海航运贸易。
+owo.event.fall_of_constantinople_1453_christendom.option_2,接纳拜占庭流亡学者与人文学士入朝讲学。
+owo.event.end_hundred_years_war_1453.option_2,重赏百战骑士与王室炮兵将领。
+owo.event.end_hundred_years_war_1453_england.option_2,坚守加莱据点，调集百战长弓手驻防。
+owo.event.gutenberg_printing_press_1455.option_2,将印刷馆所置于王室审查特许之下。
+owo.event.wars_of_the_roses_1455.option_2,倒向约克白玫瑰与理查公爵！
+owo.event.portuguese_african_voyages_1460.option_2,修筑几内亚沿海商馆，垄断黄金贸易。
+owo.event.fall_of_trebizond_1461.option_2,向地方骑兵颁授蒂玛尔封邑，巩固海防。

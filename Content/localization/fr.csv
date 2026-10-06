@@ -310,27 +310,27 @@ owo.doctrine.economy.t5.agrarian_crown_estates,Agrarian Crown Estates
 owo.doctrine.economy.t5.agrarian_crown_estates.desc,Drained marshes, new villages and crown estates make the land itself the source of the realm's wealth.
 owo.doctrine.economy.milestone,Commercial Revolution
 owo.doctrine.economy.milestone.desc,Banking, bills of exchange and long-distance trade have made your realm's wealth work for it.
-owo.event.fall_of_constantinople_1453.title,La chute de Constantinople
+owo.event.fall_of_constantinople_1453.title,Prise de Constantinople (Triomphe Ottoman)
 owo.event.fall_of_constantinople_1453.description,Le 29 mai 1453, après un siège de 53 jours, les armées du sultan Mehmed II ont forcé les antiques murailles théodosiennes. L'Empire romain d'Orient est tombé, achevant plus d'un millénaire de civilisation byzantine. Constantinople devient la prestigieuse capitale de l'Empire ottoman.
-owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye brillera comme le joyau de la couronne de notre empire !
-owo.event.fall_of_constantinople_1453_christendom.title,La chute de Constantinople
+owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye sera la capitale éternelle de l'Empire !
+owo.event.fall_of_constantinople_1453_christendom.title,La Chute de Constantinople (Choc en Chrétienté)
 owo.event.fall_of_constantinople_1453_christendom.description,Le 29 mai 1453, après un siège de 53 jours, les armées du sultan Mehmed II ont forcé les antiques murailles théodosiennes. L'Empire romain d'Orient est tombé, achevant plus d'un millénaire de civilisation byzantine. Constantinople devient la prestigieuse capitale de l'Empire ottoman.
 owo.event.fall_of_constantinople_1453_christendom.option_1,Un crépuscule tragique pour le monde romain chrétien.
-owo.event.end_hundred_years_war_1453.title,Bataille de Castillon : Fin de la guerre de Cent Ans
+owo.event.end_hundred_years_war_1453.title,Fin de la Guerre de Cent Ans (Victoire Française)
 owo.event.end_hundred_years_war_1453.description,En juillet 1453, l'artillerie de Jean Bureau a anéanti les chevaliers anglais de John Talbot à Castillon. La couronne de France a repris Bordeaux et toute la Guyenne. Après 116 ans de guerre, les Anglais sont chassés du continent à la seule exception de Calais.
 owo.event.end_hundred_years_war_1453.option_1,La France se dresse enfin souveraine et unie !
-owo.event.end_hundred_years_war_1453_england.title,Bataille de Castillon : Fin de la guerre de Cent Ans
+owo.event.end_hundred_years_war_1453_england.title,Fin de la Guerre de Cent Ans (Retraite Anglaise)
 owo.event.end_hundred_years_war_1453_england.description,En juillet 1453, l'artillerie de Jean Bureau a anéanti les chevaliers anglais de John Talbot à Castillon. La couronne de France a repris Bordeaux et toute la Guyenne. Après 116 ans de guerre, les Anglais sont chassés du continent à la seule exception de Calais.
-owo.event.end_hundred_years_war_1453_england.option_1,Une douloureuse retraite de l'autre côté de la Manche.
-owo.event.gutenberg_printing_press_1455.title,La révolution de l'imprimerie de Gutenberg
+owo.event.end_hundred_years_war_1453_england.option_1,Une douloureuse retraite par-delà la Manche.
+owo.event.gutenberg_printing_press_1455.title,Révolution de l'Imprimerie de Gutenberg (1455)
 owo.event.gutenberg_printing_press_1455.description,À Mayence, l'orfèvre Johannes Gutenberg a combiné caractères mobiles en plomb, encre grasse et presse à bras pour imprimer sa Bible à 42 lignes, promettant une diffusion du savoir sans précédent.
-owo.event.gutenberg_printing_press_1455.option_1,Encouragez l'installation d'ateliers d'imprimerie dans nos cités.
-owo.event.wars_of_the_roses_1455.title,Déclenchement de la guerre des Deux-Roses
+owo.event.gutenberg_printing_press_1455.option_1,Financer les ateliers d'imprimerie pour diffuser le savoir.
+owo.event.wars_of_the_roses_1455.title,Guerre des Deux-Roses (1455)
 owo.event.wars_of_the_roses_1455.description,Au lendemain de la défaite en France et face à la folie du roi Henri VI, la rivalité entre la maison de Lancastre et la maison d'York dégénère lors de la première bataille de Saint-Albans. L'Angleterre plonge dans une guerre civile sanglante.
-owo.event.wars_of_the_roses_1455.option_1,Que Dieu préserve le royaume du désordre civil.
-owo.event.portuguese_african_voyages_1460.title,Caravelles de la mer Océane
+owo.event.wars_of_the_roses_1455.option_1,Soutenir la Rose Rouge de Lancastre et le roi Henri VI !
+owo.event.portuguese_african_voyages_1460.title,Henri le Navigateur et les Caravelles Africaines (1460)
 owo.event.portuguese_african_voyages_1460.description,Sous l'impulsion du prince Henri le Navigateur, les caravelles portugaises ont doublé le cap Vert et atteint le golfe de Guinée. Le commerce direct de l'or, de la malaguette et de l'ivoire contourne les pistes caravanières, enrichissant Lisbonne.
-owo.event.portuguese_african_voyages_1460.option_1,Développez nos comptoirs fortifiés le long des côtes africaines !
+owo.event.portuguese_african_voyages_1460.option_1,Armer de nouvelles caravelles vers les mers du Sud.
 owo.goal.basic_fill_the_treasury,Fill the Royal Treasury
 owo.goal.basic_fill_the_treasury.desc,A realm without coin cannot raise armies or keep the peace. Build a reserve worth defending.
 owo.task.basic_fill_the_treasury.treasury,Hold 500 fl. in the treasury
@@ -707,7 +707,7 @@ owo.event.corvinus_black_army_1458.title,L'Armée Noire de Matthias Corvin
 owo.event.corvinus_black_army_1458.description,Monté sur le trône en 1458, le roi Matthias Corvin a créé la Fekete Sereg (l'Armée Noire), l'une des premières armées permanentes de mercenaires professionnels en Europe.
 owo.event.corvinus_black_army_1458.option_1,Finançons l'Armée Noire pour défendre le royaume et la chrétienté !
 owo.event.corvinus_black_army_1458.option_2,Le trésor ne peut entretenir des mercenaires; fions-nous à la noblesse.
-owo.event.fall_of_trebizond_1461.title,La Chute de Trébizonde
+owo.event.fall_of_trebizond_1461.title,Chute de Trébizonde: Maîtrise de la Mer Noire (1461)
 owo.event.fall_of_trebizond_1461.description,En août 1461, après un siège ottoman mené par le sultan Mehmed II, l'empereur David de Trébizonde capitule. Le dernier vestige de l'Empire romain passe sous contrôle ottoman.
 owo.event.fall_of_trebizond_1461.option_1,La mer Noire est désormais un lac ottoman.
 owo.goal.mvy_gather_russian_lands,Gather the Russian Lands
@@ -758,3 +758,11 @@ owo.event.songhai_ascendancy_1464.title,Sonni Ali et l'Ascension Songhaï
 owo.event.songhai_ascendancy_1464.description,Couronné à Gao en 1464, Sonni Ali Ber transforme le royaume songhaï en un puissant empire. Disposant d'une flotte de pirogues sur le Niger et d'une cavalerie redoutable, il s'empare de Tombouctou et des routes transsahariennes.
 owo.event.songhai_ascendancy_1464.option_1,Mobiliser la flotte du Niger et dominer le Sahel !
 owo.event.songhai_ascendancy_1464.option_2,Fortifier Gao et commercer en paix le long du fleuve.
+owo.event.fall_of_constantinople_1453.option_2,Garantir les droits du patriarcat et ranimer le commerce.
+owo.event.fall_of_constantinople_1453_christendom.option_2,Accueillir les érudits byzantins et humanistes à notre cour.
+owo.event.end_hundred_years_war_1453.option_2,Récompenser notre chevalerie et les capitaines royaux.
+owo.event.end_hundred_years_war_1453_england.option_2,Fortifier Calais et mobiliser les archers vétérans.
+owo.event.gutenberg_printing_press_1455.option_2,Placer les presses sous privilège royal et censure.
+owo.event.wars_of_the_roses_1455.option_2,Se rallier à la Rose Blanche d'York et au duc Richard !
+owo.event.portuguese_african_voyages_1460.option_2,Consolider les comptoirs côtiers et le commerce d'or.
+owo.event.fall_of_trebizond_1461.option_2,Distribuer des fiefs timars aux cavaliers pontiques.

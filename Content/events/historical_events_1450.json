@@ -37,6 +37,38 @@
           }
         ],
         "text_key": "owo.event.fall_of_constantinople_1453.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "annex_province",
+            "province_id": 2276,
+            "target": "OTT"
+          },
+          {
+            "type": "add_treasury",
+            "value": 250
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          },
+          {
+            "type": "modify_unrest",
+            "value": -5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "constantinople_conquered"
+          }
+        ],
+        "text_key": "owo.event.fall_of_constantinople_1453.option_2"
       }
     ],
     "title_key": "owo.event.fall_of_constantinople_1453.title",
@@ -75,6 +107,20 @@
           }
         ],
         "text_key": "owo.event.fall_of_constantinople_1453_christendom.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": -50
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.015
+          }
+        ],
+        "text_key": "owo.event.fall_of_constantinople_1453_christendom.option_2"
       }
     ],
     "title_key": "owo.event.fall_of_constantinople_1453_christendom.title",
@@ -111,6 +157,22 @@
           }
         ],
         "text_key": "owo.event.end_hundred_years_war_1453.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "france_knight",
+            "count": 1,
+            "target": "FRA"
+          }
+        ],
+        "text_key": "owo.event.end_hundred_years_war_1453.option_2"
       }
     ],
     "title_key": "owo.event.end_hundred_years_war_1453.title",
@@ -145,6 +207,25 @@
           }
         ],
         "text_key": "owo.event.end_hundred_years_war_1453_england.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": -150
+          },
+          {
+            "type": "modify_unrest",
+            "value": 5
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "england_longbowman",
+            "count": 1,
+            "target": "ENG"
+          }
+        ],
+        "text_key": "owo.event.end_hundred_years_war_1453_england.option_2"
       }
     ],
     "title_key": "owo.event.end_hundred_years_war_1453_england.title",
@@ -178,6 +259,20 @@
           }
         ],
         "text_key": "owo.event.gutenberg_printing_press_1455.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "modify_unrest",
+            "value": -5
+          }
+        ],
+        "text_key": "owo.event.gutenberg_printing_press_1455.option_2"
       }
     ],
     "title_key": "owo.event.gutenberg_printing_press_1455.title",
@@ -213,6 +308,24 @@
           }
         ],
         "text_key": "owo.event.wars_of_the_roses_1455.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_unrest",
+            "value": 20
+          },
+          {
+            "type": "add_treasury",
+            "value": 200
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          }
+        ],
+        "text_key": "owo.event.wars_of_the_roses_1455.option_2"
       }
     ],
     "title_key": "owo.event.wars_of_the_roses_1455.title",
@@ -247,6 +360,20 @@
           }
         ],
         "text_key": "owo.event.portuguese_african_voyages_1460.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 150
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          }
+        ],
+        "text_key": "owo.event.portuguese_african_voyages_1460.option_2"
       }
     ],
     "title_key": "owo.event.portuguese_african_voyages_1460.title",
@@ -426,6 +553,30 @@
           }
         ],
         "text_key": "owo.event.fall_of_trebizond_1461.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "annex_province",
+            "province_id": 2415,
+            "target": "OTT"
+          },
+          {
+            "type": "add_treasury",
+            "value": 100
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "ottoman_sipahi",
+            "count": 1,
+            "target": "OTT"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "trebizond_annexed"
+          }
+        ],
+        "text_key": "owo.event.fall_of_trebizond_1461.option_2"
       }
     ],
     "title_key": "owo.event.fall_of_trebizond_1461.title",
