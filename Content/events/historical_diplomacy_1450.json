@@ -1061,5 +1061,291 @@
         "text_key": "owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_2"
       }
     ]
+  },
+  {
+    "id": "diplomacy_danubian_principalities_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 9,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "WAL",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "HUN",
+            "value": 70
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "HUN"
+          },
+          {
+            "type": "add_relation",
+            "target": "OTT",
+            "value": -40
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "wallachian_hungarian_treaty"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_danubian_principalities_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "OTT",
+            "value": 45
+          },
+          {
+            "type": "add_treasury",
+            "value": -100
+          },
+          {
+            "type": "add_relation",
+            "target": "HUN",
+            "value": -30
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "wallachian_porte_tribute"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_danubian_principalities_1450.option_2"
+      }
+    ],
+    "title_key": "owo.event.diplomacy_danubian_principalities_1450.title",
+    "description_key": "owo.event.diplomacy_danubian_principalities_1450.description"
+  },
+  {
+    "id": "diplomacy_ryukyu_maritime_tribute_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 8,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "RYU",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "MYN",
+            "value": 80
+          },
+          {
+            "type": "engage_diplomatically",
+            "target": "MYN"
+          },
+          {
+            "type": "add_treasury",
+            "value": 250
+          },
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "ryukyu_ming_tributary_active"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_ryukyu_maritime_tribute_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "add_treasury",
+            "value": 100
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "med_cog",
+            "count": 1,
+            "province_id": 2916,
+            "target": "RYU"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "ryukyu_fortified"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_ryukyu_maritime_tribute_1450.option_2"
+      }
+    ],
+    "title_key": "owo.event.diplomacy_ryukyu_maritime_tribute_1450.title",
+    "description_key": "owo.event.diplomacy_ryukyu_maritime_tribute_1450.description"
+  },
+  {
+    "id": "diplomacy_imperial_electors_peace_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 9,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "HAB",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "SAX",
+            "value": 50
+          },
+          {
+            "type": "add_relation",
+            "target": "BRG",
+            "value": 50
+          },
+          {
+            "type": "add_relation",
+            "target": "BOH",
+            "value": 40
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "hre_electoral_peace_ratified"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_imperial_electors_peace_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 300
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          },
+          {
+            "type": "add_relation",
+            "target": "SAX",
+            "value": -25
+          },
+          {
+            "type": "add_relation",
+            "target": "BRG",
+            "value": -25
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "habsburg_hegemony_asserted"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_imperial_electors_peace_1450.option_2"
+      }
+    ],
+    "title_key": "owo.event.diplomacy_imperial_electors_peace_1450.title",
+    "description_key": "owo.event.diplomacy_imperial_electors_peace_1450.description"
+  },
+  {
+    "id": "diplomacy_raichur_doab_armistice_1450",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 9,
+    "fire_once": true,
+    "immediate": true,
+    "target": "specific_country",
+    "target_country": "BAH",
+    "conditions": [
+      {
+        "type": "date_before",
+        "value": "1450-03"
+      }
+    ],
+    "options": [
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "VIJ",
+            "value": 30
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "add_treasury",
+            "value": 200
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "raichur_armistice_observed"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_raichur_doab_armistice_1450.option_1"
+      },
+      {
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "VIJ",
+            "value": -70
+          },
+          {
+            "type": "add_treasury",
+            "value": 400
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "raichur_doab_raided"
+          }
+        ],
+        "text_key": "owo.event.diplomacy_raichur_doab_armistice_1450.option_2"
+      }
+    ],
+    "title_key": "owo.event.diplomacy_raichur_doab_armistice_1450.title",
+    "description_key": "owo.event.diplomacy_raichur_doab_armistice_1450.description"
   }
 ]
