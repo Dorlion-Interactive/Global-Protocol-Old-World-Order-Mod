@@ -993,7 +993,8 @@
       }
     ],
     "title_key": "owo.event.malacca_spice_entrepot_1458.title",
-    "description_key": "owo.event.malacca_spice_entrepot_1458.description"
+    "description_key": "owo.event.malacca_spice_entrepot_1458.description",
+    "image": "malacca_spice_entrepot"
   },
   {
     "id": "medici_fugger_banking_accord_1460",
@@ -1065,7 +1066,8 @@
       }
     ],
     "title_key": "owo.event.medici_fugger_banking_accord_1460.title",
-    "description_key": "owo.event.medici_fugger_banking_accord_1460.description"
+    "description_key": "owo.event.medici_fugger_banking_accord_1460.description",
+    "image": "medici_fugger_banking"
   },
   {
     "id": "prussian_confederation_revolt_1454",
@@ -1135,7 +1137,8 @@
       }
     ],
     "title_key": "owo.event.prussian_confederation_revolt_1454.title",
-    "description_key": "owo.event.prussian_confederation_revolt_1454.description"
+    "description_key": "owo.event.prussian_confederation_revolt_1454.description",
+    "image": "prussian_confederation"
   },
   {
     "id": "casimir_incorporation_of_prussia_1454",
@@ -1197,7 +1200,8 @@
       }
     ],
     "title_key": "owo.event.casimir_incorporation_of_prussia_1454.title",
-    "description_key": "owo.event.casimir_incorporation_of_prussia_1454.description"
+    "description_key": "owo.event.casimir_incorporation_of_prussia_1454.description",
+    "image": "prussian_confederation"
   },
   {
     "id": "battle_of_towton_1461",
@@ -1320,7 +1324,8 @@
       }
     ],
     "title_key": "owo.event.marriage_of_the_catholic_monarchs_1469.title",
-    "description_key": "owo.event.marriage_of_the_catholic_monarchs_1469.description"
+    "description_key": "owo.event.marriage_of_the_catholic_monarchs_1469.description",
+    "image": "catholic_monarchs"
   },
   {
     "id": "hussite_king_of_bohemia_1458",
@@ -1390,7 +1395,8 @@
       }
     ],
     "title_key": "owo.event.hussite_king_of_bohemia_1458.title",
-    "description_key": "owo.event.hussite_king_of_bohemia_1458.description"
+    "description_key": "owo.event.hussite_king_of_bohemia_1458.description",
+    "image": "hussite_king_bohemia"
   },
   {
     "id": "third_rome_doctrine_1453",
@@ -1458,7 +1464,8 @@
       }
     ],
     "title_key": "owo.event.third_rome_doctrine_1453.title",
-    "description_key": "owo.event.third_rome_doctrine_1453.description"
+    "description_key": "owo.event.third_rome_doctrine_1453.description",
+    "image": "third_rome_doctrine"
   },
   {
     "id": "vatican_library_founded_1451",
@@ -1522,7 +1529,8 @@
       }
     ],
     "title_key": "owo.event.vatican_library_founded_1451.title",
-    "description_key": "owo.event.vatican_library_founded_1451.description"
+    "description_key": "owo.event.vatican_library_founded_1451.description",
+    "image": "vatican_library"
   },
   {
     "id": "bhakti_devotional_movement_1455",
@@ -1586,6 +1594,7 @@
       }
     ],
     "title_key": "owo.event.bhakti_devotional_movement_1455.title",
-    "description_key": "owo.event.bhakti_devotional_movement_1455.description"
+    "description_key": "owo.event.bhakti_devotional_movement_1455.description",
+    "image": "bhakti_movement"
   }
 ]
