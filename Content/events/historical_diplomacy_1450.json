@@ -68,7 +68,8 @@
         ],
         "text_key": "owo.event.diplomacy_union_of_poland_lithuania_1450.option_2"
       }
-    ]
+    ],
+    "image": "union_poland_lithuania"
   },
   {
     "id": "diplomacy_auld_alliance_1450",
@@ -144,7 +145,8 @@
         ],
         "text_key": "owo.event.diplomacy_auld_alliance_1450.option_2"
       }
-    ]
+    ],
+    "image": "auld_alliance"
   },
   {
     "id": "diplomacy_hundred_years_war_england_1450",
@@ -220,7 +222,8 @@
         ],
         "text_key": "owo.event.diplomacy_hundred_years_war_england_1450.option_2"
       }
-    ]
+    ],
+    "image": "anglo_french_parley"
   },
   {
     "id": "diplomacy_venice_genoa_rivalry_1450",
@@ -296,7 +299,8 @@
         ],
         "text_key": "owo.event.diplomacy_venice_genoa_rivalry_1450.option_2"
       }
-    ]
+    ],
+    "image": "venice_genoa_rivalry"
   },
   {
     "id": "diplomacy_byzantine_diplomatic_plea_1450",
@@ -519,7 +523,8 @@
         ],
         "text_key": "owo.event.diplomacy_kalmar_union_accord_1450.option_2"
       }
-    ]
+    ],
+    "image": "kalmar_union_accord"
   },
   {
     "id": "diplomacy_ming_joseon_tributary_pact_1450",
