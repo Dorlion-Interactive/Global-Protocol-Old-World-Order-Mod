@@ -20,9 +20,32 @@ public sealed class ModEntrypoint : ModBase, IModHost
         ModHookBus.ShowPopup(OldWorldOrder.ModId, title, body);
     }
 
+    private static readonly System.Action<string>? _unityLog = ResolveUnityLog();
+
+    private static System.Action<string>? ResolveUnityLog()
+    {
+        try
+        {
+            var debugType = System.Type.GetType("UnityEngine.Debug, UnityEngine.CoreModule")
+                         ?? System.Type.GetType("UnityEngine.Debug, UnityEngine");
+            if (debugType != null)
+            {
+                var method = debugType.GetMethod("Log", new[] { typeof(object) });
+                if (method != null)
+                    return msg => method.Invoke(null, new object[] { msg });
+            }
+        }
+        catch { }
+        return null;
+    }
+
     public void Log(string message)
     {
-        // Native C# delegate path logs natively or via unity engine if available.
+        string formatted = $"[OldWorldOrder:CSharp] {message}";
+        if (_unityLog != null)
+            _unityLog(formatted);
+        else
+            System.Console.WriteLine(formatted);
     }
 
     public string GetModVersion()
@@ -47,6 +70,7 @@ public sealed class ModEntrypoint : ModBase, IModHost
 
     protected override void OnInitialize(IModServices services)
     {
+        Log("ModEntrypoint.OnInitialize() called by engine runtime!");
         _shared = new OldWorldOrder(this);
         _shared.OnInitialize();
     }
@@ -55,6 +79,10 @@ public sealed class ModEntrypoint : ModBase, IModHost
     // tick  = total elapsed ticks, year/month = current in-game date.
     protected override void OnTick(int tick, int year, int month)
     {
+        if (tick <= 5 || tick % 100 == 0)
+        {
+            Log($"OnTick: tick={tick}, date={year}-{month:D2}");
+        }
         _shared?.OnTick(tick, year, month);
     }
 
@@ -129,6 +157,7 @@ public sealed class ModEntrypoint : ModBase, IModHost
     // Always check modId first — other mods fire this hook too.
     protected override void OnUiAction(string hookName, string modId)
     {
+        Log($"OnUiAction received: hookName='{hookName}', modId='{modId}'");
         _shared?.OnUiAction(hookName, modId);
     }
 }
