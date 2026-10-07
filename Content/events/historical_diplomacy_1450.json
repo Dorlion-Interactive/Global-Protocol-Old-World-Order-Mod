@@ -381,7 +381,8 @@
         ],
         "text_key": "owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_2"
       }
-    ]
+    ],
+    "image": "byzantine_plea"
   },
   {
     "id": "diplomacy_iberian_trastamara_concord_1450",
@@ -456,7 +457,8 @@
         ],
         "text_key": "owo.event.diplomacy_iberian_trastamara_concord_1450.option_2"
       }
-    ]
+    ],
+    "image": "iberian_trastamara_concord"
   },
   {
     "id": "diplomacy_kalmar_union_accord_1450",
@@ -594,7 +596,8 @@
         ],
         "text_key": "owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_2"
       }
-    ]
+    ],
+    "image": "ming_joseon_tributary"
   },
   {
     "id": "diplomacy_deccan_rivalry_1450",
@@ -666,7 +669,8 @@
         ],
         "text_key": "owo.event.diplomacy_deccan_rivalry_1450.option_2"
       }
-    ]
+    ],
+    "image": "deccan_rivalry"
   },
   {
     "id": "diplomacy_muscovy_novgorod_struggle_1450",
@@ -747,7 +751,8 @@
         ],
         "text_key": "owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_2"
       }
-    ]
+    ],
+    "image": "muscovy_novgorod_struggle"
   },
   {
     "id": "diplomacy_ottoman_hungarian_frontier_1450",
@@ -829,7 +834,8 @@
         ],
         "text_key": "owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_2"
       }
-    ]
+    ],
+    "image": "ottoman_hungarian_frontier"
   },
   {
     "id": "diplomacy_mamluk_venetian_trade_treaty_1450",
@@ -908,7 +914,8 @@
         ],
         "text_key": "owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_2"
       }
-    ]
+    ],
+    "image": "mamluk_venetian_trade"
   },
   {
     "id": "diplomacy_italian_balance_milan_florence_1450",
@@ -984,7 +991,8 @@
         ],
         "text_key": "owo.event.diplomacy_italian_balance_milan_florence_1450.option_2"
       }
-    ]
+    ],
+    "image": "italian_balance_milan_florence"
   },
   {
     "id": "diplomacy_andean_tawantinsuyu_chimor_1450",
@@ -1051,7 +1059,8 @@
         ],
         "text_key": "owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_2"
       }
-    ]
+    ],
+    "image": "andean_tawantinsuyu_chimor"
   },
   {
     "id": "diplomacy_danubian_principalities_1450",
@@ -1122,7 +1131,8 @@
       }
     ],
     "title_key": "owo.event.diplomacy_danubian_principalities_1450.title",
-    "description_key": "owo.event.diplomacy_danubian_principalities_1450.description"
+    "description_key": "owo.event.diplomacy_danubian_principalities_1450.description",
+    "image": "danubian_principalities"
   },
   {
     "id": "diplomacy_ryukyu_maritime_tribute_1450",
@@ -1194,7 +1204,8 @@
       }
     ],
     "title_key": "owo.event.diplomacy_ryukyu_maritime_tribute_1450.title",
-    "description_key": "owo.event.diplomacy_ryukyu_maritime_tribute_1450.description"
+    "description_key": "owo.event.diplomacy_ryukyu_maritime_tribute_1450.description",
+    "image": "ryukyu_maritime_tribute"
   },
   {
     "id": "diplomacy_imperial_electors_peace_1450",
@@ -1271,7 +1282,8 @@
       }
     ],
     "title_key": "owo.event.diplomacy_imperial_electors_peace_1450.title",
-    "description_key": "owo.event.diplomacy_imperial_electors_peace_1450.description"
+    "description_key": "owo.event.diplomacy_imperial_electors_peace_1450.description",
+    "image": "imperial_electors_peace"
   },
   {
     "id": "diplomacy_raichur_doab_armistice_1450",
@@ -1337,6 +1349,7 @@
       }
     ],
     "title_key": "owo.event.diplomacy_raichur_doab_armistice_1450.title",
-    "description_key": "owo.event.diplomacy_raichur_doab_armistice_1450.description"
+    "description_key": "owo.event.diplomacy_raichur_doab_armistice_1450.description",
+    "image": "raichur_doab_armistice"
   }
 ]
