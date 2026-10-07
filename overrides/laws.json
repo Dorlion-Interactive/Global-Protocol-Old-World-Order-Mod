@@ -1,4 +1,34 @@
 {
+  "categories": [
+    {
+      "id": "conscription",
+      "options": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "id": "cyber_reserve_corps",
+          "gate_key": "military_t5"
+        }
+      ]
+    },
+    {},
+    {
+      "id": "press_freedom",
+      "options": [
+        {},
+        {},
+        {},
+        {},
+        {
+          "id": "platform_regulation",
+          "gate_key": "government_t4"
+        }
+      ]
+    }
+  ],
   "country_overrides": {
     "OTT": {
       "conscription": "selective",

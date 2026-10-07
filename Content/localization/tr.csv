@@ -1,3 +1,33 @@
+building.arms_factory.description,Ağır bronz bombardalar, demir gülleler, arkebüzler ve kuşatma ekipmanları döken dökümhane.
+building.arms_factory.name,Top ve Çan Dökümhanesi
+building.barracks.description,Şehir milisleri, bekçiler ve daimi silahlı muhafızlar için toplanma alanı, silah deposu ve kışlalar.
+building.barracks.name,Garnizon ve Toplanma Alanı
+building.commercial_district.description,Bölgesel ticareti, takas panayırlarını ve geçiş vergisi gelirini kolaylaştıran taş döşeli pazar meydanı ve tüccar tezgahları.
+building.commercial_district.name,Pazar Meydanı
+building.counterintel_bureau.description,Sıkı sorgulamalar yoluyla yabancı kışkırtıcıları, isyanı ve gizli sızmaları kökünden kazıyan adli mahkeme ve şehir muhafızlığı.
+building.counterintel_bureau.name,Engizisyon Mahkemesi
+building.factory.description,Kentli zanaatkarları istihdam ederek metal eşyalar, tekstil ve zırh üreten lonca atölyeleri ve demirci ocakları.
+building.factory.name,Lonca Atölyesi
+building.highway.description,Ulak posta hatlarını ve birlik hareketini kolaylaştıran, taş köprüleri ve menzilleri olan taş döşeli krallık yolu.
+building.highway.name,Taş Döşeli Kral Yolu
+building.hospital.description,Tabip loncası ustaları veya dini cemaatler tarafından işletilen, şifalı ot tedavileri sunan ve hastaları barındıran şifahane.
+building.hospital.name,Darüşşifa ve Bitkisel Eczane
+building.intelligence_hq.description,Saray muhbirlerini yöneten, diplomatik mektupları ele geçiren ve gizli yabancı operasyonlar düzenleyen merkezi casusluk odası ve ulak merkezi.
+building.intelligence_hq.name,Kraliyet İstihbarat Dairesi
+building.military_base.description,Tartışmasız derebeyi otoritesini tesis eden, sur duvarları, kuleleri ve hendekleri olan heybetli taş kale.
+building.military_base.name,Kale ve İç Kale
+building.naval_base.description,Savaş kadırgaları, kalyonlar inşa eden ve deniz silahlarını donatan devlet tersanesi ve kızaklar.
+building.naval_base.name,Tersane ve Donanma Cephaneliği
+building.power_plant.description,Tahıl öğütmeyi, kereste biçmeyi ve demirci tokmaklarını işleten nehir su çarkları ve yeldeğirmenleri.
+building.power_plant.name,Su ve Rüzgar Değirmenleri
+building.radar_station.description,Düşman ordularının yürüyüşüne karşı erken uyarı sağlayan tepe gözetleme kuleleri ve işaret ateşleri sistemi.
+building.radar_station.name,Gözetleme Kulesi ve Ateş Kulesi Hattı
+building.tech_park.description,Tezhibli el yazmalarını, deniz haritalarını ve ilmi risaleleri koruyan manastır veya şehir yazıhanesi.
+building.tech_park.name,Yazıhane ve Kütüphane
+building.trade_port.description,Tüccar kogları, kadırgaları ve uluslararası deniz yüklerini idare eden korunaklı kıyı demirleme yeri ve taş rıhtımlar.
+building.trade_port.name,Liman ve İskeleler
+building.university.description,Katipleri ve fakihleri ilahiyat, medeni hukuk, belagat ve tıp alanlarında eğiten meşhur ilim merkezi.
+building.university.name,Ortaçağ Medresesi ve Üniversitesi
 country.homeland.term.albania,ARNAVUTLUK
 country.homeland.term.ethiopia,HABEŞİSTAN
 country.homeland.term.hanguk,HANGUK
@@ -211,264 +241,67 @@ country.name.WUR,Württemberg Kontluğu
 country.name.ZAP,Zapotek Krallığı
 country.name.ZAY,Zeyyani Tilimsan Krallığı
 country.name.ZIM,Zimbabwe Krallığı
-mod.owo.popup.startup.body_no_date,Avrupa ve Asya eski feodal düzenler ile yükselen merkezi devletler arasında sıkışmış durumda.\nAkdeniz Karadeniz Hint Okyanusu ve İpek Yolu üzerindeki ticaret hatları gücün atardamarlarını oluşturuyor.\nBarutlu ordular yükseliyor ancak süvari birlikleri levazım düzeni ve kaleler hala savaşların kaderini belirliyor.\n\nDöneme uygun hükümdarlar sınırlar ve askeri düzenlerle tanımlanan 137 tarihsel siyasi oluşumdan birini yönetiyorsun.\nBu bilgilendirmeyi istediğin zaman tekrar açmak için araç çubuğundaki bilgilendirme düğmesini kullan.
-mod.owo.popup.startup.body_with_date,Tarih: {0}-{1}\n\nAvrupa ve Asya eski feodal düzenler ile yükselen merkezi devletler arasında sıkışmış durumda.\nAkdeniz Karadeniz Hint Okyanusu ve İpek Yolu üzerindeki ticaret hatları gücün atardamarlarını oluşturuyor.\nBarutlu ordular yükseliyor ancak süvari birlikleri levazım düzeni ve kaleler hala savaşların kaderini belirliyor.\n\nDöneme uygun hükümdarlar sınırlar ve askeri düzenlerle tanımlanan 137 tarihsel siyasi oluşumdan birini yönetiyorsun.\nBu bilgilendirmeyi istediğin zaman tekrar açmak için araç çubuğundaki bilgilendirme düğmesini kullan.
-mod.owo.popup.startup.title,Old World Order, 1450
-mod.ui.toolbar.welcome_tooltip,Stratejik Bilgilendirmeyi Aç
-ui.button.ok,TAMAM
-building.factory.name,Lonca Atölyesi
-building.factory.description,Kentli zanaatkarları istihdam ederek metal eşyalar, tekstil ve zırh üreten lonca atölyeleri ve demirci ocakları.
-building.commercial_district.name,Pazar Meydanı
-building.commercial_district.description,Bölgesel ticareti, takas panayırlarını ve geçiş vergisi gelirini kolaylaştıran taş döşeli pazar meydanı ve tüccar tezgahları.
-building.trade_port.name,Liman ve İskeleler
-building.trade_port.description,Tüccar kogları, kadırgaları ve uluslararası deniz yüklerini idare eden korunaklı kıyı demirleme yeri ve taş rıhtımlar.
-building.tech_park.name,Yazıhane ve Kütüphane
-building.tech_park.description,Tezhibli el yazmalarını, deniz haritalarını ve ilmi risaleleri koruyan manastır veya şehir yazıhanesi.
-building.barracks.name,Garnizon ve Toplanma Alanı
-building.barracks.description,Şehir milisleri, bekçiler ve daimi silahlı muhafızlar için toplanma alanı, silah deposu ve kışlalar.
-building.military_base.name,Kale ve İç Kale
-building.military_base.description,Tartışmasız derebeyi otoritesini tesis eden, sur duvarları, kuleleri ve hendekleri olan heybetli taş kale.
-building.arms_factory.name,Top ve Çan Dökümhanesi
-building.arms_factory.description,Ağır bronz bombardalar, demir gülleler, arkebüzler ve kuşatma ekipmanları döken dökümhane.
-building.highway.name,Taş Döşeli Kral Yolu
-building.highway.description,Ulak posta hatlarını ve birlik hareketini kolaylaştıran, taş köprüleri ve menzilleri olan taş döşeli krallık yolu.
-building.power_plant.name,Su ve Rüzgar Değirmenleri
-building.power_plant.description,Tahıl öğütmeyi, kereste biçmeyi ve demirci tokmaklarını işleten nehir su çarkları ve yeldeğirmenleri.
-building.hospital.name,Darüşşifa ve Bitkisel Eczane
-building.hospital.description,Tabip loncası ustaları veya dini cemaatler tarafından işletilen, şifalı ot tedavileri sunan ve hastaları barındıran şifahane.
-building.university.name,Ortaçağ Medresesi ve Üniversitesi
-building.university.description,Katipleri ve fakihleri ilahiyat, medeni hukuk, belagat ve tıp alanlarında eğiten meşhur ilim merkezi.
-building.naval_base.name,Tersane ve Donanma Cephaneliği
-building.naval_base.description,Savaş kadırgaları, kalyonlar inşa eden ve deniz silahlarını donatan devlet tersanesi ve kızaklar.
-building.radar_station.name,Gözetleme Kulesi ve Ateş Kulesi Hattı
-building.radar_station.description,Düşman ordularının yürüyüşüne karşı erken uyarı sağlayan tepe gözetleme kuleleri ve işaret ateşleri sistemi.
-building.intelligence_hq.name,Kraliyet İstihbarat Dairesi
-building.intelligence_hq.description,Saray muhbirlerini yöneten, diplomatik mektupları ele geçiren ve gizli yabancı operasyonlar düzenleyen merkezi casusluk odası ve ulak merkezi.
-building.counterintel_bureau.name,Engizisyon Mahkemesi
-building.counterintel_bureau.description,Sıkı sorgulamalar yoluyla yabancı kışkırtıcıları, isyanı ve gizli sızmaları kökünden kazıyan adli mahkeme ve şehir muhafızlığı.
+doctrine.diplomacy.t1.mobile_envoy_service,Diplomatik Şifreler ve Ulak Hattı
+doctrine.diplomacy.t1.mobile_envoy_service.desc,Vilayetler arası güvenli iletişimi sağlayan şifreli diplomatik yazışmalar ve hızlı kraliyet atlı ulak ağları.
+doctrine.economy.t1.fiscal_discipline,Çift Taraflı Muhasebe ve Tüccar Bankacılığı
+doctrine.economy.t1.fiscal_discipline.desc,Ticarette devrim yaratan Venedik ve Floransa usulü çift taraflı defterler, poliçeler ve tüccar mevduat bankaları.
+doctrine.economy.t3.commercial_economy,Karavela Gövdesi ve Latin Yelken Donanımı
+doctrine.economy.t3.commercial_economy.desc,Gemilerin ters rüzgarlara karşı seyredebilmesini sağlayan kıvrak sığ su gövdeleri ve üçgen latin yelkenler.
+doctrine.industry.t1.mass_production_system,Hareketli Harfli Matbaa
+doctrine.industry.t1.mass_production_system.desc,Kitap üretimini ve idari kayıt tutmayı yaygınlaştıran kurşun alaşımlı döküm harfler ve vidalı baskı presleri.
+doctrine.industry.t2.continuous_production,Su ve Rüzgar Değirmeni Mühendisliği
+doctrine.industry.t2.continuous_production.desc,Kırsal vilayetlerde mekanik iş gücünü katlayan gelişmiş dişli miller ve gelgit değirmenleri.
+doctrine.intelligence.t1.centralized_intelligence_directorate,Kraliyet Başcasusluğu ve Muhbir Ağları
+doctrine.intelligence.t1.centralized_intelligence_directorate.desc,Yabancı komplolara dair önceden istihbarat sağlayan saray muhbirleri, tüccar casuslar ve liman gözcüleri.
+doctrine.intelligence.t4.defensive_counter_intelligence,Engizisyon ve Hükümdar Gözetimi
+doctrine.intelligence.t4.defensive_counter_intelligence.desc,Yabancı fitneleri tespit etmeye odaklanan kraliyet mahkemeleri, şehir muhafızları ve dini denetim.
 doctrine.military.t1.professional_armed_forces,Plaka Zırh ve Yüksek Fırınlar
 doctrine.military.t1.professional_armed_forces.desc,Yüksek fırınlardaki hidrolik körükler, eklemli plaka zırhlar için üstün sertleştirilmiş çelik üretir.
 doctrine.military.t2.precision_warfare,Kundaklı Yay ve Pavise Düzenleri
 doctrine.military.t2.precision_warfare.desc,Süvari hücumlarına karşı koyan, yüksek pavise kalkanlarıyla korunan disiplinli kundaklı yay birlikleri.
 doctrine.military.t3.heavy_firepower,Şahi Top Dökümü ve Kuşatma Barutu
 doctrine.military.t3.heavy_firepower.desc,Ortaçağ kale surlarını yerle bir edebilen devasa dökme tunç şahi toplar ve taneli barut formülleri.
-doctrine.economy.t1.fiscal_discipline,Çift Taraflı Muhasebe ve Tüccar Bankacılığı
-doctrine.economy.t1.fiscal_discipline.desc,Ticarette devrim yaratan Venedik ve Floransa usulü çift taraflı defterler, poliçeler ve tüccar mevduat bankaları.
-doctrine.economy.t3.commercial_economy,Karavela Gövdesi ve Latin Yelken Donanımı
-doctrine.economy.t3.commercial_economy.desc,Gemilerin ters rüzgarlara karşı seyredebilmesini sağlayan kıvrak sığ su gövdeleri ve üçgen latin yelkenler.
-owo.doctrine.military.t1,Levy ve Maiyet
-owo.doctrine.military.t1.question,Ordularını nasıl topluyorsun?
-owo.doctrine.military.t1.feudal_levies,Feodal Levyeler
-owo.doctrine.military.t1.feudal_levies.desc,Vasallar köylüleri ve silahlı adamlarıyla çağrıya uyar: ucuz, bol ama toplanması yavaş.
-owo.doctrine.military.t2,Muharebe Taktikleri
-owo.doctrine.military.t2.question,Savaşları hangi taktiklerle kazanıyorsun?
-owo.doctrine.military.t2.heavy_cavalry_charge,Ağır Süvari Hücumu
-owo.doctrine.military.t2.heavy_cavalry_charge.desc,Zırhlı şövalyeler ve sipahiler düşman hattını tek bir gürleyen hücumla yarar; bedeli at ve zırhla ağır ödenir.
-owo.doctrine.military.t3,Kuşatma Sanatı
-owo.doctrine.military.t3.question,Surları nasıl yıkıyor ya da savunuyorsun?
-owo.doctrine.military.t3.bastion_fortifications,Tabya Tahkimatı
-owo.doctrine.military.t3.bastion_fortifications.desc,Alçak, kalın ve açılı tabyalar top ateşine dayanır ve her sınır kalesini kuşatanlar için bir tuzağa çevirir.
-owo.doctrine.military.t4,İkmal ve Sefer
-owo.doctrine.military.t4.question,Orduları sahada nasıl ayakta tutuyorsun?
-owo.doctrine.military.t4.baggage_trains,Ağırlık Kolları ve Menziller
-owo.doctrine.military.t4.baggage_trains.desc,Araba kolları, nehir mavnaları ve tahkimli menzil hanları uzun seferlerde orduyu besler.
-owo.doctrine.military.t4.living_off_the_land,Yerel Tedarik
-owo.doctrine.military.t4.living_off_the_land.desc,Ordular yürürken yem toplar ve el koyar: beslemesi ucuzdur, geçtiği vilayetler içinse acıdır.
-owo.doctrine.military.t5,Daimi Ordular
-owo.doctrine.military.t5.question,Diyarının ordusu neye dönüşecek?
-owo.doctrine.military.t5.permanent_standing_army,Daimi Ordu
-owo.doctrine.military.t5.permanent_standing_army.desc,Taç sancağı altındaki maaşlı bölükler barışta da savaşta da silah altında kalır.
-owo.doctrine.military.t5.condottieri_contracts,Kondottiyeri Sözleşmeleri
-owo.doctrine.military.t5.condottieri_contracts.desc,Paralı asker kaptanları bütün bölükleri sözleşmeyle satar; altın nerede iyiyse oraya yürümeye hazırdır.
-owo.doctrine.military.milestone,Askeri Devrim
-owo.doctrine.military.milestone.desc,Barut, talim ve daimi bölükler diyarının savaşma biçimini yeniden şekillendirdi.
-owo.doctrine.economy.t1,Kraliyet Maliyesi
-owo.doctrine.economy.t1.question,Taç hazinesini nasıl dolduruyor?
-owo.doctrine.economy.t1.tax_farming,İltizam
-owo.doctrine.economy.t1.tax_farming.desc,Mültezimler vergi toplama hakkını peşin satın alır: taca hızlı gelir, köylüye zor günler.
-owo.doctrine.economy.t2,Loncalar ve Pazarlar
-owo.doctrine.economy.t2.question,Kasabalarında ticareti kim yönetiyor?
-owo.doctrine.economy.t2.chartered_craft_guilds,Beratlı Esnaf Loncaları
-owo.doctrine.economy.t2.chartered_craft_guilds.desc,Kraliyet beratları loncalara her atölyede kalite, fiyat ve çıraklar üzerinde söz hakkı verir.
-owo.doctrine.economy.t2.free_fairs,Serbest Panayırlar ve Pazar Kasabaları
-owo.doctrine.economy.t2.free_fairs.desc,Gümrüksüz mevsimlik panayırlar uzak diyarlardan tüccarları pazar kasabalarına çeker.
-owo.doctrine.economy.t3,Uzak Ticaret
-owo.doctrine.economy.t3.question,Servetin hangi yollardan geçiyor?
-owo.doctrine.economy.t3.caravanserai_network,Kervansaray Ağı
-owo.doctrine.economy.t3.caravanserai_network.desc,Birer günlük mesafedeki tahkimli hanlar ipek ve baharat kervanlarının karadan güvenle ilerlemesini sağlar.
-owo.doctrine.economy.t4,Ambarlar ve Sikke
-owo.doctrine.economy.t4.question,Kıtlığa ve sikke tağşişine nasıl dayanıyorsun?
-owo.doctrine.economy.t4.royal_granaries,Kraliyet Ambarları
-owo.doctrine.economy.t4.royal_granaries.desc,Taç ambarları bereketli yıllarda tahıl alır, kıt yıllarda kapılarını açar.
-owo.doctrine.economy.t4.sound_coinage,Sağlam Sikke
-owo.doctrine.economy.t4.sound_coinage.desc,Güvenilir darphane sikkeyi kırpmayı ve tağşişi reddeder; borç verenler tacın itibarını ödüllendirir.
-owo.doctrine.economy.t5,Ticari Güç
-owo.doctrine.economy.t5.question,Nasıl bir ekonomik güç olacaksın?
-owo.doctrine.economy.t5.trading_post_empire,Ticaret Karakolları İmparatorluğu
-owo.doctrine.economy.t5.trading_post_empire.desc,Uzak kıyılardaki tahkimli ticaret karakolları baharatı, altını ve şekeri kraliyet hazinesine akıtır.
-owo.doctrine.economy.t5.agrarian_crown_estates,Kraliyet Çiftlikleri
-owo.doctrine.economy.t5.agrarian_crown_estates.desc,Kurutulan bataklıklar, yeni köyler ve taç çiftlikleri diyarın servetini topraktan devşirir.
-owo.doctrine.economy.milestone,Ticaret Devrimi
-owo.doctrine.economy.milestone.desc,Bankacılık, poliçeler ve uzak ticaret diyarının servetini onun için çalıştırır hale getirdi.
-owo.event.fall_of_constantinople_1453.title,İstanbul'un Fethi (Osmanlı Zaferi)
-owo.event.fall_of_constantinople_1453.description,29 Mayıs 1453'te, 53 günlük bir kuşatmanın ardından Sultan II. Mehmed'in orduları kadim Theodosius Surlarını aştı. Doğu Roma İmparatorluğu yıkıldı ve bin yılı aşkın Bizans medeniyeti sona erdi. Kostantiniyye, Osmanlı İmparatorluğu'nun ulu başkenti ilan edildi ve Akdeniz'i Karadeniz'e bağlayan tarihi ticaret yolları artık bütünüyle imparatorluk kontrolüne geçti.
-owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye imparatorluğumuzun başkenti olarak parlayacak!
-owo.event.fall_of_constantinople_1453_christendom.title,Konstantinopolis'in Düşüşü (Hristiyan Dünyasında Yas)
-owo.event.fall_of_constantinople_1453_christendom.description,29 Mayıs 1453'te, 53 günlük bir kuşatmanın ardından Sultan II. Mehmed'in orduları kadim Theodosius Surlarını aştı. Doğu Roma İmparatorluğu yıkıldı ve bin yılı aşkın Bizans medeniyeti sona erdi. Kostantiniyye, Osmanlı İmparatorluğu'nun ulu başkenti ilan edildi ve Akdeniz'i Karadeniz'e bağlayan tarihi ticaret yolları artık bütünüyle imparatorluk kontrolüne geçti.
-owo.event.fall_of_constantinople_1453_christendom.option_1,Hristiyan Roma dünyası için trajik bir gün batımı.
-owo.event.end_hundred_years_war_1453.title,Yüzyıl Savaşları'nın Sonu (Fransız Zaferi)
-owo.event.end_hundred_years_war_1453.description,Temmuz 1453'te, Jean Bureau'nun Fransız sahra topçusu, Castillon Muharebesi'nde John Talbot'un İngiliz şövalyelerini kesin bir yenilgiye uğrattı. Muharebenin ardından Fransız tacı Bordeaux'yu ve tüm Guyenne Dükalığı'nı geri aldı. 116 yıllık yıkıcı hanedan savaşının ardından, İngiliz orduları Calais hariç tüm kıta topraklarından çıkarıldı.
-owo.event.end_hundred_years_war_1453.option_1,Fransa nihayet egemen ve birleşik!
-owo.event.end_hundred_years_war_1453_england.title,Yüzyıl Savaşları'nın Sonu (İngiliz Geri Çekilişi)
-owo.event.end_hundred_years_war_1453_england.description,Temmuz 1453'te, Jean Bureau'nun Fransız sahra topçusu, Castillon Muharebesi'nde John Talbot'un İngiliz şövalyelerini kesin bir yenilgiye uğrattı. Muharebenin ardından Fransız tacı Bordeaux'yu ve tüm Guyenne Dükalığı'nı geri aldı. 116 yıllık yıkıcı hanedan savaşının ardından, İngiliz orduları Calais hariç tüm kıta topraklarından çıkarıldı.
-owo.event.end_hundred_years_war_1453_england.option_1,Manş Denizi'nin ardına acı bir geri çekilme.
-owo.event.gutenberg_printing_press_1455.title,Gutenberg Matbaa Devrimi (1455)
-owo.event.gutenberg_printing_press_1455.description,Mainz şehrinde usta kuyumcu Johannes Gutenberg; hareketli kurşun alaşımlı harfleri, yağ bazlı mürekkebi ve uyarlanmış ahşap mengene presini birleştirerek 42 satırlık Gutenberg İncili'ni bastı. Bu buluş, dini, hukuki ve klasik hümanist bilginin yayılmasını hayal bile edilemeyecek bir hızla ivmelendirmeyi vaat ediyor.
-owo.event.gutenberg_printing_press_1455.option_1,İlim ve kitapların yayılması için matbaaları destekle.
-owo.event.wars_of_the_roses_1455.title,Güller Savaşı'nın Başlangıcı (1455)
-owo.event.wars_of_the_roses_1455.description,Fransa'daki askeri yenilginin ve Kral VI. Henry'nin zihinsel rahatsızlığının ardından, rakip hanedan kolları—Lancaster Hanedanı (Kırmızı Gül) ile York Hanedanı (Beyaz Gül)—arasındaki kıyasıya rekabet, Birinci St Albans Muharebesi ile kanlı bir çatışmaya dönüştü. İngiltere, taht için nesiller boyu sürecek kanlı bir iç savaşa sürükleniyor.
-owo.event.wars_of_the_roses_1455.option_1,Lancaster'ın Kırmızı Gülü ve Kral Henry VI'nın arkasında birleşin!
-owo.event.portuguese_african_voyages_1460.title,Prens Henrique ve Afrika Seferleri (1460)
-owo.event.portuguese_african_voyages_1460.description,Denizci Prens Henrique'nin himayesinde Portekiz karavelleri Cabo Verde'yi dolaştı ve Bijagós takımadalarını geçerek Gine Körfezi'ne girdi. Batı Afrika altın tozu, malagueta biberi ve fildişinin doğrudan deniz ticareti, geleneksel Sahra ötesi kara yollarını devre dışı bırakarak Lizbon'a muazzam bir zenginlik kazandırıyor.
-owo.event.portuguese_african_voyages_1460.option_1,Güney okyanuslarını haritalandırmak için yeni karaveller gönder.
-owo.goal.basic_fill_the_treasury,Kraliyet Hazinesini Doldur
-owo.goal.basic_fill_the_treasury.desc,Parası olmayan bir diyar ne ordu kurabilir ne de barışı koruyabilir. Korumaya değer bir birikim yap.
-owo.task.basic_fill_the_treasury.treasury,Hazinede 500 fl. biriktir
-owo.goal.basic_first_alliance,Güvenilir Bir Müttefik Ara
-owo.goal.basic_first_alliance.desc,Hiçbir taç uzun süre tek başına ayakta kalamaz. Bir komşunun dostluğunu kazan.
-owo.task.basic_first_alliance.relations,Başka bir diyarla iyi ilişkiler kur
-owo.goal.ott_heir_of_rome,Roma'nın Vârisi
-owo.goal.ott_heir_of_rome.desc,Konstantinopolis'i al ve Kayser-i Rûm unvanını sahiplen.
-owo.task.ott_heir_of_rome.war,Bizans İmparatorluğu'na savaş ilan et
-owo.task.ott_heir_of_rome.army,20.000 asker topla
-owo.goal.ott_anatolian_unity,Anadolu Birliği
-owo.goal.ott_anatolian_unity.desc,Karaman'ı ve diğer beylikleri Sultan'ın otoritesi altına al.
-owo.task.ott_anatolian_unity.karaman,Karamanoğulları'na savaş ilan et
-owo.task.ott_anatolian_unity.candar,Candaroğulları ile iyi ilişkiler kur
-owo.goal.fra_end_hundred_years_war,Yüz Yıl Savaşları'nı Bitir
-owo.goal.fra_end_hundred_years_war.desc,İngiliz tacını Normandiya ve Guyenne'den kesin olarak çıkar.
-owo.task.fra_end_hundred_years_war.war,İngiltere'ye savaş ilan et
-owo.task.fra_end_hundred_years_war.army,15.000 asker topla
-owo.goal.fra_contain_burgundy,Burgonya'yı Dizginle
-owo.goal.fra_contain_burgundy.desc,Batı'nın Büyük Dükleri'nin Fransa'nın sınır topraklarından bir krallık oyup çıkarmasını engelle.
-owo.task.fra_contain_burgundy.scotland,İskoçya ile Eski İttifak'ı yenile
-owo.goal.cas_reconquista,Reconquista'yı Tamamla
-owo.goal.cas_reconquista.desc,İber Yarımadası'ndaki son Müslüman devlet olan Gırnata Emirliği'ni düşür.
-owo.task.cas_reconquista.war,Gırnata'ya savaş ilan et
-owo.goal.cas_union_with_aragon,Tacların Birliği
-owo.goal.cas_union_with_aragon.desc,Kastilya ile Aragon'u tek bir İspanyol monarşisinde birleştir.
-owo.task.cas_union_with_aragon.alliance,Aragon Tacı ile ittifak kur
-owo.goal.ott_danubian_frontier,Tuna Serhaddini Tahkim Et
-owo.goal.ott_danubian_frontier.desc,Macar ve haçlı karşı taarruzlarına karşı Tuna nehri boyunca kale hattını emniyete al.
-owo.task.ott_danubian_frontier.army,25.000 asker topla
-owo.task.ott_danubian_frontier.treasury,Hazinede 800 fl. bulundur
-owo.goal.fra_compagnies_ordonnance,Compagnies d'Ordonnance
-owo.goal.fra_compagnies_ordonnance.desc,Daimi bir kraliyet vergisiyle finanse edilen Fransa'nın ilk profesyonel daimi ordusunu kur.
-owo.task.fra_compagnies_ordonnance.standing_army,15.000 profesyonel asker topla
-owo.task.fra_compagnies_ordonnance.treasury,Kraliyet hazinesinde 600 fl. bulundur
-owo.goal.eng_fortress_calais,Calais Kalesi ve Dar Denizler
-owo.goal.eng_fortress_calais.desc,Calais Bölgesi tahkimatlarını güçlendir ve Manş Denizi üzerindeki deniz hakimiyetini koru.
-owo.task.eng_fortress_calais.fleet,10 savaş gemisinden oluşan bir filo topla
-owo.task.eng_fortress_calais.treasury,Maliyede 600 fl. bulundur
-owo.goal.eng_scottish_border,Kuzey Serhatlerini Koru
-owo.goal.eng_scottish_border.desc,İskoç Sınır Bölgelerini emniyete al ve kuzeyden gelebilecek Auld Alliance istilası tehdidini etkisiz hale getir.
-owo.task.eng_scottish_border.scotland,Diplomasi yoluyla İskoçya'yı yatıştır
-owo.goal.eng_royal_solvency,Kraliyet Maliyesini İhya Et
-owo.goal.eng_royal_solvency.desc,Maliyeyi yeniden düzenle, savaş borçlarını yönet ve parlamentonun Taca olan güvenini tazele.
-owo.task.eng_royal_solvency.treasury,Kraliyet hazinesinde 1.200 fl. biriktir
-owo.goal.cas_western_seas,Okyanus Denizini Haritalandır
-owo.goal.cas_western_seas.desc,Atlantik üzerinden batıya giden bir deniz yolu aramaları için cesur denizcilere sponsor ol.
-owo.task.cas_western_seas.fleet,10 gemilik bir deniz keşif filosu inşa et
-owo.task.cas_western_seas.treasury,Keşifleri hazinedeki 1.000 fl. ile finanse et
-owo.goal.prt_chart_african_coast,Afrika Kıyılarını Haritalandır
-owo.goal.prt_chart_african_coast.desc,Afrika kıtasının güney ucunu haritalamak için karavelaları Gine'nin güneyine doğru sür.
-owo.task.prt_chart_african_coast.navigation_tech,2 doktrin kademesi araştırarak seyrüsefer bilgisini geliştir
-owo.task.prt_chart_african_coast.caravels,8 gemilik bir karavela filosu topla
-owo.goal.prt_spice_monopoly,Deniz Baharat Tekeli
-owo.goal.prt_spice_monopoly.desc,Münhasır deniz baharat ticaretini güvenceye almak için Hint Okyanusu boyunca silahlı feitorialar kur.
-owo.task.prt_spice_monopoly.fleet,15 gemilik bir ticaret filosu topla
-owo.task.prt_spice_monopoly.treasury,Ticari rezervlerde 2.000 fl. biriktir
-owo.goal.myn_tumu_crisis_recovery,Tumu Krizini Aş
-owo.goal.myn_tumu_crisis_recovery.desc,Bakan Yu Qian önderliğinde imparatorluk sarayını toparla, Pekin'i tahkim et ve Oyrat Moğol istilacılarını püskürt.
-owo.task.myn_tumu_crisis_recovery.army,50.000 imparatorluk askerini seferber et
-owo.task.myn_tumu_crisis_recovery.treasury,İmparatorluk hazinesinde 1.000 fl. bulundur
-owo.goal.myn_rebuild_great_wall,Ming Sınırının Taş Duvarları
-owo.goal.myn_rebuild_great_wall.desc,Kalıcı barışı sağlamak için kuzey sınır geçitleri boyunca kesintisiz taş ve tuğla gözetleme kuleleri inşa et.
-owo.task.myn_rebuild_great_wall.frontier_army,Kuzey serhatlerini 30.000 askerle garnizonla
-owo.task.myn_rebuild_great_wall.treasury,Sınır savunmalarına 2.500 fl. tahsis et
-owo.goal.myn_grand_canal,Büyük Kanal'ı Temizle
-owo.goal.myn_grand_canal.desc,Yangtze'den başkente kesintisiz tahıl sevkiyatını garanti etmek için 1.700 kilometrelik Büyük Kanal'ı yeniden inşa et ve tara.
-owo.task.myn_grand_canal.treasury,Büyük Kanal restorasyonuna 2.000 fl. yatırım yap
-owo.doctrine.government.t1,Feodal Yeminler ve Kâhyalar
-owo.doctrine.government.t1.question,Otorite diyar genelinde nasıl icra ediliyor?
-owo.doctrine.government.t1.feudal_oaths,Feodal Yeminler ve Vasallık
-owo.doctrine.government.t1.feudal_oaths.desc,Kişisel sadakat ve vasallık sözleşmeleri, diyarın askeri ve sivil düzeninin temel taşını oluşturur.
-owo.doctrine.government.t1.centralized_bailiffs,Kraliyet Kâhyaları ve Şerifler
-owo.doctrine.government.t1.centralized_bailiffs.desc,Doğrudan kraliyet görevlileri, hükümdarın sulhunu sağlar ve vilayetlerden kraliyet vergilerini toplar.
-owo.doctrine.government.t2,Konseyler ve Meclisler
-owo.doctrine.government.t2.question,Hukuk ve vergilendirme konusunda Taca kim danışmanlık ediyor?
-owo.doctrine.government.t2.privy_council,Lordlar Özel Meclisi
-owo.doctrine.government.t2.privy_council.desc,Güvenilir soylular ve ruhbanlardan oluşan seçkin bir konsey, devlet idaresini hız ve ihtiyatla yönlendirir.
-owo.doctrine.government.t2.chartered_parliaments,Zümreler ve Parlamentolar
-owo.doctrine.government.t2.chartered_parliaments.desc,Soylu, ruhban ve kentlilerden oluşan düzenli danışma meclisleri, vergileri müzakere eder ve şikayetleri dinler.
-owo.doctrine.government.t3,Yazılı Adalet ve Kayıtlar
-owo.doctrine.government.t3.question,Anlaşmazlıklar nasıl çözülüyor ve fermanlar nasıl kaydediliyor?
-owo.doctrine.government.t3.codified_customary_law,Yazılı Örfi Hukuk
-owo.doctrine.government.t3.codified_customary_law.desc,Yerel geleneklerin ve kraliyet fermanlarının kanunnamelere işlenmesi keyfi adaletsizlikleri azaltır.
-owo.doctrine.government.t3.chancery_clerks,Kraliyet Divan Kâtipliği
-owo.doctrine.government.t3.chancery_clerks.desc,Özel bir idari bürokrasi; beratları, fermanları ve vergi kayıtlarını mesleki titizlikle hazırlar.
-owo.doctrine.government.t4,Hükümdar Fermanları
-owo.doctrine.government.t4.question,Kraliyet fermanlarının yetkisi nereye kadar uzanır?
-owo.doctrine.government.t4.royal_ordinances,Kraliyet Fermanları ve Emirnameleri
-owo.doctrine.government.t4.royal_ordinances.desc,Bağlayıcı egemen fermanlar bölgesel feodal adetlerin yerini alarak yeknesak kraliyet içtihadı oluşturur.
-owo.doctrine.government.t4.provincial_intendants,Taşra İdarecileri
-owo.doctrine.government.t4.provincial_intendants.desc,Kraliyet komiserleri, kendilerine devredilen tam yetkiyle yerel mahkemeleri, vergi tahsilatını ve kamu düzenini denetler.
-owo.doctrine.government.t5,Egemen Devlet Düzeni
-owo.doctrine.government.t5.question,Kraliyet otoritesinin nihai kaynağı nedir?
-owo.doctrine.government.t5.divine_right_monarchy,İlahi Hak Monarşisi
-owo.doctrine.government.t5.divine_right_monarchy.desc,Tacın meşruiyeti doğrudan ilahi takdirden gelir ve hükümdarı tüm fani kliklerin üzerine çıkarır.
-owo.doctrine.government.t5.bureaucratic_centralism,Bürokratik Merkeziyetçilik
-owo.doctrine.government.t5.bureaucratic_centralism.desc,Daimi bir bakanlık bürokrasisi, kraliyet politikasını başkentten tüm taht topraklarına doğrudan uygular.
-owo.doctrine.government.milestone,Merkezi Monarşi
-owo.doctrine.government.milestone.desc,Dağınık feodal iddialardan, köklü ve kurumsal bir kraliyet yönetimi dövüldü.
-owo.doctrine.society.t1,Tarımsal Ortak Alanlar
-owo.doctrine.society.t1.question,Kırsalda toprak ve emek nasıl organize ediliyor?
-owo.doctrine.society.t1.communal_commons,Ortak Otlaklar ve Açık Tarlalar
-owo.doctrine.society.t1.communal_commons.desc,Köyün açık tarla ekim nöbeti ve ortak otlaklar, toplumsal ahengi ve köylünün geçimini temin eder.
-owo.doctrine.society.t1.manorial_estates,Malikane Arazileri ve Haslar
-owo.doctrine.society.t1.manorial_estates.desc,Soyluların elinde toplanan malikaneler, kralın savaş hazinesi için tahıl fazlasını ve angarya yükümlülüklerini artırır.
-owo.doctrine.society.t2,Loncalar ve Köylü Statüsü
-owo.doctrine.society.t2.question,Şehirli zanaatkârlar ve kır emekçileri hangi haklara sahip?
-owo.doctrine.society.t2.guild_charters,Beratlı Zanaat Loncaları
-owo.doctrine.society.t2.guild_charters.desc,Ayrıcalıklı lonca beratları üretim standartlarını, çıraklığı ve kentsel istikrarı düzenler.
-owo.doctrine.society.t2.free_peasantry,Serflerin Azad Edilmesi
-owo.doctrine.society.t2.free_peasantry.desc,Feodal bağlılıkların nakdi kiralara dönüştürülmesi köylü girişimciliğini ve nüfus artışını teşvik eder.
-owo.doctrine.society.t3,Sivil Kurumlar ve İlim
-owo.doctrine.society.t3.question,Hastalarla kim ilgileniyor ve alimleri kim yetiştiriyor?
-owo.doctrine.society.t3.monastic_hospitals,Manastır Şifahaneleri ve Sadaka
-owo.doctrine.society.t3.monastic_hospitals.desc,Dini kurumlar hastane ağlarını ve hayır işlerini yürüterek halkı salgınlardan ve kıtlıktan korur.
-owo.doctrine.society.t3.cathedral_schools,Katedral Mektepleri ve Üniversiteler
-owo.doctrine.society.t3.cathedral_schools.desc,Skolastik fakülteler; diyara hizmet edecek hukukçular, ilahiyatçılar ve tabipler yetiştirir.
-owo.doctrine.society.t4,Kentsel Düzen ve Hamilik
-owo.doctrine.society.t4.question,Şehirler krizlere nasıl dayanıyor ve refahı nasıl sergiliyor?
-owo.doctrine.society.t4.civic_relief_funds,Şehir İane Tahıl Ambarları
-owo.doctrine.society.t4.civic_relief_funds.desc,Belediye tahıl stokları ve acil durum yardımları, kıtlık zamanlarında halk huzursuzluğunu yatıştırır.
-owo.doctrine.society.t4.burgher_patronage,Kentli Tüccar Hamiliği
-owo.doctrine.society.t4.burgher_patronage.desc,Varlıklı tüccarlar, kentin itibarını artırmak için anıtlar, lonca sarayları ve hastaneler vakfeder.
-owo.doctrine.society.t5,Rönesans Uyanışı
-owo.doctrine.society.t5.question,Halkınızın ruhunu hangi kültür tanımlıyor?
-owo.doctrine.society.t5.humanist_renaissance,Hümanist Rönesans
-owo.doctrine.society.t5.humanist_renaissance.desc,Klasik uyanış, edebi eserler ve doğa felsefesi eşi görülmemiş bir yenilik çağını başlatır.
-owo.doctrine.society.t5.estate_harmony,Zümreler Ahengi
-owo.doctrine.society.t5.estate_harmony.desc,Soylular, din adamları ve halk arasındaki denge, köklü bir toplumsal huzur ve kalıcı meşruiyet tesis eder.
-owo.doctrine.society.milestone,Rönesans Toplumu
-owo.doctrine.society.milestone.desc,Toplumunuz karanlık içine kapanıklıktan çiçek açan, kültürlü bir diyara dönüştü.
+mod.owo.popup.startup.body_no_date,Avrupa ve Asya eski feodal düzenler ile yükselen merkezi devletler arasında sıkışmış durumda.\nAkdeniz Karadeniz Hint Okyanusu ve İpek Yolu üzerindeki ticaret hatları gücün atardamarlarını oluşturuyor.\nBarutlu ordular yükseliyor ancak süvari birlikleri levazım düzeni ve kaleler hala savaşların kaderini belirliyor.\n\nDöneme uygun hükümdarlar sınırlar ve askeri düzenlerle tanımlanan 137 tarihsel siyasi oluşumdan birini yönetiyorsun.\nBu bilgilendirmeyi istediğin zaman tekrar açmak için araç çubuğundaki bilgilendirme düğmesini kullan.
+mod.owo.popup.startup.body_with_date,Tarih: {0}-{1}\n\nAvrupa ve Asya eski feodal düzenler ile yükselen merkezi devletler arasında sıkışmış durumda.\nAkdeniz Karadeniz Hint Okyanusu ve İpek Yolu üzerindeki ticaret hatları gücün atardamarlarını oluşturuyor.\nBarutlu ordular yükseliyor ancak süvari birlikleri levazım düzeni ve kaleler hala savaşların kaderini belirliyor.\n\nDöneme uygun hükümdarlar sınırlar ve askeri düzenlerle tanımlanan 137 tarihsel siyasi oluşumdan birini yönetiyorsun.\nBu bilgilendirmeyi istediğin zaman tekrar açmak için araç çubuğundaki bilgilendirme düğmesini kullan.
+mod.owo.popup.startup.title,Old World Order, 1450
+mod.ui.popup.body,1450 yılında yaklaşık 120 ulusun başındasınız. Tarihsel açıdan gerçekçi ordular komuta edin, ittifaklar kurun ve ortaçağ dünyasının kaderini yeniden yazın. Bu mod; Osmanlı İmparatorluğu, Ming Hanedanı, Portekiz, Fransa, İngiltere, Moskova Prensliği, Timurluların ve çok daha fazlasını içerir.
+mod.ui.popup.continue,Devam Et
+mod.ui.popup.mod_info,Mod Bilgisi
+mod.ui.popup.title,Old World Order'a Hoş Geldiniz
+mod.ui.province.historical_sig,Tarihi Önemi
+mod.ui.toolbar.archive_tooltip,Tarihçi İstihbarat Arşivi
+mod.ui.toolbar.balance_of_power_tooltip,Güç Dengesi ve İttifaklar
+mod.ui.toolbar.chronicle_tooltip,1450 Dünya Vakayinamesi
+mod.ui.toolbar.dynasties_tooltip,1450 Yılının Büyük Hanedanlarını ve Hükümdar Ailelerini İncele
+mod.ui.toolbar.faiths_tooltip,Dünya Kutsal Merkezlerini ve Dini Otoriteleri İncele
+mod.ui.toolbar.info_tooltip,Mod Genel Bakış ve Durum
+mod.ui.toolbar.welcome_tooltip,Stratejik Bilgilendirmeyi Aç
+owo.doctrine.diplomacy.directive.broker_of_peace,Barışın Aracısı
+owo.doctrine.diplomacy.directive.broker_of_peace.desc,Görüşmelere ev sahipliği yapın, kalemi elinizde tutun ve her iki taraf da anlaşmayı size borçlu kalsın. İtibar, eyaletlerden ucuzdur.
+owo.doctrine.diplomacy.directive.marriage_diplomacy,Evlilik Diplomasisi
+owo.doctrine.diplomacy.directive.marriage_diplomacy.desc,Bırakın başkaları savaşsın; siz evlendirin. Yerleştirilen her kız, tartışmayı bırakan bir sınır ve torununuzun tahsil edebileceği bir iddiadır.
+owo.doctrine.diplomacy.directive.tribute_and_threat,Haraç ve Tehdit
+owo.doctrine.diplomacy.directive.tribute_and_threat.desc,Demirleme yerine donanmayla girin ve şartları önceden yazılmış olarak sunun. İmzalarlar ve unutmazlar.
+owo.doctrine.diplomacy.hidden.capitulations,Kapitülasyonlar
+owo.doctrine.diplomacy.hidden.capitulations.desc,Yabancı tüccarlar kendi mahallesini, kendi konsolosunu ve kendi hukukunu alır. Ticaret sel gibi akar; yerleşik bir yabancı çıkar da öyle.
+owo.doctrine.diplomacy.hidden.golden_bull_charter,Altın Mühürlü Ferman
+owo.doctrine.diplomacy.hidden.golden_bull_charter.desc,Altın mühür altında verilmiş, geri alınamaz ve son derece alenî bir imtiyaz. Böyle verilen ayrıcalıkları geri almak çok zordur; maksat da budur.
+owo.doctrine.diplomacy.hidden.heralds_truce,Münadi Mütarekesi
+owo.doctrine.diplomacy.hidden.heralds_truce.desc,Fidye cetvelleri, yol emannameleri ve iki tarafın münadilerinin kendi prenslerine dayatacağı bir mütareke. Kuralı olan savaş, bitirebileceğiniz savaştır.
+owo.doctrine.diplomacy.hidden.hostage_exchange,Rehine Değişimi
+owo.doctrine.diplomacy.hidden.hostage_exchange.desc,Onların vârisi sizin sarayınızda, sizinki onlarınkinde büyür. Nabzı atan bir antlaşma ve parşömenden çok daha zor bozulur.
+owo.doctrine.diplomacy.hidden.italic_league,İtalyan Birliği
+owo.doctrine.diplomacy.hidden.italic_league.desc,Haritayı dondurmak için daimî bir ahit: ilk kim kımıldarsa, herkes ona karşı kımıldar. Karşılıklı şüpheyle korunan barış.
+owo.doctrine.diplomacy.hidden.papal_dispensation,Papalık Muafiyeti
+owo.doctrine.diplomacy.hidden.papal_dispensation.desc,Engel kaldırılır, evlilik geçerli olur ve iddia da onunla birlikte. Pahalı, yavaş ve bir kez verildi mi itiraz edilemez.
+owo.doctrine.diplomacy.milestone,Büyük Devlet İdaresi
+owo.doctrine.diplomacy.milestone.desc,Diplomasideki ustalığınız tacınızı bölgesel meselelerin tartışmasız hakemi haline getirdi.
 owo.doctrine.diplomacy.t1,Haberciler ve Hanedan Bağları
+owo.doctrine.diplomacy.t1.dynastic_marriages,Hanedanlar Arası Evlilikler
+owo.doctrine.diplomacy.t1.dynastic_marriages.desc,Stratejik evlilik ittifakları hanedanları birbirine bağlar, kırılgan barışları soylu kanıyla pekiştirir.
 owo.doctrine.diplomacy.t1.question,Yabancı saraylarla nasıl temas kuruyorsunuz?
 owo.doctrine.diplomacy.t1.royal_heralds,Kraliyet Habercileri ve Ulaklar
 owo.doctrine.diplomacy.t1.royal_heralds.desc,Dokunulmazlığı olan kraliyet habercileri sınırların ötesine resmi bildiriler, emanlar ve antlaşma şartları taşır.
-owo.doctrine.diplomacy.t1.dynastic_marriages,Hanedanlar Arası Evlilikler
-owo.doctrine.diplomacy.t1.dynastic_marriages.desc,Stratejik evlilik ittifakları hanedanları birbirine bağlar, kırılgan barışları soylu kanıyla pekiştirir.
 owo.doctrine.diplomacy.t2,Elçilikler ve İaneler
 owo.doctrine.diplomacy.t2.question,Yurtdışıyla sürekli ilişkileri nasıl sürdürüyorsunuz?
 owo.doctrine.diplomacy.t2.resident_ambassadors,Daimi Mukim Elçilikler
@@ -476,103 +309,219 @@ owo.doctrine.diplomacy.t2.resident_ambassadors.desc,Önemli başkentlerde daimi 
 owo.doctrine.diplomacy.t2.tribute_and_subsidies,Diplomatik Tahsisatlar ve Haraç
 owo.doctrine.diplomacy.t2.tribute_and_subsidies.desc,Yıllık altın tahsisatları tampon beylikleri sadık tutar ve büyük çatışmalarda tarafsızlık satın alır.
 owo.doctrine.diplomacy.t3,İttifaklar ve Ticaret
-owo.doctrine.diplomacy.t3.question,Sınırlarınızı ve deniz yollarınızı nasıl koruyorsunuz?
 owo.doctrine.diplomacy.t3.defensive_leagues,Karşılıklı Savunma Paktları
 owo.doctrine.diplomacy.t3.defensive_leagues.desc,Resmi kolektif savunma antlaşmaları, saldırgan komşuların müttefik topraklarına saldırmasını caydırır.
 owo.doctrine.diplomacy.t3.mercantile_treaties,İkili Kapitülasyonlar ve Ticaret Ahitnameleri
 owo.doctrine.diplomacy.t3.mercantile_treaties.desc,Karşılıklı ticaret imtiyazları, indirimli gümrükler ve tüccar mahalleleri dış ticareti zenginleştirir.
+owo.doctrine.diplomacy.t3.question,Sınırlarınızı ve deniz yollarınızı nasıl koruyorsunuz?
 owo.doctrine.diplomacy.t4,Arabuluculuk ve Baskı
-owo.doctrine.diplomacy.t4.question,Devletler arası rekabetleri nasıl yönetiyorsunuz?
-owo.doctrine.diplomacy.t4.papal_and_caliphal_mediation,Ruhani ve Hakemli Arabuluculuk
-owo.doctrine.diplomacy.t4.papal_and_caliphal_mediation.desc,Sınırları belirlemek için yüce ruhani makamları hakemliğe çağırmak tepkileri ve düşmanlıkları sınırlar.
 owo.doctrine.diplomacy.t4.coercive_ultimatums,Egemenlik Ültimatomları
 owo.doctrine.diplomacy.t4.coercive_ultimatums.desc,Askeri güç gösterisiyle desteklenen sert diplomatik ültimatomlar, zayıf sarayları savaşa girmeden boyun eğdirir.
+owo.doctrine.diplomacy.t4.papal_and_caliphal_mediation,Ruhani ve Hakemli Arabuluculuk
+owo.doctrine.diplomacy.t4.papal_and_caliphal_mediation.desc,Sınırları belirlemek için yüce ruhani makamları hakemliğe çağırmak tepkileri ve düşmanlıkları sınırlar.
+owo.doctrine.diplomacy.t4.question,Devletler arası rekabetleri nasıl yönetiyorsunuz?
 owo.doctrine.diplomacy.t5,Dünya Hâkimiyeti
-owo.doctrine.diplomacy.t5.question,Uluslararası düzeni nasıl yapılandırıyorsunuz?
 owo.doctrine.diplomacy.t5.concert_of_realms,Büyük Güçler Uyumu
 owo.doctrine.diplomacy.t5.concert_of_realms.desc,Çok taraflı kongreler ve güç dengesi antlaşmaları, egemen uluslar arasında dengeyi muhafaza eder.
 owo.doctrine.diplomacy.t5.hegemonic_vassal_system,İmparatorluk Hâkimiyeti ve Tabilik
 owo.doctrine.diplomacy.t5.hegemonic_vassal_system.desc,Tabi prenslikler imparatorluk tahtına askeri vergi ve diplomatik sadakat sunmakla yükümlüdür.
-owo.doctrine.diplomacy.milestone,Büyük Devlet İdaresi
-owo.doctrine.diplomacy.milestone.desc,Diplomasideki ustalığınız tacınızı bölgesel meselelerin tartışmasız hakemi haline getirdi.
-owo.doctrine.intelligence.t1,Saray Muhbirleri
-owo.doctrine.intelligence.t1.question,Tahta karşı kurulan komploları nasıl ortaya çıkarıyorsunuz?
-owo.doctrine.intelligence.t1.palace_informants,Saray Muhbirleri ve Gözcüler
-owo.doctrine.intelligence.t1.palace_informants.desc,Nedim ve hizmetkârları rüşvetle elde etmek, dahili hain komploları henüz filizlenmeden ifşa eder.
-owo.doctrine.intelligence.t1.whispering_networks,Meyhane ve Liman Fısıltı Ağları
-owo.doctrine.intelligence.t1.whispering_networks.desc,Liman nöbetçileri, hancılar ve serseriler askeri hareketlilikleri ve yabancı kışkırtıcıları bildirir.
-owo.doctrine.intelligence.t2,Şifreler ve Fesat
-owo.doctrine.intelligence.t2.question,Devlet sırlarını nasıl koruyor ve fitne tohumlarını nasıl ekiyorsunuz?
-owo.doctrine.intelligence.t2.cryptographic_ciphers,Polialfabetik Şifreler
-owo.doctrine.intelligence.t2.cryptographic_ciphers.desc,Riyazi gizli yazı yöntemleri, hassas diplomatik mektupları ele geçirilmekten korur.
-owo.doctrine.intelligence.t2.covert_provocateurs,Fitne ve Provokatörler
-owo.doctrine.intelligence.t2.covert_provocateurs.desc,Gizli ajanlar hasım topraklara sızarak hoşnutsuz vasallar arasında isyan ve huzursuzluk kışkırtır.
-owo.doctrine.intelligence.t3,İstihbarat Reisi
-owo.doctrine.intelligence.t3.question,Diyarın gizli operasyonlarını kim yönetiyor?
-owo.doctrine.intelligence.t3.master_of_spies,Casusbaşı
-owo.doctrine.intelligence.t3.master_of_spies.desc,Üst düzey bir divan veziri; iç gözetimi, denizaşırı güvenli evleri ve örtülü ödenekleri koordine eder.
-owo.doctrine.intelligence.t3.subversive_propaganda,Risaleler ve Vaizler
-owo.doctrine.intelligence.t3.subversive_propaganda.desc,Kışkırtıcı gravürler dağıtmak ve gezgin dervişleri desteklemek düşmanın meşruiyetini aşındırır.
-owo.doctrine.intelligence.t4,Engizisyon ve Karşı Casusluk
-owo.doctrine.intelligence.t4.question,Düşman sızmalarını nasıl etkisiz hale getiriyorsunuz?
-owo.doctrine.intelligence.t4.inquisitorial_apparatus,Tahkikat Mahkemesi
-owo.doctrine.intelligence.t4.inquisitorial_apparatus.desc,Sistemli soruşturma heyetleri yabancı sapkınları, sabotajcıları ve çift taraflı casusları ortaya çıkarır.
-owo.doctrine.intelligence.t4.intercepted_pigeon_couriers,Posta Güvercinlerinin Önünü Kesme
-owo.doctrine.intelligence.t4.intercepted_pigeon_couriers.desc,Posta denetimi ve taşıyıcı güvercinlerin yakalanması yabancı haberleşme zincirlerini kırar.
-owo.doctrine.intelligence.t5,Gölge Hâkimiyeti
-owo.doctrine.intelligence.t5.question,Görünmez gücü nasıl kullanıyorsunuz?
-owo.doctrine.intelligence.t5.black_chamber_statecraft,Hükümdarlık Gizli Kalemi
-owo.doctrine.intelligence.t5.black_chamber_statecraft.desc,Antlaşmaları tahrif edebilen, naipleri rüşvetle bağlayan ve veraseti yönlendiren gizli istihbarat bürosu.
-owo.doctrine.intelligence.t5.covert_dynastic_intrigue,Hanedan Suikastleri ve Zehir
-owo.doctrine.intelligence.t5.covert_dynastic_intrigue.desc,Kritik tarihi dönemeçlerde kilit düşman komutanlarını ve veliahtlarını hedef alan örtülü operasyonlar.
-owo.doctrine.intelligence.milestone,Gölgelerin Efendisi
-owo.doctrine.intelligence.milestone.desc,Bilinen dünyada hiçbir sır sizin her şeyi gören istihbarat ağınızdan kaçamaz.
+owo.doctrine.diplomacy.t5.question,Uluslararası düzeni nasıl yapılandırıyorsunuz?
+owo.doctrine.economy.directive.bullionist_crown,Külçeci Taç
+owo.doctrine.economy.directive.bullionist_crown.desc,Ülkeden çıkan gümüş, kaybedilmiş gümüştür. Gümrükleri sıkın, her ihracatı ruhsata bağlayın ve tüccarlar söylenirken darphanenin dolmasını izleyin.
+owo.doctrine.economy.directive.crown_credit,Taç Kredisi
+owo.doctrine.economy.directive.crown_credit.desc,Gelecek yılın gümrük gelirini bir bankacı faiziyle rehin verin. Ordular vaktinde yürür, bunun bedeli olan tağşiş ise sessizce gelir.
+owo.doctrine.economy.directive.free_trade_charters,Serbest Ticaret Beratları
+owo.doctrine.economy.directive.free_trade_charters.desc,Gemisi olan herkese serbest geçiş beratı satın. Resimler düşer, rıhtımlar dolar ve taç çok daha büyük bir ticaretten payını alır.
+owo.doctrine.economy.hidden.bills_of_exchange,Poliçeler
+owo.doctrine.economy.hidden.bills_of_exchange.desc,Bir tüccar Bruges'te öder, temsilcisi Venedik'te tahsil eder ve hiçbir sikke haydut yolundan geçmez. Kredi artık bir ulağın hızıyla hareket eder.
+owo.doctrine.economy.hidden.branch_banking,Şubeli Bankacılık
+owo.doctrine.economy.hidden.branch_banking.desc,Tek bir hane, her büyük şehirde bir defter ve tümünden sorumlu bir ortak. Onlarla çalışan taç ucuza borçlanır ve onlardan bir daha tam kurtulamaz.
+owo.doctrine.economy.hidden.consignment_fleet,Ortak Sefer Filosu
+owo.doctrine.economy.hidden.consignment_fleet.desc,Yükü ortaklaştırın, riski ortaklaştırın ve mevsimin ticaretini tek bayrak altında yollayın. Kaybedilen tek gemi artık bir haneyi batırmıyor.
+owo.doctrine.economy.hidden.hanseatic_kontor,Hansa Kontoru
+owo.doctrine.economy.hidden.hanseatic_kontor.desc,Kendi hukuku, kendi ambarı ve içinde bulunduğu şehirle kendi kavgası olan surlu bir ticaret kompleksi. Tahıl ve kürk artık Hansa şartlarıyla akar.
+owo.doctrine.economy.hidden.salt_monopoly,Tuz Tekeli
+owo.doctrine.economy.hidden.salt_monopoly.desc,Kimse sizin izniniz olmadan kışlık etini tuzlayamaz. Ülkenin en güvenilir geliri ve köylüyü yaba ile yola dökme ihtimali en yüksek olanı.
+owo.doctrine.economy.hidden.silver_strike,Gümüş Damarı
+owo.doctrine.economy.hidden.silver_strike.desc,Yeni bir damar açılır ve darphane çift vardiya çalışır. Ülke birdenbire zengindir; içindeki her fiyat da tırmanmaya başlar.
+owo.doctrine.economy.milestone,Ticaret Devrimi
+owo.doctrine.economy.milestone.desc,Bankacılık, poliçeler ve uzak ticaret diyarının servetini onun için çalıştırır hale getirdi.
+owo.doctrine.economy.t1,Kraliyet Maliyesi
+owo.doctrine.economy.t1.question,Taç hazinesini nasıl dolduruyor?
+owo.doctrine.economy.t1.tax_farming,İltizam
+owo.doctrine.economy.t1.tax_farming.desc,Mültezimler vergi toplama hakkını peşin satın alır: taca hızlı gelir, köylüye zor günler.
+owo.doctrine.economy.t2,Loncalar ve Pazarlar
+owo.doctrine.economy.t2.chartered_craft_guilds,Beratlı Esnaf Loncaları
+owo.doctrine.economy.t2.chartered_craft_guilds.desc,Kraliyet beratları loncalara her atölyede kalite, fiyat ve çıraklar üzerinde söz hakkı verir.
+owo.doctrine.economy.t2.free_fairs,Serbest Panayırlar ve Pazar Kasabaları
+owo.doctrine.economy.t2.free_fairs.desc,Gümrüksüz mevsimlik panayırlar uzak diyarlardan tüccarları pazar kasabalarına çeker.
+owo.doctrine.economy.t2.question,Kasabalarında ticareti kim yönetiyor?
+owo.doctrine.economy.t3,Uzak Ticaret
+owo.doctrine.economy.t3.caravanserai_network,Kervansaray Ağı
+owo.doctrine.economy.t3.caravanserai_network.desc,Birer günlük mesafedeki tahkimli hanlar ipek ve baharat kervanlarının karadan güvenle ilerlemesini sağlar.
+owo.doctrine.economy.t3.question,Servetin hangi yollardan geçiyor?
+owo.doctrine.economy.t4,Ambarlar ve Sikke
+owo.doctrine.economy.t4.question,Kıtlığa ve sikke tağşişine nasıl dayanıyorsun?
+owo.doctrine.economy.t4.royal_granaries,Kraliyet Ambarları
+owo.doctrine.economy.t4.royal_granaries.desc,Taç ambarları bereketli yıllarda tahıl alır, kıt yıllarda kapılarını açar.
+owo.doctrine.economy.t4.sound_coinage,Sağlam Sikke
+owo.doctrine.economy.t4.sound_coinage.desc,Güvenilir darphane sikkeyi kırpmayı ve tağşişi reddeder; borç verenler tacın itibarını ödüllendirir.
+owo.doctrine.economy.t5,Ticari Güç
+owo.doctrine.economy.t5.agrarian_crown_estates,Kraliyet Çiftlikleri
+owo.doctrine.economy.t5.agrarian_crown_estates.desc,Kurutulan bataklıklar, yeni köyler ve taç çiftlikleri diyarın servetini topraktan devşirir.
+owo.doctrine.economy.t5.question,Nasıl bir ekonomik güç olacaksın?
+owo.doctrine.economy.t5.trading_post_empire,Ticaret Karakolları İmparatorluğu
+owo.doctrine.economy.t5.trading_post_empire.desc,Uzak kıyılardaki tahkimli ticaret karakolları baharatı, altını ve şekeri kraliyet hazinesine akıtır.
+owo.doctrine.government.directive.consult_the_estates,Zümrelere Danışma
+owo.doctrine.government.directive.consult_the_estates.desc,Üç zümre dinlenmeden hiçbir şey geçmez. Yavaş, kavgacı ve ardından isyan etmesi neredeyse imkânsız.
+owo.doctrine.government.directive.crown_patrimony,Taç Hasları
+owo.doctrine.government.directive.crown_patrimony.desc,Kraliyet topraklarını doğrudan kralın eline alın ve her kâhyayı teftiş edin. Dağıtacak daha az iltimas, kasaya uzanan çok daha az el.
+owo.doctrine.government.directive.rule_by_ordinance,Fermanla Yönetim
+owo.doctrine.government.directive.rule_by_ordinance.desc,Kralın mühürlenip ilan edilen sözü cumaya kalmadan kanundur. Kararlar hızla gelir, zümreler de her birini tek tek hatırlar.
+owo.doctrine.government.hidden.cadastral_survey,Tahrir Defteri
+owo.doctrine.government.hidden.cadastral_survey.desc,Her tarla, ocak ve değirmen deftere yazılır. Ülkenin ne ettiğini nihayet bilirsiniz; her tahsildar da bilir.
+owo.doctrine.government.hidden.chancery_archive,Divan Arşivi
+owo.doctrine.government.hidden.chancery_archive.desc,Defterleri tutun, suretleri tutun ve bir kâtibin bulabileceği yerde tutun. Yazıyla ispatlayabildiğiniz bir iddia, kazanabileceğiniz bir iddiadır.
+owo.doctrine.government.hidden.coronation_oath,Taç Giyme Yemini
+owo.doctrine.government.hidden.coronation_oath.desc,Taç giymiş, kutsanmış ve ülkenin huzurunda yemin etmiş. Size isyan artık sadece ihanet değil, kutsala saygısızlıktır.
+owo.doctrine.government.hidden.pragmatic_sanction,Veraset Fermanı
+owo.doctrine.government.hidden.pragmatic_sanction.desc,Kral daha hayattayken verasetini yazıya dökün. Öldüğü gün üç kaleden daha değerlidir.
+owo.doctrine.government.hidden.royal_progress,Kraliyet Seyahati
+owo.doctrine.government.hidden.royal_progress.desc,Saray bütün yaz taşrayı dolaşır, masrafı magnatlara yükler ve onlara bir kralın neye benzediğini hatırlatır.
+owo.doctrine.government.hidden.venality_of_office,Makam Satışı
+owo.doctrine.government.hidden.venality_of_office.desc,Makamları doğrudan satın. Hazine bu öğleden sonra dolar ve mevkiini satın alan adamlar bedelini geri kazanmayı bekler.
+owo.doctrine.government.milestone,Merkezi Monarşi
+owo.doctrine.government.milestone.desc,Dağınık feodal iddialardan, köklü ve kurumsal bir kraliyet yönetimi dövüldü.
+owo.doctrine.government.t1,Feodal Yeminler ve Kâhyalar
+owo.doctrine.government.t1.centralized_bailiffs,Kraliyet Kâhyaları ve Şerifler
+owo.doctrine.government.t1.centralized_bailiffs.desc,Doğrudan kraliyet görevlileri, hükümdarın sulhunu sağlar ve vilayetlerden kraliyet vergilerini toplar.
+owo.doctrine.government.t1.feudal_oaths,Feodal Yeminler ve Vasallık
+owo.doctrine.government.t1.feudal_oaths.desc,Kişisel sadakat ve vasallık sözleşmeleri, diyarın askeri ve sivil düzeninin temel taşını oluşturur.
+owo.doctrine.government.t1.question,Otorite diyar genelinde nasıl icra ediliyor?
+owo.doctrine.government.t2,Konseyler ve Meclisler
+owo.doctrine.government.t2.chartered_parliaments,Zümreler ve Parlamentolar
+owo.doctrine.government.t2.chartered_parliaments.desc,Soylu, ruhban ve kentlilerden oluşan düzenli danışma meclisleri, vergileri müzakere eder ve şikayetleri dinler.
+owo.doctrine.government.t2.privy_council,Lordlar Özel Meclisi
+owo.doctrine.government.t2.privy_council.desc,Güvenilir soylular ve ruhbanlardan oluşan seçkin bir konsey, devlet idaresini hız ve ihtiyatla yönlendirir.
+owo.doctrine.government.t2.question,Hukuk ve vergilendirme konusunda Taca kim danışmanlık ediyor?
+owo.doctrine.government.t3,Yazılı Adalet ve Kayıtlar
+owo.doctrine.government.t3.chancery_clerks,Kraliyet Divan Kâtipliği
+owo.doctrine.government.t3.chancery_clerks.desc,Özel bir idari bürokrasi; beratları, fermanları ve vergi kayıtlarını mesleki titizlikle hazırlar.
+owo.doctrine.government.t3.codified_customary_law,Yazılı Örfi Hukuk
+owo.doctrine.government.t3.codified_customary_law.desc,Yerel geleneklerin ve kraliyet fermanlarının kanunnamelere işlenmesi keyfi adaletsizlikleri azaltır.
+owo.doctrine.government.t3.question,Anlaşmazlıklar nasıl çözülüyor ve fermanlar nasıl kaydediliyor?
+owo.doctrine.government.t4,Hükümdar Fermanları
+owo.doctrine.government.t4.provincial_intendants,Taşra İdarecileri
+owo.doctrine.government.t4.provincial_intendants.desc,Kraliyet komiserleri, kendilerine devredilen tam yetkiyle yerel mahkemeleri, vergi tahsilatını ve kamu düzenini denetler.
+owo.doctrine.government.t4.question,Kraliyet fermanlarının yetkisi nereye kadar uzanır?
+owo.doctrine.government.t4.royal_ordinances,Kraliyet Fermanları ve Emirnameleri
+owo.doctrine.government.t4.royal_ordinances.desc,Bağlayıcı egemen fermanlar bölgesel feodal adetlerin yerini alarak yeknesak kraliyet içtihadı oluşturur.
+owo.doctrine.government.t5,Egemen Devlet Düzeni
+owo.doctrine.government.t5.bureaucratic_centralism,Bürokratik Merkeziyetçilik
+owo.doctrine.government.t5.bureaucratic_centralism.desc,Daimi bir bakanlık bürokrasisi, kraliyet politikasını başkentten tüm taht topraklarına doğrudan uygular.
+owo.doctrine.government.t5.divine_right_monarchy,İlahi Hak Monarşisi
+owo.doctrine.government.t5.divine_right_monarchy.desc,Tacın meşruiyeti doğrudan ilahi takdirden gelir ve hükümdarı tüm fani kliklerin üzerine çıkarır.
+owo.doctrine.government.t5.question,Kraliyet otoritesinin nihai kaynağı nedir?
+owo.doctrine.industry.directive.arsenal_priority,Tersane Önceliği
+owo.doctrine.industry.directive.arsenal_priority.desc,Tersane önce yer: kereste, demir, halat ve her usta el. Donanmalar ve toplar erken gelir, diğer her şey bekler.
+owo.doctrine.industry.directive.public_works,Bayındırlık İşleri
+owo.doctrine.industry.directive.public_works.desc,Köprüler, mendirekler, su kemerleri ve yollar. Getirisini toptan daha geç gösterir ve iki yüzyıl boyunca göstermeye devam eder.
+owo.doctrine.industry.directive.stockpile_the_realm,Ülkeyi Stoklamak
+owo.doctrine.industry.directive.stockpile_the_realm.desc,Kötü yıla karşı cephanelikleri, ambarları ve kereste avlularını doldurun. Sermaye sundurmalarda atıl bekler ve kötü yıl her zaman gelir.
+owo.doctrine.industry.hidden.arsenal_assembly,Tersane Montajı
+owo.doctrine.industry.hidden.arsenal_assembly.desc,Standart iskeletler, hazırlanmış keresteler ve teknenin çekildiği bir donatım kanalı. Sipariş üzerine bir günde tamamlanan kadırga.
+owo.doctrine.industry.hidden.blast_furnace,Yüksek Fırın
+owo.doctrine.industry.hidden.blast_furnace.desc,Daha yüksek bacalar ve su gücüyle çalışan körükler şarjı erimiş tutar; böylece demir dövülmek yerine dökülür. Çubukla değil, tonla üretim.
+owo.doctrine.industry.hidden.dry_dock,Kuru Havuz
+owo.doctrine.industry.hidden.dry_dock.desc,İçeri alın, kapağı kapatın, suyu boşaltın ve tekneyi kuruda çalışın. Kalafat mevsimi artık gelgitle oynanan bir kumar olmaktan çıkar.
+owo.doctrine.industry.hidden.overshot_wheel,Üstten Savaklı Çark
+owo.doctrine.industry.hidden.overshot_wheel.desc,Su, çarkın altına değil üstüne verilir. Bir bent kurulabilen her yerde aynı dereden iki katı güç.
+owo.doctrine.industry.hidden.saigerprozess,Gümüş Ayırma Usulü
+owo.doctrine.industry.hidden.saigerprozess.desc,Gümüşlü bakırı kurşunla eritin, gümüş ayrışsın. Değersiz sayılan cevher birdenbire bir darphaneye dönüşür.
+owo.doctrine.industry.hidden.wire_drawing_mill,Tel Çekme Değirmeni
+owo.doctrine.industry.hidden.wire_drawing_mill.desc,Su gücüyle çalışan çekme tezgâhları bütün gün çubuğu tele dönüştürür. Hiçbir el tezgâhının ulaşamayacağı miktarda zırh, iğne, toplu iğne ve halat.
+owo.doctrine.industry.milestone,Ön-Sanayi Devrimi
+owo.doctrine.industry.milestone.desc,Fırınlarınız, madenleriniz ve tersaneleriniz diyarınızı geç ortaçağın mekanik devine dönüştürdü.
 owo.doctrine.industry.t1,Değirmencilik ve Ormancılık
 owo.doctrine.industry.t1.question,Mekanik güç ve keresteden nasıl faydalanıyorsunuz?
-owo.doctrine.industry.t1.water_powered_mills,Su Değirmenleri
-owo.doctrine.industry.t1.water_powered_mills.desc,Tahıl, dokuma ve hızar değirmenlerini döndüren su çarkları, eyaletlerdeki üretim çıktısını katlar.
 owo.doctrine.industry.t1.timber_and_charcoal_works,Orman İdaresi ve Odun Kömürü Ocakları
 owo.doctrine.industry.t1.timber_and_charcoal_works.desc,Düzenli koruluk bakımı ve kömürlük ocakları, ortaçağ metalurjisi için elzem yakıtı sağlar.
+owo.doctrine.industry.t1.water_powered_mills,Su Değirmenleri
+owo.doctrine.industry.t1.water_powered_mills.desc,Tahıl, dokuma ve hızar değirmenlerini döndüren su çarkları, eyaletlerdeki üretim çıktısını katlar.
 owo.doctrine.industry.t2,Dökümhaneler ve Taş Ocakları
-owo.doctrine.industry.t2.question,İnşaat malzemelerini nasıl çıkarıp işliyorsunuz?
 owo.doctrine.industry.t2.guild_metalwork_foundries,Dökümhaneler ve Demirciler
 owo.doctrine.industry.t2.guild_metalwork_foundries.desc,Ortak döküm ocakları dayanıklı ferforje aletler, demir çapalar ve zırh levhaları üretir.
 owo.doctrine.industry.t2.quarry_and_masonry_concessions,Kraliyet Taş Ocakları ve Taş Ustaları
 owo.doctrine.industry.t2.quarry_and_masonry_concessions.desc,Organize taş ocakçılığı ve yapı loncaları, katedral ve kale inşasını hızlandırır.
+owo.doctrine.industry.t2.question,İnşaat malzemelerini nasıl çıkarıp işliyorsunuz?
 owo.doctrine.industry.t3,Tersaneler ve Derin Madencilik
-owo.doctrine.industry.t3.question,Orduları nasıl donatıyor ve madenleri nasıl kazıyorsunuz?
 owo.doctrine.industry.t3.arsenal_shipbuilding,Devlet Donanma Tersaneleri
 owo.doctrine.industry.t3.arsenal_shipbuilding.desc,Merkezi kuru havuzlar ve halathaneler, kadırga ve kalyonları modüler bir verimlilikle inşa eder.
 owo.doctrine.industry.t3.deep_shaft_mining,Derin Maden Kuyuları ve Drenaj
 owo.doctrine.industry.t3.deep_shaft_mining.desc,Atlı tulumba mekanizmaları ve ahşap tahkimatlar, yeraltındaki zengin gümüş, bakır ve kalay damarlarını açar.
+owo.doctrine.industry.t3.question,Orduları nasıl donatıyor ve madenleri nasıl kazıyorsunuz?
 owo.doctrine.industry.t4,Yüksek Fırınlar ve Silah Sanayii
-owo.doctrine.industry.t4.question,Ağır metalurjiyi nasıl modernize ediyorsunuz?
 owo.doctrine.industry.t4.early_blast_furnaces,Erken Dönem Yüksek Fırınları
 owo.doctrine.industry.t4.early_blast_furnaces.desc,Su körüklü yüksek taş fırınlar, yüksek ısıda kesintisiz dökme pik demir üretir.
+owo.doctrine.industry.t4.question,Ağır metalurjiyi nasıl modernize ediyorsunuz?
 owo.doctrine.industry.t4.royal_arms_manufactories,Kraliyet Tophaneleri ve Cephanelikleri
 owo.doctrine.industry.t4.royal_arms_manufactories.desc,Birleştirilmiş taht atölyeleri; arkebüzleri, arbaletleri ve demir gülleleri devasa ölçekte döver.
 owo.doctrine.industry.t5,Ön-Sanayi
-owo.doctrine.industry.t5.question,Diyarınızın üretim geleceği nasıl şekillenecek?
 owo.doctrine.industry.t5.proto_industrial_workshops,Ön-Sanayi İmalathaneleri
 owo.doctrine.industry.t5.proto_industrial_workshops.desc,Fason üretim sistemleri ve bölgesel zanaatkâr kümelenmeleri yüksek hacimli üretime öncülük eder.
+owo.doctrine.industry.t5.question,Diyarınızın üretim geleceği nasıl şekillenecek?
 owo.doctrine.industry.t5.standardized_ordnance,Standart Top Kalibreleri ve Mühimmat
 owo.doctrine.industry.t5.standardized_ordnance.desc,Sıkı metalurjik kalibreler, mühimmat uyumluluğu ve savaş alanında yıkıcı verimlilik sağlar.
-owo.doctrine.industry.milestone,Ön-Sanayi Devrimi
-owo.doctrine.industry.milestone.desc,Fırınlarınız, madenleriniz ve tersaneleriniz diyarınızı geç ortaçağın mekanik devine dönüştürdü.
-mod.ui.popup.title,Old World Order'a Hoş Geldiniz
-mod.ui.popup.body,1450 yılında yaklaşık 120 ulusun başındasınız. Tarihsel açıdan gerçekçi ordular komuta edin, ittifaklar kurun ve ortaçağ dünyasının kaderini yeniden yazın. Bu mod; Osmanlı İmparatorluğu, Ming Hanedanı, Portekiz, Fransa, İngiltere, Moskova Prensliği, Timurluların ve çok daha fazlasını içerir.
-mod.ui.popup.continue,Devam Et
-mod.ui.popup.mod_info,Mod Bilgisi
-doctrine.industry.t1.mass_production_system,Hareketli Harfli Matbaa
-doctrine.industry.t1.mass_production_system.desc,Kitap üretimini ve idari kayıt tutmayı yaygınlaştıran kurşun alaşımlı döküm harfler ve vidalı baskı presleri.
-doctrine.industry.t2.continuous_production,Su ve Rüzgar Değirmeni Mühendisliği
-doctrine.industry.t2.continuous_production.desc,Kırsal vilayetlerde mekanik iş gücünü katlayan gelişmiş dişli miller ve gelgit değirmenleri.
-doctrine.diplomacy.t1.mobile_envoy_service,Diplomatik Şifreler ve Ulak Hattı
-doctrine.diplomacy.t1.mobile_envoy_service.desc,Vilayetler arası güvenli iletişimi sağlayan şifreli diplomatik yazışmalar ve hızlı kraliyet atlı ulak ağları.
-doctrine.intelligence.t1.centralized_intelligence_directorate,Kraliyet Başcasusluğu ve Muhbir Ağları
-doctrine.intelligence.t1.centralized_intelligence_directorate.desc,Yabancı komplolara dair önceden istihbarat sağlayan saray muhbirleri, tüccar casuslar ve liman gözcüleri.
-doctrine.intelligence.t4.defensive_counter_intelligence,Engizisyon ve Hükümdar Gözetimi
-doctrine.intelligence.t4.defensive_counter_intelligence.desc,Yabancı fitneleri tespit etmeye odaklanan kraliyet mahkemeleri, şehir muhafızları ve dini denetim.
+owo.doctrine.intelligence.directive.agents_abroad,Yurtdışındaki Ajanlar
+owo.doctrine.intelligence.directive.agents_abroad.desc,Kendi adamlarınızı onların divanlarına yerleştirin ve iyi ödeyin. Kendi haneniz üzerinde zayıf bir nöbet pahasına elde edilen erişim.
+owo.doctrine.intelligence.directive.black_chamber,Kara Oda
+owo.doctrine.intelligence.directive.black_chamber.desc,Her diplomatik çanta açılır, istinsah edilir, yeniden mühürlenir ve hiç dokunulmamış gibi yoluna devam eder. Her şeyi öğrenir, dışarıda hiçbir şey riske atmazsınız.
+owo.doctrine.intelligence.directive.court_whispers,Saray Fısıltıları
+owo.doctrine.intelligence.directive.court_whispers.desc,Dikkatle yerleştirilmiş bir söylenti bir ordunun işini görür. Ucuz, inkâr edilebilir ve tam olarak nişan alınması imkânsız.
+owo.doctrine.intelligence.hidden.apothecary_arts,Aktarın Hüneri
+owo.doctrine.intelligence.hidden.apothecary_arts.desc,Rakip bir sarayda hekim, bir alaya bedeldir ve ara sıra bir alayın işini görür. Hiçbir şey asla ispatlanamaz.
+owo.doctrine.intelligence.hidden.bought_clerk,Satın Alınmış Kâtip
+owo.doctrine.intelligence.hidden.bought_clerk.desc,Antlaşmaları temize çeken adam iki kere maaş alır. Avrupa'nın en ucuz istihbaratı ve kaybedildiğinde yerine konması en zor olanı.
+owo.doctrine.intelligence.hidden.cipher_disk,Şifre Diski
+owo.doctrine.intelligence.hidden.cipher_disk.desc,İç içe iki alfabe ve dönen bir gösterge harfi. Zeki bir kâtibin uzun bir öğleden sonrada artık çözemeyeceği yazışmalar.
+owo.doctrine.intelligence.hidden.council_of_ten,Onlar Meclisi
+owo.doctrine.intelligence.hidden.council_of_ten.desc,Önce hareket edip sonra izah etme yetkisi olan küçük ve daimî bir heyet. Sahip olan her cumhuriyette en çok korkulan kurum.
+owo.doctrine.intelligence.hidden.intercepted_bag,Ele Geçirilen Çanta
+owo.doctrine.intelligence.hidden.intercepted_bag.desc,Ulak, keseyi ve ne yazık ki evrakı da alan haydutlarca soyulur. İttifakları imzalanmadan önce bilinir.
+owo.doctrine.intelligence.hidden.pilgrim_networks,Hacı Ağları
+owo.doctrine.intelligence.hidden.pilgrim_networks.desc,Kimse bir hacının yolunu, bir dervişin konağını ya da bir seyyar satıcının denkini sorgulamaz. Hristiyan âleminin her sınırını kendi ayağıyla geçen bir örtü.
+owo.doctrine.intelligence.milestone,Gölgelerin Efendisi
+owo.doctrine.intelligence.milestone.desc,Bilinen dünyada hiçbir sır sizin her şeyi gören istihbarat ağınızdan kaçamaz.
+owo.doctrine.intelligence.t1,Saray Muhbirleri
+owo.doctrine.intelligence.t1.palace_informants,Saray Muhbirleri ve Gözcüler
+owo.doctrine.intelligence.t1.palace_informants.desc,Nedim ve hizmetkârları rüşvetle elde etmek, dahili hain komploları henüz filizlenmeden ifşa eder.
+owo.doctrine.intelligence.t1.question,Tahta karşı kurulan komploları nasıl ortaya çıkarıyorsunuz?
+owo.doctrine.intelligence.t1.whispering_networks,Meyhane ve Liman Fısıltı Ağları
+owo.doctrine.intelligence.t1.whispering_networks.desc,Liman nöbetçileri, hancılar ve serseriler askeri hareketlilikleri ve yabancı kışkırtıcıları bildirir.
+owo.doctrine.intelligence.t2,Şifreler ve Fesat
+owo.doctrine.intelligence.t2.covert_provocateurs,Fitne ve Provokatörler
+owo.doctrine.intelligence.t2.covert_provocateurs.desc,Gizli ajanlar hasım topraklara sızarak hoşnutsuz vasallar arasında isyan ve huzursuzluk kışkırtır.
+owo.doctrine.intelligence.t2.cryptographic_ciphers,Polialfabetik Şifreler
+owo.doctrine.intelligence.t2.cryptographic_ciphers.desc,Riyazi gizli yazı yöntemleri, hassas diplomatik mektupları ele geçirilmekten korur.
+owo.doctrine.intelligence.t2.question,Devlet sırlarını nasıl koruyor ve fitne tohumlarını nasıl ekiyorsunuz?
+owo.doctrine.intelligence.t3,İstihbarat Reisi
+owo.doctrine.intelligence.t3.master_of_spies,Casusbaşı
+owo.doctrine.intelligence.t3.master_of_spies.desc,Üst düzey bir divan veziri; iç gözetimi, denizaşırı güvenli evleri ve örtülü ödenekleri koordine eder.
+owo.doctrine.intelligence.t3.question,Diyarın gizli operasyonlarını kim yönetiyor?
+owo.doctrine.intelligence.t3.subversive_propaganda,Risaleler ve Vaizler
+owo.doctrine.intelligence.t3.subversive_propaganda.desc,Kışkırtıcı gravürler dağıtmak ve gezgin dervişleri desteklemek düşmanın meşruiyetini aşındırır.
+owo.doctrine.intelligence.t4,Engizisyon ve Karşı Casusluk
+owo.doctrine.intelligence.t4.inquisitorial_apparatus,Tahkikat Mahkemesi
+owo.doctrine.intelligence.t4.inquisitorial_apparatus.desc,Sistemli soruşturma heyetleri yabancı sapkınları, sabotajcıları ve çift taraflı casusları ortaya çıkarır.
+owo.doctrine.intelligence.t4.intercepted_pigeon_couriers,Posta Güvercinlerinin Önünü Kesme
+owo.doctrine.intelligence.t4.intercepted_pigeon_couriers.desc,Posta denetimi ve taşıyıcı güvercinlerin yakalanması yabancı haberleşme zincirlerini kırar.
+owo.doctrine.intelligence.t4.question,Düşman sızmalarını nasıl etkisiz hale getiriyorsunuz?
+owo.doctrine.intelligence.t5,Gölge Hâkimiyeti
+owo.doctrine.intelligence.t5.black_chamber_statecraft,Hükümdarlık Gizli Kalemi
+owo.doctrine.intelligence.t5.black_chamber_statecraft.desc,Antlaşmaları tahrif edebilen, naipleri rüşvetle bağlayan ve veraseti yönlendiren gizli istihbarat bürosu.
+owo.doctrine.intelligence.t5.covert_dynastic_intrigue,Hanedan Suikastleri ve Zehir
+owo.doctrine.intelligence.t5.covert_dynastic_intrigue.desc,Kritik tarihi dönemeçlerde kilit düşman komutanlarını ve veliahtlarını hedef alan örtülü operasyonlar.
+owo.doctrine.intelligence.t5.question,Görünmez gücü nasıl kullanıyorsunuz?
 owo.doctrine.military.directive.chevauchee,Yağma Akını
 owo.doctrine.military.directive.chevauchee.desc,Düşman topraklarının derinliğine dalıp her şeyi ateşe verin: savaş kendi masrafını yağma ve dehşetle öder, karşılığında bunu duyan her sarayın iyi niyetini kaybedersiniz.
 owo.doctrine.military.directive.fortress_realm,Kaleler Ülkesi
@@ -581,416 +530,495 @@ owo.doctrine.military.directive.mercenary_retainers,Paralı Asker Sözleşmeleri
 owo.doctrine.military.directive.mercenary_retainers.desc,Condottieri ve serbest bölükleri sürekli maaşa bağlayın. Para sayılır sayılmaz toplanırlar, savaş aralarında da hazineyi kuruturlar.
 owo.doctrine.military.hidden.corned_powder,Tanelenmiş Barut
 owo.doctrine.military.hidden.corned_powder.desc,Barutu ıslatıp keklemek ve tanelere öğütmek onu sıcak ve düzenli yakar. Eskiden kendi namlusunu çatlatan toplar artık sur perdelerini indiriyor.
-owo.doctrine.military.hidden.trace_italienne,İtalyan Tarzı Tabya
-owo.doctrine.military.hidden.trace_italienne.desc,Topraktan ve tuğladan alçak açılı tabyalar gülleyi parçalanmak yerine yutar; her yaklaşma hattı bir sonraki tabyanın yan ateşiyle taranır.
+owo.doctrine.military.hidden.galleass_squadrons,Mavna Filoları
+owo.doctrine.military.hidden.galleass_squadrons.desc,Bir yan ateş bataryası taşıyacak kadar ağır kürekli tekneler. Yuvarlak gemilerin sürüklendiği durgun havada hattı tutar ve hiçbir kadırganın kaldıramayacağı topları taşırlar.
 owo.doctrine.military.hidden.janissary_corps,Yeniçeri Ocağı
 owo.doctrine.military.hidden.janissary_corps.desc,Çocukluktan yetiştirilen, nakit maaş alan ve yalnızca tahta sadık daimî bir kapıkulu ocağı. Hiçbir feodal levyenin erişemeyeceği bir disiplin ve asla maaşını geciktiremeyeceğiniz bir ödeme defteri.
 owo.doctrine.military.hidden.longbow_yeomanry,Uzun Yaylı Yeomanlar
 owo.doctrine.military.hidden.longbow_yeomanry.desc,Kanun, her toprak sahibini pazar günleri atış talimine mecbur eder. Bir kuşak sonra hiçbir kıta ordusunun satın alamayacağı okçular çıkarırsınız; çünkü onlar satın alınmaz, yetiştirilir.
+owo.doctrine.military.hidden.trace_italienne,İtalyan Tarzı Tabya
+owo.doctrine.military.hidden.trace_italienne.desc,Topraktan ve tuğladan alçak açılı tabyalar gülleyi parçalanmak yerine yutar; her yaklaşma hattı bir sonraki tabyanın yan ateşiyle taranır.
 owo.doctrine.military.hidden.wagenburg,Savaş Arabası Tabyası
 owo.doctrine.military.hidden.wagenburg.desc,Savaş arabalarını zincirleyip çember kurun, el kumbaracılarını kalasların arkasına yerleştirin ve şövalyeler kendilerini bu duvara parçalasın. Artık süvariden korkmayan piyade.
-owo.doctrine.military.hidden.galleass_squadrons,Mavna Filoları
-owo.doctrine.military.hidden.galleass_squadrons.desc,Bir yan ateş bataryası taşıyacak kadar ağır kürekli tekneler. Yuvarlak gemilerin sürüklendiği durgun havada hattı tutar ve hiçbir kadırganın kaldıramayacağı topları taşırlar.
-owo.doctrine.economy.directive.bullionist_crown,Külçeci Taç
-owo.doctrine.economy.directive.bullionist_crown.desc,Ülkeden çıkan gümüş, kaybedilmiş gümüştür. Gümrükleri sıkın, her ihracatı ruhsata bağlayın ve tüccarlar söylenirken darphanenin dolmasını izleyin.
-owo.doctrine.economy.directive.free_trade_charters,Serbest Ticaret Beratları
-owo.doctrine.economy.directive.free_trade_charters.desc,Gemisi olan herkese serbest geçiş beratı satın. Resimler düşer, rıhtımlar dolar ve taç çok daha büyük bir ticaretten payını alır.
-owo.doctrine.economy.directive.crown_credit,Taç Kredisi
-owo.doctrine.economy.directive.crown_credit.desc,Gelecek yılın gümrük gelirini bir bankacı faiziyle rehin verin. Ordular vaktinde yürür, bunun bedeli olan tağşiş ise sessizce gelir.
-owo.doctrine.economy.hidden.bills_of_exchange,Poliçeler
-owo.doctrine.economy.hidden.bills_of_exchange.desc,Bir tüccar Bruges'te öder, temsilcisi Venedik'te tahsil eder ve hiçbir sikke haydut yolundan geçmez. Kredi artık bir ulağın hızıyla hareket eder.
-owo.doctrine.economy.hidden.branch_banking,Şubeli Bankacılık
-owo.doctrine.economy.hidden.branch_banking.desc,Tek bir hane, her büyük şehirde bir defter ve tümünden sorumlu bir ortak. Onlarla çalışan taç ucuza borçlanır ve onlardan bir daha tam kurtulamaz.
-owo.doctrine.economy.hidden.hanseatic_kontor,Hansa Kontoru
-owo.doctrine.economy.hidden.hanseatic_kontor.desc,Kendi hukuku, kendi ambarı ve içinde bulunduğu şehirle kendi kavgası olan surlu bir ticaret kompleksi. Tahıl ve kürk artık Hansa şartlarıyla akar.
-owo.doctrine.economy.hidden.silver_strike,Gümüş Damarı
-owo.doctrine.economy.hidden.silver_strike.desc,Yeni bir damar açılır ve darphane çift vardiya çalışır. Ülke birdenbire zengindir; içindeki her fiyat da tırmanmaya başlar.
-owo.doctrine.economy.hidden.salt_monopoly,Tuz Tekeli
-owo.doctrine.economy.hidden.salt_monopoly.desc,Kimse sizin izniniz olmadan kışlık etini tuzlayamaz. Ülkenin en güvenilir geliri ve köylüyü yaba ile yola dökme ihtimali en yüksek olanı.
-owo.doctrine.economy.hidden.consignment_fleet,Ortak Sefer Filosu
-owo.doctrine.economy.hidden.consignment_fleet.desc,Yükü ortaklaştırın, riski ortaklaştırın ve mevsimin ticaretini tek bayrak altında yollayın. Kaybedilen tek gemi artık bir haneyi batırmıyor.
-owo.doctrine.government.directive.rule_by_ordinance,Fermanla Yönetim
-owo.doctrine.government.directive.rule_by_ordinance.desc,Kralın mühürlenip ilan edilen sözü cumaya kalmadan kanundur. Kararlar hızla gelir, zümreler de her birini tek tek hatırlar.
-owo.doctrine.government.directive.consult_the_estates,Zümrelere Danışma
-owo.doctrine.government.directive.consult_the_estates.desc,Üç zümre dinlenmeden hiçbir şey geçmez. Yavaş, kavgacı ve ardından isyan etmesi neredeyse imkânsız.
-owo.doctrine.government.directive.crown_patrimony,Taç Hasları
-owo.doctrine.government.directive.crown_patrimony.desc,Kraliyet topraklarını doğrudan kralın eline alın ve her kâhyayı teftiş edin. Dağıtacak daha az iltimas, kasaya uzanan çok daha az el.
-owo.doctrine.government.hidden.pragmatic_sanction,Veraset Fermanı
-owo.doctrine.government.hidden.pragmatic_sanction.desc,Kral daha hayattayken verasetini yazıya dökün. Öldüğü gün üç kaleden daha değerlidir.
-owo.doctrine.government.hidden.royal_progress,Kraliyet Seyahati
-owo.doctrine.government.hidden.royal_progress.desc,Saray bütün yaz taşrayı dolaşır, masrafı magnatlara yükler ve onlara bir kralın neye benzediğini hatırlatır.
-owo.doctrine.government.hidden.cadastral_survey,Tahrir Defteri
-owo.doctrine.government.hidden.cadastral_survey.desc,Her tarla, ocak ve değirmen deftere yazılır. Ülkenin ne ettiğini nihayet bilirsiniz; her tahsildar da bilir.
-owo.doctrine.government.hidden.venality_of_office,Makam Satışı
-owo.doctrine.government.hidden.venality_of_office.desc,Makamları doğrudan satın. Hazine bu öğleden sonra dolar ve mevkiini satın alan adamlar bedelini geri kazanmayı bekler.
-owo.doctrine.government.hidden.coronation_oath,Taç Giyme Yemini
-owo.doctrine.government.hidden.coronation_oath.desc,Taç giymiş, kutsanmış ve ülkenin huzurunda yemin etmiş. Size isyan artık sadece ihanet değil, kutsala saygısızlıktır.
-owo.doctrine.government.hidden.chancery_archive,Divan Arşivi
-owo.doctrine.government.hidden.chancery_archive.desc,Defterleri tutun, suretleri tutun ve bir kâtibin bulabileceği yerde tutun. Yazıyla ispatlayabildiğiniz bir iddia, kazanabileceğiniz bir iddiadır.
-owo.doctrine.society.directive.pious_realm,Dindar Ülke
-owo.doctrine.society.directive.pious_realm.desc,Vakıfları donatın, yortu günlerini gözetin ve yönetmeyi kürsüye bırakın. Yeni soru sormayan, sessiz ve itaatkâr bir ülke.
-owo.doctrine.society.directive.patron_of_letters,İlim Hamisi
-owo.doctrine.society.directive.patron_of_letters.desc,Yazmaları satın alın, âlimleri tutun, müstensihlere ödeyin. Saray ün kazanır, hazine de bunu fark eder.
+owo.doctrine.military.milestone,Askeri Devrim
+owo.doctrine.military.milestone.desc,Barut, talim ve daimi bölükler diyarının savaşma biçimini yeniden şekillendirdi.
+owo.doctrine.military.t1,Levy ve Maiyet
+owo.doctrine.military.t1.feudal_levies,Feodal Levyeler
+owo.doctrine.military.t1.feudal_levies.desc,Vasallar köylüleri ve silahlı adamlarıyla çağrıya uyar: ucuz, bol ama toplanması yavaş.
+owo.doctrine.military.t1.question,Ordularını nasıl topluyorsun?
+owo.doctrine.military.t2,Muharebe Taktikleri
+owo.doctrine.military.t2.heavy_cavalry_charge,Ağır Süvari Hücumu
+owo.doctrine.military.t2.heavy_cavalry_charge.desc,Zırhlı şövalyeler ve sipahiler düşman hattını tek bir gürleyen hücumla yarar; bedeli at ve zırhla ağır ödenir.
+owo.doctrine.military.t2.question,Savaşları hangi taktiklerle kazanıyorsun?
+owo.doctrine.military.t3,Kuşatma Sanatı
+owo.doctrine.military.t3.bastion_fortifications,Tabya Tahkimatı
+owo.doctrine.military.t3.bastion_fortifications.desc,Alçak, kalın ve açılı tabyalar top ateşine dayanır ve her sınır kalesini kuşatanlar için bir tuzağa çevirir.
+owo.doctrine.military.t3.question,Surları nasıl yıkıyor ya da savunuyorsun?
+owo.doctrine.military.t4,İkmal ve Sefer
+owo.doctrine.military.t4.baggage_trains,Ağırlık Kolları ve Menziller
+owo.doctrine.military.t4.baggage_trains.desc,Araba kolları, nehir mavnaları ve tahkimli menzil hanları uzun seferlerde orduyu besler.
+owo.doctrine.military.t4.living_off_the_land,Yerel Tedarik
+owo.doctrine.military.t4.living_off_the_land.desc,Ordular yürürken yem toplar ve el koyar: beslemesi ucuzdur, geçtiği vilayetler içinse acıdır.
+owo.doctrine.military.t4.question,Orduları sahada nasıl ayakta tutuyorsun?
+owo.doctrine.military.t5,Daimi Ordular
+owo.doctrine.military.t5.condottieri_contracts,Kondottiyeri Sözleşmeleri
+owo.doctrine.military.t5.condottieri_contracts.desc,Paralı asker kaptanları bütün bölükleri sözleşmeyle satar; altın nerede iyiyse oraya yürümeye hazırdır.
+owo.doctrine.military.t5.permanent_standing_army,Daimi Ordu
+owo.doctrine.military.t5.permanent_standing_army.desc,Taç sancağı altındaki maaşlı bölükler barışta da savaşta da silah altında kalır.
+owo.doctrine.military.t5.question,Diyarının ordusu neye dönüşecek?
 owo.doctrine.society.directive.bread_and_charity,Ekmek ve Sadaka
 owo.doctrine.society.directive.bread_and_charity.desc,Açlar kendi aralarında örgütlenmeden ambarları açın ve imarethaneleri fonlayın. Çok ucuz bir isyana karşı pahalı bir sigorta.
-owo.doctrine.society.hidden.printing_workshop,Matbaa Atölyesi
-owo.doctrine.society.hidden.printing_workshop.desc,Bir pres, bir harf kasası ve iki adam, kırk kişilik bir istinsah odasını geçer. Hoşunuza giden fikirler hızlanır; diğerleri de.
-owo.doctrine.society.hidden.lazaretto_quarantine,Karantina Adası
-owo.doctrine.society.hidden.lazaretto_quarantine.desc,Hiçbir tekne rıhtıma değmeden önce kırk gün açıkta bekler. Tüccarlar gerekmediği her mevsim söylenir, gerektiği tek mevsimde dua eder.
-owo.doctrine.society.hidden.vernacular_scripture,Halk Dilinde Kutsal Kitap
-owo.doctrine.society.hidden.vernacular_scripture.desc,Kitabı insanların gerçekten konuştuğu dile taşıyın. İman derinleşir, okuryazarlık yayılır ve ulema tartışma üzerindeki tekelini kaybeder.
-owo.doctrine.society.hidden.civic_confraternities,Lonca Kardeşlikleri
-owo.doctrine.society.hidden.civic_confraternities.desc,Cenaze sandıkları, çeyiz kasaları ve arkasında yürünecek bir lonca sancağı. Şehir, suçlayacak birini aramadan önce kendi insanına bakar.
-owo.doctrine.society.hidden.studia_humanitatis,Beşerî İlimler
-owo.doctrine.society.hidden.studia_humanitatis.desc,Gramer, belagat, tarih ve ahlak felsefesi, yeniden bulunan kadimlerden okutulur. Daha iyi kâtipler yetiştirir; çok daha tehlikeli olanlarını da.
+owo.doctrine.society.directive.patron_of_letters,İlim Hamisi
+owo.doctrine.society.directive.patron_of_letters.desc,Yazmaları satın alın, âlimleri tutun, müstensihlere ödeyin. Saray ün kazanır, hazine de bunu fark eder.
+owo.doctrine.society.directive.pious_realm,Dindar Ülke
+owo.doctrine.society.directive.pious_realm.desc,Vakıfları donatın, yortu günlerini gözetin ve yönetmeyi kürsüye bırakın. Yeni soru sormayan, sessiz ve itaatkâr bir ülke.
 owo.doctrine.society.hidden.apprentice_statutes,Çıraklık Nizamnamesi
 owo.doctrine.society.hidden.apprentice_statutes.desc,Yedi yıl bağlı, sonra bir şaheser ve ustalık. Hüner tam olarak korunur; bu da onun çok yavaş değiştiği anlamına gelir.
-owo.doctrine.diplomacy.directive.marriage_diplomacy,Evlilik Diplomasisi
-owo.doctrine.diplomacy.directive.marriage_diplomacy.desc,Bırakın başkaları savaşsın; siz evlendirin. Yerleştirilen her kız, tartışmayı bırakan bir sınır ve torununuzun tahsil edebileceği bir iddiadır.
-owo.doctrine.diplomacy.directive.tribute_and_threat,Haraç ve Tehdit
-owo.doctrine.diplomacy.directive.tribute_and_threat.desc,Demirleme yerine donanmayla girin ve şartları önceden yazılmış olarak sunun. İmzalarlar ve unutmazlar.
-owo.doctrine.diplomacy.directive.broker_of_peace,Barışın Aracısı
-owo.doctrine.diplomacy.directive.broker_of_peace.desc,Görüşmelere ev sahipliği yapın, kalemi elinizde tutun ve her iki taraf da anlaşmayı size borçlu kalsın. İtibar, eyaletlerden ucuzdur.
-owo.doctrine.diplomacy.hidden.golden_bull_charter,Altın Mühürlü Ferman
-owo.doctrine.diplomacy.hidden.golden_bull_charter.desc,Altın mühür altında verilmiş, geri alınamaz ve son derece alenî bir imtiyaz. Böyle verilen ayrıcalıkları geri almak çok zordur; maksat da budur.
-owo.doctrine.diplomacy.hidden.hostage_exchange,Rehine Değişimi
-owo.doctrine.diplomacy.hidden.hostage_exchange.desc,Onların vârisi sizin sarayınızda, sizinki onlarınkinde büyür. Nabzı atan bir antlaşma ve parşömenden çok daha zor bozulur.
-owo.doctrine.diplomacy.hidden.papal_dispensation,Papalık Muafiyeti
-owo.doctrine.diplomacy.hidden.papal_dispensation.desc,Engel kaldırılır, evlilik geçerli olur ve iddia da onunla birlikte. Pahalı, yavaş ve bir kez verildi mi itiraz edilemez.
-owo.doctrine.diplomacy.hidden.capitulations,Kapitülasyonlar
-owo.doctrine.diplomacy.hidden.capitulations.desc,Yabancı tüccarlar kendi mahallesini, kendi konsolosunu ve kendi hukukunu alır. Ticaret sel gibi akar; yerleşik bir yabancı çıkar da öyle.
-owo.doctrine.diplomacy.hidden.italic_league,İtalyan Birliği
-owo.doctrine.diplomacy.hidden.italic_league.desc,Haritayı dondurmak için daimî bir ahit: ilk kim kımıldarsa, herkes ona karşı kımıldar. Karşılıklı şüpheyle korunan barış.
-owo.doctrine.diplomacy.hidden.heralds_truce,Münadi Mütarekesi
-owo.doctrine.diplomacy.hidden.heralds_truce.desc,Fidye cetvelleri, yol emannameleri ve iki tarafın münadilerinin kendi prenslerine dayatacağı bir mütareke. Kuralı olan savaş, bitirebileceğiniz savaştır.
-owo.doctrine.intelligence.directive.black_chamber,Kara Oda
-owo.doctrine.intelligence.directive.black_chamber.desc,Her diplomatik çanta açılır, istinsah edilir, yeniden mühürlenir ve hiç dokunulmamış gibi yoluna devam eder. Her şeyi öğrenir, dışarıda hiçbir şey riske atmazsınız.
-owo.doctrine.intelligence.directive.agents_abroad,Yurtdışındaki Ajanlar
-owo.doctrine.intelligence.directive.agents_abroad.desc,Kendi adamlarınızı onların divanlarına yerleştirin ve iyi ödeyin. Kendi haneniz üzerinde zayıf bir nöbet pahasına elde edilen erişim.
-owo.doctrine.intelligence.directive.court_whispers,Saray Fısıltıları
-owo.doctrine.intelligence.directive.court_whispers.desc,Dikkatle yerleştirilmiş bir söylenti bir ordunun işini görür. Ucuz, inkâr edilebilir ve tam olarak nişan alınması imkânsız.
-owo.doctrine.intelligence.hidden.cipher_disk,Şifre Diski
-owo.doctrine.intelligence.hidden.cipher_disk.desc,İç içe iki alfabe ve dönen bir gösterge harfi. Zeki bir kâtibin uzun bir öğleden sonrada artık çözemeyeceği yazışmalar.
-owo.doctrine.intelligence.hidden.council_of_ten,Onlar Meclisi
-owo.doctrine.intelligence.hidden.council_of_ten.desc,Önce hareket edip sonra izah etme yetkisi olan küçük ve daimî bir heyet. Sahip olan her cumhuriyette en çok korkulan kurum.
-owo.doctrine.intelligence.hidden.bought_clerk,Satın Alınmış Kâtip
-owo.doctrine.intelligence.hidden.bought_clerk.desc,Antlaşmaları temize çeken adam iki kere maaş alır. Avrupa'nın en ucuz istihbaratı ve kaybedildiğinde yerine konması en zor olanı.
-owo.doctrine.intelligence.hidden.pilgrim_networks,Hacı Ağları
-owo.doctrine.intelligence.hidden.pilgrim_networks.desc,Kimse bir hacının yolunu, bir dervişin konağını ya da bir seyyar satıcının denkini sorgulamaz. Hristiyan âleminin her sınırını kendi ayağıyla geçen bir örtü.
-owo.doctrine.intelligence.hidden.apothecary_arts,Aktarın Hüneri
-owo.doctrine.intelligence.hidden.apothecary_arts.desc,Rakip bir sarayda hekim, bir alaya bedeldir ve ara sıra bir alayın işini görür. Hiçbir şey asla ispatlanamaz.
-owo.doctrine.intelligence.hidden.intercepted_bag,Ele Geçirilen Çanta
-owo.doctrine.intelligence.hidden.intercepted_bag.desc,Ulak, keseyi ve ne yazık ki evrakı da alan haydutlarca soyulur. İttifakları imzalanmadan önce bilinir.
-owo.doctrine.industry.directive.arsenal_priority,Tersane Önceliği
-owo.doctrine.industry.directive.arsenal_priority.desc,Tersane önce yer: kereste, demir, halat ve her usta el. Donanmalar ve toplar erken gelir, diğer her şey bekler.
-owo.doctrine.industry.directive.public_works,Bayındırlık İşleri
-owo.doctrine.industry.directive.public_works.desc,Köprüler, mendirekler, su kemerleri ve yollar. Getirisini toptan daha geç gösterir ve iki yüzyıl boyunca göstermeye devam eder.
-owo.doctrine.industry.directive.stockpile_the_realm,Ülkeyi Stoklamak
-owo.doctrine.industry.directive.stockpile_the_realm.desc,Kötü yıla karşı cephanelikleri, ambarları ve kereste avlularını doldurun. Sermaye sundurmalarda atıl bekler ve kötü yıl her zaman gelir.
-owo.doctrine.industry.hidden.blast_furnace,Yüksek Fırın
-owo.doctrine.industry.hidden.blast_furnace.desc,Daha yüksek bacalar ve su gücüyle çalışan körükler şarjı erimiş tutar; böylece demir dövülmek yerine dökülür. Çubukla değil, tonla üretim.
-owo.doctrine.industry.hidden.arsenal_assembly,Tersane Montajı
-owo.doctrine.industry.hidden.arsenal_assembly.desc,Standart iskeletler, hazırlanmış keresteler ve teknenin çekildiği bir donatım kanalı. Sipariş üzerine bir günde tamamlanan kadırga.
-owo.doctrine.industry.hidden.saigerprozess,Gümüş Ayırma Usulü
-owo.doctrine.industry.hidden.saigerprozess.desc,Gümüşlü bakırı kurşunla eritin, gümüş ayrışsın. Değersiz sayılan cevher birdenbire bir darphaneye dönüşür.
-owo.doctrine.industry.hidden.overshot_wheel,Üstten Savaklı Çark
-owo.doctrine.industry.hidden.overshot_wheel.desc,Su, çarkın altına değil üstüne verilir. Bir bent kurulabilen her yerde aynı dereden iki katı güç.
-owo.doctrine.industry.hidden.wire_drawing_mill,Tel Çekme Değirmeni
-owo.doctrine.industry.hidden.wire_drawing_mill.desc,Su gücüyle çalışan çekme tezgâhları bütün gün çubuğu tele dönüştürür. Hiçbir el tezgâhının ulaşamayacağı miktarda zırh, iğne, toplu iğne ve halat.
-owo.doctrine.industry.hidden.dry_dock,Kuru Havuz
-owo.doctrine.industry.hidden.dry_dock.desc,İçeri alın, kapağı kapatın, suyu boşaltın ve tekneyi kuruda çalışın. Kalafat mevsimi artık gelgitle oynanan bir kumar olmaktan çıkar.
-owo.event.peace_of_lodi_1454.title,Lodi Barışı
-owo.event.peace_of_lodi_1454.description,9 Nisan 1454'te Lombardiya'daki Lodi kentinde Milano, Venedik ve Floransa elçileri Lombardiya Savaşları'na son veren antlaşmayı imzaladı. Kutsal Birlik'i (Lega Italica) kuran bu antlaşma, beş büyük İtalyan gücü arasında güç dengesi tesis ederek yarımadada barışı güvence altına alıyor.
-owo.event.peace_of_lodi_1454.option_1,Antlaşmayı onayla ve İtalya'nın barışını koru.
-owo.event.peace_of_lodi_1454.option_2,Uzlaşmayı reddet; Lombardiya'daki emellerimiz sınırlandırılamaz.
-owo.event.corvinus_black_army_1458.title,Matyas Corvinus ve Kara Ordu
-owo.event.corvinus_black_army_1458.description,1458 yılında Macaristan tahtına çıkan Kral Matyas Corvinus, asi soyluların feodal birliklerine bel bağlamayı bırakarak Avrupa'nın ilk daimi profesyonel paralı ordularından biri olan Kara Ordu'yu (Fekete Sereg) kurdu.
-owo.event.corvinus_black_army_1458.option_1,Krallığı savunmak için Kara Ordu'yu göreve çağır!
-owo.event.corvinus_black_army_1458.option_2,Hazine paralı askerleri kaldıramaz; soylu birliklerine güven.
-owo.event.fall_of_trebizond_1461.title,Trabzon'un Fethi: Karadeniz Hakimiyeti (1461)
-owo.event.fall_of_trebizond_1461.description,Ağustos 1461'de Sultan II. Mehmed komutasındaki kara ve deniz kuşatması sonucunda İmparator David Megas Komnenos müstahkem Trabzon kentini teslim etti. Karadeniz'deki son Roma ardıl devleti de Osmanlı topraklarına katıldı.
-owo.event.fall_of_trebizond_1461.option_1,Karadeniz artık tamamen bir Osmanlı gölüdür.
-owo.goal.mvy_gather_russian_lands,Rus Topraklarını Birleştir
-owo.goal.mvy_gather_russian_lands.desc,Bölünmüş Rus prensliklerini Moskova'nın liderliğinde tek bir sancak altında topla.
-owo.task.mvy_gather_russian_lands.army,15.000 asker topla
-owo.task.mvy_gather_russian_lands.novgorod,Novgorod Cumhuriyeti'ne savaş ilan et
-owo.goal.mvy_stand_against_the_horde,Orda'ya Karşı Direniş
-owo.goal.mvy_stand_against_the_horde.desc,Tatar boyunduruğunu kır ve Büyük Orda'ya ödenen haracı reddet.
-owo.task.mvy_stand_against_the_horde.treasury,Hazinede 800 fl. biriktir
-owo.task.mvy_stand_against_the_horde.army,25.000 kişilik bir ordu kur
-owo.goal.vnc_queen_of_the_adriatic,Adriyatik'in Kraliçesi
-owo.goal.vnc_queen_of_the_adriatic.desc,Doğu Akdeniz'deki rakipsiz deniz ticaretiyle cumhuriyeti zenginleştir.
-owo.task.vnc_queen_of_the_adriatic.treasury,Dükalık hazinesinde 1.200 fl. biriktir
-owo.task.vnc_queen_of_the_adriatic.trade,İkili ticaret antlaşmaları yap
-owo.goal.vnc_defend_stato_da_mar,Stato da Màr'ı Koru
-owo.goal.vnc_defend_stato_da_mar.desc,Osmanlı deniz genişlemesine karşı Venedik ada karakollarını ve deniz yollarını savun.
-owo.task.vnc_defend_stato_da_mar.fleet,Güçlü bir donanma kur
-owo.goal.hun_bastion_of_christendom,Hristiyanlığın Kalesi
-owo.goal.hun_bastion_of_christendom.desc,Tuna ve Sava nehirleri boyunca güney sınırını Osmanlı akınlarına karşı koru.
-owo.task.hun_bastion_of_christendom.army,25.000 kişilik sınır savunma ordusu topla
-owo.task.hun_bastion_of_christendom.allies,Orta Avrupa krallıklarıyla ittifak ara
-owo.goal.hun_corvinus_hegemony,Corvinus Rönesansı
-owo.goal.hun_corvinus_hegemony.desc,Kraliyet maliyesini modernize et ve hümanist kültürü destekle.
-owo.task.hun_corvinus_hegemony.treasury,Kraliyet kasasında 700 fl. tut
-owo.goal.pol_personal_union,Jagiellon Birliği
-owo.goal.pol_personal_union.desc,Litvanya Büyük Dükalığı ile hanedan ortaklığını güçlendir.
-owo.task.pol_personal_union.alliance,Litvanya ile ittifak kur
-owo.task.pol_personal_union.relations,Vilnius ile ilişkileri geliştir
-owo.goal.pol_thirteen_years_war,Baltık Kıyılarını Geri Al
-owo.goal.pol_thirteen_years_war.desc,Töton Şövalyeleri'ne meydan okuyarak Baltık Denizi'ne erişimi yeniden sağla.
-owo.task.pol_thirteen_years_war.war,Töton Tarikatı'na savaş ilan et
-owo.task.pol_thirteen_years_war.army,20.000 kraliyet askeri topla
-owo.goal.mam_custodian_holy_sanctuaries,Kutsal Şehirlerin Koruyucusu
-owo.goal.mam_custodian_holy_sanctuaries.desc,Mekke, Medine ve Kudüs'ü korurken Kızıldeniz ticaretini elinde tut.
-owo.task.mam_custodian_holy_sanctuaries.treasury,Kahire kalesi hazinesinde 1.000 fl. tut
-owo.goal.mam_syrian_bulwark,Suriye Seddi
-owo.goal.mam_syrian_bulwark.desc,Kuzey tehditlerine karşı Halep ve Şam'da güçlü bir süvari ordusu bulundur.
-owo.task.mam_syrian_bulwark.army,30.000 Memlük savaşçısı topla
-owo.event.tumu_crisis_beijing_1450.title,Tumu Krizi ve Pekin Savunması
-owo.event.tumu_crisis_beijing_1450.description,İmparator Zhengtong'un Tumu'da Oyrat Moğolları tarafından esir alınmasının ardından düşman ordusu Pekin surlarına dayandı. Savaş Bakanı Yu Qian, Jingtai İmparatoru'nu tahta çıkararak başkenti savundu; surlara ateş mızrakları ve ağır toplar yerleştirerek kuzey kuşatmasını püskürttü.
-owo.event.tumu_crisis_beijing_1450.option_1,Yu Qian önderliğinde direnin; başkentten bir karış toprak verilmeyecek!
-owo.event.tumu_crisis_beijing_1450.option_2,Kuzeyle ateşkes için gümüş ve ipek haraç teklif et.
-owo.event.rise_of_tawantinsuyu_1450.title,Pachacuti ve Tawantinsuyu'nun Yükselişi
-owo.event.rise_of_tawantinsuyu_1450.description,Cusco'yu Chanca istilasına karşı başarıyla savunan Sapa İnka Pachacuti Yupanqui, Tawantinsuyu'nun (Dört Bölgenin Diyarı) kuruluşunu ilan etti. Cusco'yu anıtsal taş yapılarla yeniden inşa ettirip And yamaçlarını teraslayan Pachacuti, dağ vadilerini Güneş Tanrısı İnti sancağı altında birleştirmek üzere sefere çıkıyor.
-owo.event.rise_of_tawantinsuyu_1450.option_1,Tawantinsuyu'yu ilan et ve And Dağları'nda sefere çık!
-owo.event.rise_of_tawantinsuyu_1450.option_2,Kutsal Vadi'yi tahkim et ve Coricancha tapınağını zenginleştir.
-owo.event.songhai_ascendancy_1464.title,Sonni Ali ve Songhay Yükselişi
-owo.event.songhai_ascendancy_1464.description,1464'te Gao tahtına çıkan Sonni Ali Ber, Songhay krallığını durdurulamaz bir imparatorluğa dönüştürdü. Nijer Nehri üzerindeki savaş kanoları filosu ve Sahel'deki zırhlı süvarileriyle Sonni Ali, Timbuktu'yu Tuareglerden alarak Sahra ötesi altın ve tuz ticaret yollarını ele geçirmeye hazırlanıyor.
-owo.event.songhai_ascendancy_1464.option_1,Nijer donanmasını sefere çıkar ve Sahel'e hükmet!
-owo.event.songhai_ascendancy_1464.option_2,Gao kapılarını koru ve nehir boyunca barış içinde ticaret yap.
-owo.event.fall_of_constantinople_1453.option_2,Ortodoks Patrikhanesi'nin haklarını tanı ve Karadeniz ticaretini canlandır.
-owo.event.fall_of_constantinople_1453_christendom.option_2,Bizanslı bilgin ve hümanist mültecileri sarayımıza kabul et.
-owo.event.end_hundred_years_war_1453.option_2,Savaşta pişen şövalyelerimizi ve kraliyet komutanlarını ödüllendir.
-owo.event.end_hundred_years_war_1453_england.option_2,Calais'yi tahkim et ve kıdemli uzun yaylıları göreve çağır.
-owo.event.gutenberg_printing_press_1455.option_2,Matbaaları kraliyet denetimine ve sansürüne bağla.
-owo.event.wars_of_the_roses_1455.option_2,York'un Beyaz Gülü ve Dük Richard'ı destekleyin!
-owo.event.portuguese_african_voyages_1460.option_2,Gine ticaret merkezlerini pekiştir ve ticaret gelirini topla.
-owo.event.fall_of_trebizond_1461.option_2,Kıyı güvenliği için yerel süvarilere tımarlar bağışla.
-owo.event.diplomacy_union_of_poland_lithuania_1450.title,Jagiellon Kişisel Birliği
-owo.event.diplomacy_union_of_poland_lithuania_1450.description,Kral IV. Casimir Jagiellon, Polonya Krallığı ile Litvanya Büyük Dükalığı'nı kişisel birlik altında birleştirdi. Kraliyet meclisi iki diyarı sarsılmaz bir ittifakla bağlamayı tartışıyor.
-owo.event.diplomacy_union_of_poland_lithuania_1450.option_1,Polonya ve Litvanya'nın sarsılmaz birliğini tasdik et!
-owo.event.diplomacy_union_of_poland_lithuania_1450.option_2,Bölgesel imtiyazlar tanı ve kraliyet hazinesini koru.
-owo.event.diplomacy_auld_alliance_1450.title,Kadim İttifak: Karşılıklı Savunma
-owo.event.diplomacy_auld_alliance_1450.description,1295'ten beri Fransa ile İskoçya arasındaki Kadim İttifak İngiliz emellerini dengeledi. Fransız orduları Normandiya'yı geri alırken VII. Charles İskoçlarla ittifakı pekiştiriyor.
-owo.event.diplomacy_auld_alliance_1450.option_1,Kadim İttifak'ı yenile ve İngiltere'yi iki cephede sıkıştır!
-owo.event.diplomacy_auld_alliance_1450.option_2,Yalnızca Normandiya ve Akitanya'nın fethine odaklan.
-owo.event.diplomacy_hundred_years_war_england_1450.title,Yüzyıl Savaşları: İngiliz Çaresizliği
-owo.event.diplomacy_hundred_years_war_england_1450.description,Normandiya Fransız kuşatması altında düşerken ve Kent'te isyan başlarken VI. Henry çaresizlikle karşı karşıya. Londra kıta topraklarını savunmak ya da geri çekilmek arasında seçim yapmalı.
-owo.event.diplomacy_hundred_years_war_england_1450.option_1,Tecrübeli birlikleri topla ve kıta topraklarını sonuna kadar savun!
-owo.event.diplomacy_hundred_years_war_england_1450.option_2,Britanya Adaları'na çekil ve iç düzeni yeniden sağla.
-owo.event.diplomacy_venice_genoa_rivalry_1450.title,Venedik-Ceneviz Deniz Rekabeti
-owo.event.diplomacy_venice_genoa_rivalry_1450.description,Venedik Cumhuriyeti Adriyatik ve Levant'a hükmederken Ceneviz Sakız, Galata ve Karadeniz ticaret üslerine tutunuyor. Doç Francesco Foscari deniz ticaretinde üstünlük kurmayı değerlendiriyor.
-owo.event.diplomacy_venice_genoa_rivalry_1450.option_1,Levant sularında mutlak Venedik deniz hakimiyetini ilan et!
-owo.event.diplomacy_venice_genoa_rivalry_1450.option_2,Cenevizlilerle pragmatik bir ticari uzlaşı ara.
-owo.event.diplomacy_byzantine_diplomatic_plea_1450.title,Konstantinopolis'ten Umutsuz Elçiler
-owo.event.diplomacy_byzantine_diplomatic_plea_1450.description,Osmanlı hisarları Boğaz'ı sararken İmparator XI. Konstantinos Palaiologos Theodosius surlarının ardında direniyor. Konstantinopolis Papalık ve Batı prenslerinden acil Haçlı yardımı istiyor.
-owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_1,Roma'da Kiliselerin Birliği'ni ilan et ve Batı'yı yardıma çağır!
-owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_2,Papalık şartlarını reddet; Ortodoks inancına ve surlara güven.
-owo.event.diplomacy_iberian_trastamara_concord_1450.title,İber Trastámara Mutabakatı
-owo.event.diplomacy_iberian_trastamara_concord_1450.description,Kral II. John, Aragon ve Portekiz ile hanedan bağları arasında Kastilya'yı yönetiyor. Güneyde Nasriler İber krallıklarının adımlarını endişeyle takip ediyor.
-owo.event.diplomacy_iberian_trastamara_concord_1450.option_1,Kardeş Trastámara paktlarını tasdik et ve dostluğu koru.
-owo.event.diplomacy_iberian_trastamara_concord_1450.option_2,Gırnata Emirliği'nden ağır gümüş vergisi talep et.
-owo.event.diplomacy_kalmar_union_accord_1450.title,Kalmar Birliği ve Halmstad Antlaşması
-owo.event.diplomacy_kalmar_union_accord_1450.description,Kral I. Christian Danimarka ve Norveç'i yönetirken İsveç soyluları Karl Knutsson'u destekliyor. Halmstad müzakereleri üç İskandinav tacını birlik altında tutmayı hedefliyor.
-owo.event.diplomacy_kalmar_union_accord_1450.option_1,Kuzey barışını korumak için Halmstad Mutabakatı'nı onayla.
-owo.event.diplomacy_kalmar_union_accord_1450.option_2,İsveç konseyi üzerinde Danimarka kraliyet otoritesini kur.
-owo.event.diplomacy_ming_joseon_tributary_pact_1450.title,Ming-Joseon İmparatorluk Kardeşliği
-owo.event.diplomacy_ming_joseon_tributary_pact_1450.description,Tumu Krizi'nin ardından Joseon Hanedanı Pekin'e taziyeler ve erzak gönderdi. Ming sarayı bu Konfüçyüsçü ittifakı en yüksek diplomatik itibarla onurlandırmayı değerlendiriyor.
-owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_1,Joseon'a en yüksek imtiyazı ver ve karşılıklı savunmayı pekiştir!
-owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_2,İmparatorluk hazinesini doldurmak için savaş vergisi talep et.
-owo.event.diplomacy_deccan_rivalry_1450.title,Dekkan Çatışması: Raichur Sınırı
-owo.event.diplomacy_deccan_rivalry_1450.description,Krishna ve Tungabhadra nehirleri arasındaki verimli Raichur Doab bölgesi, Vijayanagara İmparatorluğu ile Behmani Sultanlığı arasında amansız bir mücadeleye sahne oluyor.
-owo.event.diplomacy_deccan_rivalry_1450.option_1,Tungabhadra sınırını tahkim et ve sultanlık akınlarına hazırlan!
-owo.event.diplomacy_deccan_rivalry_1450.option_2,Batı limanlarından deniz ticaretini genişlet ve süvari kirala.
-owo.event.diplomacy_muscovy_novgorod_struggle_1450.title,Moskova ve Rus Topraklarının Birleşmesi
-owo.event.diplomacy_muscovy_novgorod_struggle_1450.description,İç savaşı kazanan Büyük Prens II. Vasili, Novgorod Cumhuriyeti'nin ticari zenginliğine ve Büyük Orda'nın kalan baskısına karşı hamle yapmaya hazırlanıyor.
-owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_1,Pskov'a himaye sağla ve Novgorod'un kuzey üstünlüğüne meydan oku!
-owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_2,Moskova hazinesini güçlendirmek için Novgorod ile ticaret yap.
-owo.event.diplomacy_ottoman_hungarian_frontier_1450.title,Tuna Kalkanı: Macar Serhaddi
-owo.event.diplomacy_ottoman_hungarian_frontier_1450.description,Naip János Hunyadi, Tuna boyunca Osmanlı seferlerine direnmek için güney sancaklarını tahkim ediyor; İskender Bey'in Lezhë Ligi ve Papalık ile ortak cephe kuruyor.
-owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_1,İskender Bey ile omuz omuza dur; Tuna'yı Hristiyanlığın Kalkanı yap!
-owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_2,Kraliyet maliyesini düzeltmek için Avusturya Habsburgları ile anlaş.
-owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.title,Levant Baharat Kapitülasyonları
-owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.description,İskenderiye ve Kahire'yi kontrol eden Memlük Sultanlığı, Doğu baharat yollarının kapısını tutuyor. Venedik elçileri gümrük kolaylığı ve ticaret imtiyazı talep ediyor.
-owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_1,Ticaret hacmini artırmak için Venedik imtiyazlarını yenile.
-owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_2,İtalyan tüccar depolarına yüksek imparatorluk vergisi koy.
-owo.event.diplomacy_italian_balance_milan_florence_1450.title,Lombardiya'nın Sforza-Medici Ekseni
-owo.event.diplomacy_italian_balance_milan_florence_1450.description,Milano Dükü olan Francesco Sforza, Floransa'da Cosimo de' Medici'nin mali ve diplomatik desteğini alarak Venedik hırslarına karşı denge kuruyor.
-owo.event.diplomacy_italian_balance_milan_florence_1450.option_1,Venedik yayılmasını durdurmak için Milano-Floransa birliğini kur!
-owo.event.diplomacy_italian_balance_milan_florence_1450.option_2,Esnek bir tarafsızlık sürdür ve ticari bağımsızlığı koru.
-owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.title,And Rekabeti: Cusco ve Chimor
-owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.description,Pachacuti İnka egemenliğini And Dağları boyunca genişletirken, kıyıdaki zengin Chimor Krallığı başkenti Chan Chan'dan İnka ordularının ilerleyişini kaygıyla izliyor.
-owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_1,İnka ordularını kuzey kıyılarına doğru dağ vadilerinden yürüt!
-owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_2,Cusco başkentini güçlendir ve kutsal tapınaklar inşa et.
-mod.ui.toolbar.archive_tooltip,Tarihçi İstihbarat Arşivi
-mod.ui.toolbar.info_tooltip,Mod Genel Bakış ve Durum
-mod.ui.toolbar.chronicle_tooltip,1450 Dünya Vakayinamesi
-mod.ui.toolbar.balance_of_power_tooltip,Güç Dengesi ve İttifaklar
-mod.ui.province.historical_sig,Tarihi Önemi
-owo.goal.byz_defend_constantinople,Osmanlı Kuşatmasına Diren
-owo.goal.byz_defend_constantinople.desc,Theodosius Surları ardında savunmayı toparla ve Batı Hristiyanlığından acil Haçlı yardımı iste.
-owo.task.byz_defend_constantinople.army,10.000 imparatorluk muhafızı topla
-owo.task.byz_defend_constantinople.allies,Macaristan ile ittifak kur
-owo.goal.byz_restore_morea,Mora Despotluğu'nu Güçlendir
-owo.goal.byz_restore_morea.desc,Güney Yunanistan'da Roma egemenliğini yeniden kur ve Mora Despotluğu'nu pekiştir.
-owo.task.byz_restore_morea.treasury,Hazinede 500 fl. imparatorluk rezervi tut
-owo.goal.hab_imperial_diadem,İmparatorluk Tacını Pekiştir
-owo.goal.hab_imperial_diadem.desc,Kutsal Roma İmparatorluğu tacını Viyana'da tut ve elektör prenslerle ittifaklar kur.
-owo.task.hab_imperial_diadem.treasury,Viyana hazinesinde 1.000 fl. biriktir
-owo.task.hab_imperial_diadem.allies,Bohemya ile ittifak sağla
-owo.goal.hab_dynastic_marriage,İmparatorluk Evlilik Diplomasisi
-owo.goal.hab_dynastic_marriage.desc,Bırak başkaları savaşsın; sen, mutlu Avusturya, evlen. Tuna boyunca hanedan bağlarını genişlet.
-owo.task.hab_dynastic_marriage.relations,Macaristan ile iyi ilişkiler geliştir
-owo.task.hab_dynastic_marriage.army,20.000 kişilik ordu topla
-owo.goal.dan_kalmar_hegemony,Kalmar Birliği'ni Muhafaza Et
-owo.goal.dan_kalmar_hegemony.desc,Danimarka kraliyet otoritesini Stockholm'deki asi İsveç konseyine kabul ettir.
-owo.task.dan_kalmar_hegemony.army,20.000 kraliyet askeri topla
-owo.task.dan_kalmar_hegemony.sweden,İsveç muhalefetini dize getir
-owo.goal.dan_sound_tolls,Øresund Boğazı Vergilerine Hükmet
-owo.goal.dan_sound_tolls.desc,Baltık'a giren tüm ticaret gemilerinden gümrük vergisi al ve güçlü bir donanma kur.
-owo.task.dan_sound_tolls.fleet,12 savaş gemisinden oluşan donanma hazırla
-owo.task.dan_sound_tolls.treasury,Boğaz vergisinden 800 fl. biriktir
-owo.goal.vij_raichur_bastion,Raichur Doabını Tahkim Et
-owo.goal.vij_raichur_bastion.desc,Tungabhadra nehir boyundaki kaleleri güçlendirerek Behmani akınlarını püskürt.
-owo.task.vij_raichur_bastion.army,35.000 savaşçı topla
-owo.task.vij_raichur_bastion.bahmani,Behmani Sultanlığı'nı sınırla
-owo.goal.vij_monuments_of_hampi,Hampi'nin İhtişamı
-owo.goal.vij_monuments_of_hampi.desc,Görkemli tapınak kuleleri inşa et, pazarları genişlet ve Hint Okyanusu ticaretine hükmet.
-owo.task.vij_monuments_of_hampi.treasury,Kraliyet hazinesinde 1.500 fl. biriktir
-owo.goal.inc_tawantinsuyu_expansion,Tawantinsuyu'yu Birleştir
-owo.goal.inc_tawantinsuyu_expansion.desc,And dağ vadilerini Cusco'dan yöneterek Güneş Tanrısı İnti sancağı altında birleştir.
-owo.task.inc_tawantinsuyu_expansion.army,25.000 And savaşçısı topla
-owo.goal.inc_qhapaq_nan,Qhapaq Ñan Kral Yolu
-owo.goal.inc_qhapaq_nan.desc,Kraliyet yol ağını taşla döşe, dağ yamaçlarını terasla ve devlet ambarlarını doldur.
-owo.task.inc_qhapaq_nan.treasury,Devlet ambarlarında 700 fl. değerinde rezerv depola
-owo.goal.jos_hangul_enlightenment,Hunminjeongeum'u İlan Et
-owo.goal.jos_hangul_enlightenment.desc,Kral Sejong'un bilimsel Hangul alfabesini yayarak okuryazarlığı ve Konfüçyüsçü yönetimi güçlendir.
-owo.task.jos_hangul_enlightenment.treasury,Kraliyet hazinesinde 600 fl. tut
-owo.task.jos_hangul_enlightenment.relations,Ming Hanedanı ile uyumlu ilişkileri koru
-owo.goal.jos_northern_frontier,Kuzey Sınırını Güçlendir
-owo.goal.jos_northern_frontier.desc,Yalu ve Tumen nehirleri boyunca Cürçen akınlarına karşı sınır garnizonları inşa et.
-owo.task.jos_northern_frontier.army,20.000 sınır muhafızı topla
-owo.goal.tim_timurid_renaissance,Timurlu Rönesansı
-owo.goal.tim_timurid_renaissance.desc,Semerkant ve Herat'ta astronomi, sanat ve anıtsal mimariyi Timur Hanedanı altında destekle.
-owo.task.tim_timurid_renaissance.treasury,İmparatorluk hazinesinde 1.000 fl. muhafaza et
-owo.goal.tim_defend_samarkand,Maveraünnehir'i Koru
-owo.goal.tim_defend_samarkand.desc,Zırhlı atlı okçuları topla ve Semerkant'ı göçebe Özbek akınlarına karşı savun.
-owo.task.tim_defend_samarkand.army,30.000 kişilik imparatorluk ordusu topla
-owo.event.hanseatic_league_kontor_1455.title,Hanse Birliği ve Boğaz Geçiş Vergisi Krizi
-owo.event.hanseatic_league_kontor_1455.description,Lübeck, Danzig ve Bergen'deki Hanse kontorları Kuzey deniz ticaretine hakim durumdadır. Danimarka'nın Øresund boğaz geçiş vergileri üzerindeki denetimi sıkılaştırması ve tüccarların tekele karşı koruma talep etmesi gerilimi tırmandırıyor.
-owo.event.hanseatic_league_kontor_1455.option_1,Boğaz Geçiş Vergisini Uygula ve Hanse Loncalarını Kısıtla
-owo.event.hanseatic_league_kontor_1455.option_2,Kontor Ayricaliklarini Yenile ve Gümrükleri Düşür
-owo.event.trans_saharan_gold_boom_1456.title,Sahra-Ötesi Altın ve Tuz Kervanları
-owo.event.trans_saharan_gold_boom_1456.description,Taghaza kaya tuzu, Akan altını ve Sahra bakırını taşıyan deve kervanları Gao ve Timbuktu nehir pazarlarına ulaşıyor. Ticaret haneleri ve İslam alimleri Sahel bölgesine muazzam bir zenginlik ve şöhret kazandırıyor.
-owo.event.trans_saharan_gold_boom_1456.option_1,Sankore Alimlerini ve Kervansarayları Destekle
-owo.event.trans_saharan_gold_boom_1456.option_2,Sahra-Ötesi Geçiş Vergilerini Artır
-owo.event.malacca_spice_entrepot_1458.title,Melaka Antreposu ve Baharat Yolu
-owo.event.malacca_spice_entrepot_1458.description,Hint Okyanusu ile Güney Çin Denizi arasındaki kritik boğazda yer alan Melaka; Maluku karanfili, muskat, Fars dokumaları ve Ming ipekleri için dünyanın en büyük ticaret merkezine dönüştü.
-owo.event.malacca_spice_entrepot_1458.option_1,Şahbender Tesislerini Genişlet ve Tüccarları Karşıla
-owo.event.malacca_spice_entrepot_1458.option_2,Boğaz Geçitlerini Tahkim Et ve Savaş Gemileri İnşa Et
-owo.event.medici_fugger_banking_accord_1460.title,Rönesans Tüccar Bankacılığı ve Poliçeler
-owo.event.medici_fugger_banking_accord_1460.description,Floransa'daki Medici Bankası ve erken dönem Fugger madencilik finansörleri; çift taraflı defter tutma, poliçeler (lettere di cambio) ve sınır ötesi kredi ağlarıyla Avrupa çapında modern bankacılığın temelini atıyor.
-owo.event.medici_fugger_banking_accord_1460.option_1,Uluslararası Krediyi ve Hümanist Sanatı Destekle
-owo.event.medici_fugger_banking_accord_1460.option_2,Bankacılık Sermayesini Paralı Askerlere Yönlendir
-owo.goal.bur_grand_dukes_of_the_west,Batı'nın Büyük Dükleri
-owo.goal.bur_grand_dukes_of_the_west.desc,Gent, Brugge ve Anvers'in zengin Flaman kumaş pazarlarını Dijon'daki dükalık makamına bağla.
-owo.task.bur_grand_dukes_of_the_west.treasury,Dükalık hazinesinde 1.200 florin biriktir
-owo.goal.bur_lotharingian_crown,Lotharingiya Tacı
-owo.goal.bur_lotharingian_crown.desc,Modern Ordonnance birlikleri kur ve Alçak Ülkeleri egemen bir Burgonya krallığında birleştir.
-owo.task.bur_lotharingian_crown.army,25.000 zırhlı süvari ve arbaletçi topla
-owo.goal.swd_break_kalmar_union,Kalmar Birliği'ni Dağıt
-owo.goal.swd_break_kalmar_union.desc,İsveç'in egemenliğini savun ve Danimarka'nın Stockholm ile Baltık üzerindeki hakimiyetine karşı dur.
-owo.task.swd_break_kalmar_union.army,15.000 İsveçli milis ve köylü savaşçı seferber et
-owo.goal.swd_bergslagen_iron_and_copper,Falu Bakırı ve Bergslagen Demiri
-owo.goal.swd_bergslagen_iron_and_copper.desc,Falun'daki büyük bakır madenini ve Baltık Denizi üzerinden kereste ihracatını genişlet.
-owo.task.swd_bergslagen_iron_and_copper.treasury,Kraliyet hazinesinde 600 florin biriktir
-owo.goal.azt_flower_wars_tribute,Çiçek Savaşları
-owo.goal.azt_flower_wars_tribute.desc,Meksika Vadisi'nde ritüel savaşlar yürüterek esirler al ve Üçlü İttifak üstünlüğünü kur.
-owo.task.azt_flower_wars_tribute.army,30.000 jaguar ve kartal savaşçısı topla
-owo.goal.azt_tenochtitlan_chinampas,Tenochtitlan Çinampaları
-owo.goal.azt_tenochtitlan_chinampas.desc,Yüzen bahçe su yolları inşa et ve büyük Tlatelolco pazarını genişlet.
-owo.task.azt_tenochtitlan_chinampas.treasury,İmparatorluk hazinesinde 800 florinlik haraç topla
-owo.goal.maj_oath_of_palapa,Palapa Yemini
-owo.goal.maj_oath_of_palapa.desc,Cava, Sumatra ve Maluku baharat yolları üzerinde deniz hakimiyetini yeniden tesis et.
-owo.task.maj_oath_of_palapa.fleet,15.000 deniz savaşçısı ve kadırga mürettebatı hazırla
-owo.goal.maj_trowulan_sanctuary,Trowulan İhtişamı
-owo.goal.maj_trowulan_sanctuary.desc,İmparatorluk başkentinin anıtsal tuğla kapılarını, kanallarını ve su havuzlarını onar.
-owo.task.maj_trowulan_sanctuary.treasury,İmparatorluk hazinesinde 700 florin biriktir
-owo.goal.sct_auld_alliance_bastion,Kadim İttifak Kalesi
-owo.goal.sct_auld_alliance_bastion.desc,Fransa ile karşılıklı savunma anlaşmalarını güçlendir ve İngiliz akınlarına karşı sınırları tahkim et.
-owo.task.sct_auld_alliance_bastion.relations,Fransa Krallığı ile sıcak ilişkileri (+60) koru
-owo.task.sct_auld_alliance_bastion.army,Sınırlarda 15.000 İskoç kargıcısı konuşlandır
-owo.goal.sct_st_andrews_scholars,St Andrews Alimleri
-owo.goal.sct_st_andrews_scholars.desc,St Andrews Üniversitesi'nde kolej fakülteleri ve kraliyet kütüphaneleri kur.
-owo.task.sct_st_andrews_scholars.treasury,Kraliyet hazinesinde 500 florin tut
-owo.goal.son_niger_river_imperium,Nijer Nehri Donanma Hakimiyeti
-owo.goal.son_niger_river_imperium.desc,Nijer kıvrımı boyunca Gao, Timbuktu ve Jenne ticaret merkezlerini bağlayan savaş kanoları inşa et.
-owo.task.son_niger_river_imperium.army,25.000 savaşçıdan oluşan bir imparatorluk ordusu topla
-owo.goal.son_sankore_learning,Timbuktu Medreseleri
-owo.goal.son_sankore_learning.desc,Sankore Camii'ndeki İslam hukukçularını, matematikçilerini ve yazmalarını himaye et.
-owo.task.son_sankore_learning.treasury,Altın kervanlarından elde edilen 800 florini hazinede biriktir
-owo.event.prussian_confederation_revolt_1454.title,Prusya Konfederasyonu İsyanı
-owo.event.prussian_confederation_revolt_1454.description,Danzig, Thorn ve Elbing burjuvaları Töton Şövalyeleri'nin ağır vergilerini ve keyfi yönetimini reddetti. Prusya Konfederasyonu'nu kurarak dış destek aramaya başladılar.
-owo.event.prussian_confederation_revolt_1454.option_1,Sıkıyönetim İlan Et ve İsyancıları Cezalandır
-owo.event.prussian_confederation_revolt_1454.option_2,Danzig'e Ayrıcalıklar Tanı ve Uzlaş
-owo.event.casimir_incorporation_of_prussia_1454.title,Kraliyet Prusyası'nın İntihakı
-owo.event.casimir_incorporation_of_prussia_1454.description,Prusya Konfederasyonu heyeti Krakow'da Kral IV. Casimir Jagiellon'un huzuruna çıkarak Prusya'yı Polonya Krallığı'na bağlamasını ve şehirlere askeri koruma sağlamasını talep etti.
-owo.event.casimir_incorporation_of_prussia_1454.option_1,Kraliyet Prusyası'nı İlhak Et ve Şövalyelere Savaş Aç
-owo.event.casimir_incorporation_of_prussia_1454.option_2,Barışı Korumak İçin Talebi Reddet
-owo.event.battle_of_towton_1461.title,Towton Kar Fırtınası
+owo.doctrine.society.hidden.civic_confraternities,Lonca Kardeşlikleri
+owo.doctrine.society.hidden.civic_confraternities.desc,Cenaze sandıkları, çeyiz kasaları ve arkasında yürünecek bir lonca sancağı. Şehir, suçlayacak birini aramadan önce kendi insanına bakar.
+owo.doctrine.society.hidden.lazaretto_quarantine,Karantina Adası
+owo.doctrine.society.hidden.lazaretto_quarantine.desc,Hiçbir tekne rıhtıma değmeden önce kırk gün açıkta bekler. Tüccarlar gerekmediği her mevsim söylenir, gerektiği tek mevsimde dua eder.
+owo.doctrine.society.hidden.printing_workshop,Matbaa Atölyesi
+owo.doctrine.society.hidden.printing_workshop.desc,Bir pres, bir harf kasası ve iki adam, kırk kişilik bir istinsah odasını geçer. Hoşunuza giden fikirler hızlanır; diğerleri de.
+owo.doctrine.society.hidden.studia_humanitatis,Beşerî İlimler
+owo.doctrine.society.hidden.studia_humanitatis.desc,Gramer, belagat, tarih ve ahlak felsefesi, yeniden bulunan kadimlerden okutulur. Daha iyi kâtipler yetiştirir; çok daha tehlikeli olanlarını da.
+owo.doctrine.society.hidden.vernacular_scripture,Halk Dilinde Kutsal Kitap
+owo.doctrine.society.hidden.vernacular_scripture.desc,Kitabı insanların gerçekten konuştuğu dile taşıyın. İman derinleşir, okuryazarlık yayılır ve ulema tartışma üzerindeki tekelini kaybeder.
+owo.doctrine.society.milestone,Rönesans Toplumu
+owo.doctrine.society.milestone.desc,Toplumunuz karanlık içine kapanıklıktan çiçek açan, kültürlü bir diyara dönüştü.
+owo.doctrine.society.t1,Tarımsal Ortak Alanlar
+owo.doctrine.society.t1.communal_commons,Ortak Otlaklar ve Açık Tarlalar
+owo.doctrine.society.t1.communal_commons.desc,Köyün açık tarla ekim nöbeti ve ortak otlaklar, toplumsal ahengi ve köylünün geçimini temin eder.
+owo.doctrine.society.t1.manorial_estates,Malikane Arazileri ve Haslar
+owo.doctrine.society.t1.manorial_estates.desc,Soyluların elinde toplanan malikaneler, kralın savaş hazinesi için tahıl fazlasını ve angarya yükümlülüklerini artırır.
+owo.doctrine.society.t1.question,Kırsalda toprak ve emek nasıl organize ediliyor?
+owo.doctrine.society.t2,Loncalar ve Köylü Statüsü
+owo.doctrine.society.t2.free_peasantry,Serflerin Azad Edilmesi
+owo.doctrine.society.t2.free_peasantry.desc,Feodal bağlılıkların nakdi kiralara dönüştürülmesi köylü girişimciliğini ve nüfus artışını teşvik eder.
+owo.doctrine.society.t2.guild_charters,Beratlı Zanaat Loncaları
+owo.doctrine.society.t2.guild_charters.desc,Ayrıcalıklı lonca beratları üretim standartlarını, çıraklığı ve kentsel istikrarı düzenler.
+owo.doctrine.society.t2.question,Şehirli zanaatkârlar ve kır emekçileri hangi haklara sahip?
+owo.doctrine.society.t3,Sivil Kurumlar ve İlim
+owo.doctrine.society.t3.cathedral_schools,Katedral Mektepleri ve Üniversiteler
+owo.doctrine.society.t3.cathedral_schools.desc,Skolastik fakülteler; diyara hizmet edecek hukukçular, ilahiyatçılar ve tabipler yetiştirir.
+owo.doctrine.society.t3.monastic_hospitals,Manastır Şifahaneleri ve Sadaka
+owo.doctrine.society.t3.monastic_hospitals.desc,Dini kurumlar hastane ağlarını ve hayır işlerini yürüterek halkı salgınlardan ve kıtlıktan korur.
+owo.doctrine.society.t3.question,Hastalarla kim ilgileniyor ve alimleri kim yetiştiriyor?
+owo.doctrine.society.t4,Kentsel Düzen ve Hamilik
+owo.doctrine.society.t4.burgher_patronage,Kentli Tüccar Hamiliği
+owo.doctrine.society.t4.burgher_patronage.desc,Varlıklı tüccarlar, kentin itibarını artırmak için anıtlar, lonca sarayları ve hastaneler vakfeder.
+owo.doctrine.society.t4.civic_relief_funds,Şehir İane Tahıl Ambarları
+owo.doctrine.society.t4.civic_relief_funds.desc,Belediye tahıl stokları ve acil durum yardımları, kıtlık zamanlarında halk huzursuzluğunu yatıştırır.
+owo.doctrine.society.t4.question,Şehirler krizlere nasıl dayanıyor ve refahı nasıl sergiliyor?
+owo.doctrine.society.t5,Rönesans Uyanışı
+owo.doctrine.society.t5.estate_harmony,Zümreler Ahengi
+owo.doctrine.society.t5.estate_harmony.desc,Soylular, din adamları ve halk arasındaki denge, köklü bir toplumsal huzur ve kalıcı meşruiyet tesis eder.
+owo.doctrine.society.t5.humanist_renaissance,Hümanist Rönesans
+owo.doctrine.society.t5.humanist_renaissance.desc,Klasik uyanış, edebi eserler ve doğa felsefesi eşi görülmemiş bir yenilik çağını başlatır.
+owo.doctrine.society.t5.question,Halkınızın ruhunu hangi kültür tanımlıyor?
 owo.event.battle_of_towton_1461.description,Yorkshire'daki kör edici bir kar fırtınasında York ve Lancaster hanedanı orduları İngiltere topraklarının en kanlı savaşında karşı karşıya geldi. Tahtın kaderi bu meydanda belirleniyor.
 owo.event.battle_of_towton_1461.option_1,Beyaz Gül Kazandı: IV. Edward'ı Kral İlan Et
 owo.event.battle_of_towton_1461.option_2,Kızıl Gül Direndi: VI. Henry'nin Tahtını Güvenceye Al
-owo.event.marriage_of_the_catholic_monarchs_1469.title,Katolik Hükümdarların Düğünü
-owo.event.marriage_of_the_catholic_monarchs_1469.description,Kastilya Prensesi Isabel ile Aragon Prensi Ferdinand Valladolid'de gizlice evlenerek birleşik bir İspanyol krallığının hanedan temelini attı.
-owo.event.marriage_of_the_catholic_monarchs_1469.option_1,Kastilya ve Aragon Trastamara Birliğini Onayla
-owo.event.marriage_of_the_catholic_monarchs_1469.option_2,Portekiz ile Alternatif Bir İttifak Kur
-mod.ui.toolbar.dynasties_tooltip,1450 Yılının Büyük Hanedanlarını ve Hükümdar Ailelerini İncele
-mod.ui.toolbar.faiths_tooltip,Dünya Kutsal Merkezlerini ve Dini Otoriteleri İncele
-owo.event.hussite_king_of_bohemia_1458.title,Bohemya'nın Hussit Kralı
-owo.event.hussite_king_of_bohemia_1458.description,Bohemya Meclisi, Utrakist dini özgürlüklerin savunucusu George of Poděbrady'yi kral seçti. Roma bu taç giymeyi derin bir şüpheyle karşılıyor ve Hussit ayrıcalıklarının feshini talep ediyor.
-owo.event.hussite_king_of_bohemia_1458.option_1,Basel Sözleşmesi'ni ve Hussit Haklarını Savun
-owo.event.hussite_king_of_bohemia_1458.option_2,Roma ile Uzlaş ve Papalığa Bağlılık Bildir
-owo.event.third_rome_doctrine_1453.title,Üçüncü Roma Doktrini
-owo.event.third_rome_doctrine_1453.description,Konstantinopolis'in düşüşünün ardından Rus din adamları ve boyarlar Moskova'yı Hristiyan Roma'nın yegane varisi ilan ediyor: 'İki Roma düştü, üçüncüsü ayakta ve dördüncüsü asla olmayacak.'
-owo.event.third_rome_doctrine_1453.option_1,Moskova'yı Üçüncü Roma ve Ortodoksluğun Hamisi İlan Et
-owo.event.third_rome_doctrine_1453.option_2,Yalnızca Bozkır Sınırlarına Odaklan
-owo.event.vatican_library_founded_1451.title,Vatikan Kütüphanesi'nin Kuruluşu
-owo.event.vatican_library_founded_1451.description,Papa V. Nicholas, hümanistleri ve Bizanslı bilginleri binlerce antik elyazmasını toplamak ve tercüme etmekle görevlendirerek Vatikan Kütüphanesi'ni kuruyor.
-owo.event.vatican_library_founded_1451.option_1,Kütüphaneyi Destekle ve Antik Eserleri Çevirt
-owo.event.vatican_library_founded_1451.option_2,Tüm Kaynakları Roma'nın Savunmasına Aktar
-owo.event.bhakti_devotional_movement_1455.title,Haridasa ve Bhakti Hareketi
+owo.event.battle_of_towton_1461.title,Towton Kar Fırtınası
 owo.event.bhakti_devotional_movement_1455.description,Tungabhadra nehri boyunca Haridasa şairleri ilahi aşk şiirleri besteleyerek kast sınırlarını aşıyor ve Vijayanagara tapınak festivallerini canlandırıyor.
 owo.event.bhakti_devotional_movement_1455.option_1,Haridasa Şairlerini ve Virupaksha Ayinlerini Destekle
 owo.event.bhakti_devotional_movement_1455.option_2,Savaş İçin Tapınak Vakıflarını Vergilendir
-owo.event.diplomacy_danubian_principalities_1450.title,Tuna Sınırı: Eflak Egemenlik Dengesi
+owo.event.bhakti_devotional_movement_1455.title,Haridasa ve Bhakti Hareketi
+owo.event.casimir_incorporation_of_prussia_1454.description,Prusya Konfederasyonu heyeti Krakow'da Kral IV. Casimir Jagiellon'un huzuruna çıkarak Prusya'yı Polonya Krallığı'na bağlamasını ve şehirlere askeri koruma sağlamasını talep etti.
+owo.event.casimir_incorporation_of_prussia_1454.option_1,Kraliyet Prusyası'nı İlhak Et ve Şövalyelere Savaş Aç
+owo.event.casimir_incorporation_of_prussia_1454.option_2,Barışı Korumak İçin Talebi Reddet
+owo.event.casimir_incorporation_of_prussia_1454.title,Kraliyet Prusyası'nın İntihakı
+owo.event.corvinus_black_army_1458.description,1458 yılında Macaristan tahtına çıkan Kral Matyas Corvinus, asi soyluların feodal birliklerine bel bağlamayı bırakarak Avrupa'nın ilk daimi profesyonel paralı ordularından biri olan Kara Ordu'yu (Fekete Sereg) kurdu.
+owo.event.corvinus_black_army_1458.option_1,Krallığı savunmak için Kara Ordu'yu göreve çağır!
+owo.event.corvinus_black_army_1458.option_2,Hazine paralı askerleri kaldıramaz; soylu birliklerine güven.
+owo.event.corvinus_black_army_1458.title,Matyas Corvinus ve Kara Ordu
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.description,Pachacuti İnka egemenliğini And Dağları boyunca genişletirken, kıyıdaki zengin Chimor Krallığı başkenti Chan Chan'dan İnka ordularının ilerleyişini kaygıyla izliyor.
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_1,İnka ordularını kuzey kıyılarına doğru dağ vadilerinden yürüt!
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.option_2,Cusco başkentini güçlendir ve kutsal tapınaklar inşa et.
+owo.event.diplomacy_andean_tawantinsuyu_chimor_1450.title,And Rekabeti: Cusco ve Chimor
+owo.event.diplomacy_auld_alliance_1450.description,1295'ten beri Fransa ile İskoçya arasındaki Kadim İttifak İngiliz emellerini dengeledi. Fransız orduları Normandiya'yı geri alırken VII. Charles İskoçlarla ittifakı pekiştiriyor.
+owo.event.diplomacy_auld_alliance_1450.option_1,Kadim İttifak'ı yenile ve İngiltere'yi iki cephede sıkıştır!
+owo.event.diplomacy_auld_alliance_1450.option_2,Yalnızca Normandiya ve Akitanya'nın fethine odaklan.
+owo.event.diplomacy_auld_alliance_1450.title,Kadim İttifak: Karşılıklı Savunma
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.description,Osmanlı hisarları Boğaz'ı sararken İmparator XI. Konstantinos Palaiologos Theodosius surlarının ardında direniyor. Konstantinopolis Papalık ve Batı prenslerinden acil Haçlı yardımı istiyor.
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_1,Roma'da Kiliselerin Birliği'ni ilan et ve Batı'yı yardıma çağır!
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.option_2,Papalık şartlarını reddet; Ortodoks inancına ve surlara güven.
+owo.event.diplomacy_byzantine_diplomatic_plea_1450.title,Konstantinopolis'ten Umutsuz Elçiler
 owo.event.diplomacy_danubian_principalities_1450.description,Osmanlı serhaddi, John Hunyadi Macaristanı ve Polonya arasında sıkışan Eflak voyvodaları Hristiyan savunma ittifakı ile Bab-ı Ali'ye haraç ödeme arasında bir seçim yapmak zorunda.
 owo.event.diplomacy_danubian_principalities_1450.option_1,Hunyadi Macaristanı ile Tuna İttifakı Kur
 owo.event.diplomacy_danubian_principalities_1450.option_2,Osmanlı Payitahtına Haraç Gönder
-owo.event.diplomacy_ryukyu_maritime_tribute_1450.title,Bankoku Shinryo: Ryukyu Deniz Haracı
-owo.event.diplomacy_ryukyu_maritime_tribute_1450.description,Ryukyu Krallığı'nın Şo Hanedanı, Naha, Ming Fuzhou ve Güneydoğu Asya arasında haraç ticareti misyonları yürüterek ulusların deniz köprüsü işlevini görüyor.
-owo.event.diplomacy_ryukyu_maritime_tribute_1450.option_1,Ming Haraç Misyonlarını ve Liman Haklarını Onayla
-owo.event.diplomacy_ryukyu_maritime_tribute_1450.option_2,Ada Kalelerini ve Denizcilik Özerkliğini Güçlendir
-owo.event.diplomacy_imperial_electors_peace_1450.title,Altın Mühür: İmparatorluk Meclisi Barışı
+owo.event.diplomacy_danubian_principalities_1450.title,Tuna Sınırı: Eflak Egemenlik Dengesi
+owo.event.diplomacy_deccan_rivalry_1450.description,Krishna ve Tungabhadra nehirleri arasındaki verimli Raichur Doab bölgesi, Vijayanagara İmparatorluğu ile Behmani Sultanlığı arasında amansız bir mücadeleye sahne oluyor.
+owo.event.diplomacy_deccan_rivalry_1450.option_1,Tungabhadra sınırını tahkim et ve sultanlık akınlarına hazırlan!
+owo.event.diplomacy_deccan_rivalry_1450.option_2,Batı limanlarından deniz ticaretini genişlet ve süvari kirala.
+owo.event.diplomacy_deccan_rivalry_1450.title,Dekkan Çatışması: Raichur Sınırı
+owo.event.diplomacy_hundred_years_war_england_1450.description,Normandiya Fransız kuşatması altında düşerken ve Kent'te isyan başlarken VI. Henry çaresizlikle karşı karşıya. Londra kıta topraklarını savunmak ya da geri çekilmek arasında seçim yapmalı.
+owo.event.diplomacy_hundred_years_war_england_1450.option_1,Tecrübeli birlikleri topla ve kıta topraklarını sonuna kadar savun!
+owo.event.diplomacy_hundred_years_war_england_1450.option_2,Britanya Adaları'na çekil ve iç düzeni yeniden sağla.
+owo.event.diplomacy_hundred_years_war_england_1450.title,Yüzyıl Savaşları: İngiliz Çaresizliği
+owo.event.diplomacy_iberian_trastamara_concord_1450.description,Kral II. John, Aragon ve Portekiz ile hanedan bağları arasında Kastilya'yı yönetiyor. Güneyde Nasriler İber krallıklarının adımlarını endişeyle takip ediyor.
+owo.event.diplomacy_iberian_trastamara_concord_1450.option_1,Kardeş Trastámara paktlarını tasdik et ve dostluğu koru.
+owo.event.diplomacy_iberian_trastamara_concord_1450.option_2,Gırnata Emirliği'nden ağır gümüş vergisi talep et.
+owo.event.diplomacy_iberian_trastamara_concord_1450.title,İber Trastámara Mutabakatı
 owo.event.diplomacy_imperial_electors_peace_1450.description,Romalıların Kralı Dük III. Friedrich, Landfrieden barışını yeniden tesis etmek ve imparatorluk imtiyazlarını onaylamak için Kutsal Roma elektörlerini topluyor.
 owo.event.diplomacy_imperial_electors_peace_1450.option_1,Meclisi ve Elektör Dokunulmazlıklarını Onayla
 owo.event.diplomacy_imperial_electors_peace_1450.option_2,Merkezi Avusturya Hanedan Üstünlüğünü Dayat
-owo.event.diplomacy_raichur_doab_armistice_1450.title,Raichur Doab Sınır Gerilimi
+owo.event.diplomacy_imperial_electors_peace_1450.title,Altın Mühür: İmparatorluk Meclisi Barışı
+owo.event.diplomacy_italian_balance_milan_florence_1450.description,Milano Dükü olan Francesco Sforza, Floransa'da Cosimo de' Medici'nin mali ve diplomatik desteğini alarak Venedik hırslarına karşı denge kuruyor.
+owo.event.diplomacy_italian_balance_milan_florence_1450.option_1,Venedik yayılmasını durdurmak için Milano-Floransa birliğini kur!
+owo.event.diplomacy_italian_balance_milan_florence_1450.option_2,Esnek bir tarafsızlık sürdür ve ticari bağımsızlığı koru.
+owo.event.diplomacy_italian_balance_milan_florence_1450.title,Lombardiya'nın Sforza-Medici Ekseni
+owo.event.diplomacy_kalmar_union_accord_1450.description,Kral I. Christian Danimarka ve Norveç'i yönetirken İsveç soyluları Karl Knutsson'u destekliyor. Halmstad müzakereleri üç İskandinav tacını birlik altında tutmayı hedefliyor.
+owo.event.diplomacy_kalmar_union_accord_1450.option_1,Kuzey barışını korumak için Halmstad Mutabakatı'nı onayla.
+owo.event.diplomacy_kalmar_union_accord_1450.option_2,İsveç konseyi üzerinde Danimarka kraliyet otoritesini kur.
+owo.event.diplomacy_kalmar_union_accord_1450.title,Kalmar Birliği ve Halmstad Antlaşması
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.description,İskenderiye ve Kahire'yi kontrol eden Memlük Sultanlığı, Doğu baharat yollarının kapısını tutuyor. Venedik elçileri gümrük kolaylığı ve ticaret imtiyazı talep ediyor.
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_1,Ticaret hacmini artırmak için Venedik imtiyazlarını yenile.
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.option_2,İtalyan tüccar depolarına yüksek imparatorluk vergisi koy.
+owo.event.diplomacy_mamluk_venetian_trade_treaty_1450.title,Levant Baharat Kapitülasyonları
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.description,Tumu Krizi'nin ardından Joseon Hanedanı Pekin'e taziyeler ve erzak gönderdi. Ming sarayı bu Konfüçyüsçü ittifakı en yüksek diplomatik itibarla onurlandırmayı değerlendiriyor.
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_1,Joseon'a en yüksek imtiyazı ver ve karşılıklı savunmayı pekiştir!
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.option_2,İmparatorluk hazinesini doldurmak için savaş vergisi talep et.
+owo.event.diplomacy_ming_joseon_tributary_pact_1450.title,Ming-Joseon İmparatorluk Kardeşliği
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.description,İç savaşı kazanan Büyük Prens II. Vasili, Novgorod Cumhuriyeti'nin ticari zenginliğine ve Büyük Orda'nın kalan baskısına karşı hamle yapmaya hazırlanıyor.
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_1,Pskov'a himaye sağla ve Novgorod'un kuzey üstünlüğüne meydan oku!
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.option_2,Moskova hazinesini güçlendirmek için Novgorod ile ticaret yap.
+owo.event.diplomacy_muscovy_novgorod_struggle_1450.title,Moskova ve Rus Topraklarının Birleşmesi
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.description,Naip János Hunyadi, Tuna boyunca Osmanlı seferlerine direnmek için güney sancaklarını tahkim ediyor; İskender Bey'in Lezhë Ligi ve Papalık ile ortak cephe kuruyor.
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_1,İskender Bey ile omuz omuza dur; Tuna'yı Hristiyanlığın Kalkanı yap!
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.option_2,Kraliyet maliyesini düzeltmek için Avusturya Habsburgları ile anlaş.
+owo.event.diplomacy_ottoman_hungarian_frontier_1450.title,Tuna Kalkanı: Macar Serhaddi
 owo.event.diplomacy_raichur_doab_armistice_1450.description,Krişna ve Tungabhadra nehirleri boyunca Behmani Sultanlığı ve Vijayanagara İmparatorluğu elmas zengini Dekkan havzası üzerinde birbirlerini gözetliyor.
 owo.event.diplomacy_raichur_doab_armistice_1450.option_1,Gulbarga'yı Tahkim Et ve Dekkan Ateşkesine Uy
 owo.event.diplomacy_raichur_doab_armistice_1450.option_2,Nehir Ötesindeki Elmas Havzasına Akın Düzenle
-owo.goal.myn_grand_canal_dredging,Büyük Kanal Tahıl Can Damarı
-owo.goal.myn_grand_canal_dredging.desc,Jiangnan'ın güney pirinç havzalarını Pekin'e bağlayan su kanallarını ve bentlerini derinleştir.
-owo.task.myn_grand_canal_dredging.treasury,İmparatorluk ambarı hazinesinde 2.500 florin biriktir
-owo.goal.vij_virupaksha_temple_aqueducts,Hampi Virupaksha Su Kemerleri
-owo.goal.vij_virupaksha_temple_aqueducts.desc,Vijayanagara başkentinde anıtsal granit su kanalları, basamaklı havuzlar ve tapınak avluları inşa et.
-owo.task.vij_virupaksha_temple_aqueducts.treasury,Kraliyet tapınak hazinesinde 1.200 florin biriktir
-owo.goal.pap_renaissance_rome_restoration,Roma'nın Rönesans İmarı
-owo.goal.pap_renaissance_rome_restoration.desc,Roma'nın bazilikalarını, köprülerini ve surlarını yeniden inşa etmek için usta mimarları ve taş yontucuları görevlendir.
-owo.task.pap_renaissance_rome_restoration.treasury,Papalık bayındırlık işleri için 1.000 florin tahsis et
+owo.event.diplomacy_raichur_doab_armistice_1450.title,Raichur Doab Sınır Gerilimi
+owo.event.diplomacy_ryukyu_maritime_tribute_1450.description,Ryukyu Krallığı'nın Şo Hanedanı, Naha, Ming Fuzhou ve Güneydoğu Asya arasında haraç ticareti misyonları yürüterek ulusların deniz köprüsü işlevini görüyor.
+owo.event.diplomacy_ryukyu_maritime_tribute_1450.option_1,Ming Haraç Misyonlarını ve Liman Haklarını Onayla
+owo.event.diplomacy_ryukyu_maritime_tribute_1450.option_2,Ada Kalelerini ve Denizcilik Özerkliğini Güçlendir
+owo.event.diplomacy_ryukyu_maritime_tribute_1450.title,Bankoku Shinryo: Ryukyu Deniz Haracı
+owo.event.diplomacy_union_of_poland_lithuania_1450.description,Kral IV. Casimir Jagiellon, Polonya Krallığı ile Litvanya Büyük Dükalığı'nı kişisel birlik altında birleştirdi. Kraliyet meclisi iki diyarı sarsılmaz bir ittifakla bağlamayı tartışıyor.
+owo.event.diplomacy_union_of_poland_lithuania_1450.option_1,Polonya ve Litvanya'nın sarsılmaz birliğini tasdik et!
+owo.event.diplomacy_union_of_poland_lithuania_1450.option_2,Bölgesel imtiyazlar tanı ve kraliyet hazinesini koru.
+owo.event.diplomacy_union_of_poland_lithuania_1450.title,Jagiellon Kişisel Birliği
+owo.event.diplomacy_venice_genoa_rivalry_1450.description,Venedik Cumhuriyeti Adriyatik ve Levant'a hükmederken Ceneviz Sakız, Galata ve Karadeniz ticaret üslerine tutunuyor. Doç Francesco Foscari deniz ticaretinde üstünlük kurmayı değerlendiriyor.
+owo.event.diplomacy_venice_genoa_rivalry_1450.option_1,Levant sularında mutlak Venedik deniz hakimiyetini ilan et!
+owo.event.diplomacy_venice_genoa_rivalry_1450.option_2,Cenevizlilerle pragmatik bir ticari uzlaşı ara.
+owo.event.diplomacy_venice_genoa_rivalry_1450.title,Venedik-Ceneviz Deniz Rekabeti
+owo.event.end_hundred_years_war_1453.description,Temmuz 1453'te, Jean Bureau'nun Fransız sahra topçusu, Castillon Muharebesi'nde John Talbot'un İngiliz şövalyelerini kesin bir yenilgiye uğrattı. Muharebenin ardından Fransız tacı Bordeaux'yu ve tüm Guyenne Dükalığı'nı geri aldı. 116 yıllık yıkıcı hanedan savaşının ardından, İngiliz orduları Calais hariç tüm kıta topraklarından çıkarıldı.
+owo.event.end_hundred_years_war_1453.option_1,Fransa nihayet egemen ve birleşik!
+owo.event.end_hundred_years_war_1453.option_2,Savaşta pişen şövalyelerimizi ve kraliyet komutanlarını ödüllendir.
+owo.event.end_hundred_years_war_1453.title,Yüzyıl Savaşları'nın Sonu (Fransız Zaferi)
+owo.event.end_hundred_years_war_1453_england.description,Temmuz 1453'te, Jean Bureau'nun Fransız sahra topçusu, Castillon Muharebesi'nde John Talbot'un İngiliz şövalyelerini kesin bir yenilgiye uğrattı. Muharebenin ardından Fransız tacı Bordeaux'yu ve tüm Guyenne Dükalığı'nı geri aldı. 116 yıllık yıkıcı hanedan savaşının ardından, İngiliz orduları Calais hariç tüm kıta topraklarından çıkarıldı.
+owo.event.end_hundred_years_war_1453_england.option_1,Manş Denizi'nin ardına acı bir geri çekilme.
+owo.event.end_hundred_years_war_1453_england.option_2,Calais'yi tahkim et ve kıdemli uzun yaylıları göreve çağır.
+owo.event.end_hundred_years_war_1453_england.title,Yüzyıl Savaşları'nın Sonu (İngiliz Geri Çekilişi)
+owo.event.fall_of_constantinople_1453.description,29 Mayıs 1453'te, 53 günlük bir kuşatmanın ardından Sultan II. Mehmed'in orduları kadim Theodosius Surlarını aştı. Doğu Roma İmparatorluğu yıkıldı ve bin yılı aşkın Bizans medeniyeti sona erdi. Kostantiniyye, Osmanlı İmparatorluğu'nun ulu başkenti ilan edildi ve Akdeniz'i Karadeniz'e bağlayan tarihi ticaret yolları artık bütünüyle imparatorluk kontrolüne geçti.
+owo.event.fall_of_constantinople_1453.option_1,Kostantiniyye imparatorluğumuzun başkenti olarak parlayacak!
+owo.event.fall_of_constantinople_1453.option_2,Ortodoks Patrikhanesi'nin haklarını tanı ve Karadeniz ticaretini canlandır.
+owo.event.fall_of_constantinople_1453.title,İstanbul'un Fethi (Osmanlı Zaferi)
+owo.event.fall_of_constantinople_1453_christendom.description,29 Mayıs 1453'te, 53 günlük bir kuşatmanın ardından Sultan II. Mehmed'in orduları kadim Theodosius Surlarını aştı. Doğu Roma İmparatorluğu yıkıldı ve bin yılı aşkın Bizans medeniyeti sona erdi. Kostantiniyye, Osmanlı İmparatorluğu'nun ulu başkenti ilan edildi ve Akdeniz'i Karadeniz'e bağlayan tarihi ticaret yolları artık bütünüyle imparatorluk kontrolüne geçti.
+owo.event.fall_of_constantinople_1453_christendom.option_1,Hristiyan Roma dünyası için trajik bir gün batımı.
+owo.event.fall_of_constantinople_1453_christendom.option_2,Bizanslı bilgin ve hümanist mültecileri sarayımıza kabul et.
+owo.event.fall_of_constantinople_1453_christendom.title,Konstantinopolis'in Düşüşü (Hristiyan Dünyasında Yas)
+owo.event.fall_of_trebizond_1461.description,Ağustos 1461'de Sultan II. Mehmed komutasındaki kara ve deniz kuşatması sonucunda İmparator David Megas Komnenos müstahkem Trabzon kentini teslim etti. Karadeniz'deki son Roma ardıl devleti de Osmanlı topraklarına katıldı.
+owo.event.fall_of_trebizond_1461.option_1,Karadeniz artık tamamen bir Osmanlı gölüdür.
+owo.event.fall_of_trebizond_1461.option_2,Kıyı güvenliği için yerel süvarilere tımarlar bağışla.
+owo.event.fall_of_trebizond_1461.title,Trabzon'un Fethi: Karadeniz Hakimiyeti (1461)
+owo.event.gutenberg_printing_press_1455.description,Mainz şehrinde usta kuyumcu Johannes Gutenberg; hareketli kurşun alaşımlı harfleri, yağ bazlı mürekkebi ve uyarlanmış ahşap mengene presini birleştirerek 42 satırlık Gutenberg İncili'ni bastı. Bu buluş, dini, hukuki ve klasik hümanist bilginin yayılmasını hayal bile edilemeyecek bir hızla ivmelendirmeyi vaat ediyor.
+owo.event.gutenberg_printing_press_1455.option_1,İlim ve kitapların yayılması için matbaaları destekle.
+owo.event.gutenberg_printing_press_1455.option_2,Matbaaları kraliyet denetimine ve sansürüne bağla.
+owo.event.gutenberg_printing_press_1455.title,Gutenberg Matbaa Devrimi (1455)
+owo.event.hanseatic_league_kontor_1455.description,Lübeck, Danzig ve Bergen'deki Hanse kontorları Kuzey deniz ticaretine hakim durumdadır. Danimarka'nın Øresund boğaz geçiş vergileri üzerindeki denetimi sıkılaştırması ve tüccarların tekele karşı koruma talep etmesi gerilimi tırmandırıyor.
+owo.event.hanseatic_league_kontor_1455.option_1,Boğaz Geçiş Vergisini Uygula ve Hanse Loncalarını Kısıtla
+owo.event.hanseatic_league_kontor_1455.option_2,Kontor Ayricaliklarini Yenile ve Gümrükleri Düşür
+owo.event.hanseatic_league_kontor_1455.title,Hanse Birliği ve Boğaz Geçiş Vergisi Krizi
+owo.event.hussite_king_of_bohemia_1458.description,Bohemya Meclisi, Utrakist dini özgürlüklerin savunucusu George of Poděbrady'yi kral seçti. Roma bu taç giymeyi derin bir şüpheyle karşılıyor ve Hussit ayrıcalıklarının feshini talep ediyor.
+owo.event.hussite_king_of_bohemia_1458.option_1,Basel Sözleşmesi'ni ve Hussit Haklarını Savun
+owo.event.hussite_king_of_bohemia_1458.option_2,Roma ile Uzlaş ve Papalığa Bağlılık Bildir
+owo.event.hussite_king_of_bohemia_1458.title,Bohemya'nın Hussit Kralı
+owo.event.malacca_spice_entrepot_1458.description,Hint Okyanusu ile Güney Çin Denizi arasındaki kritik boğazda yer alan Melaka; Maluku karanfili, muskat, Fars dokumaları ve Ming ipekleri için dünyanın en büyük ticaret merkezine dönüştü.
+owo.event.malacca_spice_entrepot_1458.option_1,Şahbender Tesislerini Genişlet ve Tüccarları Karşıla
+owo.event.malacca_spice_entrepot_1458.option_2,Boğaz Geçitlerini Tahkim Et ve Savaş Gemileri İnşa Et
+owo.event.malacca_spice_entrepot_1458.title,Melaka Antreposu ve Baharat Yolu
+owo.event.marriage_of_the_catholic_monarchs_1469.description,Kastilya Prensesi Isabel ile Aragon Prensi Ferdinand Valladolid'de gizlice evlenerek birleşik bir İspanyol krallığının hanedan temelini attı.
+owo.event.marriage_of_the_catholic_monarchs_1469.option_1,Kastilya ve Aragon Trastamara Birliğini Onayla
+owo.event.marriage_of_the_catholic_monarchs_1469.option_2,Portekiz ile Alternatif Bir İttifak Kur
+owo.event.marriage_of_the_catholic_monarchs_1469.title,Katolik Hükümdarların Düğünü
+owo.event.medici_fugger_banking_accord_1460.description,Floransa'daki Medici Bankası ve erken dönem Fugger madencilik finansörleri; çift taraflı defter tutma, poliçeler (lettere di cambio) ve sınır ötesi kredi ağlarıyla Avrupa çapında modern bankacılığın temelini atıyor.
+owo.event.medici_fugger_banking_accord_1460.option_1,Uluslararası Krediyi ve Hümanist Sanatı Destekle
+owo.event.medici_fugger_banking_accord_1460.option_2,Bankacılık Sermayesini Paralı Askerlere Yönlendir
+owo.event.medici_fugger_banking_accord_1460.title,Rönesans Tüccar Bankacılığı ve Poliçeler
+owo.event.peace_of_lodi_1454.description,9 Nisan 1454'te Lombardiya'daki Lodi kentinde Milano, Venedik ve Floransa elçileri Lombardiya Savaşları'na son veren antlaşmayı imzaladı. Kutsal Birlik'i (Lega Italica) kuran bu antlaşma, beş büyük İtalyan gücü arasında güç dengesi tesis ederek yarımadada barışı güvence altına alıyor.
+owo.event.peace_of_lodi_1454.option_1,Antlaşmayı onayla ve İtalya'nın barışını koru.
+owo.event.peace_of_lodi_1454.option_2,Uzlaşmayı reddet; Lombardiya'daki emellerimiz sınırlandırılamaz.
+owo.event.peace_of_lodi_1454.title,Lodi Barışı
+owo.event.portuguese_african_voyages_1460.description,Denizci Prens Henrique'nin himayesinde Portekiz karavelleri Cabo Verde'yi dolaştı ve Bijagós takımadalarını geçerek Gine Körfezi'ne girdi. Batı Afrika altın tozu, malagueta biberi ve fildişinin doğrudan deniz ticareti, geleneksel Sahra ötesi kara yollarını devre dışı bırakarak Lizbon'a muazzam bir zenginlik kazandırıyor.
+owo.event.portuguese_african_voyages_1460.option_1,Güney okyanuslarını haritalandırmak için yeni karaveller gönder.
+owo.event.portuguese_african_voyages_1460.option_2,Gine ticaret merkezlerini pekiştir ve ticaret gelirini topla.
+owo.event.portuguese_african_voyages_1460.title,Prens Henrique ve Afrika Seferleri (1460)
+owo.event.prussian_confederation_revolt_1454.description,Danzig, Thorn ve Elbing burjuvaları Töton Şövalyeleri'nin ağır vergilerini ve keyfi yönetimini reddetti. Prusya Konfederasyonu'nu kurarak dış destek aramaya başladılar.
+owo.event.prussian_confederation_revolt_1454.option_1,Sıkıyönetim İlan Et ve İsyancıları Cezalandır
+owo.event.prussian_confederation_revolt_1454.option_2,Danzig'e Ayrıcalıklar Tanı ve Uzlaş
+owo.event.prussian_confederation_revolt_1454.title,Prusya Konfederasyonu İsyanı
+owo.event.rise_of_tawantinsuyu_1450.description,Cusco'yu Chanca istilasına karşı başarıyla savunan Sapa İnka Pachacuti Yupanqui, Tawantinsuyu'nun (Dört Bölgenin Diyarı) kuruluşunu ilan etti. Cusco'yu anıtsal taş yapılarla yeniden inşa ettirip And yamaçlarını teraslayan Pachacuti, dağ vadilerini Güneş Tanrısı İnti sancağı altında birleştirmek üzere sefere çıkıyor.
+owo.event.rise_of_tawantinsuyu_1450.option_1,Tawantinsuyu'yu ilan et ve And Dağları'nda sefere çık!
+owo.event.rise_of_tawantinsuyu_1450.option_2,Kutsal Vadi'yi tahkim et ve Coricancha tapınağını zenginleştir.
+owo.event.rise_of_tawantinsuyu_1450.title,Pachacuti ve Tawantinsuyu'nun Yükselişi
+owo.event.songhai_ascendancy_1464.description,1464'te Gao tahtına çıkan Sonni Ali Ber, Songhay krallığını durdurulamaz bir imparatorluğa dönüştürdü. Nijer Nehri üzerindeki savaş kanoları filosu ve Sahel'deki zırhlı süvarileriyle Sonni Ali, Timbuktu'yu Tuareglerden alarak Sahra ötesi altın ve tuz ticaret yollarını ele geçirmeye hazırlanıyor.
+owo.event.songhai_ascendancy_1464.option_1,Nijer donanmasını sefere çıkar ve Sahel'e hükmet!
+owo.event.songhai_ascendancy_1464.option_2,Gao kapılarını koru ve nehir boyunca barış içinde ticaret yap.
+owo.event.songhai_ascendancy_1464.title,Sonni Ali ve Songhay Yükselişi
+owo.event.third_rome_doctrine_1453.description,Konstantinopolis'in düşüşünün ardından Rus din adamları ve boyarlar Moskova'yı Hristiyan Roma'nın yegane varisi ilan ediyor: 'İki Roma düştü, üçüncüsü ayakta ve dördüncüsü asla olmayacak.'
+owo.event.third_rome_doctrine_1453.option_1,Moskova'yı Üçüncü Roma ve Ortodoksluğun Hamisi İlan Et
+owo.event.third_rome_doctrine_1453.option_2,Yalnızca Bozkır Sınırlarına Odaklan
+owo.event.third_rome_doctrine_1453.title,Üçüncü Roma Doktrini
+owo.event.trans_saharan_gold_boom_1456.description,Taghaza kaya tuzu, Akan altını ve Sahra bakırını taşıyan deve kervanları Gao ve Timbuktu nehir pazarlarına ulaşıyor. Ticaret haneleri ve İslam alimleri Sahel bölgesine muazzam bir zenginlik ve şöhret kazandırıyor.
+owo.event.trans_saharan_gold_boom_1456.option_1,Sankore Alimlerini ve Kervansarayları Destekle
+owo.event.trans_saharan_gold_boom_1456.option_2,Sahra-Ötesi Geçiş Vergilerini Artır
+owo.event.trans_saharan_gold_boom_1456.title,Sahra-Ötesi Altın ve Tuz Kervanları
+owo.event.tumu_crisis_beijing_1450.description,İmparator Zhengtong'un Tumu'da Oyrat Moğolları tarafından esir alınmasının ardından düşman ordusu Pekin surlarına dayandı. Savaş Bakanı Yu Qian, Jingtai İmparatoru'nu tahta çıkararak başkenti savundu; surlara ateş mızrakları ve ağır toplar yerleştirerek kuzey kuşatmasını püskürttü.
+owo.event.tumu_crisis_beijing_1450.option_1,Yu Qian önderliğinde direnin; başkentten bir karış toprak verilmeyecek!
+owo.event.tumu_crisis_beijing_1450.option_2,Kuzeyle ateşkes için gümüş ve ipek haraç teklif et.
+owo.event.tumu_crisis_beijing_1450.title,Tumu Krizi ve Pekin Savunması
+owo.event.vatican_library_founded_1451.description,Papa V. Nicholas, hümanistleri ve Bizanslı bilginleri binlerce antik elyazmasını toplamak ve tercüme etmekle görevlendirerek Vatikan Kütüphanesi'ni kuruyor.
+owo.event.vatican_library_founded_1451.option_1,Kütüphaneyi Destekle ve Antik Eserleri Çevirt
+owo.event.vatican_library_founded_1451.option_2,Tüm Kaynakları Roma'nın Savunmasına Aktar
+owo.event.vatican_library_founded_1451.title,Vatikan Kütüphanesi'nin Kuruluşu
+owo.event.wars_of_the_roses_1455.description,Fransa'daki askeri yenilginin ve Kral VI. Henry'nin zihinsel rahatsızlığının ardından, rakip hanedan kolları—Lancaster Hanedanı (Kırmızı Gül) ile York Hanedanı (Beyaz Gül)—arasındaki kıyasıya rekabet, Birinci St Albans Muharebesi ile kanlı bir çatışmaya dönüştü. İngiltere, taht için nesiller boyu sürecek kanlı bir iç savaşa sürükleniyor.
+owo.event.wars_of_the_roses_1455.option_1,Lancaster'ın Kırmızı Gülü ve Kral Henry VI'nın arkasında birleşin!
+owo.event.wars_of_the_roses_1455.option_2,York'un Beyaz Gülü ve Dük Richard'ı destekleyin!
+owo.event.wars_of_the_roses_1455.title,Güller Savaşı'nın Başlangıcı (1455)
+owo.goal.azt_flower_wars_tribute,Çiçek Savaşları
+owo.goal.azt_flower_wars_tribute.desc,Meksika Vadisi'nde ritüel savaşlar yürüterek esirler al ve Üçlü İttifak üstünlüğünü kur.
+owo.goal.azt_tenochtitlan_chinampas,Tenochtitlan Çinampaları
+owo.goal.azt_tenochtitlan_chinampas.desc,Yüzen bahçe su yolları inşa et ve büyük Tlatelolco pazarını genişlet.
+owo.goal.basic_fill_the_treasury,Kraliyet Hazinesini Doldur
+owo.goal.basic_fill_the_treasury.desc,Parası olmayan bir diyar ne ordu kurabilir ne de barışı koruyabilir. Korumaya değer bir birikim yap.
+owo.goal.basic_first_alliance,Güvenilir Bir Müttefik Ara
+owo.goal.basic_first_alliance.desc,Hiçbir taç uzun süre tek başına ayakta kalamaz. Bir komşunun dostluğunu kazan.
+owo.goal.bur_grand_dukes_of_the_west,Batı'nın Büyük Dükleri
+owo.goal.bur_grand_dukes_of_the_west.desc,Gent, Brugge ve Anvers'in zengin Flaman kumaş pazarlarını Dijon'daki dükalık makamına bağla.
+owo.goal.bur_lotharingian_crown,Lotharingiya Tacı
+owo.goal.bur_lotharingian_crown.desc,Modern Ordonnance birlikleri kur ve Alçak Ülkeleri egemen bir Burgonya krallığında birleştir.
+owo.goal.byz_defend_constantinople,Osmanlı Kuşatmasına Diren
+owo.goal.byz_defend_constantinople.desc,Theodosius Surları ardında savunmayı toparla ve Batı Hristiyanlığından acil Haçlı yardımı iste.
+owo.goal.byz_restore_morea,Mora Despotluğu'nu Güçlendir
+owo.goal.byz_restore_morea.desc,Güney Yunanistan'da Roma egemenliğini yeniden kur ve Mora Despotluğu'nu pekiştir.
+owo.goal.cas_reconquista,Reconquista'yı Tamamla
+owo.goal.cas_reconquista.desc,İber Yarımadası'ndaki son Müslüman devlet olan Gırnata Emirliği'ni düşür.
+owo.goal.cas_union_with_aragon,Tacların Birliği
+owo.goal.cas_union_with_aragon.desc,Kastilya ile Aragon'u tek bir İspanyol monarşisinde birleştir.
+owo.goal.cas_western_seas,Okyanus Denizini Haritalandır
+owo.goal.cas_western_seas.desc,Atlantik üzerinden batıya giden bir deniz yolu aramaları için cesur denizcilere sponsor ol.
+owo.goal.dan_kalmar_hegemony,Kalmar Birliği'ni Muhafaza Et
+owo.goal.dan_kalmar_hegemony.desc,Danimarka kraliyet otoritesini Stockholm'deki asi İsveç konseyine kabul ettir.
+owo.goal.dan_sound_tolls,Øresund Boğazı Vergilerine Hükmet
+owo.goal.dan_sound_tolls.desc,Baltık'a giren tüm ticaret gemilerinden gümrük vergisi al ve güçlü bir donanma kur.
+owo.goal.eng_fortress_calais,Calais Kalesi ve Dar Denizler
+owo.goal.eng_fortress_calais.desc,Calais Bölgesi tahkimatlarını güçlendir ve Manş Denizi üzerindeki deniz hakimiyetini koru.
+owo.goal.eng_royal_solvency,Kraliyet Maliyesini İhya Et
+owo.goal.eng_royal_solvency.desc,Maliyeyi yeniden düzenle, savaş borçlarını yönet ve parlamentonun Taca olan güvenini tazele.
+owo.goal.eng_scottish_border,Kuzey Serhatlerini Koru
+owo.goal.eng_scottish_border.desc,İskoç Sınır Bölgelerini emniyete al ve kuzeyden gelebilecek Auld Alliance istilası tehdidini etkisiz hale getir.
 owo.goal.flr_cathedral_dome_of_florence,Brunelleschi Katedral Kubbesi
 owo.goal.flr_cathedral_dome_of_florence.desc,Floransa siluetini taçlandıran Santa Maria del Fiore'nin anıtsal sekizgen tuğla kubbesini tamamla.
-owo.task.flr_cathedral_dome_of_florence.treasury,Opera del Duomo vakfına 1.500 florin yatır
+owo.goal.fra_compagnies_ordonnance,Compagnies d'Ordonnance
+owo.goal.fra_compagnies_ordonnance.desc,Daimi bir kraliyet vergisiyle finanse edilen Fransa'nın ilk profesyonel daimi ordusunu kur.
+owo.goal.fra_contain_burgundy,Burgonya'yı Dizginle
+owo.goal.fra_contain_burgundy.desc,Batı'nın Büyük Dükleri'nin Fransa'nın sınır topraklarından bir krallık oyup çıkarmasını engelle.
+owo.goal.fra_end_hundred_years_war,Yüz Yıl Savaşları'nı Bitir
+owo.goal.fra_end_hundred_years_war.desc,İngiliz tacını Normandiya ve Guyenne'den kesin olarak çıkar.
+owo.goal.hab_dynastic_marriage,İmparatorluk Evlilik Diplomasisi
+owo.goal.hab_dynastic_marriage.desc,Bırak başkaları savaşsın; sen, mutlu Avusturya, evlen. Tuna boyunca hanedan bağlarını genişlet.
+owo.goal.hab_imperial_diadem,İmparatorluk Tacını Pekiştir
+owo.goal.hab_imperial_diadem.desc,Kutsal Roma İmparatorluğu tacını Viyana'da tut ve elektör prenslerle ittifaklar kur.
+owo.goal.hun_bastion_of_christendom,Hristiyanlığın Kalesi
+owo.goal.hun_bastion_of_christendom.desc,Tuna ve Sava nehirleri boyunca güney sınırını Osmanlı akınlarına karşı koru.
+owo.goal.hun_corvinus_hegemony,Corvinus Rönesansı
+owo.goal.hun_corvinus_hegemony.desc,Kraliyet maliyesini modernize et ve hümanist kültürü destekle.
+owo.goal.inc_qhapaq_nan,Qhapaq Ñan Kral Yolu
+owo.goal.inc_qhapaq_nan.desc,Kraliyet yol ağını taşla döşe, dağ yamaçlarını terasla ve devlet ambarlarını doldur.
 owo.goal.inc_royal_estate_machu_picchu,Urubamba Kraliyet Tapınakları
 owo.goal.inc_royal_estate_machu_picchu.desc,Urubamba dağ zirveleri boyunca kesme taştan saraylar, güneş gözlemevleri ve tarım terasları inşa et.
+owo.goal.inc_tawantinsuyu_expansion,Tawantinsuyu'yu Birleştir
+owo.goal.inc_tawantinsuyu_expansion.desc,And dağ vadilerini Cusco'dan yöneterek Güneş Tanrısı İnti sancağı altında birleştir.
+owo.goal.jos_hangul_enlightenment,Hunminjeongeum'u İlan Et
+owo.goal.jos_hangul_enlightenment.desc,Kral Sejong'un bilimsel Hangul alfabesini yayarak okuryazarlığı ve Konfüçyüsçü yönetimi güçlendir.
+owo.goal.jos_northern_frontier,Kuzey Sınırını Güçlendir
+owo.goal.jos_northern_frontier.desc,Yalu ve Tumen nehirleri boyunca Cürçen akınlarına karşı sınır garnizonları inşa et.
+owo.goal.maj_oath_of_palapa,Palapa Yemini
+owo.goal.maj_oath_of_palapa.desc,Cava, Sumatra ve Maluku baharat yolları üzerinde deniz hakimiyetini yeniden tesis et.
+owo.goal.maj_trowulan_sanctuary,Trowulan İhtişamı
+owo.goal.maj_trowulan_sanctuary.desc,İmparatorluk başkentinin anıtsal tuğla kapılarını, kanallarını ve su havuzlarını onar.
+owo.goal.mam_custodian_holy_sanctuaries,Kutsal Şehirlerin Koruyucusu
+owo.goal.mam_custodian_holy_sanctuaries.desc,Mekke, Medine ve Kudüs'ü korurken Kızıldeniz ticaretini elinde tut.
+owo.goal.mam_syrian_bulwark,Suriye Seddi
+owo.goal.mam_syrian_bulwark.desc,Kuzey tehditlerine karşı Halep ve Şam'da güçlü bir süvari ordusu bulundur.
+owo.goal.mvy_gather_russian_lands,Rus Topraklarını Birleştir
+owo.goal.mvy_gather_russian_lands.desc,Bölünmüş Rus prensliklerini Moskova'nın liderliğinde tek bir sancak altında topla.
+owo.goal.mvy_stand_against_the_horde,Orda'ya Karşı Direniş
+owo.goal.mvy_stand_against_the_horde.desc,Tatar boyunduruğunu kır ve Büyük Orda'ya ödenen haracı reddet.
+owo.goal.myn_grand_canal,Büyük Kanal'ı Temizle
+owo.goal.myn_grand_canal.desc,Yangtze'den başkente kesintisiz tahıl sevkiyatını garanti etmek için 1.700 kilometrelik Büyük Kanal'ı yeniden inşa et ve tara.
+owo.goal.myn_grand_canal_dredging,Büyük Kanal Tahıl Can Damarı
+owo.goal.myn_grand_canal_dredging.desc,Jiangnan'ın güney pirinç havzalarını Pekin'e bağlayan su kanallarını ve bentlerini derinleştir.
+owo.goal.myn_rebuild_great_wall,Ming Sınırının Taş Duvarları
+owo.goal.myn_rebuild_great_wall.desc,Kalıcı barışı sağlamak için kuzey sınır geçitleri boyunca kesintisiz taş ve tuğla gözetleme kuleleri inşa et.
+owo.goal.myn_tumu_crisis_recovery,Tumu Krizini Aş
+owo.goal.myn_tumu_crisis_recovery.desc,Bakan Yu Qian önderliğinde imparatorluk sarayını toparla, Pekin'i tahkim et ve Oyrat Moğol istilacılarını püskürt.
+owo.goal.ott_anatolian_unity,Anadolu Birliği
+owo.goal.ott_anatolian_unity.desc,Karaman'ı ve diğer beylikleri Sultan'ın otoritesi altına al.
+owo.goal.ott_danubian_frontier,Tuna Serhaddini Tahkim Et
+owo.goal.ott_danubian_frontier.desc,Macar ve haçlı karşı taarruzlarına karşı Tuna nehri boyunca kale hattını emniyete al.
+owo.goal.ott_heir_of_rome,Roma'nın Vârisi
+owo.goal.ott_heir_of_rome.desc,Konstantinopolis'i al ve Kayser-i Rûm unvanını sahiplen.
+owo.goal.pap_renaissance_rome_restoration,Roma'nın Rönesans İmarı
+owo.goal.pap_renaissance_rome_restoration.desc,Roma'nın bazilikalarını, köprülerini ve surlarını yeniden inşa etmek için usta mimarları ve taş yontucuları görevlendir.
+owo.goal.pol_personal_union,Jagiellon Birliği
+owo.goal.pol_personal_union.desc,Litvanya Büyük Dükalığı ile hanedan ortaklığını güçlendir.
+owo.goal.pol_thirteen_years_war,Baltık Kıyılarını Geri Al
+owo.goal.pol_thirteen_years_war.desc,Töton Şövalyeleri'ne meydan okuyarak Baltık Denizi'ne erişimi yeniden sağla.
+owo.goal.prt_chart_african_coast,Afrika Kıyılarını Haritalandır
+owo.goal.prt_chart_african_coast.desc,Afrika kıtasının güney ucunu haritalamak için karavelaları Gine'nin güneyine doğru sür.
+owo.goal.prt_spice_monopoly,Deniz Baharat Tekeli
+owo.goal.prt_spice_monopoly.desc,Münhasır deniz baharat ticaretini güvenceye almak için Hint Okyanusu boyunca silahlı feitorialar kur.
+owo.goal.sct_auld_alliance_bastion,Kadim İttifak Kalesi
+owo.goal.sct_auld_alliance_bastion.desc,Fransa ile karşılıklı savunma anlaşmalarını güçlendir ve İngiliz akınlarına karşı sınırları tahkim et.
+owo.goal.sct_st_andrews_scholars,St Andrews Alimleri
+owo.goal.sct_st_andrews_scholars.desc,St Andrews Üniversitesi'nde kolej fakülteleri ve kraliyet kütüphaneleri kur.
+owo.goal.son_niger_river_imperium,Nijer Nehri Donanma Hakimiyeti
+owo.goal.son_niger_river_imperium.desc,Nijer kıvrımı boyunca Gao, Timbuktu ve Jenne ticaret merkezlerini bağlayan savaş kanoları inşa et.
+owo.goal.son_sankore_learning,Timbuktu Medreseleri
+owo.goal.son_sankore_learning.desc,Sankore Camii'ndeki İslam hukukçularını, matematikçilerini ve yazmalarını himaye et.
+owo.goal.swd_bergslagen_iron_and_copper,Falu Bakırı ve Bergslagen Demiri
+owo.goal.swd_bergslagen_iron_and_copper.desc,Falun'daki büyük bakır madenini ve Baltık Denizi üzerinden kereste ihracatını genişlet.
+owo.goal.swd_break_kalmar_union,Kalmar Birliği'ni Dağıt
+owo.goal.swd_break_kalmar_union.desc,İsveç'in egemenliğini savun ve Danimarka'nın Stockholm ile Baltık üzerindeki hakimiyetine karşı dur.
+owo.goal.tim_defend_samarkand,Maveraünnehir'i Koru
+owo.goal.tim_defend_samarkand.desc,Zırhlı atlı okçuları topla ve Semerkant'ı göçebe Özbek akınlarına karşı savun.
+owo.goal.tim_timurid_renaissance,Timurlu Rönesansı
+owo.goal.tim_timurid_renaissance.desc,Semerkant ve Herat'ta astronomi, sanat ve anıtsal mimariyi Timur Hanedanı altında destekle.
+owo.goal.vij_monuments_of_hampi,Hampi'nin İhtişamı
+owo.goal.vij_monuments_of_hampi.desc,Görkemli tapınak kuleleri inşa et, pazarları genişlet ve Hint Okyanusu ticaretine hükmet.
+owo.goal.vij_raichur_bastion,Raichur Doabını Tahkim Et
+owo.goal.vij_raichur_bastion.desc,Tungabhadra nehir boyundaki kaleleri güçlendirerek Behmani akınlarını püskürt.
+owo.goal.vij_virupaksha_temple_aqueducts,Hampi Virupaksha Su Kemerleri
+owo.goal.vij_virupaksha_temple_aqueducts.desc,Vijayanagara başkentinde anıtsal granit su kanalları, basamaklı havuzlar ve tapınak avluları inşa et.
+owo.goal.vnc_defend_stato_da_mar,Stato da Màr'ı Koru
+owo.goal.vnc_defend_stato_da_mar.desc,Osmanlı deniz genişlemesine karşı Venedik ada karakollarını ve deniz yollarını savun.
+owo.goal.vnc_queen_of_the_adriatic,Adriyatik'in Kraliçesi
+owo.goal.vnc_queen_of_the_adriatic.desc,Doğu Akdeniz'deki rakipsiz deniz ticaretiyle cumhuriyeti zenginleştir.
+owo.task.azt_flower_wars_tribute.army,30.000 jaguar ve kartal savaşçısı topla
+owo.task.azt_tenochtitlan_chinampas.treasury,İmparatorluk hazinesinde 800 florinlik haraç topla
+owo.task.basic_fill_the_treasury.treasury,Hazinede 500 fl. biriktir
+owo.task.basic_first_alliance.relations,Başka bir diyarla iyi ilişkiler kur
+owo.task.bur_grand_dukes_of_the_west.treasury,Dükalık hazinesinde 1.200 florin biriktir
+owo.task.bur_lotharingian_crown.army,25.000 zırhlı süvari ve arbaletçi topla
+owo.task.byz_defend_constantinople.allies,Macaristan ile ittifak kur
+owo.task.byz_defend_constantinople.army,10.000 imparatorluk muhafızı topla
+owo.task.byz_restore_morea.treasury,Hazinede 500 fl. imparatorluk rezervi tut
+owo.task.cas_reconquista.war,Gırnata'ya savaş ilan et
+owo.task.cas_union_with_aragon.alliance,Aragon Tacı ile ittifak kur
+owo.task.cas_western_seas.fleet,10 gemilik bir deniz keşif filosu inşa et
+owo.task.cas_western_seas.treasury,Keşifleri hazinedeki 1.000 fl. ile finanse et
+owo.task.dan_kalmar_hegemony.army,20.000 kraliyet askeri topla
+owo.task.dan_kalmar_hegemony.sweden,İsveç muhalefetini dize getir
+owo.task.dan_sound_tolls.fleet,12 savaş gemisinden oluşan donanma hazırla
+owo.task.dan_sound_tolls.treasury,Boğaz vergisinden 800 fl. biriktir
+owo.task.eng_fortress_calais.fleet,10 savaş gemisinden oluşan bir filo topla
+owo.task.eng_fortress_calais.treasury,Maliyede 600 fl. bulundur
+owo.task.eng_royal_solvency.treasury,Kraliyet hazinesinde 1.200 fl. biriktir
+owo.task.eng_scottish_border.scotland,Diplomasi yoluyla İskoçya'yı yatıştır
+owo.task.flr_cathedral_dome_of_florence.treasury,Opera del Duomo vakfına 1.500 florin yatır
+owo.task.fra_compagnies_ordonnance.standing_army,15.000 profesyonel asker topla
+owo.task.fra_compagnies_ordonnance.treasury,Kraliyet hazinesinde 600 fl. bulundur
+owo.task.fra_contain_burgundy.scotland,İskoçya ile Eski İttifak'ı yenile
+owo.task.fra_end_hundred_years_war.army,15.000 asker topla
+owo.task.fra_end_hundred_years_war.war,İngiltere'ye savaş ilan et
+owo.task.hab_dynastic_marriage.army,20.000 kişilik ordu topla
+owo.task.hab_dynastic_marriage.relations,Macaristan ile iyi ilişkiler geliştir
+owo.task.hab_imperial_diadem.allies,Bohemya ile ittifak sağla
+owo.task.hab_imperial_diadem.treasury,Viyana hazinesinde 1.000 fl. biriktir
+owo.task.hun_bastion_of_christendom.allies,Orta Avrupa krallıklarıyla ittifak ara
+owo.task.hun_bastion_of_christendom.army,25.000 kişilik sınır savunma ordusu topla
+owo.task.hun_corvinus_hegemony.treasury,Kraliyet kasasında 700 fl. tut
+owo.task.inc_qhapaq_nan.treasury,Devlet ambarlarında 700 fl. değerinde rezerv depola
 owo.task.inc_royal_estate_machu_picchu.treasury,Güneş tapınağı hazinesinde 900 florin biriktir
+owo.task.inc_tawantinsuyu_expansion.army,25.000 And savaşçısı topla
+owo.task.jos_hangul_enlightenment.relations,Ming Hanedanı ile uyumlu ilişkileri koru
+owo.task.jos_hangul_enlightenment.treasury,Kraliyet hazinesinde 600 fl. tut
+owo.task.jos_northern_frontier.army,20.000 sınır muhafızı topla
+owo.task.maj_oath_of_palapa.fleet,15.000 deniz savaşçısı ve kadırga mürettebatı hazırla
+owo.task.maj_trowulan_sanctuary.treasury,İmparatorluk hazinesinde 700 florin biriktir
+owo.task.mam_custodian_holy_sanctuaries.treasury,Kahire kalesi hazinesinde 1.000 fl. tut
+owo.task.mam_syrian_bulwark.army,30.000 Memlük savaşçısı topla
+owo.task.mvy_gather_russian_lands.army,15.000 asker topla
+owo.task.mvy_gather_russian_lands.novgorod,Novgorod Cumhuriyeti'ne savaş ilan et
+owo.task.mvy_stand_against_the_horde.army,25.000 kişilik bir ordu kur
+owo.task.mvy_stand_against_the_horde.treasury,Hazinede 800 fl. biriktir
+owo.task.myn_grand_canal.treasury,Büyük Kanal restorasyonuna 2.000 fl. yatırım yap
+owo.task.myn_grand_canal_dredging.treasury,İmparatorluk ambarı hazinesinde 2.500 florin biriktir
+owo.task.myn_rebuild_great_wall.frontier_army,Kuzey serhatlerini 30.000 askerle garnizonla
+owo.task.myn_rebuild_great_wall.treasury,Sınır savunmalarına 2.500 fl. tahsis et
+owo.task.myn_tumu_crisis_recovery.army,50.000 imparatorluk askerini seferber et
+owo.task.myn_tumu_crisis_recovery.treasury,İmparatorluk hazinesinde 1.000 fl. bulundur
+owo.task.ott_anatolian_unity.candar,Candaroğulları ile iyi ilişkiler kur
+owo.task.ott_anatolian_unity.karaman,Karamanoğulları'na savaş ilan et
+owo.task.ott_danubian_frontier.army,25.000 asker topla
+owo.task.ott_danubian_frontier.treasury,Hazinede 800 fl. bulundur
+owo.task.ott_heir_of_rome.army,20.000 asker topla
+owo.task.ott_heir_of_rome.war,Bizans İmparatorluğu'na savaş ilan et
+owo.task.pap_renaissance_rome_restoration.treasury,Papalık bayındırlık işleri için 1.000 florin tahsis et
+owo.task.pol_personal_union.alliance,Litvanya ile ittifak kur
+owo.task.pol_personal_union.relations,Vilnius ile ilişkileri geliştir
+owo.task.pol_thirteen_years_war.army,20.000 kraliyet askeri topla
+owo.task.pol_thirteen_years_war.war,Töton Tarikatı'na savaş ilan et
+owo.task.prt_chart_african_coast.caravels,8 gemilik bir karavela filosu topla
+owo.task.prt_chart_african_coast.navigation_tech,2 doktrin kademesi araştırarak seyrüsefer bilgisini geliştir
+owo.task.prt_spice_monopoly.fleet,15 gemilik bir ticaret filosu topla
+owo.task.prt_spice_monopoly.treasury,Ticari rezervlerde 2.000 fl. biriktir
+owo.task.sct_auld_alliance_bastion.army,Sınırlarda 15.000 İskoç kargıcısı konuşlandır
+owo.task.sct_auld_alliance_bastion.relations,Fransa Krallığı ile sıcak ilişkileri (+60) koru
+owo.task.sct_st_andrews_scholars.treasury,Kraliyet hazinesinde 500 florin tut
+owo.task.son_niger_river_imperium.army,25.000 savaşçıdan oluşan bir imparatorluk ordusu topla
+owo.task.son_sankore_learning.treasury,Altın kervanlarından elde edilen 800 florini hazinede biriktir
+owo.task.swd_bergslagen_iron_and_copper.treasury,Kraliyet hazinesinde 600 florin biriktir
+owo.task.swd_break_kalmar_union.army,15.000 İsveçli milis ve köylü savaşçı seferber et
+owo.task.tim_defend_samarkand.army,30.000 kişilik imparatorluk ordusu topla
+owo.task.tim_timurid_renaissance.treasury,İmparatorluk hazinesinde 1.000 fl. muhafaza et
+owo.task.vij_monuments_of_hampi.treasury,Kraliyet hazinesinde 1.500 fl. biriktir
+owo.task.vij_raichur_bastion.army,35.000 savaşçı topla
+owo.task.vij_raichur_bastion.bahmani,Behmani Sultanlığı'nı sınırla
+owo.task.vij_virupaksha_temple_aqueducts.treasury,Kraliyet tapınak hazinesinde 1.200 florin biriktir
+owo.task.vnc_defend_stato_da_mar.fleet,Güçlü bir donanma kur
+owo.task.vnc_queen_of_the_adriatic.trade,İkili ticaret antlaşmaları yap
+owo.task.vnc_queen_of_the_adriatic.treasury,Dükalık hazinesinde 1.200 fl. biriktir
+politics.law.civil_liberties.predictive_policing,Subaşılık ve Asesbaşı Devriyesi
+politics.law.civil_liberties.predictive_policing.desc,Gece sokağa çıkma yasaklarını uygulayan ve asayişi sağlayan subaşı ve ases devriyeleri.
+politics.law.civil_liberties.surveillance_state,Divan Hafiyeleri ve Kadı Murakabesi
+politics.law.civil_liberties.surveillance_state.desc,İsyan ve fitneyi ortaya çıkarmak için çalışan saray hafiyeleri ve gizli teftiş ağı.
+politics.law.conscription.cyber_reserve_corps,Hassa Muhafızları ve Kapıkulu
+politics.law.conscription.cyber_reserve_corps.desc,Doğrudan hükümdarın şahsına bağlı, daimi profesyonel hassa şövalyeleri ve kapıkulu ocakları.
+politics.law.conscription.predictive_mobilization,Umumi Seferberlik ve Tımar Ordusu
+politics.law.conscription.predictive_mobilization.desc,Büyük tehdit anında hükümdarın fermanıyla tüm tımarlı sipahilerin, vasalların ve şehir milislerinin seferber edilmesi.
+politics.law.immigration.digital_visa_corridors,Yabancı Tacir Balyoslukları
+politics.law.immigration.digital_visa_corridors.desc,Hansa, Venedik ve Levanten tüccarlara tanınan imtiyazlı ticaret kolonileri ve eman belgeleri.
+politics.law.immigration.points_based_system,Şehirli Beratı ve Lonca Kabulü
+politics.law.immigration.points_based_system.desc,Şehir vatandaşlığı ve ticaret hakkının yalnızca usta loncaları ve kraliyet beratı ile verilmesi.
+politics.law.labor_law.adaptive_workforce_compact,Ahilik ve Lonca Nizamnameleri
+politics.law.labor_law.adaptive_workforce_compact.desc,Çıraklık, kalfalık, ustalık standartları ve üretim nizamını düzenleyen lonca kuralları.
+politics.law.labor_law.gig_economy_compact,Irgat ve Rençber Kanunnameleri
+politics.law.labor_law.gig_economy_compact.desc,Gündelikçi rençberler ve göçer işçiler için uygulanan geleneksel ücret ve mevsimlik çalışma kuralları.
+politics.law.labor_law.reduced_workweek,Kutsal Gün ve Cuma İzni
+politics.law.labor_law.reduced_workweek.desc,Dini bayramlarda ve kutsal günlerde dünyevi angaryanın men edilmesi.
+politics.law.press_freedom.managed_pluralism,Müsamaha ve Eman Fermanları
+politics.law.press_freedom.managed_pluralism.desc,Kamu düzenini korumak adına hükümdar denetiminde sınırlı teolojik serbesti ve eman tanınması.
+politics.law.press_freedom.platform_regulation,Divan ve Kürsü Denetimi
+politics.law.press_freedom.platform_regulation.desc,Fesat ve isyanı önlemek için tellalların, risalelerin ve vaazların divan ile ulema mührüne tabi tutulması.
+politics.law.religion_state.civic_pluralism_charter,Millet Sistemi ve Zimmet Ahdi
+politics.law.religion_state.civic_pluralism_charter.desc,Gayrimüslim ve azınlık cemaatlerine kendi mahkemeleri ve ibadetleri için tanınan hukuki özerklik.
+politics.law.tax_regime.algorithmic_taxation,Tahrir Defterleri ve Cizye Tahriri
+politics.law.tax_regime.algorithmic_taxation.desc,Vergi kaçaklarını önlemek için tüm toprak, hane ve hasadın kraliyet tahrir defterlerine titizlikle kaydedilmesi.
+politics.law.welfare_state.algorithmic_welfare,Vakıf Aşevleri ve İmarethaneler
+politics.law.welfare_state.algorithmic_welfare.desc,Kıtlık ve yoksulluk zamanında halkı doyurmak için vakıf imaretleri, aşevleri ve darüşşifaların seferber edilmesi.
+ui.button.ok,TAMAM
