@@ -7,6 +7,8 @@ Use this as the root page for your wiki import.
 - [Modding Reference](./MODDING_REFERENCE.md)
 - [WASM Scripting Guide](./WASM_SCRIPTING_GUIDE.md)
 - [UI Injection Guide](./UI_INJECTION_GUIDE.md)
+- [HUD Theming Guide](./UI_THEMING_GUIDE.md)
+- [HUD Layout Guide](./UI_LAYOUT_GUIDE.md)
 - [Province Reference](./PROVINCE_REFERENCE.md)
 
 ## Examples

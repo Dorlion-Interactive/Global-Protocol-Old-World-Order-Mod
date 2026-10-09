@@ -156,6 +156,15 @@
                 },
                 "population": {
                     "type": "integer"
+                },
+                "flag": {
+                    "type": "string",
+                    "description": "Optional event flag (the name a mod event's set_flag effect writes). A country may build or upgrade this only while it holds the flag; player, AI and multiplayer peers are all refused without it. Omit for no gate (every base building)."
+                },
+                "hidden_until_flag": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "With prerequisites.flag: hide the building from the build lists until the flag is set, instead of listing it locked. The AI treats a hidden building exactly like a locked one. Ignored when no flag is set."
                 }
             }
         },

@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_scenario_victory.schema.json",
+  "title": "Mod Scenario Victories",
+  "description": "A scenario's victory file (named by victoryFile in scenario.json). It adds the scenario's own endings, extra rows for the end screen's mod record, and can turn the five base victories off. Each ending is checked once a month, in file order; the first one whose conditions all hold for one of the countries it names ends the game.",
+  "type": "object",
+  "properties": {
+    "disable_base_victories": {
+      "type": "boolean",
+      "default": false,
+      "description": "When true, the five base victories (military, economic, diplomatic, technological, nuclear) are not checked in this scenario, so only mod_victories can end the game."
+    },
+    "mod_victories": {
+      "type": "array",
+      "description": "The scenario's endings, tried in this order.",
+      "items": { "$ref": "#/definitions/ModVictory" }
+    },
+    "end_screen_rows": {
+      "type": "array",
+      "description": "Extra lines in the end screen's mod record (shown on every end screen of the game, whichever ending or victory ended it).",
+      "items": { "$ref": "#/definitions/EndScreenRow" }
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "ModVictory": {
+      "type": "object",
+      "required": ["id", "title_key"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A short name, unique in the file. The saved game remembers which ending was reached by it."
+        },
+        "title_key": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Text key of the title shown on the end screen (define it in Content/localization)."
+        },
+        "description_key": {
+          "type": "string",
+          "description": "Optional text key of a line shown under the title."
+        },
+        "outcome": {
+          "type": "string",
+          "enum": ["victory", "defeat"],
+          "default": "victory",
+          "description": "victory shows the VICTORY screen when the winner is the player; defeat shows DEFEAT even though the conditions held (a world that ended)."
+        },
+        "winner": {
+          "type": "string",
+          "default": "player",
+          "description": "Which countries are tried, in ISO3 order: 'player' (the human players), 'any' (every country), or a three-letter country code for that country only. The first whose conditions hold is the winner."
+        },
+        "min_year": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0,
+          "description": "The ending is not checked before this calendar year (0 = no limit)."
+        },
+        "conditions": {
+          "type": "array",
+          "description": "All of these must hold for the winner. An ending with no conditions holds at the first check.",
+          "items": { "$ref": "#/definitions/VictoryCondition" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "VictoryCondition": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "has_flag", "not_has_flag", "flag_age_months_gt", "flag_age_months_lt",
+            "variable_gt", "variable_lt", "variable_eq", "lifetime_gt", "lifetime_lt",
+            "date_after", "date_before"
+          ],
+          "description": "The same condition types and fields as an event's conditions (see event.schema.json), limited to the ones that make sense for an ending. They test the country being tried as the winner."
+        },
+        "flag_name": {
+          "type": "string",
+          "description": "has_flag / not_has_flag / flag_age_months_gt / flag_age_months_lt: the flag name."
+        },
+        "variable": {
+          "type": "string",
+          "description": "variable_gt / variable_lt / variable_eq: the variable name."
+        },
+        "scope": {
+          "type": "string",
+          "enum": ["country", "mod"],
+          "description": "variable_gt / variable_lt / variable_eq: 'mod' tests the scenario mod's own key/value state instead of the country's variable."
+        },
+        "counter": {
+          "type": "string",
+          "enum": ["personnel_lost", "regiments_lost", "ships_lost", "aircraft_lost", "civilians_affected", "provinces_gained", "provinces_lost", "wars_won", "wars_lost"],
+          "description": "lifetime_gt / lifetime_lt: which lifetime counter of the winner to test."
+        },
+        "value": {
+          "description": "The number to compare with, or 'YYYY-MM' for date_after / date_before."
+        }
+      },
+      "additionalProperties": true
+    },
+    "EndScreenRow": {
+      "type": "object",
+      "required": ["label_key", "value"],
+      "properties": {
+        "label_key": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Text key of the row's label (define it in Content/localization)."
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Where the number comes from: 'lifetime.<counter>' (a lifetime counter of the player's country, e.g. lifetime.ships_lost), 'mod_state.<key>' (a key of the mod's own saved state) or 'variable.<name>' (an event variable of the player's country)."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

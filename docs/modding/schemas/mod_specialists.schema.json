@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_specialists.schema.json",
+  "title": "Mod specialists",
+  "description": "Content/specialists.json: named scientists and engineers a country can employ. A country hires one for a one-off cost and pays upkeep every month while it is employed; while employed its effect lanes apply to the country. Each specialist works for one country at a time; the roster can start some of them with a country in a new game.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": ["merge", "replace"],
+      "description": "\"merge\" (default) adds these specialists to the roster other mods define (an id an earlier mod already defines keeps that definition); \"replace\" discards the roster of the mods loaded before this one."
+    },
+    "settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_assigned": { "type": "integer", "minimum": 1, "maximum": 8, "description": "How many specialists one country can employ at once (default 2)." }
+      }
+    },
+    "specialists": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/specialist" }
+    }
+  },
+  "definitions": {
+    "specialist": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9_]{1,24}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "role": { "type": "string", "enum": ["scientist", "engineer", "other"], "description": "Display only." },
+        "portrait": { "type": "string", "description": "Mod-relative path of the portrait PNG, conventionally portraits/specialists/<id>.png. Must stay inside the mod folder." },
+        "country": { "type": "string", "pattern": "^[A-Za-z]{3}$", "description": "ISO3 of the country that employs the specialist at the start of a new game. Empty = hireable by anyone." },
+        "available_from": { "type": "integer", "minimum": 0, "maximum": 3000, "description": "First year the specialist can be hired (0 = from the start)." },
+        "hire_cost": { "type": "number", "minimum": 0, "description": "One-off cost in USD, paid from the treasury." },
+        "upkeep_monthly": { "type": "number", "minimum": 0, "description": "Monthly cost in USD while employed." },
+        "requires_flag": { "type": "string", "description": "Event flag a country must hold before it can hire this specialist." },
+        "ai_weight": { "type": "number", "description": "Extra preference the AI gives this specialist when it chooses whom to hire." },
+        "effects": {
+          "type": "object",
+          "description": "While employed. Only these lanes are available to specialists.",
+          "additionalProperties": false,
+          "properties": {
+            "research_speed": { "type": "number" },
+            "construction_speed_mult": { "type": "number", "exclusiveMinimum": 0 },
+            "unit_build_speed_mult": { "type": "number", "exclusiveMinimum": 0 },
+            "production_output_mult": { "type": "number", "exclusiveMinimum": 0 }
+          }
+        }
+      }
+    }
+  }
+}

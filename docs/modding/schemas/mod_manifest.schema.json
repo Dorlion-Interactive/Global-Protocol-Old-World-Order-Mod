@@ -75,7 +75,8 @@
         "wasmAbiVersion": {
             "type": "integer",
             "minimum": 1,
-            "default": 1
+            "default": 1,
+            "description": "The script ABI the WASM module was built for (1 to 4). ABI 4 adds the world-state imports and the world.read / flags.write permissions; older imports keep working at every ABI."
         },
         "enableComponentRuntime": {
             "type": "boolean",
@@ -103,15 +104,20 @@
                     "FireTriggers",
                     "WriteFlags",
                     "InjectUI",
+                    "WriteDiplomacy",
+                    "ReadWorld",
                     "read_economy",
                     "write_treasury",
                     "fire_triggers",
                     "write_flags",
-                    "inject_ui"
+                    "inject_ui",
+                    "write_diplomacy",
+                    "world.read",
+                    "flags.write"
                 ]
             },
             "uniqueItems": true,
-            "description": "Requested mod permissions"
+            "description": "Requested mod permissions. world.read (ReadWorld) lets a script read countries, wars, alliances, provinces, flags and variables; flags.write (WriteFlags / write_flags) lets it change flags and variables. Both need wasmAbiVersion 4 for WASM scripts."
         },
         "author": {
             "type": "string",

@@ -1,0 +1,172 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "mod_scenario_diplomacy.schema.json",
+    "title": "Mod Scenario - Starting Diplomacy",
+    "description": "Fragment file (scenario/diplomacy.json, or the same startingDiplomacy object inline in scenario.json): the diplomacy a scenario starts with. Alliance organisations with their members, bilateral alliances, treaties, wars that are already running, and relation values. Written once when a new game starts; a loaded save keeps what it has.",
+    "type": "object",
+    "properties": {
+        "startingDiplomacy": {
+            "type": "object",
+            "description": "Day-one diplomacy. Every list is optional; lists from several files are appended in file order.",
+            "properties": {
+                "organizations": {
+                    "type": "array",
+                    "description": "Named alliance organisations (a Warsaw Pact, a league, a trade union). A member holds the organisation's key as an alliance, so a collective-defence organisation answers an attack on one member with a call to arms on all. Using the id of a built-in organisation such as NATO adds members to it.",
+                    "items": {
+                        "type": "object",
+                        "required": ["id"],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[A-Z0-9_]{4,24}$",
+                                "description": "Stable id: 4 to 24 upper-case letters, digits or underscores, never starting with IDX (for example WARSAW_PACT)."
+                            },
+                            "nameKey": {
+                                "type": "string",
+                                "maxLength": 60,
+                                "description": "Localization key of the organisation's display name, shipped in the mod's own text. Blank uses org.<id>.name when the mod has it, otherwise the id."
+                            },
+                            "type": {
+                                "type": "string",
+                                "enum": ["CollectiveDefense", "Economic", "Political", "InternationalOrg"],
+                                "default": "CollectiveDefense",
+                                "description": "CollectiveDefense is a mutual-defence pact; the others are plain memberships."
+                            },
+                            "founder": {
+                                "type": "string",
+                                "pattern": "^[A-Z]{3}$",
+                                "description": "ISO3 of the founding country. The founder is a member."
+                            },
+                            "members": {
+                                "type": "array",
+                                "items": { "type": "string", "pattern": "^[A-Z]{3}$" },
+                                "description": "ISO3 codes of the member countries."
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "alliances": {
+                    "type": "array",
+                    "description": "Bilateral alliances in force on day one.",
+                    "items": {
+                        "type": "object",
+                        "required": ["a", "b"],
+                        "properties": {
+                            "a": { "type": "string", "pattern": "^[A-Z]{3}$", "description": "ISO3 of the first country." },
+                            "b": { "type": "string", "pattern": "^[A-Z]{3}$", "description": "ISO3 of the second country." },
+                            "type": {
+                                "type": "string",
+                                "enum": ["Military", "DefensePact"],
+                                "default": "Military",
+                                "description": "Military can be called into an offensive war; DefensePact only defends."
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "treaties": {
+                    "type": "array",
+                    "description": "Bilateral treaties in force on day one.",
+                    "items": {
+                        "type": "object",
+                        "required": ["type", "a", "b"],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": ["nap", "truce", "trade_agreement", "guarantee"],
+                                "description": "nap: non-aggression pact. truce: no war between the two until it runs out (needs months). trade_agreement: the default trade terms. guarantee: a guarantees b's independence."
+                            },
+                            "a": { "type": "string", "pattern": "^[A-Z]{3}$", "description": "ISO3 of the first country (the guarantor for a guarantee)." },
+                            "b": { "type": "string", "pattern": "^[A-Z]{3}$", "description": "ISO3 of the second country." },
+                            "months": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 1200,
+                                "description": "Length in 30-day months. Required for a truce; a guarantee uses the diplomacy setting's length when this is 0."
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "wars": {
+                    "type": "array",
+                    "description": "Wars that are already running when the game starts, with exactly these sides (the first country of each side opens the war and the others join it). Armies placed by the scenario fight from tick 0.",
+                    "items": {
+                        "type": "object",
+                        "required": ["attackers", "defenders"],
+                        "properties": {
+                            "id": { "type": "string", "description": "A name for the war, used in the load log." },
+                            "attackers": {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": { "type": "string", "pattern": "^[A-Z]{3}$" },
+                                "description": "ISO3 codes of the attacking side. The first one declares the war."
+                            },
+                            "defenders": {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": { "type": "string", "pattern": "^[A-Z]{3}$" },
+                                "description": "ISO3 codes of the defending side."
+                            },
+                            "casusBelli": {
+                                "type": "string",
+                                "enum": ["Scripted", "Territorial", "Ideological", "Humiliation", "Defense", "Liberation", "Reconquest"],
+                                "default": "Scripted",
+                                "description": "The war's casus belli. Starting wars carry no aggression penalty whichever is chosen."
+                            },
+                            "callAllies": {
+                                "type": "boolean",
+                                "default": false,
+                                "description": "Off: the war has exactly the listed sides. On: each side's allies are called to arms as in any war."
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "relations": {
+                    "type": "array",
+                    "description": "Relation values between two countries on day one.",
+                    "items": {
+                        "type": "object",
+                        "required": ["a", "b"],
+                        "properties": {
+                            "a": { "type": "string", "pattern": "^[A-Z]{3}$", "description": "ISO3 of the country whose view is set." },
+                            "b": { "type": "string", "pattern": "^[A-Z]{3}$", "description": "ISO3 of the other country." },
+                            "opinion": {
+                                "type": "integer",
+                                "minimum": -100,
+                                "maximum": 100,
+                                "description": "How much a likes b, from -100 to 100."
+                            },
+                            "trust": {
+                                "type": "integer",
+                                "minimum": -100,
+                                "maximum": 100,
+                                "description": "How much a trusts b to keep its word, from -100 to 100."
+                            },
+                            "mutual": {
+                                "type": "boolean",
+                                "default": false,
+                                "description": "Set b's view of a to the same values."
+                            },
+                            "anchor": {
+                                "type": "boolean",
+                                "default": false,
+                                "description": "Make the values the level relations drift back to, so they do not fade towards the regional baseline."
+                            },
+                            "rival": {
+                                "type": "boolean",
+                                "default": false,
+                                "description": "Make a and b rivals (both ways when mutual is set)."
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}

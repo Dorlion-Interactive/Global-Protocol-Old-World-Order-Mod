@@ -13,6 +13,12 @@
       "maxItems": 16,
       "items": { "$ref": "#/definitions/category" }
     },
+    "disabled_options": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "Mod override files only (overrides/laws.json). Law options this mod switches off, written as \"category.option\" (both ids from laws.json) or as a bare option id when only one category has it. A disabled option keeps its index (saves and the law commands store raw indices) but is hidden in the Laws tab, skipped by the AI, refused by the law commands on every peer, and an active one reverts to its category's default when a game loads. Lists from several mods are combined. Entries are ignored (with a warning) when they name nothing, are ambiguous, are the default option of a government type, or would leave a category with no enabled option.",
+      "items": { "type": "string", "minLength": 2, "maxLength": 65 }
+    },
     "country_overrides": {
       "type": "object",
       "description": "Curated starting-law overrides keyed by ISO 3166-1 alpha-3 code. Each entry maps category id → option id (partial; unlisted categories fall back to ideology-derived seeding). Highest seed priority: override > ideology-derived > gov-type default. CURATION PRINCIPLE: entries encode LEGAL frameworks (constitutional/statutory reality — conscription statutes, state-religion clauses, press-control regimes, Gulf guest-worker systems), never electorate mood: the voter blocs express that. HAND-CURATED — safe to edit directly.",
@@ -189,6 +195,10 @@
         "stability_delta_monthly": {
           "type": "number", "minimum": -1, "maximum": 1,
           "description": "Stability effect of this option. While political_drift.stability_target_convergence_rate > 0 (the stability target model), it raises the country's stability target by stability_target_policy_weight × value; the combined law + doctrine total is capped at ±stability_target_policy_cap. Otherwise it is added to stability every month (StabilityLawDelta ledger channel)."
+        },
+        "corruption_target_delta": {
+          "type": "number", "minimum": -10, "maximum": 10,
+          "description": "Corruption-target points while this option is active (negative = cleaner). While political_drift.corruption_target_convergence_rate > 0 (the corruption model), corruption drifts toward a target that includes corruption_target_law_weight × the combined total of the active laws. No effect otherwise."
         }
       }
     }

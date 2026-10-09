@@ -1,6 +1,6 @@
 # NewWorldOrder – Modding Reference
 
-Last updated: 2026-09-28
+Last updated: 2026-10-08
 
 This document is the authoritative reference for mod authors. It covers folder layout, the manifest, all data override types, scenario split files, permissions, and enum values.
 
@@ -31,9 +31,11 @@ This document is the authoritative reference for mod authors. It covers folder l
   scenario/                  ← optional split scenario folder
     scenario.json            ← required header (must contain scenarioId)
     national_goals.json      ← optional, named by nationalGoalsFile (§8.6)
+    victories.json           ← optional, named by victoryFile (§8.12)
     countries_add.json
     countries_remove.json
     countries_state.json
+    diplomacy.json           ← optional: day-one alliances, treaties, wars, relations (§3.4)
     provinces_ownership.json
     units_define.json
     units_deploy_armies.json
@@ -97,6 +99,17 @@ report. Only the files the upload would contain are checked. The checks:
   languages but not in others (§8.3), and the EVENTS tab's checks (§8.7).
 - **Packaging.** Folders with their own `mod.json`, and a note of what the upload leaves out.
 
+**The game runs a lighter version of the check whenever a mod loads.** Every active mod is validated
+at load and what is found lands in the same places as other load problems. Errors are listed in the
+Loadout screen's error bar and the mod's error badge, and in the Mod Builder's Reload & Test; warnings
+are listed in Reload & Test only (marked `(warning)`) and never mark the mod as failing. To keep
+startup fast the load-time run reads only the JSON under `Content/`, `overrides/` and the scenario
+folder, skips files over 512 KB, does not walk the rest of the folder or scan localization, and leaves
+out what the load already reports itself (events, the WASM ABI and managed SDK, `gameVersion`,
+dependencies, the roster composition and the unapplied `game_settings` sections). The whole pass has a
+250 ms budget: if it runs out, one line in the Mods panel names how many mods were not checked.
+Without an enabled mod nothing is read at all. Use VALIDATE in the Mod Builder for the full report.
+
 **PUBLISH runs the same check first.** Any error stops the upload before Steam is contacted (no
 Workshop item is created), and the report opens. Warnings stop it once: press the button again to
 publish with exactly those warnings; a warning that was not there the first time asks again.
@@ -127,12 +140,12 @@ publish with exactly those warnings; a warning that was not there the first time
 | `defaultScenarioFile` | string | | Relative path to a single `scenario.json` |
 | `scenarioFolder` | string | | Relative path to a folder containing split scenario files. **Takes precedence over `defaultScenarioFile`.** |
 | `entrypoints` | object | | Explicit runtime entrypoints such as `entrypoints.wasm` and `entrypoints.ui` |
-| `wasmAbiVersion` | int | | WASM ABI version required (default: 1) |
+| `wasmAbiVersion` | int | | WASM ABI version the script was built for, 1 to 4 (default: 1). ABI 4 adds the world-state imports (see the [WASM guide](./WASM_SCRIPTING_GUIDE.md) §4.2); every older import keeps working at every version |
 | `runtimePolicy` | string | | Runtime coexistence policy: `"coexist"` (default), `"wasm_only"`, `"csharp_only"` |
 | `enableComponentRuntime` | bool | | Allow component-model WASM binaries for this mod |
 | `permissions` | string[] | | Required permissions (see §7) |
 
-`entrypoints.wasm` is the preferred way to declare the mod's WASM module. `entrypoints.ui` is the preferred way to declare `inject.json`. Legacy fallback paths are still accepted for compatibility when the manifest entrypoint is omitted or unresolved.
+`entrypoints.wasm` is the preferred way to declare the mod's WASM module. `entrypoints.ui` is the preferred way to declare `inject.json` (the Mod Builder's INTERFACE tab edits it and writes the entrypoint for you; see [UI_INJECTION_GUIDE.md](UI_INJECTION_GUIDE.md)). Legacy fallback paths are still accepted for compatibility when the manifest entrypoint is omitted or unresolved.
 
 **Auto-detection:** If neither `defaultScenarioFile` nor `scenarioFolder` is set but a `scenario/` subfolder containing `scenario.json` exists, it is loaded automatically.
 
@@ -239,6 +252,7 @@ Point `scenarioFolder` at a directory. The loader reads `scenario.json` first (m
 | `countries_add.json` | New countries to spawn |
 | `countries_remove.json` | Countries to remove |
 | `countries_state.json` | Economic/political state overrides |
+| `diplomacy.json` | Day-one organizations, alliances, treaties, wars and relation values (§3.4) |
 | `provinces_ownership.json` | Province and region reassignments |
 | `units_define.json` | Custom unit type definitions |
 | `units_deploy_air.json` | Air wing placements |
@@ -262,6 +276,7 @@ Each file is optional; missing files are skipped. Lists from all files are **app
 | `clearDiplomacyScope` | string | `"extended"` | `"core"` or `"extended"` |
 | `rebuildNeutralRelations` | bool | true | Re-seed neutral opinion after clearing |
 | `nationalGoalsFile` | string | `""` | National goals file, relative to the scenario folder (§8.6). It **replaces** the base game's goals for the Agenda panel and the AI. |
+| `victoryFile` | string | `""` | Victory file, relative to the scenario folder (§8.12): the scenario's own endings, extra end-screen rows, and the switch that turns the base victories off. |
 | `gdpScale` | float | 1.0 | Multiplies every country's GDP, GDP per capita, exports, imports, foreign reserves, treasury and opening monthly budgets (revenue, expenses, defense, research) once, when a new game starts. Tutorial treasury rewards are paid times this scale too, capped at `economy.max_single_event_treasury_gdp_fraction` of the player's GDP (5%, the cap event treasury effects get). `countryStateOverrides` values are absolute and are applied after it; a country whose `gdp` is overridden has its opening monthly budgets and its trade (exports, imports and the tariff and commercial-hub revenue they bring) re-based on that GDP. |
 | `unownedProvincePopulationScale` | float | 1.0 | Multiplies the population of every province still unowned after `removeCountries` and the ownership overrides, once, when a new game starts. Provinces are baked with 2026 headcounts, which unowned land brings back when it is colonised; a historical scenario sets this to roughly its declared world population divided by the 2026 population of the provinces its countries own. A scaled province keeps at least 100 people (or its own population, if smaller). Owned provinces follow each country's declared `population` instead (§4.1). |
 | `economicEraLabel` | string | `""` | Economy era key for init system |
@@ -277,11 +292,125 @@ Each file is optional; missing files are skipped. Lists from all files are **app
 | `disabledBuildingCategories` | string[] | `[]` | `Economic`, `Military`, `Infrastructure`, `Research`, `Social`, `Defense`, `Intelligence` — removed from every build menu, starting seeding, the AI and the build command. |
 | `disabledBuildingIds` | string[] | `[]` | Specific building ids, same effect. To drop most of the base roster, use `"mode": "replace"` (§8.1) instead. |
 | `disabledDoctrineBranches` | string[] | `[]` | Knowledge Network branches hidden from research: `military`, `government`, `economy`, `industry`, `diplomacy`, `intelligence`, `cyber`, `space`, `energy`, `society`. Their tier gates never open, so everything gated behind them stays locked. |
+| `worldCeasefire` | object | — | A world ceasefire the scenario starts with (§3.5): `startDate`, `endDate`, `untilFlag`, `countries`, `blockDeclarations`, `suspendWars`. Absent = no ceasefire. |
 
 Override file paths that do not resolve, and files that do not parse, are listed in the Mods panel
 (and the Mod Builder's Reload & Test) instead of being skipped silently.
 
+### 3.4 Starting diplomacy (`startingDiplomacy` / `diplomacy.json`)
+
+A scenario can start with the diplomacy it needs: a Warsaw Pact that answers an attack on one member,
+a defence pact, a non-aggression treaty, a war that is already running, hostile or friendly relations.
+Put the block in `scenario/diplomacy.json`, or inline in `scenario.json`; lists from several files are
+appended. It is written **once, when a new game starts**: a loaded save keeps the diplomacy it has. A scenario
+without the block starts exactly as before. The Mod Builder's Diplomacy tab edits the file.
+
+```json
+{ "startingDiplomacy": {
+  "organizations": [
+    { "id": "WARSAW_PACT", "nameKey": "org.warsaw_pact.name", "type": "CollectiveDefense",
+      "founder": "SOV", "members": ["SOV", "POL", "CZE"] }
+  ],
+  "alliances": [ { "a": "USA", "b": "GBR", "type": "Military" } ],
+  "treaties": [
+    { "type": "nap",   "a": "DEU", "b": "SOV" },
+    { "type": "truce", "a": "ITA", "b": "ESP", "months": 24 }
+  ],
+  "wars": [
+    { "id": "korea", "attackers": ["PRK", "CHN"], "defenders": ["KOR", "USA"],
+      "casusBelli": "Territorial", "callAllies": false }
+  ],
+  "relations": [
+    { "a": "USA", "b": "SOV", "opinion": -60, "trust": -40, "mutual": true, "anchor": true, "rival": true }
+  ]
+} }
+```
+
+Every country is an ISO3 code of a country the scenario has (a real one the scenario keeps, or one in
+`addCountries`). An unknown country skips that entry with a warning in `Player.log`; Validate Mod reports it.
+
+- **`organizations`.** A named alliance organization. `id` is 4 to 24 upper-case letters, digits or underscores,
+  never starting with `IDX` (it is the organization's identity in saves and multiplayer). `nameKey` is the
+  localization key of its display name, shipped in the mod's own text; blank uses `org.<id lower-case>.name` when
+  the mod has it, then the id. `type` is `CollectiveDefense` (default: a mutual-defence pact, so an attack on one
+  member is answered by all, and a member that attacks another is expelled), `Economic`, `Political` or
+  `InternationalOrg` (plain memberships). The `founder` is a member; `members` lists the rest. Members of a
+  `CollectiveDefense` organization count as allies of each other; an organization gives no shared map vision or
+  transit (that needs a bilateral alliance). The id of a built-in organization, such as `NATO`, adds your members
+  to it. Mod organizations do not count towards the prestige of the built-in G7, G20 and UN memberships.
+- **`alliances`.** A bilateral alliance, `Military` (default; can be called into an offensive war) or `DefensePact`
+  (defends only). Both sides hold it from day one and the AI does not drop it on its own, like the built-in
+  pacts; a player can still break it.
+- **`treaties`.** `nap` (non-aggression pact), `truce` (needs `months`, in 30-day months) or `trade_agreement`
+  (the default trade terms), between `a` and `b`; or `guarantee`, where `a` guarantees `b`'s independence
+  (`months` = how long, 0 = the diplomacy setting's length).
+- **`wars`.** A war running from tick 0, with **exactly** the listed sides unless `callAllies` is true. The first
+  attacker opens the war on the first defender through the normal war declaration; the others join their side.
+  A starting war carries no aggression penalty (no aggressive-expansion gain, no goodwill drop with third
+  countries, no embargo), whichever `casusBelli` it has: `Scripted` (default), `Territorial`, `Ideological`,
+  `Humiliation`, `Defense`, `Liberation` or `Reconquest`. A truce between the two lead countries is ended by the
+  war, and a country that is allied to someone on the other side stays out of it (a warning). The scenario's
+  starting armies fight from the first day. The war is created a few frames after the scenario applies, before
+  the first game tick.
+- **`relations`.** Sets how much `a` likes (`opinion`, -100 to 100) and trusts (`trust`) `b`. `mutual` sets
+  `b`'s view of `a` too. `anchor` also makes the values the level relations drift back to, so they do not fade
+  towards the regional baseline. `rival` makes the two countries rivals (both ways when `mutual` is set).
+
+Multiplayer: the block is part of the scenario every player loads, and everything it writes is saved and
+hashed like any other diplomacy, so players stay in step.
+
 ---
+
+### 3.5 World ceasefire (`worldCeasefire`)
+
+A ceasefire that silences the wars between the countries it covers, from the first day or from a date you
+choose. It is a header field of `scenario.json`, so it also appears in the Scenario tab of the Mod Builder.
+Events and scripts can start and end one too (§8.7, §7).
+
+```json
+{
+  "worldCeasefire": {
+    "startDate": "1914-09-01",
+    "endDate": "1915-01-01",
+    "untilFlag": "armistice_broken",
+    "countries": ["FRA", "DEU", "GBR"],
+    "blockDeclarations": true,
+    "suspendWars": true
+  }
+}
+```
+
+| Field | Default | Description |
+|---|---|---|
+| `startDate` | the scenario's first day | `YYYY-MM-DD`, with the game's 30-day months. A date in the future arms the ceasefire: it begins that day. |
+| `endDate` | none | `YYYY-MM-DD`. The ceasefire ends on this day. |
+| `untilFlag` | none | The ceasefire also ends the moment any country holds the event flag with this name (set by a `set_flag` effect). |
+| `countries` | every country | ISO3 codes. A pair of countries is covered only when **both** are listed. |
+| `blockDeclarations` | `true` | A declaration of war between covered countries is refused, for the player, the AI, the call to arms and the coalition wars alike. A `declare_war` effect with `"force": true` still goes through, and that one war stays live while the ceasefire holds. |
+| `suspendWars` | `true` | The wars running between covered countries are suspended. |
+
+With neither `endDate` nor `untilFlag` the ceasefire lasts until an `end_world_ceasefire` effect (or a
+script) ends it; Validate Mod warns when nothing in the mod can.
+
+What **suspended** means. The war, its participants, its occupations and its peace terms all stay, and a
+peace deal can still be signed. But for each suspended pair:
+
+- no new battle starts and a battle in progress stops (the armies stand down where they are);
+- sieges and occupations **freeze**: no progress, no recovery, nothing cleared (an owner cannot reclaim a
+  province, a besieger loses nothing);
+- war score and war exhaustion stop moving, and the occupation costs stop accumulating;
+- air strikes, close air support, ground fire and air interception between them stop, a blockade is lifted
+  (and raised again afterwards), and nuclear and conventional missile strikes against the other side are
+  refused;
+- armies cannot enter the other side's land (an order that needs it is refused or paused);
+- nobody can declare war on the other, or join a war against it (the call to arms and coalition joins are
+  refused too).
+
+The scenario's own `startingDiplomacy.wars` (§3.4) are declared first and then suspended, so a scenario
+can open mid-war with the guns silent. The HUD shows a "World ceasefire" pill on the Diplomacy panel's
+conflict line (with the end date when there is one) and a "Suspended" tag on the war rows, and toasts when
+it starts and ends. The ceasefire is saved and hashed with the game, so saving, loading and multiplayer
+resyncs keep it.
 
 ## 4. Country Overrides
 
@@ -291,11 +420,11 @@ Each entry maps to `ScenarioCountryDefinition`. Required field: `iso3`.
 
 | Field | Type | Description |
 |---|---|---|
-| `iso3` | string | ISO3 code of the new country (uppercase, 3 chars) |
+| `iso3` | string | ISO3 code of the new country (uppercase, 3 chars). Use a code no real country has: one that belongs to a real country the scenario removes or does not play gives the new country that country's 2026 population pyramid and demographic rates (there is no `useSeedRow` switch), and the game logs a load warning (Mod Builder's Reload & Test list; Validate Mod warns for a removed base country). A base-game country that stays is a re-skin (below). |
 | `templateISO3` | string | Existing country to copy from: economy, military, AI personality, political starting state and every field the entry leaves out. There is no fully custom country: when omitted, the country with the alphabetically first ISO3 (`ABW`, Aruba, in the base game) is used and a warning is logged; its identity fields (below) are not copied. Ignored for a re-skin (below). |
 | `name` | string | Display name |
 | `mapColor` | string | Hex color `#RRGGBB` |
-| `flagPngPath` | string | A 128×80 flag PNG. A relative path is looked up in the mod folder (the one holding `mod.json`) first, then in the scenario folder (the split scenario folder, or the folder of a single-file scenario); an absolute path is used as is. The game and the Mod Builder preview use the same rule. A path that matches no file is listed in the Mods panel, and the country shows the base game's flag for its ISO3 (a re-skin) or an empty flag frame (a new ISO3). A changed flag shows when the scenario is loaded again (a new game, or the Mod Builder's Reload & Test). |
+| `flagPngPath` | string | A 128×80 flag PNG. A relative path is looked up in the mod folder (the one holding `mod.json`) first, then in the scenario folder (the split scenario folder, or the folder of a single-file scenario); the path must be mod-relative: an absolute path, or one whose `..` leaves the mod folder, is refused (Validate Mod reports an error and the flag does not load). The game and the Mod Builder preview use the same rule. A path that matches no file is listed in the Mods panel, and the country shows the base game's flag for its ISO3 (a re-skin) or an empty flag frame (a new ISO3). A changed flag shows when the scenario is loaded again (a new game, or the Mod Builder's Reload & Test). |
 | `capital` | string | Capital city display name |
 | `capitalProvince` | string | Province name or numeric ID string |
 | `population` | int | Total population, spread over the country's provinces (see **Population** below) |
@@ -308,6 +437,10 @@ Each entry maps to `ScenarioCountryDefinition`. Required field: `iso3`.
 | `seaNeighbors` | string[] | Sea-adjacent ISO3 codes |
 | `leaderTitle` | string | Override leader title (e.g. `"Chancellor"`) |
 | `leaderName` | string | Override leader name |
+| `leaderGender` | string | `"male"` or `"female"`: the starting leader's gender, which picks a gender-matched portrait. Omitted: the first `leaderNamePool` entry decides (if it has a gender), else the template's. |
+| `leaderPortraitPath` | string | Mod-relative PNG or JPG shown for the **starting** leader instead of the question-mark placeholder. Must stay inside the mod folder (see **Leader identity** below). |
+| `leaderNamePool` | object[] | Names later leaders are drawn from, instead of the regional pool. Each `{ "name": "...", "title": "...", "gender": "male" }` (`title` and `gender` optional). See **Leader identity** below. |
+| `lockLeaderTitle` | bool | `true` keeps `leaderTitle` on every leader drawn from `leaderNamePool`, whatever the government becomes. |
 | `homelandTerm` | string | Override homeland noun (e.g. `"Federation"`) |
 | `continent` | string | See §9.3 |
 | `region` | string | See §9.4 |
@@ -316,6 +449,34 @@ Each entry maps to `ScenarioCountryDefinition`. Required field: `iso3`.
 | `dominantEthnicity` | string | Largest ethnic group, e.g. `"Turkish"` (max 29 bytes). Drives kinship (below). |
 | `primaryCulture` | string | Culture shown on the country overview, e.g. `"Ottoman"` (max 29 bytes) |
 | `ethnicHomogeneity` | number | 0 (very diverse) to 1 (homogeneous); shown on the country overview when a culture or ethnicity is set |
+
+**Leader identity.** A new country used to keep its template's leader (a human name on an alien
+nation) until its first change of government, when the game gave it a human name from a regional
+pool and a title from the government type. Four fields fix that:
+
+- `leaderName`, `leaderTitle` and `leaderGender` set the starting leader. A country with a
+  `leaderNamePool` but no `leaderName` starts with the pool's **first entry** (its name, its title if
+  it has one, its gender), so a pool alone replaces the template's leader. A country that declares
+  neither keeps the template's leader, exactly as before.
+- `leaderNamePool` replaces the regional name pool **for that ISO3** (it also replaces a base-game
+  pool when the entry re-skins one). Elections, coups, revolutions and leader deaths draw from it.
+  An entry's `title` overrides the title the government type would give. Names are at most 61 bytes of
+  UTF-8 and titles 29; longer ones are shortened and Validate Mod says so.
+- `lockLeaderTitle: true` gives every pool entry the country's `leaderTitle`, so successors keep it
+  whatever the government type becomes. It needs `leaderTitle` and a `leaderNamePool`; without a pool
+  the regional pool picks successors and the title follows the government type (Validate Mod warns).
+- `leaderPortraitPath` is shown for the starting leader. A relative path is tried against the mod folder,
+  then the scenario folder, and the resolved file must lie **inside the mod folder**: an absolute path or
+  one that climbs out (`../`) is refused (an error in Validate Mod; the placeholder is shown). Leaders
+  who take over later use the mod's `portraits/<ISO3>/<ISO3>_m_01.jpg` (or `_f_` for women; `.jpg` or
+  `.png`, numbered from 01) when you ship that folder, picked deterministically by leader number like
+  the base game's bank; without it they get the base game's generated portrait if it has one, else the
+  placeholder.
+
+The Mod Builder's COUNTRIES tab has the matching controls on each added country: the leader name,
+title, gender and title lock in the form, an Import button for the portrait (it copies the image to
+`portraits/<ISO3>.<ext>`), and an editable name pool. The pools are rebuilt from the loaded scenario
+each session, so they are not saved and a loaded game gets them back.
 
 **Reusing a base-game ISO3 (re-skin).** An entry whose `iso3` the base game already has (for
 example `FRA` in a 1450 scenario) does not create a second country: its fields are applied onto the
@@ -390,7 +551,7 @@ A removed country takes its base-game military with it: its armies, fleets and a
 | `clearDiplomacyScope` | string | `"core"` or `"extended"` |
 | `governmentType` | string | New government type |
 | `ideology` | string | New ideology |
-| `techLevel` | int | Starting Knowledge Network level: tiers 1 to `techLevel` of every doctrine branch start completed (doctrine A), except branches hidden by `disabledDoctrineBranches` (§3.3). A branch has 5 tiers, so 6–10 act as 5; tiers the country already has are kept. New games only. 0 or omitted grants nothing. **Check existing mods:** this field did nothing until 2026-09, and older Mod Builder versions wrote `techLevel: 5` into every new override. Remove it, or set it to 0, unless you want the tiers. |
+| `techLevel` | int | Starting Knowledge Network level: tiers 1 to `techLevel` of every doctrine branch start completed (doctrine A), except branches hidden by `disabledDoctrineBranches` (§3.3). A branch has 5 tiers, so 6–10 act as 5; tiers the country already has are kept. New games only. 0 or omitted grants nothing. **Check existing mods:** this field did nothing until 2026-09, and older Mod Builder versions wrote `techLevel: 5` into every new override. Remove it, or set it to 0, unless you want the tiers. The Mod Builder's Starting States editor has a **Starting Tech Level** row (0–5); it writes `techLevel` only when you tick it. |
 | `stability` | float | 0.0–1.0 |
 | `corruption` | float | 0.0–1.0 |
 | `treasury` | number | Treasury balance in US dollars (not millions) |
@@ -499,16 +660,20 @@ Same as armies plus:
 
 Declare required permissions in `mod.json`:
 ```json
-{ "permissions": ["ReadEconomy", "WriteTreasury", "InjectUI"] }
+{ "permissions": ["ReadEconomy", "WriteTreasury", "InjectUI", "world.read"] }
 ```
+
+Each permission can be written in PascalCase (`WriteTreasury`) or snake_case (`write_treasury`); the two newer ones are written `world.read` and `flags.write`.
 
 | Permission | Description |
 |---|---|
 | `ReadEconomy` | Nothing yet: every read (treasury, GDP, stability, manpower, tech level, date) works without it. Accepted so existing manifests stay valid. |
 | `WriteTreasury` | Change a country's treasury (`country_set_treasury`, `add_treasury`) |
 | `FireTriggers` | Queue events and raise reactive triggers (`fire_event`, `fire_trigger`, `ModHookBus.FireEvent`) |
-| `WriteFlags` | Set or clear a country's event flags, the flags that `has_flag` / `not_has_flag` event conditions test. There is no WASM import for this yet; only C# mods can do it (`ModGameActionRequest.SetCountryFlag` / `ClearCountryFlag`). It has nothing to do with flag or banner images. |
-| `InjectUI` | Add UI elements to the HUD (`inject.json`) and show popups (`show_mod_popup`) |
+| `world.read` (`ReadWorld`) | Scripts read the world: the country list and ISO3 lookups, wars and alliances, province owner and controller, country flags and variables (WASM ABI 4 imports and the matching C# `IModServices` members; [WASM guide](./WASM_SCRIPTING_GUIDE.md) §4.2). A WASM script that imports one of these without `wasmAbiVersion` 4 and this permission fails to load. |
+| `flags.write` (`WriteFlags`) | Set or clear a country's event flags and set or add to its event variables: the state that `has_flag` / `not_has_flag` and `variable_gt/lt/eq` event conditions test. WASM ABI 4 imports (`country_set_flag`, `country_clear_flag`, `country_set_var`, `country_add_var`) and the matching C# `IModServices` members ([WASM guide](./WASM_SCRIPTING_GUIDE.md) §4.3); refused in multiplayer from a UI action or outside a simulation hook. It has nothing to do with flag or banner images. |
+| `InjectUI` | Add UI elements to the HUD (`inject.json`) and show popups (`show_mod_popup`, and `show_mod_popup_key` / `IModServices.ShowPopupLocalized` from ABI 4) |
+| `WriteDiplomacy` (`write_diplomacy`) | Found, join, leave and invite alliance organizations from a script (C#: `ModGameActionRequest.CreateOrganization` / `JoinOrganization` / `LeaveOrganization` / `InviteToOrganization`; the same actions as the `create_organization` ... `invite_to_organization` event effects, §8.7), and start or end the world ceasefire (C#: `ModGameActionRequest.StartWorldCeasefire` / `EndWorldCeasefire`; the same as the `start_world_ceasefire` / `end_world_ceasefire` effects, §8.7). A WASM script (ABI 4) calls `organization_create` / `organization_join` / `organization_leave` / `organization_invite` and `world_ceasefire_start` / `world_ceasefire_end`; a C# mod uses the matching `IModServices` members (WASM Scripting Guide §4.5). |
 
 A call that needs a permission the mod did not declare does nothing.
 
@@ -567,7 +732,11 @@ A replace file for an earlier era:
 `units`, `resources`).
 
 **`disabled`** switches ids off in any mode, for buildings, units and resources alike. It wins over
-being listed.
+being listed. A disabled resource also disappears from the lists that show every resource: the Economy
+overlay's Resources and Markets pages (rows, counts, top lists, category filter), Quick Build's shortage
+scoring, and a building's output / recipe choices in its details (a recipe that needs or only makes a
+disabled resource is left out). The pickers that already skipped them (spot market, trade proposals,
+world overview, admin panel) are unchanged.
 
 **`inherit`** decides what an entry for an **existing** base id means:
 
@@ -579,6 +748,8 @@ Entries in a replace-mode file default to `inherit: false`, so a medieval roster
 keep modern recipes or effects; entries in a merge-mode file default to `true`. New ids are always
 whole definitions. Nested objects (`cost`, `effects`, `prerequisites`) are replaced as a whole,
 never merged field by field — write the full object.
+
+**Which `inherit` applies when several layers touch one id.** The first layer that introduces an id decides its `inherit` flag, and that flag sticks. A later mod or scenario layer that edits the same id and leaves `inherit` out keeps the flag the first layer gave it, even when the later file is in the other mode (a merge-mode edit does not turn a replace-mode entry back into a sparse merge). The flag describes how the entry relates to the base game, and a partial edit does not change that. To change it, write `inherit` explicitly in the later entry; an explicit value always wins. In the Mod Builder's Content tab the "Keep base values for unlisted fields" switch writes this field, and its tooltip says the same.
 
 **What "switched off" means.** Base entries are never removed from the game's data: saves store
 buildings and units by position, and multiplayer compares unit positions. A switched-off building
@@ -610,7 +781,7 @@ mean to drop the feature, name the id in the roster's `"disabled"` list (or the 
 | `barracks`, `military_base` | Land unit recruitment (units name them in `cost.required_building`) |
 | `submarine_pen`, `trade_port` | Coastal building rules |
 | `intelligence_hq`, `cyber_ops_center`, `counterintel_bureau` | Espionage |
-| `satellite_launch_facility` | Satellite launches |
+| `satellite_launch_facility` | The vanilla satellite launch site (see "Satellite launch capacity" below) |
 
 **Names and descriptions.** An entry's `name` (a building reads `display_name` first; a resource
 uses `display_name`) and its `description` are what the game shows for that id. At load they become
@@ -641,6 +812,30 @@ does not exist or an old tech-tree id such as `"cyber_operations"` can never be 
 stays locked for the whole game. The Mods panel and the Mod Builder's checks box warn about such a
 key on any entry your roster lists.
 
+**Flag gates.** A unit or building can also wait for an event flag, so a story event can unlock it for
+one country (player or AI) instead of it being available from the start:
+
+```json
+{ "id": "sunken_vault", "category": "military",
+  "prerequisites": { "tech": "none", "flag": "atlantis_vault_found", "hidden_until_flag": true } }
+```
+
+- `prerequisites.flag` — the name a `set_flag` effect writes (§8.7). A country that does not hold the flag cannot recruit the unit or build the building,
+  and cannot upgrade it. The recruit and build commands refuse it for the player, for the AI and
+  for every multiplayer peer; the AI treats it as unavailable. The flag is an ordinary saved event
+  flag, so nothing extra is written to the save. The name is trimmed and matched exactly, like
+  `has_flag`.
+- `prerequisites.hidden_until_flag` — `true` hides the entry from the recruit and build lists until
+  the flag is set; without it the entry is listed but locked (the player sees an unmet
+  requirement). It does nothing without a `flag`.
+- The flag gate sits beside `prerequisites.tech`: both must be met. `prerequisites` is replaced as a
+  whole (see above), so keep the `tech` you want when you add a `flag`.
+- Only flags a mod event, a goal's `on_complete_flag` (§8.6) or a script sets can ever open the gate. The Validate Mod report
+  and the Mod Builder's checks warn about a flag that no event of the mod sets.
+
+In the Mod Builder, every building and unit card on the Content tab has a **Requires flag** field
+with a picker of the flags your own events set, and a **Hidden until flag** toggle.
+
 **Resources** are a fixed set: the ids of the base game's `resources.json` (`Oil`, `Uranium`,
 `Semiconductors`, …, matched case-insensitively). A mod can re-price, re-skin or switch them off,
 but cannot add new ones; unknown resource ids are reported. A scenario takes modern commodities out
@@ -654,7 +849,10 @@ of an earlier era with its `resourcesOverrideFile` (§3.3), applied after every 
 A `"mode": "replace"` file lists the resources the scenario keeps instead, and switches off every
 resource it does not list. A switched-off resource is no longer produced, by buildings or by
 province land, and is hidden from the spot market, trade-agreement proposal and resource overview
-screens.
+screens. The simulation enforces it as well, for the player, the AI and multiplayer peers alike: the
+spot-market buy and sell command refuses the resource, the strategic-reserve auto-buy and auto-sell
+skip it (a reserve target left on it is inert), and the AI never names it in the priority resources of
+a trade agreement it proposes.
 
 **In the Mod Builder** (Content tab) the roster mode sits at the top of each file. In replace mode
 the base entries you have not included are listed as switched off, each with an Include button, plus
@@ -681,16 +879,42 @@ Sparse documents against the shipped base config — write only the keys you wan
 
 | File | Covers |
 |---|---|
-| `game_settings.json` | Balance sections applied at runtime: population, diplomacy, advanced diplomacy, world order, AI weights, fog of war, intelligence, map interaction, satellite, military and buildings, plus `events` and `envoys` (see below for the ones that are not) |
+| `game_settings.json` | Balance sections applied at runtime: population, economy, technology, diplomacy, advanced diplomacy, `step42_diplomacy` (guarantees, rivals, aggressive expansion, coalitions, opinion, trust, embassies), world order, AI weights, fog of war, intelligence, map interaction, satellite, `political_drift` (drift, elections, coups, corruption, stability target), military and buildings, the mod-only `nuclear` section, plus `events` and `envoys` |
 | `doctrines.json` | Doctrine values, effects and text |
+| `laws.json` | Law values and appended categories/options (below) |
+| `interest_groups.json` | The electorate: age-band leans, interest-group affinities, drivers and demand multipliers, law and doctrine bonuses, religiosity, country overrides (below) |
 | `game_flow.json` / `events.json` / `envoys.json` | The matching `game_settings` sections, kept as separate files for backwards compatibility |
 | `military_markers.json` | Map marker appearance |
 
-**Sections the game does not apply yet.** `economy`, `technology`, `step42_diplomacy` and
-`political_drift` are in `game_settings.schema.json`, but no runtime stage reads them from a mod:
-values you write there are ignored. The Mod Builder's SETTINGS tab does not show them, Reload &
-Test and the Mods panel list any you wrote by hand ("… are not applied at runtime yet and were
-ignored"). They will become moddable once the runtime can re-bake those config blobs.
+**Economy, technology, step42_diplomacy, political_drift and nuclear.** These sections are applied at
+runtime like the others: a key you write replaces the shipped value and every key you leave out keeps
+it. Nested objects use the same names as the shipped file (`economy.central_bank.ai_rate_adjust_speed`,
+`step42_diplomacy.guarantee.expire_ticks`, `political_drift.corruption_target_convergence_rate`).
+Values are written raw, with none of the clamping the editor-side importer applies, so keep them
+sensible. A key the runtime cannot place is listed in Player.log as unknown and skipped.
+Two things to know:
+
+- `economy.terrain_productivity` is accepted by the schema but nothing reads that table at runtime
+  (province terrain multipliers are seeded from province data), so it is reported and ignored. A few
+  other economy keys (`price_shock_decay_rate`, `resource_strategic_caps.*`,
+  `trade_agreement_defaults.*` other than the three caps) have no config field behind them either.
+- `nuclear` is **mod-only**: it has no counterpart in the shipped `game_settings.json`. It overrides
+  `nuclear_config.json` and takes its sub-objects (`nuclear_consequences`, `recovery`, `deterrence`,
+  `missile_defense`, `retaliation`, `defcon_escalation`, `ai_first_strike`) with the same key names.
+  The DEFCON level table and the missile type list are not patchable. For example, a stronger shield:
+  `{ "nuclear": { "missile_defense": { "base_intercept_chance": 0.8, "radar_bonus_cap": 0.4 } } }`.
+
+The Mod Builder's SETTINGS tab shows all of these (the nuclear section with the shipped values as
+hints). A section the game still does not apply is listed by Reload & Test as "… are not applied at
+runtime yet and were ignored".
+
+**Satellite launch capacity.** A country may keep as many satellites in orbit (active plus queued)
+as the sum of the `satellite_launch_capacity` building effect over its completed buildings, and any
+building carrying the effect is a launch site, not just `satellite_launch_facility`. In the shipped
+game only the launch facility carries it (value 3, `buildings.json` `effects`), so one facility now
+holds three satellites; before this was one per facility. `game_settings.satellite.max_per_facility`
+is deprecated and no longer read. Give another building `"effects": { "satellite_launch_capacity": N }`
+in Content > Buildings (or `Content/buildings.json`) to make it a launch site.
 
 Two constraints worth knowing before you edit:
 
@@ -727,6 +951,15 @@ Two constraints worth knowing before you edit:
 
   Files apply in load order; a replace file starts again from the base tree and the Mods panel warns
   that it discarded the doctrine files loaded before it.
+
+  **`requires_flag` on a doctrine card** locks that one card behind an event flag (a name a `set_flag`
+  effect writes, §8.7). It is a value, so it works in both modes — in a merge file as
+  `{ "branches": [ {}, { "tiers": [ {}, { "doctrines": [ {}, { "requires_flag": "my_flag" } ] } ] } ] }`
+  (earlier positions are `{}` placeholders). A country without the flag sees the card locked, cannot
+  start it (the research command is refused for every player and peer), and the AI never picks it;
+  a tier whose three cards are all locked is not started by the AI. The Mod Builder's **Doctrines**
+  tab has a *Flag-gated doctrine cards* section: pick the branch, tier and card, then type a flag or
+  choose one of your events' flags.
 - **`game_flow` cannot be modded in practice.** Autosave interval, autosave on/off, save-slot count
   and the pre-selected country are the *player's* settings (stored in their own `settings.json` and
   edited from the Settings screen). A mod override of that section is ignored, which is why the
@@ -746,6 +979,57 @@ indices live in saves and on the multiplayer wire) and disables the offending mo
 category needs at least one ungated option and a complete 10-government `defaults` block.
 Law names/descriptions come from `politics.law.*` keys in the mod's
 `Content/localization/<lang>.csv` files (all 13 shipped locales are loaded).
+
+**Interest groups and age bands (`overrides/interest_groups.json`).** The electorate config is applied
+at runtime and re-baked at boot: a mod can make the senior vote more nationalist, give the Religious
+group a different affinity or demand table, change a law or doctrine bonus, or pin a country's group
+shares. It is a sparse patch against `interest_groups.schema.json`:
+
+- `age_bands` and `groups` entries are matched by `id` (`youth, young, middle, senior` and
+  `workers, entrepreneurs, military, religious, environmentalists`) and merge key by key, so
+  `{ "age_bands": [ { "id": "senior", "lean": { "nationalist_conservative": 0.4 } } ] }` changes one
+  number. **The model has exactly these four bands and five groups** (they are enum-indexed in the
+  blob, the cohort state and the save), so an entry with any other id is rejected with a message
+  naming it, and the mod is disabled; they cannot be added, removed, reordered or renamed.
+- `law_bonuses` (matched by `category` + `option` + `group`) and `doctrine_bonuses` (`branch` +
+  `group`) update the matching entry or append a new one. `country_overrides`, `religiosity_by_religion`
+  and `neutrality_reference_shares` merge key by key; `gdp_factor_thresholds` replaces the list.
+- The merged document must pass the same rules as the shipped file: bands and groups in order;
+  turnout in (0, 1]; leans and affinities in [-1, 1]; law options, doctrine branches, resource
+  categories and resources must exist; `fixed` country overrides list every group and sum to 1; and
+  **demand multipliers stay neutral** (weighted by the world age mix for bands, or by
+  `neutrality_reference_shares` for groups, every resource averages 1 within 10%). A mod that breaks
+  one is disabled on its own and Reload & Test names the problem. Validate Mod reports the same
+  findings as errors.
+- The file is part of the lobby mod-set hash, so two peers with different electorate files do not
+  match. Nothing is written to a save: the config is rebuilt from the loaded mods each session.
+
+The Mod Builder's **POLITICS** tab (the former LAWS tab) holds two sub-tabs, **Laws** and **Interest
+groups**. The latter edits this file with the shipped values beside every field: leans, affinities,
+turnout and drivers as sliders, demand multipliers as a table (add a `category:` or `resource:` key,
+or edit and revert an existing one), the religiosity table, and per-country shares. Nothing is
+written until a value actually changes.
+
+**Switching options off (`disabled_options`).** A mod can remove anachronistic options without
+touching the save-stable order:
+
+```json
+{ "disabled_options": [ "conscription.cyber_reserve_corps", "press_freedom.platform_regulation" ] }
+```
+
+Each entry is `category.option` (the ids in laws.json) or a bare option id when only one category has
+it. A disabled option keeps its index but is hidden in the Laws tab, skipped by the AI, refused by
+the law commands for every player and multiplayer peer, and a country that has it active falls back
+to its category default when a game loads (a pending debate for it is dropped). Lists from several
+mods are combined. An entry is ignored, with a warning in the Mods panel and the Validate Mod report,
+when it names nothing, is ambiguous, is the default option of a government type (change that default
+first) or would leave its category with no enabled option. A starting-law override in
+`country_overrides` that names a disabled option falls back to the usual seeding.
+
+Options gated by a doctrine branch the game hides (the scenario's `disabledDoctrineBranches`, or a
+branch a replace-mode doctrines.json leaves out) can never be unlocked, so the Laws tab no longer lists
+them; you do not need to disable them. The Mod Builder's Laws tab shows a *Hidden: its doctrine
+branch is disabled* badge on such options and a **Disable this option** switch on every option card.
 
 ### 8.3 Localization
 
@@ -773,8 +1057,7 @@ not define, so a re-skin is never hidden behind the base game's text. The `name`
 way. A row in your CSV wins for its language; that is where translations of those names go.
 
 **Script popups.** `ModHookBus.ShowPopup(modId, title, body)` (C#) and the `show_mod_popup` import
-(WASM) take plain text, and there is no lookup call in the scripting API yet. Instead, a title or
-body that is **exactly a localization key** — no spaces or commas, with at least one dot inside,
+(WASM) take plain text. A title or body that is **exactly a localization key** — no spaces or commas, with at least one dot inside,
 e.g. `mymod.popup.intro.title` — is shown as that key's text in the player's language. Any other
 text is shown as written, so English literals keep working. The same rule applies to a legacy
 event's `title`, `description` and option `text` (§8.7). The key follows the rule above: define it
@@ -783,6 +1066,17 @@ still empty (the Mod Builder adds a new key to the other 12 files with an empty 
 
 ```csharp
 ModHookBus.ShowPopup("mymod", "mymod.popup.intro.title", "mymod.popup.intro.body");
+```
+
+For a popup whose text holds values, or for text a script composes itself, use the ABI-4 text calls: the
+`localize` and `format` imports and `show_mod_popup_key` (WASM), or `IModServices.Localize`, `Format` and
+`ShowPopupLocalized` (C#), which fill `{0}`, `{1}`... of a key's text from arguments. The text differs per
+player's language, so a script shows it and never branches on it
+([WASM guide](./WASM_SCRIPTING_GUIDE.md) §4.4).
+
+```csharp
+// mymod.popup.startup.body = "Strategic briefing: {0}-{1}"
+services.ShowPopupLocalized("mymod.popup.startup.title", "mymod.popup.startup.body", new[] { "1450", "5" });
 ```
 
 ### 8.4 Icons
@@ -807,13 +1101,45 @@ its id. The game looks for mod icons first and falls back to the base game's art
   wins — the same order as content rosters.
 - New ids you add to a roster (§8.1) get their icon the same way.
 - Icons and event pictures are presentation only and are not part of the multiplayer lobby check.
-- Map markers are drawn per unit **subcategory**: set those with `overrides/military_markers.json`
-  (`subcategory_icons`).
+- Map markers are drawn per unit **subcategory** or per **unit**: set those with
+  `overrides/military_markers.json` (see "Marker art" below).
 
 The Mod Builder's Content tab has an icon picker on every building, unit and resource card, and the
 Doctrines tab lists every doctrine icon id with a picker; both copy your image to the right place.
-Event pictures have no import button yet: copy the file into `images/events/` yourself. The Events
-tab's image picker then lists it first (the picker needs a loaded map; without one, type the name).
+The Events tab's image row has an **IMPORT...** button: pick a PNG or JPG and it is copied into
+`images/events/` under its file name (spaces and characters the file system rejects become `_`), selected
+on the event and listed first in the picker. It asks before replacing an image of the same name, removes a
+leftover file of the same name with another extension, and warns when the picture is far taller than 1:2
+or wider than 4:1, because the popup crops to a wide band. (The picker needs a loaded map; without one the
+row is a typed name and the Import button still works.)
+
+#### Marker art (`overrides/military_markers.json`)
+
+```json
+{
+  "army":  { "subcategory_icons": { "infantry": "icons/markers/army_infantry.png" },
+             "unit_icons":        { "war_elephant": "icons/markers/army_unit_war_elephant.png" } },
+  "fleet": { "subcategory_icons": { "destroyer": "icons/markers/fleet_destroyer.png" } },
+  "air":   { }
+}
+```
+
+- `subcategory_icons` replaces the marker of every unit in that subcategory. Keys are the 16 marker
+  subcategories: `infantry`, `armor` (alias `tank`), `artillery`, `special_forces`, `fighter`, `bomber`,
+  `helicopter`, `drone`, `destroyer`, `frigate`, `submarine`, `carrier`, `patrol_boat`, `amphibious`,
+  `mechanized_infantry`, `cavalry`, or the numbers 0 to 15.
+- `unit_icons` replaces the marker of a stack whose **dominant unit** is that unit: the strongest one
+  (attack + defense) for an army, the most numerous one for a fleet or an air wing. A unit icon wins over its
+  subcategory's. (The `army` section's `unit_icons` also gives the unit its picture in menus.) Pictures in
+  `icons/units/` are portraits and are not drawn on the map unless a `unit_icons` entry points at them.
+- Paths are relative to the mod folder (also looked up under `overrides/` and `Content/`) and must stay inside it.
+- A mod with no marker art leaves the map exactly as the base game draws it. Each unit icon costs one extra
+  slice in the marker picture array, built once when the mod loads.
+- The Mod Builder edits this file on **Units > MARKERS**: pick the branch (army, fleet, air wing), choose a picture
+  for any of the 16 subcategories, or add a unit and choose its picture. Choosing copies the PNG/JPG into
+  `icons/markers/` (`<branch>_<subcategory>` or `<branch>_unit_<id>`; one file per entry) and writes the path.
+  **Validate Mod** flags a key that is not a subcategory, a picture that is not in the mod folder, and a unit
+  nobody defines. After SAVE ALL, the deployment preview on the Provinces tab shows the new markers.
 
 ### 8.5 Currencies (`Content/currencies.json`)
 
@@ -851,9 +1177,11 @@ The Mod Builder's Content tab has a Currencies sub-tab for all of this.
 
 A scenario can bring its own national goals — the Agenda panel's goals, and the goals AI countries
 pursue. The file is named by the scenario header's `nationalGoalsFile`, relative to the scenario
-folder, and it **replaces** the base game's goals entirely: countries it does not list have no
-agenda, and a file without `_BASIC` has no starter goals. It uses the base game's
-`national_goals_2026.json` shape:
+folder. By default it **replaces** the base game's goals entirely: countries it does not list have no
+agenda, and a file without `_BASIC` has no starter goals. Put `"mode": "merge"` at the root of the file
+to keep the base game's goals and **append** yours instead, per country and in the shared `_BASIC` set
+(a new country key gets its own list); a goal id may not repeat one of the base game's, or the file is
+rejected. It uses the base game's `national_goals_2026.json` shape:
 
 ```json
 {
@@ -873,7 +1201,7 @@ agenda, and a file without `_BASIC` has no starter goals. It uses the base game'
 ```
 
 - **Keys** are `_BASIC` (starter goals every country sees) or a country's upper-case code. Other
-  `_`-prefixed keys are ignored as metadata.
+  `_`-prefixed keys are ignored as metadata. The root key `"mode"` is `"replace"` (default) or `"merge"`.
 - **`id`** is required and unique across the file; the player's active goal is saved by id. Starter
   goals appear in the planner's starter list only when their id starts with `basic_`.
 - **`title_key` / `description_key`** are looked up in the mod's localization CSVs; `title` and
@@ -883,8 +1211,17 @@ agenda, and a file without `_BASIC` has no starter goals. It uses the base game'
   Agenda panel's task templates. **`priority`**: `starter`, `primary`, `secondary`, `aspirational`.
   Unknown values are reported and fall back to economic / secondary.
 - **`ai_weight`** (0–1, default 0.5) and **`target_countries`** steer AI countries that pursue the goal.
-- **`on_complete_effects`** — the AI applies `prestige`, `stability`, `aggression_modifier` and
-  `military_modifier` when it completes a goal; the Agenda panel shows them as the reward.
+- **`on_complete_effects`** — paid **once** when the goal is completed, to the player and to AI
+  countries alike: `prestige` (a fading prestige bonus), `stability` (added, kept within 0–100),
+  `aggression_modifier` and `military_modifier` (added to the country's AI personality). `economy_boost`
+  is read and shown but no system applies it yet. For the player the payment is a command
+  (`CompleteAgendaGoal`) that every multiplayer peer runs from its own goals table, and the completion is
+  saved, so reloading neither repays nor forgets it. The Agenda panel shows the same numbers as the reward.
+- **`on_complete_flag`** — an event flag set on the country when the goal completes (player and AI), for
+  `has_flag` conditions, other goals' `has_flag` tasks and the flag gates of units, buildings and doctrine
+  cards (§8.1, §8.2) to test. **`on_complete_event`** — an event id queued for the player's country at the
+  same moment, the way a script's `fire_event` queues it (its conditions and cooldowns are not checked);
+  AI countries do not fire it.
 - **`tasks`** are the player's steps. A goal without tasks gets a template from its `type`. Condition
   types and their `params`:
 
@@ -892,21 +1229,47 @@ agenda, and a file without `_BASIC` has no starter goals. It uses the base game'
 |---|---|
 | `own_provinces` | `province_owner` — counts owned provinces whose base-map country is this code |
 | `alliance_with` | `target_iso3` (one country) **or** `partners` — a comma-separated ISO3 list (`"ISR,SAU,ARE"`), or `"*"` for any country. Progress is the number of distinct listed countries holding a bilateral alliance or a Defense Pact treaty with the owner; collective-defense memberships such as NATO do not count. `required_count` is the target |
-| `declare_war_on`, `espionage_on`, `embassy_with`, `trade_agreement_with`, `defensive_pact_with`, `guarantee_independence`, `sphere_member` | `target_iso3` |
+| `declare_war_on`, `espionage_on`, `embassy_with`, `trade_agreement_with`, `defensive_pact_with`, `guarantee_independence` | `target_iso3` |
+| `sphere_member` | `target_iso3` or `partners` — one ISO3 or a comma-separated list (absent = any member) — and/or `region`, a `WorldRegion` name such as `SoutheastAsia` (a member must match both when both are given). Progress is the number of members of the owner's sphere of influence that match; `required_count` is the target |
 | `improve_relations` | `target_iso3` (optional), `min_value` (default 50) |
 | `build_in_provinces` | `province_owner` (optional) |
 | `recruit_units`, `military_units_above` | `unit_type`: `tanks`, `aircraft`, `ships`, `submarines`, `helicopters`, `apcs`, `artillery`, `personnel` (or `active_personnel`) — the count is the progress. `military_units_above` also takes `min_value`, the count to reach, used when `required_count` is absent |
 | `research_tech` | none — the number of completed doctrine tiers is the progress |
 | `treasury_above`, `gdp_above` | `min_value`, in the base money unit |
 | `tutorial_objective` | `objective_id` |
+| `has_flag`, `not_has_flag` | `flag_name` — met while the country holds (respectively does not hold) that saved event flag. Written by a mod event's `set_flag` effect or another goal's `on_complete_flag`. The AI ignores tasks, with one exception: it will not complete a goal while one of its `has_flag` / `not_has_flag` tasks fails |
 
   `required_count` (default 1) is the progress a counting task needs, e.g. 10 for "own 10 provinces"
   or 5000 for "5,000 personnel"; yes/no conditions report 1 when met. Unknown condition types never
   progress.
 
-A file that is not an object, uses a key that is not a country code, or has a goal without an id or
-with a repeated id is rejected and the base goals stay; the Mods panel says why. The goals file is
-part of the multiplayer lobby check.
+A file that is not an object, uses a key that is not a country code, has a `mode` other than
+`merge` / `replace`, or has a goal without an id or with a repeated id (in merge mode, one that repeats a
+base game goal) is rejected and the base goals stay; the Mods panel says why. The goals file is part of the
+multiplayer lobby check. The Validate Mod report also warns about a `has_flag` task whose flag nothing in
+the mod sets.
+
+In the Mod Builder, the **Goals** tab has the replace / add switch at the top, and every goal card has
+its rewards, `on_complete_flag`, `on_complete_event` and a task editor (condition type dropdown including
+`has_flag` / `not_has_flag`, the parameters that type reads, required count), with pickers for the flags
+and events the mod's own events define.
+
+#### Goal prerequisites and the goal graph
+
+A goal may list other goals it depends on:
+
+```json
+{ "id": "tur_modern_navy", "prerequisites": ["tur_shipyards"], "mutually_exclusive": ["tur_land_power"], "editor_position": [3, 1] }
+```
+
+* `prerequisites`: goal ids of the same country (or the shared `_BASIC` goals) that must be completed first, all of them. Until they are, the Agenda shows "Requires: ..." on the goal, it cannot be set
+  active, its tasks do not complete it, and the simulation refuses its completion (a multiplayer peer included). AI countries make no progress on such a goal.
+* `mutually_exclusive`: goal ids whose completion makes this goal unavailable ("Unavailable: ... is already done"). The relation is made symmetric when the file loads.
+* `editor_position`: `[column, row]` in the Mod Builder's goal graph; the game ignores it. `incompatible_with` in the shipped goals stays informational.
+* At load, unknown ids, a goal naming itself, ids of another country, entries that would close a cycle and an id that is both prerequisite and exclusion are dropped and listed in the mod warnings;
+  Validate Mod reports them as errors. A goal that lists none of these behaves exactly as before.
+* The player's completion set is per game, so another country's Agenda view never shows a lock. Mod Builder: Goals tab, **List | Graph** - drag from a goal's port onto another goal to add a prerequisite
+  (a cycle is refused), the inspector under the graph removes prerequisites and adds exclusions (dashed red edge), **Auto layout** and **Reset view**.
 
 ### 8.7 Events (`Content/events/*.json`)
 
@@ -956,7 +1319,10 @@ effects as objects (`{ "type": "modify_stat", ... }`) to run it in the event eng
 | Field | Where | Meaning |
 |---|---|---|
 | `immediate: true` | event | No random roll (MTTH 0). The event fires at the first monthly evaluation where all its conditions pass. It ignores the 60-day cooldown left by an earlier event and always beats ordinary events in that evaluation. If several `immediate` events are eligible, the highest `priority` fires first; on a tie, the one loaded first. It still waits while the country has an unanswered event, and it still respects its own `cooldown_months`, `fire_once` and `target`. An `immediate` event that can repeat (no `fire_once`) and has no `cooldown_months` waits the 60 days after each of its own firings, and while its conditions hold it beats ordinary events every time: give it `fire_once`, `cooldown_months` or a condition that stops passing. `mean_time_to_happen_months: 0` without `immediate` works the same way, with a load note. Without `immediate`, `mean_time_to_happen_months` (default 12) sets the chance per roll, `1 - e^(-1/MTTH)`. An AI country rolls scripted events in 1 month out of 5. A human country rolls every month at 5× the MTTH, so over those 5 months its chance per event is the same as the AI's. `target: "player"` and `specific_country` events are the exception: humans roll them every month at the MTTH you wrote. |
+| `pause_game` | event | `true` / `false`. Whether the event popup pauses the game when it opens. Absent, the game pauses for `geopolitical_crisis`, `military_incident`, `natural_disaster` and `internal_politics` events and not for `economic_shock`, `diplomatic_opportunity`, `technology_breakthrough` or `social_cultural`. `true` always pauses, `false` never does. The player's "Pause on Event Popup" setting (Settings, Gameplay) still turns pausing off for every event. |
 | `target: "player"` | event | Only human-controlled countries can get the event. AI countries never roll it. In multiplayer, every human player can get it. |
+| `target: "global"` | event | A world-scoped event. It is rolled once per check for a single country (the first human player by ISO3, else the first live country by ISO3), so it fires once, not once per country, and its conditions are tested on that country. The Mod Builder offers it in the Who-gets-it list. |
+| `target: "every_country"` | event | Every country whose conditions pass gets the event, at the first monthly evaluation where they hold (day 6-8), all in the same evaluation. No random roll, no AI group rotation, no 60-day wait; the `mean_time_to_happen_months` you write is ignored. A country with an unanswered event gets this one queued behind it (at most `max_active_events_per_country`, 3 by default; one that is full is tried again next month). An AI country answers it in the same evaluation, each with its own choice weights; a human sees the popup. It still respects `fire_once` and `cooldown_months`; a repeatable one waits at least `repeatable_immediate_min_cooldown_days` between its own firings, so give it `fire_once`, `cooldown_months` or a condition that stops passing. Unlike `all` (which behaves like `any_country`), it never waits for a group to roll. Countries are judged in alphabetical ISO3 order on every player's game, so multiplayer sessions agree. Eliminated countries are skipped. |
 | `fire_event` + `chain_event` + `delay_months` | option effect | Queues the event named by `chain_event` to fire `delay_months` later. `0` or no value uses the default (`chain_event_delay_months`, 1 month). The minimum is 1 month and the maximum is 600 months; a longer delay (or `chain_delay_months`) is cut to 600, with a warning. A month is 30 days. |
 | `flag` | condition / effect | Same as `flag_name`. |
 | `target` | condition / effect | Same as `target_country`. ISO3 codes are upper-cased. |
@@ -984,14 +1350,17 @@ effects as objects (`{ "type": "modify_stat", ... }`) to run it in the event eng
   or procedural event for 60 days (`generated_post_event_cooldown_days`). After a reactive event the
   wait is 3 days (`reactive_post_event_cooldown_days`). `cooldown_months` adds a cooldown for one
   event. An `immediate` event ignores the 60-day wait an earlier event left (it still starts a new
-  one when it fires). One that can repeat and has no `cooldown_months` waits 60 days after its own
-  firing, so it cannot fire every month.
+  one when it fires). One that can repeat (not `fire_once`) and has no `cooldown_months` waits at
+  least `repeatable_immediate_min_cooldown_days` (60 by default) after its own firing, so it cannot
+  fire every month. A mod can raise that number in the `events` section of
+  `overrides/game_settings.json` (the Mod Builder's Settings tab); it is never shorter than the
+  scripted lane's own 60 days.
 - **Ties.** When several events are eligible in the same month, one is picked at random, weighted
   by `priority` (1–10). An eligible `immediate` event skips the draw and fires instead; among
   several, the highest `priority` wins, then the one loaded first.
 - **Reactive events** fire from their `triggers` (`on_war_declared`, `on_coup`, …). A reactive
   event **without** triggers never fires on its own. It fires only as a chain target or from a
-  script.
+  script. See [Reactive triggers](#reactive-triggers) for what raises each one.
 - **Choices.** AI countries choose an option automatically (`ai_weight` and the personality
   factors). The player sees a popup. If the player doesn't answer, the game picks an option after
   30 days (`player_event_auto_decide_days`).
@@ -1000,6 +1369,41 @@ effects as objects (`{ "type": "modify_stat", ... }`) to run it in the event eng
   and moved to the event log. At "Critical only", only `geopolitical_crisis`, `military_incident`,
   `natural_disaster` and `internal_politics` events show as popups. Use one of those four categories
   for story events the player must see.
+
+#### Reactive triggers
+
+A reactive event lists one or more `triggers`. The game raises all thirteen types itself, for the
+player and the AI alike, and a mod script can raise any of them too (the `fire_trigger` call).
+
+| Trigger | Raised when | The event goes to (`source_country`) | `target_country` |
+|---|---|---|---|
+| `on_war_declared` | a country declares war | the country that declared | the defender |
+| `on_peace_signed` | a peace deal is signed | the country that proposed it | the other party |
+| `on_alliance_formed` | two countries form an alliance | the country that proposed it | the partner |
+| `on_alliance_broken` | an alliance ends: broken, or the ally is attacked, or a call to arms is dishonoured | the country that broke it | the former ally |
+| `on_sanction_applied` | a country imposes sanctions | the country that imposed them | the sanctioned country |
+| `on_tech_researched` | a country completes a doctrine tier, or a mod research node | that country | none (the gate index of the tier, or `64 +` the node's gate index for a mod node) |
+| `on_country_collapse` | a country is eliminated (its last province is lost) | the fallen country | none |
+| `on_building_completed` | a building finishes construction | the country that owns the province | none |
+| `on_coup`, `on_revolution`, `on_leader_death` | the government changes that way / the leader dies | that country | none |
+| `on_nuke_launched` | a country launches a nuclear strike | the launching country | none |
+| `on_espionage_resolved` | an espionage mission reaches an outcome: success, failure or caught | the country that ran the mission | the country it was run against |
+
+- **Recipient.** The event is queued for the **source** country only. To react from the other side
+  (the defender of a war), write a second reactive event with `target_country` set the other way
+  round and a condition that only the other side meets.
+- **Filters.** A trigger's `source_country` / `target_country` (ISO3) narrow it to those countries;
+  leave them out to match any.
+- **Timing.** The game collects triggers all month and the reactive events fire at the next monthly
+  event evaluation (days 6-8), after the usual checks: a country with an unanswered event, a
+  `cooldown_months` that is still running, a `fire_once` event it already had, or the 3-day
+  reactive wait since its last reactive event all hold the event back (the trigger is not kept).
+- **Cost.** A trigger is raised only while some loaded event lists it, so a mod that uses none
+  of them costs the game nothing.
+- **A fallen country** (`on_country_collapse`) still exists but owns no land, so keep that event's
+  effects to things that do not need territory (flags, variables, relations).
+- Mod scripts can listen to the same moments through the hooks (`on_war_declared`, …); the two do
+  not depend on each other.
 
 #### Chains
 
@@ -1029,6 +1433,11 @@ one option. The effect form queues the follow-up only when the player or AI pick
 | `at_war` / `not_at_war` | yes | Optional `target_country`: at war with that country. |
 | `has_nuclear` | yes | The country has nuclear warheads. |
 | `has_flag` / `not_has_flag` | yes | `flag_name` (or `flag`), set by `set_flag` or `gp.set_country_flag`. |
+| `flag_age_months_gt` / `flag_age_months_lt` | yes | `flag_name` + `value` (a whole number of months, 0 to 1200). True when the flag was set more / fewer than that many **whole months** ago (a month is 30 days). Never true while the country lacks the flag. See [Flags and variables](#flags-and-variables). |
+| `variable_gt` / `variable_lt` / `variable_eq` | yes | `variable` + `value` (a whole number): the country's variable is above / below / equal to the value. A variable that was never set reads 0. See [Flags and variables](#flags-and-variables). |
+| `espionage_active` | yes | The country has an espionage mission running. Optional `mission_type` (`gather_intelligence`, `sabotage_economy`, `steal_technology`, `influence_government`, `counter_intelligence`, `satellite_surveillance`) narrows it to that kind, optional `target_country` to missions against that country. See [Covert operations](#covert-operations). |
+| `mission_caught_recently` | yes | `months` (a whole number, 1 to 1200): one of the country's espionage missions was caught within that many months (a month is 30 days). Optional `target_country`. See [Covert operations](#covert-operations). |
+| `lifetime_gt` / `lifetime_lt` | yes | `counter` + `value` (a whole number, 0 to 2,000,000,000): the country's lifetime counter is above / below the value. Counters: `personnel_lost`, `regiments_lost`, `ships_lost`, `aircraft_lost`, `civilians_affected`, `provinces_gained`, `provinces_lost`, `wars_won`, `wars_lost`. They add up over the whole campaign and peace never resets them. See [Lifetime counters](#lifetime-counters). |
 | `government_type` | yes | The same names as `change_government` above. |
 | `continent` / `not_continent` | yes | `africa`, `americas`, `asia`, `europe`, `oceania`, `antarctica`. |
 | `region` / `not_region` | yes | `northern_africa`, `sub_saharan_africa`, `latin_america_caribbean`, `northern_america`, `central_asia`, `east_asia`, `south_asia`, `southeast_asia`, `western_asia`, `eastern_europe`, `northern_europe`, `southern_europe`, `western_europe`, `australia_new_zealand`, `melanesia`, `micronesia`, `polynesia`. |
@@ -1038,13 +1447,17 @@ one option. The effect form queues the follow-up only when the player or AI pick
 | `alliance_member` | yes | `target_country`: the country is allied with that country. Without one it never passes. |
 | `relation_above` / `relation_gt` / `relation_below` / `relation_lt` | yes | `target_country` + `value` (−100 to 100): the country's relation toward that country is above / below the value. Without a country the relation counts as 0. |
 | `stakeholder` | yes | `target_country` (required) + `value`: the country is that country, is at war with it, is allied with it, or has a relation toward it whose size is at least `value` (positive or negative). Several `stakeholder` conditions on one event are OR-ed, then AND-ed with the rest. |
-| `has_tech` | yes | `value`: a doctrine tier, `"<branch>_t<tier>"` with a tier from 1 to 5, e.g. `"cyber_t2"`. True when the country has completed that tier. Branch ids: `military`, `government`, `economy`, `industry`, `diplomacy`, `intelligence`, `cyber`, `space`, `energy`, `society`. Any other shape is rejected; a branch the game does not have gets a warning at load and never passes. |
+| `has_tech` | yes | `value`: a doctrine tier, `"<branch>_t<tier>"` with a tier from 1 to 5, e.g. `"cyber_t2"`. True when the country has completed that tier. Branch ids: `military`, `government`, `economy`, `industry`, `diplomacy`, `intelligence`, `cyber`, `space`, `energy`, `society`. A mod's research works too: `"tech:<node id>"` (a research node or doctrine card), or a mod branch tier (`"atlantis_t2"`, or a base branch tier above 5 such as `"military_t6"`); true when the country has that gate open (§8.8). It never passes in a game whose mods add no such research, and a key no mod defines gets a warning at load. Any other shape is rejected; a branch the game does not have gets a warning at load and never passes. |
+| `has_specialist` | yes | `specialist`: the id of a specialist in a mod's `Content/specialists.json` (§8.9). True when the country employs it. An unknown id never passes (warning at load). |
 | `province_stat_gt` | yes | `field`: `province.population`, `province.infrastructure`, `province.unrest`, `province.dev_level` or `province.radiation`; `value`: a number. True when at least one province the country **legally owns** has that stat above the value (occupied provinces count for their owner). A country without provinces never passes. Any other `field` is rejected. |
+| `in_organization` | yes | `id`: an alliance organization's id. True when the country is a member: a mod's own organization or a built-in one such as `NATO`. See [Alliance organization effects](#alliance-organization-effects). |
+| `world_ceasefire_active` | yes | No arguments. True while a world ceasefire holds (§3.5). A fact about the whole world, so it is true or false for every country alike. |
 | `defcon_level` | yes | `value`: a whole number from 0 to 5. True when the country's DEFCON is at the value or more severe (5 = peace, 0 = nuclear exchange), so `3` passes at DEFCON 3, 2, 1 and 0. Countries without nuclear capability are always at 5. |
 | `active_law_is` | **no** | Rejected in mod events for now. |
 
-`has_tech`, `province_stat_gt` and `defcon_level` always check the country that gets the event. A
-`target_country` on them is rejected.
+`has_tech`, `has_specialist`, `province_stat_gt`, `defcon_level`, `flag_age_months_gt` / `flag_age_months_lt`,
+`variable_gt` / `variable_lt` / `variable_eq`, `in_organization`, `world_ceasefire_active` and `lifetime_gt` /
+`lifetime_lt` always check the country that gets the event. A `target_country` on them is rejected.
 
 Stat fields that `country_stat_gt` / `country_stat_lt` read: `economy.gdp`,
 `economy.gdp_per_capita`, `economy.gdp_growth_rate`, `economy.inflation_rate`,
@@ -1053,6 +1466,70 @@ Stat fields that `country_stat_gt` / `country_stat_lt` read: `economy.gdp`,
 `military.manpower`, `military.reserve`, `military.defense_budget`, `military.tanks`,
 `military.aircraft`, `military.ships`, `military.nuclear_warheads`, `budget.tax_rate`,
 `budget.treasury`, `budget.military_pct`, `budget.research_pct`.
+
+#### Lifetime counters
+
+Every country keeps nine counters for the whole game, in every game, with or without mods. They are
+saved with the game, shown on the end screen's Campaign record (the player's own) and readable from
+events (`lifetime_gt` / `lifetime_lt`) and from scripts (`country_lifetime` in the
+[WASM guide](./WASM_SCRIPTING_GUIDE.md) §4.2, `IModServices.GetLifetime`). Their ids, used by scripts, are
+the order below.
+
+| Id | `counter` | Counts |
+|---|---|---|
+| 0 | `personnel_lost` | Soldiers killed in ground combat, missile and air strikes and nuclear blasts: the same quantity the war ledger calls manpower lost, over the whole game. |
+| 1 | `regiments_lost` | Regiments destroyed (the units behind the soldiers above). |
+| 2 | `ships_lost` | Ships sunk in naval combat, by naval strikes from the air and by nuclear blasts. |
+| 3 | `aircraft_lost` | Aircraft shot down by ground fire over bombing and close air support, and in nuclear blasts. |
+| 4 | `civilians_affected` | Civilians affected on the country's own soil: the estimated casualties of an enemy occupation, and the population a nuclear strike kills. |
+| 5 | `provinces_gained` | Provinces that changed owner to this country by treaty. |
+| 6 | `provinces_lost` | Provinces that changed owner away from this country by treaty. |
+| 7 | `wars_won` | Wars that ended with this country clearly ahead. |
+| 8 | `wars_lost` | Wars that ended with this country clearly behind. |
+
+A war's own ledger (the War detail screen) also lists, per side, the manpower, equipment, ships and
+aircraft each side lost and the civilians and economic damage on its soil. That ledger ends with the war;
+the lifetime counters do not.
+
+#### Flags and variables
+
+Flags are on/off marks on a country; variables are whole numbers kept on each country. Both live
+until a mod clears or overwrites them, and both are saved with the game and synced in multiplayer.
+
+```json
+{ "type": "set_variable", "variable": "mymod_tension", "value": 0 }
+{ "type": "change_variable", "variable": "mymod_tension", "value": 2 }
+{ "type": "variable_gt", "variable": "mymod_tension", "value": 5 }
+{ "type": "flag_age_months_gt", "flag_name": "mymod_referendum", "value": 18 }
+```
+
+- **`set_variable`** makes the variable equal `value`; **`change_variable`** adds `value` to it
+  (negative to subtract). A variable that was never set counts as 0, so `change_variable` can be
+  the first write. Values are whole numbers between -1,000,000,000 and 1,000,000,000: a fraction is
+  rounded (with a warning at load) and a result past the limit stops at the limit.
+- **Reading.** `variable_gt`, `variable_lt` and `variable_eq` compare the variable with `value`.
+  They test the country that gets the event, in the monthly evaluation, in an option's own
+  conditions and when a chained event comes due.
+- **Flag age.** `flag_age_months_gt` / `flag_age_months_lt` compare how long ago `set_flag` set the
+  flag. `set_flag` on a flag the country already has changes nothing, so the age keeps counting
+  from the first time; `clear_flag` then `set_flag` restarts it. A flag written by a script
+  (`gp.set_country_flag`) counts from the tick of the write.
+- **The limit.** A country keeps at most `events.max_flags_per_country` flags (64 by default) and,
+  separately, the same number of variables. A new flag or variable past it is dropped, and the game
+  writes one `[Events] flag cap reached for <ISO3>` / `variable cap reached` line to `Player.log`
+  per country. Changing a variable that already exists always works.
+- **Scope.** A variable normally lives on a country. Add `"scope": "mod"` to `set_variable`,
+  `change_variable` and `variable_gt` / `variable_lt` / `variable_eq` and it is one number for your
+  whole mod instead: shared by every country, saved with the game, and the same store your scripts
+  read and write (`state_get` / `state_set` / `state_add`, [WASM guide](./WASM_SCRIPTING_GUIDE.md) §4.3).
+  Another mod's key of the same name is separate. Omit `scope` (or write `"country"`) for the
+  country's own variable. A mod may hold as many keys as one country may hold flags
+  (`events.max_flags_per_country`); a new key past that is dropped with one `Player.log` line per
+  mod. The Mod Builder's Events tab has a Scope dropdown on those rows.
+- **Names.** Start them with your mod's id (`mymod_tension`) so two mods do not share one.
+  Variables and flags are separate: a flag and a variable may share a name. The Mod Builder's
+  Events tab offers a "Reuse a name" list built from your own events and warns when an event
+  reads a name nothing in the mod sets.
 
 #### Province conditions
 
@@ -1086,10 +1563,129 @@ fire when a province changes hands. `value` is the province id from the game's p
 
 | Effect | Works? |
 |---|---|
+| `set_variable`, `change_variable` | yes, see [Flags and variables](#flags-and-variables) |
 | `modify_stat`, `add_relation`, `set_flag`, `clear_flag`, `add_treasury`, `modify_unrest`, `impose_sanction`, `lift_sanction`, `engage_diplomatically`, `withdraw_forces`, `change_government`, `modify_resource_price` (alias `global_modifier`), `fire_event` | yes |
 | `annex_province`, `annex_country` | yes, see [Territory effects](#territory-effects) |
 | `create_unit` | yes, see [Unit effect](#unit-effect) |
-| `declare_war`, `start_research` | **no**: accepted, but they do nothing yet (warning at load) |
+| `modify_military` | yes, see [Military modifiers](#military-modifiers) |
+| `start_espionage_mission`, `steal_technology`, `sabotage_military` | yes, see [Covert operations](#covert-operations) |
+| `declare_war`, `sign_peace`, `sign_truce`, `form_alliance`, `break_alliance` | yes, see [Diplomacy effects](#diplomacy-effects) |
+| `create_organization`, `join_organization`, `leave_organization`, `invite_to_organization` | yes, see [Alliance organization effects](#alliance-organization-effects) |
+| `start_world_ceasefire`, `end_world_ceasefire` | yes, see [World ceasefire effects](#world-ceasefire-effects) |
+| `grant_specialist`, `remove_specialist` | yes, see [Specialists](#89-specialists-contentspecialistsjson) |
+| `start_research` | **no**: accepted, but it does nothing yet (warning at load) |
+
+#### Diplomacy effects
+
+The country the event reached acts on the country in `target` (or `target_country`, required). They run
+through the same commands the player and the AI use, so allies are called to arms, the
+`on_war_declared` / `on_peace_signed` / alliance hooks and reactive triggers fire, trust and relations
+change as usual, and a war is a real war with peace deals, war score and occupation.
+
+```json
+{ "type": "declare_war", "target": "TEU", "casus_belli": "territorial", "force": true }
+{ "type": "sign_peace", "target": "TEU" }
+{ "type": "sign_truce", "target": "TEU", "months": 60 }
+{ "type": "form_alliance", "target": "POL" }
+{ "type": "break_alliance", "target": "POL" }
+```
+
+- **`declare_war`.** Without `force` the war is **skipped** (a warning goes to `Player.log`) while a
+  truce, a non-aggression pact or an alliance holds between the two countries, or when they are
+  already at war. With `"force": true` the truce ends, the pact and the alliance are broken, and the war
+  is declared. The enemy does not have to be a country the actor has "discovered". `casus_belli` is
+  one of `scripted` (default; shown as "Story event"), `territorial`, `ideological`, `humiliation`,
+  `defense`, `liberation`, `reconquest`. `scripted` counts as neither aggression nor an unjustified
+  attack: no aggressive-expansion gain, no goodwill drop with third countries, no automatic embargo.
+  The others behave as when a player picks them. Allies on both sides are called to arms in the normal
+  way. A world ceasefire (§3.5) that refuses declarations is a gate too: without `force` the war is
+  skipped while it holds between the two countries; with `"force": true` it goes through, and that one
+  pair stays at war while the rest of the world is suspended.
+- **`sign_peace`.** A **white peace**: the war between the two ends with no demands, and the usual
+  truce follows. Skipped when they are not at war.
+- **`sign_truce`.** A truce for `months` months (1-600; absent = the game's usual truce length) between
+  two countries **not** at war, replacing any truce in force. Skipped while they are at war: use
+  `sign_peace`.
+- **`form_alliance`.** A bilateral alliance. Without `force` the normal rules decide (relations, treaty
+  limits, and the other country has to want it; a human country is asked in its inbox). With
+  `"force": true` it forms at once. Skipped when already allied or at war.
+- **`break_alliance`.** Ends the bilateral alliance, with the usual relations and trust penalty.
+  Skipped when they have no bilateral alliance. Membership in NATO-style organisations is not touched.
+- **Order.** Several of these in one choice run in the order you wrote them, after the event's other
+  effects. A country that no longer exists skips the action.
+- **Multiplayer.** They are part of the simulation like any other effect, so every player's game
+  runs the same actions in the same order.
+
+#### Alliance organization effects
+
+A named alliance organization (a Warsaw Pact, a league, a trade union) that events, scripts and the
+scenario can found and that countries can join, leave and be invited to. They share the organization
+registry that a scenario's `startingDiplomacy.organizations` fills (§3.4), so an organization a scenario
+starts with can be joined or left by an event, and the other way round.
+
+```json
+{ "type": "create_organization", "id": "SOUTHERN_LEAGUE", "collective_defense": true }
+{ "type": "join_organization", "id": "SOUTHERN_LEAGUE", "target": "ARG" }
+{ "type": "leave_organization", "id": "SOUTHERN_LEAGUE" }
+{ "type": "invite_to_organization", "id": "SOUTHERN_LEAGUE", "target": "CHL" }
+{ "type": "in_organization", "id": "SOUTHERN_LEAGUE" }
+```
+
+- **`id`.** 4 to 24 letters, digits or underscores, upper-cased by the game, never starting with `IDX`.
+  The organization's display name is the text you give the key `org.<id in lower case>.name` in your
+  localization (otherwise the id is shown).
+- **`create_organization`.** The country the event reached founds the organization and joins it.
+  `collective_defense: true` makes it a defence pact: an attack on one member is answered by all the
+  others (the call to arms of any alliance), and a member that attacks another is expelled. Without it
+  the organization is a plain membership with no obligations. Skipped when the id is already in use,
+  by a mod organization or a built-in one such as `NATO`.
+- **`join_organization`.** The country the event reached, or `target` when you name one, joins. It can
+  join a mod organization or a built-in one (`NATO`, `CSTO`...). A country already inside it is skipped, and so is
+  a country at war with a member of a defence pact, unless `"force": true`.
+- **`leave_organization`.** The country the event reached leaves; skipped when it is not a member.
+  Leaving a built-in defence pact also drops its alliance with each former fellow member (unless another
+  pact still ties them).
+- **`invite_to_organization`.** The country the event reached, which must be a member, invites `target`
+  (required). A **human** player gets an invitation in the diplomatic inbox: accepting joins, declining or
+  letting it lapse costs nothing. An **AI** country answers on the spot, with no dice: it accepts when its
+  average relation to the members reaches `diplomacy.alliance_form_min_relation`, and refuses when it is at
+  war with a member or is a neutral and the organization is a defence pact.
+- **`in_organization`.** A condition: the country holds the organization's membership.
+- **Members of a defence pact are allies**: they see each other as allied for wars, joins and the call
+  to arms. They do not share map vision or transit; form a bilateral alliance (`form_alliance`) for that.
+  Mod organizations do not count towards the prestige of the built-in G7, G20 and UN memberships.
+- **Scripts.** With the `WriteDiplomacy` permission (§7), a script does the same: WASM imports
+  `organization_create`, `organization_join`, `organization_leave` and `organization_invite` (ABI 4),
+  C# `IModServices.CreateOrganization` / `JoinOrganization` / `LeaveOrganization` / `InviteToOrganization`
+  (or `ModGameActionRequest` for mods that reference the ECS assembly).
+- **Saves and multiplayer.** Organizations and memberships are saved and hashed like any other
+  diplomacy; the effects run in the simulation, in the order written, on every player's game.
+
+#### World ceasefire effects
+
+`start_world_ceasefire` suspends every running war and refuses every new declaration of war, until it is
+ended; `end_world_ceasefire` ends it at once. They act on the world, not on the country the event reached
+(a `target` is ignored). See §3.5 for what suspended means.
+
+```json
+{ "type": "start_world_ceasefire", "months": 6, "until_flag": "armistice_broken" }
+{ "type": "end_world_ceasefire" }
+{ "type": "world_ceasefire_active" }
+```
+
+- **`months`.** 1 to 600 (a month is 30 days): the ceasefire ends that long after the effect runs. Absent
+  = no end date.
+- **`until_flag`.** The ceasefire also ends the moment any country holds this event flag. Absent = no
+  flag ends it. With neither, it lasts until an `end_world_ceasefire` effect.
+- A ceasefire started here covers every country, blocks declarations and suspends wars (use the scenario
+  header, §3.5, to scope one). Starting while one runs **replaces** it.
+- **`end_world_ceasefire`** is skipped (a warning goes to `Player.log`) when none is running.
+- **`world_ceasefire_active`** is a condition: it holds while a ceasefire holds.
+- **Scripts.** With the `WriteDiplomacy` permission (§7), a WASM script calls the ABI-4 imports
+  `world_ceasefire_start(months, until_flag)` and `world_ceasefire_end()`; a C# mod calls
+  `IModServices.StartWorldCeasefire` / `EndWorldCeasefire` (or `ModGameActionRequest.StartWorldCeasefire(em, months, untilFlag, modId)` and `EndWorldCeasefire(em, modId)`).
+- **Saves and multiplayer.** The ceasefire is saved and hashed; the effects run in the simulation on every
+  player's game.
 
 #### Territory effects
 
@@ -1139,8 +1735,16 @@ one country to the country that got the event.
 { "type": "create_unit", "unit_id": "atl_hydro_sub", "count": 2, "province_id": 3277, "target": "HYP" }
 ```
 
-- **`unit_id`** (required) is a unit type id: from the base `units.json`, from any active mod's
-  `Content/units.json`, or from the scenario's unit types. Case does not matter. At most 29 bytes.
+- **`unit_id`** (required, unless you give a `unit_category`) is a unit type id: from the base
+  `units.json`, from any active mod's `Content/units.json`, or from the scenario's unit types. Case
+  does not matter. At most 29 bytes.
+- **`unit_category`** (`ground`, `air`, `naval` or `special`) replaces `unit_id`: the receiver gets
+  its **best available unit of that category** when the effect runs. "Best" is the highest attack
+  plus defense, times health; a tie goes to the lower unit id. Available means the same as for a
+  recruit: the scenario's disabled units and categories, the scenario's unit roster, units a mod
+  gives to another country only, and tiers the receiver has not researched are all excluded.
+  Missiles are not offered. If nothing of that category is available the effect is skipped with a
+  warning. With both keys, `unit_id` wins and a load note says the category is ignored.
 - **`count`** is how many units of that type the stack gets, from 1 to 100. Without it the stack
   gets 1. A larger count is cut to 100, with a warning at load. Files that put the count in `value`
   still load.
@@ -1172,6 +1776,89 @@ one country to the country that got the event.
 - **Multiplayer and saves.** The stack appears on the same tick on every machine, in the order the
   effects are written. A queued effect is saved with its unit id, count and province.
 
+#### Covert operations
+
+Events can start, observe and react to the game's espionage missions. There is no hidden
+"domestic faction" in the engine: a covert group inside a country is still narrated with events
+and [flags and variables](#flags-and-variables); these tools give it real consequences.
+
+```json
+{ "type": "start_espionage_mission", "mission_type": "steal_technology", "target": "RUS" }
+{ "type": "steal_technology", "target": "RUS" }
+{ "type": "sabotage_military", "target": "RUS", "field": "military.tanks", "pct": 10 }
+```
+
+- **`start_espionage_mission`.** The country the event reaches launches a real mission against
+  `target` (required, except for `counter_intelligence`, which is run against the country itself).
+  `mission_type` is one of `gather_intelligence`, `sabotage_economy`, `steal_technology`,
+  `influence_government`, `counter_intelligence`, `satellite_surveillance`. It goes through the
+  same launch rules as the player's and the AI's missions: it needs an Intelligence HQ, a free
+  mission slot, a specialist already deployed in the target country (counter_intelligence: an idle one), a Cyber Operations Center for the cyber kinds,
+  and no cooldown running for that kind. When the rules refuse it, the effect is skipped with a
+  warning in `Player.log` (it never forces a mission through). Once launched it is an ordinary
+  mission: it costs upkeep, can be caught, and its success or failure has the usual consequences.
+  `sabotage_infrastructure` and `fund_opposition` are not offered: they need a province or a
+  political bloc that an event cannot name.
+- **`steal_technology`.** Shorthand for a `steal_technology` mission against `target`.
+- **`sabotage_military`.** Immediately destroys `pct` percent (0.1 to 50) of the stock named by
+  `field` (`military.manpower`, `military.reserve`, `military.tanks`, `military.aircraft`,
+  `military.ships`) in `target`, rounded down. It is not a mission: it cannot be caught and needs no
+  Intelligence HQ. Narrate the cost to the saboteur with another effect if you want one.
+- **`on_espionage_resolved`.** A reactive trigger raised when a mission reaches an outcome, for the
+  country that ran it (`source_country`) against the country it targeted (`target_country`). It is
+  raised only while a loaded reactive event lists it. Use `mission_caught_recently` to tell a caught
+  mission from a success. There is no script (`gp.*`) hook for it yet.
+- **`espionage_active` / `mission_caught_recently`.** Conditions on the country's own missions, see
+  the table above. `mission_caught_recently` cannot see missions saved before the feature existed
+  (their outcome time was not recorded).
+- **Multiplayer and saves.** Effects run on the same tick on every machine; a launched mission is
+  saved with the country as before, now with the tick it resolved.
+- **Vanilla.** A game with no such event does nothing different: the conditions read the mission list
+  only when an event uses them, and the trigger monitor does not run.
+
+#### Military modifiers
+
+`modify_military` changes the military of the country that got the event (the choosing country).
+
+```json
+{ "type": "modify_military", "stat": "attack", "value": 0.15, "months": 24 }
+{ "type": "modify_military", "stat": "morale", "value": -20 }
+```
+
+- **`stat`** (required): `attack` or `defense` add `value` as a fraction to the country's army and
+  fleet combat power (0.1 = +10%, -0.2 = -20%; allowed from -0.9 to 5). `morale_recovery` adds
+  `value` as a fraction to how fast idle armies regain morale (0.5 = 50% faster; from -1 to 10).
+  `morale` adds `value` points once to every army's morale (on the 0-100 scale, from -100 to 100,
+  clamped to 0-100); it leaves nothing behind and ignores `months`.
+- **`months`** (optional, 0 to 600): how long the change lasts. Empty or 0 is permanent.
+- **Stacking.** Modifiers of the same stat add up, so two +10% attack effects give +20%. A country
+  holds at most 32 at a time; once full, a new one is skipped with a warning.
+- **Where it applies.** Land and naval combat power (`attack` when the country's units attack,
+  `defense` when they defend), and the morale recovery of idle armies. It does not change the
+  units' own stats.
+- **Multiplayer and saves.** Applied on the same tick on every machine, in the order the effects
+  are written. The active modifiers are saved with the country and rebuilt on load.
+- **Vanilla.** A game without such an effect carries no modifier data and plays exactly as before.
+
+#### Testing your events in the game
+
+The dev console (the backtick key) has commands for checking an event chain without playing months
+of game time. They work in the editor, in development builds and, for the read-only ones, in release
+builds. The two that change the world (`event fire`, `flag set|clear`) are refused in multiplayer
+and in release builds; nothing here is saved by itself.
+
+| Command | What it does |
+|---|---|
+| `event fire <id> [ISO3]` | Queues the event for the country (default: the player) at once. Conditions, MTTH and cooldowns are not checked, like a script's `fire_event`. A player-only event is refused for an AI country, and an event that is already pending is refused. A `fire_once` event that already fired is refused too. |
+| `event fire! <id> [ISO3]` | The same, and a `fire_once` event fires again. |
+| `event why <id> [ISO3]` | Judges each of the event's conditions for the country with the game's own code and prints pass or FAIL with the current value (a flag's age, a variable's value, whether a flag is set). It also names the gates that are not conditions: `fire_once`, the event's own cooldown, an event already pending, a player-only event. It changes nothing. |
+| `event pending [ISO3]` | The country's events waiting for an answer, its chained events with their due tick and days left, and the cooldowns still running, each by event id. |
+| `flags [ISO3]` | The country's flags with the tick they were set and their age, and its event variables. A flag is printed by name when any event file uses the name; a flag set only by a mod script shows as a hex number. |
+| `flag set <name> [ISO3]`, `flag clear <name> [ISO3]` | Sets (with the real tick, honouring `events.max_flags_per_country`) or clears a flag. |
+| `mod hooks` | Each mod hook that has subscribers and how many, the events waiting to be delivered, and the last 32 hook events delivered (the per-tick and per-month ones are left out). |
+
+Event ids are case-sensitive. There is no command to fast-forward to a date.
+
 #### Errors
 
 Mod events are checked strictly. These problems **skip the whole event**:
@@ -1181,7 +1868,15 @@ Mod events are checked strictly. These problems **skip the whole event**:
 - a province condition whose `value` isn't a whole number of 1 or more;
 - an `annex_province` without a land province id (`province_id`, a whole number from 1 to 5000),
   or an `annex_country` without `target_country`;
-- a `create_unit` without `unit_id` (or with one longer than 29 bytes), with a `count` that isn't a
+- a `start_espionage_mission` without a known `mission_type` (or, unless it is `counter_intelligence`,
+  without a `target`), a `steal_technology` without a `target`, a `sabotage_military` without a
+  `target`, a military stock `field` or a `pct` between 0.1 and 50;
+- an `espionage_active` with an unknown `mission_type`, or a `mission_caught_recently` whose `months`
+  is not a whole number from 1 to 1200;
+- a `modify_military` without a known `stat`, with a `value` outside the range of its stat, or with
+  `months` that isn't a whole number from 0 to 600;
+- a `create_unit` without `unit_id` or `unit_category` (or with an id longer than 29 bytes, or a
+  category that isn't ground, air, naval or special), with a `count` that isn't a
   whole number of 1 or more, or with a `province_id` that isn't a land province id;
 - an unknown continent, region or government name;
 - a `specific_country` event without `target_country`;
@@ -1200,6 +1895,8 @@ labels, 509 bytes for tooltips.
 
 Where problems appear:
 - the Mod Builder's VALIDATE report and the check PUBLISH runs, before the mod is loaded at all;
+- the lighter validation every load runs (see §1): errors in the Loadout error bar and Reload & Test,
+  warnings in Reload & Test;
 - the Loadout screen's error bar;
 - the Mods panel;
 - the Mod Builder's Reload & Test;
@@ -1222,6 +1919,30 @@ event that has already fired, and when it is already pending for that country. A
 raises `on_event_fired` like any other. If the id isn't an engine event, a legacy event with that
 id is shown instead. See the [WASM Scripting Guide](./WASM_SCRIPTING_GUIDE.md) (§4).
 
+#### Editing a mod in a running game
+
+In a **single-player** game with a local mod active, the pause menu has a **Mod Builder** button. Edit the mod, then press
+**APPLY TO RUNNING GAME** instead of RELOAD & TEST: it saves your edits and reloads the mod's **events**,
+**localization**, **script** and **number settings** into the game you are playing, without a restart.
+
+- Every event that already exists keeps its place (its index), so events a country has pending and chains already scheduled
+  keep working. An event you changed is updated in place; one you added goes after the last one; one you deleted (or broke:
+  a file that no longer validates) stops firing until it is back, and nothing chains into it.
+- A `.wasm` script is rebuilt first and swapped in only when the new module loads (a broken edit leaves the old script running);
+  its memory starts fresh and its optional `on_reload` export is called instead of `on_init`. What the mod keeps in the game
+  (flags, variables, its `state_*` store) is untouched.
+- Settings that are plain numbers take effect at once: the `game_settings.json` sections `population`, `diplomacy`,
+  `advanced_diplomacy`, `world_order`, `ai_weights`, `fog_of_war`, `intelligence`, `map_interaction`, `satellite`,
+  `step42_diplomacy` and `political_drift`, and everything in `events.json`. They are rebuilt from the values the game started
+  with, so a key you delete goes back to its original value. `economy`, `technology`, `nuclear`, `military` and `buildings`
+  are not re-applied: the result line names the ones you changed, and a new game picks them up.
+- The Events tab's **FIRE NOW** button queues the selected event for your country at once, ignoring its conditions and chance,
+  so you can see the popup and try each option.
+- **Not reloaded:** C# code (the game keeps a mod's assemblies for the whole run), a changed `mod.json` (permissions, versions,
+  scripts, dependencies: save and restart), the settings sections above that are not live, and content such as buildings, units,
+  doctrines, laws, resources and goals (new game). The result line says what was done.
+- Refused in multiplayer: every player would need the same change at the same moment.
+
 #### Saves and multiplayer
 
 - Mod events are saved by id. If you load a save after removing or renaming an event, its pending
@@ -1237,6 +1958,185 @@ one month later. The "Leave it" option sets a different flag, so `atlas_02` neve
 includes English and Turkish text.
 
 ---
+
+### 8.8 Mod research: doctrine branches and research tracks
+
+A mod can add research beside the Knowledge Network without touching the base branches. Two sources feed one engine;
+mod research runs in its own slots, so it never takes points from doctrine research.
+
+**New branches and extra tiers (`overrides/doctrines.json`, `"append"`).** The `append` block is read next to the usual
+`"mode": "merge" | "replace"` (both modes accept it). Schema: `doctrines.schema.json` (`append`).
+
+```json
+{
+  "append": {
+    "branches": [
+      { "id": "atlantis", "name": "Atlantis", "description": "...", "icon": "space_t1_a",
+        "tiers": [
+          { "name": "Foundations", "question": "Which foundation?", "cost": 400, "months": 6,
+            "cards": [ { "id": "crystal_a", "name": "Crystal lattice", "effects": { "research_speed": 0.1 },
+                         "ai": { "economy": 0.6 }, "requires_flag": "found_atlantis" } ] } ],
+        "milestone": { "name": "Deep knowledge", "effects": { "gdp_modifier": 0.05 } } } ],
+    "tiers": [ { "branch": "military", "tiers": [ { "cards": [ { "id": "mil_six", "name": "Sixth doctrine" } ] } ] } ]
+  }
+}
+```
+
+* A tier holds 1-3 cards; the country researches exactly one (like a base tier), tiers in order. `cost` (research points)
+  and `months` (minimum duration) default to the base values for the same tier number (tiers above 5 use tier 5's).
+* `append.branches` creates branches shown under **Mod research** in the Knowledge Network rail (1-9 tiers, optional milestone
+  granted once every tier has a researched card). `append.tiers` extends a base branch: tier numbers continue after 5 (6-9, at most four);
+  the first extra tier needs the base branch's tier 5. Hidden pools and directives are not supported on mod branches.
+* Ids are 1-24 characters of `a-z`, `0-9`, `_`, unique across every mod card and track node. A card's effects use the same keys as a
+  base card (see `doctrines.schema.json`); an unknown key is an error.
+* Gate keys content can require in `prerequisites.tech` (buildings, units): `tech:<card or node id>`, `<branch>_t<N>` of a mod branch (N up to 9),
+  and `<base branch>_t6`..`t9` for appended tiers. A card can require other cards or base gates in `prerequisites`.
+* AI countries choose among the cards they may research from the five `ai` axes, the effect lanes and a national taste.
+
+**Research tracks (`Content/research_tracks.json`).** Free-form nodes with prerequisites and costs; schema `mod_research_tracks.schema.json`.
+`settings.slots` (1-4, default 2) and `settings.points_share` (default 0.5: each mod slot receives that fraction of the country's monthly
+research points) are file-wide. A node has `cost`, optional `months`, `prerequisites` (all of), `any_of` (at least two), `requires_flag`,
+`effects`, `ai`, `ai_weight`, `position` ([column, row]); `starting` lists nodes a country already knows in a new game.
+
+Validation (Mod Builder > Validate Mod, and at load): duplicate or malformed ids, unknown effects, tier and card counts, unresolved
+prerequisites, prerequisite cycles, limits (192 nodes, 64 mod tiers). A tree that breaks a rule is dropped with a warning; the mod still loads.
+Mod nodes raise the `on_tech_researched` hook, and the reactive event trigger of the same name, with tech index `64 + gate index`
+(once per completed node; the trigger is only raised when a loaded event lists it). Events test a mod node with `has_tech` `"tech:<node id>"` (§3 conditions).
+Saves store progress by node id; ids a later version of the mod no longer defines are dropped with a warning.
+
+### 8.9 Specialists (`Content/specialists.json`)
+
+Named scientists and engineers a country can employ. Schema: `mod_specialists.schema.json`. The base game has none; every one comes from a mod.
+
+```json
+{
+  "mode": "merge",
+  "settings": { "max_assigned": 2 },
+  "specialists": [
+    { "id": "dr_vega", "name": "Dr Vega", "description": "...", "role": "scientist",
+      "portrait": "portraits/specialists/dr_vega.png", "country": "ATL", "available_from": 1990,
+      "hire_cost": 5000000, "upkeep_monthly": 250000, "requires_flag": "found_lab", "ai_weight": 0.4,
+      "effects": { "research_speed": 0.05, "construction_speed_mult": 1.1 } } ]
+}
+```
+
+* A country hires a specialist for `hire_cost` (USD, from the treasury, booked to the political-expense ledger lane) and pays `upkeep_monthly` every
+  month while the specialist is employed. `max_assigned` (1-8, default 2) caps how many one country employs. A specialist works for one country at a time.
+* `country` (ISO3) employs the specialist at the start of a new game; empty = hireable by anyone. `available_from` is the first year it can be hired (0 = from the start);
+  `requires_flag` gates hiring on an event flag.
+* `effects` may use only `research_speed`, `construction_speed_mult`, `unit_build_speed_mult`, `production_output_mult` (same meaning as the doctrine lanes). They apply from the
+  next monthly update after a hire or dismissal.
+* `portrait` is a PNG path relative to the mod folder (it must stay inside it); without one a placeholder is shown. Role (`scientist`, `engineer`, `other`) is display only.
+* `mode`: `merge` (default) adds to the roster other mods define - an id an earlier mod already defines keeps that definition - and `replace` discards the roster of the mods loaded before.
+* AI countries hire the best specialist they can afford (three times the hire cost in the treasury) once a month, in ISO3 order.
+* Event files reward and test specialists: the effects `grant_specialist` (`specialist`: the id; the country the event reached employs it for free, with no hire
+  cost, slot limit, year or flag requirement, taking it from another country that employs it) and `remove_specialist` (it stops employing it; nothing is
+  refunded), and the condition `has_specialist`. An unknown id does nothing and gets a warning at load.
+  ```json
+  { "type": "grant_specialist", "specialist": "dr_vega" }
+  { "type": "has_specialist", "specialist": "dr_vega" }
+  ```
+
+### 8.10 Demography (`Content/demography/seeds.json`, `Content/demography/model.json`)
+
+Schemas: `mod_demography_seeds.schema.json`, `mod_demography_model.schema.json`.
+
+```json
+{
+  "countries": {
+    "TUR": { "bands": [0.2, 0.25, 0.3, 0.25], "region": "Europe", "tfr": 1.6 },
+    "ATL": { "template": "NLD", "le": 82 }
+  }
+}
+```
+
+* A row gives a country's starting age pyramid and demographic scalars. The shape is `cohorts` (`male` / `female`, 101 headcounts by age), four `bands` shares
+  (0-18, 19-36, 37-56, 57+, summing to 1, spread over single years by the `region` template, default World) or a `template` country; what is missing is inherited from the country's
+  shipped row, its template or the region template. Only the shape matters: the pyramid is scaled to the country's population.
+* `le` / `le_male` / `le_female`, `tfr`, `sex_ratio_at_birth` (0.9-1.2), `cbr_target` / `cdr_target` and `calibration` (`mortality_child`, `mortality_adult`, `fertility` factors) override the scalars.
+  `le` and `tfr` must lie inside the model's life-table and fertility grids; a row that breaks a rule is skipped with a message in the log and the Validate Mod report.
+* A scenario nation that names `templateISO3` and has no row here inherits that template's row (only when a mod ships demography).
+* `model.json` replaces whole sections of the shipped model: `sex_gap_male_weight`, `mortality`, `fertility`, `migration`, `crisis_excess_shape`, `preston`, `region_templates`, `world_reference_bands`.
+  A section must be complete and passes the shipped file's validation; if it is rejected the shipped tables stay.
+* Rows apply to a NEW game only (seeds are read at game start); a loaded save keeps its pyramids. With no demography file the shipped model is used unchanged.
+
+### 8.11 Scenario province data (`scenario/provinces_data.json`)
+
+Name the file in `scenario.json`: `"provinceDataFile": "provinces_data.json"` (relative to the scenario folder). Schema: `mod_scenario_provinces_data.schema.json`.
+
+```json
+{
+  "provinces": {
+    "1021": { "population": 250000 },
+    "1022": { "terrain": "Mountain", "resources_mode": "add", "resources": [ { "resource": "Iron", "intensity": 0.8 } ] }
+  }
+}
+```
+
+* Keys are land province ids (1-5000). Every field is optional; an unset field keeps the shipped value.
+* `population` is written to the province when a new game starts, after the scenario's declared country populations, so a province entry wins over the even spread of a declared country total.
+  The owning country's total, GDP per capita and age pyramid follow. A loaded save keeps what it saved.
+* `terrain` replaces the province's terrain (movement, combat, building sites, the terrain map mode). The map's terrain colours do not change. `Ocean` is not allowed.
+* `resources` lists latent deposits (`resource` name, `intensity` above 0 up to 1, at most 8). `resources_mode` is `replace` (default: exactly these deposits; an empty list removes all)
+  or `add` (these join the shipped deposits; the same resource is overwritten). In replace mode the strongest listed resource becomes the province's produced resource in a new game.
+  Terrain and resources are static: they are re-applied every time the world starts, so loads see them too.
+* Starting buildings are not covered. Unknown province ids, terrains and resources are reported by Validate Mod and the entry is skipped.
+* Mod Builder: Provinces > map > **Data** paints these values: edit the selected province, or turn the brush on and click provinces. Provinces that carry data are tinted.
+
+### 8.12 Scenario victories (scenario `victoryFile`)
+
+A scenario can end the game in ways of its own. The header's `victoryFile` names a JSON file (by
+default `victories.json` in the scenario folder) with three optional parts:
+
+```json
+{
+  "disable_base_victories": true,
+  "mod_victories": [
+    { "id": "atlantis_saved", "title_key": "mymod.end.saved", "description_key": "mymod.end.saved.desc",
+      "outcome": "victory", "winner": "player", "min_year": 2040,
+      "conditions": [
+        { "type": "has_flag", "flag_name": "atlantis_gate_sealed" },
+        { "type": "lifetime_lt", "counter": "civilians_affected", "value": 1000000 },
+        { "type": "variable_gt", "variable": "refugees_saved", "scope": "mod", "value": 50 } ] },
+    { "id": "world_lost", "title_key": "mymod.end.lost", "outcome": "defeat", "winner": "any",
+      "conditions": [ { "type": "has_flag", "flag_name": "atlantis_flooded" } ] }
+  ],
+  "end_screen_rows": [
+    { "label_key": "mymod.row.ships", "value": "lifetime.ships_lost" },
+    { "label_key": "mymod.row.refugees", "value": "mod_state.refugees" } ]
+}
+```
+
+- **Endings (`mod_victories`).** Checked once a month, in file order. For each ending the countries
+  it names are tried in ISO3 order, and the first country for which **all** the conditions hold is
+  the winner: the game ends, the end screen opens with the ending's `title_key` (and the optional
+  `description_key` under it), and the `on_game_ended` hook fires. An ending with no conditions holds
+  at its first check. `id` must be unique in the file; the saved game remembers the ending by it.
+- **Who wins (`winner`).** `"player"` (the default) tries the human players, `"any"` every country
+  that still exists, and a three-letter country code only that country.
+- **Result (`outcome`).** `"victory"` (the default) shows VICTORY when the winner is the player.
+  `"defeat"` shows DEFEAT even though its conditions held, for an ending such as a world that
+  ended.
+- **`min_year`.** The ending is not checked before this calendar year (0 or absent: no limit).
+- **Conditions.** The event conditions of §8.7 with the same fields, limited to `has_flag`,
+  `not_has_flag`, `flag_age_months_gt/lt`, `variable_gt/lt/eq` (`scope` `"country"` or `"mod"`),
+  `lifetime_gt/lt` and `date_after` / `date_before`. They test the country being tried as the
+  winner. A condition with a `target_country`, or of another type, is rejected and the ending is
+  dropped (the load log and the validator say which).
+- **`disable_base_victories`.** `true` stops the five base victories from being checked in this
+  scenario, so only your endings can end the game.
+- **End-screen rows (`end_screen_rows`).** Extra lines in the end screen's **mod record**, shown
+  on every end screen of this scenario whichever way the game ended. `label_key` is a text key of
+  your mod; `value` is `lifetime.<counter>` (a [lifetime counter](#lifetime-counters) of the
+  player's country), `mod_state.<key>` (your mod's own saved state) or `variable.<name>` (an event
+  variable of the player's country). Scripts add rows with `register_end_screen_row` /
+  `IModServices.RegisterEndScreenRow`.
+- **Multiplayer.** Every player's game checks the same endings in the same order, so every peer
+  picks the same winner on the same tick. The ending reached is saved with the game and in the state hash.
+
+The Mod Builder's **ENDINGS** tab edits the file, and the validator checks it (duplicate ids,
+a missing title, a condition a victory cannot use, an unknown lifetime counter in a row). A game
+without a victory file runs none of this.
 
 ## 9. Enum Reference
 
@@ -1305,3 +2205,14 @@ The schema also accepts these older spellings: `cas` (CloseAirSupport), `interce
 `Despotic`, `Anarchy`, `Transitional`, `SocialistRepublic`, `FederalRepublic`
 
 `None` means "not set". The older label `city_state` is read as `CityState`, with a warning.
+
+### 9.9 Starting diplomacy types
+`startingDiplomacy` (section 3.4):
+
+- Organization `type`: `CollectiveDefense` (default), `Economic`, `Political`, `InternationalOrg`.
+- Alliance `type`: `Military` (default), `DefensePact`.
+- Treaty `type`: `nap`, `truce` (needs `months`), `trade_agreement`, `guarantee`.
+- War `casusBelli`: `Scripted` (default), `Territorial`, `Ideological`, `Humiliation`, `Defense`, `Liberation`, `Reconquest`.
+
+`worldCeasefire` (section 3.5): `startDate` / `endDate` are `YYYY-MM-DD` with 30-day months (day 1 to 30);
+`countries` are ISO3 codes; `untilFlag` is an event flag name.

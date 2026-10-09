@@ -63,6 +63,10 @@
       "default": false,
       "description": "If true, event can only fire once per country per game. Each country tracks this independently in its FiredEventElement buffer, which is persisted across save/load."
     },
+    "pause_game": {
+      "type": "boolean",
+      "description": "Whether the event's popup pauses the game when it opens. Absent: the game pauses for geopolitical_crisis, military_incident, natural_disaster and internal_politics events, and not for the other categories. true: always pauses; false: never pauses. The player's 'Pause on Event Popup' setting (Settings > Gameplay) still switches pausing off for every event."
+    },
     "cooldown_months": {
       "type": "integer",
       "default": 0,
@@ -70,8 +74,8 @@
     },
     "target": {
       "type": "string",
-      "enum": ["player", "any_country", "specific_country", "all", "random_matching"],
-      "description": "Who can get the event. 'player': only human-controlled countries (every human in multiplayer); AI countries never roll it, and a chain that would deliver it to an AI country is dropped. 'specific_country': only target_country. 'any_country' / 'all' / 'random_matching': any country whose conditions pass. Chain recipients follow the rule in chain_event, not this field."
+      "enum": ["player", "any_country", "specific_country", "all", "global", "random_matching", "every_country"],
+      "description": "Who can get the event. 'player': only human-controlled countries (every human in multiplayer); AI countries never roll it, and a chain that would deliver it to an AI country is dropped. 'specific_country': only target_country. 'any_country' / 'all' / 'random_matching': any country whose conditions pass, by chance (an AI country rolls in one month out of five). 'global': a world-scoped event, rolled once per check for a single country (the first human player by ISO3, else the first live country by ISO3) so it fires once rather than once per country; its conditions are tested on that country. 'every_country': EVERY country whose conditions pass, at the first monthly evaluation they hold, with no random roll, no AI shard and no lane cooldown; a country with an unanswered event gets it queued behind (up to events.max_active_events_per_country), and an AI country answers it in the same evaluation; it still respects fire_once and cooldown_months, and a repeatable one waits events.repeatable_immediate_min_cooldown_days between firings. Chain recipients follow the rule in chain_event, not this field."
     },
     "target_country": {
       "type": "string",
@@ -98,7 +102,8 @@
               "on_sanction_applied",
               "on_building_completed",
               "on_leader_death",
-              "on_revolution"
+              "on_revolution",
+              "on_espionage_resolved"
             ],
             "description": "Game action that triggers this event"
           },
@@ -155,15 +160,58 @@
               "not_owns_province",
               "controls_province",
               "not_controls_province",
-              "stakeholder"
+              "stakeholder",
+              "flag_age_months_gt",
+              "flag_age_months_lt",
+              "variable_gt",
+              "variable_lt",
+              "variable_eq",
+              "espionage_active",
+              "mission_caught_recently",
+              "in_organization",
+              "world_ceasefire_active",
+              "lifetime_gt",
+              "lifetime_lt",
+              "has_specialist"
             ]
+          },
+          "specialist": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]{1,24}$",
+            "description": "has_specialist (required): the id of a specialist in a mod's Content/specialists.json. True when the evaluating country employs it. An unknown id never passes. Mod events only."
+          },
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_]{4,24}$",
+            "description": "in_organization (required): the alliance organization's id (4 to 24 letters, digits or underscores, upper-cased by the game; never starting with IDX). True when the evaluating country is a member: a mod's own organization or a built-in one such as NATO. Mod events only."
+          },
+          "scope": {
+            "type": "string",
+            "enum": ["country", "mod"],
+            "description": "variable_gt / variable_lt / variable_eq / set_variable / change_variable (optional): 'country' (the default) keeps the number on each country; 'mod' keeps one number for the whole mod, shared by every country and by the mod's scripts (state_get / state_set / state_add), saved with the game. A mod may hold as many keys as one country may hold flags (events.max_flags_per_country)."
+          },
+          "counter": {
+            "type": "string",
+            "enum": ["personnel_lost", "regiments_lost", "ships_lost", "aircraft_lost", "civilians_affected", "provinces_gained", "provinces_lost", "wars_won", "wars_lost"],
+            "description": "lifetime_gt / lifetime_lt (required): which lifetime counter of the country to test. They count over the whole campaign and peace never resets them. personnel_lost = soldiers killed, regiments_lost = regiments destroyed, ships_lost, aircraft_lost, civilians_affected = civilians affected on the country's soil, provinces_gained / provinces_lost = provinces that changed owner by treaty, wars_won / wars_lost = wars ended with a clear advantage. Mod events only."
+          },
+          "mission_type": {
+            "type": "string",
+            "enum": ["gather_intelligence", "sabotage_economy", "steal_technology", "influence_government", "counter_intelligence", "satellite_surveillance"],
+            "description": "espionage_active (optional): only a running mission of this kind counts; leave it out for any kind. Mod events only."
+          },
+          "months": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1200,
+            "description": "mission_caught_recently (required): one of the country's espionage missions was caught within this many months (a month is 30 days). A whole-number value is read as the months when months is absent. Missions saved before this feature have no recorded outcome time and never count. Mod events only."
           },
           "field": {
             "type": "string",
             "description": "Dot-path to stat field (e.g., 'military.active_personnel', 'government.stability'). province_stat_gt: one of 'province.population', 'province.infrastructure', 'province.unrest', 'province.dev_level', 'province.radiation'."
           },
           "value": {
-            "description": "Comparison value. Numbers for stat conditions (country_unrest_gt/lt compare 0-100 average national unrest); string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before. relation_above/gt/below/lt: the relation threshold (-100 to 100) to compare against target_country. stakeholder: a non-negative relation-magnitude threshold — the evaluating country qualifies if it IS target_country, is at war with it, is allied with it, or |relation| >= this value. For active_law_is, prefer law_category/law_option (or a 'categoryId/optionId' value string). For owns_province / not_owns_province / controls_province / not_controls_province: the province id from province_registry.json (a whole number of 1 or more, e.g. 2276). 'owns' = the legal owner (changes with a peace deal or territory transfer); 'controls' = the occupier if the province is occupied, otherwise the owner (changes on capture). An unknown province is owned / controlled by no one, so the not_ variants are true for it. has_tech: a doctrine tier '<branch>_t<tier>' with a tier from 1 to 5 (e.g. 'cyber_t2'); true when the evaluating country has completed that tier (branch ids as in doctrines.json; an unknown branch never passes). province_stat_gt: a number; true when at least one province the evaluating country legally owns has the 'field' stat above it (a country without provinces never passes). defcon_level: a whole number from 0 to 5; true when the evaluating country's DEFCON is at that level or more severe (5 = peace, 0 = nuclear exchange; a country without nuclear capability is at 5)."
+            "description": "Comparison value. Numbers for stat conditions (country_unrest_gt/lt compare 0-100 average national unrest); string names for continent/region/government_type (e.g., 'europe', 'northern_europe'); date string 'YYYY-MM' for date_after/date_before. relation_above/gt/below/lt: the relation threshold (-100 to 100) to compare against target_country. stakeholder: a non-negative relation-magnitude threshold — the evaluating country qualifies if it IS target_country, is at war with it, is allied with it, or |relation| >= this value. For active_law_is, prefer law_category/law_option (or a 'categoryId/optionId' value string). For owns_province / not_owns_province / controls_province / not_controls_province: the province id from province_registry.json (a whole number of 1 or more, e.g. 2276). 'owns' = the legal owner (changes with a peace deal or territory transfer); 'controls' = the occupier if the province is occupied, otherwise the owner (changes on capture). An unknown province is owned / controlled by no one, so the not_ variants are true for it. has_tech: a doctrine tier '<branch>_t<tier>' with a tier from 1 to 5 (e.g. 'cyber_t2'); true when the evaluating country has completed that tier (branch ids as in doctrines.json; an unknown branch never passes). A mod's research also works: 'tech:<node id>' for a research node or doctrine card, or a mod branch tier such as 'atlantis_t2' or a base branch tier above 5 ('military_t6'); true when the country has that gate open (it never passes in a game whose mods add no such research). province_stat_gt: a number; true when at least one province the evaluating country legally owns has the 'field' stat above it (a country without provinces never passes). defcon_level: a whole number from 0 to 5; true when the evaluating country's DEFCON is at that level or more severe (5 = peace, 0 = nuclear exchange; a country without nuclear capability is at 5). flag_age_months_gt / flag_age_months_lt: a whole number of months from 0 to 1200 (a month is 30 days); compared with the whole months since flag_name was set (never true while the country lacks the flag). variable_gt / variable_lt / variable_eq: a whole number compared with the country's variable (an unset variable reads 0). lifetime_gt / lifetime_lt: a whole number from 0 to 2,000,000,000 compared with the lifetime counter named by 'counter' (values above 16,777,216 are rounded)."
           },
           "target_country": {
             "type": "string",
@@ -171,15 +219,19 @@
           },
           "target": {
             "type": "string",
-            "description": "Alias of target_country, accepted in mod events (Content/events/*.json) and — since W6.4 — the base game importers."
+            "description": "Alias of target_country, accepted in mod events (Content/events/*.json) and by every base game importer."
           },
           "flag_name": {
             "type": "string",
-            "description": "has_flag / not_has_flag only: the flag name set by a set_flag effect."
+            "description": "has_flag / not_has_flag / flag_age_months_gt / flag_age_months_lt: the flag name set by a set_flag effect (flag_age_* measures from the moment it was set; a flag written by a mod script counts from the tick of the write)."
+          },
+          "variable": {
+            "type": "string",
+            "description": "variable_gt / variable_lt / variable_eq: the name of a per-country whole-number variable written by set_variable / change_variable. Mod events only (variable_name is accepted as an alias)."
           },
           "flag": {
             "type": "string",
-            "description": "Alias of flag_name, accepted in mod events (Content/events/*.json) only. The base game importers read flag_name."
+            "description": "Alias of flag_name, accepted in mod events (Content/events/*.json) and by every base game importer. Prefer flag_name."
           },
           "law_category": {
             "type": "string",
@@ -194,8 +246,8 @@
     },
     "mean_time_to_happen_months": {
       "type": "number",
-      "minimum": 0.1,
-      "description": "Sets the chance of each monthly check once the conditions pass: P = 1 - e^(-1/MTTH). AI countries are checked one month in five and human players every month at 5 x MTTH, so an any_country event takes about 5 x MTTH months on average for both. Target player and specific_country events are checked every month for a human player at MTTH as written."
+      "minimum": 0,
+      "description": "0 means no roll: the event fires at the first monthly evaluation where its conditions pass (what 'immediate' does for a mod event). Above 0 it sets the chance of each monthly check once the conditions pass: P = 1 - e^(-1/MTTH). AI countries are checked one month in five and human players every month at 5 x MTTH, so an any_country event takes about 5 x MTTH months on average for both. Target player and specific_country events are checked every month for a human player at MTTH as written."
     },
     "immediate": {
       "type": "boolean",
@@ -280,12 +332,30 @@
                     "withdraw_forces",
                     "modify_resource_price",
                     "global_modifier",
-                    "annex_country"
+                    "annex_country",
+                    "set_variable",
+                    "change_variable",
+                    "sign_peace",
+                    "sign_truce",
+                    "form_alliance",
+                    "break_alliance",
+                    "modify_military",
+                    "start_espionage_mission",
+                    "steal_technology",
+                    "sabotage_military",
+                    "create_organization",
+                    "join_organization",
+                    "leave_organization",
+                    "invite_to_organization",
+                    "start_world_ceasefire",
+                    "end_world_ceasefire",
+                    "grant_specialist",
+                    "remove_specialist"
                   ]
                 },
                 "target": {
                   "type": "string",
-                  "description": "Target country ISO3 (mod events also accept target_country, which wins when both are set). add_relation, the sanction effects, engage_diplomatically, withdraw_forces: the other country. annex_province: the country that receives the province (absent = the event's recipient; a named country that no longer exists skips the effect). annex_country (required): the country whose provinces the event's recipient takes; it is then eliminated as after a full peace annexation. create_unit: the country that receives the units (absent = the event's recipient; a named country that no longer exists skips the effect). A province id no longer goes here: use province_id."
+                  "description": "Target country ISO3 (mod events also accept target_country, which wins when both are set). add_relation, the sanction effects, engage_diplomatically, withdraw_forces: the other country. declare_war, sign_peace, sign_truce, form_alliance, break_alliance (required): the other country; the country the event reached acts on it. annex_province: the country that receives the province (absent = the event's recipient; a named country that no longer exists skips the effect). annex_country (required): the country whose provinces the event's recipient takes; it is then eliminated as after a full peace annexation. create_unit: the country that receives the units (absent = the event's recipient; a named country that no longer exists skips the effect). A province id no longer goes here: use province_id. join_organization: the country that joins instead of the one the event reached (optional). invite_to_organization (required): the country that is invited; the country the event reached, which must be a member, invites it."
                 },
                 "province_id": {
                   "type": "integer",
@@ -293,11 +363,21 @@
                   "maximum": 5000,
                   "description": "annex_province (required): the land province's id from province_registry.json (e.g. 2276). Sea zones (5001 and up) are rejected. The receiver becomes its owner and controller at once; occupation and siege end, with no resistance and no added unrest. For older data, a whole-number value is read as the id when province_id is absent. create_unit (optional): where the new stack starts, a land province the receiver owns and controls (coastal for a naval unit, with an airfield for an air unit); absent or unsuitable = the receiver's capital, else its lowest-numbered suitable province."
                 },
+                "unit_category": {
+                  "type": "string",
+                  "enum": ["ground", "air", "naval", "special"],
+                  "description": "create_unit, instead of unit_id: the receiver gets its best available unit of this category when the effect runs (highest attack plus defense, times health, among the units its scenario, roster, exclusivity and researched tiers allow; ties go to the lower unit id). A unit_id, when present, wins and the category is ignored with a note. Missiles are not offered. If nothing of the category is available the effect is skipped with a warning. Mod events only."
+                },
+                "stat": {
+                  "type": "string",
+                  "enum": ["attack", "defense", "morale_recovery", "morale"],
+                  "description": "modify_military (required): attack and defense add value as a fraction to the country's army and fleet combat power (0.1 = +10%; from -0.9 to 5). morale_recovery adds value as a fraction to how fast idle armies regain morale (0.5 = 50% faster; from -1 to 10). morale adds value points once to every army's morale (-100 to 100 on the 0-100 scale; nothing is left behind and months is ignored). Several modifiers of the same stat add up; at most 32 are active per country. Mod events only."
+                },
                 "unit_id": {
                   "type": "string",
                   "minLength": 1,
                   "maxLength": 29,
-                  "description": "create_unit (required): the id of a unit type from units.json, a mod's Content/units.json or the scenario's unit types (case is ignored; at most 29 UTF-8 bytes). The receiver gets one new stack of these units, free and at full strength. An unknown id, a missile unit, a unit the scenario disables, or a receiver with no suitable province skips the effect with a warning when it runs."
+                  "description": "create_unit (required unless unit_category is given): the id of a unit type from units.json, a mod's Content/units.json or the scenario's unit types (case is ignored; at most 29 UTF-8 bytes). The receiver gets one new stack of these units, free and at full strength. An unknown id, a missile unit, a unit the scenario disables, or a receiver with no suitable province skips the effect with a warning when it runs."
                 },
                 "count": {
                   "type": "integer",
@@ -307,14 +387,70 @@
                 },
                 "field": {
                   "type": "string",
-                  "description": "Stat field path for modify_stat"
+                  "description": "Stat field path for modify_stat. sabotage_military (required): the target's stock that is hit, one of military.manpower, military.reserve, military.tanks, military.aircraft, military.ships."
+                },
+                "mission_type": {
+                  "type": "string",
+                  "enum": ["gather_intelligence", "sabotage_economy", "steal_technology", "influence_government", "counter_intelligence", "satellite_surveillance"],
+                  "description": "start_espionage_mission (required): the kind of covert operation the country the event reaches launches against target_country, through the same rules as a player (it needs an Intelligence HQ, a free mission slot, a specialist already deployed in the target country and no cooldown running for that kind; otherwise the effect is skipped with a warning). counter_intelligence needs no target. sabotage_infrastructure and fund_opposition are not offered: they need a province or a political bloc that an event cannot name. Mod events only."
+                },
+                "pct": {
+                  "type": "number",
+                  "minimum": 0.1,
+                  "maximum": 50,
+                  "description": "sabotage_military (required): the percent of the chosen stock that is destroyed in one go, from 0.1 to 50 (10 removes a tenth, rounded down). A numeric value is read as the percent when pct is absent. Mod events only."
                 },
                 "value": {
-                  "description": "Effect value (number, string, etc.). change_government: a GovernmentType number, or in mod events a name such as 'democracy'. fire_event: prefer delay_months; a numeric value here is used as the delay only when delay_months is absent."
+                  "description": "Effect value (number, string, etc.). change_government: a GovernmentType number, or in mod events a name such as 'democracy'. fire_event: prefer delay_months; a numeric value here is used as the delay only when delay_months is absent. set_variable: the whole number the variable becomes. change_variable: the whole number added to it (negative to subtract); both are limited to +-1,000,000,000 and a fraction is rounded."
                 },
                 "flag_name": {
                   "type": "string",
-                  "description": "set_flag / clear_flag only: the country event flag to set or clear (tested by has_flag / not_has_flag)."
+                  "description": "set_flag / clear_flag only: the country event flag to set or clear (tested by has_flag / not_has_flag; its age is tested by flag_age_months_gt / flag_age_months_lt). A set_flag past events.max_flags_per_country is dropped, with one log line per country."
+                },
+                "force": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "declare_war, form_alliance and join_organization only. join_organization: false refuses a country that is at war with a member of a defence pact; true joins anyway. declare_war: false skips the war while a truce, a non-aggression pact or an alliance holds between the two countries; true ends the truce, breaks the pact and the alliance, then declares, even while a world ceasefire refuses declarations (that pair then stays at war while the ceasefire holds). form_alliance: false applies the normal rules (relations, treaty limits, the other country has to want it, a human is asked); true forms the alliance at once. Mod events only."
+                },
+                "casus_belli": {
+                  "type": "string",
+                  "enum": ["scripted", "territorial", "ideological", "humiliation", "defense", "liberation", "reconquest"],
+                  "default": "scripted",
+                  "description": "declare_war only: the casus belli the war carries. 'scripted' (default, shown as 'Story event') is neither aggression nor an unjustified attack, so it costs no goodwill and draws no automatic embargo; the others behave as when a player picks them. Mod events only."
+                },
+                "months": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 600,
+                  "description": "sign_truce: how many months the truce lasts. Absent = the game's usual truce length (diplomacy truce_duration_months). A whole-number value is read as the months when months is absent. modify_military: how many months the attack, defense or morale_recovery change lasts; absent or 0 = permanent. start_world_ceasefire: how many months the ceasefire lasts (1 to 600); absent = no end date (it then ends by until_flag or end_world_ceasefire). Mod events only."
+                },
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9_]{4,24}$",
+                  "description": "create_organization, join_organization, leave_organization, invite_to_organization (required): the alliance organization's id (4 to 24 letters, digits or underscores, upper-cased by the game; never starting with IDX). create_organization founds it and the country the event reached joins it; the others act on an existing one, a mod's own or a built-in one such as NATO. Mod events only."
+                },
+                "specialist": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9_]{1,24}$",
+                  "description": "grant_specialist, remove_specialist (required): the id of a specialist in a mod's Content/specialists.json. grant_specialist makes the country the event reached employ it for free (no hire cost, no slot limit, no year or flag requirement), taking it from another country that employs it; remove_specialist dismisses it from that country. An unknown id does nothing. Mod events only."
+                },
+                "collective_defense": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "create_organization only: true makes the organization a defence pact (an attack on one member is answered by all, and a member that attacks another is expelled); false is a plain membership. Mod events only."
+                },
+                "until_flag": {
+                  "type": "string",
+                  "description": "start_world_ceasefire only: the ceasefire also ends the moment any country holds the event flag with this name (set by set_flag). Absent = no flag ends it. start_world_ceasefire suspends every running war and refuses every new declaration until it ends; end_world_ceasefire ends it at once. Mod events only."
+                },
+                "variable": {
+                  "type": "string",
+                  "description": "set_variable / change_variable (required): the name of a per-country whole-number variable, read by variable_gt / variable_lt / variable_eq. The variable exists on a country only once an effect has written it; a new variable past events.max_flags_per_country is dropped, with one log line per country. Mod events only (variable_name is accepted as an alias)."
+                },
+                "scope": {
+                  "type": "string",
+                  "enum": ["country", "mod"],
+                  "description": "set_variable / change_variable (optional): 'country' (the default) writes the variable on the country; 'mod' writes the mod's own key/value state, one number for the whole mod that scripts also read and write (state_get / state_set / state_add) and variable_gt / variable_lt / variable_eq with scope 'mod' test. Saved with the game."
                 },
                 "flag": {
                   "type": "string",

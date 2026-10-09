@@ -63,9 +63,17 @@
       "default": true,
       "description": "Re-initialise neutral opinion modifiers after clearing relationships"
     },
+    "provinceDataFile": {
+      "type": "string",
+      "description": "Per-province population, terrain and latent resources, relative to the scenario folder (scenario/provinces_data.json). Applied when a new game starts; terrain and resources are re-applied on every load."
+    },
     "nationalGoalsFile": {
       "type": "string",
       "description": "National goals file, relative to the scenario folder, in the national_goals_2026.json shape ({ \"_BASIC\": { \"goals\": [...] }, \"OTT\": { \"goals\": [...] } }). It REPLACES the base goals for the Agenda panel and the AI; a file without _BASIC means no starter goals."
+    },
+    "victoryFile": {
+      "type": "string",
+      "description": "Victory file, relative to the scenario folder (see mod_scenario_victory.schema.json): the scenario's own endings (mod_victories), extra end-screen rows (end_screen_rows) and the switch that turns the five base victories off (disable_base_victories). Checked once a month; the first ending whose conditions hold ends the game. The Mod Builder's Endings tab edits it."
     },
     "gdpScale": {
       "type": "number",
@@ -209,6 +217,46 @@
     },
     "regionOwnerOverrides": {
       "$ref": "mod_scenario_provinces_ownership.schema.json#/properties/regionOwnerOverrides"
+    },
+    "startingDiplomacy": {
+      "$ref": "mod_scenario_diplomacy.schema.json#/properties/startingDiplomacy"
+    },
+    "worldCeasefire": {
+      "type": "object",
+      "description": "A world ceasefire the scenario starts with. It suspends the wars running between the covered countries (no battles, sieges, occupation progress, war score or exhaustion growth, air strikes, blockades or nuclear launches, and armies cannot enter each other's land; participants, occupations and peace terms stay) and refuses new declarations of war between them. The scenario's own starting wars are declared first and then suspended, so a scenario can open mid-war with the guns silent. Peace deals stay possible. Events can also start and end one (start_world_ceasefire / end_world_ceasefire).",
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "pattern": "^\\d{1,4}-\\d{1,2}-\\d{1,2}$",
+          "description": "YYYY-MM-DD, counted with the game's 30-day months. The day the ceasefire begins; blank = the scenario's first day."
+        },
+        "endDate": {
+          "type": "string",
+          "pattern": "^\\d{1,4}-\\d{1,2}-\\d{1,2}$",
+          "description": "YYYY-MM-DD. The ceasefire ends on this day; blank = no end date (it then ends by untilFlag or an end_world_ceasefire effect only)."
+        },
+        "untilFlag": {
+          "type": "string",
+          "description": "The ceasefire also ends the moment any country holds the event flag with this name (set by a set_flag effect). Blank = no flag ends it."
+        },
+        "countries": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Za-z0-9]{3}$" },
+          "uniqueItems": true,
+          "description": "ISO3 codes the ceasefire covers. A pair of countries is covered only when BOTH are listed. Empty = every country."
+        },
+        "blockDeclarations": {
+          "type": "boolean",
+          "default": true,
+          "description": "True: a declaration of war between covered countries is refused while the ceasefire holds (a declare_war effect with force: true still goes through, and that war stays live)."
+        },
+        "suspendWars": {
+          "type": "boolean",
+          "default": true,
+          "description": "True: the wars running between covered countries are suspended while the ceasefire holds."
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false

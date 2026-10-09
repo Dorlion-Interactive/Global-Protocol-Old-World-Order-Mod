@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_scenario_provinces_data.schema.json",
+  "title": "Scenario province data",
+  "description": "scenario/provinces_data.json (named by the scenario's provinceDataFile): per-province changes applied when a new game starts. population is written to the province and the owning country's total follows; terrain and resources are static and are re-applied on every load. Starting buildings are not covered.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "provinces": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[0-9]{1,4}$" },
+      "additionalProperties": { "$ref": "#/definitions/entry" }
+    }
+  },
+  "definitions": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "population": { "type": "number", "minimum": 0, "description": "People in the province at the start." },
+        "terrain": { "type": "string", "enum": ["Plains", "Mountain", "Desert", "Forest", "Jungle", "Tundra", "Coastal", "Urban", "Wetland"], "description": "Terrain type (movement, combat, building sites). The map's terrain colours do not change." },
+        "resources_mode": { "type": "string", "enum": ["replace", "add"], "description": "replace (default): the listed resources replace the province's deposits; add: they are added to them." },
+        "resources": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": ["resource", "intensity"],
+            "additionalProperties": false,
+            "properties": {
+              "resource": { "type": "string", "description": "Resource name, for example Oil, Iron, Wheat." },
+              "intensity": { "type": "number", "exclusiveMinimum": 0, "maximum": 1, "description": "Deposit strength, above 0 up to 1." }
+            }
+          }
+        }
+      }
+    }
+  }
+}

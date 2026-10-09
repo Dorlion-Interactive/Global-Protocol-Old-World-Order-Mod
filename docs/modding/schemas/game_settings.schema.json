@@ -1739,7 +1739,8 @@
               "description": "Maximum simultaneous bilateral agreements per country.",
               "minimum": 1,
               "maximum": 32
-            }
+            },
+            "tariff_reduction_cap": { "type": "number", "description": "Mirrors game_settings.json: economy.trade_agreement_defaults.tariff_reduction_cap" }
           }
         },
         "spot_market": {
@@ -1934,6 +1935,252 @@
             }
           }
         },
+        "trade": {
+          "type": "object",
+          "description": "Trade revision (economy.trade.*): settlement, contracts, negotiation, private finance, auto-trade bounds and the trade-centre network. Every value 0 means off / legacy behaviour. Documented key by key in .ai/implementation-plans/features/economy/trade-revision/CONTRACTS.md.",
+          "properties": {
+            "settlement": {
+              "type": "object",
+              "description": "When and how traded goods are delivered and matched (lane S).",
+              "properties": {
+                "deferred_delivery": {
+                  "type": "integer",
+                  "description": "1 = imports delivered at the close of month N are added to the stockpile after the monthly draw and are usable from N+1 (TradeSettlementCloseSystem); 0 = legacy in-month delivery. Owner: lane S.",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "direct_order_surplus_fraction": {
+                  "type": "number",
+                  "description": "Share (0-1) of an AI seller's protected exportable surplus one DirectTradeOrder may take. Owner: lane S.",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            },
+            "contracts": {
+              "type": "object",
+              "description": "Supply contracts: caps, renewal, hostility, price indexing (lane C).",
+              "properties": {
+                "max_active_per_country": {
+                  "type": "integer",
+                  "description": "Max active supply contracts per country (as buyer plus seller). 0 = contracts disabled. Owner: lane C.",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "renewal_notice_months": {
+                  "type": "integer",
+                  "description": "Months before the end of a contract at which its single renewal follow-up is sent. Owner: lane C.",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "hostility_suspend_months": {
+                  "type": "integer",
+                  "description": "Months a contract stays Suspended under hostility (war, freeze marker) before it is Terminated. Owner: lane C.",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "indexed_review_months": {
+                  "type": "integer",
+                  "description": "Months between price reviews of an Indexed contract. Owner: lane C/S.",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "indexed_cap_mult": {
+                  "type": "number",
+                  "description": "An Indexed price never exceeds BasePrice x this multiple. Owner: lane C/S.",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "indexed_floor_mult": {
+                  "type": "number",
+                  "description": "An Indexed price never falls under BasePrice x this multiple. Owner: lane C/S.",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "max_surplus_commit_fraction": {
+                  "type": "number",
+                  "description": "Max share (0-1) of a seller's protected exportable surplus that signed contracts may commit in total. Owner: lane C.",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            },
+            "negotiation": {
+              "type": "object",
+              "description": "Offer threads: counters, rejection cooldown, AI offers (lane C).",
+              "properties": {
+                "max_counter_rounds": {
+                  "type": "integer",
+                  "description": "Max counter-offers in one thread. 0 = no counters (accept or reject only). Owner: lane C.",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "reject_cooldown_ticks": {
+                  "type": "integer",
+                  "description": "Ticks (days) after a rejection before the same pair and scope may be offered again without a material change. 0 = no cooldown. Owner: lane C.",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "material_change_threshold": {
+                  "type": "number",
+                  "description": "Relative change in quantity or price (0-1) that lets a re-offer through the cooldown. Owner: lane C.",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "ai_offers_per_country_per_month": {
+                  "type": "integer",
+                  "description": "Max offers one AI country proposes per month. 0 = the AI proposes nothing. Owner: lane C.",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "ai_offer_min_relation": {
+                  "type": "number",
+                  "description": "Minimum relation value (-100..100) for an AI to open an offer to a country. Owner: lane C.",
+                  "minimum": -100,
+                  "maximum": 100
+                },
+                "ai_accept_score_threshold": {
+                  "type": "number",
+                  "description": "Utility score (0-1) at or above which an AI accepts an offer; between half of it and it, the AI counters. Owner: lane C.",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "max_pending_offers_per_recipient": {
+                  "type": "integer",
+                  "description": "Max offers that may wait unanswered for one recipient at a time. 0 = no cap. Owner: lane C.",
+                  "minimum": 0,
+                  "maximum": 1000000
+                }
+              }
+            },
+            "private_finance": {
+              "type": "object",
+              "description": "Monthly cap on private-sector trade finance (lane P).",
+              "properties": {
+                "monthly_gdp_fraction": {
+                  "type": "number",
+                  "description": "Private trade-finance cap per month as a fraction of GDP. 0 = uncapped (legacy). Lane P must check the scale against a real monthly import bill. Owner: lane P.",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "floor_usd": {
+                  "type": "number",
+                  "description": "Minimum monthly cap in USD, so a tiny economy can still import. Owner: lane P.",
+                  "minimum": 1,
+                  "maximum": 1000000000
+                }
+              }
+            },
+            "auto_trade": {
+              "type": "object",
+              "description": "Bounds on the per-resource auto-trade limits a player may set (lane P).",
+              "properties": {
+                "price_ceiling_max_mult": {
+                  "type": "number",
+                  "description": "The highest price ceiling a player may set, as a multiple of the resource base price. 0 = no bound. Owner: lane P.",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "price_floor_min_mult": {
+                  "type": "number",
+                  "description": "The lowest price floor a player may set, as a multiple of the resource base price. 0 = no bound. Owner: lane P.",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                }
+              }
+            },
+            "network": {
+              "type": "object",
+              "description": "Trade-centre network: freight cost, air eligibility, owner bonuses (lane N).",
+              "properties": {
+                "enabled": {
+                  "type": "integer",
+                  "description": "1 = the trade-centre network is used (TradeRoute resolves real routes); 0 = legacy (every route feasible by sea at 0 km). Owner: lane N.",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "sea_cost_per_tkm_usd": {
+                  "type": "number",
+                  "description": "Sea freight in USD per tonne-km. Owner: lane N (calibrates against the resource price scale).",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "land_cost_per_tkm_usd": {
+                  "type": "number",
+                  "description": "Land freight (rail/road) in USD per tonne-km. Owner: lane N.",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "air_cost_per_tkm_usd": {
+                  "type": "number",
+                  "description": "Air freight in USD per tonne-km. Owner: lane N.",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "air_max_tonnes_per_unit": {
+                  "type": "number",
+                  "description": "Air is offered only for goods whose freight mass per unit (tonnes) is at or under this (about 0.01: high-value, low-mass goods). Owner: lane N (redefined in FX-4; was air_max_weight).",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "owner_bonus_tier1": {
+                  "type": "number",
+                  "description": "Additive TradeHubFactor bonus for owning a tier-1 (national) trade-centre province. Owner: lane N.",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "owner_bonus_tier2": {
+                  "type": "number",
+                  "description": "Same, tier 2 (regional). Owner: lane N.",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "owner_bonus_tier3": {
+                  "type": "number",
+                  "description": "Same, tier 3 (global hub). Owner: lane N.",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "owned_hub_transport_discount": {
+                  "type": "number",
+                  "description": "Fraction (0-1) off the transport cost of a lane that passes through a hub the buyer owns. Owner: lane N.",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "owner_spot_cap_bonus": {
+                  "type": "number",
+                  "description": "Fraction added to the spot-market cap scale per unit of TradeCenterBonus. Owner: lane N.",
+                  "minimum": 0,
+                  "maximum": 1000000000
+                },
+                "freight_tonnes_per_unit_default": {
+                  "type": "number",
+                  "description": "Freight tonnes of one unit of a tonne-denominated resource (FX-4). 0 = no freight.",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "freight_tonnes_per_unit_kusd": {
+                  "type": "number",
+                  "description": "Freight tonnes of one unit (1 kUSD of output) of a kUSD-denominated resource (FX-4). Services and financials never ship.",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "freight_tonnes_per_unit_vehicle": {
+                  "type": "number",
+                  "description": "Freight tonnes of one whole vehicle (FX-4).",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "freight_tonnes_per_unit_m3": {
+                  "type": "number",
+                  "description": "Freight tonnes of one cubic metre of roundwood (FX-4).",
+                  "minimum": 0,
+                  "maximum": 1000000
+                }
+              }
+            }
+          }
+        },
         "resource_strategic_caps": {
           "type": "object",
           "description": "Caps applied by ResourceStrategicEffectsSystem to keep deficit consequences bounded.",
@@ -2019,6 +2266,77 @@
             }
           },
           "additionalProperties": false
+        },
+        "fiscal_deficit_inflation_max_ratio": { "type": "number", "description": "Mirrors game_settings.json: economy.fiscal_deficit_inflation_max_ratio" },
+        "max_aggregate_event_growth_bonus": { "type": "number", "description": "Mirrors game_settings.json: economy.max_aggregate_event_growth_bonus" },
+        "max_single_event_gdp_fraction": { "type": "number", "description": "Mirrors game_settings.json: economy.max_single_event_gdp_fraction" },
+        "max_single_event_treasury_gdp_fraction": { "type": "number", "description": "Mirrors game_settings.json: economy.max_single_event_treasury_gdp_fraction" },
+        "event_growth_bonus_monthly_decay": { "type": "number", "description": "Mirrors game_settings.json: economy.event_growth_bonus_monthly_decay" },
+        "natural_inflation_rate": { "type": "number", "description": "Mirrors game_settings.json: economy.natural_inflation_rate" },
+        "growth_inflation_coefficient": { "type": "number", "description": "Mirrors game_settings.json: economy.growth_inflation_coefficient" },
+        "inflation_below_target_reversion": { "type": "number", "description": "Mirrors game_settings.json: economy.inflation_below_target_reversion" },
+        "inflation_above_target_reversion": { "type": "number", "description": "Mirrors game_settings.json: economy.inflation_above_target_reversion" },
+        "imported_inflation_cap_high": { "type": "number", "description": "Mirrors game_settings.json: economy.imported_inflation_cap_high" },
+        "imported_inflation_cap_low": { "type": "number", "description": "Mirrors game_settings.json: economy.imported_inflation_cap_low" },
+        "central_bank": {
+          "type": "object",
+          "description": "Mirrors game_settings.json / economy.central_bank",
+          "properties": {
+            "ai_rate_response_coeff": { "type": "number", "description": "Mirrors game_settings.json: economy.central_bank.ai_rate_response_coeff" },
+            "ai_rate_adjust_speed": { "type": "number", "description": "Mirrors game_settings.json: economy.central_bank.ai_rate_adjust_speed" },
+            "ai_max_rate_over_neutral": { "type": "number", "description": "Mirrors game_settings.json: economy.central_bank.ai_max_rate_over_neutral" }
+          }
+        },
+        "reserve_shield": {
+          "type": "object",
+          "description": "Mirrors game_settings.json / economy.reserve_shield",
+          "properties": {
+            "dampening_cap": { "type": "number", "description": "Mirrors game_settings.json: economy.reserve_shield.dampening_cap" },
+            "spend_share_cap": { "type": "number", "description": "Mirrors game_settings.json: economy.reserve_shield.spend_share_cap" },
+            "ai_injection_months": { "type": "number", "description": "Mirrors game_settings.json: economy.reserve_shield.ai_injection_months" }
+          }
+        },
+        "rate_to_inflation_dampening": { "type": "number", "description": "Mirrors game_settings.json: economy.rate_to_inflation_dampening" },
+        "debt_service_budget_coverage": { "type": "number", "description": "Mirrors game_settings.json: economy.debt_service_budget_coverage" },
+        "debt_repayment": {
+          "type": "object",
+          "description": "Mirrors game_settings.json / economy.debt_repayment",
+          "properties": {
+            "max_gdp_fraction": { "type": "number", "description": "Mirrors game_settings.json: economy.debt_repayment.max_gdp_fraction" },
+            "max_treasury_fraction": { "type": "number", "description": "Mirrors game_settings.json: economy.debt_repayment.max_treasury_fraction" },
+            "min_expense_cover": { "type": "number", "description": "Mirrors game_settings.json: economy.debt_repayment.min_expense_cover" },
+            "emergency_treasury_fraction": { "type": "number", "description": "Mirrors game_settings.json: economy.debt_repayment.emergency_treasury_fraction" },
+            "emergency_trigger_interest_coverage": { "type": "number", "description": "Mirrors game_settings.json: economy.debt_repayment.emergency_trigger_interest_coverage" }
+          }
+        },
+        "treasury": {
+          "type": "object",
+          "description": "Mirrors game_settings.json / economy.treasury",
+          "properties": {
+            "target_gdp_fraction": { "type": "number", "description": "Mirrors game_settings.json: economy.treasury.target_gdp_fraction" },
+            "drawdown_rate": { "type": "number", "description": "Mirrors game_settings.json: economy.treasury.drawdown_rate" },
+            "drawdown_social_stability_rate": { "type": "number", "description": "Mirrors game_settings.json: economy.treasury.drawdown_social_stability_rate" },
+            "load_clamp_gdp_multiple": { "type": "number", "description": "Mirrors game_settings.json: economy.treasury.load_clamp_gdp_multiple" },
+            "investment_policy_enabled": { "type": "boolean", "description": "Mirrors game_settings.json: economy.treasury.investment_policy_enabled" }
+          }
+        },
+        "military_mothball": {
+          "type": "object",
+          "description": "Mirrors game_settings.json / economy.military_mothball",
+          "properties": {
+            "underfunded_upkeep_fraction": { "type": "number", "description": "Mirrors game_settings.json: economy.military_mothball.underfunded_upkeep_fraction" },
+            "min_readiness_floor": { "type": "number", "description": "Mirrors game_settings.json: economy.military_mothball.min_readiness_floor" }
+          }
+        },
+        "supply_constrained_gdp": {
+          "type": "object",
+          "description": "Mirrors game_settings.json / economy.supply_constrained_gdp",
+          "properties": {
+            "enabled": { "type": "boolean", "description": "Mirrors game_settings.json: economy.supply_constrained_gdp.enabled" },
+            "gdp_tracking_enabled": { "type": "boolean", "description": "Mirrors game_settings.json: economy.supply_constrained_gdp.gdp_tracking_enabled" },
+            "efficiency_floor": { "type": "number", "description": "Mirrors game_settings.json: economy.supply_constrained_gdp.efficiency_floor" },
+            "coverage_curve_exponent": { "type": "number", "description": "Mirrors game_settings.json: economy.supply_constrained_gdp.coverage_curve_exponent" }
+          }
         }
       }
     },
@@ -2562,6 +2880,36 @@
           "exclusiveMinimum": 0,
           "maximum": 3600
         },
+        "regime_change_stance_shift": {
+          "type": "number",
+          "description": "RegimeChange peace demand: fraction (0, 1] of the way the target's economic and social stances move toward the proposer's (the drift baseline moves with them). 0 = use the formula default (0.6)",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "regime_change_bloc_promote": {
+          "type": "number",
+          "description": "RegimeChange peace demand: voter share (0, 1] pulled into the installed party's ideology bloc on the national and cohort shares (VoterCohortFormulas.PromoteBloc). 0 = use the formula default (0.25)",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "regime_change_stability_penalty": {
+          "type": "number",
+          "description": "RegimeChange peace demand: flat stability points [0, 50] subtracted once from the target. 0 = use the formula default (10)",
+          "exclusiveMinimum": 0,
+          "maximum": 50
+        },
+        "regime_change_opinion_bonus": {
+          "type": "number",
+          "description": "RegimeChange peace demand: opinion [0, 100] the installed government holds toward the victor at signing. 0 = use the formula default (25)",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "regime_change_opinion_decay_ticks": {
+          "type": "integer",
+          "description": "RegimeChange peace demand: lifetime (ticks) the installed government's opinion bonus decays linearly to 0 over. 0 = use the formula default (720)",
+          "exclusiveMinimum": 0,
+          "maximum": 3600
+        },
         "truce_duration_months": {
           "type": "integer",
           "description": "Duration of truce after peace deal in months",
@@ -2672,7 +3020,7 @@
         },
         "allied_to_rival_penalty": {
           "type": "number",
-          "description": "Monthly relation penalty when a target is allied to one of our rivals",
+          "description": "Monthly relation penalty when a target is allied to one of our rivals. A positive magnitude that is SUBTRACTED from the relation: enter 2 for a penalty of 2, not -2 (negative values are outside the allowed range).",
           "minimum": 0,
           "maximum": 10
         },
@@ -4720,7 +5068,8 @@
         "chain_event_delay_months",
         "natural_disaster_frequency",
         "max_flags_per_country",
-        "player_event_auto_decide_days"
+        "player_event_auto_decide_days",
+        "repeatable_immediate_min_cooldown_days"
       ],
       "properties": {
         "max_events_per_month": {
@@ -4836,6 +5185,12 @@
           "minimum": 1,
           "maximum": 365,
           "description": "Days before an unanswered player event automatically selects the default option"
+        },
+        "repeatable_immediate_min_cooldown_days": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3650,
+          "description": "Shortest wait, in days, before a repeatable immediate event (immediate: true, not fire_once, no cooldown_months) can fire for the same country again. The wait is the longer of this and the scripted lane's own cooldown (never under 60). 0 leaves only the lane's length; a mod can raise it. Fire-once events and events with cooldown_months are not affected."
         }
       }
     },
@@ -5087,7 +5442,7 @@
           "type": "integer",
           "minimum": 1,
           "maximum": 20,
-          "description": "Max satellites a country may field per completed satellite_launch_facility"
+          "description": "DEPRECATED, no longer read. Launch capacity is the satellite_launch_capacity building effect summed over the country's buildings (3 on the vanilla satellite_launch_facility)."
         },
         "orbital_altitude": {
           "type": "number",
@@ -5523,6 +5878,198 @@
           "minimum": 0,
           "maximum": 100
         },
+        "corruption_target_convergence_rate": {
+          "type": "number",
+          "description": "Fraction of the gap (target − corruption) closed per month (ships ~0.03); 0 or missing = legacy, corruption does not drift",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "corruption_target_max_step_per_month": {
+          "type": "number",
+          "description": "Largest monthly corruption change toward the target, either way (ships ~0.5)",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "corruption_target_min": {
+          "type": "number",
+          "description": "Lower clamp on the corruption target (ships ~2)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "corruption_target_max": {
+          "type": "number",
+          "description": "Upper clamp on the corruption target (ships ~98)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "corruption_target_doctrine_weight": {
+          "type": "number",
+          "description": "Target points per point of the doctrines' combined corruption_delta (ships 1.0: a −5 doctrine lowers the target by 5)",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "corruption_target_law_weight": {
+          "type": "number",
+          "description": "Target points per point of the laws' combined corruption_target_delta (ships 1.0)",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "corruption_target_low_stability_threshold": {
+          "type": "number",
+          "description": "Stability below which the corruption target rises (ships 40)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "corruption_target_low_stability_weight": {
+          "type": "number",
+          "description": "Target points added per stability point below the threshold (ships ~0.25)",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "corruption_target_inflation_threshold": {
+          "type": "number",
+          "description": "Inflation (fraction) tolerated before it raises the corruption target (ships 0.10)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "corruption_target_inflation_weight": {
+          "type": "number",
+          "description": "Target points added per percentage point of inflation above the threshold (ships ~0.3)",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "corruption_target_inflation_cap": {
+          "type": "number",
+          "description": "Cap on the inflation term of the corruption target (ships ~8)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "corruption_target_war_exhaustion_weight": {
+          "type": "number",
+          "description": "Target points added per war-exhaustion point (0–100) (ships ~0.05)",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "corruption_target_resilience_weight": {
+          "type": "number",
+          "description": "Target points removed per institutional-resilience point above 50 (ships ~0.1)",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "stability_target_corruption_weight": {
+          "type": "number",
+          "description": "Stability-target points lost per corruption point above the pivot (gained below it) (ships ~0.5); 0 disables the term",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "stability_target_corruption_pivot": {
+          "type": "number",
+          "description": "Corruption at which the stability-target corruption term is zero (ships ~55)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stability_target_corruption_cap": {
+          "type": "number",
+          "description": "Absolute cap on the stability-target corruption term (ships ~20)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "corruption_tax_efficiency_pivot": {
+          "type": "number",
+          "description": "Corruption above which tax revenue starts to leak (ships ~20)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "corruption_tax_efficiency_weight": {
+          "type": "number",
+          "description": "Share of tax revenue lost per 100 corruption points above the pivot (ships ~0.2: corruption 80 loses 12 %); 0 disables the term",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "corruption_tax_efficiency_max_loss": {
+          "type": "number",
+          "description": "Largest share of tax revenue corruption can cost (ships ~0.25)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "anti_corruption_campaign_target_cut": {
+          "type": "number",
+          "description": "Corruption-target points a campaign removes at launch (ships ~8); 0 or missing disables the campaign",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "anti_corruption_campaign_permanent_share": {
+          "type": "number",
+          "description": "Share of the cut that is permanent (lowers the country's baseline); the rest fades over the campaign (ships ~0.25)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "anti_corruption_campaign_duration_months": {
+          "type": "integer",
+          "description": "Months over which the temporary part of the cut fades to 0 (ships ~24)",
+          "minimum": 1,
+          "maximum": 240
+        },
+        "anti_corruption_campaign_cost_gdp_share": {
+          "type": "number",
+          "description": "Treasury cost of a campaign as a share of GDP (ships ~0.001)",
+          "minimum": 0,
+          "maximum": 0.1
+        },
+        "anti_corruption_campaign_min_cost": {
+          "type": "number",
+          "description": "Minimum treasury cost of a campaign, in USD (ships ~5e7)",
+          "minimum": 0,
+          "maximum": 1000000000000.0
+        },
+        "anti_corruption_campaign_stability_cost": {
+          "type": "number",
+          "description": "Stability lost at launch: the elites push back (ships ~3)",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "anti_corruption_campaign_resentment": {
+          "type": "number",
+          "description": "Clandestine resentment added at launch in a non-democracy, scaled by corruption / 100 (ships ~10)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "anti_corruption_campaign_cooldown_months": {
+          "type": "integer",
+          "description": "Months before another campaign can start (ships ~36)",
+          "minimum": 0,
+          "maximum": 240
+        },
+        "anti_corruption_campaign_min_corruption": {
+          "type": "number",
+          "description": "Corruption at or below which a campaign has nothing to root out and is refused (ships ~15)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "ai_anti_corruption_min_corruption": {
+          "type": "number",
+          "description": "Corruption at or above which an AI considers a campaign (ships ~50)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "ai_anti_corruption_min_stability": {
+          "type": "number",
+          "description": "Stability an AI needs before it risks a campaign's pushback (ships ~40)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "ai_anti_corruption_treasury_cost_multiple": {
+          "type": "number",
+          "description": "Treasury an AI must hold, as a multiple of the campaign cost (ships ~3)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "ai_anti_corruption_eval_chance": {
+          "type": "number",
+          "description": "Monthly chance an eligible AI launches a campaign (ships ~0.1); 0 = the AI never does",
+          "minimum": 0,
+          "maximum": 1
+        },
         "peaceful_transition_stability_threshold": {
           "type": "number",
           "description": "Minimum stability for peaceful government transitions to occur",
@@ -5744,7 +6291,34 @@
           "description": "Symmetric clamp on the per-month incumbent performance score",
           "minimum": 0,
           "maximum": 1
-        }
+        },
+        "leader_death_age_risk_start": { "type": "number", "description": "Mirrors game_settings.json: political_drift.leader_death_age_risk_start" },
+        "leader_death_age_high_risk": { "type": "number", "description": "Mirrors game_settings.json: political_drift.leader_death_age_high_risk" },
+        "leader_death_young_probability_multiplier": { "type": "number", "description": "Mirrors game_settings.json: political_drift.leader_death_young_probability_multiplier" },
+        "leader_death_tenure_grace_months": { "type": "number", "description": "Mirrors game_settings.json: political_drift.leader_death_tenure_grace_months" },
+        "leader_death_tenure_ramp_months": { "type": "number", "description": "Mirrors game_settings.json: political_drift.leader_death_tenure_ramp_months" },
+        "leader_death_tenure_max_bonus": { "type": "number", "description": "Mirrors game_settings.json: political_drift.leader_death_tenure_max_bonus" },
+        "leader_death_probability_cap": { "type": "number", "description": "Mirrors game_settings.json: political_drift.leader_death_probability_cap" },
+        "leader_successor_min_age": { "type": "number", "description": "Mirrors game_settings.json: political_drift.leader_successor_min_age" },
+        "leader_successor_max_age": { "type": "number", "description": "Mirrors game_settings.json: political_drift.leader_successor_max_age" },
+        "ai_law_war_manpower_weight": { "type": "number", "description": "Mirrors game_settings.json: political_drift.ai_law_war_manpower_weight" },
+        "ai_law_fiscal_tax_weight": { "type": "number", "description": "Mirrors game_settings.json: political_drift.ai_law_fiscal_tax_weight" },
+        "ai_law_unrest_calming_weight": { "type": "number", "description": "Mirrors game_settings.json: political_drift.ai_law_unrest_calming_weight" },
+        "ai_law_unrest_trigger": { "type": "number", "description": "Mirrors game_settings.json: political_drift.ai_law_unrest_trigger" },
+        "ai_law_decree_resentment_weight": { "type": "number", "description": "Mirrors game_settings.json: political_drift.ai_law_decree_resentment_weight" },
+        "ai_law_min_total_score": { "type": "number", "description": "Mirrors game_settings.json: political_drift.ai_law_min_total_score" },
+        "clandestine_resentment_stability_drag": { "type": "number", "description": "Mirrors game_settings.json: political_drift.clandestine_resentment_stability_drag" },
+        "clandestine_resentment_decay": { "type": "number", "description": "Mirrors game_settings.json: political_drift.clandestine_resentment_decay" },
+        "coup_resentment_weight": { "type": "number", "description": "Mirrors game_settings.json: political_drift.coup_resentment_weight" },
+        "resentment_unrest_weight": { "type": "number", "description": "Mirrors game_settings.json: political_drift.resentment_unrest_weight" },
+        "law_package_base_cycle_months": { "type": "number", "description": "Mirrors game_settings.json: political_drift.law_package_base_cycle_months" },
+        "law_package_load_months_per_change": { "type": "number", "description": "Mirrors game_settings.json: political_drift.law_package_load_months_per_change" },
+        "law_package_redline_stance_threshold": { "type": "number", "description": "Mirrors game_settings.json: political_drift.law_package_redline_stance_threshold" },
+        "law_concession_stance_floor": { "type": "number", "description": "Mirrors game_settings.json: political_drift.law_concession_stance_floor" },
+        "law_concession_max_demands_per_bloc": { "type": "number", "description": "Mirrors game_settings.json: political_drift.law_concession_max_demands_per_bloc" },
+        "ai_law_package_max_changes": { "type": "number", "description": "Mirrors game_settings.json: political_drift.ai_law_package_max_changes" },
+        "ai_law_package_second_change_min_score": { "type": "number", "description": "Mirrors game_settings.json: political_drift.ai_law_package_second_change_min_score" },
+        "ai_law_package_taste_amplitude": { "type": "number", "description": "Mirrors game_settings.json: political_drift.ai_law_package_taste_amplitude" }
       }
     },
     "envoys": {
@@ -6066,31 +6640,36 @@
           "additionalProperties": {
             "type": "number"
           },
-          "description": "How much each remembered action shifts one country's opinion of another."
-        },
-        "sphere": {
-          "type": "object",
+          "description": "How much each remembered action shifts one country's opinion of another.",
           "properties": {
-            "max_score_ratio": {
-              "type": "number"
-            },
-            "min_relation": {
-              "type": "integer"
-            },
-            "relation_bonus": {
-              "type": "integer"
-            },
-            "rival_sphere_penalty": {
-              "type": "integer"
-            },
-            "leave_relation_penalty": {
-              "type": "integer"
-            },
-            "great_power_count": {
-              "type": "integer"
-            }
-          },
-          "description": "Spheres of influence: who can lead one, the relations needed to join, and the cost of leaving."
+            "at_war": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.at_war" },
+            "past_war": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.past_war" },
+            "guaranteed_independence": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.guaranteed_independence" },
+            "trade_partner": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.trade_partner" },
+            "alliance_member": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.alliance_member" },
+            "rival": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.rival" },
+            "honored_guarantee": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.honored_guarantee" },
+            "broke_guarantee": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.broke_guarantee" },
+            "sanctions_applied": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.sanctions_applied" },
+            "province_taken": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.province_taken" },
+            "returned_province": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.returned_province" },
+            "same_ideology": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.same_ideology" },
+            "different_ideology": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.different_ideology" },
+            "nuke_launched_nearby": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.nuke_launched_nearby" },
+            "gift_sent": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.gift_sent" },
+            "insult_sent": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.insult_sent" },
+            "backed_rebels": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.backed_rebels" },
+            "spy_caught": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.spy_caught" },
+            "coalition_target": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.coalition_target" },
+            "aid_received": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.aid_received" },
+            "aggressive_expansion": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.aggressive_expansion" },
+            "at_war_immediate_drop": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.at_war_immediate_drop" },
+            "past_war_decay_ticks": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.past_war_decay_ticks" },
+            "insult_sent_decay_ticks": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.insult_sent_decay_ticks" },
+            "aid_received_decay_ticks": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.aid_received_decay_ticks" },
+            "humiliated": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.humiliated" },
+            "humiliated_decay_ticks": { "type": "number", "description": "Mirrors game_settings.json: step42_diplomacy.opinion_modifiers.humiliated_decay_ticks" }
+          }
         },
         "trust": {
           "type": "object",
@@ -6445,6 +7024,1944 @@
             }
           },
           "description": "Thresholds that decide how readily the AI reaches for these diplomatic tools."
+        },
+        "sphere": {
+          "type": "object",
+          "properties": {
+            "max_score_ratio": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0,
+              "description": "Legacy join ratio: a target must have under this share of the leader's composite score. Fallback for consent.join_score_ratio before a rebake."
+            },
+            "min_relation": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Relation (target toward leader) required to invite, unless the target already consented."
+            },
+            "relation_bonus": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100,
+              "description": "Legacy opinion bonus between a member and its leader. Fallback for every charter's opinion_member before a rebake."
+            },
+            "rival_sphere_penalty": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 0,
+              "description": "Opinion penalty (negative) a leader earns from a rival's member it courts (sphere_meddling)."
+            },
+            "leave_relation_penalty": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 0,
+              "description": "Legacy relation penalty when leaving a sphere. Fallback for every charter's leave_relation_penalty before a rebake."
+            },
+            "great_power_count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 32,
+              "description": "Number of top countries designated as Great Powers."
+            },
+            "tiers": {
+              "type": "object",
+              "properties": {
+                "superpower": {
+                  "type": "object",
+                  "properties": {
+                    "max_rank": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 8,
+                      "description": "A superpower must be at most this global rank."
+                    },
+                    "min_score_share_of_top": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "A superpower must hold at least this share of the top composite score."
+                    },
+                    "slots": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 32,
+                      "description": "Most members one leader of this tier can hold at once."
+                    },
+                    "court_slots": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 16,
+                      "description": "Most influence projects (courts) one leader of this tier can run at once."
+                    },
+                    "reach": {
+                      "type": "string",
+                      "enum": [
+                        "global",
+                        "region_adjacent",
+                        "region_adjacent_neighbors"
+                      ],
+                      "description": "Which countries the tier can court or invite: 'global' (anyone), 'region_adjacent' (own and adjacent WorldRegions, see regions.adjacent) or 'region_adjacent_neighbors' (that plus land and sea neighbours anywhere)."
+                    },
+                    "influence_gain_mult": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 5.0,
+                      "description": "Multiplier on every monthly influence gain this tier earns."
+                    }
+                  },
+                  "description": "Superpower: a top-ranked great power holding a large share of the top score."
+                },
+                "great_power": {
+                  "type": "object",
+                  "properties": {
+                    "slots": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 32,
+                      "description": "Most members one leader of this tier can hold at once."
+                    },
+                    "court_slots": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 16,
+                      "description": "Most influence projects (courts) one leader of this tier can run at once."
+                    },
+                    "reach": {
+                      "type": "string",
+                      "enum": [
+                        "global",
+                        "region_adjacent",
+                        "region_adjacent_neighbors"
+                      ],
+                      "description": "Which countries the tier can court or invite: 'global' (anyone), 'region_adjacent' (own and adjacent WorldRegions, see regions.adjacent) or 'region_adjacent_neighbors' (that plus land and sea neighbours anywhere)."
+                    },
+                    "influence_gain_mult": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 5.0,
+                      "description": "Multiplier on every monthly influence gain this tier earns."
+                    }
+                  },
+                  "description": "Great Power: carries the GreatPowerTag."
+                },
+                "regional_power": {
+                  "type": "object",
+                  "properties": {
+                    "per_region": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 8,
+                      "description": "How many regional powers each WorldRegion gets."
+                    },
+                    "max_global_rank": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 266,
+                      "description": "A regional power must be at most this global rank."
+                    },
+                    "min_share_of_region_top": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "A regional power must hold at least this share of its region's best non-great-power score."
+                    },
+                    "slots": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 32,
+                      "description": "Most members one leader of this tier can hold at once."
+                    },
+                    "court_slots": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 16,
+                      "description": "Most influence projects (courts) one leader of this tier can run at once."
+                    },
+                    "reach": {
+                      "type": "string",
+                      "enum": [
+                        "global",
+                        "region_adjacent",
+                        "region_adjacent_neighbors"
+                      ],
+                      "description": "Which countries the tier can court or invite: 'global' (anyone), 'region_adjacent' (own and adjacent WorldRegions, see regions.adjacent) or 'region_adjacent_neighbors' (that plus land and sea neighbours anywhere)."
+                    },
+                    "influence_gain_mult": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 5.0,
+                      "description": "Multiplier on every monthly influence gain this tier earns."
+                    }
+                  },
+                  "description": "Regional Power: the best non-great powers of each WorldRegion."
+                },
+                "demotion_grace_months": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 120,
+                  "description": "Months a demoted leader keeps its old tier before members over the new slot count are released."
+                }
+              },
+              "description": "Who can lead a sphere and how big it can be. Superpower and Great Power come from the composite-score ranking; Regional Powers are the best non-great powers of each WorldRegion."
+            },
+            "regions": {
+              "type": "object",
+              "properties": {
+                "adjacent": {
+                  "type": "object",
+                  "properties": {
+                    "Unknown": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to Unknown."
+                    },
+                    "NorthernAfrica": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to NorthernAfrica."
+                    },
+                    "SubSaharanAfrica": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to SubSaharanAfrica."
+                    },
+                    "LatinAmericaCaribbean": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to LatinAmericaCaribbean."
+                    },
+                    "NorthernAmerica": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to NorthernAmerica."
+                    },
+                    "CentralAsia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to CentralAsia."
+                    },
+                    "EastAsia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to EastAsia."
+                    },
+                    "SouthAsia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to SouthAsia."
+                    },
+                    "SoutheastAsia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to SoutheastAsia."
+                    },
+                    "WesternAsia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to WesternAsia."
+                    },
+                    "EasternEurope": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to EasternEurope."
+                    },
+                    "NorthernEurope": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to NorthernEurope."
+                    },
+                    "SouthernEurope": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to SouthernEurope."
+                    },
+                    "WesternEurope": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to WesternEurope."
+                    },
+                    "AustraliaNewZealand": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to AustraliaNewZealand."
+                    },
+                    "Melanesia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to Melanesia."
+                    },
+                    "Micronesia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to Micronesia."
+                    },
+                    "Polynesia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "Unknown",
+                          "NorthernAfrica",
+                          "SubSaharanAfrica",
+                          "LatinAmericaCaribbean",
+                          "NorthernAmerica",
+                          "CentralAsia",
+                          "EastAsia",
+                          "SouthAsia",
+                          "SoutheastAsia",
+                          "WesternAsia",
+                          "EasternEurope",
+                          "NorthernEurope",
+                          "SouthernEurope",
+                          "WesternEurope",
+                          "AustraliaNewZealand",
+                          "Melanesia",
+                          "Micronesia",
+                          "Polynesia"
+                        ]
+                      },
+                      "description": "WorldRegions adjacent to Polynesia."
+                    }
+                  },
+                  "description": "Adjacent WorldRegions per region (symmetric; all 18 WorldRegion values listed, Unknown has none). Used by the region_adjacent reach modes and the region influence levers."
+                }
+              },
+              "description": "WorldRegion geography for sphere reach."
+            },
+            "influence": {
+              "type": "object",
+              "properties": {
+                "decay_permille": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000,
+                  "description": "Per mille of a leader's influence on a target that decays each month."
+                },
+                "pool_cap": {
+                  "type": "integer",
+                  "minimum": 1000,
+                  "maximum": 100000,
+                  "description": "Cap on the total influence all leaders hold on one target (hundredths); larger pools shrink proportionally."
+                },
+                "prune_below": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 5000,
+                  "description": "Influence rows under this many hundredths are dropped after the step."
+                },
+                "erosion_share": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0,
+                  "description": "Share of the other leaders' positive monthly gains this month that erodes each leader's influence (rivals contest a target without freezing each other out: two equal rivals settle near gain x (1 - erosion_share) / decay)."
+                },
+                "invite_threshold": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10000,
+                  "description": "Influence (hundredths) a leader needs on a target to invite it."
+                },
+                "contested_margin": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10000,
+                  "description": "A target is contested when a rival leader is within this many hundredths of its strongest leader."
+                },
+                "envoy_saturation": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 20,
+                  "description": "Cultivation envoys in a target at which the envoy lever is at full strength."
+                },
+                "sea_neighbor_factor": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0,
+                  "description": "Share of the neighbor lever a sea-only neighbour earns (a land border earns all of it)."
+                },
+                "levers": {
+                  "type": "object",
+                  "properties": {
+                    "neighbor": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Land border (a sea-only neighbour earns sea_neighbor_factor of it)."
+                    },
+                    "same_region": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Target in the leader's own WorldRegion."
+                    },
+                    "adjacent_region": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Target in an adjacent WorldRegion."
+                    },
+                    "global": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Baseline of a leader with global reach."
+                    },
+                    "ethnicity": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Shared dominant ethnicity."
+                    },
+                    "religion": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Shared dominant religion."
+                    },
+                    "ideology": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Ideological closeness (only above 50% similarity)."
+                    },
+                    "relation": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Positive relation of the target toward the leader, scaled by relation/100."
+                    },
+                    "trade": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Trade ties (agreement, partner share)."
+                    },
+                    "embassy": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Embassy channel (full = 100%, half = 50%)."
+                    },
+                    "debt": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Debt-trap dependency of the target on the leader (EconomicWarfareState.DependencyScore)."
+                    },
+                    "aid": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Aid the target received from the leader."
+                    },
+                    "guarantee": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "The leader guarantees the target's independence."
+                    },
+                    "alliance": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "The leader and target are allied."
+                    },
+                    "envoy": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2000,
+                      "description": "Cultivation envoys the leader keeps in the target."
+                    },
+                    "court": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 5000,
+                      "description": "An active influence project (court) on the target."
+                    }
+                  },
+                  "description": "Monthly gain (hundredths) of each lever at full strength, before charter and tier multipliers."
+                }
+              },
+              "description": "Monthly influence of leaders on targets. Amounts are integer hundredths of an influence point (10000 = 100.00)."
+            },
+            "consent": {
+              "type": "object",
+              "properties": {
+                "petition_min_influence": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10000,
+                  "description": "Influence (hundredths) a leader needs on a petitioner before it may accept the petition."
+                },
+                "join_score_ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0,
+                  "description": "A target may be taken in only with under this share of the leader's composite score."
+                },
+                "leave_score_ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0,
+                  "description": "A member that grows to this share of the leader's score outgrows the sphere (must exceed join_score_ratio: hysteresis)."
+                },
+                "request_expiry_ticks": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 720,
+                  "description": "Ticks a sphere request waits in a human's inbox before it expires."
+                },
+                "human_max_pending": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 20,
+                  "description": "Most sphere requests waiting unanswered in one human's inbox."
+                },
+                "human_spacing_ticks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 360,
+                  "description": "Minimum ticks between two sphere requests into the same human's inbox."
+                },
+                "reject_relation_penalty": {
+                  "type": "integer",
+                  "minimum": -100,
+                  "maximum": 0,
+                  "description": "Relation penalty (negative) the requester takes when a human refuses its request."
+                },
+                "acceptance_threshold": {
+                  "type": "number",
+                  "minimum": -5.0,
+                  "maximum": 5.0,
+                  "description": "An AI target accepts when its acceptance score is above this."
+                },
+                "rejoin_cooldown_ticks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 7200,
+                  "description": "Ticks after leaving or being released before the same leader may take the country again (lifetime of the sphere_left modifier)."
+                },
+                "charter_change_penalty": {
+                  "type": "number",
+                  "minimum": -100.0,
+                  "maximum": 0.0,
+                  "description": "Opinion (negative) each member holds toward its leader after the leader changes the sphere's charter; it fades over rejoin_cooldown_ticks."
+                }
+              },
+              "description": "How targets and leaders consent to membership."
+            },
+            "defection": {
+              "type": "object",
+              "properties": {
+                "rival_margin": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10000,
+                  "description": "Influence (hundredths) the rival must lead the current leader by."
+                },
+                "min_influence": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10000,
+                  "description": "Influence (hundredths) the rival needs at least."
+                },
+                "months": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 120,
+                  "description": "Consecutive months the rival must hold the lead before it may offer defection."
+                }
+              },
+              "description": "A rival leader taking a member from its current leader."
+            },
+            "court": {
+              "type": "object",
+              "properties": {
+                "cost_gdp_share": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 0.01,
+                  "description": "Monthly treasury cost of one court as a share of the leader's GDP."
+                },
+                "cost_min": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1000000000000.0,
+                  "description": "Floor on the monthly cost of one court (USD)."
+                },
+                "meddling_window_ticks": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 720,
+                  "description": "Lifetime of the sphere_meddling opinion a rival leader holds toward a courter; each monthly court pass refreshes it, so it lapses by itself soon after the court stops or the target leaves the rival sphere."
+                }
+              },
+              "description": "Influence projects (courts)."
+            },
+            "charters": {
+              "type": "object",
+              "properties": {
+                "economic": {
+                  "type": "object",
+                  "properties": {
+                    "opinion_member": {
+                      "type": "number",
+                      "minimum": -100.0,
+                      "maximum": 100.0,
+                      "description": "Opinion a member holds of its leader while in the sphere (sphere_member modifier)."
+                    },
+                    "opinion_leader": {
+                      "type": "number",
+                      "minimum": -100.0,
+                      "maximum": 100.0,
+                      "description": "Opinion the leader holds of each member while in the sphere."
+                    },
+                    "member_export_boost": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 2.0,
+                      "description": "Fractional boost to a member's exports (0.10 = +10%)."
+                    },
+                    "member_growth_annual": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 0.1,
+                      "description": "Annual GDP growth fraction added to each member (0.003 = +0.3 points a year)."
+                    },
+                    "leader_export_per_member": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Fractional export bonus the leader earns per member."
+                    },
+                    "leader_export_cap": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 2.0,
+                      "description": "Cap on the leader's total fractional export bonus."
+                    },
+                    "prestige_per_member": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 100.0,
+                      "description": "Prestige the leader earns per member (PrestigeModifierIds.SphereLeadership)."
+                    },
+                    "prestige_cap": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1000.0,
+                      "description": "Cap on the leader's sphere prestige."
+                    },
+                    "security_guarantee": {
+                      "type": "boolean",
+                      "description": "True: the leader keeps a rolling independence guarantee over every member and members are protected by it."
+                    },
+                    "guarantee_window_ticks": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 7200,
+                      "description": "Length in ticks of each rolling guarantee, renewed while the member stays."
+                    },
+                    "deterrence_share": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Share (0..1) of the leader's strength a member counts as a defender when AIs weigh attacking it."
+                    },
+                    "ideology_pull": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 0.5,
+                      "description": "Fraction of the stance gap to the leader a member's government closes each month."
+                    },
+                    "lever_mult": {
+                      "type": "object",
+                      "properties": {
+                        "trade": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the trade lever."
+                        },
+                        "debt": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the debt-dependency lever."
+                        },
+                        "aid": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the aid lever."
+                        },
+                        "guarantee": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the independence-guarantee lever."
+                        },
+                        "alliance": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the alliance lever."
+                        },
+                        "ideology": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the ideology lever."
+                        },
+                        "kinship": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the ethnicity and religion levers."
+                        },
+                        "embassy": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the embassy-channel lever."
+                        }
+                      },
+                      "description": "Per-lever multipliers this charter applies to the monthly influence gain (1.0 = the lever's base weight)."
+                    },
+                    "leave_relation_penalty": {
+                      "type": "number",
+                      "minimum": -100.0,
+                      "maximum": 0.0,
+                      "description": "Relation penalty (negative) the leaver takes with the leader on Leave or Release (sphere_left modifier)."
+                    },
+                    "leave_influence_loss": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 10000,
+                      "description": "Influence (hundredths) the leader loses on the leaver when a member leaves or is released."
+                    },
+                    "charter_change_cooldown_ticks": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 14400,
+                      "description": "Ticks after setting or changing this charter before it can be changed again."
+                    }
+                  },
+                  "description": "Economic charter: member export and growth boost; the leader earns an export bonus per member."
+                },
+                "security": {
+                  "type": "object",
+                  "properties": {
+                    "opinion_member": {
+                      "type": "number",
+                      "minimum": -100.0,
+                      "maximum": 100.0,
+                      "description": "Opinion a member holds of its leader while in the sphere (sphere_member modifier)."
+                    },
+                    "opinion_leader": {
+                      "type": "number",
+                      "minimum": -100.0,
+                      "maximum": 100.0,
+                      "description": "Opinion the leader holds of each member while in the sphere."
+                    },
+                    "member_export_boost": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 2.0,
+                      "description": "Fractional boost to a member's exports (0.10 = +10%)."
+                    },
+                    "member_growth_annual": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 0.1,
+                      "description": "Annual GDP growth fraction added to each member (0.003 = +0.3 points a year)."
+                    },
+                    "leader_export_per_member": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Fractional export bonus the leader earns per member."
+                    },
+                    "leader_export_cap": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 2.0,
+                      "description": "Cap on the leader's total fractional export bonus."
+                    },
+                    "prestige_per_member": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 100.0,
+                      "description": "Prestige the leader earns per member (PrestigeModifierIds.SphereLeadership)."
+                    },
+                    "prestige_cap": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1000.0,
+                      "description": "Cap on the leader's sphere prestige."
+                    },
+                    "security_guarantee": {
+                      "type": "boolean",
+                      "description": "True: the leader keeps a rolling independence guarantee over every member and members are protected by it."
+                    },
+                    "guarantee_window_ticks": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 7200,
+                      "description": "Length in ticks of each rolling guarantee, renewed while the member stays."
+                    },
+                    "deterrence_share": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Share (0..1) of the leader's strength a member counts as a defender when AIs weigh attacking it."
+                    },
+                    "ideology_pull": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 0.5,
+                      "description": "Fraction of the stance gap to the leader a member's government closes each month."
+                    },
+                    "lever_mult": {
+                      "type": "object",
+                      "properties": {
+                        "trade": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the trade lever."
+                        },
+                        "debt": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the debt-dependency lever."
+                        },
+                        "aid": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the aid lever."
+                        },
+                        "guarantee": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the independence-guarantee lever."
+                        },
+                        "alliance": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the alliance lever."
+                        },
+                        "ideology": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the ideology lever."
+                        },
+                        "kinship": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the ethnicity and religion levers."
+                        },
+                        "embassy": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the embassy-channel lever."
+                        }
+                      },
+                      "description": "Per-lever multipliers this charter applies to the monthly influence gain (1.0 = the lever's base weight)."
+                    },
+                    "leave_relation_penalty": {
+                      "type": "number",
+                      "minimum": -100.0,
+                      "maximum": 0.0,
+                      "description": "Relation penalty (negative) the leaver takes with the leader on Leave or Release (sphere_left modifier)."
+                    },
+                    "leave_influence_loss": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 10000,
+                      "description": "Influence (hundredths) the leader loses on the leaver when a member leaves or is released."
+                    },
+                    "charter_change_cooldown_ticks": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 14400,
+                      "description": "Ticks after setting or changing this charter before it can be changed again."
+                    }
+                  },
+                  "description": "Security charter: the leader guarantees its members and members gain deterrence."
+                },
+                "political": {
+                  "type": "object",
+                  "properties": {
+                    "opinion_member": {
+                      "type": "number",
+                      "minimum": -100.0,
+                      "maximum": 100.0,
+                      "description": "Opinion a member holds of its leader while in the sphere (sphere_member modifier)."
+                    },
+                    "opinion_leader": {
+                      "type": "number",
+                      "minimum": -100.0,
+                      "maximum": 100.0,
+                      "description": "Opinion the leader holds of each member while in the sphere."
+                    },
+                    "member_export_boost": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 2.0,
+                      "description": "Fractional boost to a member's exports (0.10 = +10%)."
+                    },
+                    "member_growth_annual": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 0.1,
+                      "description": "Annual GDP growth fraction added to each member (0.003 = +0.3 points a year)."
+                    },
+                    "leader_export_per_member": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Fractional export bonus the leader earns per member."
+                    },
+                    "leader_export_cap": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 2.0,
+                      "description": "Cap on the leader's total fractional export bonus."
+                    },
+                    "prestige_per_member": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 100.0,
+                      "description": "Prestige the leader earns per member (PrestigeModifierIds.SphereLeadership)."
+                    },
+                    "prestige_cap": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1000.0,
+                      "description": "Cap on the leader's sphere prestige."
+                    },
+                    "security_guarantee": {
+                      "type": "boolean",
+                      "description": "True: the leader keeps a rolling independence guarantee over every member and members are protected by it."
+                    },
+                    "guarantee_window_ticks": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 7200,
+                      "description": "Length in ticks of each rolling guarantee, renewed while the member stays."
+                    },
+                    "deterrence_share": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Share (0..1) of the leader's strength a member counts as a defender when AIs weigh attacking it."
+                    },
+                    "ideology_pull": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 0.5,
+                      "description": "Fraction of the stance gap to the leader a member's government closes each month."
+                    },
+                    "lever_mult": {
+                      "type": "object",
+                      "properties": {
+                        "trade": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the trade lever."
+                        },
+                        "debt": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the debt-dependency lever."
+                        },
+                        "aid": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the aid lever."
+                        },
+                        "guarantee": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the independence-guarantee lever."
+                        },
+                        "alliance": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the alliance lever."
+                        },
+                        "ideology": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the ideology lever."
+                        },
+                        "kinship": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the ethnicity and religion levers."
+                        },
+                        "embassy": {
+                          "type": "number",
+                          "minimum": 0.0,
+                          "maximum": 5.0,
+                          "description": "Multiplier on the embassy-channel lever."
+                        }
+                      },
+                      "description": "Per-lever multipliers this charter applies to the monthly influence gain (1.0 = the lever's base weight)."
+                    },
+                    "leave_relation_penalty": {
+                      "type": "number",
+                      "minimum": -100.0,
+                      "maximum": 0.0,
+                      "description": "Relation penalty (negative) the leaver takes with the leader on Leave or Release (sphere_left modifier)."
+                    },
+                    "leave_influence_loss": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 10000,
+                      "description": "Influence (hundredths) the leader loses on the leaver when a member leaves or is released."
+                    },
+                    "charter_change_cooldown_ticks": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 14400,
+                      "description": "Ticks after setting or changing this charter before it can be changed again."
+                    }
+                  },
+                  "description": "Political charter: member ideology drifts toward the leader's; stability and AE relief."
+                }
+              },
+              "description": "What each charter does. All three share one field set."
+            },
+            "ai": {
+              "type": "object",
+              "properties": {
+                "weights": {
+                  "type": "object",
+                  "properties": {
+                    "proximity": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of geographic proximity."
+                    },
+                    "rival_sphere": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of taking a rival's pull away."
+                    },
+                    "grand_strategy": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of fitting the AI's grand strategy."
+                    },
+                    "national_goal": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of being a national-goal target."
+                    },
+                    "influence_head_start": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of influence already held."
+                    },
+                    "resource_value": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the target's resources."
+                    },
+                    "size_value": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the target's size."
+                    },
+                    "cost_penalty": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the court's treasury cost (subtracted)."
+                    },
+                    "acceptance": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the estimated acceptance."
+                    },
+                    "min_candidate_score": {
+                      "type": "number",
+                      "minimum": -10.0,
+                      "maximum": 10.0,
+                      "description": "Candidates scoring under this are not pursued."
+                    },
+                    "ideology_fit": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the target's ideological fit with the leader (scaled by the charter's ideology lever multiplier)."
+                    },
+                    "slot_pressure": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of how full the leader's slots and courts already are (subtracted)."
+                    }
+                  },
+                  "description": "Leader-side candidate value."
+                },
+                "acceptance": {
+                  "type": "object",
+                  "properties": {
+                    "influence": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the leader's influence on the target (0..1)."
+                    },
+                    "relation": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the target's relation toward the leader (-1..1)."
+                    },
+                    "trust": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the target's trust in the leader (-1..1)."
+                    },
+                    "dependency": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of economic dependency on the leader (0..1)."
+                    },
+                    "threat": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the threat the target perceives (0..1): protection is attractive."
+                    },
+                    "ideology": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of ideological opposition (subtracted)."
+                    },
+                    "kinship": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of shared ethnicity and religion."
+                    },
+                    "power_gap": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the target being large next to the leader (subtracted)."
+                    },
+                    "enemy_ally": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of being at war with one of the leader's allies (subtracted)."
+                    },
+                    "loyalty": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of loyalty to the current leader on a defection offer (subtracted)."
+                    },
+                    "embassy": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the embassy channel."
+                    },
+                    "charter_fit": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of how well the charter suits the target."
+                    },
+                    "isolationism": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the target's isolationism (subtracted)."
+                    },
+                    "bias": {
+                      "type": "number",
+                      "minimum": -5.0,
+                      "maximum": 5.0,
+                      "description": "Constant offset of the score."
+                    },
+                    "verdict_margin": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 5.0,
+                      "description": "Distance from the threshold within which the verdict is 'uncertain'."
+                    },
+                    "kinship_ethnicity_share": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Share of the kinship term a shared dominant ethnicity earns."
+                    },
+                    "kinship_religion_share": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Share of the kinship term a shared dominant religion earns."
+                    },
+                    "loyalty_relation_share": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Weight of the member's liking of its current leader in its loyalty (0..1)."
+                    },
+                    "loyalty_influence_share": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Weight of the current leader's influence on the member in its loyalty (0..1)."
+                    }
+                  },
+                  "description": "Target-side acceptance score terms (SphereAcceptance)."
+                },
+                "leave": {
+                  "type": "object",
+                  "properties": {
+                    "threshold": {
+                      "type": "number",
+                      "minimum": -5.0,
+                      "maximum": 10.0,
+                      "description": "Leave when the leave score reaches this."
+                    },
+                    "relation": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of a poor relation with the leader."
+                    },
+                    "rival_influence": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of a rival's influence on the member."
+                    },
+                    "ideology": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of ideological opposition to the leader."
+                    },
+                    "outgrown": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the member's growth next to the leader."
+                    },
+                    "dependency": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of dependency on the leader (keeps the member in)."
+                    },
+                    "cost": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the leave penalty (keeps the member in)."
+                    },
+                    "retention": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the leader's influence on the member being under the retention floor."
+                    },
+                    "retention_floor": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 10000,
+                      "description": "Leader influence (hundredths) under which the member feels the leader's hold slipping."
+                    },
+                    "relation_floor": {
+                      "type": "integer",
+                      "minimum": -100,
+                      "maximum": 100,
+                      "description": "Relation toward the leader under which relation pressure to leave starts."
+                    },
+                    "ally_war": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the leader being at war with one of the member's allies."
+                    },
+                    "immediate_margin": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "A leave score this far over the threshold leaves at once; between the threshold and it, the member first waits a leave-evaluation window."
+                    }
+                  },
+                  "description": "Member-side decision to leave."
+                },
+                "petition": {
+                  "type": "object",
+                  "properties": {
+                    "threshold": {
+                      "type": "number",
+                      "minimum": -5.0,
+                      "maximum": 10.0,
+                      "description": "Petition when the petition score reaches this."
+                    },
+                    "threat": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the threat the country faces."
+                    },
+                    "relation": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the relation with the leader."
+                    },
+                    "influence": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of the leader's influence on the country."
+                    },
+                    "ideology": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of ideological opposition (subtracted)."
+                    },
+                    "power_gap": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of being small next to the leader."
+                    },
+                    "security_charter": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Bonus for petitioning a Security-charter leader (protection is what the country is after)."
+                    },
+                    "min_threat": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0,
+                      "description": "Perceived threat (0..1) under which a country never petitions."
+                    }
+                  },
+                  "description": "Small-country decision to petition a leader."
+                },
+                "charter_choice": {
+                  "type": "object",
+                  "properties": {
+                    "economic_trade": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of trade ties for the Economic charter."
+                    },
+                    "economic_gdp": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of GDP for the Economic charter."
+                    },
+                    "security_threat": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of threat for the Security charter."
+                    },
+                    "security_military": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of military strength for the Security charter."
+                    },
+                    "political_ideology": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of ideological cohesion for the Political charter."
+                    },
+                    "political_stability": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Weight of stability for the Political charter."
+                    },
+                    "stickiness": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Bonus for keeping the current charter."
+                    },
+                    "grand_strategy": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Bonus for the charter the grand strategy points at (the secondary strategy gets the secondary share of it)."
+                    }
+                  },
+                  "description": "Leader-side charter choice."
+                },
+                "cooldowns": {
+                  "type": "object",
+                  "properties": {
+                    "invite": {
+                      "type": "integer",
+                      "minimum": 31,
+                      "maximum": 7200,
+                      "description": "Between two invitations to the same target."
+                    },
+                    "declined": {
+                      "type": "integer",
+                      "minimum": 31,
+                      "maximum": 7200,
+                      "description": "After a target declined."
+                    },
+                    "court": {
+                      "type": "integer",
+                      "minimum": 31,
+                      "maximum": 7200,
+                      "description": "Between starting or stopping courts on the same target."
+                    },
+                    "leave_eval": {
+                      "type": "integer",
+                      "minimum": 31,
+                      "maximum": 7200,
+                      "description": "Between a member's leave evaluations."
+                    },
+                    "petition": {
+                      "type": "integer",
+                      "minimum": 31,
+                      "maximum": 7200,
+                      "description": "Between a country's petitions to the same leader."
+                    }
+                  },
+                  "description": "Ticks. Every value must exceed the 30-tick AI planner cadence."
+                },
+                "alliance_member_mult": {
+                  "type": "number",
+                  "minimum": 0.5,
+                  "maximum": 3.0,
+                  "description": "Multiplier on the AI alliance score between a leader and its member (was hardcoded 1.10)."
+                },
+                "alliance_drag_per_ally": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0,
+                  "description": "War-score drag the AI adds per alliance of the target (was hardcoded 0.15); sphere deterrence adds on top."
+                },
+                "planner": {
+                  "type": "object",
+                  "properties": {
+                      "max_actions_per_month": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 10,
+                        "description": "Sphere requests one country may emit per monthly pass."
+                      },
+                      "afford_months_start": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 60,
+                        "description": "A court starts only when the treasury covers this many months of it."
+                      },
+                      "afford_months_stop": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 60,
+                        "description": "A court stops when the treasury covers fewer months than this."
+                      },
+                      "court_hopeless_months": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 120,
+                        "description": "A court older than this that has not reached the invite threshold is hopeless."
+                      },
+                      "court_hopeless_acceptance": {
+                        "type": "number",
+                        "minimum": 0.0,
+                        "maximum": 10.0,
+                        "description": "Acceptance score this far under the bar makes a court hopeless."
+                      },
+                      "invite_acceptance_margin": {
+                        "type": "number",
+                        "minimum": -5.0,
+                        "maximum": 5.0,
+                        "description": "Extra acceptance score over the bar the AI wants before it invites."
+                      },
+                      "secondary_strategy_share": {
+                        "type": "number",
+                        "minimum": 0.0,
+                        "maximum": 1.0,
+                        "description": "Share of the grand-strategy fit a secondary strategy counts for."
+                      },
+                      "rival_in_sphere": {
+                        "type": "number",
+                        "minimum": 0.0,
+                        "maximum": 1.0,
+                        "description": "Rivalry share when the target is in a rival's sphere."
+                      },
+                      "rival_courting": {
+                        "type": "number",
+                        "minimum": 0.0,
+                        "maximum": 1.0,
+                        "description": "Rivalry share when a rival courts the target."
+                      },
+                      "rival_top_influence": {
+                        "type": "number",
+                        "minimum": 0.0,
+                        "maximum": 1.0,
+                        "description": "Rivalry share when a rival is the strongest influence on the target."
+                      },
+                      "rival_border": {
+                        "type": "number",
+                        "minimum": 0.0,
+                        "maximum": 1.0,
+                        "description": "Rivalry share when the target borders a rival."
+                      },
+                      "resource_kinds_full": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 40,
+                        "description": "Resource kinds that make the resource value of a target count in full."
+                      }
+                  },
+                  "description": "How a leader or member runs its monthly sphere pass: action budget, affordability and hopelessness of courts, rivalry shares."
+                }
+              },
+              "description": "How the AI weighs sphere decisions. Cooldowns are ticks and must exceed the 30-tick AI planner cadence."
+            },
+            "legacy": {
+              "type": "object",
+              "properties": {
+                "default_charter": {
+                  "type": "string",
+                  "enum": [
+                    "economic",
+                    "security",
+                    "political"
+                  ],
+                  "description": "Charter given to a legacy sphere leader on load."
+                },
+                "member_seed_influence": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10000,
+                  "description": "Influence (hundredths) given to a legacy member on load."
+                }
+              },
+              "description": "Migration of pre-overhaul saves."
+            }
+          },
+          "description": "Spheres of influence: who can lead one, how leaders earn and contest influence over targets, how targets consent, what each charter does, and how the AI weighs it. The six legacy keys stay (the fallback until the new blob is baked)."
         }
       }
     },
@@ -6751,6 +9268,95 @@
     "intelligence": {
       "type": "object",
       "description": "Espionage and intelligence balance parameters"
+    },
+    "nuclear": {
+      "type": "object",
+      "description": "Nuclear and missile-defence balance. Mirrors nuclear_config.json (nuclear_consequences, recovery, deterrence, missile_defense, retaliation, defcon_escalation, ai_first_strike); the DEFCON level table and the missile type list are not patchable here. A mod-only section: it has no counterpart in the base game_settings.json.",
+      "properties": {
+        "nuclear_consequences": {
+          "type": "object",
+          "description": "Mirrors nuclear_config.json / nuclear.nuclear_consequences",
+          "properties": {
+            "province_irradiation_base": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.nuclear_consequences.province_irradiation_base" },
+            "ring_falloff": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.nuclear_consequences.ring_falloff" },
+            "nuclear_winter_food_penalty_per_warhead": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.nuclear_consequences.nuclear_winter_food_penalty_per_warhead" },
+            "nuclear_winter_max_penalty": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.nuclear_consequences.nuclear_winter_max_penalty" },
+            "diplomatic_penalty": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.nuclear_consequences.diplomatic_penalty" },
+            "ally_diplomatic_penalty": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.nuclear_consequences.ally_diplomatic_penalty" },
+            "stability_penalty_attacker": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.nuclear_consequences.stability_penalty_attacker" },
+            "coup_risk_attacker": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.nuclear_consequences.coup_risk_attacker" },
+            "gdp_penalty_both_sides": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.nuclear_consequences.gdp_penalty_both_sides" },
+            "mad_retaliation_enabled": { "type": "boolean", "description": "Mirrors nuclear_config.json: nuclear.nuclear_consequences.mad_retaliation_enabled" }
+          }
+        },
+        "recovery": {
+          "type": "object",
+          "description": "Mirrors nuclear_config.json / nuclear.recovery",
+          "properties": {
+            "radiation_decay_per_year": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.recovery.radiation_decay_per_year" },
+            "diplomatic_recovery_per_year": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.recovery.diplomatic_recovery_per_year" },
+            "nuclear_winter_decay_per_year": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.recovery.nuclear_winter_decay_per_year" }
+          }
+        },
+        "deterrence": {
+          "type": "object",
+          "description": "Mirrors nuclear_config.json / nuclear.deterrence",
+          "properties": {
+            "warhead_deterrence_factor": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.deterrence.warhead_deterrence_factor" },
+            "slbm_deterrence_bonus": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.deterrence.slbm_deterrence_bonus" },
+            "deterrence_war_threshold": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.deterrence.deterrence_war_threshold" }
+          }
+        },
+        "missile_defense": {
+          "type": "object",
+          "description": "Mirrors nuclear_config.json / nuclear.missile_defense",
+          "properties": {
+            "base_intercept_chance": { "type": "number", "minimum": 0, "maximum": 1, "description": "Chance one interceptor shot stops an incoming missile before tech and radar bonuses (0-1)." },
+            "tech_modifier_scale": { "type": "number", "minimum": 0, "maximum": 10, "description": "How strongly missile-defence technology scales the intercept chance." },
+            "battery_range_provinces": { "type": "number", "minimum": 0, "maximum": 50, "description": "How many province hops a missile-defence battery covers." },
+            "shots_per_engagement": { "type": "integer", "minimum": 1, "maximum": 20, "description": "Interceptor shots a defended province fires per incoming missile." },
+            "radar_bonus_per_radar": { "type": "number", "minimum": 0, "maximum": 1, "description": "Intercept-chance bonus each early-warning radar adds (0-1)." },
+            "radar_bonus_cap": { "type": "number", "minimum": 0, "maximum": 1, "description": "Ceiling on the total radar bonus to the intercept chance (0-1)." }
+          }
+        },
+        "retaliation": {
+          "type": "object",
+          "description": "Mirrors nuclear_config.json / nuclear.retaliation",
+          "properties": {
+            "saturate_defenses": { "type": "boolean", "description": "Mirrors nuclear_config.json: nuclear.retaliation.saturate_defenses" },
+            "max_warheads_per_salvo": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.retaliation.max_warheads_per_salvo" },
+            "ae_multiplier": { "type": "number", "minimum": 0, "maximum": 100, "description": "Aggressive-expansion multiplier applied to automatic MAD retaliation." },
+            "diplomatic_multiplier": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.retaliation.diplomatic_multiplier" }
+          }
+        },
+        "defcon_escalation": {
+          "type": "object",
+          "description": "Mirrors nuclear_config.json / nuclear.defcon_escalation",
+          "properties": {
+            "max_step_per_tick": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.defcon_escalation.max_step_per_tick" },
+            "deescalation_months": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.defcon_escalation.deescalation_months" },
+            "auto_escalate_on_nuke": { "type": "boolean", "description": "Mirrors nuclear_config.json: nuclear.defcon_escalation.auto_escalate_on_nuke" }
+          }
+        },
+        "ai_first_strike": {
+          "type": "object",
+          "description": "Mirrors nuclear_config.json / nuclear.ai_first_strike",
+          "properties": {
+            "desperation_exhaustion_weight": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.desperation_exhaustion_weight" },
+            "desperation_ratio_weight": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.desperation_ratio_weight" },
+            "aggression_weight": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.aggression_weight" },
+            "threshold_penalty_weight": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.threshold_penalty_weight" },
+            "strict_mad_weight": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.strict_mad_weight" },
+            "aggressive_expansion_aversion": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.aggressive_expansion_aversion" },
+            "launch_threshold_mult": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.launch_threshold_mult" },
+            "last_resort_min_war_exhaustion": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.last_resort_min_war_exhaustion" },
+            "last_resort_losing_advantage": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.last_resort_losing_advantage" },
+            "wars_lost_lashout_count": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.wars_lost_lashout_count" },
+            "max_salvo": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.max_salvo" },
+            "interceptor_reserve_fraction": { "type": "number", "description": "Mirrors nuclear_config.json: nuclear.ai_first_strike.interceptor_reserve_fraction" }
+          }
+        }
+      }
     }
   }
 }

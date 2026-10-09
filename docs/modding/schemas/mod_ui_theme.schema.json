@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_ui_theme.schema.json",
+  "title": "Mod HUD Theme",
+  "description": "A mod's HUD theme (Content/ui/theme.json, needs the InjectUI permission). Design tokens recolour and resize everything the interface styles through them; rules style the parts tokens do not reach. Applied when the game screen is entered and removed when the player returns to the menu. Fonts cannot be changed. Tokens and rules of several mods merge in load order.",
+  "type": "object",
+  "properties": {
+    "base": {
+      "type": "string",
+      "description": "Id of a built-in HUD theme the tokens are applied on top of (the game ships \"classic\"). Omit it to let the player's own theme show through; with several mods the last one that names a base wins."
+    },
+    "tokens": {
+      "type": "object",
+      "description": "Design tokens to override, by name (the :root variables of the HUD style sheet, for example \"--surface-1\"). Colours are #rgb, #rrggbb, #rrggbbaa, rgb() or rgba(); sizes are 12px or 50%; plain numbers are numbers. A value may also be var(--other-token). A token the HUD does not use is ignored (Validate Mod warns).",
+      "propertyNames": {
+        "pattern": "^--[A-Za-z0-9_-]+$"
+      },
+      "additionalProperties": {
+        "type": [ "string", "number" ]
+      }
+    },
+    "rules": {
+      "type": "array",
+      "description": "Extra style rules, applied after the tokens. Each rule is a selector plus the properties it sets.",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "required": [ "selector" ],
+        "properties": {
+          "selector": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A USS selector, for example \"#top-bar\", \".stat-bar__item\" or \".nav-tab:hover\". The game's own parser checks it."
+          }
+        },
+        "additionalProperties": {
+          "type": [ "string", "number" ],
+          "description": "A supported property (color, background-color, background-image, border-color, border-width, border-radius, opacity, font-size, letter-spacing, -unity-font-style, margin, padding, width, height, min/max sizes, left/right/top/bottom, position, display, flex-direction and the per-side forms of those) and its value. background-image is a path inside the mod folder (png or jpg, 4 MB at most)."
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -26,7 +26,7 @@
                 "iso3": {
                     "type": "string",
                     "pattern": "^[A-Z]{3}$",
-                    "description": "ISO3 code of the new country"
+                    "description": "ISO3 code of the new country. Use an ISO3 that no real country has: a code that belongs to a real country the scenario removes or does not play makes the new country inherit that country's 2026 population pyramid and demographic rates (there is no useSeedRow switch), and the game logs a load warning. A code of a base-game country that stays in the scenario re-skins that country instead."
                 },
                 "name": {
                     "type": "string",
@@ -101,6 +101,44 @@
                 "leaderName": {
                     "type": "string",
                     "description": "Override the leader's name"
+                },
+                "leaderGender": {
+                    "type": "string",
+                    "enum": ["male", "female"],
+                    "description": "Gender of the starting leader; picks a gender-matched portrait from a portraits/<ISO3>/ bank. When omitted, the first leaderNamePool entry decides (if it has a gender), else the template's."
+                },
+                "leaderPortraitPath": {
+                    "type": "string",
+                    "description": "Mod-relative image (PNG or JPG) shown for the country's STARTING leader instead of the question-mark placeholder, e.g. 'portraits/HYP.png'. Looked up in the mod folder, then the scenario folder, and must stay inside the mod folder: an absolute path or one that climbs out of it is refused. Leaders who take over later use portraits/<ISO3>/<ISO3>_m_01.jpg (or _f_) from the mod folder when present."
+                },
+                "leaderNamePool": {
+                    "type": "array",
+                    "description": "Names this country's later leaders are drawn from, instead of its region's name pool (elections, coups, deaths). The first entry is also the starting leader when leaderName is omitted, so a pool alone replaces the template's leader. A country with a pool and no leaderName/leaderTitle starts with the first entry's name and title.",
+                    "items": {
+                        "type": "object",
+                        "required": ["name"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "minLength": 1,
+                                "description": "Full display name (at most 61 bytes of UTF-8)"
+                            },
+                            "title": {
+                                "type": "string",
+                                "description": "Title this leader carries, e.g. 'Archon' (at most 29 bytes). Blank = the title the government type gives."
+                            },
+                            "gender": {
+                                "type": "string",
+                                "enum": ["male", "female"],
+                                "description": "Picks a gender-matched portrait. Default male."
+                            }
+                        }
+                    }
+                },
+                "lockLeaderTitle": {
+                    "type": "boolean",
+                    "description": "True keeps leaderTitle on every leader drawn from leaderNamePool, whatever the government type becomes (the game would otherwise retitle them President, Chairman and so on). Needs leaderTitle and a leaderNamePool."
                 },
                 "homelandTerm": {
                     "type": "string",

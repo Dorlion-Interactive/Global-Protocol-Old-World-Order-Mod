@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_ui_layout.schema.json",
+  "title": "Mod HUD Slot Layout",
+  "description": "Which parts of the game HUD a mod replaces or hides (Content/ui/layout.json, needs the InjectUI permission). The HUD is split into slots (topbar, alerts, sidebar, rail, mapmodes, statusbar, outliner, eventpopup, armybar; the map tooltips slot cannot be changed). A replaced slot is rebuilt from a small UXML layout file that places the game's own elements by name; the game keeps them working. A slot whose layout is invalid stays as the game draws it. The slot list, each slot's element names and the required ones are in StreamingAssets/modding/hud_slots.json.",
+  "type": "object",
+  "properties": {
+    "slots": {
+      "type": "object",
+      "description": "Slot id to what the mod does with it. A slot that is not listed is left alone. With several mods the later one in load order wins.",
+      "propertyNames": {
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [ "vanilla", "replace", "hide" ],
+            "default": "replace",
+            "description": "vanilla leaves the slot alone; replace uses the layout file; hide removes the slot from the screen (only the map modes, status bar and outliner slots can be hidden)."
+          },
+          "file": {
+            "type": "string",
+            "description": "The layout file for replace, a UXML file inside the mod folder. Defaults to Content/ui/layouts/<slot id>.uxml."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

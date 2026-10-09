@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_demography_model.schema.json",
+  "title": "Mod demography model sections",
+  "description": "Content/demography/model.json: sections of the shipped demography_model.json to replace wholesale (for example a pre-modern life table). A listed section must be complete and has the shape of the shipped one (101 ages; grids as [rows][ages] arrays, distributions summing to 1 over both sexes); the game validates it with the same rules as the shipped file and keeps the shipped tables if it is rejected. Sections not listed stay as shipped.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "sex_gap_male_weight": { "type": "number", "description": "Weight of the male side when a mean life expectancy and sex gap are split into male and female values." },
+    "mortality": { "type": "object", "description": "le_min, le_max, le_step and the monthly_q_male / monthly_q_female grids ([life-expectancy rows][101 ages])." },
+    "fertility": { "type": "object", "description": "tfr_min, tfr_max, tfr_step, first_cell, cells and the shape_per_month grid." },
+    "migration": { "type": "object", "description": "Immigrant / refugee arrival profiles (each pair sums to 1) and emigration / refugee propensities, 101 values per sex." },
+    "crisis_excess_shape": { "type": "array", "minItems": 101, "maxItems": 101, "items": { "type": "number" } },
+    "preston": { "type": "object", "description": "gdppc (strictly ascending) and le arrays of equal length: the life-expectancy-by-income curve." },
+    "region_templates": { "type": "object", "description": "WorldRegion name (and World) -> { male[101], female[101], le_sex_gap, sex_ratio_at_birth }; male + female must sum to 1." },
+    "world_reference_bands": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "number" } }
+  }
+}

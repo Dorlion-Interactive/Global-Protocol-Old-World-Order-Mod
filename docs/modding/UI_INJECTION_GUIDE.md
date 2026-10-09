@@ -1,6 +1,6 @@
 # NewWorldOrder – UI Injection Guide
 
-Last updated: 2026-05-11
+Last updated: 2026-10-08
 
 Mods with the `InjectUI` permission can add UI elements to the HUD and respond to player interactions via the `OnUiAction` hook event.
 
@@ -20,16 +20,20 @@ Attempts to inject UI elements without this permission are rejected at load time
 
 Current runtime support:
 - **Custom toolbar buttons** — converted into HUD overlay buttons via `mod-hud-overlay`
+- **Province detail rows** and **country panel rows** — static label/value rows (see §6, §7)
 
 Declared but not yet executed by the runtime:
-- **Province detail rows**
-- **Country panel rows**
 - **Notification entries**
+
+**When it is injected.** The HUD injects the UI of every active mod when the game screen is entered (a
+scenario mod only becomes active after the main menu, so boot time is too early) and clears it when the
+player returns to the menu. Injection is idempotent: entering the game twice never gives two toolbars.
+The Mod Builder's **INTERFACE** tab edits this file.
 
 Not supported:
 - New full-screen panels
-- Overriding or hiding existing core HUD elements
-- Shader/texture replacement via UI injection (use `Content/ui/` overrides instead)
+- Overriding or hiding existing core HUD elements (replace or hide HUD slots: [UI_LAYOUT_GUIDE.md](UI_LAYOUT_GUIDE.md))
+- Shader replacement via UI injection. Recolouring the HUD is done with a theme ([UI_THEMING_GUIDE.md](UI_THEMING_GUIDE.md))
 
 ---
 
@@ -58,11 +62,15 @@ Declare injection points under `entrypoints.ui`:
       "tooltip": "Open Mod Ledger",
       "hookName": "open_ledger"
     }
-  ]
+  ],
+  "style": {
+    "keys":   ["top", "right"],
+    "values": ["120px", "30px"]
+  }
 }
 ```
 
-`provinceDetailRows`, `countryPanelRows`, and notification-style entries are still reserved shapes. They may appear in docs or forward-looking examples, but the current runtime does not build or refresh them.
+`style` is optional (§5.1). Notification-style entries are still a reserved shape; the runtime does not build them.
 
 ---
 
@@ -72,8 +80,23 @@ Declare injection points under `entrypoints.ui`:
 |---|---|---|
 | `id` | ✓ | Unique button ID within the mod |
 | `iconPath` | ✓ | Relative path to a 32×32 PNG icon in the mod folder |
-| `tooltip` | | Reserved field. The current injector ignores it, so no tooltip is shown yet. |
-| `hookName` | ✓ | Name passed to `OnUiAction` when clicked |
+| `tooltip` | | Text shown when the player hovers the button (plain string). |
+| `hookName` | ✓ | Name passed to `OnUiAction` when clicked. A button without one is skipped. |
+
+A button with no `iconPath` (or an icon file that is missing) is drawn blank. The Validate Mod report
+warns about missing hooks, missing icons, duplicate ids and a missing `InjectUI` permission.
+
+### 5.1 Toolbar placement and style
+
+By default the toolbar sits near the top of the map, under the priority strip and left of the right
+context dock, clear of the top bar and the domain rail. It is styled in `HUDLayout.uss`
+(`.mod-toolbar-panel`, `.mod-toolbar-button`). To move or restyle it, add a `style` block: parallel
+`keys` / `values` lists, applied inline over the default in order (a later row wins). Supported keys:
+`display`, `visibility`, `flex-direction`, `flex-grow`, `flex-shrink`, `flex-wrap`, `align-items`,
+`justify-content`, `width`, `height`, `min-width`, `min-height`, `max-width`, `max-height`, `margin`,
+`margin-top/bottom/left/right`, `padding`, `padding-top/bottom/left/right`, `position`, `left`, `right`,
+`top`, `bottom`, `background-color`, `color`, `border-color`, `font-size`, `white-space`, `text-align`,
+`border-radius`, `opacity`. Unknown keys are ignored (and reported by Validate Mod).
 
 When the button is clicked, `ModHookBus.OnUiAction` fires with `(hookName, modId)`. Your WASM `on_ui_action` export or C# delegate receives this.
 
@@ -81,26 +104,30 @@ When the button is clicked, `ModHookBus.OnUiAction` fires with `(hookName, modId
 
 ## 6. Province Detail Rows
 
-This shape is documented for the intended ABI, but it is not wired in the current runtime.
-
-Injected rows appear in the Province Detail panel below the standard stat rows.
+`provinceDetailRows` entries appear in the Province Detail panel as static label/value rows (the
+panel builds them when it is created).
 
 | Field | Required | Description |
 |---|---|---|
-| `id` | ✓ | Unique row ID |
-| `label` | ✓ | Display label (raw string or localization key) |
-| `valueExpression` | ✓ | Data binding expression (see §8) |
-| `iconPath` | | Optional 16×16 PNG icon |
-| `format` | | Format string, e.g. `"{0:0.0}%"` (default: `"{0}"`) |
-| `showWhenZero` | | Show row when value is 0 (default: `false`) |
+| `label` | ✓ | Display label |
+| `value` | ✓ | Display value |
+
+The richer shape below (`id`, `valueExpression`, `iconPath`, `format`, `showWhenZero`) is documented for
+the intended ABI but is not wired yet.
+
+| Field | Description |
+|---|---|
+| `valueExpression` | Data binding expression (see §8) |
+| `iconPath` | Optional 16×16 PNG icon |
+| `format` | Format string, e.g. `"{0:0.0}%"` (default: `"{0}"`) |
+| `showWhenZero` | Show row when value is 0 (default: `false`) |
 
 ---
 
 ## 7. Country Panel Rows
 
-This shape is documented for the intended ABI, but it is not wired in the current runtime.
-
-Same shape as province rows. `valueExpression` uses `country.` prefix.
+`countryPanelRows` entries (`label`, `value`) appear in the country Overview tab. Same shape as province
+rows; the future `valueExpression` uses the `country.` prefix.
 
 ---
 
@@ -146,11 +173,14 @@ The game loads them via `ModAssetLoader.LoadFlagSprite()` which caches the resul
 
 ---
 
-## 10. USS Overrides
+## 10. Styling (no loose `.uss` files)
 
-Place `.uss` files under `Content/ui/` to override or extend existing styles. The game merges USS from all enabled mods in load order. Use `.unity-button--toolbar-mod` and `.unity-label--panel-row-mod` class selectors for injected elements to avoid conflicts with core styles.
+The game does **not** load `.uss` files from a mod folder. Unity cannot parse USS in a built game, so a `.uss`
+dropped under `Content/ui/` is ignored. Two supported ways to change how things look:
 
-Do **not** set `color: inherit` or `color: initial` in mod USS files — these values are unsupported by UI Toolkit and will produce warnings. Use explicit hex colors instead.
+- the inline `style` block of `inject.json` (§5.1), for the toolbar the mod injects;
+- a HUD theme, `Content/ui/theme.json`: design tokens and selector rules applied to the whole HUD. See
+  [UI_THEMING_GUIDE.md](UI_THEMING_GUIDE.md).
 
 ---
 

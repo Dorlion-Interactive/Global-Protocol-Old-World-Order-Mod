@@ -23,6 +23,7 @@ that list to refresh this folder.
 | `countries_add.json` | `mod_scenario_countries_add.schema.json` |
 | `countries_remove.json` | `mod_scenario_countries_remove.schema.json` |
 | `countries_state.json` | `mod_scenario_countries_state.schema.json` |
+| `diplomacy.json` | `mod_scenario_diplomacy.schema.json` |
 | `provinces_ownership.json` | `mod_scenario_provinces_ownership.schema.json` |
 | `units_define.json` | `mod_scenario_units_define.schema.json` |
 | `units_deploy_armies.json` | `mod_scenario_units_deploy_armies.schema.json` |
@@ -49,6 +50,13 @@ envelope. The schema below describes **one entry**, not the whole file.
 | `Content/resources.json` | `resource_type.schema.json` |
 | `Content/tech_tree.json` | `tech_tree.schema.json` |
 | `Content/events/*.json` | `event.schema.json` (a bare array, a single object, or `{ "events": [...] }` — any number of events per file) |
+
+## Interface (`Content/ui/`)
+
+| File | Schema |
+|---|---|
+| `Content/ui/theme.json` | `mod_ui_theme.schema.json` (see `UI_THEMING_GUIDE.md`) |
+| `Content/ui/layout.json` | `mod_ui_layout.schema.json` (see `UI_LAYOUT_GUIDE.md`) |
 
 ## Config overrides (`overrides/`)
 

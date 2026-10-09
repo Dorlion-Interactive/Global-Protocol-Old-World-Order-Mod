@@ -1,0 +1,154 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Interest Groups / Electorate Config",
+  "description": "Age-band political leans, the five interest groups (shares derived monthly from country state), their bloc affinities, law/doctrine bonuses, religiosity table, demand multipliers and per-country overrides. Baked into ElectorateConfigBlob. Demand multiplier keys are 'category:<resources.json category>' or 'resource:<Resource enum name>'; the world-average-weighted multiplier per resource must stay within 1 +/- 0.10.",
+  "type": "object",
+  "required": ["lean_scale", "group_lean_scale", "recenter_iterations", "workers_min", "gdp_factor_thresholds", "age_bands", "groups", "religiosity_by_religion", "neutrality_reference_shares"],
+  "definitions": {
+    "bloc_vector": {
+      "type": "object",
+      "required": ["liberal_capitalist", "socialist_communist", "nationalist_conservative", "authoritarian_theocratic"],
+      "additionalProperties": false,
+      "properties": {
+        "liberal_capitalist": { "type": "number", "minimum": -1, "maximum": 1 },
+        "socialist_communist": { "type": "number", "minimum": -1, "maximum": 1 },
+        "nationalist_conservative": { "type": "number", "minimum": -1, "maximum": 1 },
+        "authoritarian_theocratic": { "type": "number", "minimum": -1, "maximum": 1 }
+      }
+    },
+    "demand_multipliers": {
+      "type": "object",
+      "description": "Multiplier per resource category or per resource (1 = neutral). Category entries apply first, resource entries override.",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(category|resource):[A-Za-z_]+$": { "type": "number", "minimum": 0.25, "maximum": 4 }
+      }
+    },
+    "group_shares": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "workers": { "type": "number", "minimum": -1, "maximum": 1 },
+        "entrepreneurs": { "type": "number", "minimum": -1, "maximum": 1 },
+        "military": { "type": "number", "minimum": -1, "maximum": 1 },
+        "religious": { "type": "number", "minimum": -1, "maximum": 1 },
+        "environmentalists": { "type": "number", "minimum": -1, "maximum": 1 }
+      }
+    }
+  },
+  "properties": {
+    "_comment": { "type": "string" },
+    "lean_scale": { "type": "number", "minimum": 0, "maximum": 3, "description": "Global multiplier on the per-band political leans." },
+    "group_lean_scale": { "type": "number", "minimum": 0, "maximum": 3, "description": "Global multiplier on the interest-group lean delta fed to the cohort targets." },
+    "aging_vote_gain": { "type": "number", "minimum": 0, "maximum": 10, "description": "Amplification of the age pyramid's drift on the national vote: the cohort targets are recentred with g*w_seed + (1-g)*w_now while the national aggregate uses w_now (0 = aging cancels out, 1 = the physical effect, 3 = default)." },
+    "recenter_iterations": { "type": "integer", "minimum": 1, "maximum": 10, "description": "IPF passes that recenter the band targets on the national anchor." },
+    "workers_min": { "type": "number", "minimum": 0, "maximum": 0.9, "description": "Floor on the Workers share; other groups are scaled down to leave it." },
+    "gdp_factor_thresholds": {
+      "type": "array", "minItems": 1, "maxItems": 8,
+      "items": { "type": "number", "minimum": 0 },
+      "description": "Ascending GDP-per-capita cut points for the piecewise-linear 0..1 gdp factor."
+    },
+    "age_bands": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "description": "Exactly four bands in AgeBand order: youth (non-voting, lean ignored), young, middle, senior.",
+      "items": {
+        "type": "object",
+        "required": ["id", "lean", "demand_multipliers"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "enum": ["youth", "young", "middle", "senior"] },
+          "turnout": { "type": "number", "exclusiveMinimum": 0, "maximum": 1, "description": "Turnout of the band in (0, 1]; multiplies its population weight in the electorate (VoterCohortFormulas.EffectiveVotingWeights). Ignored for youth; missing = 1." },
+          "lean": { "$ref": "#/definitions/bloc_vector" },
+          "demand_multipliers": { "$ref": "#/definitions/demand_multipliers" }
+        }
+      }
+    },
+    "groups": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "description": "Exactly five groups in InterestGroup order: workers, entrepreneurs, military, religious, environmentalists.",
+      "items": {
+        "type": "object",
+        "required": ["id", "name_key", "desc_key", "bloc_affinity", "drivers", "demand_multipliers"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "enum": ["workers", "entrepreneurs", "military", "religious", "environmentalists"] },
+          "name_key": { "type": "string" },
+          "desc_key": { "type": "string" },
+          "bloc_affinity": { "$ref": "#/definitions/bloc_vector" },
+          "drivers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "residual": { "type": "boolean" },
+              "base": { "type": "number", "minimum": 0, "maximum": 1 },
+              "min": { "type": "number", "minimum": 0, "maximum": 1 },
+              "max": { "type": "number", "minimum": 0, "maximum": 1 },
+              "personnel_weight": { "type": "number", "minimum": 0, "maximum": 10 },
+              "family_mult": { "type": "number", "minimum": 0, "maximum": 10 },
+              "personnel_ratio_cap": { "type": "number", "minimum": 0, "maximum": 1 },
+              "budget_weight": { "type": "number", "minimum": 0, "maximum": 2 },
+              "education_weight": { "type": "number", "minimum": 0, "maximum": 1 },
+              "edu_urb_weight": { "type": "number", "minimum": 0, "maximum": 1 },
+              "gdp_weight": { "type": "number", "minimum": 0, "maximum": 1 },
+              "urbanization_weight": { "type": "number", "minimum": 0, "maximum": 1 }
+            }
+          },
+          "demand_multipliers": { "$ref": "#/definitions/demand_multipliers" }
+        }
+      }
+    },
+    "law_bonuses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["category", "option", "group", "bonus"],
+        "additionalProperties": false,
+        "properties": {
+          "category": { "type": "string", "description": "laws.json category id" },
+          "option": { "type": "string", "description": "laws.json option id within the category" },
+          "group": { "type": "string", "enum": ["workers", "entrepreneurs", "military", "religious", "environmentalists"] },
+          "bonus": { "type": "number", "minimum": -0.5, "maximum": 0.5 }
+        }
+      }
+    },
+    "doctrine_bonuses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["branch", "group", "per_tier"],
+        "additionalProperties": false,
+        "properties": {
+          "branch": { "type": "string", "description": "doctrines.json branch id" },
+          "group": { "type": "string", "enum": ["workers", "entrepreneurs", "military", "religious", "environmentalists"] },
+          "per_tier": { "type": "number", "minimum": -0.1, "maximum": 0.1 }
+        }
+      }
+    },
+    "religiosity_by_religion": {
+      "type": "object",
+      "required": ["default"],
+      "description": "Religiosity base per dominant_religion value (as spelled in countries/*.json) plus 'default'.",
+      "additionalProperties": { "type": "number", "minimum": 0, "maximum": 1 }
+    },
+    "neutrality_reference_shares": {
+      "$ref": "#/definitions/group_shares",
+      "description": "World-average group shares used by the validator's neutrality rule (must sum to 1)."
+    },
+    "country_overrides": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[A-Z]{3}$": {
+          "type": "object",
+          "required": ["shares"],
+          "additionalProperties": false,
+          "properties": {
+            "mode": { "type": "string", "enum": ["fixed", "delta"] },
+            "shares": { "$ref": "#/definitions/group_shares" },
+            "religiosity": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        }
+      }
+    }
+  }
+}

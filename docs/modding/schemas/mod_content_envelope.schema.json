@@ -83,7 +83,7 @@
         },
         "inherit": {
           "type": "boolean",
-          "description": "For an id that exists in the base game: true overwrites only the fields this entry names; false makes this entry the whole definition (missing fields take engine defaults). Defaults to false in a replace-mode file and true otherwise. New ids are always whole definitions."
+          "description": "For an id that exists in the base game: true overwrites only the fields this entry names; false makes this entry the whole definition (missing fields take engine defaults). Defaults to false in a replace-mode file and true otherwise. New ids are always whole definitions. When several mods or layers touch the same id, the first one that introduced it decides the flag; a later entry that leaves inherit out keeps it, and only an explicit inherit in the later entry changes it."
         }
       },
       "additionalProperties": true

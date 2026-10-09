@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_research_tracks.schema.json",
+  "title": "Mod research tracks",
+  "description": "Content/research_tracks.json: free-form research tracks beside the Knowledge Network. A node has a cost in research points, prerequisites, doctrine effect lanes and AI weights; researching it opens the gate 'tech:<node id>' that buildings, units and law options can require (prerequisites.tech), and raises the on_tech_researched hook. Mod nodes use their own research slots, fed with a share of the country's monthly research points on top of (not instead of) the Knowledge Network.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slots": { "type": "integer", "minimum": 1, "maximum": 4, "description": "Mod research slots that run at once (default 2)." },
+        "points_share": { "type": "number", "exclusiveMinimum": 0, "maximum": 1, "description": "Fraction of a country's monthly research points each mod slot receives (default 0.5). Nothing is taken from doctrine research." }
+      }
+    },
+    "tracks": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/track" }
+    },
+    "starting": {
+      "type": "object",
+      "description": "Nodes already researched at the start of a new game, by ISO3.",
+      "propertyNames": { "pattern": "^[A-Za-z]{3}$" },
+      "additionalProperties": { "type": "array", "items": { "type": "string" } }
+    }
+  },
+  "definitions": {
+    "track": {
+      "type": "object",
+      "required": ["id", "name", "nodes"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9_]{1,24}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "icon": { "type": "string" },
+        "nodes": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/node" } }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": ["id", "name", "cost"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9_]{1,24}$", "description": "Unique across every mod node and doctrine card; content gates on 'tech:<id>'." },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "icon": { "type": "string" },
+        "cost": { "type": "number", "exclusiveMinimum": 0, "description": "Research points." },
+        "months": { "type": "number", "minimum": 0, "description": "Minimum months to research, however many points a country has." },
+        "prerequisites": { "type": "array", "items": { "type": "string" }, "description": "All of these must be researched first: node ids, 'tech:<id>' keys or doctrine gate keys such as 'military_t3'." },
+        "any_of": { "type": "array", "minItems": 2, "items": { "type": "string" }, "description": "At least one of these must be researched, on top of prerequisites." },
+        "requires_flag": { "type": "string" },
+        "effects": { "type": "object", "description": "Doctrine effect lanes, same keys as a doctrine card.", "additionalProperties": { "type": "number" } },
+        "ai": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "military": { "type": "number" }, "economy": { "type": "number" }, "stability": { "type": "number" },
+            "diplomacy": { "type": "number" }, "intel": { "type": "number" }
+          }
+        },
+        "ai_weight": { "type": "number", "description": "Extra AI preference added to the node's score." },
+        "position": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "integer" }, "description": "[column, row] in the track view." }
+      }
+    }
+  }
+}

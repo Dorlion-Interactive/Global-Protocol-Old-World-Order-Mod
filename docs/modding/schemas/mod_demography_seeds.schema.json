@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_demography_seeds.schema.json",
+  "title": "Mod demography seeds",
+  "description": "Content/demography/seeds.json: per-country demography seeds that replace (or add to) the shipped ones. A country's starting age pyramid is the shape of its row (scaled to its population), its life expectancy and fertility start from the row's le / tfr, and the calibration factors tune the monthly mortality and births. Give the shape as `cohorts` (101 headcounts per sex), as four `bands` shares, or inherit it from a `template` country; whatever is missing is inherited from the country's shipped row, its template, or the region template. A scenario nation that names a templateISO3 and has no row here inherits that template's row.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "countries": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[A-Za-z]{3}$" },
+      "additionalProperties": { "$ref": "#/definitions/row" }
+    }
+  },
+  "definitions": {
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "template": { "type": "string", "pattern": "^[A-Za-z]{3}$", "description": "ISO3 of a shipped (or earlier mod) row to start from." },
+        "region": { "type": "string", "description": "WorldRegion name whose template shape fills the gaps (default: the World template)." },
+        "bands": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": { "type": "number", "minimum": 0 },
+          "description": "Shares of youth (0-18), young (19-36), middle (37-56) and senior (57+); must sum to 1 (within 0.01)."
+        },
+        "cohorts": {
+          "type": "object",
+          "required": ["male", "female"],
+          "additionalProperties": false,
+          "description": "Headcounts by single year of age, 0 to 100. Only the shape matters (the pyramid is scaled to the country's population).",
+          "properties": {
+            "male": { "type": "array", "minItems": 101, "maxItems": 101, "items": { "type": "integer", "minimum": 0 } },
+            "female": { "type": "array", "minItems": 101, "maxItems": 101, "items": { "type": "integer", "minimum": 0 } }
+          }
+        },
+        "le": { "type": "number", "exclusiveMinimum": 0, "description": "Life expectancy at birth in years; must lie inside the model's life-table grid." },
+        "le_male": { "type": "number", "exclusiveMinimum": 0 },
+        "le_female": { "type": "number", "exclusiveMinimum": 0 },
+        "tfr": { "type": "number", "minimum": 0, "description": "Total fertility rate; must lie inside the model's fertility grid." },
+        "sex_ratio_at_birth": { "type": "number", "minimum": 0.9, "maximum": 1.2, "description": "Male births per female birth." },
+        "cbr_target": { "type": "number", "minimum": 0, "description": "Calibration target: crude birth rate per mille." },
+        "cdr_target": { "type": "number", "minimum": 0, "description": "Calibration target: crude death rate per mille." },
+        "calibration": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mortality_child": { "type": "number", "exclusiveMinimum": 0 },
+            "mortality_adult": { "type": "number", "exclusiveMinimum": 0 },
+            "fertility": { "type": "number", "exclusiveMinimum": 0 }
+          }
+        }
+      }
+    }
+  }
+}
