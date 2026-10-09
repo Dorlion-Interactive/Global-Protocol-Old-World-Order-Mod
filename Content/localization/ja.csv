@@ -276,6 +276,7 @@ mod.ui.toolbar.dynasties_tooltip,Inspect the Great Dynasties and Ruling Houses o
 mod.ui.toolbar.faiths_tooltip,Inspect Global Holy Sees and Spiritual Centers
 mod.ui.toolbar.info_tooltip,Mod Overview & Status
 mod.ui.toolbar.welcome_tooltip,Open Strategic Briefing
+mod.ui.toolbar.ambitions_tooltip,Historical Ambitions & Paths to Glory
 owo.doctrine.diplomacy.directive.broker_of_peace,Broker of Peace
 owo.doctrine.diplomacy.directive.broker_of_peace.desc,Host the talks, hold the pen, and let both sides owe you the settlement. Prestige is cheaper than provinces.
 owo.doctrine.diplomacy.directive.marriage_diplomacy,Marriage Diplomacy

@@ -7,6 +7,12 @@
       "hookName": "owo.welcome"
     },
     {
+      "id": "owo.ambitions_btn",
+      "iconPath": "Content/ui/icons/welcome.png",
+      "tooltip": "mod.ui.toolbar.ambitions_tooltip",
+      "hookName": "owo.ambitions"
+    },
+    {
       "id": "owo.archive_btn",
       "iconPath": "Content/ui/icons/archive.png",
       "tooltip": "mod.ui.toolbar.archive_tooltip",

@@ -23,6 +23,7 @@ public sealed class OldWorldOrder
 {
     public const string ModId = "globalprotocol.old_world_order";
     public const string WelcomeHook = "owo.welcome";
+    public const string AmbitionsHook = "owo.ambitions";
     public const string ArchiveHook = "owo.archive";
     public const string ChronicleHook = "owo.chronicle";
     public const string BalanceOfPowerHook = "owo.balance_of_power";
@@ -39,6 +40,7 @@ public sealed class OldWorldOrder
     private int _techsObserved;
     private int _buildingsObserved;
     private int _eventsObserved;
+    private int _countriesEliminated;
     private int _lastYear;
     private int _lastMonth;
     private bool _startupShown;
@@ -46,6 +48,7 @@ public sealed class OldWorldOrder
     private bool _soundDuesCaptured;
     private bool _malaccaCaptured;
     private bool _gibraltarCaptured;
+    private bool _muscatCaptured;
     private readonly System.Collections.Generic.Dictionary<int, int> _warAggressors = new();
 
     public OldWorldOrder(IModHost host)
@@ -63,13 +66,15 @@ public sealed class OldWorldOrder
         _techsObserved = 0;
         _buildingsObserved = 0;
         _eventsObserved = 0;
-        _lastYear = 0;
-        _lastMonth = 0;
+        _countriesEliminated = 0;
+        _lastYear = 1450;
+        _lastMonth = 1;
         _startupShown = false;
         _constantinopleFallen = false;
         _soundDuesCaptured = false;
         _malaccaCaptured = false;
         _gibraltarCaptured = false;
+        _muscatCaptured = false;
         _warAggressors.Clear();
         _host.Log("OWO initialized shared logic with ABI 3 diplomacy hooks.");
     }
@@ -101,7 +106,7 @@ public sealed class OldWorldOrder
 
     public void OnPeaceSigned(int proposer, int target)
     {
-        // Showcase hook: triggered when peace is signed between two countries
+        _host.Log($"OWO: Peace ratified between nation #{proposer} and #{target}");
     }
 
     public void OnAllianceFormed(int proposerIndex, int partnerIndex)
@@ -163,8 +168,8 @@ public sealed class OldWorldOrder
             );
             _host.Log("OWO: Malacca captured! Spice route bulletin dispatched.");
         }
-        // Province 2289 = Gibraltar (Pillars of Hercules)
-        else if (provinceId == 2289 && !_gibraltarCaptured)
+        // Province 1234 or 2289 = Gibraltar (Pillars of Hercules)
+        else if ((provinceId == 1234 || provinceId == 2289) && !_gibraltarCaptured)
         {
             _gibraltarCaptured = true;
             _host.ShowPopup(
@@ -174,6 +179,17 @@ public sealed class OldWorldOrder
               + "naval access between the Italian maritime republics, Iberia, and the oceanic trade lanes."
             );
             _host.Log("OWO: Gibraltar captured! Mediterranean gateway bulletin dispatched.");
+        }
+        // Province 2046 = Muscat / Ormuz Gateway
+        else if (provinceId == 2046 && !_muscatCaptured)
+        {
+            _muscatCaptured = true;
+            _host.ShowPopup(
+                "Maritime Crossroads: Gulf of Oman & Hormuz",
+                "The maritime fortress of Muscat commanding the approaches to the Strait of Hormuz has fallen!\n\n"
+              + "The conqueror now commands the vital conduit between the Persian Gulf silk markets and Indian Ocean commerce."
+            );
+            _host.Log("OWO: Muscat / Hormuz gateway captured!");
         }
     }
 
@@ -200,7 +216,13 @@ public sealed class OldWorldOrder
 
     public void OnCountryEliminated(int countryIndex)
     {
-        // Showcase hook: triggered when a country is fully eliminated from the game
+        _countriesEliminated++;
+        _host.Log($"OWO: Country #{countryIndex} fully eliminated from the 1450 map.");
+        _host.ShowPopup(
+            "Dynastic Extinction & Sovereign Annexation",
+            "A sovereign crown has been completely erased from the world map of 1450 AD!\n\n"
+          + "Its royal lineage has been extinguished or driven into exile, and its provinces have been absorbed into the victor realm."
+        );
     }
 
     public void OnUiAction(string hookName, string modId)
@@ -213,6 +235,11 @@ public sealed class OldWorldOrder
             case WelcomeHook:
                 _host.ShowPopup("Strategic Briefing: 1450 AD", BuildBriefingBody(_lastYear, _lastMonth));
                 _host.Log("OWO: welcome popup shown via UI action");
+                break;
+
+            case AmbitionsHook:
+                _host.ShowPopup("Historical Ambitions & Paths to Glory", BuildAmbitionsBody());
+                _host.Log("OWO: ambitions popup shown via UI action");
                 break;
 
             case ArchiveHook:
@@ -250,29 +277,63 @@ public sealed class OldWorldOrder
     private string BuildBriefingBody(int year, int month)
     {
         string monthText = (month >= 1 && month <= 12) ? month.ToString("00") : "--";
-        return "Era: 1450 AD (Current Date: " + year + "-" + monthText + ")\n\n"
-             + "THE 1450 DIPLOMATIC WEB:\n"
-             + "• The Jagiellonian Union: Poland (POL) and Lithuania (LTH) united under Casimir IV against the Teutonic Order.\n"
-             + "• The Auld Alliance: France (FRA) and Scotland (SCT) press the English crown (ENG) in the final stage of the Hundred Years' War.\n"
-             + "• The Balkan Bastion: Hungary (HUN), Skanderbeg's Albania (LEZ), and the Papacy (PAP) confront Ottoman expansion (OTT).\n"
-             + "• Italian Pentarchy: Maritime rivalry divides Venice (VNC) and Genoa (GEN); Milan (MIL) and Florence (FLR) hold the balance.\n"
-             + "• The Iberian Concord: Castile (CAS), Aragon (ARA), and Portugal (PRT) maintain fragile peace on the Granada (GRN) frontier.\n"
-             + "• Eastern Pacts: Ming China (MYN) rebuilds after Tumu with Joseon (JOS) tributary support; Vijayanagara (VIJ) contests the Deccan.\n\n"
-             + "Use the toolbar buttons to inspect intelligence, military chronicles, and mod status.";
+        return "ERA: 1450 ANNO DOMINI  (Current Date: " + year + "-" + monthText + ")\n\n"
+             + "THE SIX SUPRANATIONAL ORDERS:\n"
+             + "1. The Kalmar Union: Nordic crown union of Denmark (DAN), Sweden (SWD), and Norway under King Christian I.\n"
+             + "2. The Swiss Confederacy: Alpine alliance of cantons (CHE) maintaining staunch armed neutrality.\n"
+             + "3. The Holy Roman Empire: Imperial Diet of electors, prince-bishoprics, and free cities under Emperor Friedrich III (HAB).\n"
+             + "4. The League of Lezhë: Skanderbeg's Albanian military confederation (LEZ) holding the Danubian-Balkan mountain wall.\n"
+             + "5. The Livonian Confederation: Baltic tripartite union of the Livonian Order (LIV), Riga (RIG), and Dorpat.\n"
+             + "6. The Ming Tributary Order: East Asian celestial hierarchy uniting Ming China (MYN), Joseon (JOS), and Ryukyu (RYU).\n\n"
+             + "ACTIVE DAY-ONE WARS:\n"
+             + "• The Hundred Years' War: France (FRA) pressing England (ENG) in Normandy and Gascony.\n"
+             + "• First Ottoman-Albanian War: Sultan Murad II (OTT) besieging Krujë against Skanderbeg (LEZ).\n"
+             + "• Second Margrave War: Brandenburg (BRG) contesting Franconian Imperial Cities.\n"
+             + "• Incan Andean Expansion: Pachacuti (INC) marching north from Cusco against regional polities.\n"
+             + "• Deccan Hegemony Contest: Vijayanagara (VIJ) locked in frontier war with the Bahmani Sultanate (BAH).\n\n"
+             + "ECONOMIC REALITY:\n"
+             + "• Base currency: The Gold Florin (48,000 Florins = 1.0 GDP weight).\n"
+             + "• Modern hydrocarbons and synthetic commodities are disabled; economies thrive on grain, wool, timber, spices, and coinage.\n\n"
+             + "Use the HUD toolbar crown button to review military chronicles, diplomatic ledgers, and historical victory conditions.";
+    }
+
+    private string BuildAmbitionsBody()
+    {
+        return "HISTORICAL AMBITIONS & PATHS TO GLORY\n\n"
+             + "The five modern victories are disabled. Only nine demanding historical achievements can end the campaign:\n\n"
+             + "1. IMPERIAL HEGEMONY (Global Hegemon)\n"
+             + "   • Requirements: Year >= 1485 | 120+ Provinces Conquered | 10+ Wars Won | <2 Wars Lost | <150 Regiments Lost\n\n"
+             + "2. DAWN OF THE AGE OF DISCOVERY (Oceanic Expansion)\n"
+             + "   • Requirements: Year >= 1492 | 40+ Provinces Gained | 6+ Wars Won | <2 Wars Lost | <20 Ships Lost\n\n"
+             + "3. SULTAN-I RUM & CALIPHATE (Ottoman Realm)\n"
+             + "   • Requirements: Year >= 1480 | Flag: Constantinople Conquered | 80+ Provinces Gained | 8+ Wars Won | <2 Wars Lost\n\n"
+             + "4. PAX SINICA & CELESTIAL MANDATE (Great Ming)\n"
+             + "   • Requirements: Year >= 1490 | Flag: Beijing Defended | 0 Wars Lost | <3 Provinces Lost | 5+ Wars Won\n\n"
+             + "5. SOVEREIGN OF THE SEVEN SEAS (Thalassocracy)\n"
+             + "   • Requirements: Year >= 1488 | 45+ Coastal Provinces | 7+ Wars Won | <12 Ships Lost | <2 Wars Lost\n\n"
+             + "6. CROWN OF SPAIN & RECONQUISTA (Castile & Aragon)\n"
+             + "   • Requirements: Year >= 1492 | Flags: Reconquista Completed & Catholic Monarchs United | 50+ Provinces | 6+ Wars Won\n\n"
+             + "7. THIRD ROME & TSARDOM OF ALL RUS (Muscovy)\n"
+             + "   • Requirements: Year >= 1480 | Flag: Third Rome Proclaimed | 75+ Provinces Gained | 7+ Wars Won | <2 Wars Lost\n\n"
+             + "8. TRIUMPH OF THE HUNDRED YEARS (France / England)\n"
+             + "   • Requirements: Year >= 1475 | Flag: Hundred Years' War Won | 55+ Provinces Gained | 6+ Wars Won | <2 Wars Lost\n\n"
+             + "9. TAWANTINSUYU: REALM OF THE FOUR PARTS (Inca Empire)\n"
+             + "   • Requirements: Year >= 1480 | Flag: Tawantinsuyu Proclaimed | 60+ Andean Provinces | 6+ Wars Won | <2 Wars Lost";
     }
 
     private string BuildArchiveBody()
     {
-        return "1450 Geopolitical & Intelligence Ledger\n\n"
-             + "Observed wars declared: " + _warsObserved + "\n"
-             + "Observed alliances formed: " + _alliancesObserved + "\n"
-             + "Observed alliances dissolved: " + _alliancesBroken + "\n"
-             + "Observed trade pacts: " + _tradeAgreementsObserved + "\n"
-             + "Observed territorial conquests: " + _provincesCaptured + "\n"
-             + "Observed doctrines researched: " + _techsObserved + "\n"
-             + "Observed building projects: " + _buildingsObserved + "\n"
-             + "Observed scripted events: " + _eventsObserved + "\n\n"
-             + "Maintain dynastic legitimacy, secure trade choke points, and honor defensive pacts.";
+        return "1450 GEOPOLITICAL & INTELLIGENCE LEDGER\n\n"
+             + "Observed Wars Declared: " + _warsObserved + "\n"
+             + "Observed Alliances Formed: " + _alliancesObserved + "\n"
+             + "Observed Alliances Dissolved: " + _alliancesBroken + "\n"
+             + "Observed Commercial Treaties: " + _tradeAgreementsObserved + "\n"
+             + "Observed Territorial Conquests: " + _provincesCaptured + "\n"
+             + "Observed Dynasties Extinguished: " + _countriesEliminated + "\n"
+             + "Observed Doctrines Researched: " + _techsObserved + "\n"
+             + "Observed Building Projects: " + _buildingsObserved + "\n"
+             + "Observed Scripted Historical Events: " + _eventsObserved + "\n\n"
+             + "Maintain dynastic legitimacy, secure global trade chokepoints, and honor treaty obligations.";
     }
 
     private string BuildChronicleBody()
@@ -293,19 +354,25 @@ public sealed class OldWorldOrder
             ? "CAPTURED — Pillars of Hercules occupied; Mediterranean gateway controlled."
             : "GUARDED — Iberian & Moorish naval squadrons watch the Atlantic strait.";
 
+        string muscatStatus = _muscatCaptured
+            ? "SEIZED — Gulf of Oman approaches controlled by foreign conquerors."
+            : "UNOPPOSED — Ormuz and Omani dhows navigate Persian Gulf silk waters.";
+
         return "1450 WORLD CHRONICLE & MARITIME ARTERIES\n\n"
              + "• Current Date: " + _lastYear + " AD\n\n"
-             + "GLOBAL CHOKEPOINTS:\n"
+             + "STRATEGIC CHOKEPOINTS:\n"
              + "1. Bosporus & Dardanelles (Constantinople): " + spiceStatus + "\n"
              + "2. Øresund Sound Dues (Copenhagen): " + soundStatus + "\n"
              + "3. Straits of Malacca (Malacca): " + malaccaStatus + "\n"
-             + "4. Pillars of Hercules (Gibraltar): " + gibraltarStatus + "\n\n"
+             + "4. Pillars of Hercules (Gibraltar): " + gibraltarStatus + "\n"
+             + "5. Strait of Hormuz & Gulf of Oman: " + muscatStatus + "\n\n"
              + "LEDGER OF CAMPAIGNS:\n"
              + "• Continental Wars Observed: " + _warsObserved + "\n"
              + "• Diplomatic Alliances Formed: " + _alliancesObserved + "\n"
              + "• Treaties Dissolved / Broken: " + _alliancesBroken + "\n"
              + "• Commercial Trade Agreements: " + _tradeAgreementsObserved + "\n"
-             + "• Provinces Changed Sovereignty: " + _provincesCaptured + "\n\n"
+             + "• Provinces Changed Sovereignty: " + _provincesCaptured + "\n"
+             + "• Sovereign Realms Eliminated: " + _countriesEliminated + "\n\n"
              + "The world transitions from medieval chivalric levies into early modern sovereign states.";
     }
 
@@ -316,12 +383,16 @@ public sealed class OldWorldOrder
              + "   • Kingdom of France (FRA) & Kingdom of Scotland (SCT) — The Auld Alliance\n"
              + "   • Kingdom of England (ENG) & Duchy of Burgundy (BUR) — Anglo-Burgundian ties\n"
              + "   • Crown of Castile (CAS) & Crown of Aragon (ARA) — Trastámara dynastic accord\n\n"
-             + "2. Central & Eastern Europe:\n"
+             + "2. Central & Northern Europe:\n"
+             + "   • Kalmar Union: Denmark (DAN), Sweden (SWD), Norway\n"
+             + "   • Swiss Confederacy: Alpine cantons of Switzerland (CHE)\n"
+             + "   • Holy Roman Empire: Imperial Diet & Habsburg leadership (HAB)\n"
              + "   • Crown of Poland (POL) & Grand Duchy of Lithuania (LTH) — Jagiellonian Union\n"
              + "   • Crown of Hungary (HUN) & League of Lezhë (LEZ) — Anti-Ottoman Danubian front\n"
-             + "   • Grand Duchy of Moscow (MVY) & Pskov (PSK) — Defense against the Great Horde (STE)\n\n"
+             + "   • Livonian Confederation: Livonian Order (LIV), Riga (RIG), Dorpat\n\n"
              + "3. Eastern Empires:\n"
-             + "   • Ming Dynasty (MYN) & Joseon Dynasty (JOS) — Confucian Tributary Pact\n"
+             + "   • Grand Duchy of Moscow (MVY) & Pskov (PSK) — Unification against the Great Horde\n"
+             + "   • Ming Dynasty (MYN) & Joseon (JOS) & Ryukyu (RYU) — Confucian Tributary Pact\n"
              + "   • Vijayanagara Empire (VIJ) vs. Bahmani Sultanate (BAH) — Deccan balance of power\n\n"
              + "4. Maritime Republics:\n"
              + "   • Republic of Venice (VNC) vs. Republic of Genoa (GEN) — Mediterranean trade rivalry";
@@ -336,7 +407,7 @@ public sealed class OldWorldOrder
              + "   • House of Trastámara (CAS / ARA): King John II & Alfonso V — Divided Iberian crowns approaching union.\n"
              + "   • House of Valois-Burgundy (BUR): Duke Philip the Good — Grand Dukes of the West in the Low Countries.\n\n"
              + "2. Central & Northern Europe:\n"
-             + "   • House of Habsburg (HAB): Duke Friedrich III — Inner Austria and Imperial Roman Crown.\n"
+             + "   • House of Habsburg (HAB): Emperor Friedrich III — Inner Austria and Imperial Roman Crown.\n"
              + "   • House of Jagiellon (POL / LTH): Casimir IV — Dual monarchy across the Baltic to the Black Sea.\n"
              + "   • House of Oldenburg (DAN / SWD): King Christian I — The Scandinavian Kalmar Union.\n\n"
              + "3. Eastern Empires:\n"
@@ -375,7 +446,7 @@ public sealed class OldWorldOrder
         return "Global Protocol: Old World Order\n"
              + "Version: " + version + "\n\n"
              + "A historical scenario mod focusing on the late medieval and early Renaissance era (1450 AD).\n"
-             + "Features deep diplomatic networks, cultural affinities, dynamic events, and Knowledge Network doctrines.\n\n"
+             + "Features 137 historical nations, 4,604 calibrated provinces, deep diplomatic organizations, and 9 authentic victory conditions.\n\n"
              + "Project: Dorlion-Interactive/Global-Protocol-Old-World-Order-Mod";
     }
 }

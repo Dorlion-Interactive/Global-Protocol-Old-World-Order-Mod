@@ -276,6 +276,7 @@ mod.ui.toolbar.dynasties_tooltip,1450 Yılının Büyük Hanedanlarını ve Hük
 mod.ui.toolbar.faiths_tooltip,Dünya Kutsal Merkezlerini ve Dini Otoriteleri İncele
 mod.ui.toolbar.info_tooltip,Mod Genel Bakış ve Durum
 mod.ui.toolbar.welcome_tooltip,Stratejik Bilgilendirmeyi Aç
+mod.ui.toolbar.ambitions_tooltip,Tarihi Emeller ve Zafer Yolları
 owo.doctrine.diplomacy.directive.broker_of_peace,Barışın Aracısı
 owo.doctrine.diplomacy.directive.broker_of_peace.desc,Görüşmelere ev sahipliği yapın, kalemi elinizde tutun ve her iki taraf da anlaşmayı size borçlu kalsın. İtibar, eyaletlerden ucuzdur.
 owo.doctrine.diplomacy.directive.marriage_diplomacy,Evlilik Diplomasisi
