@@ -1,0 +1,224 @@
+{
+  "mode": "replace",
+  "settings": {
+    "max_assigned": 3
+  },
+  "specialists": [
+    {
+      "id": "johannes_gutenberg",
+      "name": "Johannes Gutenberg",
+      "description": "Pioneer of movable type mechanical printing in Mainz.",
+      "role": "scientist",
+      "available_from": 1450,
+      "hire_cost": 50000,
+      "upkeep_monthly": 2500,
+      "ai_weight": 2.0,
+      "effects": {
+        "research_speed": 0.25
+      }
+    },
+    {
+      "id": "orban_engineer",
+      "name": "Urban (Orban)",
+      "description": "Master brass and iron founder who designed the great Basilic bombard.",
+      "role": "engineer",
+      "country": "OTT",
+      "available_from": 1450,
+      "hire_cost": 75000,
+      "upkeep_monthly": 4000,
+      "ai_weight": 2.5,
+      "effects": {
+        "unit_build_speed_mult": 1.3,
+        "production_output_mult": 1.15
+      }
+    },
+    {
+      "id": "filippo_brunelleschi",
+      "name": "Filippo Brunelleschi",
+      "description": "Renowned Florentine master architect and engineer.",
+      "role": "engineer",
+      "country": "FLR",
+      "available_from": 1450,
+      "hire_cost": 60000,
+      "upkeep_monthly": 3000,
+      "ai_weight": 2.0,
+      "effects": {
+        "construction_speed_mult": 1.35
+      }
+    },
+    {
+      "id": "henry_the_navigator",
+      "name": "Prince Henry the Navigator",
+      "description": "Patron of Portuguese maritime exploration and cartography.",
+      "role": "scientist",
+      "country": "PRT",
+      "available_from": 1450,
+      "hire_cost": 80000,
+      "upkeep_monthly": 4500,
+      "ai_weight": 2.5,
+      "effects": {
+        "research_speed": 0.2,
+        "unit_build_speed_mult": 1.15
+      }
+    },
+    {
+      "id": "georg_von_peuerbach",
+      "name": "Georg von Peuerbach",
+      "description": "Viennese astronomer and mathematician who advanced celestial navigation.",
+      "role": "scientist",
+      "country": "HAB",
+      "available_from": 1450,
+      "hire_cost": 45000,
+      "upkeep_monthly": 2000,
+      "ai_weight": 1.8,
+      "effects": {
+        "research_speed": 0.2
+      }
+    },
+    {
+      "id": "yu_qian",
+      "name": "Yu Qian",
+      "description": "Ming Minister of War who reorganized imperial defenses after the Tumu Crisis.",
+      "role": "other",
+      "country": "MYN",
+      "available_from": 1450,
+      "hire_cost": 70000,
+      "upkeep_monthly": 3500,
+      "ai_weight": 2.2,
+      "effects": {
+        "unit_build_speed_mult": 1.25,
+        "production_output_mult": 1.1
+      }
+    },
+    {
+      "id": "john_hunyadi",
+      "name": "John Hunyadi",
+      "description": "White Knight of Hungary and master of wagon-fort defensive warfare.",
+      "role": "other",
+      "country": "HUN",
+      "available_from": 1450,
+      "hire_cost": 75000,
+      "upkeep_monthly": 4000,
+      "ai_weight": 2.4,
+      "effects": {
+        "unit_build_speed_mult": 1.3
+      }
+    },
+    {
+      "id": "skanderbeg",
+      "name": "Gjergj Kastrioti",
+      "description": "Lord of Albania and military mastermind of the League of Lezhe.",
+      "role": "other",
+      "country": "LEZ",
+      "available_from": 1450,
+      "hire_cost": 50000,
+      "upkeep_monthly": 2000,
+      "ai_weight": 2.0,
+      "effects": {
+        "unit_build_speed_mult": 1.2
+      }
+    },
+    {
+      "id": "jean_bureau",
+      "name": "Jean Bureau",
+      "description": "Grand Master of French royal artillery who revolutionized siege and field guns.",
+      "role": "engineer",
+      "country": "FRA",
+      "available_from": 1450,
+      "hire_cost": 70000,
+      "upkeep_monthly": 3800,
+      "ai_weight": 2.3,
+      "effects": {
+        "unit_build_speed_mult": 1.35,
+        "production_output_mult": 1.1
+      }
+    },
+    {
+      "id": "ulugh_beg",
+      "name": "Ulugh Beg",
+      "description": "Timurid astronomer and mathematician who built the great Samarkand observatory.",
+      "role": "scientist",
+      "country": "TIM",
+      "available_from": 1450,
+      "hire_cost": 65000,
+      "upkeep_monthly": 3200,
+      "ai_weight": 2.0,
+      "effects": {
+        "research_speed": 0.25
+      }
+    },
+    {
+      "id": "ali_qushji",
+      "name": "Ali Qushji",
+      "description": "Ottoman polymath and astronomer who advanced mathematical physics.",
+      "role": "scientist",
+      "country": "OTT",
+      "available_from": 1450,
+      "hire_cost": 55000,
+      "upkeep_monthly": 2500,
+      "ai_weight": 1.9,
+      "effects": {
+        "research_speed": 0.22
+      }
+    },
+    {
+      "id": "tlacaelel",
+      "name": "Tlacaelel",
+      "description": "Principal architect of the Aztec Triple Alliance and imperial administrative reform.",
+      "role": "other",
+      "country": "AZT",
+      "available_from": 1450,
+      "hire_cost": 60000,
+      "upkeep_monthly": 2800,
+      "ai_weight": 2.1,
+      "effects": {
+        "construction_speed_mult": 1.25,
+        "production_output_mult": 1.15
+      }
+    },
+    {
+      "id": "pachacuti",
+      "name": "Pachacuti Inca Yupanqui",
+      "description": "Transformative Sapa Inca builder of monumental stone citadels and agricultural terraces.",
+      "role": "engineer",
+      "country": "INC",
+      "available_from": 1450,
+      "hire_cost": 70000,
+      "upkeep_monthly": 3500,
+      "ai_weight": 2.2,
+      "effects": {
+        "construction_speed_mult": 1.4
+      }
+    },
+    {
+      "id": "shin_sukju",
+      "name": "Shin Suk-ju",
+      "description": "Joseon Hall of Worthies scholar, linguist, and premier state planner.",
+      "role": "scientist",
+      "country": "JOS",
+      "available_from": 1450,
+      "hire_cost": 50000,
+      "upkeep_monthly": 2200,
+      "ai_weight": 1.8,
+      "effects": {
+        "research_speed": 0.2,
+        "construction_speed_mult": 1.15
+      }
+    },
+    {
+      "id": "mahmud_gawan",
+      "name": "Mahmud Gawan",
+      "description": "Visionary Bahmani vizier, architectural patron, and administrative modernizer.",
+      "role": "other",
+      "country": "BAH",
+      "available_from": 1450,
+      "hire_cost": 60000,
+      "upkeep_monthly": 3000,
+      "ai_weight": 2.0,
+      "effects": {
+        "construction_speed_mult": 1.2,
+        "production_output_mult": 1.2
+      }
+    }
+  ]
+}

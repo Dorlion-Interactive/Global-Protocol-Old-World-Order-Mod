@@ -871,6 +871,1560 @@
           "count": 2
         }
       ]
+    },
+    {
+      "ownerISO3": "ABY",
+      "provinceId": 3742,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "ADA",
+      "provinceId": 366,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "AKK",
+      "provinceId": 381,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "ARK",
+      "provinceId": 621,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "war_elephant",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "AVA",
+      "provinceId": 623,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BAV",
+      "provinceId": 121,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BNG",
+      "provinceId": 1016,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "war_elephant",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BNK",
+      "provinceId": 485,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BOS",
+      "provinceId": 811,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BRG",
+      "provinceId": 846,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BRU",
+      "provinceId": 587,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BUG",
+      "provinceId": 3917,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "CAH",
+      "provinceId": 4358,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "CND",
+      "provinceId": 2419,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "COL",
+      "provinceId": 412,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "CPA",
+      "provinceId": 1064,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "war_elephant",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "DUL",
+      "provinceId": 4071,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "FNJ",
+      "provinceId": 1112,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "GRG",
+      "provinceId": 4303,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "GUJ",
+      "provinceId": 2237,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "war_elephant",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "HAU",
+      "provinceId": 475,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "HFS",
+      "provinceId": 1936,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "HRM",
+      "provinceId": 2121,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "IRO",
+      "provinceId": 1246,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "JBR",
+      "provinceId": 3089,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "JNP",
+      "provinceId": 1642,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KAR",
+      "provinceId": 4054,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KBR",
+      "provinceId": 1138,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KKY",
+      "provinceId": 4269,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KLW",
+      "provinceId": 1778,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KMR",
+      "provinceId": 3813,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "war_elephant",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KNG",
+      "provinceId": 1924,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KOT",
+      "provinceId": 1860,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "war_elephant",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "KSH",
+      "provinceId": 1639,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "LIV",
+      "provinceId": 2381,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "LNA",
+      "provinceId": 1020,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "war_elephant",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "LUB",
+      "provinceId": 371,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "LUS",
+      "provinceId": 1629,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "LXG",
+      "provinceId": 249,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "war_elephant",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MAD",
+      "provinceId": 1750,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MAJ",
+      "provinceId": 583,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "war_elephant",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MAP",
+      "provinceId": 1326,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MAY",
+      "provinceId": 578,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MEW",
+      "provinceId": 1611,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MLC",
+      "provinceId": 2908,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MLD",
+      "provinceId": 3116,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MLW",
+      "provinceId": 3275,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MOL",
+      "provinceId": 877,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MOS",
+      "provinceId": 1180,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MUI",
+      "provinceId": 3782,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "NAP",
+      "provinceId": 2465,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "NAV",
+      "provinceId": 626,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "NBH",
+      "provinceId": 447,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "NEP",
+      "provinceId": 1003,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "ORI",
+      "provinceId": 2179,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "OYO",
+      "provinceId": 476,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "PAL",
+      "provinceId": 199,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "PEG",
+      "provinceId": 1023,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "war_elephant",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "PSI",
+      "provinceId": 1829,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "PUE",
+      "provinceId": 1255,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "RAM",
+      "provinceId": 2434,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "RYU",
+      "provinceId": 2916,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "SAV",
+      "provinceId": 4411,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "SAX",
+      "provinceId": 2540,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "SHV",
+      "provinceId": 931,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "SND",
+      "provinceId": 1376,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "SRB",
+      "provinceId": 3500,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "SUL",
+      "provinceId": 1822,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "TAH",
+      "provinceId": 2039,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "TAI",
+      "provinceId": 88,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "TAR",
+      "provinceId": 1988,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "TIB",
+      "provinceId": 71,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "TLX",
+      "provinceId": 4211,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "UZB",
+      "provinceId": 1631,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "WAL",
+      "provinceId": 852,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "WUR",
+      "provinceId": 765,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "ZAP",
+      "provinceId": 2101,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "ZAY",
+      "provinceId": 1625,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_cavalry",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "ZIM",
+      "provinceId": 3183,
+      "units": [
+        {
+          "unitTypeId": "medieval_infantry",
+          "count": 2
+        },
+        {
+          "unitTypeId": "medieval_crossbowman",
+          "count": 1
+        },
+        {
+          "unitTypeId": "medieval_bombard",
+          "count": 1
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,638 @@
+{
+  "startingDiplomacy": {
+    "organizations": [
+      {
+        "id": "KALMAR_UNION",
+        "nameKey": "owo.org.kalmar_union.name",
+        "type": "CollectiveDefense",
+        "founder": "DAN",
+        "members": [
+          "DAN",
+          "SWD"
+        ]
+      },
+      {
+        "id": "SWISS_CONFEDERACY",
+        "nameKey": "owo.org.swiss_confederacy.name",
+        "type": "CollectiveDefense",
+        "founder": "CHE",
+        "members": [
+          "CHE"
+        ]
+      },
+      {
+        "id": "HOLY_ROMAN_EMPIRE",
+        "nameKey": "owo.org.holy_roman_empire.name",
+        "type": "Political",
+        "founder": "HAB",
+        "members": [
+          "HAB",
+          "BOH",
+          "BAV",
+          "BRG",
+          "SAX",
+          "PAL",
+          "COL",
+          "WUR"
+        ]
+      },
+      {
+        "id": "LEAGUE_OF_LEZHE",
+        "nameKey": "owo.org.league_of_lezhe.name",
+        "type": "CollectiveDefense",
+        "founder": "LEZ",
+        "members": [
+          "LEZ",
+          "SRB",
+          "BOS"
+        ]
+      },
+      {
+        "id": "LIVONIAN_CONFEDERATION",
+        "nameKey": "owo.org.livonian_confederation.name",
+        "type": "CollectiveDefense",
+        "founder": "LIV",
+        "members": [
+          "LIV",
+          "TEU"
+        ]
+      },
+      {
+        "id": "MING_TRIBUTARY_ORDER",
+        "nameKey": "owo.org.ming_tributary_order.name",
+        "type": "InternationalOrg",
+        "founder": "MYN",
+        "members": [
+          "MYN",
+          "JOS",
+          "RYU",
+          "DVT"
+        ]
+      }
+    ],
+    "alliances": [
+      {
+        "a": "FRA",
+        "b": "SCT",
+        "type": "Military"
+      },
+      {
+        "a": "CAS",
+        "b": "ARA",
+        "type": "DefensePact"
+      },
+      {
+        "a": "CAS",
+        "b": "PRT",
+        "type": "DefensePact"
+      },
+      {
+        "a": "POL",
+        "b": "LTH",
+        "type": "Military"
+      },
+      {
+        "a": "HUN",
+        "b": "HAB",
+        "type": "DefensePact"
+      },
+      {
+        "a": "HUN",
+        "b": "POL",
+        "type": "DefensePact"
+      },
+      {
+        "a": "TEU",
+        "b": "LIV",
+        "type": "Military"
+      },
+      {
+        "a": "MVY",
+        "b": "PSK",
+        "type": "DefensePact"
+      },
+      {
+        "a": "FLR",
+        "b": "MIL",
+        "type": "DefensePact"
+      },
+      {
+        "a": "VNC",
+        "b": "NAP",
+        "type": "DefensePact"
+      },
+      {
+        "a": "AKK",
+        "b": "TRE",
+        "type": "DefensePact"
+      },
+      {
+        "a": "MAM",
+        "b": "DUL",
+        "type": "DefensePact"
+      },
+      {
+        "a": "MYN",
+        "b": "JOS",
+        "type": "DefensePact"
+      },
+      {
+        "a": "MYN",
+        "b": "RYU",
+        "type": "DefensePact"
+      },
+      {
+        "a": "AZT",
+        "b": "ZAP",
+        "type": "DefensePact"
+      }
+    ],
+    "treaties": [
+      {
+        "type": "truce",
+        "a": "HUN",
+        "b": "OTT",
+        "months": 36
+      },
+      {
+        "type": "truce",
+        "a": "POL",
+        "b": "TEU",
+        "months": 48
+      },
+      {
+        "type": "truce",
+        "a": "VNC",
+        "b": "MIL",
+        "months": 24
+      },
+      {
+        "type": "truce",
+        "a": "VIJ",
+        "b": "BAH",
+        "months": 36
+      },
+      {
+        "type": "truce",
+        "a": "TIM",
+        "b": "UZB",
+        "months": 30
+      },
+      {
+        "type": "nap",
+        "a": "MAM",
+        "b": "OTT",
+        "months": 60
+      },
+      {
+        "type": "nap",
+        "a": "BUR",
+        "b": "FRA",
+        "months": 48
+      },
+      {
+        "type": "nap",
+        "a": "CAS",
+        "b": "NAV",
+        "months": 48
+      },
+      {
+        "type": "nap",
+        "a": "DEL",
+        "b": "JNP",
+        "months": 36
+      },
+      {
+        "type": "guarantee",
+        "a": "PAP",
+        "b": "KNI",
+        "months": 0
+      },
+      {
+        "type": "guarantee",
+        "a": "PAP",
+        "b": "LUS",
+        "months": 0
+      },
+      {
+        "type": "guarantee",
+        "a": "OTT",
+        "b": "WAL",
+        "months": 0
+      },
+      {
+        "type": "guarantee",
+        "a": "OTT",
+        "b": "MOL",
+        "months": 0
+      },
+      {
+        "type": "guarantee",
+        "a": "OTT",
+        "b": "SRB",
+        "months": 0
+      },
+      {
+        "type": "guarantee",
+        "a": "MYN",
+        "b": "JOS",
+        "months": 0
+      },
+      {
+        "type": "guarantee",
+        "a": "MYN",
+        "b": "RYU",
+        "months": 0
+      },
+      {
+        "type": "guarantee",
+        "a": "HAB",
+        "b": "CHE",
+        "months": 0
+      },
+      {
+        "type": "trade_agreement",
+        "a": "VNC",
+        "b": "OTT",
+        "months": 0
+      },
+      {
+        "type": "trade_agreement",
+        "a": "GEN",
+        "b": "BYZ",
+        "months": 0
+      },
+      {
+        "type": "trade_agreement",
+        "a": "VNC",
+        "b": "MAM",
+        "months": 0
+      },
+      {
+        "type": "trade_agreement",
+        "a": "GEN",
+        "b": "KRM",
+        "months": 0
+      },
+      {
+        "type": "trade_agreement",
+        "a": "PRT",
+        "b": "ENG",
+        "months": 0
+      },
+      {
+        "type": "trade_agreement",
+        "a": "BUR",
+        "b": "ENG",
+        "months": 0
+      },
+      {
+        "type": "trade_agreement",
+        "a": "MLC",
+        "b": "MYN",
+        "months": 0
+      },
+      {
+        "type": "trade_agreement",
+        "a": "HRM",
+        "b": "GUJ",
+        "months": 0
+      }
+    ],
+    "wars": [
+      {
+        "id": "HUNDRED_YEARS_WAR",
+        "attackers": [
+          "FRA"
+        ],
+        "defenders": [
+          "ENG"
+        ],
+        "casusBelli": "Territorial",
+        "callAllies": true
+      },
+      {
+        "id": "BYZANTINE_OTTOMAN_WAR",
+        "attackers": [
+          "OTT"
+        ],
+        "defenders": [
+          "BYZ"
+        ],
+        "casusBelli": "Reconquest",
+        "callAllies": false
+      },
+      {
+        "id": "TUMU_CRISIS_WAR",
+        "attackers": [
+          "MGL"
+        ],
+        "defenders": [
+          "MYN"
+        ],
+        "casusBelli": "Humiliation",
+        "callAllies": false
+      },
+      {
+        "id": "ALBANIAN_OTTOMAN_WAR",
+        "attackers": [
+          "OTT"
+        ],
+        "defenders": [
+          "LEZ"
+        ],
+        "casusBelli": "Defense",
+        "callAllies": false
+      },
+      {
+        "id": "FLOWER_WARS",
+        "attackers": [
+          "AZT"
+        ],
+        "defenders": [
+          "TLX"
+        ],
+        "casusBelli": "Scripted",
+        "callAllies": false
+      }
+    ],
+    "relations": [
+      {
+        "a": "FRA",
+        "b": "ENG",
+        "opinion": -100,
+        "trust": -100,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "OTT",
+        "b": "BYZ",
+        "opinion": -95,
+        "trust": -95,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "OTT",
+        "b": "HUN",
+        "opinion": -90,
+        "trust": -85,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "OTT",
+        "b": "KAR",
+        "opinion": -80,
+        "trust": -75,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "POL",
+        "b": "TEU",
+        "opinion": -85,
+        "trust": -80,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "VNC",
+        "b": "GEN",
+        "opinion": -80,
+        "trust": -80,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "VNC",
+        "b": "MIL",
+        "opinion": -75,
+        "trust": -70,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "BUR",
+        "b": "FRA",
+        "opinion": -65,
+        "trust": -60,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "DAN",
+        "b": "SWD",
+        "opinion": -45,
+        "trust": -50,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "MVY",
+        "b": "NVD",
+        "opinion": -75,
+        "trust": -70,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "MVY",
+        "b": "STE",
+        "opinion": -85,
+        "trust": -85,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "KKY",
+        "b": "AKK",
+        "opinion": -85,
+        "trust": -85,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "VIJ",
+        "b": "BAH",
+        "opinion": -85,
+        "trust": -85,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "DEL",
+        "b": "JNP",
+        "opinion": -70,
+        "trust": -70,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "MYN",
+        "b": "MGL",
+        "opinion": -95,
+        "trust": -90,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "AZT",
+        "b": "TLX",
+        "opinion": -95,
+        "trust": -95,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "AZT",
+        "b": "TAR",
+        "opinion": -80,
+        "trust": -75,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "INC",
+        "b": "CHM",
+        "opinion": -75,
+        "trust": -70,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "CAS",
+        "b": "GRN",
+        "opinion": -90,
+        "trust": -90,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "MOR",
+        "b": "PRT",
+        "opinion": -80,
+        "trust": -75,
+        "mutual": true,
+        "rival": true,
+        "anchor": true
+      },
+      {
+        "a": "MAM",
+        "b": "OTT",
+        "opinion": -30,
+        "trust": -25,
+        "mutual": true,
+        "rival": false
+      },
+      {
+        "a": "POL",
+        "b": "LTH",
+        "opinion": 95,
+        "trust": 95,
+        "mutual": true,
+        "anchor": true
+      },
+      {
+        "a": "FRA",
+        "b": "SCT",
+        "opinion": 90,
+        "trust": 90,
+        "mutual": true,
+        "anchor": true
+      },
+      {
+        "a": "CAS",
+        "b": "ARA",
+        "opinion": 75,
+        "trust": 75,
+        "mutual": true,
+        "anchor": true
+      },
+      {
+        "a": "PRT",
+        "b": "ENG",
+        "opinion": 75,
+        "trust": 80,
+        "mutual": true,
+        "anchor": true
+      },
+      {
+        "a": "FLR",
+        "b": "MIL",
+        "opinion": 70,
+        "trust": 70,
+        "mutual": true,
+        "anchor": true
+      },
+      {
+        "a": "HAB",
+        "b": "BOH",
+        "opinion": 65,
+        "trust": 65,
+        "mutual": true,
+        "anchor": true
+      },
+      {
+        "a": "HAB",
+        "b": "HUN",
+        "opinion": 60,
+        "trust": 60,
+        "mutual": true,
+        "anchor": true
+      },
+      {
+        "a": "MYN",
+        "b": "JOS",
+        "opinion": 90,
+        "trust": 90,
+        "mutual": true,
+        "anchor": true
+      },
+      {
+        "a": "MYN",
+        "b": "RYU",
+        "opinion": 85,
+        "trust": 85,
+        "mutual": true,
+        "anchor": true
+      },
+      {
+        "a": "TEU",
+        "b": "LIV",
+        "opinion": 85,
+        "trust": 85,
+        "mutual": true,
+        "anchor": true
+      },
+      {
+        "a": "CHE",
+        "b": "FRA",
+        "opinion": 60,
+        "trust": 65,
+        "mutual": true,
+        "anchor": true
+      }
+    ]
+  }
+}

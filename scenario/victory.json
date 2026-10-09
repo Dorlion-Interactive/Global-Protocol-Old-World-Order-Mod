@@ -1,0 +1,320 @@
+{
+  "disable_base_victories": true,
+  "mod_victories": [
+    {
+      "id": "imperial_hegemony",
+      "title_key": "owo.victory.imperial_hegemony.title",
+      "description_key": "owo.victory.imperial_hegemony.desc",
+      "outcome": "victory",
+      "winner": "player",
+      "min_year": 1485,
+      "conditions": [
+        {
+          "type": "lifetime_gt",
+          "counter": "provinces_gained",
+          "value": 120
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "wars_won",
+          "value": 10
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "wars_lost",
+          "value": 2
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "regiments_lost",
+          "value": 150
+        }
+      ]
+    },
+    {
+      "id": "era_of_discovery_dawn",
+      "title_key": "owo.victory.era_of_discovery.title",
+      "description_key": "owo.victory.era_of_discovery.desc",
+      "outcome": "victory",
+      "winner": "player",
+      "min_year": 1492,
+      "conditions": [
+        {
+          "type": "date_after",
+          "value": "1492-01"
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "provinces_gained",
+          "value": 40
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "wars_won",
+          "value": 6
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "wars_lost",
+          "value": 2
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "ships_lost",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": "sultan_i_rum_caliphate",
+      "title_key": "owo.victory.sultan_i_rum.title",
+      "description_key": "owo.victory.sultan_i_rum.desc",
+      "outcome": "victory",
+      "winner": "player",
+      "min_year": 1480,
+      "conditions": [
+        {
+          "type": "has_flag",
+          "flag_name": "constantinople_conquered"
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "provinces_gained",
+          "value": 80
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "wars_won",
+          "value": 8
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "wars_lost",
+          "value": 2
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "regiments_lost",
+          "value": 120
+        }
+      ]
+    },
+    {
+      "id": "pax_sinica_middle_kingdom",
+      "title_key": "owo.victory.pax_sinica.title",
+      "description_key": "owo.victory.pax_sinica.desc",
+      "outcome": "victory",
+      "winner": "player",
+      "min_year": 1490,
+      "conditions": [
+        {
+          "type": "has_flag",
+          "flag_name": "beijing_defended_1450"
+        },
+        {
+          "type": "date_after",
+          "value": "1490-01"
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "provinces_lost",
+          "value": 3
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "wars_lost",
+          "value": 1
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "wars_won",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "ocean_thalassocracy",
+      "title_key": "owo.victory.thalassocracy.title",
+      "description_key": "owo.victory.thalassocracy.desc",
+      "outcome": "victory",
+      "winner": "player",
+      "min_year": 1488,
+      "conditions": [
+        {
+          "type": "lifetime_gt",
+          "counter": "provinces_gained",
+          "value": 45
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "wars_won",
+          "value": 7
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "ships_lost",
+          "value": 12
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "wars_lost",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "catholic_monarchs_reconquista",
+      "title_key": "owo.victory.catholic_monarchs.title",
+      "description_key": "owo.victory.catholic_monarchs.desc",
+      "outcome": "victory",
+      "winner": "player",
+      "min_year": 1492,
+      "conditions": [
+        {
+          "type": "has_flag",
+          "flag_name": "reconquista_completed"
+        },
+        {
+          "type": "has_flag",
+          "flag_name": "catholic_monarchs_united"
+        },
+        {
+          "type": "date_after",
+          "value": "1492-01"
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "provinces_gained",
+          "value": 50
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "wars_won",
+          "value": 6
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "wars_lost",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "third_rome_gathering",
+      "title_key": "owo.victory.third_rome.title",
+      "description_key": "owo.victory.third_rome.desc",
+      "outcome": "victory",
+      "winner": "player",
+      "min_year": 1480,
+      "conditions": [
+        {
+          "type": "has_flag",
+          "flag_name": "third_rome_proclaimed"
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "provinces_gained",
+          "value": 75
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "wars_won",
+          "value": 7
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "wars_lost",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "hundred_years_triumph",
+      "title_key": "owo.victory.hundred_years_triumph.title",
+      "description_key": "owo.victory.hundred_years_triumph.desc",
+      "outcome": "victory",
+      "winner": "player",
+      "min_year": 1475,
+      "conditions": [
+        {
+          "type": "has_flag",
+          "flag_name": "hundred_years_war_won"
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "provinces_gained",
+          "value": 55
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "wars_won",
+          "value": 6
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "wars_lost",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "tawantinsuyu_expansion",
+      "title_key": "owo.victory.tawantinsuyu.title",
+      "description_key": "owo.victory.tawantinsuyu.desc",
+      "outcome": "victory",
+      "winner": "player",
+      "min_year": 1480,
+      "conditions": [
+        {
+          "type": "has_flag",
+          "flag_name": "tawantinsuyu_proclaimed"
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "provinces_gained",
+          "value": 60
+        },
+        {
+          "type": "lifetime_gt",
+          "counter": "wars_won",
+          "value": 6
+        },
+        {
+          "type": "lifetime_lt",
+          "counter": "wars_lost",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "end_screen_rows": [
+    {
+      "label_key": "owo.endscreen.provinces_gained",
+      "value": "lifetime.provinces_gained"
+    },
+    {
+      "label_key": "owo.endscreen.provinces_lost",
+      "value": "lifetime.provinces_lost"
+    },
+    {
+      "label_key": "owo.endscreen.wars_won",
+      "value": "lifetime.wars_won"
+    },
+    {
+      "label_key": "owo.endscreen.wars_lost",
+      "value": "lifetime.wars_lost"
+    },
+    {
+      "label_key": "owo.endscreen.regiments_lost",
+      "value": "lifetime.regiments_lost"
+    },
+    {
+      "label_key": "owo.endscreen.ships_lost",
+      "value": "lifetime.ships_lost"
+    },
+    {
+      "label_key": "owo.endscreen.personnel_lost",
+      "value": "lifetime.personnel_lost"
+    }
+  ]
+}

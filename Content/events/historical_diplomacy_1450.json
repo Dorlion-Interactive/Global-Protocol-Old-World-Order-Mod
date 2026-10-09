@@ -20,6 +20,11 @@
       {
         "effects": [
           {
+            "type": "form_alliance",
+            "target": "LTH",
+            "force": true
+          },
+          {
             "type": "add_relation",
             "target": "LTH",
             "value": 85
@@ -92,6 +97,11 @@
       {
         "effects": [
           {
+            "type": "form_alliance",
+            "target": "SCT",
+            "force": true
+          },
+          {
             "type": "add_relation",
             "target": "SCT",
             "value": 80
@@ -124,6 +134,10 @@
       },
       {
         "effects": [
+          {
+            "type": "break_alliance",
+            "target": "SCT"
+          },
           {
             "type": "add_relation",
             "target": "SCT",
@@ -169,6 +183,12 @@
       {
         "effects": [
           {
+            "type": "declare_war",
+            "target": "FRA",
+            "casus_belli": "territorial",
+            "force": true
+          },
+          {
             "type": "add_relation",
             "target": "FRA",
             "value": -90
@@ -201,6 +221,10 @@
       },
       {
         "effects": [
+          {
+            "type": "sign_peace",
+            "target": "FRA"
+          },
           {
             "type": "add_relation",
             "target": "FRA",
@@ -323,6 +347,11 @@
       {
         "effects": [
           {
+            "type": "form_alliance",
+            "target": "PAP",
+            "force": true
+          },
+          {
             "type": "add_relation",
             "target": "PAP",
             "value": 75
@@ -404,6 +433,11 @@
     "options": [
       {
         "effects": [
+          {
+            "type": "form_alliance",
+            "target": "ARA",
+            "force": true
+          },
           {
             "type": "add_relation",
             "target": "ARA",
@@ -549,6 +583,11 @@
       {
         "effects": [
           {
+            "type": "form_alliance",
+            "target": "JOS",
+            "force": true
+          },
+          {
             "type": "add_relation",
             "target": "JOS",
             "value": 85
@@ -693,6 +732,11 @@
       {
         "effects": [
           {
+            "type": "form_alliance",
+            "target": "PSK",
+            "force": true
+          },
+          {
             "type": "add_relation",
             "target": "PSK",
             "value": 70
@@ -730,6 +774,11 @@
       },
       {
         "effects": [
+          {
+            "type": "sign_truce",
+            "target": "NVD",
+            "months": 36
+          },
           {
             "type": "add_relation",
             "target": "NVD",

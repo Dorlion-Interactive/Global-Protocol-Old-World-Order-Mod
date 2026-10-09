@@ -1,0 +1,40 @@
+{
+  "groups": [
+    {
+      "id": "workers",
+      "name_key": "owo.group.workers.name",
+      "desc_key": "owo.group.workers.desc"
+    },
+    {
+      "id": "entrepreneurs",
+      "name_key": "owo.group.entrepreneurs.name",
+      "desc_key": "owo.group.entrepreneurs.desc"
+    },
+    {
+      "id": "military",
+      "name_key": "owo.group.military.name",
+      "desc_key": "owo.group.military.desc"
+    },
+    {
+      "id": "religious",
+      "name_key": "owo.group.religious.name",
+      "desc_key": "owo.group.religious.desc"
+    },
+    {
+      "id": "environmentalists",
+      "name_key": "owo.group.environmentalists.name",
+      "desc_key": "owo.group.environmentalists.desc"
+    }
+  ],
+  "religiosity_by_religion": {
+    "default": 0.85,
+    "Christianity": 0.90,
+    "Islam": 0.92,
+    "Hinduism": 0.90,
+    "Buddhism": 0.88,
+    "Shintoism": 0.85,
+    "Mesoamerican": 0.92,
+    "Andean": 0.92,
+    "Animism": 0.85
+  }
+}

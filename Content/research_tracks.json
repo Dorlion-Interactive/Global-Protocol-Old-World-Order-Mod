@@ -1,0 +1,142 @@
+{
+  "settings": {
+    "slots": 2,
+    "points_share": 0.5
+  },
+  "tracks": [
+    {
+      "id": "renaissance_sciences",
+      "name": "Renaissance Sciences & Arts",
+      "description": "Scholastic, humanist, and mechanical advancements of the early modern dawn.",
+      "nodes": [
+        {
+          "id": "movable_type",
+          "name": "Movable Type Printing",
+          "description": "Metal movable type printing presses rapidly disseminate books, treaties, and knowledge.",
+          "cost": 450,
+          "position": [
+            0,
+            0
+          ],
+          "effects": {
+            "construction_speed_mult": 0.95
+          },
+          "ai": {
+            "economy": 0.4,
+            "stability": 0.3
+          }
+        },
+        {
+          "id": "double_entry_bookkeeping",
+          "name": "Double-Entry Bookkeeping",
+          "description": "Venetian merchant accounting methods that rationalize commercial enterprises and taxation.",
+          "cost": 650,
+          "prerequisites": [
+            "movable_type"
+          ],
+          "position": [
+            1,
+            0
+          ],
+          "effects": {
+            "recruit_cost_mult": 0.95
+          },
+          "ai": {
+            "economy": 0.7
+          }
+        },
+        {
+          "id": "humanist_statecraft",
+          "name": "Humanist Statecraft",
+          "description": "Revival of classical rhetoric, jurisprudence, and diplomatic administration.",
+          "cost": 600,
+          "prerequisites": [
+            "movable_type"
+          ],
+          "position": [
+            1,
+            1
+          ],
+          "effects": {
+            "upkeep_mult": 0.96
+          },
+          "ai": {
+            "diplomacy": 0.6,
+            "stability": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "late_medieval_warfare",
+      "name": "Late Medieval Warfare",
+      "description": "Evolution of siege artillery, gunpowder weapons, and ocean-going naval architecture.",
+      "nodes": [
+        {
+          "id": "cast_bombards",
+          "name": "Cast Siege Bombards",
+          "description": "Heavy wrought iron and bronze siege guns capable of pulverizing concentric curtain walls.",
+          "cost": 500,
+          "position": [
+            0,
+            0
+          ],
+          "effects": {
+            "military_attack": 0.08
+          },
+          "ai": {
+            "military": 0.8
+          }
+        },
+        {
+          "id": "matchlock_arquebus",
+          "name": "Matchlock Arquebuses",
+          "description": "Early individual firearms providing devastating armor penetration at close range.",
+          "cost": 750,
+          "prerequisites": [
+            "cast_bombards"
+          ],
+          "position": [
+            1,
+            0
+          ],
+          "effects": {
+            "military_attack": 0.06,
+            "military_defense": 0.04
+          },
+          "ai": {
+            "military": 0.7
+          }
+        },
+        {
+          "id": "caravel_ocean_rig",
+          "name": "Caravel Oceanic Rigging",
+          "description": "Lateen-rigged shallow draught vessels designed to tack into the wind along uncharted coasts.",
+          "cost": 600,
+          "position": [
+            0,
+            1
+          ],
+          "effects": {
+            "unit_build_speed_mult": 0.92
+          },
+          "ai": {
+            "economy": 0.5,
+            "military": 0.4
+          }
+        }
+      ]
+    }
+  ],
+  "starting": {
+    "OTT": [
+      "cast_bombards"
+    ],
+    "PRT": [
+      "caravel_ocean_rig"
+    ],
+    "VNC": [
+      "double_entry_bookkeeping"
+    ]
+  }
+}

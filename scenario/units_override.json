@@ -306,7 +306,9 @@
       },
       "prerequisites": {
         "tech": "none",
-        "building": null
+        "building": null,
+        "flag": "urban_cannon_cast",
+        "hidden_until_flag": false
       }
     },
     {
@@ -790,7 +792,9 @@
       },
       "prerequisites": {
         "tech": "none",
-        "building": null
+        "building": null,
+        "flag": "russian_lands_gathered",
+        "hidden_until_flag": false
       }
     },
     {
@@ -922,7 +926,9 @@
       },
       "prerequisites": {
         "tech": "none",
-        "building": null
+        "building": null,
+        "flag": "compagnies_ordonnance_established",
+        "hidden_until_flag": false
       }
     },
     {

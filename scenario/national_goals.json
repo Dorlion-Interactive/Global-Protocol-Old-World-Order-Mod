@@ -65,8 +65,8 @@
         "description": "Take Constantinople and claim the mantle of the Caesars.",
         "description_key": "owo.goal.ott_heir_of_rome.desc",
         "type": "territorial",
-        "priority": "primary",
-        "ai_weight": 0.9,
+        "priority": "starter",
+        "ai_weight": 0.95,
         "target_countries": [
           "BYZ"
         ],
@@ -98,7 +98,8 @@
             },
             "required_count": 20000
           }
-        ]
+        ],
+        "on_complete_flag": "constantinople_fallen"
       },
       {
         "id": "ott_anatolian_unity",
@@ -107,15 +108,18 @@
         "description": "Bring Karaman and the other beyliks under the Sultan's authority.",
         "description_key": "owo.goal.ott_anatolian_unity.desc",
         "type": "unification",
-        "priority": "secondary",
-        "ai_weight": 0.7,
+        "priority": "primary",
+        "ai_weight": 0.8,
         "target_countries": [
           "KAR",
           "CND",
           "DUL"
         ],
+        "prerequisites": [
+          "ott_heir_of_rome"
+        ],
         "on_complete_effects": {
-          "prestige": 25,
+          "prestige": 30,
           "stability": 5
         },
         "tasks": [
@@ -142,7 +146,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "anatolia_subjugated"
       },
       {
         "id": "ott_danubian_frontier",
@@ -152,13 +157,17 @@
         "description_key": "owo.goal.ott_danubian_frontier.desc",
         "type": "defense",
         "priority": "secondary",
-        "ai_weight": 0.65,
+        "ai_weight": 0.75,
         "target_countries": [
           "HUN"
         ],
+        "prerequisites": [
+          "ott_anatolian_unity"
+        ],
         "on_complete_effects": {
-          "prestige": 20,
-          "stability": 5
+          "prestige": 35,
+          "stability": 5,
+          "military_modifier": 0.08
         },
         "tasks": [
           {
@@ -184,7 +193,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "danubian_frontier_pushed"
       }
     ]
   },
@@ -197,8 +207,8 @@
         "description": "Drive the English crown from Normandy and Guyenne for good.",
         "description_key": "owo.goal.fra_end_hundred_years_war.desc",
         "type": "territorial",
-        "priority": "primary",
-        "ai_weight": 0.9,
+        "priority": "starter",
+        "ai_weight": 0.95,
         "target_countries": [
           "ENG"
         ],
@@ -230,7 +240,8 @@
             },
             "required_count": 15000
           }
-        ]
+        ],
+        "on_complete_flag": "hundred_years_war_won"
       },
       {
         "id": "fra_contain_burgundy",
@@ -239,13 +250,17 @@
         "description": "Keep the Grand Dukes of the West from carving a kingdom out of France's borderlands.",
         "description_key": "owo.goal.fra_contain_burgundy.desc",
         "type": "diplomatic",
-        "priority": "secondary",
-        "ai_weight": 0.6,
+        "priority": "primary",
+        "ai_weight": 0.75,
         "target_countries": [
           "BUR"
         ],
+        "prerequisites": [
+          "fra_end_hundred_years_war"
+        ],
         "on_complete_effects": {
-          "prestige": 20
+          "prestige": 25,
+          "stability": 5
         },
         "tasks": [
           {
@@ -259,7 +274,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "burgundian_containment_achieved"
       },
       {
         "id": "fra_compagnies_ordonnance",
@@ -269,10 +285,14 @@
         "description_key": "owo.goal.fra_compagnies_ordonnance.desc",
         "type": "defense",
         "priority": "secondary",
-        "ai_weight": 0.7,
+        "ai_weight": 0.8,
+        "prerequisites": [
+          "fra_contain_burgundy"
+        ],
         "on_complete_effects": {
-          "prestige": 30,
-          "stability": 5
+          "prestige": 35,
+          "stability": 10,
+          "military_modifier": 0.1
         },
         "tasks": [
           {
@@ -298,7 +318,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "compagnies_ordonnance_established"
       }
     ]
   },
@@ -311,8 +332,8 @@
         "description": "Bring down the Emirate of Granada, the last Muslim realm in Iberia.",
         "description_key": "owo.goal.cas_reconquista.desc",
         "type": "territorial",
-        "priority": "primary",
-        "ai_weight": 0.9,
+        "priority": "starter",
+        "ai_weight": 0.95,
         "target_countries": [
           "GRN"
         ],
@@ -332,7 +353,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "reconquista_completed"
       },
       {
         "id": "cas_union_with_aragon",
@@ -341,14 +363,17 @@
         "description": "Bind Castile and Aragon together into one Spanish monarchy.",
         "description_key": "owo.goal.cas_union_with_aragon.desc",
         "type": "diplomatic",
-        "priority": "secondary",
-        "ai_weight": 0.7,
+        "priority": "primary",
+        "ai_weight": 0.8,
         "target_countries": [
           "ARA"
         ],
+        "prerequisites": [
+          "cas_reconquista"
+        ],
         "on_complete_effects": {
-          "prestige": 30,
-          "stability": 5
+          "prestige": 35,
+          "stability": 10
         },
         "tasks": [
           {
@@ -362,7 +387,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "catholic_monarchs_united"
       },
       {
         "id": "cas_western_seas",
@@ -372,10 +398,14 @@
         "description_key": "owo.goal.cas_western_seas.desc",
         "type": "prestige",
         "priority": "aspirational",
-        "ai_weight": 0.6,
+        "ai_weight": 0.75,
+        "prerequisites": [
+          "cas_union_with_aragon"
+        ],
         "on_complete_effects": {
-          "prestige": 40,
-          "stability": 3
+          "prestige": 50,
+          "stability": 5,
+          "economy_boost": 0.08
         },
         "tasks": [
           {
@@ -401,7 +431,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "plus_ultra_new_world"
       }
     ]
   },
@@ -414,8 +445,8 @@
         "description": "Strengthen the fortifications of the Calais Pale and maintain naval mastery over the English Channel.",
         "description_key": "owo.goal.eng_fortress_calais.desc",
         "type": "defense",
-        "priority": "primary",
-        "ai_weight": 0.85,
+        "priority": "starter",
+        "ai_weight": 0.9,
         "target_countries": [
           "FRA"
         ],
@@ -447,7 +478,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "calais_pale_fortified"
       },
       {
         "id": "eng_scottish_border",
@@ -456,14 +488,17 @@
         "description": "Secure the Scottish Border Marches and neutralize the threat of a northern Auld Alliance invasion.",
         "description_key": "owo.goal.eng_scottish_border.desc",
         "type": "defense",
-        "priority": "secondary",
-        "ai_weight": 0.7,
+        "priority": "primary",
+        "ai_weight": 0.8,
         "target_countries": [
           "SCT"
         ],
+        "prerequisites": [
+          "eng_fortress_calais"
+        ],
         "on_complete_effects": {
-          "stability": 5,
-          "prestige": 20
+          "prestige": 25,
+          "stability": 5
         },
         "tasks": [
           {
@@ -477,35 +512,65 @@
                 "min_value": "50"
               }
             }
+          },
+          {
+            "id": "garrison",
+            "title_key": "owo.task.eng_scottish_border.garrison",
+            "title": "Garrison the northern marches with 15,000 men",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 15000
           }
-        ]
+        ],
+        "on_complete_flag": "northern_marches_secured"
       },
       {
-        "id": "eng_royal_solvency",
-        "title": "Restore Royal Solvency",
-        "title_key": "owo.goal.eng_royal_solvency",
-        "description": "Reorganize the exchequer, manage war debts, and restore parliamentary confidence in the Crown.",
-        "description_key": "owo.goal.eng_royal_solvency.desc",
+        "id": "eng_tudor_settlement",
+        "title": "Sovereignty of the Rose",
+        "title_key": "owo.goal.eng_tudor_settlement",
+        "description": "Reconcile rival Lancaster and York factions, restore crown finances, and reassert royal authority over the realm.",
+        "description_key": "owo.goal.eng_tudor_settlement.desc",
         "type": "economic",
         "priority": "secondary",
-        "ai_weight": 0.65,
+        "ai_weight": 0.75,
+        "prerequisites": [
+          "eng_scottish_border"
+        ],
         "on_complete_effects": {
-          "stability": 5,
-          "prestige": 20
+          "prestige": 45,
+          "stability": 10,
+          "economy_boost": 0.05
         },
         "tasks": [
           {
             "id": "treasury",
-            "title_key": "owo.task.eng_royal_solvency.treasury",
-            "title": "Accumulate 1,200 fl. in the royal treasury",
+            "title_key": "owo.task.eng_tudor_settlement.treasury",
+            "title": "Accumulate 1,400 fl. in the royal treasury",
             "condition": {
               "type": "treasury_above",
               "params": {
-                "min_value": "1200"
+                "min_value": "1400"
               }
             }
+          },
+          {
+            "id": "royal_army",
+            "title_key": "owo.task.eng_tudor_settlement.royal_army",
+            "title": "Muster 25,000 royal soldiers",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 25000
           }
-        ]
+        ],
+        "on_complete_flag": "english_crown_stabilized"
       }
     ]
   },
@@ -518,8 +583,8 @@
         "description": "Push maritime caravels southward past Guinea to map the southern extremity of the African continent.",
         "description_key": "owo.goal.prt_chart_african_coast.desc",
         "type": "prestige",
-        "priority": "aspirational",
-        "ai_weight": 0.8,
+        "priority": "starter",
+        "ai_weight": 0.9,
         "on_complete_effects": {
           "prestige": 40,
           "stability": 5
@@ -546,7 +611,52 @@
             },
             "required_count": 8
           }
-        ]
+        ],
+        "on_complete_flag": "african_coast_charted"
+      },
+      {
+        "id": "prt_feitorias_guinea",
+        "title": "Feitorias of Guinea & Mina",
+        "title_key": "owo.goal.prt_feitorias_guinea",
+        "description": "Construct fortified feitoria trading posts along the Gold Coast to safeguard maritime gold, ivory, and spice commerce.",
+        "description_key": "owo.goal.prt_feitorias_guinea.desc",
+        "type": "economic",
+        "priority": "primary",
+        "ai_weight": 0.85,
+        "prerequisites": [
+          "prt_chart_african_coast"
+        ],
+        "on_complete_effects": {
+          "prestige": 35,
+          "stability": 5,
+          "economy_boost": 0.08
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.prt_feitorias_guinea.treasury",
+            "title": "Accumulate 1,200 fl. in commercial reserves",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1200"
+              }
+            }
+          },
+          {
+            "id": "fleet",
+            "title_key": "owo.task.prt_feitorias_guinea.fleet",
+            "title": "Expand expeditionary fleet to 12 ships",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "ships"
+              }
+            },
+            "required_count": 12
+          }
+        ],
+        "on_complete_flag": "guinea_feitorias_established"
       },
       {
         "id": "prt_spice_monopoly",
@@ -555,37 +665,42 @@
         "description": "Establish armed feitorias along the Indian Ocean to secure the exclusive maritime spice trade.",
         "description_key": "owo.goal.prt_spice_monopoly.desc",
         "type": "economic",
-        "priority": "primary",
-        "ai_weight": 0.85,
+        "priority": "aspirational",
+        "ai_weight": 0.8,
+        "prerequisites": [
+          "prt_feitorias_guinea"
+        ],
         "on_complete_effects": {
-          "prestige": 35,
-          "stability": 5
+          "prestige": 50,
+          "stability": 5,
+          "economy_boost": 0.12
         },
         "tasks": [
           {
             "id": "fleet",
             "title_key": "owo.task.prt_spice_monopoly.fleet",
-            "title": "Muster a merchant fleet of 15 ships",
+            "title": "Muster a grand oceanic armada of 18 ships",
             "condition": {
               "type": "military_units_above",
               "params": {
                 "unit_type": "ships"
               }
             },
-            "required_count": 15
+            "required_count": 18
           },
           {
             "id": "treasury",
             "title_key": "owo.task.prt_spice_monopoly.treasury",
-            "title": "Amass 2,000 fl. in commercial reserves",
+            "title": "Amass 2,200 fl. in the Casa da India exchequer",
             "condition": {
               "type": "treasury_above",
               "params": {
-                "min_value": "2000"
+                "min_value": "2200"
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "indies_route_secured"
       }
     ]
   },
@@ -598,7 +713,7 @@
         "description": "Rally the imperial court under Minister Yu Qian, fortify Beijing, and repel the Oirat Mongol invaders.",
         "description_key": "owo.goal.myn_tumu_crisis_recovery.desc",
         "type": "defense",
-        "priority": "primary",
+        "priority": "starter",
         "ai_weight": 0.95,
         "target_countries": [
           "OIR"
@@ -631,7 +746,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "tumu_crisis_resolved"
       },
       {
         "id": "myn_rebuild_great_wall",
@@ -640,24 +756,28 @@
         "description": "Construct contiguous stone and brick watchtowers along the northern frontier passes to ensure enduring peace.",
         "description_key": "owo.goal.myn_rebuild_great_wall.desc",
         "type": "defense",
-        "priority": "secondary",
-        "ai_weight": 0.7,
+        "priority": "primary",
+        "ai_weight": 0.8,
+        "prerequisites": [
+          "myn_tumu_crisis_recovery"
+        ],
         "on_complete_effects": {
-          "prestige": 25,
-          "stability": 5
+          "prestige": 35,
+          "stability": 5,
+          "military_modifier": 0.08
         },
         "tasks": [
           {
             "id": "frontier_army",
             "title_key": "owo.task.myn_rebuild_great_wall.frontier_army",
-            "title": "Garrison the northern marches with 30,000 soldiers",
+            "title": "Garrison the northern marches with 40,000 soldiers",
             "condition": {
               "type": "military_units_above",
               "params": {
                 "unit_type": "personnel"
               }
             },
-            "required_count": 30000
+            "required_count": 40000
           },
           {
             "id": "treasury",
@@ -670,61 +790,52 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "ming_great_wall_fortified"
       },
       {
         "id": "myn_grand_canal",
-        "title": "Dredge the Grand Canal",
+        "title": "The Grand Canal Lifeline",
         "title_key": "owo.goal.myn_grand_canal",
         "description": "Reconstruct and dredge the 1,700-kilometer Grand Canal to guarantee continuous grain shipments from the Yangtze to the capital.",
         "description_key": "owo.goal.myn_grand_canal.desc",
         "type": "economic",
         "priority": "secondary",
         "ai_weight": 0.75,
+        "prerequisites": [
+          "myn_rebuild_great_wall"
+        ],
         "on_complete_effects": {
-          "prestige": 30,
-          "stability": 5
+          "prestige": 40,
+          "stability": 10,
+          "economy_boost": 0.08
         },
         "tasks": [
           {
             "id": "treasury",
             "title_key": "owo.task.myn_grand_canal.treasury",
-            "title": "Invest 2,000 fl. in Grand Canal restoration",
+            "title": "Invest 3,000 fl. in Grand Canal restoration and granaries",
             "condition": {
               "type": "treasury_above",
               "params": {
-                "min_value": "2000"
+                "min_value": "3000"
               }
             }
-          }
-        ]
-      },
-      {
-        "id": "myn_grand_canal_dredging",
-        "title": "The Grand Canal Grain Lifeline",
-        "title_key": "owo.goal.myn_grand_canal_dredging",
-        "description": "Dredge the locks and canal arteries connecting the fertile southern rice paddies of Jiangnan to Beijing.",
-        "description_key": "owo.goal.myn_grand_canal_dredging.desc",
-        "type": "economic",
-        "priority": "secondary",
-        "ai_weight": 0.8,
-        "on_complete_effects": {
-          "prestige": 35,
-          "stability": 5
-        },
-        "tasks": [
+          },
           {
-            "id": "treasury",
-            "title_key": "owo.task.myn_grand_canal_dredging.treasury",
-            "title": "Accumulate 2,500 fl. in the imperial granary treasury",
+            "id": "imperial_garrison",
+            "title_key": "owo.task.myn_grand_canal.imperial_garrison",
+            "title": "Maintain 60,000 crown personnel",
             "condition": {
-              "type": "treasury_above",
+              "type": "military_units_above",
               "params": {
-                "min_value": "2500"
+                "unit_type": "personnel"
               }
-            }
+            },
+            "required_count": 60000
           }
-        ]
+        ],
+        "on_complete_flag": "grand_canal_lifeline_secured"
       }
     ]
   },
@@ -737,8 +848,8 @@
         "description": "Unify the divided principalities of Rus under the leadership of Moscow.",
         "description_key": "owo.goal.mvy_gather_russian_lands.desc",
         "type": "expansion",
-        "priority": "primary",
-        "ai_weight": 0.85,
+        "priority": "starter",
+        "ai_weight": 0.9,
         "target_countries": [
           "NVD",
           "TVR",
@@ -773,7 +884,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "russian_lands_gathered"
       },
       {
         "id": "mvy_stand_against_the_horde",
@@ -782,10 +894,13 @@
         "description": "Cast off the Tatar yoke and refuse all further tribute to the Great Horde.",
         "description_key": "owo.goal.mvy_stand_against_the_horde.desc",
         "type": "defense",
-        "priority": "secondary",
-        "ai_weight": 0.75,
+        "priority": "primary",
+        "ai_weight": 0.85,
         "target_countries": [
           "STE"
+        ],
+        "prerequisites": [
+          "mvy_gather_russian_lands"
         ],
         "on_complete_effects": {
           "prestige": 35,
@@ -816,7 +931,52 @@
             },
             "required_count": 25000
           }
-        ]
+        ],
+        "on_complete_flag": "tatar_yoke_broken"
+      },
+      {
+        "id": "mvy_third_rome",
+        "title": "Third Rome & Tsardom of All Rus",
+        "title_key": "owo.goal.mvy_third_rome",
+        "description": "Assume the Byzantine imperial heritage, commission stone cathedrals in the Moscow Kremlin, and proclaim the Tsardom of All Rus.",
+        "description_key": "owo.goal.mvy_third_rome.desc",
+        "type": "prestige",
+        "priority": "aspirational",
+        "ai_weight": 0.8,
+        "prerequisites": [
+          "mvy_stand_against_the_horde"
+        ],
+        "on_complete_effects": {
+          "prestige": 50,
+          "stability": 10,
+          "military_modifier": 0.1
+        },
+        "tasks": [
+          {
+            "id": "standing_army",
+            "title_key": "owo.task.mvy_third_rome.standing_army",
+            "title": "Muster 30,000 crown troops",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 30000
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.mvy_third_rome.treasury",
+            "title": "Accumulate 1,500 fl. in the Kremlin exchequer",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1500"
+              }
+            }
+          }
+        ],
+        "on_complete_flag": "tsardom_of_russia_proclaimed"
       }
     ]
   },
@@ -829,7 +989,7 @@
         "description": "Enrich the republic through unrivaled maritime commerce across the eastern Mediterranean.",
         "description_key": "owo.goal.vnc_queen_of_the_adriatic.desc",
         "type": "economic",
-        "priority": "primary",
+        "priority": "starter",
         "ai_weight": 0.85,
         "on_complete_effects": {
           "prestige": 30,
@@ -858,7 +1018,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "venetian_thalassocracy"
       },
       {
         "id": "vnc_defend_stato_da_mar",
@@ -867,30 +1028,76 @@
         "description": "Protect Venetian island outposts and sea lanes against Ottoman maritime expansion.",
         "description_key": "owo.goal.vnc_defend_stato_da_mar.desc",
         "type": "defense",
-        "priority": "secondary",
-        "ai_weight": 0.75,
+        "priority": "primary",
+        "ai_weight": 0.8,
         "target_countries": [
           "OTT"
         ],
         "on_complete_effects": {
-          "prestige": 25,
+          "prestige": 35,
           "military_modifier": 0.05
         },
         "tasks": [
           {
             "id": "fleet",
             "title_key": "owo.task.vnc_defend_stato_da_mar.fleet",
-            "title": "Maintain a formidable naval armada",
+            "title": "Maintain a formidable naval armada of 15 warships",
             "condition": {
               "type": "military_units_above",
               "params": {
-                "unit_type": "naval",
-                "min_value": "15"
+                "unit_type": "naval"
               }
             },
             "required_count": 15
           }
-        ]
+        ],
+        "prerequisites": [
+          "vnc_queen_of_the_adriatic"
+        ],
+        "on_complete_flag": "stato_da_mar_secured"
+      },
+      {
+        "id": "vnc_arsenale_di_venezia",
+        "title": "Arsenale di Venezia",
+        "title_key": "owo.goal.vnc_arsenale_di_venezia",
+        "description": "Expand the state shipyard and cordage factories of the Arsenale into the greatest industrial naval complex in Christendom.",
+        "description_key": "owo.goal.vnc_arsenale_di_venezia.desc",
+        "type": "economic",
+        "priority": "secondary",
+        "ai_weight": 0.75,
+        "on_complete_effects": {
+          "prestige": 45,
+          "military_modifier": 0.1
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.vnc_arsenale_di_venezia.treasury",
+            "title": "Hold 1,800 fl. in the ducal treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1800"
+              }
+            }
+          },
+          {
+            "id": "grand_armada",
+            "title_key": "owo.task.vnc_arsenale_di_venezia.grand_armada",
+            "title": "Muster a grand armada of 25 naval vessels",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "naval"
+              }
+            },
+            "required_count": 25
+          }
+        ],
+        "prerequisites": [
+          "vnc_defend_stato_da_mar"
+        ],
+        "on_complete_flag": "arsenale_di_venezia_expanded"
       }
     ]
   },
@@ -903,8 +1110,8 @@
         "description": "Defend the southern frontier against Ottoman incursions along the Danube and Sava rivers.",
         "description_key": "owo.goal.hun_bastion_of_christendom.desc",
         "type": "defense",
-        "priority": "primary",
-        "ai_weight": 0.9,
+        "priority": "starter",
+        "ai_weight": 0.95,
         "target_countries": [
           "OTT"
         ],
@@ -937,7 +1144,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "danubian_bulwark_established"
       },
       {
         "id": "hun_corvinus_hegemony",
@@ -946,25 +1154,85 @@
         "description": "Modernize royal finances, patronize humanist culture, and expand royal sovereignty.",
         "description_key": "owo.goal.hun_corvinus_hegemony.desc",
         "type": "prestige",
-        "priority": "secondary",
-        "ai_weight": 0.65,
+        "priority": "primary",
+        "ai_weight": 0.8,
+        "prerequisites": [
+          "hun_bastion_of_christendom"
+        ],
         "on_complete_effects": {
-          "prestige": 30,
-          "economy_boost": 0.03
+          "prestige": 35,
+          "economy_boost": 0.05
         },
         "tasks": [
           {
             "id": "treasury",
             "title_key": "owo.task.hun_corvinus_hegemony.treasury",
-            "title": "Hold 700 fl. in royal reserves",
+            "title": "Hold 900 fl. in royal reserves",
             "condition": {
               "type": "treasury_above",
               "params": {
-                "min_value": "700"
+                "min_value": "900"
+              }
+            }
+          },
+          {
+            "id": "relations",
+            "title_key": "owo.task.hun_corvinus_hegemony.relations",
+            "title": "Maintain diplomatic friendship with Austria",
+            "condition": {
+              "type": "improve_relations",
+              "params": {
+                "target_iso3": "HAB",
+                "min_value": "50"
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "corvinus_renaissance_achieved"
+      },
+      {
+        "id": "hun_fekete_sereg",
+        "title": "The Black Army of Hungary",
+        "title_key": "owo.goal.hun_fekete_sereg",
+        "description": "Sponsor King Matthias Corvinus's legendary standing mercenary force, the Fekete Sereg, dominating Central European battlefields.",
+        "description_key": "owo.goal.hun_fekete_sereg.desc",
+        "type": "defense",
+        "priority": "secondary",
+        "ai_weight": 0.85,
+        "prerequisites": [
+          "hun_corvinus_hegemony"
+        ],
+        "on_complete_effects": {
+          "prestige": 45,
+          "military_modifier": 0.12,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "standing_mercenaries",
+            "title_key": "owo.task.hun_fekete_sereg.standing_mercenaries",
+            "title": "Mobilize 30,000 battle-hardened troops",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 30000
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.hun_fekete_sereg.treasury",
+            "title": "Amass 1,400 fl. in royal war exchequer",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1400"
+              }
+            }
+          }
+        ],
+        "on_complete_flag": "black_army_standing"
       }
     ]
   },
@@ -977,8 +1245,8 @@
         "description": "Cement the dynastic partnership with the Grand Duchy of Lithuania.",
         "description_key": "owo.goal.pol_personal_union.desc",
         "type": "diplomatic",
-        "priority": "primary",
-        "ai_weight": 0.85,
+        "priority": "starter",
+        "ai_weight": 0.9,
         "target_countries": [
           "LTH"
         ],
@@ -1010,19 +1278,23 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "jagiellonian_union_cemented"
       },
       {
         "id": "pol_thirteen_years_war",
-        "title": "Reclaim the Baltic Coast",
+        "title": "The Thirteen Years' War",
         "title_key": "owo.goal.pol_thirteen_years_war",
         "description": "Challenge the Teutonic Knights to restore Polish access to the Baltic Sea.",
         "description_key": "owo.goal.pol_thirteen_years_war.desc",
         "type": "territorial",
-        "priority": "secondary",
-        "ai_weight": 0.8,
+        "priority": "primary",
+        "ai_weight": 0.85,
         "target_countries": [
           "TEU"
+        ],
+        "prerequisites": [
+          "pol_personal_union"
         ],
         "on_complete_effects": {
           "prestige": 40,
@@ -1053,7 +1325,52 @@
             },
             "required_count": 20000
           }
-        ]
+        ],
+        "on_complete_flag": "prussian_confederation_triumphed"
+      },
+      {
+        "id": "pol_baltic_grain_hegemony",
+        "title": "Vistula Grain & Royal Prussia",
+        "title_key": "owo.goal.pol_baltic_grain_hegemony",
+        "description": "Incorporate Royal Prussia, protect the merchant privileges of Gdansk, and channel Vistula grain exports across northern Europe.",
+        "description_key": "owo.goal.pol_baltic_grain_hegemony.desc",
+        "type": "economic",
+        "priority": "secondary",
+        "ai_weight": 0.8,
+        "prerequisites": [
+          "pol_thirteen_years_war"
+        ],
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 10,
+          "economy_boost": 0.08
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.pol_baltic_grain_hegemony.treasury",
+            "title": "Accumulate 1,500 fl. in the royal Krakow treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1500"
+              }
+            }
+          },
+          {
+            "id": "army",
+            "title_key": "owo.task.pol_baltic_grain_hegemony.army",
+            "title": "Field a royal host of 25,000 troops",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 25000
+          }
+        ],
+        "on_complete_flag": "vistula_grain_monopoly"
       }
     ]
   },
@@ -1066,8 +1383,8 @@
         "description": "Safeguard Mecca, Medina, and Jerusalem while dominating Red Sea trade routes.",
         "description_key": "owo.goal.mam_custodian_holy_sanctuaries.desc",
         "type": "prestige",
-        "priority": "primary",
-        "ai_weight": 0.8,
+        "priority": "starter",
+        "ai_weight": 0.85,
         "on_complete_effects": {
           "prestige": 50,
           "stability": 5
@@ -1084,7 +1401,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "custodian_of_two_sanctuaries"
       },
       {
         "id": "mam_syrian_bulwark",
@@ -1093,14 +1411,14 @@
         "description": "Maintain a formidable cavalry army in Aleppo and Damascus to deter northern aggression.",
         "description_key": "owo.goal.mam_syrian_bulwark.desc",
         "type": "defense",
-        "priority": "secondary",
-        "ai_weight": 0.75,
+        "priority": "primary",
+        "ai_weight": 0.8,
         "target_countries": [
           "OTT"
         ],
         "on_complete_effects": {
-          "prestige": 30,
-          "military_modifier": 0.05
+          "prestige": 35,
+          "military_modifier": 0.08
         },
         "tasks": [
           {
@@ -1110,13 +1428,59 @@
             "condition": {
               "type": "military_units_above",
               "params": {
-                "unit_type": "personnel",
-                "min_value": "30000"
+                "unit_type": "personnel"
               }
             },
             "required_count": 30000
           }
-        ]
+        ],
+        "prerequisites": [
+          "mam_custodian_holy_sanctuaries"
+        ],
+        "on_complete_flag": "syrian_marches_secured"
+      },
+      {
+        "id": "mam_red_sea_monopoly",
+        "title": "Dominion of the Spice Transit",
+        "title_key": "owo.goal.mam_red_sea_monopoly",
+        "description": "Levy tolls upon the maritime spice route through the Red Sea and Alexandria, guaranteeing the wealth of the Sultanate.",
+        "description_key": "owo.goal.mam_red_sea_monopoly.desc",
+        "type": "economic",
+        "priority": "secondary",
+        "ai_weight": 0.75,
+        "on_complete_effects": {
+          "prestige": 40,
+          "economy_boost": 0.06
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.mam_red_sea_monopoly.treasury",
+            "title": "Accumulate 2,000 fl. in Cairo",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "2000"
+              }
+            }
+          },
+          {
+            "id": "relations",
+            "title_key": "owo.task.mam_red_sea_monopoly.relations",
+            "title": "Maintain diplomatic accord with Venice",
+            "condition": {
+              "type": "improve_relations",
+              "params": {
+                "target_iso3": "VNC",
+                "min_value": "50"
+              }
+            }
+          }
+        ],
+        "prerequisites": [
+          "mam_syrian_bulwark"
+        ],
+        "on_complete_flag": "cairo_spice_transit_monopolized"
       }
     ]
   },
@@ -1141,7 +1505,10 @@
             "title_key": "owo.task.byz_defend_constantinople.army",
             "title": "Muster 10,000 imperial defenders",
             "condition": {
-              "type": "military_units_above"
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
             },
             "required_count": 10000
           },
@@ -1156,7 +1523,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "city_of_world_desire_defended"
       },
       {
         "id": "byz_restore_morea",
@@ -1166,24 +1534,96 @@
         "description_key": "owo.goal.byz_restore_morea.desc",
         "type": "expansion",
         "priority": "primary",
-        "ai_weight": 0.7,
+        "ai_weight": 0.8,
+        "prerequisites": [
+          "byz_defend_constantinople"
+        ],
         "on_complete_effects": {
-          "prestige": 30,
+          "prestige": 35,
           "stability": 5
         },
         "tasks": [
           {
             "id": "treasury",
             "title_key": "owo.task.byz_restore_morea.treasury",
-            "title": "Amass 500 fl. in imperial reserves",
+            "title": "Amass 600 fl. in imperial reserves",
             "condition": {
               "type": "treasury_above",
               "params": {
-                "min_value": "500"
+                "min_value": "600"
+              }
+            }
+          },
+          {
+            "id": "troops",
+            "title_key": "owo.task.byz_restore_morea.troops",
+            "title": "Muster 12,000 imperial troops",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 12000
+          }
+        ],
+        "on_complete_flag": "morea_consolidated"
+      },
+      {
+        "id": "byz_renovatio_imperii",
+        "title": "Renovatio Imperii & Palaeologan Restoration",
+        "title_key": "owo.goal.byz_renovatio_imperii",
+        "description": "Rebuild the imperial fleet, expel foreign garrisons from the Aegean straits, and proclaim the glorious rebirth of the Eastern Roman Empire.",
+        "description_key": "owo.goal.byz_renovatio_imperii.desc",
+        "type": "prestige",
+        "priority": "aspirational",
+        "ai_weight": 0.85,
+        "prerequisites": [
+          "byz_restore_morea"
+        ],
+        "on_complete_effects": {
+          "prestige": 60,
+          "stability": 15,
+          "military_modifier": 0.1
+        },
+        "tasks": [
+          {
+            "id": "fleet",
+            "title_key": "owo.task.byz_renovatio_imperii.fleet",
+            "title": "Muster an imperial armada of 15 warships",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "ships"
+              }
+            },
+            "required_count": 15
+          },
+          {
+            "id": "army",
+            "title_key": "owo.task.byz_renovatio_imperii.army",
+            "title": "Field 20,000 imperial cataphracts and archers",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 20000
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.byz_renovatio_imperii.treasury",
+            "title": "Amass 1,600 fl. in the Blachernae treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1600"
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "byzantine_restoration"
       }
     ]
   },
@@ -1221,11 +1661,12 @@
             "condition": {
               "type": "alliance_with",
               "params": {
-                "target_country": "BOH"
+                "target_iso3": "BOH"
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "habsburg_imperial_diadem"
       },
       {
         "id": "hab_dynastic_marriage",
@@ -1248,7 +1689,8 @@
             "condition": {
               "type": "improve_relations",
               "params": {
-                "target_country": "HUN"
+                "target_iso3": "HUN",
+                "min_value": "50"
               }
             }
           },
@@ -1257,11 +1699,61 @@
             "title_key": "owo.task.hab_dynastic_marriage.army",
             "title": "Field an army of 20,000 men",
             "condition": {
-              "type": "military_units_above"
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
             },
             "required_count": 20000
           }
-        ]
+        ],
+        "prerequisites": [
+          "hab_imperial_diadem"
+        ],
+        "on_complete_flag": "bella_gerant_alii"
+      },
+      {
+        "id": "hab_hereditary_lands",
+        "title": "Unite the Hereditary Lands",
+        "title_key": "owo.goal.hab_hereditary_lands",
+        "description": "Bind the duchies of Styria, Carinthia, and Carniola with the county of Tyrol under undivided Habsburg rule.",
+        "description_key": "owo.goal.hab_hereditary_lands.desc",
+        "type": "defense",
+        "priority": "secondary",
+        "ai_weight": 0.8,
+        "on_complete_effects": {
+          "prestige": 45,
+          "military_modifier": 0.08
+        },
+        "tasks": [
+          {
+            "id": "army",
+            "title_key": "owo.task.hab_hereditary_lands.army",
+            "title": "Muster an imperial army of 25,000 men-at-arms",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 25000
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.hab_hereditary_lands.treasury",
+            "title": "Hold 1,500 fl. in the Hofburg treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1500"
+              }
+            }
+          }
+        ],
+        "prerequisites": [
+          "hab_dynastic_marriage"
+        ],
+        "on_complete_flag": "austrian_lands_consolidated"
       }
     ]
   },
@@ -1301,7 +1793,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "kalmar_union_enforced"
       },
       {
         "id": "dan_sound_tolls",
@@ -1312,9 +1805,12 @@
         "type": "economic",
         "priority": "primary",
         "ai_weight": 0.8,
+        "prerequisites": [
+          "dan_kalmar_hegemony"
+        ],
         "on_complete_effects": {
-          "prestige": 25,
-          "economy_boost": 15
+          "prestige": 30,
+          "economy_boost": 0.08
         },
         "tasks": [
           {
@@ -1340,7 +1836,52 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "sound_tolls_levied"
+      },
+      {
+        "id": "dan_dominium_maris_baltici",
+        "title": "Dominium Maris Baltici",
+        "title_key": "owo.goal.dan_dominium_maris_baltici",
+        "description": "Maintain naval supremacy across the Baltic and North Seas, guaranteeing Danish toll sovereignty over all maritime trade.",
+        "description_key": "owo.goal.dan_dominium_maris_baltici.desc",
+        "type": "prestige",
+        "priority": "secondary",
+        "ai_weight": 0.75,
+        "prerequisites": [
+          "dan_sound_tolls"
+        ],
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 5,
+          "economy_boost": 0.08
+        },
+        "tasks": [
+          {
+            "id": "royal_navy",
+            "title_key": "owo.task.dan_dominium_maris_baltici.royal_navy",
+            "title": "Muster a formidable war fleet of 18 ships",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "ships"
+              }
+            },
+            "required_count": 18
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.dan_dominium_maris_baltici.treasury",
+            "title": "Accumulate 1,600 fl. in Copenhagen toll reserves",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1600"
+              }
+            }
+          }
+        ],
+        "on_complete_flag": "baltic_thalassocracy_established"
       }
     ]
   },
@@ -1357,7 +1898,7 @@
         "ai_weight": 0.9,
         "on_complete_effects": {
           "prestige": 35,
-          "military_modifier": 10
+          "military_modifier": 0.08
         },
         "tasks": [
           {
@@ -1380,34 +1921,8 @@
               }
             }
           }
-        ]
-      },
-      {
-        "id": "vij_monuments_of_hampi",
-        "title": "Glory of Hampi",
-        "title_key": "owo.goal.vij_monuments_of_hampi",
-        "description": "Construct monumental temple gopurams, expand bazaars, and dominate Indian Ocean trade.",
-        "description_key": "owo.goal.vij_monuments_of_hampi.desc",
-        "type": "economic",
-        "priority": "primary",
-        "ai_weight": 0.75,
-        "on_complete_effects": {
-          "prestige": 40,
-          "stability": 10
-        },
-        "tasks": [
-          {
-            "id": "treasury",
-            "title_key": "owo.task.vij_monuments_of_hampi.treasury",
-            "title": "Accumulate 1,500 fl. in the royal treasury",
-            "condition": {
-              "type": "treasury_above",
-              "params": {
-                "min_value": "1500"
-              }
-            }
-          }
-        ]
+        ],
+        "on_complete_flag": "raichur_doab_held"
       },
       {
         "id": "vij_virupaksha_temple_aqueducts",
@@ -1416,10 +1931,13 @@
         "description": "Construct monumental granite channels, stepped tanks, and temple courtyards in the capital city of Vijayanagara.",
         "description_key": "owo.goal.vij_virupaksha_temple_aqueducts.desc",
         "type": "prestige",
-        "priority": "secondary",
+        "priority": "primary",
         "ai_weight": 0.8,
+        "prerequisites": [
+          "vij_raichur_bastion"
+        ],
         "on_complete_effects": {
-          "prestige": 30,
+          "prestige": 35,
           "stability": 10
         },
         "tasks": [
@@ -1434,7 +1952,40 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "hampi_waterworks_complete"
+      },
+      {
+        "id": "vij_monuments_of_hampi",
+        "title": "Glory of Hampi",
+        "title_key": "owo.goal.vij_monuments_of_hampi",
+        "description": "Construct monumental temple gopurams, expand bazaars, and dominate Indian Ocean trade.",
+        "description_key": "owo.goal.vij_monuments_of_hampi.desc",
+        "type": "economic",
+        "priority": "secondary",
+        "ai_weight": 0.8,
+        "prerequisites": [
+          "vij_virupaksha_temple_aqueducts"
+        ],
+        "on_complete_effects": {
+          "prestige": 45,
+          "stability": 10,
+          "economy_boost": 0.08
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.vij_monuments_of_hampi.treasury",
+            "title": "Accumulate 1,800 fl. in the royal treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1800"
+              }
+            }
+          }
+        ],
+        "on_complete_flag": "vijayanagara_golden_age"
       }
     ]
   },
@@ -1463,20 +2014,24 @@
             },
             "required_count": 25000
           }
-        ]
+        ],
+        "on_complete_flag": "tawantinsuyu_unified"
       },
       {
         "id": "inc_qhapaq_nan",
-        "title": "Engineer the Qhapaq Ñan",
+        "title": "Engineer the Qhapaq Nan",
         "title_key": "owo.goal.inc_qhapaq_nan",
         "description": "Pave the royal road network, terrace the mountain valleys, and store grain in state tambos.",
         "description_key": "owo.goal.inc_qhapaq_nan.desc",
         "type": "economic",
         "priority": "primary",
         "ai_weight": 0.8,
+        "prerequisites": [
+          "inc_tawantinsuyu_expansion"
+        ],
         "on_complete_effects": {
           "prestige": 30,
-          "economy_boost": 10
+          "economy_boost": 0.06
         },
         "tasks": [
           {
@@ -1490,7 +2045,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "qhapaq_nan_engineered"
       },
       {
         "id": "inc_royal_estate_machu_picchu",
@@ -1501,9 +2057,12 @@
         "type": "prestige",
         "priority": "secondary",
         "ai_weight": 0.75,
+        "prerequisites": [
+          "inc_qhapaq_nan"
+        ],
         "on_complete_effects": {
-          "prestige": 35,
-          "stability": 5
+          "prestige": 40,
+          "stability": 10
         },
         "tasks": [
           {
@@ -1517,7 +2076,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "machu_picchu_consecrated"
       }
     ]
   },
@@ -1559,7 +2119,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "hangul_promulgated"
       },
       {
         "id": "jos_northern_frontier",
@@ -1570,9 +2131,12 @@
         "type": "defense",
         "priority": "primary",
         "ai_weight": 0.8,
+        "prerequisites": [
+          "jos_hangul_enlightenment"
+        ],
         "on_complete_effects": {
-          "prestige": 25,
-          "military_modifier": 10
+          "prestige": 30,
+          "military_modifier": 0.08
         },
         "tasks": [
           {
@@ -1584,7 +2148,8 @@
             },
             "required_count": 20000
           }
-        ]
+        ],
+        "on_complete_flag": "yalu_tumen_frontier_fortified"
       }
     ]
   },
@@ -1598,7 +2163,7 @@
         "description_key": "owo.goal.tim_timurid_renaissance.desc",
         "type": "prestige",
         "priority": "starter",
-        "ai_weight": 0.85,
+        "ai_weight": 0.9,
         "on_complete_effects": {
           "prestige": 40,
           "stability": 10
@@ -1615,7 +2180,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "timurid_renaissance_flowered"
       },
       {
         "id": "tim_defend_samarkand",
@@ -1626,9 +2192,12 @@
         "type": "defense",
         "priority": "primary",
         "ai_weight": 0.8,
+        "prerequisites": [
+          "tim_timurid_renaissance"
+        ],
         "on_complete_effects": {
-          "prestige": 30,
-          "military_modifier": 10
+          "prestige": 35,
+          "military_modifier": 0.08
         },
         "tasks": [
           {
@@ -1640,7 +2209,52 @@
             },
             "required_count": 30000
           }
-        ]
+        ],
+        "on_complete_flag": "transoxiana_secured"
+      },
+      {
+        "id": "tim_herat_cultural_apogee",
+        "title": "Horizon of Herat & Imperial Legacy",
+        "title_key": "owo.goal.tim_herat_cultural_apogee",
+        "description": "Patronize Persian miniature art, philosophy, and garden architecture in Herat, securing the intellectual peak of the Timurid world.",
+        "description_key": "owo.goal.tim_herat_cultural_apogee.desc",
+        "type": "prestige",
+        "priority": "secondary",
+        "ai_weight": 0.75,
+        "prerequisites": [
+          "tim_defend_samarkand"
+        ],
+        "on_complete_effects": {
+          "prestige": 45,
+          "stability": 10,
+          "economy_boost": 0.05
+        },
+        "tasks": [
+          {
+            "id": "warriors",
+            "title_key": "owo.task.tim_herat_cultural_apogee.warriors",
+            "title": "Field 35,000 horse archers and guards",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 35000
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.tim_herat_cultural_apogee.treasury",
+            "title": "Hold 1,600 fl. in the Herat treasury",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1600"
+              }
+            }
+          }
+        ],
+        "on_complete_flag": "timurid_legacy_preserved"
       }
     ]
   },
@@ -1654,7 +2268,7 @@
         "description_key": "owo.goal.bur_grand_dukes_of_the_west.desc",
         "type": "economic",
         "priority": "starter",
-        "ai_weight": 0.85,
+        "ai_weight": 0.9,
         "on_complete_effects": {
           "prestige": 35,
           "stability": 5
@@ -1671,7 +2285,51 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "dukes_of_valois_burgundy"
+      },
+      {
+        "id": "bur_order_of_the_golden_fleece",
+        "title": "The Order of the Golden Fleece",
+        "title_key": "owo.goal.bur_order_of_the_golden_fleece",
+        "description": "Cultivate the most magnificent chivalric court in Western Europe, binding Burgundian and Netherlandish nobles through the Order of the Golden Fleece.",
+        "description_key": "owo.goal.bur_order_of_the_golden_fleece.desc",
+        "type": "prestige",
+        "priority": "primary",
+        "ai_weight": 0.8,
+        "prerequisites": [
+          "bur_grand_dukes_of_the_west"
+        ],
+        "on_complete_effects": {
+          "prestige": 40,
+          "stability": 5
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.bur_order_of_the_golden_fleece.treasury",
+            "title": "Hold 1,500 fl. in the court exchequer",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1500"
+              }
+            }
+          },
+          {
+            "id": "diplomacy",
+            "title_key": "owo.task.bur_order_of_the_golden_fleece.diplomacy",
+            "title": "Maintain friendly relations with the Holy See",
+            "condition": {
+              "type": "improve_relations",
+              "params": {
+                "target_iso3": "PAP",
+                "min_value": "50"
+              }
+            }
+          }
+        ],
+        "on_complete_flag": "golden_fleece_instituted"
       },
       {
         "id": "bur_lotharingian_crown",
@@ -1680,11 +2338,15 @@
         "description": "Establish modern Ordonnance companies and consolidate the Low Countries into a sovereign Burgundian kingdom.",
         "description_key": "owo.goal.bur_lotharingian_crown.desc",
         "type": "unification",
-        "priority": "primary",
-        "ai_weight": 0.8,
+        "priority": "secondary",
+        "ai_weight": 0.85,
+        "prerequisites": [
+          "bur_order_of_the_golden_fleece"
+        ],
         "on_complete_effects": {
-          "prestige": 45,
-          "military_modifier": 10
+          "prestige": 50,
+          "military_modifier": 0.12,
+          "stability": 5
         },
         "tasks": [
           {
@@ -1696,7 +2358,8 @@
             },
             "required_count": 25000
           }
-        ]
+        ],
+        "on_complete_flag": "compagnies_ordonnance_established"
       }
     ]
   },
@@ -1709,8 +2372,8 @@
         "description": "Defend Swedish sovereign liberties and defy Danish Oldenburg hegemony over Stockholm and the Baltic.",
         "description_key": "owo.goal.swd_break_kalmar_union.desc",
         "type": "defense",
-        "priority": "primary",
-        "ai_weight": 0.85,
+        "priority": "starter",
+        "ai_weight": 0.9,
         "target_countries": [
           "DAN"
         ],
@@ -1728,7 +2391,8 @@
             },
             "required_count": 15000
           }
-        ]
+        ],
+        "on_complete_flag": "kalmar_union_broken"
       },
       {
         "id": "swd_bergslagen_iron_and_copper",
@@ -1737,25 +2401,86 @@
         "description": "Expand the great copper mine at Falun and timber exports across the Baltic Sea.",
         "description_key": "owo.goal.swd_bergslagen_iron_and_copper.desc",
         "type": "economic",
-        "priority": "starter",
+        "priority": "primary",
         "ai_weight": 0.8,
+        "prerequisites": [
+          "swd_break_kalmar_union"
+        ],
         "on_complete_effects": {
-          "prestige": 25,
-          "stability": 5
+          "prestige": 30,
+          "stability": 5,
+          "economy_boost": 0.06
         },
         "tasks": [
           {
             "id": "treasury",
             "title_key": "owo.task.swd_bergslagen_iron_and_copper.treasury",
-            "title": "Amass 600 fl. in the royal treasury",
+            "title": "Amass 800 fl. in the royal treasury",
             "condition": {
               "type": "treasury_above",
               "params": {
-                "min_value": "600"
+                "min_value": "800"
+              }
+            }
+          },
+          {
+            "id": "militia",
+            "title_key": "owo.task.swd_bergslagen_iron_and_copper.militia",
+            "title": "Mobilize 16,000 Dalecarlian and Svealand troops",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 16000
+          }
+        ],
+        "on_complete_flag": "bergslagen_mines_expanded"
+      },
+      {
+        "id": "swd_riksdag_sovereignty",
+        "title": "Sovereignty of the Riksdag & Sovereign Crown",
+        "title_key": "owo.goal.swd_riksdag_sovereignty",
+        "description": "Convene the Estates of the Realm, codify Swedish constitutional liberties, and establish an unshakeable independent kingdom.",
+        "description_key": "owo.goal.swd_riksdag_sovereignty.desc",
+        "type": "prestige",
+        "priority": "aspirational",
+        "ai_weight": 0.75,
+        "prerequisites": [
+          "swd_bergslagen_iron_and_copper"
+        ],
+        "on_complete_effects": {
+          "prestige": 45,
+          "stability": 10,
+          "military_modifier": 0.08
+        },
+        "tasks": [
+          {
+            "id": "national_army",
+            "title_key": "owo.task.swd_riksdag_sovereignty.national_army",
+            "title": "Field 22,000 standing Swedish troops",
+            "condition": {
+              "type": "military_units_above",
+              "params": {
+                "unit_type": "personnel"
+              }
+            },
+            "required_count": 22000
+          },
+          {
+            "id": "treasury",
+            "title_key": "owo.task.swd_riksdag_sovereignty.treasury",
+            "title": "Hold 1,400 fl. in the Stockholm exchequer",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1400"
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "swedish_sovereignty_secured"
       }
     ]
   },
@@ -1768,42 +2493,46 @@
         "description": "Wage ritual warfare across the Valley of Mexico to secure captives and assert Triple Alliance supremacy.",
         "description_key": "owo.goal.azt_flower_wars_tribute.desc",
         "type": "expansion",
-        "priority": "primary",
+        "priority": "starter",
         "ai_weight": 0.9,
         "on_complete_effects": {
           "prestige": 50,
-          "military_modifier": 15
+          "military_modifier": 0.1
         },
         "tasks": [
           {
-            "id": "army",
-            "title_key": "owo.task.azt_flower_wars_tribute.army",
-            "title": "Muster 30,000 warrior retinues",
+            "id": "warriors",
+            "title_key": "owo.task.azt_flower_wars_tribute.warriors",
+            "title": "Mobilize 30,000 Triple Alliance warriors",
             "condition": {
               "type": "military_units_above"
             },
             "required_count": 30000
           }
-        ]
+        ],
+        "on_complete_flag": "flower_wars_triumphant"
       },
       {
         "id": "azt_tenochtitlan_chinampas",
-        "title": "The Chinampas of Tenochtitlan",
+        "title": "The Floating Gardens of Tenochtitlan",
         "title_key": "owo.goal.azt_tenochtitlan_chinampas",
-        "description": "Construct floating garden causeways and expand the great market of Tlatelolco.",
+        "description": "Construct chinampas agricultural beds and stone causeways across Lake Texcoco to sustain the imperial metropolis.",
         "description_key": "owo.goal.azt_tenochtitlan_chinampas.desc",
         "type": "economic",
-        "priority": "starter",
+        "priority": "primary",
         "ai_weight": 0.8,
+        "prerequisites": [
+          "azt_flower_wars_tribute"
+        ],
         "on_complete_effects": {
-          "prestige": 30,
+          "prestige": 35,
           "stability": 10
         },
         "tasks": [
           {
             "id": "treasury",
             "title_key": "owo.task.azt_tenochtitlan_chinampas.treasury",
-            "title": "Gather 800 fl. worth of tribute in the imperial treasury",
+            "title": "Amass 800 fl. in tribute cocoa and quills",
             "condition": {
               "type": "treasury_above",
               "params": {
@@ -1811,7 +2540,8 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "chinampas_floating_gardens_flourishing"
       }
     ]
   },
@@ -2002,12 +2732,12 @@
     "goals": [
       {
         "id": "pap_renaissance_rome_restoration",
-        "title": "Renaissance Restoration of Rome",
+        "title": "Renovatio Urbis Romae",
         "title_key": "owo.goal.pap_renaissance_rome_restoration",
-        "description": "Commission master stonecarvers and architects to rebuild Rome's basilicas, bridges, and city walls.",
+        "description": "Rebuild the crumbling walls, bridges, and aqueducts of the Eternal City to inaugurate a new golden age.",
         "description_key": "owo.goal.pap_renaissance_rome_restoration.desc",
         "type": "prestige",
-        "priority": "primary",
+        "priority": "starter",
         "ai_weight": 0.85,
         "on_complete_effects": {
           "prestige": 40,
@@ -2017,7 +2747,7 @@
           {
             "id": "treasury",
             "title_key": "owo.task.pap_renaissance_rome_restoration.treasury",
-            "title": "Endow 1,000 fl. for pontifical public works",
+            "title": "Accumulate 1,000 fl. in the papal apostolic camera",
             "condition": {
               "type": "treasury_above",
               "params": {
@@ -2025,7 +2755,51 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "papal_rome_restored"
+      },
+      {
+        "id": "pap_vatican_library_splendor",
+        "title": "The Vatican Library & Humanist Papacy",
+        "title_key": "owo.goal.pap_vatican_library_splendor",
+        "description": "Assemble rare manuscripts and commission Renaissance frescoes in St. Peter's to establish Rome as the cultural beacon of Christendom.",
+        "description_key": "owo.goal.pap_vatican_library_splendor.desc",
+        "type": "prestige",
+        "priority": "primary",
+        "ai_weight": 0.8,
+        "prerequisites": [
+          "pap_renaissance_rome_restoration"
+        ],
+        "on_complete_effects": {
+          "prestige": 45,
+          "stability": 10
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.pap_vatican_library_splendor.treasury",
+            "title": "Accumulate 1,200 fl. in the apostolic camera",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1200"
+              }
+            }
+          },
+          {
+            "id": "relations",
+            "title_key": "owo.task.pap_vatican_library_splendor.relations",
+            "title": "Maintain close diplomatic ties with Florence",
+            "condition": {
+              "type": "improve_relations",
+              "params": {
+                "target_iso3": "FLR",
+                "min_value": "60"
+              }
+            }
+          }
+        ],
+        "on_complete_flag": "vatican_library_founded"
       }
     ]
   },
@@ -2038,7 +2812,7 @@
         "description": "Complete the monumental octagonal brick dome of Santa Maria del Fiore, crowning the Florentine skyline.",
         "description_key": "owo.goal.flr_cathedral_dome_of_florence.desc",
         "type": "prestige",
-        "priority": "primary",
+        "priority": "starter",
         "ai_weight": 0.9,
         "on_complete_effects": {
           "prestige": 50,
@@ -2056,7 +2830,93 @@
               }
             }
           }
-        ]
+        ],
+        "on_complete_flag": "duomo_dome_completed"
+      },
+      {
+        "id": "flr_medici_banking_network",
+        "title": "The Medici Banking Empire",
+        "title_key": "owo.goal.flr_medici_banking_network",
+        "description": "Establish the Banco dei Medici as the premier financial powerhouse of Europe, financing kings and popes across Lyon, Bruges, and Rome.",
+        "description_key": "owo.goal.flr_medici_banking_network.desc",
+        "type": "economic",
+        "priority": "primary",
+        "ai_weight": 0.85,
+        "on_complete_effects": {
+          "prestige": 40,
+          "economy_boost": 0.08
+        },
+        "tasks": [
+          {
+            "id": "treasury",
+            "title_key": "owo.task.flr_medici_banking_network.treasury",
+            "title": "Hold 2,200 fl. in ducal gold reserves",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "2200"
+              }
+            }
+          },
+          {
+            "id": "trade",
+            "title_key": "owo.task.flr_medici_banking_network.trade",
+            "title": "Establish commercial accords across Europe",
+            "condition": {
+              "type": "trade_agreement_with",
+              "params": {
+                "partners": "*"
+              }
+            }
+          }
+        ],
+        "prerequisites": [
+          "flr_cathedral_dome_of_florence"
+        ],
+        "on_complete_flag": "medici_banking_preeminent"
+      },
+      {
+        "id": "flr_cradle_of_renaissance",
+        "title": "Cradle of the Renaissance",
+        "title_key": "owo.goal.flr_cradle_of_renaissance",
+        "description": "Commission master sculptors, architects, and Neoplatonist academies to make Florence the undisputed intellectual jewel of Italy.",
+        "description_key": "owo.goal.flr_cradle_of_renaissance.desc",
+        "type": "prestige",
+        "priority": "secondary",
+        "ai_weight": 0.8,
+        "on_complete_effects": {
+          "prestige": 60,
+          "stability": 10
+        },
+        "tasks": [
+          {
+            "id": "relations",
+            "title_key": "owo.task.flr_cradle_of_renaissance.relations",
+            "title": "Maintain close diplomatic friendship with Rome",
+            "condition": {
+              "type": "improve_relations",
+              "params": {
+                "target_iso3": "PAP",
+                "min_value": "60"
+              }
+            }
+          },
+          {
+            "id": "prosperity",
+            "title_key": "owo.task.flr_cradle_of_renaissance.prosperity",
+            "title": "Hold 1,000 fl. in civic endowments",
+            "condition": {
+              "type": "treasury_above",
+              "params": {
+                "min_value": "1000"
+              }
+            }
+          }
+        ],
+        "prerequisites": [
+          "flr_medici_banking_network"
+        ],
+        "on_complete_flag": "florentine_renaissance_apogee"
       }
     ]
   }

@@ -1022,3 +1022,146 @@ politics.law.tax_regime.algorithmic_taxation.desc,Rigorous assessment of lands, 
 politics.law.welfare_state.algorithmic_welfare,Monastic Granaries & Parish Relief
 politics.law.welfare_state.algorithmic_welfare.desc,Emergency grain storehouses, abbey infirmaries, and parish tithes mobilized to relieve famine and urban poverty.
 ui.button.ok,OK
+owo.org.kalmar_union.name,Kalmar Union
+owo.org.swiss_confederacy.name,Swiss Confederacy
+owo.victory.imperial_hegemony.title,Imperial Hegemony
+owo.victory.imperial_hegemony.desc,Your banner flies over vast realms, commanding unquestioned dominance across the known world.
+owo.victory.era_of_discovery.title,Dawn of the Age of Discovery
+owo.victory.era_of_discovery.desc,Having persevered into the 16th century, your empire stands poised to chart oceans and claim new horizons.
+owo.endscreen.provinces_gained,Provinces Conquered
+owo.endscreen.wars_won,Wars Won
+owo.endscreen.regiments_lost,Regiments Lost
+owo.endscreen.ships_lost,Ships Lost
+owo.victory.sultan_i_rum.title,Sultan-i Rum & Caliphate of Islam
+owo.victory.sultan_i_rum.desc,Having united the Roman imperial heritage and the holy sanctuaries, the Sublime Porte stands unchallenged from the Danube to the Euphrates.
+owo.victory.pax_sinica.title,Pax Sinica & Middle Kingdom Accord
+owo.victory.pax_sinica.desc,Through moral order and unwavering imperial statecraft, the Son of Heaven maintains peace beneath the celestial vault.
+owo.victory.thalassocracy.title,Sovereign of the Seven Seas
+owo.victory.thalassocracy.desc,Commanding naval supremacy across global sea lanes, your maritime fleets dictate commerce and foreign tribute.
+owo.endscreen.provinces_lost,Provinces Lost
+owo.endscreen.wars_lost,Wars Lost
+owo.victory.catholic_monarchs.title,Crown of Spain & The New Horizon
+owo.victory.catholic_monarchs.desc,With the completion of the Reconquista and dynastic union, the dual crowns of Castile and Aragon stand supreme at the threshold of the Atlantic.
+owo.victory.third_rome.title,Third Rome & Tsardom of All Rus
+owo.victory.third_rome.desc,Gathering the principalities under the double-headed eagle, Moscow inherits the eternal mantle of Constantinople and unifies the northern lands.
+owo.victory.hundred_years_triumph.title,Triumph of the Hundred Years
+owo.victory.hundred_years_triumph.desc,Decisive victory in the long dynastic conflict secures the undisputed sovereign crown of Western Europe.
+owo.victory.tawantinsuyu.title,Tawantinsuyu: Realm of the Four Parts
+owo.victory.tawantinsuyu.desc,From the sun temple of Cusco across the Andean peaks, the Inca empire unites four quarters of the earth under divine order.
+owo.endscreen.personnel_lost,Total Manpower Lost
+owo.event.byzantine_collapse_aftermath_ott.title,The Imperial Seat of Kostantiniyye
+owo.event.byzantine_collapse_aftermath_ott.description,With the final collapse of the Byzantine Empire, the eternal city of Constantinople is ours. The Sultan claims the title of Kayser-i Rum and orders the relocation of the imperial seat from Edirne.
+owo.event.byzantine_collapse_aftermath_ott.option_1,Proclaim Kostantiniyye the capital of the Ottoman Empire
+owo.event.reactive_hyw_peace_wars_of_roses.title,The Discontent of the Barons
+owo.event.reactive_hyw_peace_wars_of_roses.description,Peace with France has brought back bitter veterans and penniless nobles. The loss of Normandy and Guyenne triggers fierce recriminations between the Houses of Lancaster and York.
+owo.event.reactive_hyw_peace_wars_of_roses.option_1,Let them dispute in parliament; the crown will not bow
+owo.event.reactive_hyw_peace_wars_of_roses.option_2,Grant royal pensions and lands to pacify the rival dukes
+owo.event.reactive_hyw_peace_france_triumph.title,The Triumph of the Valois Crown
+owo.event.reactive_hyw_peace_france_triumph.description,The long conflict with England is formally concluded. The English leopards have been driven back across the Channel, cementing the realm of France under the Valois dynasty.
+owo.event.reactive_hyw_peace_france_triumph.option_1,Long live the King of France!
+owo.event.reactive_reconquista_granada_collapse.title,The Fall of Granada
+owo.event.reactive_reconquista_granada_collapse.description,The last Muslim stronghold in Iberia has fallen. The banners of Castile and Aragon are raised over the Alhambra, bringing seven centuries of Reconquista to a triumphant close.
+owo.event.reactive_reconquista_granada_collapse.option_1,Santiago y cierra, España!
+owo.event.urban_bombard_forge_1452.title,The Foundry of Master Urban
+owo.event.urban_bombard_forge_1452.description,The Hungarian brass founder Urban has arrived at our court in Edirne, offering to cast bronze siege bombards of unprecedented caliber capable of shattering the thickest stone walls.
+owo.event.urban_bombard_forge_1452.option_1,Provide unlimited gold and artisans to cast the Basilic
+owo.event.urban_bombard_forge_1452.option_2,We have no need for such extravagant engines
+owo.group.workers.name,Peasantry & Serfs
+owo.group.workers.desc,Rural cottars, serfs, and tenant farmers whose agricultural labor on manorial lands sustains the realm.
+owo.group.entrepreneurs.name,Guilds & Burghers
+owo.group.entrepreneurs.desc,Free town burghers, guild masters, money changers, and merchant patricians governing chartered commercial cities.
+owo.group.military.name,Feudal Nobility & Knights
+owo.group.military.desc,Landed aristocracy, feudal vassals, martial barons, and knights commanding regional levies.
+owo.group.religious.name,The Clergy & Holy Orders
+owo.group.religious.desc,Bishops, monastic orders, ulema, and religious prelates holding vast endowments and sacred spiritual authority.
+owo.group.environmentalists.name,Foresters & Commons Keepers
+owo.group.environmentalists.desc,Wardens of royal chases, common pasture reeves, and river bailiffs defending customary communal rights.
+owo.goal.vnc_arsenale_di_venezia,Arsenale di Venezia
+owo.goal.vnc_arsenale_di_venezia.desc,Expand the state shipyard and cordage factories of the Arsenale into the greatest industrial naval complex in Christendom.
+owo.task.vnc_arsenale_di_venezia.treasury,Hold 1,800 fl. in the ducal treasury
+owo.task.vnc_arsenale_di_venezia.grand_armada,Muster a grand armada of 25 naval vessels
+owo.goal.flr_medici_banking_network,The Medici Banking Empire
+owo.goal.flr_medici_banking_network.desc,Establish the Banco dei Medici as the premier financial powerhouse of Europe, financing kings and popes across Lyon, Bruges, and Rome.
+owo.task.flr_medici_banking_network.treasury,Hold 2,200 fl. in ducal gold reserves
+owo.task.flr_medici_banking_network.trade,Establish commercial accords across Europe
+owo.goal.flr_cradle_of_renaissance,Cradle of the Renaissance
+owo.goal.flr_cradle_of_renaissance.desc,Commission master sculptors, architects, and Neoplatonist academies to make Florence the undisputed intellectual jewel of Italy.
+owo.task.flr_cradle_of_renaissance.relations,Maintain close diplomatic friendship with Rome
+owo.task.flr_cradle_of_renaissance.prosperity,Hold 1,000 fl. in civic endowments
+owo.goal.mam_red_sea_monopoly,Dominion of the Spice Transit
+owo.goal.mam_red_sea_monopoly.desc,Levy tolls upon the maritime spice route through the Red Sea and Alexandria, guaranteeing the wealth of the Sultanate.
+owo.task.mam_red_sea_monopoly.treasury,Accumulate 2,000 fl. in Cairo
+owo.task.mam_red_sea_monopoly.relations,Maintain diplomatic accord with Venice
+owo.goal.hab_hereditary_lands,Unite the Hereditary Lands
+owo.goal.hab_hereditary_lands.desc,Bind the duchies of Styria, Carinthia, and Carniola with the county of Tyrol under undivided Habsburg rule.
+owo.task.hab_hereditary_lands.army,Muster an imperial army of 25,000 men-at-arms
+owo.task.hab_hereditary_lands.treasury,Hold 1,500 fl. in the Hofburg treasury
+owo.event.venetian_muda_spice_fleet_1451.title,The Alexandria Spice Convoys
+owo.event.venetian_muda_spice_fleet_1451.description,The state-subsidized merchant galley fleet (muda) returns safely to the Venetian lagoon from Alexandria and Beirut, laden with precious pepper, cloves, and damask silk.
+owo.event.venetian_muda_spice_fleet_1451.option_1,Reinvest profits into the Arsenale and state galleys
+owo.event.venetian_muda_spice_fleet_1451.option_2,Disburse dividends to the patrician trading houses
+owo.event.florence_brunelleschi_lantern_1452.title,The Lantern of Santa Maria del Fiore
+owo.event.florence_brunelleschi_lantern_1452.description,Master Filippo Brunelleschi completes the crowning marble lantern atop the cathedral dome, establishing Florence as the architectural capital of the Renaissance.
+owo.event.florence_brunelleschi_lantern_1452.option_1,Appoint Brunelleschi chief architect and advisor to the Signoria
+owo.event.mamluk_syrian_border_crisis_1453.title,The Fall of Constantinople in Cairo
+owo.event.mamluk_syrian_border_crisis_1453.description,Shockwaves reach the Cairo Citadel as Mehmed II seizes Constantinople. The Mamluk emirs warn that the Ottoman Sultan now casts his gaze southward toward Damascus and the Euphrates marches.
+owo.event.mamluk_syrian_border_crisis_1453.option_1,Reinforce the Syrian marches with veteran Mamluk lancers
+owo.event.mamluk_syrian_border_crisis_1453.option_2,Dispatch diplomatic envoys and cordial gifts to Kostantiniyye
+owo.event.habsburg_danubian_bulwark_1454.title,The Danubian Imperial Diet
+owo.event.habsburg_danubian_bulwark_1454.description,Emperor Frederick III convenes the Austrian estates and imperial electors in Wiener Neustadt to coordinate common defense against incursions on the south-eastern frontier.
+owo.event.habsburg_danubian_bulwark_1454.option_1,Proclaim imperial defense funding across the hereditary duchies
+owo.task.eng_scottish_border.garrison,Garrison the northern marches with 15,000 men
+owo.goal.eng_tudor_settlement,Sovereignty of the Rose
+owo.goal.eng_tudor_settlement.desc,Reconcile rival Lancaster and York factions, restore crown finances, and reassert royal authority over the realm.
+owo.task.eng_tudor_settlement.treasury,Accumulate 1,400 fl. in the royal treasury
+owo.task.eng_tudor_settlement.royal_army,Muster 25,000 royal soldiers
+owo.goal.prt_feitorias_guinea,Feitorias of Guinea & Mina
+owo.goal.prt_feitorias_guinea.desc,Construct fortified feitoria trading posts along the Gold Coast to safeguard maritime gold, ivory, and spice commerce.
+owo.task.prt_feitorias_guinea.treasury,Accumulate 1,200 fl. in commercial reserves
+owo.task.prt_feitorias_guinea.fleet,Expand expeditionary fleet to 12 ships
+owo.task.myn_grand_canal.imperial_garrison,Maintain 60,000 crown personnel
+owo.goal.mvy_third_rome,Third Rome & Tsardom of All Rus
+owo.goal.mvy_third_rome.desc,Assume the Byzantine imperial heritage, commission stone cathedrals in the Moscow Kremlin, and proclaim the Tsardom of All Rus.
+owo.task.mvy_third_rome.standing_army,Muster 30,000 crown troops
+owo.task.mvy_third_rome.treasury,Accumulate 1,500 fl. in the Kremlin exchequer
+owo.task.hun_corvinus_hegemony.relations,Maintain diplomatic friendship with Austria
+owo.goal.hun_fekete_sereg,The Black Army of Hungary
+owo.goal.hun_fekete_sereg.desc,Sponsor King Matthias Corvinus's legendary standing mercenary force, the Fekete Sereg, dominating Central European battlefields.
+owo.task.hun_fekete_sereg.standing_mercenaries,Mobilize 30,000 battle-hardened troops
+owo.task.hun_fekete_sereg.treasury,Amass 1,400 fl. in royal war exchequer
+owo.goal.pol_baltic_grain_hegemony,Vistula Grain & Royal Prussia
+owo.goal.pol_baltic_grain_hegemony.desc,Incorporate Royal Prussia, protect the merchant privileges of Gdansk, and channel Vistula grain exports across northern Europe.
+owo.task.pol_baltic_grain_hegemony.treasury,Accumulate 1,500 fl. in the royal Krakow treasury
+owo.task.pol_baltic_grain_hegemony.army,Field a royal host of 25,000 troops
+owo.task.byz_restore_morea.troops,Muster 12,000 imperial troops
+owo.goal.byz_renovatio_imperii,Renovatio Imperii & Palaeologan Restoration
+owo.goal.byz_renovatio_imperii.desc,Rebuild the imperial fleet, expel foreign garrisons from the Aegean straits, and proclaim the glorious rebirth of the Eastern Roman Empire.
+owo.task.byz_renovatio_imperii.fleet,Muster an imperial armada of 15 warships
+owo.task.byz_renovatio_imperii.army,Field 20,000 imperial cataphracts and archers
+owo.task.byz_renovatio_imperii.treasury,Amass 1,600 fl. in the Blachernae treasury
+owo.goal.dan_dominium_maris_baltici,Dominium Maris Baltici
+owo.goal.dan_dominium_maris_baltici.desc,Maintain naval supremacy across the Baltic and North Seas, guaranteeing Danish toll sovereignty over all maritime trade.
+owo.task.dan_dominium_maris_baltici.royal_navy,Muster a formidable war fleet of 18 ships
+owo.task.dan_dominium_maris_baltici.treasury,Accumulate 1,600 fl. in Copenhagen toll reserves
+owo.goal.tim_herat_cultural_apogee,Horizon of Herat & Imperial Legacy
+owo.goal.tim_herat_cultural_apogee.desc,Patronize Persian miniature art, philosophy, and garden architecture in Herat, securing the intellectual peak of the Timurid world.
+owo.task.tim_herat_cultural_apogee.warriors,Field 35,000 horse archers and guards
+owo.task.tim_herat_cultural_apogee.treasury,Hold 1,600 fl. in the Herat treasury
+owo.goal.bur_order_of_the_golden_fleece,The Order of the Golden Fleece
+owo.goal.bur_order_of_the_golden_fleece.desc,Cultivate the most magnificent chivalric court in Western Europe, binding Burgundian and Netherlandish nobles through the Order of the Golden Fleece.
+owo.task.bur_order_of_the_golden_fleece.treasury,Hold 1,500 fl. in the court exchequer
+owo.task.bur_order_of_the_golden_fleece.diplomacy,Maintain friendly relations with the Holy See
+owo.task.swd_bergslagen_iron_and_copper.militia,Mobilize 16,000 Dalecarlian and Svealand troops
+owo.goal.swd_riksdag_sovereignty,Sovereignty of the Riksdag & Sovereign Crown
+owo.goal.swd_riksdag_sovereignty.desc,Convene the Estates of the Realm, codify Swedish constitutional liberties, and establish an unshakeable independent kingdom.
+owo.task.swd_riksdag_sovereignty.national_army,Field 22,000 standing Swedish troops
+owo.task.swd_riksdag_sovereignty.treasury,Hold 1,400 fl. in the Stockholm exchequer
+owo.task.azt_flower_wars_tribute.warriors,Mobilize 30,000 Triple Alliance warriors
+owo.goal.pap_vatican_library_splendor,The Vatican Library & Humanist Papacy
+owo.goal.pap_vatican_library_splendor.desc,Assemble rare manuscripts and commission Renaissance frescoes in St. Peter's to establish Rome as the cultural beacon of Christendom.
+owo.task.pap_vatican_library_splendor.treasury,Accumulate 1,200 fl. in the apostolic camera
+owo.task.pap_vatican_library_splendor.relations,Maintain close diplomatic ties with Florence
+owo.org.holy_roman_empire.name,Holy Roman Empire
+owo.org.league_of_lezhe.name,League of Lezhe
+owo.org.livonian_confederation.name,Livonian Confederation
+owo.org.ming_tributary_order.name,Ming Tributary System

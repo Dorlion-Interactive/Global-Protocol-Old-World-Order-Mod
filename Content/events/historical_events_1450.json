@@ -34,6 +34,10 @@
           {
             "type": "set_flag",
             "flag_name": "constantinople_conquered"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "constantinople_fallen"
           }
         ],
         "text_key": "owo.event.fall_of_constantinople_1453.option_1"
@@ -66,6 +70,10 @@
           {
             "type": "set_flag",
             "flag_name": "constantinople_conquered"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "constantinople_fallen"
           }
         ],
         "text_key": "owo.event.fall_of_constantinople_1453.option_2"
@@ -254,6 +262,10 @@
     "options": [
       {
         "effects": [
+          {
+            "type": "grant_specialist",
+            "specialist": "johannes_gutenberg"
+          },
           {
             "type": "modify_stat",
             "field": "economy.gdp_growth_rate",
@@ -1596,5 +1608,450 @@
     "title_key": "owo.event.bhakti_devotional_movement_1455.title",
     "description_key": "owo.event.bhakti_devotional_movement_1455.description",
     "image": "bhakti_movement"
+  },
+  {
+    "id": "byzantine_collapse_aftermath_ott",
+    "type": "reactive",
+    "category": "geopolitical_crisis",
+    "priority": 10,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "OTT",
+    "triggers": [
+      {
+        "type": "on_country_collapse",
+        "target_country": "BYZ"
+      }
+    ],
+    "conditions": [
+      {
+        "type": "controls_province",
+        "value": 2276
+      }
+    ],
+    "title_key": "owo.event.byzantine_collapse_aftermath_ott.title",
+    "description_key": "owo.event.byzantine_collapse_aftermath_ott.description",
+    "image": "fall_of_constantinople",
+    "options": [
+      {
+        "text_key": "owo.event.byzantine_collapse_aftermath_ott.option_1",
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "add_treasury",
+            "value": 400
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "constantinople_fallen"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "constantinople_conquered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reactive_hyw_peace_wars_of_roses",
+    "type": "reactive",
+    "category": "internal_politics",
+    "priority": 10,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "ENG",
+    "triggers": [
+      {
+        "type": "on_peace_signed",
+        "source_country": "FRA",
+        "target_country": "ENG"
+      },
+      {
+        "type": "on_peace_signed",
+        "source_country": "ENG",
+        "target_country": "FRA"
+      }
+    ],
+    "conditions": [
+      {
+        "type": "not_has_flag",
+        "flag_name": "wars_of_the_roses_begun"
+      }
+    ],
+    "title_key": "owo.event.reactive_hyw_peace_wars_of_roses.title",
+    "description_key": "owo.event.reactive_hyw_peace_wars_of_roses.description",
+    "image": "hundred_years_war",
+    "options": [
+      {
+        "text_key": "owo.event.reactive_hyw_peace_wars_of_roses.option_1",
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -15
+          },
+          {
+            "type": "modify_unrest",
+            "value": 20
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "wars_of_the_roses_begun"
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.reactive_hyw_peace_wars_of_roses.option_2",
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": -200
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -5
+          },
+          {
+            "type": "modify_unrest",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "wars_of_the_roses_begun"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reactive_hyw_peace_france_triumph",
+    "type": "reactive",
+    "category": "geopolitical_crisis",
+    "priority": 10,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "FRA",
+    "triggers": [
+      {
+        "type": "on_peace_signed",
+        "source_country": "FRA",
+        "target_country": "ENG"
+      },
+      {
+        "type": "on_peace_signed",
+        "source_country": "ENG",
+        "target_country": "FRA"
+      }
+    ],
+    "conditions": [
+      {
+        "type": "not_has_flag",
+        "flag_name": "hundred_years_war_won"
+      }
+    ],
+    "title_key": "owo.event.reactive_hyw_peace_france_triumph.title",
+    "description_key": "owo.event.reactive_hyw_peace_france_triumph.description",
+    "image": "hundred_years_war",
+    "options": [
+      {
+        "text_key": "owo.event.reactive_hyw_peace_france_triumph.option_1",
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 15
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "hundred_years_war_won"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reactive_reconquista_granada_collapse",
+    "type": "reactive",
+    "category": "geopolitical_crisis",
+    "priority": 10,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "CAS",
+    "triggers": [
+      {
+        "type": "on_country_collapse",
+        "target_country": "GRN"
+      }
+    ],
+    "conditions": [
+      {
+        "type": "not_has_flag",
+        "flag_name": "reconquista_completed"
+      }
+    ],
+    "title_key": "owo.event.reactive_reconquista_granada_collapse.title",
+    "description_key": "owo.event.reactive_reconquista_granada_collapse.description",
+    "image": "catholic_monarchs",
+    "options": [
+      {
+        "text_key": "owo.event.reactive_reconquista_granada_collapse.option_1",
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 15
+          },
+          {
+            "type": "add_treasury",
+            "value": 300
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "reconquista_completed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "urban_bombard_forge_1452",
+    "type": "scripted",
+    "category": "technology_breakthrough",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "OTT",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1452-01"
+      }
+    ],
+    "title_key": "owo.event.urban_bombard_forge_1452.title",
+    "description_key": "owo.event.urban_bombard_forge_1452.description",
+    "image": "fall_of_constantinople",
+    "options": [
+      {
+        "text_key": "owo.event.urban_bombard_forge_1452.option_1",
+        "effects": [
+          {
+            "type": "grant_specialist",
+            "specialist": "orban_engineer"
+          },
+          {
+            "type": "add_treasury",
+            "value": -150
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "medieval_bombard",
+            "count": 1,
+            "target": "OTT"
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "urban_cannon_cast"
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.urban_bombard_forge_1452.option_2",
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": -2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "venetian_muda_spice_fleet_1451",
+    "type": "scripted",
+    "category": "economic_shock",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "VNC",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1451-01"
+      }
+    ],
+    "title_key": "owo.event.venetian_muda_spice_fleet_1451.title",
+    "description_key": "owo.event.venetian_muda_spice_fleet_1451.description",
+    "image": "peace_of_lodi",
+    "options": [
+      {
+        "text_key": "owo.event.venetian_muda_spice_fleet_1451.option_1",
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 250
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.venetian_muda_spice_fleet_1451.option_2",
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 150
+          },
+          {
+            "type": "modify_unrest",
+            "value": -5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "florence_brunelleschi_lantern_1452",
+    "type": "scripted",
+    "category": "social_cultural",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "FLR",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "has_flag",
+        "flag_name": "duomo_dome_completed"
+      }
+    ],
+    "title_key": "owo.event.florence_brunelleschi_lantern_1452.title",
+    "description_key": "owo.event.florence_brunelleschi_lantern_1452.description",
+    "image": "gutenberg_press",
+    "options": [
+      {
+        "text_key": "owo.event.florence_brunelleschi_lantern_1452.option_1",
+        "effects": [
+          {
+            "type": "grant_specialist",
+            "specialist": "filippo_brunelleschi"
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mamluk_syrian_border_crisis_1453",
+    "type": "reactive",
+    "category": "geopolitical_crisis",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "MAM",
+    "triggers": [
+      {
+        "type": "on_country_collapse",
+        "target_country": "BYZ"
+      }
+    ],
+    "conditions": [
+      {
+        "type": "not_has_flag",
+        "flag_name": "mamluk_syria_alert"
+      }
+    ],
+    "title_key": "owo.event.mamluk_syrian_border_crisis_1453.title",
+    "description_key": "owo.event.mamluk_syrian_border_crisis_1453.description",
+    "image": "fall_of_constantinople",
+    "options": [
+      {
+        "text_key": "owo.event.mamluk_syrian_border_crisis_1453.option_1",
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": -200
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "mamluk_syria_alert"
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.mamluk_syrian_border_crisis_1453.option_2",
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "OTT",
+            "value": 30
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "mamluk_syria_alert"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habsburg_danubian_bulwark_1454",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "HAB",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1454-01"
+      }
+    ],
+    "title_key": "owo.event.habsburg_danubian_bulwark_1454.title",
+    "description_key": "owo.event.habsburg_danubian_bulwark_1454.description",
+    "image": "peace_of_lodi",
+    "options": [
+      {
+        "text_key": "owo.event.habsburg_danubian_bulwark_1454.option_1",
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 200
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -383,6 +383,88 @@
           "count": 1
         }
       ]
+    },
+    {
+      "ownerISO3": "NVD",
+      "provinceId": 439,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_cog",
+          "count": 1
+        },
+        {
+          "unitTypeId": "med_galley",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "BNG",
+      "provinceId": 538,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2
+        },
+        {
+          "unitTypeId": "med_carrack",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "TND",
+      "provinceId": 1990,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2
+        },
+        {
+          "unitTypeId": "med_cog",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "RYU",
+      "provinceId": 2916,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_cog",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "ownerISO3": "MLD",
+      "provinceId": 2973,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 1
+        },
+        {
+          "unitTypeId": "med_cog",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ownerISO3": "JBR",
+      "provinceId": 3089,
+      "inHarbor": true,
+      "units": [
+        {
+          "unitTypeId": "med_galley",
+          "count": 2
+        }
+      ]
     }
   ]
 }

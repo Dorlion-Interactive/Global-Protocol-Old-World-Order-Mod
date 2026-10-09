@@ -1,19 +1,54 @@
 {
   "army": {
     "subcategory_icons": {
-      "infantry": "overrides/Art/Units/infantry_mod.png",
-      "cavalry": "overrides/Art/Units/cavalry.png",
-      "artillery": "overrides/Art/Units/artillery_mod.png",
-      "special_forces": "overrides/Art/Units/special_forces_mod.png"
+      "infantry": "icons/units/medieval_infantry.png",
+      "cavalry": "icons/units/medieval_cavalry.png",
+      "artillery": "icons/units/medieval_bombard.png"
+    },
+    "unit_icons": {
+      "medieval_infantry": "icons/units/medieval_infantry.png",
+      "medieval_cavalry": "icons/units/medieval_cavalry.png",
+      "medieval_bombard": "icons/units/medieval_bombard.png",
+      "medieval_crossbowman": "icons/units/medieval_crossbowman.png",
+      "war_elephant": "icons/units/war_elephant.png",
+      "ottoman_janissary": "icons/units/ottoman_janissary.png",
+      "ottoman_sipahi": "icons/units/ottoman_sipahi.png",
+      "ottoman_akinji": "icons/units/ottoman_akinji.png",
+      "ottoman_topcu": "icons/units/ottoman_topcu.png",
+      "france_knight": "icons/units/france_knight.png",
+      "england_longbowman": "icons/units/england_longbowman.png",
+      "england_menatarms": "icons/units/england_menatarms.png",
+      "swiss_pikesquare": "icons/units/swiss_pikesquare.png",
+      "swiss_halberdier": "icons/units/swiss_halberdier.png",
+      "muscovy_boyar_cavalry": "icons/units/muscovy_boyar_cavalry.png",
+      "muscovy_streltsy": "icons/units/muscovy_streltsy.png",
+      "teu_crusader_knight": "icons/units/teu_crusader_knight.png",
+      "bur_ordonnance": "icons/units/bur_ordonnance.png",
+      "byz_varangian": "icons/units/byz_varangian.png",
+      "mrc_samurai": "icons/units/mrc_samurai.png",
+      "mrc_ashigaru": "icons/units/mrc_ashigaru.png",
+      "ming_imperial_guard": "icons/units/ming_imperial_guard.png",
+      "ming_fire_lance": "icons/units/ming_fire_lance.png",
+      "ming_cavalry_archer": "icons/units/ming_cavalry_archer.png",
+      "portugal_crossbowman": "icons/units/portugal_crossbowman.png",
+      "portugal_knight_of_christ": "icons/units/portugal_knight_of_christ.png"
     }
   },
   "fleet": {
     "subcategory_icons": {
-      "destroyer": "overrides/Art/Units/destroyer.png",
-      "frigate": "overrides/Art/Units/galley_mod.png",
-      "carrier": "overrides/Art/Units/carrier.png",
-      "patrol_boat": "overrides/Art/Units/patrol_boat.png",
-      "amphibious": "overrides/Art/Units/amphibious.png"
+      "destroyer": "icons/units/med_galley.png",
+      "patrol_boat": "icons/units/med_cog.png",
+      "frigate": "icons/units/med_carrack.png"
+    },
+    "unit_icons": {
+      "med_galley": "icons/units/med_galley.png",
+      "med_cog": "icons/units/med_cog.png",
+      "med_carrack": "icons/units/med_carrack.png",
+      "venetian_galleass": "icons/units/venetian_galleass.png",
+      "ottoman_galley": "icons/units/ottoman_galley.png",
+      "ming_treasure_ship": "icons/units/ming_treasure_ship.png",
+      "portuguese_caravel": "icons/units/portuguese_caravel.png"
     }
-  }
+  },
+  "air": {}
 }

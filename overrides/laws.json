@@ -1,33 +1,17 @@
 {
-  "categories": [
-    {
-      "id": "conscription",
-      "options": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {
-          "id": "cyber_reserve_corps",
-          "gate_key": "military_t5"
-        }
-      ]
-    },
-    {},
-    {
-      "id": "press_freedom",
-      "options": [
-        {},
-        {},
-        {},
-        {},
-        {
-          "id": "platform_regulation",
-          "gate_key": "government_t4"
-        }
-      ]
-    }
+  "disabled_options": [
+    "conscription.predictive_mobilization",
+    "conscription.cyber_reserve_corps",
+    "tax_regime.algorithmic_taxation",
+    "press_freedom.platform_regulation",
+    "immigration.digital_visa_corridors",
+    "immigration.points_based_system",
+    "labor_law.adaptive_workforce_compact",
+    "labor_law.gig_economy_compact",
+    "religion_state.civic_pluralism_charter",
+    "welfare_state.algorithmic_welfare",
+    "civil_liberties.surveillance_state",
+    "civil_liberties.predictive_policing"
   ],
   "country_overrides": {
     "OTT": {

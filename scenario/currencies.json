@@ -16,16 +16,23 @@
       "exchangeRateToBase": 1.0,
       "standard": "gold",
       "associatedCountries": [
-        "VNC",
-        "GEN",
-        "PAP",
-        "NAP",
-        "MIL",
-        "FLR",
+        "BOS",
         "BYZ",
+        "FLR",
+        "GEN",
         "HUN",
+        "KNI",
+        "LEZ",
+        "LTH",
+        "LUS",
+        "MIL",
+        "MOL",
+        "NAP",
+        "PAP",
         "POL",
-        "LTH"
+        "SRB",
+        "VNC",
+        "WAL"
       ],
       "symbolPosition": "prefix"
     },
@@ -38,8 +45,10 @@
       "fineMetalGrams": 1.15,
       "description": "Silver coin minted under Murad II and Mehmed II; ~40-45 akce equaled 1 gold ducat/florin in 1450.",
       "associatedCountries": [
-        "OTT",
+        "CND",
         "DUL",
+        "KAR",
+        "OTT",
         "RAM",
         "TRE"
       ],
@@ -54,10 +63,28 @@
       "fineMetalGrams": 37.3,
       "description": "Traditional Chinese unit of weight in silver (~37g silver = ~3.5 gold florins). Circulated alongside strings of copper cash (wen) and Baocao paper notes.",
       "associatedCountries": [
-        "MYN",
+        "ARK",
+        "AVA",
+        "AYU",
+        "BRU",
+        "CEB",
+        "CPA",
+        "DVT",
         "JOS",
+        "KMR",
+        "LNA",
+        "LXG",
+        "MAJ",
+        "MGD",
+        "MID",
+        "MLC",
+        "MYN",
+        "PEG",
+        "PSI",
         "RYU",
-        "DVT"
+        "SUL",
+        "TIB",
+        "TND"
       ],
       "symbolPosition": "suffix"
     },
@@ -83,8 +110,8 @@
       "standard": "silver_account",
       "description": "French money of account; ~3.5 livres tournois to 1 gold florin / ecu d or.",
       "associatedCountries": [
-        "FRA",
         "BUR",
+        "FRA",
         "SAV"
       ],
       "symbolPosition": "prefix"
@@ -98,12 +125,15 @@
       "fineMetalGrams": 3.4,
       "description": "The standard gold coin of the Holy Roman Empire established by the Rhenish Coinage Union.",
       "associatedCountries": [
-        "HAB",
-        "BOH",
         "BAV",
-        "SAX",
+        "BOH",
+        "BRG",
+        "CHE",
+        "COL",
+        "HAB",
         "PAL",
-        "CHE"
+        "SAX",
+        "WUR"
       ],
       "symbolPosition": "prefix"
     },
@@ -115,10 +145,10 @@
       "standard": "silver_billon",
       "description": "Standard money of account in Castile. 1 gold dobla de la banda was worth 365-375 maravedis (~1 florin).",
       "associatedCountries": [
-        "CAS",
         "ARA",
-        "NAV",
-        "GRN"
+        "CAS",
+        "GRN",
+        "NAV"
       ],
       "symbolPosition": "suffix"
     },
@@ -144,10 +174,14 @@
       "fineMetalGrams": 3.45,
       "description": "Introduced by Mamluk Sultan al-Ashraf Barsbay in 1425 to match the weight and purity of the Venetian ducat.",
       "associatedCountries": [
-        "MAM",
         "HFS",
-        "ZAY",
-        "MOR"
+        "HRM",
+        "JBR",
+        "MAM",
+        "MOR",
+        "NBH",
+        "TAH",
+        "ZAY"
       ],
       "symbolPosition": "prefix"
     },
@@ -160,14 +194,20 @@
       "fineMetalGrams": 3.4,
       "description": "Gold varaha (also called pagoda by Europeans) featuring Hindu deities, standard trade currency of South India and Indian Ocean spice routes.",
       "associatedCountries": [
-        "VIJ",
-        "GUJ",
-        "MLW",
-        "JNP",
-        "DEL",
         "BAH",
         "BNG",
-        "ORI"
+        "DEL",
+        "GUJ",
+        "JNP",
+        "KOT",
+        "KSH",
+        "MEW",
+        "MLD",
+        "MLW",
+        "NEP",
+        "ORI",
+        "SND",
+        "VIJ"
       ],
       "symbolPosition": "prefix"
     },
@@ -179,10 +219,18 @@
       "standard": "silver",
       "description": "Timurid currency system centered on the silver dinar and super-unit toman (10,000 dinars).",
       "associatedCountries": [
-        "TIM",
-        "KKY",
         "AKK",
-        "SHV"
+        "GRG",
+        "KKY",
+        "KRM",
+        "KZN",
+        "MGL",
+        "MOG",
+        "SHV",
+        "SIB",
+        "STE",
+        "TIM",
+        "UZB"
       ],
       "symbolPosition": "prefix"
     },
@@ -196,9 +244,9 @@
       "description": "Silver denga coins minted in Moscow, Novgorod, and Tver; 200 denga made up the ruble of account (~1 florin).",
       "associatedCountries": [
         "MVY",
+        "NVD",
         "PSK",
         "RYA",
-        "NVD",
         "TVR"
       ],
       "symbolPosition": "suffix"
@@ -213,8 +261,9 @@
       "description": "Silver mark of the Hanseatic League and the Wendish Coinage Union; standard unit across Denmark, Sweden, and the Baltic littoral.",
       "associatedCountries": [
         "DAN",
+        "LIV",
         "SWD",
-        "LIV"
+        "TEU"
       ],
       "symbolPosition": "suffix"
     },
@@ -227,6 +276,69 @@
       "description": "Imported copper cash (Torasen) and gold banryō circulating across Muromachi Japan under the Ashikaga shogunate.",
       "associatedCountries": [
         "MRC"
+      ],
+      "symbolPosition": "suffix"
+    },
+    {
+      "id": "mithqal_cowrie",
+      "name": "Gold Mithqal / Cowrie Standard",
+      "symbol": "mq.",
+      "exchangeRateToBase": 1.05,
+      "standard": "gold",
+      "fineMetalGrams": 4.25,
+      "description": "Trans-Saharan gold dinar/mithqal standard combined with cowrie shell trade strings across West Africa and the Swahili coast.",
+      "associatedCountries": [
+        "ABY",
+        "ADA",
+        "BNK",
+        "BUG",
+        "FNJ",
+        "HAU",
+        "KBR",
+        "KLW",
+        "KNG",
+        "LUB",
+        "MAD",
+        "MAL",
+        "MOS",
+        "OYO",
+        "SON",
+        "ZIM"
+      ],
+      "symbolPosition": "prefix"
+    },
+    {
+      "id": "quachtli_cacao",
+      "name": "Quachtli & Cacao Standard",
+      "symbol": "qc.",
+      "exchangeRateToBase": 20.0,
+      "standard": "commodity",
+      "description": "Mesoamerican monetary standard based on standardized woven cotton cloaks (quachtli) and cacao beans used for tribute and trade.",
+      "associatedCountries": [
+        "AZT",
+        "CAH",
+        "IRO",
+        "MAY",
+        "PUE",
+        "TAI",
+        "TAR",
+        "TLX",
+        "ZAP"
+      ],
+      "symbolPosition": "suffix"
+    },
+    {
+      "id": "mit_a_cloth",
+      "name": "Mit'a Reciprocity & Cumbi",
+      "symbol": "cb.",
+      "exchangeRateToBase": 15.0,
+      "standard": "commodity",
+      "description": "Incan economic unit based on standardized fine cumbi cloth weaves, state storehouse tallies, and communal mit'a labor obligations.",
+      "associatedCountries": [
+        "CHM",
+        "INC",
+        "MAP",
+        "MUI"
       ],
       "symbolPosition": "suffix"
     }

@@ -1022,3 +1022,146 @@ politics.law.tax_regime.algorithmic_taxation.desc,Vergi kaçaklarını önlemek 
 politics.law.welfare_state.algorithmic_welfare,Vakıf Aşevleri ve İmarethaneler
 politics.law.welfare_state.algorithmic_welfare.desc,Kıtlık ve yoksulluk zamanında halkı doyurmak için vakıf imaretleri, aşevleri ve darüşşifaların seferber edilmesi.
 ui.button.ok,TAMAM
+owo.org.kalmar_union.name,Kalmar Birliği
+owo.org.swiss_confederacy.name,İsviçre Konfederasyonu
+owo.victory.imperial_hegemony.title,İmparatorluk Hegemonyası
+owo.victory.imperial_hegemony.desc,Sancağınız uçsuz bucaksız diyarlarda dalgalanıyor; bilinen dünyada tartışmasız bir hakimiyet kurdunuz.
+owo.victory.era_of_discovery.title,Coğrafi Keşifler Çağı
+owo.victory.era_of_discovery.desc,16. yüzyılın eşiğine kadar dimdik ayakta kalarak okyanusları aşmaya ve yeni ufuklara yelken açmaya hazırsınız.
+owo.endscreen.provinces_gained,Fethedilen Vilayetler
+owo.endscreen.wars_won,Kazanılan Savaşlar
+owo.endscreen.regiments_lost,Kayıp Alaylar
+owo.endscreen.ships_lost,Batan Gemiler
+owo.victory.sultan_i_rum.title,Sultan-ı Rûm ve Hilafet-i İslamiye
+owo.victory.sultan_i_rum.desc,Roma'nın imparatorluk mirasını ve kutsal beldeleri birleştiren Bâb-ı Âli, Tuna'dan Fırat'a dek tartışmasız yükseliyor.
+owo.victory.pax_sinica.title,Pax Sinica ve Göksel Düzen
+owo.victory.pax_sinica.desc,Ahlaki nizam ve sarsılmaz imparatorluk idaresiyle Göğün Oğlu, gökkubbe altındaki barış ve sükûneti ebedi kıldı.
+owo.victory.thalassocracy.title,Yedi Denizin Hükümdarı
+owo.victory.thalassocracy.desc,Deniz yollarında mutlak hakimiyet kuran donanmalarınız, cihan ticaretini ve yabancı haracını tayin ediyor.
+owo.endscreen.provinces_lost,Kaybedilen Vilayetler
+owo.endscreen.wars_lost,Kaybedilen Savaşlar
+owo.victory.catholic_monarchs.title,İspanya Tacı ve Yeni Ufuklar
+owo.victory.catholic_monarchs.desc,Reconquista'nın tamamlanması ve hanedan birliğiyle Kastilya ve Aragon çifte tacı, Atlas Okyanusu'nun eşiğinde mutlak kudret kazandı.
+owo.victory.third_rome.title,Üçüncü Roma ve Tüm Rusların Çarlığı
+owo.victory.third_rome.desc,Knezlikleri çift başlı kartal altında toplayan Moskova, Kostantiniyye'nin ebedi mirasını devralarak kuzey diyarlarını birleştirdi.
+owo.victory.hundred_years_triumph.title,Yüzyıl Savaşları Zaferi
+owo.victory.hundred_years_triumph.desc,Uzun hanedan savaşında kazanılan kesin zafer, Batı Avrupa'nın tartışmasız hükümdarlık tacını güvenceye aldı.
+owo.victory.tawantinsuyu.title,Tawantinsuyu: Dört Buçağın Hükümdarlığı
+owo.victory.tawantinsuyu.desc,Cusco Güneş Tapınağı'ndan And dağlarına uzanan İnka İmparatorluğu, cihanın dört bucağını ilahi nizam altında birleştirdi.
+owo.endscreen.personnel_lost,Toplam Askeri Kayıp
+owo.event.byzantine_collapse_aftermath_ott.title,Kostantiniyye Tahtı
+owo.event.byzantine_collapse_aftermath_ott.description,Bizans İmparatorluğu'nun nihai çöküşüyle ebedi şehir fethedildi. Sultan, Kayser-i Rum unvanını üstlenir ve payitahtın Edirne'den Kostantiniyye'ye taşınmasını emreder.
+owo.event.byzantine_collapse_aftermath_ott.option_1,Kostantiniyye'yi Osmanlı İmparatorluğu'nun başkenti ilan et
+owo.event.reactive_hyw_peace_wars_of_roses.title,Baronların Hoşnutsuzluğu
+owo.event.reactive_hyw_peace_wars_of_roses.description,Fransa ile imzalanan barış, öfkeli gazileri ve yoksul soyluları yurda döndürdü. Normandiya ve Guyenne'in kaybı, Lancaster ve York hanedanları arasında kanlı bir çekişmeyi ateşledi.
+owo.event.reactive_hyw_peace_wars_of_roses.option_1,Parlamentoda çekişsinler; taht boyun eğmeyecek
+owo.event.reactive_hyw_peace_wars_of_roses.option_2,Dükleri yatıştırmak için hazineden ödenek ve toprak bağışla
+owo.event.reactive_hyw_peace_france_triumph.title,Valois Hanedanının Zaferi
+owo.event.reactive_hyw_peace_france_triumph.description,İngiltere ile yüzyıllık savaş resmen sona erdi. İngiliz orduları Manş Denizi'nin ötesine sürüldü ve Fransa krallığı Valois idaresinde birleşti.
+owo.event.reactive_hyw_peace_france_triumph.option_1,Yaşasın Fransa Kralı!
+owo.event.reactive_reconquista_granada_collapse.title,Gırnata'nın Düşüşü
+owo.event.reactive_reconquista_granada_collapse.description,İberya'daki son Müslüman kalesi düştü. Kastilya ve Aragon sancakları Elhamra Sarayı'na çekildi; yedi asırlık Reconquista muzaffer bir şekilde tamamlandı.
+owo.event.reactive_reconquista_granada_collapse.option_1,Zafer Hristiyan Krallarınındır!
+owo.event.urban_bombard_forge_1452.title,Macar Usta Urban'ın Dökümhanesi
+owo.event.urban_bombard_forge_1452.description,Macar döküm ustası Urban, Edirne sarayına gelerek en kalın surları dahi yerle bir edebilecek devasa bronz şahi topları dökmeyi teklif ediyor.
+owo.event.urban_bombard_forge_1452.option_1,Şahi toplarını dökmek için sınırsız altın ve usta tahsis et
+owo.event.urban_bombard_forge_1452.option_2,Bu kadar masraflı silahlara ihtiyacımız yok
+owo.group.workers.name,Köylüler ve Serfler
+owo.group.workers.desc,Malikanelerde ve tarlalarda çalışarak krallığı besleyen kırsal köylüler, ortakçılar ve serfler.
+owo.group.entrepreneurs.name,Loncalar ve Burjuvalar
+owo.group.entrepreneurs.desc,Şehir beratlarına sahip ticaret merkezlerini yöneten lonca ustaları, sarraflar ve tüccar burjuvalar.
+owo.group.military.name,Feodal Soylular ve Şövalyeler
+owo.group.military.desc,Bölgesel tımarlı orduları ve şövalyeleri komuta eden toprak sahibi aristokratlar ve feodal baronlar.
+owo.group.religious.name,Ruhban Sınıfı ve Tarikatlar
+owo.group.religious.desc,Geniş vakıfları ve manevi otoriteyi elinde tutan piskoposlar, tarikatlar, ulema ve din bilginleri.
+owo.group.environmentalists.name,Ormancılar ve Otlak Koruyucuları
+owo.group.environmentalists.desc,Geleneksel ortak otlak haklarını ve kraliyet ormanlarını koruyan korucular ve su muhafızları.
+owo.goal.vnc_arsenale_di_venezia,Venedik Tersanesi (Arsenale)
+owo.goal.vnc_arsenale_di_venezia.desc,Arsenale devlet tersanelerini ve halathane imalathanelerini Hristiyan dünyasının en büyük deniz sanayi kompleksine dönüştürün.
+owo.task.vnc_arsenale_di_venezia.treasury,Dükalık hazinesinde 1.800 fl. bulundur
+owo.task.vnc_arsenale_di_venezia.grand_armada,25 savaş gemisinden oluşan büyük bir armada kur
+owo.goal.flr_medici_banking_network,Medici Bankacılık İmparatorluğu
+owo.goal.flr_medici_banking_network.desc,Lyon, Brugge ve Roma genelinde kralları ve papaları finanse eden Banco dei Medici'yi Avrupa'nın zirve finans gücü haline getirin.
+owo.task.flr_medici_banking_network.treasury,Dükalık rezervlerinde 2.200 fl. altın tut
+owo.task.flr_medici_banking_network.trade,Avrupa genelinde ticari anlaşmalar imzala
+owo.goal.flr_cradle_of_renaissance,Rönesans'ın Beşiği
+owo.goal.flr_cradle_of_renaissance.desc,Usta heykeltıraşları, mimarları ve akademileri himaye ederek Floransa'yı İtalya'nın en parlak entelektüel mücevheri yapın.
+owo.task.flr_cradle_of_renaissance.relations,Roma ile yakın diplomatik dostluğu sürdür
+owo.task.flr_cradle_of_renaissance.prosperity,Şehir vakıflarında 1.000 fl. biriktir
+owo.goal.mam_red_sea_monopoly,Baharat Yolu Hükümranlığı
+owo.goal.mam_red_sea_monopoly.desc,Kızıldeniz ve İskenderiye üzerinden geçen deniz baharat yolundan gümrük toplayarak Memlük Sultanlığı'nın refahını teminat altına alın.
+owo.task.mam_red_sea_monopoly.treasury,Kahire'de 2.000 fl. biriktir
+owo.task.mam_red_sea_monopoly.relations,Venedik ile diplomatik uyumu sürdür
+owo.goal.hab_hereditary_lands,Habsburg Hanedan Topraklarını Birleştir
+owo.goal.hab_hereditary_lands.desc,Stirya, Karintiya ve Karniyola dükalıklarını Tirol kontluğu ile birleştirerek tek bir bölünmez Habsburg idaresi kurun.
+owo.task.hab_hereditary_lands.army,25.000 silahlı askerden oluşan imparatorluk ordusu kur
+owo.task.hab_hereditary_lands.treasury,Hofburg hazinesinde 1.500 fl. tut
+owo.event.venetian_muda_spice_fleet_1451.title,İskenderiye Baharat Konvoyları
+owo.event.venetian_muda_spice_fleet_1451.description,Devlet destekli kadırga filosu (muda), İskenderiye ve Beyrut'tan baharat, karanfil ve ipek yüklü olarak Venedik lagününe sağ salim döndü.
+owo.event.venetian_muda_spice_fleet_1451.option_1,Gelirleri Arsenale tersanesine ve devlet kadırgalarına yatır
+owo.event.venetian_muda_spice_fleet_1451.option_2,Karı patrici ticaret hanedanlarına paylaştır
+owo.event.florence_brunelleschi_lantern_1452.title,Santa Maria del Fiore Feneri
+owo.event.florence_brunelleschi_lantern_1452.description,Mimar Filippo Brunelleschi, katedral kubbesinin mermer fenerini tamamlayarak Floransa'yı Rönesans mimarisinin başkenti yaptı.
+owo.event.florence_brunelleschi_lantern_1452.option_1,Brunelleschi'yi Signoria baş mimarı ve danışmanı tayin et
+owo.event.mamluk_syrian_border_crisis_1453.title,Kahire'de Konstantinopolis'in Yankısı
+owo.event.mamluk_syrian_border_crisis_1453.description,Fatih Sultan Mehmed'in şehri fethettiği haberi Kahire Kalesi'ne ulaştı. Memlük emirleri, Osmanlı tehdidinin Şam ve Fırat sınırlarına yönelebileceği uyarısında bulundu.
+owo.event.mamluk_syrian_border_crisis_1453.option_1,Suriye sınırını kıdemli Memlük süvarileriyle tahkim et
+owo.event.mamluk_syrian_border_crisis_1453.option_2,Kostantiniyye'ye diplomatik elçiler ve hediyeler gönder
+owo.event.habsburg_danubian_bulwark_1454.title,Tuna İmparatorluk Meclisi
+owo.event.habsburg_danubian_bulwark_1454.description,İmparator III. Friedrich, güneydoğu sınırını savunmak için Avusturya meclisini ve elektörleri Wiener Neustadt'ta topladı.
+owo.event.habsburg_danubian_bulwark_1454.option_1,Hanedan dükalıkları genelinde imparatorluk savunma fonu ilan et
+owo.task.eng_scottish_border.garrison,Kuzey sınır boylarına 15.000 asker konuşlandır
+owo.goal.eng_tudor_settlement,Gülün Hükümranlığı
+owo.goal.eng_tudor_settlement.desc,Rakip Lancaster ve York hanedanlarını uzlaştır, kraliyet maliyesini düzelt ve krallık genelinde merkezi otoriteyi yeniden kur.
+owo.task.eng_tudor_settlement.treasury,Kraliyet hazinesinde 1.400 fl. biriktir
+owo.task.eng_tudor_settlement.royal_army,25.000 kraliyet askeri topla
+owo.goal.prt_feitorias_guinea,Gine ve Mina Feitoriaları
+owo.goal.prt_feitorias_guinea.desc,Altın, fildişi ve baharat ticaretini korumak için Altın Sahili boyunca müstahkem ticaret karakolları kur.
+owo.task.prt_feitorias_guinea.treasury,Ticari rezervlerde 1.200 fl. biriktir
+owo.task.prt_feitorias_guinea.fleet,Keşif filosunu 12 gemiye çıkar
+owo.task.myn_grand_canal.imperial_garrison,60.000 imparatorluk muhafızını hazır bulundur
+owo.goal.mvy_third_rome,Üçüncü Roma ve Tüm Rusların Çarlığı
+owo.goal.mvy_third_rome.desc,Bizans imparatorluk mirasını üstlen, Moskova Kremlini'nde taştan katedraller inşa et ve Tüm Rusların Çarlığı'nı ilan et.
+owo.task.mvy_third_rome.standing_army,30.000 taht askeri topla
+owo.task.mvy_third_rome.treasury,Kremlin hazinesinde 1.500 fl. biriktir
+owo.task.hun_corvinus_hegemony.relations,Avusturya ile diplomatik dostluğu sürdür
+owo.goal.hun_fekete_sereg,Macaristan Kara Ordusu
+owo.goal.hun_fekete_sereg.desc,Kral Matthias Corvinus'un Orta Avrupa muharebelerinde üstün gelen efsanevi düzenli paralı ordusu Fekete Sereg'i finanse et.
+owo.task.hun_fekete_sereg.standing_mercenaries,30.000 tecrübeli asker topla
+owo.task.hun_fekete_sereg.treasury,Kraliyet savaş sandığında 1.400 fl. biriktir
+owo.goal.pol_baltic_grain_hegemony,Vistül Tahılı ve Kraliyet Prusyası
+owo.goal.pol_baltic_grain_hegemony.desc,Kraliyet Prusyası'nı ilhak et, Gdansk tüccar imtiyazlarını koru ve Vistül tahıl ihracatını Baltık üzerinden yönet.
+owo.task.pol_baltic_grain_hegemony.treasury,Krakov kraliyet hazinesinde 1.500 fl. biriktir
+owo.task.pol_baltic_grain_hegemony.army,25.000 kişilik kraliyet ordusu kur
+owo.task.byz_restore_morea.troops,12.000 imparatorluk askeri topla
+owo.goal.byz_renovatio_imperii,Renovatio Imperii ve Palaiologos Restorasyonu
+owo.goal.byz_renovatio_imperii.desc,İmparatorluk donanmasını yeniden inşa et, Ege boğazlarındaki yabancı garnizonları çıkar ve Doğu Roma İmparatorluğu'nun yeniden doğuşunu ilan et.
+owo.task.byz_renovatio_imperii.fleet,15 savaş gemisinden oluşan imparatorluk donanması topla
+owo.task.byz_renovatio_imperii.army,20.000 imparatorluk katafraktı ve okçusu topla
+owo.task.byz_renovatio_imperii.treasury,Blakhernai hazinesinde 1.600 fl. biriktir
+owo.goal.dan_dominium_maris_baltici,Dominium Maris Baltici
+owo.goal.dan_dominium_maris_baltici.desc,Baltık ve Kuzey Denizi'nde donanma üstünlüğünü koru, deniz ticaretindeki Danimarka Boğaz Geçiş Vergisi hakimiyetini güvenceye al.
+owo.task.dan_dominium_maris_baltici.royal_navy,18 gemilik güçlü bir donanma topla
+owo.task.dan_dominium_maris_baltici.treasury,Kopenhag vergi rezervlerinde 1.600 fl. biriktir
+owo.goal.tim_herat_cultural_apogee,Herat Ufku ve İmparatorluk Mirası
+owo.goal.tim_herat_cultural_apogee.desc,Herat'ta minyatür sanatı, felsefe ve bahçe mimarisini himaye ederek Timur dünyasının entelektüel zirvesini yaşat.
+owo.task.tim_herat_cultural_apogee.warriors,35.000 atlı okçu ve muhafız topla
+owo.task.tim_herat_cultural_apogee.treasury,Herat hazinesinde 1.600 fl. bulundur
+owo.goal.bur_order_of_the_golden_fleece,Altın Post Nişanı
+owo.goal.bur_order_of_the_golden_fleece.desc,Batı Avrupa'nın en ihtişamlı şövalye sarayını kur, Burgonya ve Felemenk soylularını Altın Post Tarikatı ile tahta bağla.
+owo.task.bur_order_of_the_golden_fleece.treasury,Saray hazinesinde 1.500 fl. bulundur
+owo.task.bur_order_of_the_golden_fleece.diplomacy,Papalık ile dostane diplomatik ilişkileri koru
+owo.task.swd_bergslagen_iron_and_copper.militia,16.000 Dalarna ve Svealand askeri topla
+owo.goal.swd_riksdag_sovereignty,Riksdag Hükümranlığı ve Bağımsız Taht
+owo.goal.swd_riksdag_sovereignty.desc,Krallık Meclisi'ni topla, İsveç anayasal hürriyetlerini yasalaştır ve sarsılmaz bir bağımsız krallık kur.
+owo.task.swd_riksdag_sovereignty.national_army,22.000 düzenli İsveç askeri topla
+owo.task.swd_riksdag_sovereignty.treasury,Stockholm hazinesinde 1.400 fl. bulundur
+owo.task.azt_flower_wars_tribute.warriors,30.000 Üçlü İttifak savaşçısı topla
+owo.goal.pap_vatican_library_splendor,Vatikan Kütüphanesi ve Hümanist Papalık
+owo.goal.pap_vatican_library_splendor.desc,Nadir el yazmalarını topla, Aziz Petrus'ta Rönesans freskleri yaptır ve Roma'yı Hristiyan aleminin kültür meşalesi yap.
+owo.task.pap_vatican_library_splendor.treasury,Apostolik hazinede 1.200 fl. biriktir
+owo.task.pap_vatican_library_splendor.relations,Floransa ile yakın diplomatik bağları koru
+owo.org.holy_roman_empire.name,Kutsal Roma Imparatorlugu
+owo.org.league_of_lezhe.name,Lez Birligi
+owo.org.livonian_confederation.name,Livonya Konfederasyonu
+owo.org.ming_tributary_order.name,Ming Haraç Sistemi

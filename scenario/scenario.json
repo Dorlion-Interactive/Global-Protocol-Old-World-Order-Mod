@@ -10,6 +10,8 @@
     "economicEraLabel": "Florins",
     "currencySymbol": "fl.",
     "nationalGoalsFile": "national_goals.json",
+    "victoryFile": "victory.json",
+    "provinceDataFile": "provinces_data.json",
     "clearDiplomaticRelationships": true,
     "clearDiplomacyScope": "extended",
     "rebuildNeutralRelations": true,
