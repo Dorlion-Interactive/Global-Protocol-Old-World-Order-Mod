@@ -269,6 +269,7 @@ mod.ui.popup.continue,Continue
 mod.ui.popup.mod_info,Open Mod Info
 mod.ui.popup.title,Welcome to Old World Order
 mod.ui.province.historical_sig,Historical Significance
+mod.ui.country.era_standing,1450 Anno Domini Sovereign
 mod.ui.toolbar.archive_tooltip,Historian's Intelligence Archive
 mod.ui.toolbar.balance_of_power_tooltip,Balance of Power & Alliances
 mod.ui.toolbar.chronicle_tooltip,1450 World Chronicle

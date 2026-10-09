@@ -124,6 +124,151 @@
       "background-color": "#2e241b",
       "border-color": "#d4af37",
       "color": "#f5eedc"
+    },
+    {
+      "selector": ".mod-toolbar-panel",
+      "position": "absolute",
+      "top": 120,
+      "right": 32,
+      "flex-direction": "row",
+      "background-color": "rgba(24, 20, 16, 0.94)",
+      "border-color": "#967a4d",
+      "border-width": 1,
+      "border-radius": 6,
+      "padding": 4
+    },
+    {
+      "selector": ".mod-toolbar-button",
+      "width": 32,
+      "height": 32,
+      "margin-left": 2,
+      "margin-right": 2,
+      "background-color": "#2a221b",
+      "border-color": "#8c734b",
+      "border-width": 1,
+      "border-radius": 4
+    },
+    {
+      "selector": ".mod-toolbar-button:hover",
+      "background-color": "#3d3227",
+      "border-color": "#d4af37"
+    },
+    {
+      "selector": ".mod-toolbar-button:active",
+      "background-color": "#4a3d2f",
+      "border-color": "#ffdf73"
+    },
+    {
+      "selector": ".speed-btn",
+      "background-color": "#2a221b",
+      "border-color": "#6e5939",
+      "color": "#f5eedc"
+    },
+    {
+      "selector": ".speed-btn:hover",
+      "background-color": "#3d3227",
+      "border-color": "#d4af37"
+    },
+    {
+      "selector": ".speed-btn--active",
+      "background-color": "#4a3d2f",
+      "border-color": "#d4af37",
+      "color": "#fffdf5"
+    },
+    {
+      "selector": ".outliner-header",
+      "background-color": "#231c16",
+      "border-color": "#6e5939",
+      "color": "#d4af37"
+    },
+    {
+      "selector": ".outliner-row:hover",
+      "background-color": "#2e241b"
+    },
+    {
+      "selector": ".army-command-bar",
+      "background-color": "#1c1712",
+      "border-color": "#8c734b",
+      "border-width": 1
+    },
+    {
+      "selector": ".army-command-btn",
+      "background-color": "#2a221b",
+      "border-color": "#6e5939",
+      "color": "#f5eedc"
+    },
+    {
+      "selector": ".army-command-btn:hover",
+      "background-color": "#3d3227",
+      "border-color": "#d4af37"
+    },
+    {
+      "selector": ".event-popup",
+      "background-color": "#1a1511",
+      "border-color": "#967a4d",
+      "border-width": 2,
+      "border-radius": 6
+    },
+    {
+      "selector": ".event-option-btn",
+      "background-color": "#2a221b",
+      "border-color": "#8c734b",
+      "color": "#f5eedc"
+    },
+    {
+      "selector": ".event-option-btn:hover",
+      "background-color": "#3d3227",
+      "border-color": "#d4af37"
+    },
+    {
+      "selector": ".mapmodes-bar",
+      "background-color": "#181410",
+      "border-color": "#6e5939"
+    },
+    {
+      "selector": ".mapmode-btn",
+      "background-color": "#2a221b",
+      "border-color": "#6e5939",
+      "color": "#c5b9a0"
+    },
+    {
+      "selector": ".mapmode-btn:hover",
+      "background-color": "#3d3227",
+      "border-color": "#d4af37"
+    },
+    {
+      "selector": ".mapmode-btn--active",
+      "background-color": "#4a3d2f",
+      "border-color": "#d4af37",
+      "color": "#f5eedc"
+    },
+    {
+      "selector": ".nuclear-panel",
+      "display": "none"
+    },
+    {
+      "selector": "#nuclear-button",
+      "display": "none"
+    },
+    {
+      "selector": ".nuclear-indicator",
+      "display": "none"
+    },
+    {
+      "selector": ".icbm-slot",
+      "display": "none"
+    },
+    {
+      "selector": ".missile-defense-card",
+      "display": "none"
+    },
+    {
+      "selector": ".space-program-btn",
+      "display": "none"
+    },
+    {
+      "selector": ".satellite-tracker",
+      "display": "none"
     }
   ]
 }

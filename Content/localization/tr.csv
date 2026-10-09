@@ -269,6 +269,7 @@ mod.ui.popup.continue,Devam Et
 mod.ui.popup.mod_info,Mod Bilgisi
 mod.ui.popup.title,Old World Order'a Hoş Geldiniz
 mod.ui.province.historical_sig,Tarihi Önemi
+mod.ui.country.era_standing,1450 Anno Domini Hükümdarlığı
 mod.ui.toolbar.archive_tooltip,Tarihçi İstihbarat Arşivi
 mod.ui.toolbar.balance_of_power_tooltip,Güç Dengesi ve İttifaklar
 mod.ui.toolbar.chronicle_tooltip,1450 Dünya Vakayinamesi

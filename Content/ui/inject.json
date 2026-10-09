@@ -49,6 +49,34 @@
       "hookName": "owo.info"
     }
   ],
+  "style": {
+    "keys": [
+      "position",
+      "top",
+      "right",
+      "flex-direction",
+      "align-items",
+      "background-color",
+      "border-color",
+      "border-width",
+      "border-radius",
+      "padding",
+      "opacity"
+    ],
+    "values": [
+      "absolute",
+      "120px",
+      "32px",
+      "row",
+      "center",
+      "rgba(24, 20, 16, 0.94)",
+      "#967a4d",
+      "1px",
+      "6px",
+      "4px",
+      "1"
+    ]
+  },
   "provinceDetailRows": [
     {
       "id": "owo.historical_sig",
@@ -56,6 +84,12 @@
       "valueExpression": "province.stability",
       "format": "High",
       "iconPath": "Content/ui/icons/info.png"
+    }
+  ],
+  "countryPanelRows": [
+    {
+      "label": "mod.ui.country.era_standing",
+      "value": "1450 Anno Domini Sovereign"
     }
   ]
 }
