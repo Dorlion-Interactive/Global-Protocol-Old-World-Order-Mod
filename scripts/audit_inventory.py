@@ -107,6 +107,22 @@ def audit():
         for r in disabled:
             print(f"  [DISABLED] {r}")
 
+    # 5. SPECIALISTS
+    if os.path.exists('Content/specialists.json'):
+        with open('Content/specialists.json', 'r', encoding='utf-8') as f:
+            spec_data = json.load(f)
+        specialists = spec_data.get('specialists', [])
+        print(f"\n7. SPECIALISTS ({len(specialists)} defined):")
+        spec_missing = []
+        for s in specialists:
+            sid = s.get('id')
+            portrait = s.get('portrait', '')
+            if portrait and os.path.exists(portrait):
+                print(f"  [OK] {sid:25} -> {portrait}")
+            else:
+                print(f"  [MISSING] {sid:25} -> {portrait}")
+                spec_missing.append(sid)
+
 
 if __name__ == '__main__':
     audit()
