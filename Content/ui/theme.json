@@ -128,10 +128,10 @@
     {
       "selector": ".mod-toolbar-panel",
       "position": "absolute",
-      "top": "120px",
+      "top": "58px",
       "right": "32px",
       "flex-direction": "row",
-      "background-color": "rgba(24, 20, 16, 0.94)",
+      "background-color": "#181410",
       "border-color": "#967a4d",
       "border-width": "1px",
       "border-radius": "6px",
@@ -241,6 +241,22 @@
       "background-color": "#4a3d2f",
       "border-color": "#d4af37",
       "color": "#f5eedc"
+    },
+    {
+      "selector": ".outliner-footer",
+      "display": "none"
+    },
+    {
+      "selector": "#outliner-footer",
+      "display": "none"
+    },
+    {
+      "selector": "#mm-btn-nuclear",
+      "display": "none"
+    },
+    {
+      "selector": ".mm-btn-nuclear",
+      "display": "none"
     },
     {
       "selector": ".nuclear-panel",

@@ -13,40 +13,16 @@
       "hookName": "owo.ambitions"
     },
     {
-      "id": "owo.archive_btn",
-      "iconPath": "Content/ui/icons/archive.png",
-      "tooltip": "mod.ui.toolbar.archive_tooltip",
-      "hookName": "owo.archive"
-    },
-    {
       "id": "owo.chronicle_btn",
       "iconPath": "Content/ui/icons/archive.png",
       "tooltip": "mod.ui.toolbar.chronicle_tooltip",
       "hookName": "owo.chronicle"
     },
     {
-      "id": "owo.balance_of_power_btn",
+      "id": "owo.archive_btn",
       "iconPath": "Content/ui/icons/info.png",
-      "tooltip": "mod.ui.toolbar.balance_of_power_tooltip",
-      "hookName": "owo.balance_of_power"
-    },
-    {
-      "id": "owo.dynasties_btn",
-      "iconPath": "Content/ui/icons/welcome.png",
-      "tooltip": "mod.ui.toolbar.dynasties_tooltip",
-      "hookName": "owo.dynasties"
-    },
-    {
-      "id": "owo.faiths_btn",
-      "iconPath": "Content/ui/icons/archive.png",
-      "tooltip": "mod.ui.toolbar.faiths_tooltip",
-      "hookName": "owo.faiths"
-    },
-    {
-      "id": "owo.info_btn",
-      "iconPath": "Content/ui/icons/info.png",
-      "tooltip": "mod.ui.toolbar.info_tooltip",
-      "hookName": "owo.info"
+      "tooltip": "mod.ui.toolbar.archive_tooltip",
+      "hookName": "owo.archive"
     }
   ],
   "style": {
@@ -64,11 +40,11 @@
     ],
     "values": [
       "absolute",
-      "120px",
+      "58px",
       "32px",
       "row",
       "center",
-      "rgba(24, 20, 16, 0.94)",
+      "#181410",
       "#967a4d",
       "6px",
       "4px",

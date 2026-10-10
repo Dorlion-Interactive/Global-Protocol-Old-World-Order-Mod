@@ -30,7 +30,7 @@
       "max_per_province": 3,
       "max_level": 5,
       "level_scaling_factor": 0.4,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "commercial_district",
@@ -56,7 +56,7 @@
       "max_per_province": 3,
       "max_level": 5,
       "level_scaling_factor": 0.4,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "trade_port",
@@ -82,7 +82,7 @@
       "max_per_province": 1,
       "max_level": 3,
       "level_scaling_factor": 0.5,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "tech_park",
@@ -107,7 +107,7 @@
       "max_per_province": 1,
       "max_level": 3,
       "level_scaling_factor": 0.5,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "barracks",
@@ -131,7 +131,7 @@
       "max_per_province": 2,
       "max_level": 3,
       "level_scaling_factor": 0.3,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "military_base",
@@ -156,7 +156,7 @@
       "max_per_province": 1,
       "max_level": 3,
       "level_scaling_factor": 0.3,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "arms_factory",
@@ -181,7 +181,7 @@
       "max_per_province": 2,
       "max_level": 3,
       "level_scaling_factor": 0.4,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "highway",
@@ -206,7 +206,7 @@
       "max_per_province": 2,
       "max_level": 3,
       "level_scaling_factor": 0.4,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "power_plant",
@@ -231,7 +231,7 @@
       "max_per_province": 2,
       "max_level": 3,
       "level_scaling_factor": 0.4,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "hospital",
@@ -256,7 +256,7 @@
       "max_per_province": 1,
       "max_level": 3,
       "level_scaling_factor": 0.3,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "university",
@@ -281,7 +281,7 @@
       "max_per_province": 1,
       "max_level": 3,
       "level_scaling_factor": 0.5,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "naval_base",
@@ -305,7 +305,7 @@
       "max_per_province": 1,
       "max_level": 3,
       "level_scaling_factor": 0.4,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "radar_station",
@@ -329,14 +329,14 @@
       "max_per_province": 2,
       "max_level": 3,
       "level_scaling_factor": 0.2,
-      "inherit": true
+      "inherit": false
     },
     {
       "id": "intelligence_hq",
       "name": "Royal Spymaster's Office",
       "description": "Central espionage chamber and courier hub directing court informants, intercepting diplomatic dispatches, and mounting foreign covert schemes.",
       "category": "intelligence",
-      "inherit": true,
+      "inherit": false,
       "cost": {
         "money": 1000,
         "build_time_months": 8
@@ -360,7 +360,7 @@
       "name": "Inquisition Tribunal",
       "description": "Judicial tribunal and municipal watch rooting out foreign agitators, sedition, and covert infiltration through rigorous cross-examination.",
       "category": "intelligence",
-      "inherit": true,
+      "inherit": false,
       "cost": {
         "money": 800,
         "build_time_months": 6
