@@ -22,7 +22,7 @@
   },
   "military": {
     "manpower_per_regiment": 1000,
-    "fortification_modifier_max": 0.60,
+    "fortification_modifier_max": 1.60,
     "combat_width_base": 12
   }
 }

@@ -58,7 +58,6 @@
       "align-items",
       "background-color",
       "border-color",
-      "border-width",
       "border-radius",
       "padding",
       "opacity"
@@ -71,7 +70,6 @@
       "center",
       "rgba(24, 20, 16, 0.94)",
       "#967a4d",
-      "1px",
       "6px",
       "4px",
       "1"

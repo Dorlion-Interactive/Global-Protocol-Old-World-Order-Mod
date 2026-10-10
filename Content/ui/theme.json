@@ -80,7 +80,7 @@
       "selector": ".card",
       "background-color": "#1e1813",
       "border-color": "#6e5939",
-      "border-radius": 4
+      "border-radius": "4px"
     },
     {
       "selector": ".card:hover",
@@ -128,25 +128,25 @@
     {
       "selector": ".mod-toolbar-panel",
       "position": "absolute",
-      "top": 120,
-      "right": 32,
+      "top": "120px",
+      "right": "32px",
       "flex-direction": "row",
       "background-color": "rgba(24, 20, 16, 0.94)",
       "border-color": "#967a4d",
-      "border-width": 1,
-      "border-radius": 6,
-      "padding": 4
+      "border-width": "1px",
+      "border-radius": "6px",
+      "padding": "4px"
     },
     {
       "selector": ".mod-toolbar-button",
-      "width": 32,
-      "height": 32,
-      "margin-left": 2,
-      "margin-right": 2,
+      "width": "32px",
+      "height": "32px",
+      "margin-left": "2px",
+      "margin-right": "2px",
       "background-color": "#2a221b",
       "border-color": "#8c734b",
-      "border-width": 1,
-      "border-radius": 4
+      "border-width": "1px",
+      "border-radius": "4px"
     },
     {
       "selector": ".mod-toolbar-button:hover",
@@ -189,7 +189,7 @@
       "selector": ".army-command-bar",
       "background-color": "#1c1712",
       "border-color": "#8c734b",
-      "border-width": 1
+      "border-width": "1px"
     },
     {
       "selector": ".army-command-btn",
@@ -206,8 +206,8 @@
       "selector": ".event-popup",
       "background-color": "#1a1511",
       "border-color": "#967a4d",
-      "border-width": 2,
-      "border-radius": 6
+      "border-width": "2px",
+      "border-radius": "6px"
     },
     {
       "selector": ".event-option-btn",
