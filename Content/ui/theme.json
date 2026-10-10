@@ -285,6 +285,70 @@
     {
       "selector": ".satellite-tracker",
       "display": "none"
+    },
+    {
+      "selector": ".defcon",
+      "display": "none"
+    },
+    {
+      "selector": "#defcon",
+      "display": "none"
+    },
+    {
+      "selector": ".defcon-badge",
+      "display": "none"
+    },
+    {
+      "selector": "#defcon-badge",
+      "display": "none"
+    },
+    {
+      "selector": ".defcon-indicator",
+      "display": "none"
+    },
+    {
+      "selector": "#defcon-indicator",
+      "display": "none"
+    },
+    {
+      "selector": ".defcon-pill",
+      "display": "none"
+    },
+    {
+      "selector": "#defcon-pill",
+      "display": "none"
+    },
+    {
+      "selector": ".defcon-level",
+      "display": "none"
+    },
+    {
+      "selector": "#defcon-level",
+      "display": "none"
+    },
+    {
+      "selector": ".defcon-container",
+      "display": "none"
+    },
+    {
+      "selector": "#defcon-container",
+      "display": "none"
+    },
+    {
+      "selector": ".threat-indicator",
+      "display": "none"
+    },
+    {
+      "selector": "#threat-indicator",
+      "display": "none"
+    },
+    {
+      "selector": ".world-tension-badge",
+      "display": "none"
+    },
+    {
+      "selector": "#world-tension-badge",
+      "display": "none"
     }
   ]
 }

@@ -41,8 +41,8 @@ public sealed class OldWorldOrder
     private int _buildingsObserved;
     private int _eventsObserved;
     private int _countriesEliminated;
-    private int _lastYear;
-    private int _lastMonth;
+    private int _lastYear = 1450;
+    private int _lastMonth = 1;
     private bool _startupShown;
     private bool _constantinopleFallen;
     private bool _soundDuesCaptured;
@@ -69,7 +69,7 @@ public sealed class OldWorldOrder
         _countriesEliminated = 0;
         _lastYear = 1450;
         _lastMonth = 1;
-        _startupShown = false;
+        _startupShown = true;
         _constantinopleFallen = false;
         _soundDuesCaptured = false;
         _malaccaCaptured = false;
@@ -77,6 +77,9 @@ public sealed class OldWorldOrder
         _muscatCaptured = false;
         _warAggressors.Clear();
         _host.Log("OWO initialized shared logic with ABI 3 diplomacy hooks.");
+
+        // Show startup briefing immediately on initialize so date and overview are accessible before unpausing
+        _host.ShowPopup("Strategic Briefing: 1450 AD", BuildBriefingBody(_lastYear, _lastMonth));
     }
 
     public void OnTick(int tick, int year, int month)
@@ -84,12 +87,12 @@ public sealed class OldWorldOrder
         _lastYear = year;
         _lastMonth = month;
 
-        if (_startupShown)
-            return;
-
-        _startupShown = true;
-        _host.ShowPopup("Strategic Briefing: 1450 AD", BuildBriefingBody(year, month));
-        _host.Log("OWO: startup popup shown via OnTick");
+        if (!_startupShown)
+        {
+            _startupShown = true;
+            _host.ShowPopup("Strategic Briefing: 1450 AD", BuildBriefingBody(year, month));
+            _host.Log("OWO: startup popup shown via OnTick fallback");
+        }
     }
 
     public void OnWarDeclared(int attacker, int defender, int tick)
@@ -227,7 +230,7 @@ public sealed class OldWorldOrder
 
     public void OnUiAction(string hookName, string modId)
     {
-        if (modId != ModId)
+        if (!string.IsNullOrEmpty(modId) && !string.Equals(modId, ModId, StringComparison.OrdinalIgnoreCase))
             return;
 
         switch (hookName)
@@ -282,12 +285,12 @@ public sealed class OldWorldOrder
              + "1. The Kalmar Union: Nordic crown union of Denmark (DAN), Sweden (SWD), and Norway under King Christian I.\n"
              + "2. The Swiss Confederacy: Alpine alliance of cantons (CHE) maintaining staunch armed neutrality.\n"
              + "3. The Holy Roman Empire: Imperial Diet of electors, prince-bishoprics, and free cities under Emperor Friedrich III (HAB).\n"
-             + "4. The League of Lezhë: Skanderbeg's Albanian military confederation (LEZ) holding the Danubian-Balkan mountain wall.\n"
+             + "4. The League of Lezhe: Skanderbeg's Albanian military confederation (LEZ) holding the Danubian-Balkan mountain wall.\n"
              + "5. The Livonian Confederation: Baltic tripartite union of the Livonian Order (LIV), Riga (RIG), and Dorpat.\n"
              + "6. The Ming Tributary Order: East Asian celestial hierarchy uniting Ming China (MYN), Joseon (JOS), and Ryukyu (RYU).\n\n"
              + "ACTIVE DAY-ONE WARS:\n"
              + "• The Hundred Years' War: France (FRA) pressing England (ENG) in Normandy and Gascony.\n"
-             + "• First Ottoman-Albanian War: Sultan Murad II (OTT) besieging Krujë against Skanderbeg (LEZ).\n"
+             + "• First Ottoman-Albanian War: Sultan Murad II (OTT) besieging Kruje against Skanderbeg (LEZ).\n"
              + "• Second Margrave War: Brandenburg (BRG) contesting Franconian Imperial Cities.\n"
              + "• Incan Andean Expansion: Pachacuti (INC) marching north from Cusco against regional polities.\n"
              + "• Deccan Hegemony Contest: Vijayanagara (VIJ) locked in frontier war with the Bahmani Sultanate (BAH).\n\n"
@@ -302,23 +305,23 @@ public sealed class OldWorldOrder
         return "HISTORICAL AMBITIONS & PATHS TO GLORY\n\n"
              + "The five modern victories are disabled. Only nine demanding historical achievements can end the campaign:\n\n"
              + "1. IMPERIAL HEGEMONY (Global Hegemon)\n"
-             + "   • Requirements: Year >= 1485 | 120+ Provinces Conquered | 10+ Wars Won | <2 Wars Lost | <150 Regiments Lost\n\n"
+             + "   • Requirements: Year 1485+ | 120+ Provinces Conquered | 10+ Wars Won | Max 1 War Lost | Max 149 Regiments Lost\n\n"
              + "2. DAWN OF THE AGE OF DISCOVERY (Oceanic Expansion)\n"
-             + "   • Requirements: Year >= 1492 | 40+ Provinces Gained | 6+ Wars Won | <2 Wars Lost | <20 Ships Lost\n\n"
+             + "   • Requirements: Year 1492+ | 40+ Provinces Gained | 6+ Wars Won | Max 1 War Lost | Max 19 Ships Lost\n\n"
              + "3. SULTAN-I RUM & CALIPHATE (Ottoman Realm)\n"
-             + "   • Requirements: Year >= 1480 | Flag: Constantinople Conquered | 80+ Provinces Gained | 8+ Wars Won | <2 Wars Lost\n\n"
+             + "   • Requirements: Year 1480+ | Constantinople Conquered | 80+ Provinces Gained | 8+ Wars Won | Max 1 War Lost\n\n"
              + "4. PAX SINICA & CELESTIAL MANDATE (Great Ming)\n"
-             + "   • Requirements: Year >= 1490 | Flag: Beijing Defended | 0 Wars Lost | <3 Provinces Lost | 5+ Wars Won\n\n"
+             + "   • Requirements: Year 1490+ | Beijing Defended | 0 Wars Lost | Max 2 Provinces Lost | 5+ Wars Won\n\n"
              + "5. SOVEREIGN OF THE SEVEN SEAS (Thalassocracy)\n"
-             + "   • Requirements: Year >= 1488 | 45+ Coastal Provinces | 7+ Wars Won | <12 Ships Lost | <2 Wars Lost\n\n"
+             + "   • Requirements: Year 1488+ | 45+ Coastal Provinces | 7+ Wars Won | Max 11 Ships Lost | Max 1 War Lost\n\n"
              + "6. CROWN OF SPAIN & RECONQUISTA (Castile & Aragon)\n"
-             + "   • Requirements: Year >= 1492 | Flags: Reconquista Completed & Catholic Monarchs United | 50+ Provinces | 6+ Wars Won\n\n"
+             + "   • Requirements: Year 1492+ | Reconquista Completed & Catholic Monarchs United | 50+ Provinces | 6+ Wars Won\n\n"
              + "7. THIRD ROME & TSARDOM OF ALL RUS (Muscovy)\n"
-             + "   • Requirements: Year >= 1480 | Flag: Third Rome Proclaimed | 75+ Provinces Gained | 7+ Wars Won | <2 Wars Lost\n\n"
+             + "   • Requirements: Year 1480+ | Third Rome Proclaimed | 75+ Provinces Gained | 7+ Wars Won | Max 1 War Lost\n\n"
              + "8. TRIUMPH OF THE HUNDRED YEARS (France / England)\n"
-             + "   • Requirements: Year >= 1475 | Flag: Hundred Years' War Won | 55+ Provinces Gained | 6+ Wars Won | <2 Wars Lost\n\n"
+             + "   • Requirements: Year 1475+ | Hundred Years' War Won | 55+ Provinces Gained | 6+ Wars Won | Max 1 War Lost\n\n"
              + "9. TAWANTINSUYU: REALM OF THE FOUR PARTS (Inca Empire)\n"
-             + "   • Requirements: Year >= 1480 | Flag: Tawantinsuyu Proclaimed | 60+ Andean Provinces | 6+ Wars Won | <2 Wars Lost";
+             + "   • Requirements: Year 1480+ | Tawantinsuyu Proclaimed | 60+ Andean Provinces | 6+ Wars Won | Max 1 War Lost";
     }
 
     private string BuildArchiveBody()

@@ -3,25 +3,25 @@
     {
       "id": "owo.welcome_btn",
       "iconPath": "Content/ui/icons/welcome.png",
-      "tooltip": "mod.ui.toolbar.welcome_tooltip",
+      "tooltip": "Strategic Briefing: 1450 AD",
       "hookName": "owo.welcome"
     },
     {
       "id": "owo.ambitions_btn",
-      "iconPath": "Content/ui/icons/welcome.png",
-      "tooltip": "mod.ui.toolbar.ambitions_tooltip",
+      "iconPath": "Content/ui/icons/ambitions.png",
+      "tooltip": "Historical Ambitions & Paths to Glory",
       "hookName": "owo.ambitions"
     },
     {
       "id": "owo.chronicle_btn",
       "iconPath": "Content/ui/icons/archive.png",
-      "tooltip": "mod.ui.toolbar.chronicle_tooltip",
+      "tooltip": "1450 World Chronicle & Maritime Chokepoints",
       "hookName": "owo.chronicle"
     },
     {
       "id": "owo.archive_btn",
       "iconPath": "Content/ui/icons/info.png",
-      "tooltip": "mod.ui.toolbar.archive_tooltip",
+      "tooltip": "Historian's Intelligence Archive",
       "hookName": "owo.archive"
     }
   ],
