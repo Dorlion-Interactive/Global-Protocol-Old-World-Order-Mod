@@ -22,6 +22,7 @@
       "name": "Urban (Orban)",
       "description": "Master brass and iron founder who designed the great Basilic bombard.",
       "role": "engineer",
+      "portrait": "Content/portraits/specialists/orban_engineer.png",
       "country": "OTT",
       "available_from": 1450,
       "hire_cost": 75000,

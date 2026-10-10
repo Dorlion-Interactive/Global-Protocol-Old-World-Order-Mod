@@ -8,28 +8,33 @@
       "id": "renaissance_sciences",
       "name": "Renaissance Sciences & Arts",
       "description": "Scholastic, humanist, and mechanical advancements of the early modern dawn.",
+      "icon": "track_renaissance_sciences",
       "nodes": [
         {
           "id": "movable_type",
           "name": "Movable Type Printing",
           "description": "Metal movable type printing presses rapidly disseminate books, treaties, and knowledge.",
+          "icon": "res_movable_type",
           "cost": 450,
           "position": [
             0,
             0
           ],
           "effects": {
-            "construction_speed_mult": 0.95
+            "research_speed": 0.15,
+            "policy_speed_mult": 0.90,
+            "law_cost_mult": 0.90
           },
           "ai": {
             "economy": 0.4,
-            "stability": 0.3
+            "stability": 0.5
           }
         },
         {
           "id": "double_entry_bookkeeping",
           "name": "Double-Entry Bookkeeping",
           "description": "Venetian merchant accounting methods that rationalize commercial enterprises and taxation.",
+          "icon": "res_double_entry_bookkeeping",
           "cost": 650,
           "prerequisites": [
             "movable_type"
@@ -39,16 +44,19 @@
             0
           ],
           "effects": {
-            "recruit_cost_mult": 0.95
+            "tax_efficiency_mult": 1.15,
+            "trade_income_mult": 1.12,
+            "corruption_delta": -0.05
           },
           "ai": {
-            "economy": 0.7
+            "economy": 0.8
           }
         },
         {
           "id": "humanist_statecraft",
           "name": "Humanist Statecraft",
           "description": "Revival of classical rhetoric, jurisprudence, and diplomatic administration.",
+          "icon": "res_humanist_statecraft",
           "cost": 600,
           "prerequisites": [
             "movable_type"
@@ -58,11 +66,14 @@
             1
           ],
           "effects": {
-            "upkeep_mult": 0.96
+            "diplomatic_capacity_delta": 2,
+            "relation_drift_delta": 0.05,
+            "stability_delta_monthly": 0.04,
+            "ae_gain_mult": 0.85
           },
           "ai": {
-            "diplomacy": 0.6,
-            "stability": 0.4
+            "diplomacy": 0.7,
+            "stability": 0.5
           }
         }
       ]
@@ -71,18 +82,21 @@
       "id": "late_medieval_warfare",
       "name": "Late Medieval Warfare",
       "description": "Evolution of siege artillery, gunpowder weapons, and ocean-going naval architecture.",
+      "icon": "track_late_medieval_warfare",
       "nodes": [
         {
           "id": "cast_bombards",
           "name": "Cast Siege Bombards",
           "description": "Heavy wrought iron and bronze siege guns capable of pulverizing concentric curtain walls.",
+          "icon": "res_cast_bombards",
           "cost": 500,
           "position": [
             0,
             0
           ],
           "effects": {
-            "military_attack": 0.08
+            "military_attack": 0.12,
+            "prestige_gain_mult": 1.15
           },
           "ai": {
             "military": 0.8
@@ -92,6 +106,7 @@
           "id": "matchlock_arquebus",
           "name": "Matchlock Arquebuses",
           "description": "Early individual firearms providing devastating armor penetration at close range.",
+          "icon": "res_matchlock_arquebus",
           "cost": 750,
           "prerequisites": [
             "cast_bombards"
@@ -101,8 +116,9 @@
             0
           ],
           "effects": {
-            "military_attack": 0.06,
-            "military_defense": 0.04
+            "military_attack": 0.10,
+            "military_defense": 0.08,
+            "unit_build_speed_mult": 0.90
           },
           "ai": {
             "military": 0.7
@@ -112,17 +128,20 @@
           "id": "caravel_ocean_rig",
           "name": "Caravel Oceanic Rigging",
           "description": "Lateen-rigged shallow draught vessels designed to tack into the wind along uncharted coasts.",
+          "icon": "res_caravel_ocean_rig",
           "cost": 600,
           "position": [
             0,
             1
           ],
           "effects": {
-            "unit_build_speed_mult": 0.92
+            "trade_income_mult": 0.15,
+            "production_output_mult": 1.08,
+            "unit_build_speed_mult": 0.85
           },
           "ai": {
-            "economy": 0.5,
-            "military": 0.4
+            "economy": 0.6,
+            "military": 0.5
           }
         }
       ]
