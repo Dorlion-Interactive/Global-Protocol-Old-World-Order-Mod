@@ -15,14 +15,15 @@
       "ai_weight": 2.0,
       "effects": {
         "research_speed": 0.25
-      }
+      },
+      "portrait": "portraits/specialists/johannes_gutenberg.png"
     },
     {
       "id": "orban_engineer",
       "name": "Urban (Orban)",
       "description": "Master brass and iron founder who designed the great Basilic bombard.",
       "role": "engineer",
-      "portrait": "Content/portraits/specialists/orban_engineer.png",
+      "portrait": "portraits/specialists/orban_engineer.png",
       "country": "OTT",
       "available_from": 1450,
       "hire_cost": 75000,
@@ -45,7 +46,8 @@
       "ai_weight": 2.0,
       "effects": {
         "construction_speed_mult": 1.35
-      }
+      },
+      "portrait": "portraits/specialists/filippo_brunelleschi.png"
     },
     {
       "id": "henry_the_navigator",
@@ -60,7 +62,8 @@
       "effects": {
         "research_speed": 0.2,
         "unit_build_speed_mult": 1.15
-      }
+      },
+      "portrait": "portraits/specialists/henry_the_navigator.png"
     },
     {
       "id": "georg_von_peuerbach",
@@ -74,7 +77,8 @@
       "ai_weight": 1.8,
       "effects": {
         "research_speed": 0.2
-      }
+      },
+      "portrait": "portraits/specialists/georg_von_peuerbach.png"
     },
     {
       "id": "yu_qian",
@@ -89,7 +93,8 @@
       "effects": {
         "unit_build_speed_mult": 1.25,
         "production_output_mult": 1.1
-      }
+      },
+      "portrait": "portraits/specialists/yu_qian.png"
     },
     {
       "id": "john_hunyadi",
@@ -103,7 +108,8 @@
       "ai_weight": 2.4,
       "effects": {
         "unit_build_speed_mult": 1.3
-      }
+      },
+      "portrait": "portraits/specialists/john_hunyadi.png"
     },
     {
       "id": "skanderbeg",
@@ -117,7 +123,8 @@
       "ai_weight": 2.0,
       "effects": {
         "unit_build_speed_mult": 1.2
-      }
+      },
+      "portrait": "portraits/specialists/skanderbeg.png"
     },
     {
       "id": "jean_bureau",
@@ -132,7 +139,8 @@
       "effects": {
         "unit_build_speed_mult": 1.35,
         "production_output_mult": 1.1
-      }
+      },
+      "portrait": "portraits/specialists/jean_bureau.png"
     },
     {
       "id": "ulugh_beg",
@@ -146,7 +154,8 @@
       "ai_weight": 2.0,
       "effects": {
         "research_speed": 0.25
-      }
+      },
+      "portrait": "portraits/specialists/ulugh_beg.png"
     },
     {
       "id": "ali_qushji",
@@ -160,7 +169,8 @@
       "ai_weight": 1.9,
       "effects": {
         "research_speed": 0.22
-      }
+      },
+      "portrait": "portraits/specialists/ali_qushji.png"
     },
     {
       "id": "tlacaelel",
@@ -175,7 +185,8 @@
       "effects": {
         "construction_speed_mult": 1.25,
         "production_output_mult": 1.15
-      }
+      },
+      "portrait": "portraits/specialists/tlacaelel.png"
     },
     {
       "id": "pachacuti",
@@ -189,7 +200,8 @@
       "ai_weight": 2.2,
       "effects": {
         "construction_speed_mult": 1.4
-      }
+      },
+      "portrait": "portraits/specialists/pachacuti.png"
     },
     {
       "id": "shin_sukju",
@@ -204,7 +216,8 @@
       "effects": {
         "research_speed": 0.2,
         "construction_speed_mult": 1.15
-      }
+      },
+      "portrait": "portraits/specialists/shin_sukju.png"
     },
     {
       "id": "mahmud_gawan",
@@ -219,7 +232,8 @@
       "effects": {
         "construction_speed_mult": 1.2,
         "production_output_mult": 1.2
-      }
+      },
+      "portrait": "portraits/specialists/mahmud_gawan.png"
     }
   ]
 }

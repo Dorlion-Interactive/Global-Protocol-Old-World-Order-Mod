@@ -320,6 +320,12 @@ if exist "%SCRIPT_DIR%images\" (
     if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on images\ & pause & exit /b 1 )
 )
 
+if exist "%SCRIPT_DIR%portraits\" (
+    echo   Copying portraits\...
+    robocopy "%SCRIPT_DIR%portraits"  "%TARGET%\portraits"  /E /NFL /NDL /NJH /NJS /R:1 /W:1
+    if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on portraits\ & pause & exit /b 1 )
+)
+
 echo   Copying Content\ (runtime assets only, no source files)...
 robocopy "%SCRIPT_DIR%Content" "%TARGET%\Content" /E /NFL /NDL /NJH /NJS /R:1 /W:1 /XD wasm-as wasm-dotnet mod-csharp /XF *.ts *.cs *.csproj *.c *.h *.a *.rsp
 if %ERRORLEVEL% GTR 7 ( echo ERROR: robocopy failed on Content\ & pause & exit /b 1 )
