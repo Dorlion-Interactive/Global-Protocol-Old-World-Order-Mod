@@ -19,7 +19,7 @@ names, which names a replacement must keep and which slots may be hidden is the 
 | `topbar` | stats, date, speed controls | yes | no |
 | `alerts` | alert bar, priority strip, pause / autosave ribbons | yes | no |
 | `sidebar` | the country panel and its tab content | yes | no |
-| `rail` | the domain rail (the ten tabs) | yes | no |
+| `rail` | the domain rail (the twelve tabs) | yes | no |
 | `mapmodes` | map mode buttons | yes | yes |
 | `statusbar` | the bottom status bar | yes | yes |
 | `outliner` | the outliner panel | yes | yes |
@@ -78,8 +78,8 @@ No `Style`, `Template` or `Instance`, no DTD or external references; at most 256
   [UI_INJECTION_GUIDE.md](UI_INJECTION_GUIDE.md) §5.1. A `Button`'s `hook` raises `OnUiAction` with that name, like a toolbar
   button.
 * **Required elements.** A replacement must place every required game element of its slot (for the top bar the date and the
-  four speed buttons, for the rail all ten tabs, ...), or contain the game element that holds it. Otherwise the slot stays
-  vanilla.
+  four speed buttons, for the rail the ten core tabs, ...), or contain the game element that holds it. Otherwise the slot stays
+  vanilla. The rail's Sphere and Trade tabs are optional: left out, they are parked and those pages open only through links.
 * **What happens to the rest.** Game elements the layout does not place are *parked*: moved into a hidden holder that stays in
   the tree, so the game can still update them. Hiding a slot parks all of it.
 

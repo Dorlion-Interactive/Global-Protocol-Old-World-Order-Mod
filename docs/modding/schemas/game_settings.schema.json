@@ -603,6 +603,20 @@
           "maximum": 4,
           "default": 0.5
         },
+        "infra_slot_top_band_start": {
+          "type": "number",
+          "description": "Infrastructure above which the top band adds building slots on top of the normal step. Set it to the passive infrastructure cap so budget-funded infrastructure unlocks exactly as before.",
+          "minimum": 0,
+          "maximum": 1000,
+          "default": 150
+        },
+        "infra_slot_top_band_threshold": {
+          "type": "number",
+          "description": "Infrastructure per extra building slot inside the top band (small nations scale it by small_nation_infra_threshold_scale). 0 turns the band off.",
+          "minimum": 0,
+          "maximum": 200,
+          "default": 25
+        },
         "province_size_weight_enabled": {
           "type": "boolean",
           "description": "Scale the flat additive building research_output lane by baked province size relative to the world-average province, correcting the ADM1/ADM2 admin-granularity imbalance. Trade bonuses stay unweighted (already country-capped at 0.50/0.25); GDP/resource lanes stay unweighted (already size-fair) as do defense and province-local effects.",
@@ -1976,12 +1990,6 @@
                 "hostility_suspend_months": {
                   "type": "integer",
                   "description": "Months a contract stays Suspended under hostility (war, freeze marker) before it is Terminated. Owner: lane C.",
-                  "minimum": 0,
-                  "maximum": 1000000
-                },
-                "indexed_review_months": {
-                  "type": "integer",
-                  "description": "Months between price reviews of an Indexed contract. Owner: lane C/S.",
                   "minimum": 0,
                   "maximum": 1000000
                 },
@@ -7728,7 +7736,7 @@
                   "type": "number",
                   "minimum": 0.0,
                   "maximum": 1.0,
-                  "description": "Share of the other leaders' positive monthly gains this month that erodes each leader's influence (rivals contest a target without freezing each other out: two equal rivals settle near gain x (1 - erosion_share) / decay)."
+                  "description": "Share of the strongest rival leader's positive gain this month that erodes each leader's influence (rivals contest a target without freezing each other out: equal rivals settle near gain x (1 - erosion_share) / decay, however many there are)."
                 },
                 "invite_threshold": {
                   "type": "integer",
@@ -7969,6 +7977,12 @@
                   "minimum": 1,
                   "maximum": 720,
                   "description": "Lifetime of the sphere_meddling opinion a rival leader holds toward a courter; each monthly court pass refreshes it, so it lapses by itself soon after the court stops or the target leaves the rival sphere."
+                },
+                "cost_target_gdp_share": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 0.01,
+                  "description": "Monthly cost of one influence project as a share of the TARGET's GDP, added to the leader-GDP share (0 = the cost ignores the target)."
                 }
               },
               "description": "Influence projects (courts)."
@@ -8120,6 +8134,18 @@
                       "minimum": 0,
                       "maximum": 14400,
                       "description": "Ticks after setting or changing this charter before it can be changed again."
+                    },
+                    "member_stability_target": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 30,
+                      "description": "Points added to a member's stability target (the stability target model's Sphere term). 0 = none."
+                    },
+                    "member_ae_decay_bonus": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 10,
+                      "description": "A member's peacetime aggressive-expansion decay runs at x (1 + this). 0 = none."
                     }
                   },
                   "description": "Economic charter: member export and growth boost; the leader earns an export bonus per member."
@@ -8268,6 +8294,18 @@
                       "minimum": 0,
                       "maximum": 14400,
                       "description": "Ticks after setting or changing this charter before it can be changed again."
+                    },
+                    "member_stability_target": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 30,
+                      "description": "Points added to a member's stability target (the stability target model's Sphere term). 0 = none."
+                    },
+                    "member_ae_decay_bonus": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 10,
+                      "description": "A member's peacetime aggressive-expansion decay runs at x (1 + this). 0 = none."
                     }
                   },
                   "description": "Security charter: the leader guarantees its members and members gain deterrence."
@@ -8416,6 +8454,18 @@
                       "minimum": 0,
                       "maximum": 14400,
                       "description": "Ticks after setting or changing this charter before it can be changed again."
+                    },
+                    "member_stability_target": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 30,
+                      "description": "Points added to a member's stability target (the stability target model's Sphere term). 0 = none."
+                    },
+                    "member_ae_decay_bonus": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 10,
+                      "description": "A member's peacetime aggressive-expansion decay runs at x (1 + this). 0 = none."
                     }
                   },
                   "description": "Political charter: member ideology drifts toward the leader's; stability and AE relief."
@@ -8620,6 +8670,30 @@
                       "minimum": 0.0,
                       "maximum": 1.0,
                       "description": "Weight of the current leader's influence on the member in its loyalty (0..1)."
+                    },
+                    "tier_pride_regional": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Acceptance penalty when the invited or tempted country is itself a Regional power (0 = none)."
+                    },
+                    "tier_pride_great": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Acceptance penalty when the invited or tempted country is itself a Great power or a Superpower (0 = none)."
+                    },
+                    "slot_value": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 10.0,
+                      "description": "Petitions only: penalty for a small petitioner taking one of a nearly full leader's last slots, weight x slot fill x (1 - size) (0 = none)."
+                    },
+                    "slot_value_full_ratio": {
+                      "type": "number",
+                      "minimum": 0.001,
+                      "maximum": 1.0,
+                      "description": "Score ratio (petitioner / leader) at which a petitioner counts as fully worth a slot for the slot-value term."
                     }
                   },
                   "description": "Target-side acceptance score terms (SphereAcceptance)."
@@ -8698,6 +8772,12 @@
                       "minimum": 0.0,
                       "maximum": 10.0,
                       "description": "A leave score this far over the threshold leaves at once; between the threshold and it, the member first waits a leave-evaluation window."
+                    },
+                    "retention_full_below": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 10000,
+                      "description": "Leader influence (hundredths) at or under which the retention pressure is full; it ramps from the retention floor down to this (0 = the old linear ramp to zero)."
                     }
                   },
                   "description": "Member-side decision to leave."
@@ -8842,6 +8922,12 @@
                       "minimum": 31,
                       "maximum": 7200,
                       "description": "Between a country's petitions to the same leader."
+                    },
+                    "release": {
+                      "type": "integer",
+                      "minimum": 31,
+                      "maximum": 7200,
+                      "description": "Between an AI leader's releases of low-value members."
                     }
                   },
                   "description": "Ticks. Every value must exceed the 30-tick AI planner cadence."
@@ -8932,6 +9018,24 @@
                         "minimum": 1,
                         "maximum": 40,
                         "description": "Resource kinds that make the resource value of a target count in full."
+                      },
+                      "human_answer_margin": {
+                        "type": "number",
+                        "minimum": 0.0,
+                        "maximum": 5.0,
+                        "description": "Extra acceptance score the AI wants before it invites or courts a human-led country, which it then predicts like an AI one (0 = no prediction: humans are always asked)."
+                      },
+                      "release_value_margin": {
+                        "type": "number",
+                        "minimum": 0.0,
+                        "maximum": 10.0,
+                        "description": "With full slots, an AI leader releases its lowest-value member when a blocked candidate is worth this much more (0 = never releases)."
+                      },
+                      "release_min_member_months": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 600,
+                        "description": "Months a member must have been in the sphere before the AI leader may release it for a better candidate."
                       }
                   },
                   "description": "How a leader or member runs its monthly sphere pass: action budget, affordability and hopelessness of courts, rivalry shares."

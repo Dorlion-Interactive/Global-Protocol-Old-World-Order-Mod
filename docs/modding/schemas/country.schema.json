@@ -228,6 +228,11 @@
                     "type": "number",
                     "description": "Foreign exchange reserves in USD"
                 },
+                "foreign_reserves_source": {
+                    "type": "string",
+                    "enum": ["estimated"],
+                    "description": "Set to \"estimated\" when foreign_reserves_usd is a pipeline estimate (no World Bank data: the sovereign's import cover for a dependency, else months of imports by income tier; DataPipeline/estimate_foreign_reserves.py). Absent = World Bank data. starting_treasury never reads the estimate."
+                },
                 "avg_tariff_rate": {
                     "type": "number",
                     "description": "Weighted mean applied tariff %"
