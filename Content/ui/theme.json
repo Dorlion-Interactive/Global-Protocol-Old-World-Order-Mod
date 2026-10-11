@@ -74,6 +74,7 @@
     },
     {
       "selector": ".stat-bar",
+      "background-color": "#181410",
       "border-color": "#6e5939"
     },
     {
@@ -348,6 +349,18 @@
     },
     {
       "selector": "#world-tension-badge",
+      "display": "none"
+    },
+    {
+      "selector": "#btn-un",
+      "display": "none"
+    },
+    {
+      "selector": "#un-proposal-badge",
+      "display": "none"
+    },
+    {
+      "selector": ".stat-bar__un-icon",
       "display": "none"
     }
   ]
