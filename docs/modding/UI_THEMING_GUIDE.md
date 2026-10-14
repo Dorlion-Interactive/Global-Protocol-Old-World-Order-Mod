@@ -17,7 +17,10 @@ Fonts cannot be changed by a mod.
 (a panel colour) or `--t-body` (the body text size) that the style sheets reference with `var(--surface-1)`.
 A theme redeclares tokens, so everything styled through a token changes at once, including the hover and
 pressed states. The list of tokens is `StreamingAssets/modding/hud_theme_tokens.json` (about 220: colours
-and sizes), and the Mod Builder lists them in groups with a search box.
+and sizes). Each token there names its `family` (what it is for: `amber`, `surfaces`, `type` …) and its
+`areas`: the places in the game whose styles use it, most used first (`top_bar`, `event_popup`, `economy` …;
+empty when only a theme's own rules can use it). The Mod Builder lists the tokens by family, says on each
+token's label what it is for and where it shows, and its search box also finds tokens by place ("Event popups").
 
 **What it does not change.** Tokens recolour only the part of the interface that is styled through them
 today. Two things are outside their reach, and a theme file cannot change either:

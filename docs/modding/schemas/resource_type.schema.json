@@ -33,6 +33,11 @@
       "description": "The unit base_price is quoted in, for tooltips: tonne, m3, vehicle, kUSD. Written by apply_real_world_resource_scale.py from resource_real_world_scale.json, so the price and its unit come from one row and cannot drift - it used to say Oil was priced per bbl at $660/tonne.",
       "maxLength": 8
     },
+    "freight_cargo": {
+      "type": "string",
+      "enum": ["dry_bulk", "liquid_bulk", "products", "container", "roro", "gas"],
+      "description": "The kind of ship a physical good travels in; its economy.trade.network.cargo_rate_mult_<kind> scales the surface freight rates (bulk ore pays a fraction of what a container or a car pays per tonne-km). Absent = the plain rates (services and financials are not shipped)."
+    },
     "terrain_bonus": {
       "type": "array",
       "items": {

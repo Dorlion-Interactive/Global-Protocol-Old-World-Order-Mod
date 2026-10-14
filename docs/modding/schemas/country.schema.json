@@ -187,6 +187,24 @@
                 "unemployment_rate": {
                     "type": "number"
                 },
+                "inflation_structural": {
+                    "type": "number",
+                    "description": "Realism round B28: the medium-term inflation level (percent) the country drifts to under its normal policy (macro_anchors.json).",
+                    "minimum": 0,
+                    "maximum": 100
+                },
+                "inflation_target": {
+                    "type": "number",
+                    "description": "Realism round B28: the central bank's inflation target (percent).",
+                    "minimum": 0,
+                    "maximum": 20
+                },
+                "cb_independence": {
+                    "type": "number",
+                    "description": "Realism round B28: central-bank independence 0-1 (how hard an AI bank fights inflation toward its target).",
+                    "minimum": 0,
+                    "maximum": 1
+                },
                 "hdi": {
                     "type": "number",
                     "minimum": 0,

@@ -1344,6 +1344,29 @@
           "minimum": -0.1,
           "maximum": 0.2
         },
+        "unemployment_own_trend_enabled": { "type": "integer", "minimum": 0, "description": "Realism round B28: 1 = unemployment reacts to growth around the country's own structural growth and floors at a share of its natural rate; 0 = the old world 2 % trend and 2 % floor." },
+        "unemployment_okun_coefficient": { "type": "number", "minimum": 0, "description": "Points of unemployment per point of growth above or below the country's structural growth (Okun; real 0.3-0.5)." },
+        "unemployment_min_rate": { "type": "number", "minimum": 0, "description": "The lowest any country's unemployment floor can be (frictional)." },
+        "unemployment_floor_share_of_natural": { "type": "number", "minimum": 0, "description": "A boom lowers unemployment at most to this share of the country's natural rate." },
+        "unemployment_social_factor": { "type": "number", "minimum": 0, "description": "Unemployment cut per unit of the social budget share (job programmes)." },
+        "unemployment_adjust_speed": { "type": "number", "minimum": 0, "description": "Share of the gap to the target closed each month (wage stickiness)." },
+        "unemployment_max_rate": { "type": "number", "minimum": 0, "description": "The highest unemployment any country can reach." },
+        "inflation_expectations_enabled": { "type": "integer", "minimum": 0, "description": "Realism round B28: 1 = inflation reverts to each country's expected inflation (anchored to its structural level), independent central banks aim at their target; 0 = the old world 2-4 % band." },
+        "inflation_neutral_real_rate": { "type": "number", "minimum": 0, "description": "r*: the neutral real policy rate; the neutral nominal rate is r* + expected inflation." },
+        "inflation_reversion_to_expected": { "type": "number", "minimum": 0, "description": "Share of the gap to expected inflation closed each month." },
+        "inflation_expectation_adapt": { "type": "number", "minimum": 0, "description": "Share of the gap to realised inflation expectations close each month." },
+        "inflation_expectation_to_structural": { "type": "number", "minimum": 0, "description": "Share of the gap to the structural level expectations close each month." },
+        "inflation_structural_adapt": { "type": "number", "minimum": 0, "description": "Structural level moved per month per unit of real policy gap." },
+        "inflation_policy_gap_cap": { "type": "number", "minimum": 0, "description": "The real policy gap counts at most this much either way." },
+        "inflation_structural_min": { "type": "number", "minimum": 0, "description": "The lowest the structural inflation level can fall." },
+        "inflation_structural_max": { "type": "number", "minimum": 0, "description": "The highest the structural inflation level can rise." },
+        "inflation_ai_response": { "type": "number", "minimum": 0, "description": "An AI bank's rate response per point of inflation above its aim (lerp(structural, target, independence))." },
+        "inflation_target_band_half_width": { "type": "number", "minimum": 0, "description": "The target band is the central bank's target +- this." },
+        "max_policy_rate": { "type": "number", "minimum": 0, "description": "The highest policy rate anyone can set." },
+        "rate_to_sovereign_spread": { "type": "number", "minimum": 0, "description": "Share of the real policy gap above neutral added to the government's borrowing rate." },
+        "rate_to_growth_penalty": { "type": "number", "minimum": 0, "description": "Annual growth lost per unit of real policy gap above neutral (easing helps at 0.35x)." },
+        "hdi_anchor_enabled": { "type": "integer", "minimum": 0, "maximum": 1, "description": "Realism round B28: 1 = the health index reads life expectancy, literacy is a fraction and HDI is the curated UNDP value x formula / formula at start; 0 = the raw formula." },
+        "unemployment_cyclical_gap_cap": { "type": "number", "minimum": 0, "description": "The largest growth gap (above or below structural growth) that moves unemployment." },
         "infrastructure_gdp_multiplier": {
           "type": "number",
           "description": "How much each unit of infrastructure boosts GDP",
@@ -1893,6 +1916,36 @@
               "description": "Relative auto-buy floor: fraction of GDP to keep in treasury before auto-buy. 0 disables the GDP term.",
               "minimum": 0,
               "maximum": 0.5
+            },
+            "world_imbalance_elasticity": {
+              "type": "number",
+              "description": "how hard a good's world price answers its world oversupply after partner matching: target = (rest-of-world offer / rest-of-world demand) ^ -elasticity. 0 = off (the reference price). Part 3 P7.1, 2026-10-12.",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "world_imbalance_min_factor": {
+              "type": "number",
+              "description": "floor of that price factor (0.5 = at most half the reference price). Part 3 P7.1, 2026-10-12.",
+              "minimum": 0.05,
+              "maximum": 1
+            },
+            "world_imbalance_max_factor": {
+              "type": "number",
+              "description": "ceiling of that price factor when the world offers less than it wants (1 = shortages never raise the price; a good no country produces always keeps the reference price). Part 3 P7.1, 2026-10-12.",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "world_imbalance_monthly_adjust": {
+              "type": "number",
+              "description": "share of the gap to its target the price factor closes each month. Part 3 P7.1, 2026-10-12.",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "auto_sell_overstock_first": {
+              "type": "integer",
+              "description": "1: auto-sell also sells a resource the country does not use (it keeps none of it), and the monthly sell slots go to the most overstocked resources first. 0: today's auto-sell. 2026-10-13.",
+              "minimum": 0,
+              "maximum": 1
             }
           }
         },
@@ -2058,6 +2111,29 @@
                   "description": "Max offers that may wait unanswered for one recipient at a time. 0 = no cap. Owner: lane C.",
                   "minimum": 0,
                   "maximum": 1000000
+                },
+                "ai_offer_world_price_weight": {
+                  "type": "number",
+                  "description": "0-1: an AI's contract offer is priced at lerp(the seller's local price, the world price, w), and an AI-made offer is judged against the same blend. 0 = the seller's local price. 2026-10-13.",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "min_offer_share_of_recipient_exports": {
+                  "type": "number",
+                  "description": "An AI does not offer a human a contract worth less than this share of the human's monthly exports a month. 0 = off. 2026-10-13.",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "min_offer_usd": {
+                  "type": "number",
+                  "description": "An AI does not offer a human a contract worth less than this many USD a month. 0 = off. 2026-10-13.",
+                  "minimum": 0
+                },
+                "ai_agreement_requires_human_gain": {
+                  "type": "integer",
+                  "description": "1: an AI proposes a trade agreement to a human only when it adds something for them (an effect below its cap, or a shortage it covers) and not while the human is at the pending-offer cap. 0 = off. 2026-10-13.",
+                  "minimum": 0,
+                  "maximum": 1
                 }
               }
             },
@@ -2179,6 +2255,42 @@
                   "minimum": 0,
                   "maximum": 1000000
                 },
+                "cargo_rate_mult_dry_bulk": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "Multiplier on the surface (sea and land) freight rates for resources whose resources.json freight_cargo is dry_bulk: ore, coal, grain and fertiliser in bulk carriers (Capesize/Panamax ~0.0015-0.002 USD per t-km). Air is not scaled. 0 = 1 (a stale bake). Part 3 P3.1, 2026-10-12."
+                },
+                "cargo_rate_mult_liquid_bulk": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "Multiplier on the surface (sea and land) freight rates for resources whose resources.json freight_cargo is liquid_bulk: crude oil in large tankers (VLCC ~0.0012-0.0018 USD per t-km). Air is not scaled. 0 = 1 (a stale bake). Part 3 P3.1, 2026-10-12."
+                },
+                "cargo_rate_mult_products": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "Multiplier on the surface (sea and land) freight rates for resources whose resources.json freight_cargo is products: refined products, chemicals, vegetable oils in product tankers and metals as breakbulk (~0.004-0.007). Air is not scaled. 0 = 1 (a stale bake). Part 3 P3.1, 2026-10-12."
+                },
+                "cargo_rate_mult_container": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "Multiplier on the surface (sea and land) freight rates for resources whose resources.json freight_cargo is container: goods in containers (rates by volume; ~0.01-0.015 per weight tonne-km for dense goods). Air is not scaled. 0 = 1 (a stale bake). Part 3 P3.1, 2026-10-12."
+                },
+                "cargo_rate_mult_roro": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "Multiplier on the surface (sea and land) freight rates for resources whose resources.json freight_cargo is roro: vehicles on ro-ro ships, charged by the space a car takes (~$1000-2000 a car Japan - US). Air is not scaled. 0 = 1 (a stale bake). Part 3 P3.1, 2026-10-12."
+                },
+                "cargo_rate_mult_gas": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "Multiplier on the surface (sea and land) freight rates for resources whose resources.json freight_cargo is gas: LNG carriers (~$1-2.5 per MMBtu). Air is not scaled. 0 = 1 (a stale bake). Part 3 P3.1, 2026-10-12."
+                },
                 "freight_tonnes_per_unit_m3": {
                   "type": "number",
                   "description": "Freight tonnes of one cubic metre of roundwood (FX-4).",
@@ -2292,7 +2404,8 @@
           "properties": {
             "ai_rate_response_coeff": { "type": "number", "description": "Mirrors game_settings.json: economy.central_bank.ai_rate_response_coeff" },
             "ai_rate_adjust_speed": { "type": "number", "description": "Mirrors game_settings.json: economy.central_bank.ai_rate_adjust_speed" },
-            "ai_max_rate_over_neutral": { "type": "number", "description": "Mirrors game_settings.json: economy.central_bank.ai_max_rate_over_neutral" }
+            "ai_max_rate_over_neutral": { "type": "number", "description": "Mirrors game_settings.json: economy.central_bank.ai_max_rate_over_neutral" },
+            "player_bank_auto": { "type": "integer", "minimum": 0, "maximum": 1, "description": "1: a player's central bank sets the rate by the AI rule until the player sets a rate (then manual until they let the bank decide again). 0: the player's rate stays where it is until they change it (realism round B28)" }
           }
         },
         "reserve_shield": {
@@ -4078,6 +4191,24 @@
               "type": "number",
               "minimum": 0,
               "maximum": 1
+            },
+            "trade_effect_scale": {
+              "type": "number",
+              "description": "Divisor for the build planner's trade lane: the strongest trade effect sum (export bonus + import discount + tariff reduction) in buildings.json. 2026-10-12.",
+              "minimum": 0.001,
+              "maximum": 1
+            },
+            "trade_benefit_weight": {
+              "type": "number",
+              "description": "Weight of the build planner's trade lane (trade buildings, valued by trade openness). 0 = off. 2026-10-12.",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "trade_gap_reference": {
+              "type": "number",
+              "description": "How far a country trails the world's trade-building export bonus when the trade lane doubles. 2026-10-12.",
+              "minimum": 0.001,
+              "maximum": 2
             }
           }
         },
@@ -5964,6 +6095,18 @@
           "minimum": 0,
           "maximum": 5
         },
+        "corruption_anchor_backs_out_terms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "1: the corruption anchor is seeded as corruption minus every other target term (laws, doctrines, low stability, war exhaustion, resilience, inflation at the structural level), so the target at start is the curated corruption. 0: corruption minus the applied doctrine (realism round B28)"
+        },
+        "corruption_target_resilience_two_sided": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "1: institutional resilience below 50 raises the corruption target as resilience above 50 lowers it. 0: only resilience above 50 counts (realism round B28)"
+        },
         "stability_target_corruption_weight": {
           "type": "number",
           "description": "Stability-target points lost per corruption point above the pivot (gained below it) (ships ~0.5); 0 disables the term",
@@ -5981,6 +6124,18 @@
           "description": "Absolute cap on the stability-target corruption term (ships ~20)",
           "minimum": 0,
           "maximum": 100
+        },
+        "stability_anchor_enabled": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "1: each country's stability target starts from its own anchor (its curated stability minus the target's other terms), which keeps a share of each shock. 0: the world-wide stability_target_base (realism round B28)"
+        },
+        "stability_anchor_shock_share": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Share of a shock to stability (an event, a coup, an election, a war hit) that stays on the country's baseline; the rest fades back to the target (ships 0.1; 0 = shocks fade fully)"
         },
         "corruption_tax_efficiency_pivot": {
           "type": "number",
@@ -6008,7 +6163,13 @@
         },
         "anti_corruption_campaign_permanent_share": {
           "type": "number",
-          "description": "Share of the cut that is permanent (lowers the country's baseline); the rest fades over the campaign (ships ~0.25)",
+          "description": "Share of the cut that is permanent (lowers the country's baseline); the rest fades over the campaign (ships ~0.1)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "event_corruption_anchor_share": {
+          "type": "number",
+          "description": "Share of an event's corruption change that stays on the country's baseline; the rest fades back toward the target (ships 0.25; 0 = all of it)",
           "minimum": 0,
           "maximum": 1
         },
@@ -6071,6 +6232,48 @@
           "description": "Treasury an AI must hold, as a multiple of the campaign cost (ships ~3)",
           "minimum": 0,
           "maximum": 100
+        },
+        "ai_anti_corruption_hybrid_mult": {
+          "type": "number",
+          "description": "Multiplier on an AI hybrid or transitional government's campaign chance (ships 0.6; 0 = 1, today's path)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ai_anti_corruption_autocracy_mult": {
+          "type": "number",
+          "description": "Multiplier on an AI autocracy's campaign chance: authoritarian, monarchy, junta, one-party, communist, theocracy (ships 0.3; 0 = 1)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "anti_corruption_campaign_failure_base": {
+          "type": "number",
+          "description": "Chance a campaign fails at or below the failure pivot (ships 0.15)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "anti_corruption_campaign_failure_per_point": {
+          "type": "number",
+          "description": "Extra failure chance per corruption point above the pivot (ships 0.006)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "anti_corruption_campaign_failure_pivot": {
+          "type": "number",
+          "description": "Corruption above which a campaign's failure chance rises (ships 40)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "anti_corruption_campaign_failure_max": {
+          "type": "number",
+          "description": "Highest chance a campaign fails (ships 0.6; 0 = campaigns never fail, today's path)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "anti_corruption_campaign_cost_corruption_scale": {
+          "type": "number",
+          "description": "The campaign cost x (1 + this x corruption / 100): deeper corruption costs more to fight (ships 1.0; 0 = today's cost)",
+          "minimum": 0,
+          "maximum": 10
         },
         "ai_anti_corruption_eval_chance": {
           "type": "number",
