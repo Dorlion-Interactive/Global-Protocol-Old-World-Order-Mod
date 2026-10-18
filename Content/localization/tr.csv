@@ -1167,3 +1167,36 @@ owo.org.holy_roman_empire.name,Kutsal Roma Imparatorlugu
 owo.org.league_of_lezhe.name,Lez Birligi
 owo.org.livonian_confederation.name,Livonya Konfederasyonu
 owo.org.ming_tributary_order.name,Ming Haraç Sistemi
+owo.event.burgundian_inheritance_crisis_1477.title,Burgonya Veraset Krizi
+owo.event.burgundian_inheritance_crisis_1477.description,Nancy Meydan Muharebesi'nde Cesur Charles'ın ölümüyle devasa Burgonya toprakları veraset krizine sürüklendi. Mary of Burgundy, Alçak Ülkeler'i Fransız işgaline karşı savunmak zorundadır.
+owo.event.burgundian_inheritance_crisis_1477.option_1,Avusturya Arşidükü Maximilian ile evlilik akdet.
+owo.event.burgundian_inheritance_crisis_1477.option_2,Fransa Kralı XI. Louis ile toprak tavizi karşılığı anlaş.
+owo.event.battle_of_bosworth_field_1485.title,Bosworth Field Muharebesi ve Tudor Gülü
+owo.event.battle_of_bosworth_field_1485.description,Güller Savaşı'nın nihai hesaplaşması Bosworth Ovası'nda gerçekleşti. Henry Tudor, İngiltere tacı için Kral III. Richard ile karşılaştı.
+owo.event.battle_of_bosworth_field_1485.option_1,VII. Henry'yi tahta çıkar; Lancaster ve York'u Tudor Gülü ile birleştir.
+owo.event.battle_of_bosworth_field_1485.option_2,III. Richard Tudor isyancılarını ezerek York üstünlüğünü korur.
+owo.event.columbus_atlantic_enterprise_1492.title,Hint Adaları Seferi Tasarısı
+owo.event.columbus_atlantic_enterprise_1492.description,Cenevizli denizci Kristof Kolomb, Okyanus Denizi'ni batıya doğru aşarak Asya'nın baharatlarına ulaşmak amacıyla Katolik Krallar'dan mali destek talep ediyor.
+owo.event.columbus_atlantic_enterprise_1492.option_1,Kraliyet desteği vererek üç açık deniz karavelasını donat.
+owo.event.columbus_atlantic_enterprise_1492.option_2,Tasarıyı gerçek dışı bularak reddet; kraliyet hazinesini koru.
+owo.event.new_world_discovered_1492.title,Yeni Dünya'ya Ayak Basış
+owo.event.new_world_discovered_1492.description,Otuz üç günlük batı seyrinin ardından İspanyol filosu Karayipler'de karaya ulaştı. Avrupa keşifleri için uçsuz bucaksız yeni topraklar açıldı.
+owo.event.new_world_discovered_1492.option_1,Keşfedilen toprakları Kastilya Tacı adına sahiplen!
+owo.event.treaty_of_tordesillas_1494.title,Tordesillas Antlaşması
+owo.event.treaty_of_tordesillas_1494.description,Papalık hakemliğinde toplanan İspanya ve Portekiz, Tordesillas'ta okyanus ötesi keşif alanlarını meridyen çizgisiyle ikiye bölen antlaşmayı müzakere ediyor.
+owo.event.treaty_of_tordesillas_1494.option_1,Antlaşmayı onaylayarak Portekiz denizcilik tekelini sağlama al.
+owo.event.treaty_of_tordesillas_1494.option_2,Bölünmeyi reddet; açık denizler yelken açan herkesindir.
+owo.event.french_italian_expedition_1494.title,VIII. Charles'ın İtalya Seferi
+owo.event.french_italian_expedition_1494.description,Napoli Krallığı üzerindeki Anjou mirasını talep eden Fransa Kralı VIII. Charles, hareketli bronz kuşatma topları eşliğinde Alpleri aşarak İtalya'ya indi.
+owo.event.french_italian_expedition_1494.option_1,Kraliyet toplarıyla İtalya'ya yürüyerek Napoli'yi talep et!
+owo.event.french_italian_expedition_1494.option_2,İtalya macerasından vazgeç; Fransa'nın refahına odaklan.
+owo.event.ming_great_wall_reinforcement_1457.title,Çin Seddi Tahkimatı
+owo.event.ming_great_wall_reinforcement_1457.description,Kuzey göçebelerinin akınlarından ders çıkaran Ming divanı, Dokuz Sınır Garnizonu boyunca taş ve tuğladan geçilmez bir savunma hattı inşa edilmesini öneriyor.
+owo.event.ming_great_wall_reinforcement_1457.option_1,Kuzey sınırı boyunca kesintisiz taş surlar inşa et.
+owo.event.ming_great_wall_reinforcement_1457.option_2,Geçitlerin ötesinde hareketli süvari birliklerine güven.
+owo.event.muscovy_byzantine_wedding_1472.title,Sofya Palaiologina ile İmparatorluk Nikahı
+owo.event.muscovy_byzantine_wedding_1472.description,Moskova Büyük Knezi III. İvan, son Bizans İmparatoru'nun yeğeni Sofya Palaiologina ile evlenerek çift başlı kartal armasını ve Roma'nın mirasını devralıyor.
+owo.event.muscovy_byzantine_wedding_1472.option_1,Sofya ile evlen ve Moskova'yı Üçüncü Roma ilan et!
+owo.event.muscovy_byzantine_wedding_1472.option_2,Hanedan evliliklerini Rus knezlikleriyle sınırlı tut.
+owo.org.lega_italica.name,Kutsal İtalyan Birliği (Lega Italica)
+owo.org.jagiellonian_union.name,Jagiellon Hanedan Birliği

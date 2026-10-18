@@ -1,9 +1,10 @@
 // GlobalProtocol: Old World Order — WASM Entrypoint (Variant B: AssemblyScript)
-import { log, showPopup, readString } from "./gp";
+import { log, showPopup, readString, addTreasury } from "./gp";
 
 const MOD_ID = "globalprotocol.old_world_order";
 
 const WELCOME_HOOK = "owo.welcome";
+const AMBITIONS_HOOK = "owo.ambitions";
 const ARCHIVE_HOOK = "owo.archive";
 const CHRONICLE_HOOK = "owo.chronicle";
 const BALANCE_OF_POWER_HOOK = "owo.balance_of_power";
@@ -61,6 +62,7 @@ export function on_province_captured(provinceId: i32, newOwner: i32, oldOwner: i
 
     if (provinceId == 2276 && !constantinopleFallen) {
         constantinopleFallen = true;
+        addTreasury(newOwner, 500.0);
         showPopup(
             "Geopolitical Shock: Fall of Constantinople",
             "With the fall of Constantinople, the Ottoman Empire secures uncontested mastery over the Bosporus straits.\n\n"
@@ -68,6 +70,7 @@ export function on_province_captured(provinceId: i32, newOwner: i32, oldOwner: i
         );
     } else if (provinceId == 162 && !soundDuesCaptured) {
         soundDuesCaptured = true;
+        addTreasury(newOwner, 300.0);
         showPopup(
             "Maritime Chokepoint: Sound Dues Control",
             "Control over the Øresund straits (Zealand/Copenhagen) has shifted!\n\n"
@@ -75,6 +78,7 @@ export function on_province_captured(provinceId: i32, newOwner: i32, oldOwner: i
         );
     } else if (provinceId == 545 && !malaccaCaptured) {
         malaccaCaptured = true;
+        addTreasury(newOwner, 400.0);
         showPopup(
             "Global Trade Hub: Fall of Malacca",
             "The great maritime emporium of Malacca has been captured!\n\n"
@@ -82,6 +86,7 @@ export function on_province_captured(provinceId: i32, newOwner: i32, oldOwner: i
         );
     } else if (provinceId == 2289 && !gibraltarCaptured) {
         gibraltarCaptured = true;
+        addTreasury(newOwner, 250.0);
         showPopup(
             "Naval Gateway: Strait of Gibraltar",
             "The Rock of Gibraltar has changed hands!\n\n"
@@ -117,6 +122,8 @@ export function on_ui_action(
 
     if (hookName == WELCOME_HOOK) {
         showPopup("Strategic Briefing: 1450 AD", buildBriefingBody(lastYear, lastMonth));
+    } else if (hookName == AMBITIONS_HOOK) {
+        showPopup("Historical Ambitions & Paths to Glory", buildAmbitionsBody());
     } else if (hookName == ARCHIVE_HOOK) {
         showPopup("Historian's Archive", buildArchiveBody());
     } else if (hookName == CHRONICLE_HOOK) {
@@ -244,6 +251,26 @@ function buildFaithsBody(): string {
         + "   • Temple of Heaven (Beijing) & Ise Grand Shrine (Japan).\n"
         + "   • Potala & Jokhang (Lhasa): Tibetan Vajrayana Buddhism.\n"
         + "   • Great Teocalli (Tenochtitlan) & Coricancha (Cusco): Sun temples.";
+}
+
+function buildAmbitionsBody(): string {
+    return "PATHS TO GLORY & HISTORICAL AMBITIONS (1450 AD)\n\n"
+        + "1. Ottoman Empire (OTT):\n"
+        + "   • Fall of Constantinople: Shatter the Theodosian Walls and claim the mantle of the Caesars.\n"
+        + "   • Danubian Frontier: Advance into the Balkans against Hungarian bastions.\n\n"
+        + "2. Kingdom of France (FRA):\n"
+        + "   • Expel the English from Guyenne and Normandy to conclude the Hundred Years' War.\n"
+        + "   • Subjugate and absorb the Burgundian appanage to consolidate the French crown.\n\n"
+        + "3. Crown of Castile (CAS) & Portugal (PRT):\n"
+        + "   • Reconquista: Subjugate the Nasrid Kingdom of Granada and claim Gibraltar.\n"
+        + "   • Oceanic Enterprise: Navigate the African littoral and unlock the Ocean Sea.\n\n"
+        + "4. Great Ming (MYN):\n"
+        + "   • Rebound from the Tumu disaster and reinforce the northern Great Wall garrisons.\n"
+        + "   • Preserve the Confucian Tributary Order across maritime and continental Asia.\n\n"
+        + "5. Grand Duchy of Moscow (MVY):\n"
+        + "   • Gather the Russian lands from Novgorod and Tver.\n"
+        + "   • Cast off the Great Horde's yoke and proclaim Moscow the Third Rome.\n\n"
+        + "Consult your national agenda panel for country-specific focus tasks and milestone rewards.";
 }
 
 function buildInfoBody(): string {

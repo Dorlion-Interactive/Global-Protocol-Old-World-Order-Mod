@@ -114,6 +114,14 @@ export function year(): i32 {
 }
 
 /**
+ * Add or subtract florins from a country's treasury.
+ * Requires "WriteTreasury" permission in mod.json.
+ */
+export function addTreasury(countryIndex: i32, amount: f32): void {
+    gp_add_treasury(countryIndex, amount);
+}
+
+/**
  * Anchor all known host imports in this module so wasm link coverage is explicit.
  * This function is never called by the host, and its guarded branch never runs,
  * so behavior remains unchanged while imports remain visible to the linker.

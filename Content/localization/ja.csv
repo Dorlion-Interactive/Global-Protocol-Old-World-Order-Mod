@@ -1167,3 +1167,36 @@ owo.org.holy_roman_empire.name,Holy Roman Empire
 owo.org.league_of_lezhe.name,League of Lezhe
 owo.org.livonian_confederation.name,Livonian Confederation
 owo.org.ming_tributary_order.name,Ming Tributary System
+owo.event.burgundian_inheritance_crisis_1477.title,The Burgundian Succession Crisis
+owo.event.burgundian_inheritance_crisis_1477.description,Following the fall of Charles the Bold at Nancy, the vast Burgundian realm faces a succession crisis. Mary of Burgundy must secure the Low Countries and Burgundy against French encroachment.
+owo.event.burgundian_inheritance_crisis_1477.option_1,Arrange marriage with Archduke Maximilian of Austria.
+owo.event.burgundian_inheritance_crisis_1477.option_2,Negotiate territorial concessions with King Louis XI of France.
+owo.event.battle_of_bosworth_field_1485.title,Battle of Bosworth Field & The Tudor Rose
+owo.event.battle_of_bosworth_field_1485.description,On Redemore plain near Market Bosworth, the final decisive clash of the Wars of the Roses unfolds. Henry Tudor challenges King Richard III for the English crown.
+owo.event.battle_of_bosworth_field_1485.option_1,Crown Henry VII and unite Lancaster and York with the Tudor Rose.
+owo.event.battle_of_bosworth_field_1485.option_2,Richard III crushes the Tudor host, securing Yorkist supremacy.
+owo.event.columbus_atlantic_enterprise_1492.title,The Enterprise of the Indies
+owo.event.columbus_atlantic_enterprise_1492.description,Genoese navigator Christopher Columbus petitions the Catholic Monarchs for royal backing to reach the spices of Asia by sailing westward across the Ocean Sea.
+owo.event.columbus_atlantic_enterprise_1492.option_1,Grant royal patronage and outfit three ocean-going caravels.
+owo.event.columbus_atlantic_enterprise_1492.option_2,Dismiss the proposal as unfeasible; preserve royal treasury.
+owo.event.new_world_discovered_1492.title,Landfall in the New World
+owo.event.new_world_discovered_1492.description,After thirty-three days of westward navigation, the Spanish expedition makes landfall in the Caribbean. An immense uncharted world opens to European exploration.
+owo.event.new_world_discovered_1492.option_1,Claim the newly discovered lands for the Crown of Castile!
+owo.event.treaty_of_tordesillas_1494.title,The Treaty of Tordesillas
+owo.event.treaty_of_tordesillas_1494.description,Under Papal mediation, Spain and Portugal convene at Tordesillas to establish an oceanic meridian dividing global zones of navigation and trade.
+owo.event.treaty_of_tordesillas_1494.option_1,Ratify the treaty meridian to guarantee Portuguese navigation rights.
+owo.event.treaty_of_tordesillas_1494.option_2,Refuse the division; the high seas belong to those who sail them.
+owo.event.french_italian_expedition_1494.title,Descent of Charles VIII into Italy
+owo.event.french_italian_expedition_1494.description,Claiming the Angevin right to the Kingdom of Naples, King Charles VIII leads a formidable French army with mobile bronze siege artillery across the Alps.
+owo.event.french_italian_expedition_1494.option_1,March into Italy with royal bombards to claim Naples!
+owo.event.french_italian_expedition_1494.option_2,Abandon Italian adventures; focus on the prosperity of France.
+owo.event.ming_great_wall_reinforcement_1457.title,The Great Wall Frontier Fortification
+owo.event.ming_great_wall_reinforcement_1457.description,Reeling from northern nomad incursions, imperial ministers urge the Emperor to construct an unbroken stone and brick defense line across the Nine Frontier Garrisons.
+owo.event.ming_great_wall_reinforcement_1457.option_1,Construct permanent stone ramparts across the northern frontier.
+owo.event.ming_great_wall_reinforcement_1457.option_2,Maintain flexible mobile cavalry forces beyond the passes.
+owo.event.muscovy_byzantine_wedding_1472.title,Imperial Marriage of Sophia Palaiologina
+owo.event.muscovy_byzantine_wedding_1472.description,Grand Prince Ivan III of Moscow marries Sophia Palaiologina, niece of the last Byzantine Emperor, inheriting the imperial double-headed eagle and the mantle of Rome.
+owo.event.muscovy_byzantine_wedding_1472.option_1,Wed Sophia and proclaim Moscow as the Third Rome!
+owo.event.muscovy_byzantine_wedding_1472.option_2,Keep dynastic ties confined to neighboring Russian princes.
+owo.org.lega_italica.name,Most Holy Italian League (Lega Italica)
+owo.org.jagiellonian_union.name,Jagiellonian Dynastic Union
