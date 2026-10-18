@@ -22,8 +22,8 @@
           ],
           "effects": {
             "research_speed": 0.15,
-            "policy_speed_mult": 0.90,
-            "law_cost_mult": 0.90
+            "policy_speed_mult": 0.9,
+            "law_cost_mult": 0.9
           },
           "ai": {
             "economy": 0.4,
@@ -116,9 +116,9 @@
             0
           ],
           "effects": {
-            "military_attack": 0.10,
+            "military_attack": 0.1,
             "military_defense": 0.08,
-            "unit_build_speed_mult": 0.90
+            "unit_build_speed_mult": 0.9
           },
           "ai": {
             "military": 0.7
@@ -145,6 +145,78 @@
           }
         }
       ]
+    },
+    {
+      "id": "oceanic_navigation",
+      "name": "Oceanic Navigation & Cartography",
+      "description": "Astronomical charts, magnetic instruments, and oceanic wind gyres opening transoceanic trade routes.",
+      "icon": "track_oceanic_navigation",
+      "nodes": [
+        {
+          "id": "portolan_charts",
+          "name": "Portolan Charts & Compass",
+          "description": "Nautical charts crisscrossed with rhumb lines and compass bearings mapping Mediterranean and Atlantic coastal havens.",
+          "icon": "res_portolan_charts",
+          "cost": 480,
+          "position": [
+            0,
+            0
+          ],
+          "effects": {
+            "trade_income_mult": 1.1,
+            "military_defense": 0.05
+          },
+          "ai": {
+            "economy": 0.6,
+            "military": 0.4
+          }
+        },
+        {
+          "id": "mariners_astrolabe",
+          "name": "Mariner's Astrolabe & Ephemerides",
+          "description": "Heavy brass navigational astrolabes and solar declination tables enabling latitude calculation out of sight of land.",
+          "icon": "res_mariners_astrolabe",
+          "cost": 680,
+          "prerequisites": [
+            "portolan_charts"
+          ],
+          "position": [
+            1,
+            0
+          ],
+          "effects": {
+            "research_speed": 0.1,
+            "trade_income_mult": 1.15
+          },
+          "ai": {
+            "economy": 0.7,
+            "intel": 0.5
+          }
+        },
+        {
+          "id": "volta_do_mar",
+          "name": "Volta do Mar",
+          "description": "Deep-sea sailing doctrine utilizing circular Atlantic prevailing wind gyres to return reliably from the African coast.",
+          "icon": "res_volta_do_mar",
+          "cost": 850,
+          "prerequisites": [
+            "mariners_astrolabe"
+          ],
+          "position": [
+            2,
+            0
+          ],
+          "effects": {
+            "unit_build_speed_mult": 0.85,
+            "trade_income_mult": 1.2,
+            "prestige_gain_mult": 1.2
+          },
+          "ai": {
+            "economy": 0.8,
+            "military": 0.6
+          }
+        }
+      ]
     }
   ],
   "starting": {
@@ -152,10 +224,17 @@
       "cast_bombards"
     ],
     "PRT": [
-      "caravel_ocean_rig"
+      "caravel_ocean_rig",
+      "portolan_charts"
     ],
     "VNC": [
       "double_entry_bookkeeping"
+    ],
+    "GEN": [
+      "portolan_charts"
+    ],
+    "CAS": [
+      "portolan_charts"
     ]
   }
 }
