@@ -2053,5 +2053,442 @@
         ]
       }
     ]
+  },
+  {
+    "id": "burgundian_inheritance_crisis_1477",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "BUR",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1477-01"
+      }
+    ],
+    "title_key": "owo.event.burgundian_inheritance_crisis_1477.title",
+    "description_key": "owo.event.burgundian_inheritance_crisis_1477.description",
+    "options": [
+      {
+        "text_key": "owo.event.burgundian_inheritance_crisis_1477.option_1",
+        "effects": [
+          {
+            "type": "form_alliance",
+            "target": "HAB"
+          },
+          {
+            "type": "add_relation",
+            "target": "HAB",
+            "value": 50
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "burgundian_habsburg_union"
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.burgundian_inheritance_crisis_1477.option_2",
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "FRA",
+            "value": 40
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "burgundian_french_treaty"
+          }
+        ]
+      }
+    ],
+    "image": "burgundian_inheritance"
+  },
+  {
+    "id": "battle_of_bosworth_field_1485",
+    "type": "scripted",
+    "category": "internal_politics",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "ENG",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1485-01"
+      }
+    ],
+    "title_key": "owo.event.battle_of_bosworth_field_1485.title",
+    "description_key": "owo.event.battle_of_bosworth_field_1485.description",
+    "options": [
+      {
+        "text_key": "owo.event.battle_of_bosworth_field_1485.option_1",
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 20
+          },
+          {
+            "type": "modify_unrest",
+            "value": -15
+          },
+          {
+            "type": "add_treasury",
+            "value": 300
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "tudor_dynasty_founded"
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.battle_of_bosworth_field_1485.option_2",
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 5
+          },
+          {
+            "type": "modify_military",
+            "stat": "morale",
+            "value": 15
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "yorkist_supremacy_secured"
+          }
+        ]
+      }
+    ],
+    "image": "battle_of_bosworth"
+  },
+  {
+    "id": "columbus_atlantic_enterprise_1492",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "CAS",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1492-01"
+      }
+    ],
+    "title_key": "owo.event.columbus_atlantic_enterprise_1492.title",
+    "description_key": "owo.event.columbus_atlantic_enterprise_1492.description",
+    "options": [
+      {
+        "text_key": "owo.event.columbus_atlantic_enterprise_1492.option_1",
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": -150
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "columbus_voyage_funded"
+          },
+          {
+            "type": "fire_event",
+            "chain_event": "new_world_discovered_1492",
+            "delay_months": 8
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.columbus_atlantic_enterprise_1492.option_2",
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": 100
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "atlantic_enterprise_rejected"
+          }
+        ]
+      }
+    ],
+    "image": "columbus_enterprise"
+  },
+  {
+    "id": "new_world_discovered_1492",
+    "type": "scripted",
+    "category": "social_cultural",
+    "priority": 10,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "CAS",
+    "title_key": "owo.event.new_world_discovered_1492.title",
+    "description_key": "owo.event.new_world_discovered_1492.description",
+    "options": [
+      {
+        "text_key": "owo.event.new_world_discovered_1492.option_1",
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "add_treasury",
+            "value": 400
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "new_world_revealed"
+          },
+          {
+            "type": "fire_event",
+            "chain_event": "treaty_of_tordesillas_1494",
+            "delay_months": 18
+          }
+        ]
+      }
+    ],
+    "image": "new_world_landfall"
+  },
+  {
+    "id": "treaty_of_tordesillas_1494",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "PRT",
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1494-01"
+      }
+    ],
+    "title_key": "owo.event.treaty_of_tordesillas_1494.title",
+    "description_key": "owo.event.treaty_of_tordesillas_1494.description",
+    "options": [
+      {
+        "text_key": "owo.event.treaty_of_tordesillas_1494.option_1",
+        "effects": [
+          {
+            "type": "sign_truce",
+            "target": "CAS",
+            "months": 120
+          },
+          {
+            "type": "add_relation",
+            "target": "CAS",
+            "value": 40
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "tordesillas_monopoly_ratified"
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.treaty_of_tordesillas_1494.option_2",
+        "effects": [
+          {
+            "type": "modify_military",
+            "stat": "attack",
+            "value": 0.1
+          },
+          {
+            "type": "add_relation",
+            "target": "CAS",
+            "value": -30
+          }
+        ]
+      }
+    ],
+    "image": "treaty_of_tordesillas"
+  },
+  {
+    "id": "french_italian_expedition_1494",
+    "type": "scripted",
+    "category": "geopolitical_crisis",
+    "priority": 9,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "FRA",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1494-01"
+      }
+    ],
+    "title_key": "owo.event.french_italian_expedition_1494.title",
+    "description_key": "owo.event.french_italian_expedition_1494.description",
+    "options": [
+      {
+        "text_key": "owo.event.french_italian_expedition_1494.option_1",
+        "effects": [
+          {
+            "type": "modify_military",
+            "stat": "attack",
+            "value": 0.15,
+            "months": 36
+          },
+          {
+            "type": "add_relation",
+            "target": "VNC",
+            "value": -40
+          },
+          {
+            "type": "add_relation",
+            "target": "MIL",
+            "value": -40
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "italian_wars_ignited"
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.french_italian_expedition_1494.option_2",
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "economy.gdp_growth_rate",
+            "value": 0.02
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          }
+        ]
+      }
+    ],
+    "image": "charles_viii_italy"
+  },
+  {
+    "id": "ming_great_wall_reinforcement_1457",
+    "type": "scripted",
+    "category": "military_incident",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "MYN",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1457-01"
+      }
+    ],
+    "title_key": "owo.event.ming_great_wall_reinforcement_1457.title",
+    "description_key": "owo.event.ming_great_wall_reinforcement_1457.description",
+    "options": [
+      {
+        "text_key": "owo.event.ming_great_wall_reinforcement_1457.option_1",
+        "effects": [
+          {
+            "type": "add_treasury",
+            "value": -300
+          },
+          {
+            "type": "modify_military",
+            "stat": "defense",
+            "value": 0.2
+          },
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 10
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "great_wall_fortified"
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.ming_great_wall_reinforcement_1457.option_2",
+        "effects": [
+          {
+            "type": "modify_military",
+            "stat": "attack",
+            "value": 0.1
+          },
+          {
+            "type": "create_unit",
+            "unit_id": "ming_cavalry_archer",
+            "count": 3
+          }
+        ]
+      }
+    ],
+    "image": "ming_great_wall"
+  },
+  {
+    "id": "muscovy_byzantine_wedding_1472",
+    "type": "scripted",
+    "category": "diplomatic_opportunity",
+    "priority": 8,
+    "fire_once": true,
+    "target": "specific_country",
+    "target_country": "MVY",
+    "immediate": true,
+    "conditions": [
+      {
+        "type": "date_after",
+        "value": "1472-01"
+      }
+    ],
+    "title_key": "owo.event.muscovy_byzantine_wedding_1472.title",
+    "description_key": "owo.event.muscovy_byzantine_wedding_1472.description",
+    "options": [
+      {
+        "text_key": "owo.event.muscovy_byzantine_wedding_1472.option_1",
+        "effects": [
+          {
+            "type": "modify_stat",
+            "field": "government.stability",
+            "value": 15
+          },
+          {
+            "type": "add_treasury",
+            "value": 200
+          },
+          {
+            "type": "set_flag",
+            "flag_name": "third_rome_heraldry_adopted"
+          }
+        ]
+      },
+      {
+        "text_key": "owo.event.muscovy_byzantine_wedding_1472.option_2",
+        "effects": [
+          {
+            "type": "add_relation",
+            "target": "TVR",
+            "value": 25
+          },
+          {
+            "type": "add_relation",
+            "target": "RYA",
+            "value": 25
+          }
+        ]
+      }
+    ],
+    "image": "sophia_palaiologina_wedding"
   }
 ]
