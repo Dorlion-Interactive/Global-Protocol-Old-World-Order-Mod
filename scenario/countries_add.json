@@ -36,7 +36,41 @@
       "primaryCulture": "Ottoman",
       "ethnicHomogeneity": 0.65,
       "mapColorVibrant": "#F1220E",
-      "mapColorGloomy": "#79433E"
+      "mapColorGloomy": "#79433E",
+      "leaderNamePool": [
+        {
+          "name": "Mehmed II",
+          "title": "Sultan",
+          "gender": "male"
+        },
+        {
+          "name": "Bayezid II",
+          "title": "Sultan",
+          "gender": "male"
+        },
+        {
+          "name": "Selim I",
+          "title": "Sultan",
+          "gender": "male"
+        },
+        {
+          "name": "Suleiman I",
+          "title": "Sultan",
+          "gender": "male"
+        },
+        {
+          "name": "Cem Sultan",
+          "title": "Sultan",
+          "gender": "male"
+        },
+        {
+          "name": "Murad III",
+          "title": "Sultan",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/OTT.png"
     },
     {
       "iso3": "FRA",
@@ -70,7 +104,36 @@
       "primaryCulture": "French",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#3265FF",
-      "mapColorGloomy": "#455994"
+      "mapColorGloomy": "#455994",
+      "leaderNamePool": [
+        {
+          "name": "Louis XI",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Charles VIII",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Louis XII",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Francis I",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Henry II",
+          "title": "King",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/FRA.png"
     },
     {
       "iso3": "PRT",
@@ -105,7 +168,31 @@
       "primaryCulture": "Portuguese",
       "ethnicHomogeneity": 0.9,
       "mapColorVibrant": "#20EC20",
-      "mapColorGloomy": "#437D43"
+      "mapColorGloomy": "#437D43",
+      "leaderNamePool": [
+        {
+          "name": "John II",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Manuel I",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "John III",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Sebastian I",
+          "title": "King",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/PRT.png"
     },
     {
       "iso3": "CHE",
@@ -136,7 +223,26 @@
       "primaryCulture": "Swiss",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#FF0D0D",
-      "mapColorGloomy": "#8F3030"
+      "mapColorGloomy": "#8F3030",
+      "leaderNamePool": [
+        {
+          "name": "Hans Waldmann",
+          "title": "Diet",
+          "gender": "male"
+        },
+        {
+          "name": "Adrian von Bubenberg",
+          "title": "Diet",
+          "gender": "male"
+        },
+        {
+          "name": "Heinrich Fleckenstein",
+          "title": "Diet",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/CHE.png"
     },
     {
       "iso3": "POL",
@@ -169,7 +275,36 @@
       "primaryCulture": "Polish",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#FF5C74",
-      "mapColorGloomy": "#B83D50"
+      "mapColorGloomy": "#B83D50",
+      "leaderNamePool": [
+        {
+          "name": "John I Albert",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Alexander I",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Sigismund I the Old",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Sigismund II Augustus",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Stephen Báthory",
+          "title": "King",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/POL.png"
     },
     {
       "iso3": "HUN",
@@ -202,7 +337,31 @@
       "primaryCulture": "Hungarian",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#FF7157",
-      "mapColorGloomy": "#B7503D"
+      "mapColorGloomy": "#B7503D",
+      "leaderNamePool": [
+        {
+          "name": "Matthias Corvinus",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Vladislaus II",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Louis II",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "John Zápolya",
+          "title": "King",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/HUN.png"
     },
     {
       "iso3": "MYN",
@@ -238,7 +397,41 @@
       "primaryCulture": "Chinese",
       "ethnicHomogeneity": 0.95,
       "mapColorVibrant": "#FFC643",
-      "mapColorGloomy": "#A08447"
+      "mapColorGloomy": "#A08447",
+      "leaderNamePool": [
+        {
+          "name": "Tianshun",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Chenghua",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Hongzhi",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Zhengde",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Jiajing",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Wanli",
+          "title": "Emperor",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/MYN.png"
     },
     {
       "iso3": "ENG",
@@ -270,7 +463,41 @@
       "primaryCulture": "English",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#E42727",
-      "mapColorGloomy": "#7A4545"
+      "mapColorGloomy": "#7A4545",
+      "leaderNamePool": [
+        {
+          "name": "Edward IV",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Richard III",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Henry VII",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Henry VIII",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Edward VI",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Elizabeth I",
+          "title": "Queen",
+          "gender": "female"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/ENG.png"
     },
     {
       "iso3": "CAS",
@@ -303,7 +530,41 @@
       "primaryCulture": "Castilian",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#F3B901",
-      "mapColorGloomy": "#766838"
+      "mapColorGloomy": "#766838",
+      "leaderNamePool": [
+        {
+          "name": "Henry IV",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Isabella I",
+          "title": "Queen",
+          "gender": "female"
+        },
+        {
+          "name": "Ferdinand V",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Joanna I",
+          "title": "Queen",
+          "gender": "female"
+        },
+        {
+          "name": "Charles I",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Philip II",
+          "title": "King",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/CAS.png"
     },
     {
       "iso3": "ARA",
@@ -370,7 +631,31 @@
       "primaryCulture": "Muscovite",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#CC0000",
-      "mapColorGloomy": "#4E1A1A"
+      "mapColorGloomy": "#4E1A1A",
+      "leaderNamePool": [
+        {
+          "name": "Ivan III",
+          "title": "Grand Prince",
+          "gender": "male"
+        },
+        {
+          "name": "Vasily III",
+          "title": "Grand Prince",
+          "gender": "male"
+        },
+        {
+          "name": "Ivan IV",
+          "title": "Tsar",
+          "gender": "male"
+        },
+        {
+          "name": "Feodor I",
+          "title": "Tsar",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/MVY.png"
     },
     {
       "iso3": "VNC",
@@ -404,7 +689,41 @@
       "primaryCulture": "Venetian",
       "ethnicHomogeneity": 0.8,
       "mapColorVibrant": "#158ABA",
-      "mapColorGloomy": "#35535F"
+      "mapColorGloomy": "#35535F",
+      "leaderNamePool": [
+        {
+          "name": "Pasquale Malipiero",
+          "title": "Doge",
+          "gender": "male"
+        },
+        {
+          "name": "Cristoforo Moro",
+          "title": "Doge",
+          "gender": "male"
+        },
+        {
+          "name": "Pietro Mocenigo",
+          "title": "Doge",
+          "gender": "male"
+        },
+        {
+          "name": "Andrea Vendramin",
+          "title": "Doge",
+          "gender": "male"
+        },
+        {
+          "name": "Agostino Barbarigo",
+          "title": "Doge",
+          "gender": "male"
+        },
+        {
+          "name": "Leonardo Loredan",
+          "title": "Doge",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/VNC.png"
     },
     {
       "iso3": "MAM",
@@ -437,7 +756,31 @@
       "primaryCulture": "Mamluk",
       "ethnicHomogeneity": 0.75,
       "mapColorVibrant": "#E2AD44",
-      "mapColorGloomy": "#84724E"
+      "mapColorGloomy": "#84724E",
+      "leaderNamePool": [
+        {
+          "name": "Al-Ashraf Inal",
+          "title": "Sultan",
+          "gender": "male"
+        },
+        {
+          "name": "Khushqadam",
+          "title": "Sultan",
+          "gender": "male"
+        },
+        {
+          "name": "Qaitbay",
+          "title": "Sultan",
+          "gender": "male"
+        },
+        {
+          "name": "Qansuh al-Ghawri",
+          "title": "Sultan",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/MAM.png"
     },
     {
       "iso3": "TIM",
@@ -503,7 +846,36 @@
       "primaryCulture": "Joseon",
       "ethnicHomogeneity": 0.95,
       "mapColorVibrant": "#2C8AA5",
-      "mapColorGloomy": "#3B535A"
+      "mapColorGloomy": "#3B535A",
+      "leaderNamePool": [
+        {
+          "name": "Danjong",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Sejo",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Yejong",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Seongjong",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Jungjong",
+          "title": "King",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/JOS.png"
     },
     {
       "iso3": "VIJ",
@@ -569,7 +941,36 @@
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#19B36E",
       "mapColorGloomy": "#325746",
-      "leaderName": "Moctezuma I"
+      "leaderName": "Moctezuma I",
+      "leaderNamePool": [
+        {
+          "name": "Axayacatl",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Tizoc",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Ahuitzotl",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Moctezuma II",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Cuauhtemoc",
+          "title": "Emperor",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/AZT.png"
     },
     {
       "iso3": "INC",
@@ -601,7 +1002,31 @@
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#DFA800",
       "mapColorGloomy": "#776428",
-      "leaderName": "Pachacuti"
+      "leaderName": "Pachacuti",
+      "leaderNamePool": [
+        {
+          "name": "Topa Inca Yupanqui",
+          "title": "Sapa Inca",
+          "gender": "male"
+        },
+        {
+          "name": "Huayna Capac",
+          "title": "Sapa Inca",
+          "gender": "male"
+        },
+        {
+          "name": "Huascar",
+          "title": "Sapa Inca",
+          "gender": "male"
+        },
+        {
+          "name": "Atahualpa",
+          "title": "Sapa Inca",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/INC.png"
     },
     {
       "iso3": "BUR",
@@ -635,7 +1060,26 @@
       "primaryCulture": "Burgundian",
       "ethnicHomogeneity": 0.75,
       "mapColorVibrant": "#4A19B3",
-      "mapColorGloomy": "#3E3258"
+      "mapColorGloomy": "#3E3258",
+      "leaderNamePool": [
+        {
+          "name": "Charles the Bold",
+          "title": "Duke",
+          "gender": "male"
+        },
+        {
+          "name": "Mary of Burgundy",
+          "title": "Duchess",
+          "gender": "female"
+        },
+        {
+          "name": "Philip the Handsome",
+          "title": "Duke",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/BUR.png"
     },
     {
       "iso3": "PAP",
@@ -767,7 +1211,36 @@
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#CC0000",
       "mapColorGloomy": "#632929",
-      "leaderName": "Friedrich III"
+      "leaderName": "Friedrich III",
+      "leaderNamePool": [
+        {
+          "name": "Maximilian I",
+          "title": "Archduke",
+          "gender": "male"
+        },
+        {
+          "name": "Charles V",
+          "title": "Archduke",
+          "gender": "male"
+        },
+        {
+          "name": "Ferdinand I",
+          "title": "Archduke",
+          "gender": "male"
+        },
+        {
+          "name": "Maximilian II",
+          "title": "Archduke",
+          "gender": "male"
+        },
+        {
+          "name": "Rudolf II",
+          "title": "Archduke",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/HAB.png"
     },
     {
       "iso3": "BOH",
@@ -863,7 +1336,31 @@
       "ethnicHomogeneity": 0.9,
       "mapColorVibrant": "#EA2121",
       "mapColorGloomy": "#7C4343",
-      "leaderName": "Christian I"
+      "leaderName": "Christian I",
+      "leaderNamePool": [
+        {
+          "name": "John",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Christian II",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Frederick I",
+          "title": "King",
+          "gender": "male"
+        },
+        {
+          "name": "Christian III",
+          "title": "King",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/DAN.png"
     },
     {
       "iso3": "SWD",
@@ -896,7 +1393,31 @@
       "ethnicHomogeneity": 0.9,
       "mapColorVibrant": "#285FBE",
       "mapColorGloomy": "#3F4D65",
-      "leaderName": "Karl VIII"
+      "leaderName": "Karl VIII",
+      "leaderNamePool": [
+        {
+          "name": "Sten Sture the Elder",
+          "title": "Regent",
+          "gender": "male"
+        },
+        {
+          "name": "Svante Nilsson",
+          "title": "Regent",
+          "gender": "male"
+        },
+        {
+          "name": "Sten Sture the Younger",
+          "title": "Regent",
+          "gender": "male"
+        },
+        {
+          "name": "Gustav I Vasa",
+          "title": "King",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/SWD.png"
     },
     {
       "iso3": "NVD",
@@ -1028,7 +1549,26 @@
       "primaryCulture": "Byzantine",
       "ethnicHomogeneity": 0.85,
       "mapColorVibrant": "#CA02B6",
-      "mapColorGloomy": "#5C2C57"
+      "mapColorGloomy": "#5C2C57",
+      "leaderNamePool": [
+        {
+          "name": "Thomas Palaiologos",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Demetrios Palaiologos",
+          "title": "Emperor",
+          "gender": "male"
+        },
+        {
+          "name": "Andreas Palaiologos",
+          "title": "Emperor",
+          "gender": "male"
+        }
+      ],
+      "lockLeaderTitle": true,
+      "leaderPortraitPath": "portraits/leaders/BYZ.png"
     },
     {
       "iso3": "WAL",
