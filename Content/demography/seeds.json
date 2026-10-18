@@ -1,0 +1,1785 @@
+{
+  "countries": {
+    "OTT": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "FRA": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "PRT": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "CHE": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "POL": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "HUN": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "MYN": {
+      "region": "EastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "ENG": {
+      "region": "NorthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "CAS": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "ARA": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "MVY": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "VNC": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "MAM": {
+      "region": "NorthernAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "TIM": {
+      "region": "CentralAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "JOS": {
+      "region": "EastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "VIJ": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "AZT": {
+      "region": "LatinAmericaCaribbean",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "INC": {
+      "region": "LatinAmericaCaribbean",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "BUR": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "PAP": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "NAP": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "SCT": {
+      "region": "NorthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "HAB": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "BOH": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "TEU": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "DAN": {
+      "region": "NorthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "SWD": {
+      "region": "NorthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "NVD": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "GEN": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "MIL": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "BYZ": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "WAL": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "MOL": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "LTH": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "MAL": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "SON": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "ABY": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "BNK": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "ZIM": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "AKK": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "DEL": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MAJ": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "AYU": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MRC": {
+      "region": "EastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "TIB": {
+      "region": "EastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MAY": {
+      "region": "LatinAmericaCaribbean",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "GRN": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "FLR": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "SAV": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "NAV": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "SRB": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "MOR": {
+      "region": "NorthernAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "HFS": {
+      "region": "NorthernAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "KKY": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "KZN": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "KRM": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "GUJ": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "BAH": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "BNG": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MLC": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "DVT": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "KNG": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "KBR": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "RYU": {
+      "region": "EastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "KAR": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "CND": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "DUL": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "RAM": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "TRE": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "SAX": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "BRG": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "BAV": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "PAL": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "COL": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "WUR": {
+      "region": "WesternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "LIV": {
+      "region": "NorthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "BOS": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "LUS": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "TAH": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "NBH": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "HRM": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "JBR": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "SHV": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "GRG": {
+      "region": "WesternAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "ZAY": {
+      "region": "NorthernAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "UZB": {
+      "region": "CentralAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MLW": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MEW": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "JNP": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "ORI": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "KSH": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "NEP": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "KOT": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MLD": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "SND": {
+      "region": "SouthAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "AVA": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "PEG": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "ARK": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "LNA": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "LXG": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "KMR": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "CPA": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "BRU": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "PSI": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "SUL": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MGL": {
+      "region": "EastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MOS": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "HAU": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "OYO": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "LUB": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "ADA": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "FNJ": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "KLW": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "BUG": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "MAD": {
+      "region": "SubSaharanAfrica",
+      "bands": [
+        0.44,
+        0.33,
+        0.18,
+        0.05
+      ],
+      "le": 33.5,
+      "tfr": 6.0,
+      "cbr_target": 44.0,
+      "cdr_target": 40.0
+    },
+    "TAR": {
+      "region": "LatinAmericaCaribbean",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "TLX": {
+      "region": "LatinAmericaCaribbean",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "ZAP": {
+      "region": "LatinAmericaCaribbean",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "CHM": {
+      "region": "LatinAmericaCaribbean",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "MUI": {
+      "region": "LatinAmericaCaribbean",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "MAP": {
+      "region": "LatinAmericaCaribbean",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "IRO": {
+      "region": "NorthernAmerica",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "PUE": {
+      "region": "NorthernAmerica",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "CAH": {
+      "region": "NorthernAmerica",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "TAI": {
+      "region": "LatinAmericaCaribbean",
+      "bands": [
+        0.43,
+        0.34,
+        0.18,
+        0.05
+      ],
+      "le": 34.5,
+      "tfr": 5.6,
+      "cbr_target": 41.0,
+      "cdr_target": 37.0
+    },
+    "TND": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "CEB": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MGD": {
+      "region": "SoutheastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "MID": {
+      "region": "EastAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "LEZ": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "STE": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "TVR": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "RYA": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "PSK": {
+      "region": "EasternEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    },
+    "MOG": {
+      "region": "CentralAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "SIB": {
+      "region": "CentralAsia",
+      "bands": [
+        0.42,
+        0.33,
+        0.19,
+        0.06
+      ],
+      "le": 36.0,
+      "tfr": 5.5,
+      "cbr_target": 40.0,
+      "cdr_target": 36.0
+    },
+    "KNI": {
+      "region": "SouthernEurope",
+      "bands": [
+        0.4,
+        0.34,
+        0.2,
+        0.06
+      ],
+      "le": 35.0,
+      "tfr": 5.2,
+      "cbr_target": 38.0,
+      "cdr_target": 35.0
+    }
+  }
+}
