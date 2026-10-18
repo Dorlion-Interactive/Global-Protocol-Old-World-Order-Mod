@@ -1263,6 +1263,32 @@
           "description": "Maximum AICommandRequest MoveFleet orders AIFleetMovementSystem's return-home layer issues per country per pass, so a peace with many idle foreign-water fleets cannot spike the command budget. 0 disables the layer. Config plumbing only; read by the AI fleet return-home pass (N5).",
           "minimum": 0
         },
+        "blockade_supply_penalty": {
+          "type": "number",
+          "description": "Share of combat power an army cut off by a blockade loses (a blockaded province with no land route to its capital). Cut-off armies also recover no HP or morale.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ai_blockade_port_weight": {
+          "type": "number",
+          "description": "AI blockade targeting: score per enemy-held port a sea zone's blockade would cut (ports already blockaded do not count).",
+          "minimum": 0
+        },
+        "ai_blockade_chokepoint_bonus": {
+          "type": "number",
+          "description": "AI blockade targeting: score added for a strait the country does not hold yet.",
+          "minimum": 0
+        },
+        "ai_blockade_distance_penalty": {
+          "type": "number",
+          "description": "AI blockade targeting: score taken per sea hop from the fleet to the zone.",
+          "minimum": 0
+        },
+        "ai_blockade_counter_ratio": {
+          "type": "number",
+          "description": "Own power over the blockaders' power a blockaded AI country needs before it sends a fleet against them.",
+          "minimum": 0
+        },
         "siege_defense_base": {
           "type": "number",
           "description": "Base defense points each province has at siege start (before pop/infra modifiers)",
@@ -2596,6 +2622,12 @@
         "war_exhaustion_occupation_rate": {
           "type": "number",
           "description": "Maximum additive monthly war exhaustion from full occupation of own provinces",
+          "minimum": 0.0,
+          "maximum": 10.0
+        },
+        "war_exhaustion_blockade_rate": {
+          "type": "number",
+          "description": "Monthly war exhaustion at a fully blockaded coast, scaled by the blockaded share of the coast",
           "minimum": 0.0,
           "maximum": 10.0
         },

@@ -172,8 +172,33 @@
               "world_ceasefire_active",
               "lifetime_gt",
               "lifetime_lt",
-              "has_specialist"
+              "has_specialist",
+              "wave_eliminated",
+              "wave_remaining_gt",
+              "wave_remaining_lt",
+              "armies_in_province_gt",
+              "armies_in_province_lt"
             ]
+          },
+          "wave_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]{1,24}$",
+            "description": "wave_eliminated / wave_remaining_gt / wave_remaining_lt (required): the wave a create_unit of the same mod named. wave_eliminated is true once the wave was spawned and none of its stacks is left, however they were lost (battle, a sunk transport, a strike, a disband); a later create_unit with the same id spawns it again and the condition is false until those stacks are gone too. A wave that was never spawned fails all three. Mod events only."
+          },
+          "measure": {
+            "type": "string",
+            "enum": ["units", "stacks"],
+            "description": "wave_remaining_gt / wave_remaining_lt (optional, default units): compare the wave's live units (regiments, ships, aircraft) or its live stacks with value. armies_in_province_gt / armies_in_province_lt (optional, default stacks): count army stacks or their units. Mod events only."
+          },
+          "province_id": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5000,
+            "description": "armies_in_province_gt / armies_in_province_lt (required): the land province whose armies are counted (value is the threshold). Mod events only."
+          },
+          "owner_country": {
+            "type": "string",
+            "description": "armies_in_province_gt / armies_in_province_lt (optional): count only this country's armies (an ISO3; target_country / target are accepted too); absent = every army in the province. A country that no longer exists has no armies. Mod events only."
           },
           "specialist": {
             "type": "string",
@@ -350,18 +375,21 @@
                     "start_world_ceasefire",
                     "end_world_ceasefire",
                     "grant_specialist",
-                    "remove_specialist"
+                    "remove_specialist",
+                    "upgrade_units",
+                    "grant_command_authority",
+                    "revoke_command_authority"
                   ]
                 },
                 "target": {
                   "type": "string",
-                  "description": "Target country ISO3 (mod events also accept target_country, which wins when both are set). add_relation, the sanction effects, engage_diplomatically, withdraw_forces: the other country. declare_war, sign_peace, sign_truce, form_alliance, break_alliance (required): the other country; the country the event reached acts on it. annex_province: the country that receives the province (absent = the event's recipient; a named country that no longer exists skips the effect). annex_country (required): the country whose provinces the event's recipient takes; it is then eliminated as after a full peace annexation. create_unit: the country that receives the units (absent = the event's recipient; a named country that no longer exists skips the effect). A province id no longer goes here: use province_id. join_organization: the country that joins instead of the one the event reached (optional). invite_to_organization (required): the country that is invited; the country the event reached, which must be a member, invites it."
+                  "description": "Target country ISO3 (mod events also accept target_country, which wins when both are set). add_relation, the sanction effects, engage_diplomatically, withdraw_forces: the other country. declare_war, sign_peace, sign_truce, form_alliance, break_alliance (required): the other country; the country the event reached acts on it. annex_province: the country that receives the province (absent = the event's recipient; a named country that no longer exists skips the effect). annex_country (required): the country whose provinces the event's recipient takes; it is then eliminated as after a full peace annexation. create_unit: the country that receives the units (absent = the event's recipient; a named country that no longer exists skips the effect). upgrade_units: the country whose stacks convert (absent = the event's recipient). A province id no longer goes here: use province_id. join_organization: the country that joins instead of the one the event reached (optional). invite_to_organization (required): the country that is invited; the country the event reached, which must be a member, invites it."
                 },
                 "province_id": {
                   "type": "integer",
                   "minimum": 1,
                   "maximum": 5000,
-                  "description": "annex_province (required): the land province's id from province_registry.json (e.g. 2276). Sea zones (5001 and up) are rejected. The receiver becomes its owner and controller at once; occupation and siege end, with no resistance and no added unrest. For older data, a whole-number value is read as the id when province_id is absent. create_unit (optional): where the new stack starts, a land province the receiver owns and controls (coastal for a naval unit, with an airfield for an air unit); absent or unsuitable = the receiver's capital, else its lowest-numbered suitable province."
+                  "description": "annex_province (required): the land province's id from province_registry.json (e.g. 2276). Sea zones (5001 and up) are rejected. The receiver becomes its owner and controller at once; occupation and siege end, with no resistance and no added unrest. For older data, a whole-number value is read as the id when province_id is absent. create_unit (optional): where the new stack starts, a land province the receiver owns and controls (coastal for a naval unit, with an airfield for an air unit); absent or unsuitable = the receiver's capital, else its lowest-numbered suitable province. upgrade_units (optional): convert only the stacks standing in this province."
                 },
                 "unit_category": {
                   "type": "string",
@@ -384,6 +412,129 @@
                   "minimum": 1,
                   "default": 1,
                   "description": "create_unit only: how many units of unit_id the new stack gets. Absent = 1. There is no hard maximum: the game cuts a count above 100 to 100 and says so in a load note (the Mod Builder offers 1 to 100). For older data, a whole-number value is read as the count when count is absent."
+                },
+                "wave_id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9_]{1,24}$",
+                  "description": "create_unit (optional): tag every stack this effect spawns with a wave id, so wave_eliminated / wave_remaining_gt / wave_remaining_lt can tell when they are gone. Stacks of a wave never merge with other stacks, and splits keep the tag. The id is per mod. upgrade_units (optional): convert only the stacks of this wave. Mod events only."
+                },
+                "stacks": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "default": 1,
+                  "description": "create_unit (optional): how many stacks to spawn, each with count units. The game cuts a value above 20 to 20 with a load note. Mod events only."
+                },
+                "spawn_mode": {
+                  "type": "string",
+                  "enum": ["owned", "landing"],
+                  "description": "create_unit (optional, default owned): owned spawns in the receiver's own provinces (spawn_pool, else province_id, else the capital) and sends ground stacks to their assault target. landing spawns ground stacks directly in the drawn assault target when the receiver is at war with the country that holds it (or nobody holds it); otherwise it falls back to owned and the stacks march. Naval and air units always spawn at home. Needs assault candidates. Mod events only."
+                },
+                "spawn_pool": {
+                  "type": "array",
+                  "items": { "type": "integer", "minimum": 1, "maximum": 5000 },
+                  "maxItems": 256,
+                  "description": "create_unit (optional): land provinces to spawn in, drawn at random among the ones that suit (owned and controlled by the receiver, coastal for ships, a free airfield slot for aircraft). None suits = the default place. Mod events only."
+                },
+                "assault_target_pool": {
+                  "type": "array",
+                  "items": { "type": "integer", "minimum": 1, "maximum": 5000 },
+                  "maxItems": 256,
+                  "description": "create_unit (optional): the provinces the ground stacks are sent to take, drawn at random when the effect runs (the assault_* filters narrow it; without a pool, every land province that passes assault_owned_by / assault_region is a candidate). The stacks march there (by sea when they must, with their owner's transports), take the province and are then released to their owner's AI, unless on_arrival is hold. Their owner's AI does not move them meanwhile; a move order the player gives cancels it. Mod events only."
+                },
+                "assault_owned_by": {
+                  "type": "string",
+                  "description": "create_unit (optional): only provinces this country legally owns are assault candidates (an ISO3; a country that no longer exists leaves no candidates). Mod events only."
+                },
+                "assault_region": {
+                  "type": "string",
+                  "description": "create_unit (optional): only provinces whose home country (the country its map data names) is in this region are assault candidates; the names the region condition takes, e.g. western_europe. Mod events only."
+                },
+                "assault_coastal": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "create_unit (optional): only coastal provinces are assault candidates. Needs assault_target_pool, assault_owned_by or assault_region. Mod events only."
+                },
+                "assault_include_controlled": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "create_unit (optional): keep candidates the receiver already controls (by default they are skipped). Mod events only."
+                },
+                "spread": {
+                  "type": "string",
+                  "enum": ["together", "split"],
+                  "description": "create_unit (optional, default together): together draws one spawn province and one target for every stack; split draws for each stack, without repeating a province until all were drawn. Mod events only."
+                },
+                "on_arrival": {
+                  "type": "string",
+                  "enum": ["release", "hold"],
+                  "description": "create_unit (optional, default release): release hands the stacks to their owner's AI once their target is taken (or its holder is no longer an enemy); hold keeps them standing there under the order. Mod events only."
+                },
+                "timeout_days": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3650,
+                  "default": 0,
+                  "description": "create_unit (optional): days after which the assault order is dropped if the target was not taken (0 = no limit). Mod events only."
+                },
+                "from_unit_id": {
+                  "type": "string",
+                  "description": "upgrade_units (required): the unit the country's stacks convert from (a unit id, base or a mod's own). Every regiment, ship or aircraft of it the country owns in scope converts. Mod events only."
+                },
+                "to_unit_id": {
+                  "type": "string",
+                  "description": "upgrade_units (required): the unit they become. It must differ from from_unit_id and be in the same category (ground, naval, air, special); ships and aircraft also keep their subcategory (a fighter never becomes a bomber), and missiles never convert. A pair that breaks this is skipped with a warning when the effect runs. Mod events only."
+                },
+                "cost_per_regiment": {
+                  "type": "number",
+                  "minimum": 0,
+                  "default": 0,
+                  "description": "upgrade_units (optional): paid per converted regiment, ship or aircraft, from the treasury (booked as recruitment spending) when the conversion happens. Stacks convert in a fixed order while the money lasts; the rest stay as they are. Mod events only."
+                },
+                "preserve_hp_pct": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "default": 100,
+                  "description": "upgrade_units (optional): how much of each regiment's damage the new unit keeps, in percent. 100 = the same share of damage (half health stays half health), 0 = the new units arrive at full health. Mod events only."
+                },
+                "region": {
+                  "type": "string",
+                  "description": "upgrade_units (optional): only stacks in provinces whose home country is in this region (the names the region condition takes, e.g. western_europe). Mod events only."
+                },
+                "controller_country": {
+                  "type": "string",
+                  "description": "grant_command_authority / revoke_command_authority (required): the ISO3 of the country that commands the lent units (the player or its AI orders them like its own). The owner keeps paying for them, takes their losses, fights its own wars with them and keeps their access and fog: the controller can only send them against countries the owner is at war with. Mod events only."
+                },
+                "source_country": {
+                  "type": "string",
+                  "description": "grant_command_authority / revoke_command_authority (optional): the ISO3 of the country whose units are lent; absent = the country the event reached. It must differ from controller_country. Mod events only."
+                },
+                "unit_kinds": {
+                  "type": "array",
+                  "items": { "type": "string", "enum": ["army", "fleet", "air"] },
+                  "minItems": 1,
+                  "description": "grant_command_authority / revoke_command_authority (optional, default all three): which of the owner's units are lent or taken back. Missiles never are: launching them stays with the owner. Mod events only."
+                },
+                "filter": {
+                  "type": "string",
+                  "enum": ["all", "in_region", "in_province", "wave"],
+                  "default": "all",
+                  "description": "grant_command_authority / revoke_command_authority (optional): all of the owner's units of those kinds, or only those in region (provinces whose home country is in that region), in province_id, or of the invasion wave wave_id. Without filter, a lone region / province_id / wave_id picks its filter. Mod events only."
+                },
+                "locked": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "grant_command_authority (optional): the owner cannot recall the units before the authority ends. Mod events only."
+                },
+                "keep_after_peace": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "grant_command_authority (optional): the authority outlives the war the two countries share. Without it, it ends when that war does (a grant made in peacetime ends after the first war the two then share). It always ends on its months, when either country is gone, or when the two go to war with each other. Mod events only."
+                },
+                "retire_old": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "upgrade_units (optional): the country can no longer recruit from_unit_id (player and AI alike, in every recruit list and template); its future production uses to_unit_id or any other unit it has. Units already in its production queue finish as ordered, and a create_unit that names the old unit still grants it. Permanent. Mod events only."
                 },
                 "field": {
                   "type": "string",
@@ -422,7 +573,7 @@
                   "type": "integer",
                   "minimum": 0,
                   "maximum": 600,
-                  "description": "sign_truce: how many months the truce lasts. Absent = the game's usual truce length (diplomacy truce_duration_months). A whole-number value is read as the months when months is absent. modify_military: how many months the attack, defense or morale_recovery change lasts; absent or 0 = permanent. start_world_ceasefire: how many months the ceasefire lasts (1 to 600); absent = no end date (it then ends by until_flag or end_world_ceasefire). Mod events only."
+                  "description": "sign_truce: how many months the truce lasts. Absent = the game's usual truce length (diplomacy truce_duration_months). A whole-number value is read as the months when months is absent. modify_military: how many months the attack, defense or morale_recovery change lasts; absent or 0 = permanent. start_world_ceasefire: how many months the ceasefire lasts (1 to 600); absent = no end date (it then ends by until_flag or end_world_ceasefire). upgrade_units (0 to 120): 0 or absent converts at once; more starts a refit programme for the country, and on its last day every stack in scope at that moment converts (and is paid for), while until then the stacks move and fight as usual. grant_command_authority (0 to 120): how long the units stay lent; 0 or absent = until the authority ends otherwise. Mod events only."
                 },
                 "id": {
                   "type": "string",

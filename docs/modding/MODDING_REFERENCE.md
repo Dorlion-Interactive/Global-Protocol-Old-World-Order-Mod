@@ -807,7 +807,9 @@ its own `prerequisites.tech`.
 
 `prerequisites.tech` must be `"none"` or `<branch>_t<tier>`: a branch id from doctrines.json exactly
 as written there (`military`, `industry`, `cyber`, …, see §3.3) and a tier from 1 to 5, e.g.
-`"industry_t2"`. The game compares the key exactly, so `"None"`, `"Industry_t2"`, a branch that
+`"industry_t2"`. A mod that adds research (§8.8) can also name it: `"tech:<node or card id>"`, a mod
+branch tier such as `"atlantis_t2"`, or a base branch tier above 5 such as `"military_t6"`; see "Tech ->
+building, end to end" there. The game compares the key exactly, so `"None"`, `"Industry_t2"`, a branch that
 does not exist or an old tech-tree id such as `"cyber_operations"` can never be met, and the entry
 stays locked for the whole game. The Mods panel and the Mod Builder's checks box warn about such a
 key on any entry your roster lists.
@@ -1449,6 +1451,9 @@ one option. The effect form queues the follow-up only when the player or AI pick
 | `stakeholder` | yes | `target_country` (required) + `value`: the country is that country, is at war with it, is allied with it, or has a relation toward it whose size is at least `value` (positive or negative). Several `stakeholder` conditions on one event are OR-ed, then AND-ed with the rest. |
 | `has_tech` | yes | `value`: a doctrine tier, `"<branch>_t<tier>"` with a tier from 1 to 5, e.g. `"cyber_t2"`. True when the country has completed that tier. Branch ids: `military`, `government`, `economy`, `industry`, `diplomacy`, `intelligence`, `cyber`, `space`, `energy`, `society`. A mod's research works too: `"tech:<node id>"` (a research node or doctrine card), or a mod branch tier (`"atlantis_t2"`, or a base branch tier above 5 such as `"military_t6"`); true when the country has that gate open (§8.8). It never passes in a game whose mods add no such research, and a key no mod defines gets a warning at load. Any other shape is rejected; a branch the game does not have gets a warning at load and never passes. |
 | `has_specialist` | yes | `specialist`: the id of a specialist in a mod's `Content/specialists.json` (§8.9). True when the country employs it. An unknown id never passes (warning at load). |
+| `wave_eliminated` | yes | `wave_id`: a wave a `create_unit` of the same mod spawned has no stack left, however they were lost. See [Invasion waves](#invasion-waves). |
+| `wave_remaining_gt` / `wave_remaining_lt` | yes | `wave_id` + `value` (a whole number) + optional `measure` (`units`, the default, or `stacks`): the wave's live units or stacks compared with the value. A wave never spawned fails both. |
+| `armies_in_province_gt` / `armies_in_province_lt` | yes | `province_id` + `value` + optional `owner_country` and `measure` (`stacks`, the default, or `units`): the armies standing in that province, of one owner or of everyone. |
 | `province_stat_gt` | yes | `field`: `province.population`, `province.infrastructure`, `province.unrest`, `province.dev_level` or `province.radiation`; `value`: a number. True when at least one province the country **legally owns** has that stat above the value (occupied provinces count for their owner). A country without provinces never passes. Any other `field` is rejected. |
 | `in_organization` | yes | `id`: an alliance organization's id. True when the country is a member: a mod's own organization or a built-in one such as `NATO`. See [Alliance organization effects](#alliance-organization-effects). |
 | `world_ceasefire_active` | yes | No arguments. True while a world ceasefire holds (§3.5). A fact about the whole world, so it is true or false for every country alike. |
@@ -1566,7 +1571,9 @@ fire when a province changes hands. `value` is the province id from the game's p
 | `set_variable`, `change_variable` | yes, see [Flags and variables](#flags-and-variables) |
 | `modify_stat`, `add_relation`, `set_flag`, `clear_flag`, `add_treasury`, `modify_unrest`, `impose_sanction`, `lift_sanction`, `engage_diplomatically`, `withdraw_forces`, `change_government`, `modify_resource_price` (alias `global_modifier`), `fire_event` | yes |
 | `annex_province`, `annex_country` | yes, see [Territory effects](#territory-effects) |
-| `create_unit` | yes, see [Unit effect](#unit-effect) |
+| `create_unit` | yes, see [Unit effect](#unit-effect) and [Invasion waves](#invasion-waves) |
+| `upgrade_units` | yes, see [Converting units](#converting-units) |
+| `grant_command_authority`, `revoke_command_authority` | yes, see [Shared command](#shared-command) |
 | `modify_military` | yes, see [Military modifiers](#military-modifiers) |
 | `start_espionage_mission`, `steal_technology`, `sabotage_military` | yes, see [Covert operations](#covert-operations) |
 | `declare_war`, `sign_peace`, `sign_truce`, `form_alliance`, `break_alliance` | yes, see [Diplomacy effects](#diplomacy-effects) |
@@ -1775,6 +1782,135 @@ one country to the country that got the event.
   - the receiver has no suitable province.
 - **Multiplayer and saves.** The stack appears on the same tick on every machine, in the order the
   effects are written. A queued effect is saved with its unit id, count and province.
+
+#### Invasion waves
+
+The same `create_unit` can spawn a **wave**: several stacks that carry one id, are sent at a target
+drawn at random from a list, and that conditions can count until none is left.
+
+```json
+{ "type": "create_unit", "unit_id": "hyp_reaper", "count": 6, "target": "HYP",
+  "stacks": 3, "wave_id": "wave_2",
+  "assault_target_pool": [2276, 2281, 2290], "assault_coastal": true, "spread": "split",
+  "on_arrival": "release", "timeout_days": 180 }
+{ "type": "wave_eliminated", "wave_id": "wave_2" }
+{ "type": "wave_remaining_lt", "wave_id": "wave_2", "value": 5, "measure": "units" }
+```
+
+- **`wave_id`** tags every stack the effect spawns (armies, fleets and air wings): 1 to 24
+  lower-case letters, digits or underscores, per mod (two mods may both use `wave_1`). Stacks of a
+  wave never merge with other stacks, and a split keeps the tag.
+- **`stacks`** spawns that many stacks (1 to 20), each with `count` units.
+- **Where they spawn.** `spawn_pool` lists the receiver's own provinces; one is drawn at random among
+  those that suit the unit (otherwise the usual place). `spawn_mode: "landing"` spawns ground stacks
+  directly in their drawn target when the receiver is at war with whoever holds it; when it is not,
+  they spawn at home and march. Put a `declare_war` before the `create_unit` in the same option: the
+  war is declared first.
+- **What they attack.** `assault_target_pool` lists the candidate provinces; `assault_owned_by` (an
+  ISO3), `assault_region` (a region name as the `region` condition takes it), `assault_coastal`
+  narrow it, or choose the candidates on their own when there is no list. Provinces the receiver
+  already holds are skipped unless `assault_include_controlled` is true. `spread: "together"` (the
+  default) gives every stack the same spawn province and target; `"split"` draws one per stack
+  without repeating a province until all were drawn. The draw is random but identical on every
+  multiplayer machine.
+- **The march.** Each ground stack gets an assault order: it marches to the target (by sea with its
+  owner's transports when it must), fights its way there and besieges it. Once its owner controls the
+  target it is released and becomes an ordinary army of its owner (`on_arrival: "hold"` keeps it
+  standing there instead). It also gives up when a country its owner is not at war with holds the
+  target, after `timeout_days` (0 = no limit), or when no route can be found several times in a row.
+  While it holds the order its owner's AI does not move, merge or split it; a move order the player
+  gives cancels it. Ships and aircraft in a wave are tagged and counted but never ordered.
+- **Counting.** `wave_eliminated` is true once the wave was spawned and none of its stacks is left,
+  however they were lost: battles, a sunk transport, a strike, a disband. `wave_remaining_gt/lt`
+  compare its live units (or stacks with `"measure": "stacks"`). A later `create_unit` with the same
+  `wave_id` adds to the wave and brings it back. `armies_in_province_gt/lt` count the armies standing
+  in one province (`owner_country` for one country's).
+- **Use it like this.** Put the waves in one event and the follow-up in another with a
+  `wave_eliminated` condition and `fire_once: true` (it fires at the next monthly evaluation after
+  the last stack is gone). There is no reactive trigger for it yet.
+- **Saves and multiplayer.** Tags, orders and the wave records are saved and part of the multiplayer
+  state check; a game without waves saves exactly as before.
+
+#### Converting units
+
+`upgrade_units` turns a country's stacks of one unit into another: its armies, fleets and air wings,
+everywhere or only in one province, region or wave.
+
+```json
+{ "type": "upgrade_units", "from_unit_id": "infantry", "to_unit_id": "atl_power_armor", "target": "FRA",
+  "months": 3, "cost_per_regiment": 50000000, "preserve_hp_pct": 100,
+  "province_id": 2276, "region": "western_europe", "wave_id": "wave_2", "retire_old": true }
+```
+
+- **The pair.** `from_unit_id` and `to_unit_id` are unit ids (the base game's or a mod's) and must
+  differ. They must be in the same category (ground, naval, air, special); ships and aircraft also
+  keep their subcategory (a fighter never becomes a bomber), and missiles never convert. A pair that
+  breaks this, or an id no unit has, is skipped with a warning when the effect runs.
+- **Who.** The country in `target`, else the country the event reached.
+- **When.** `months` 0 (the default) converts at once. 1 to 120 starts a **refit programme** for the
+  country: on its last day everything in scope *at that moment* converts and is paid for. Until then
+  the stacks move and fight as usual. A country runs at most 16 programmes at a time.
+- **What it costs.** `cost_per_regiment` (default 0) is paid from the treasury per converted
+  regiment, ship or aircraft, booked as recruitment spending. Stacks convert one after another in a
+  fixed order while the money lasts; the rest stay as they are.
+- **Health.** `preserve_hp_pct` (default 100) is how much of each regiment's damage the new unit
+  keeps: 100 keeps the same share (half health stays half health), 0 brings the new units in at full
+  health. Converted regiments join the stack's row of the new unit if it has one.
+- **Scope.** `province_id`, `region` (the names the `region` condition takes, matched on the
+  province's home country) and `wave_id` (a wave a `create_unit` of the same mod names) narrow it;
+  together they all apply.
+- **"Future production" (`retire_old`).** `retire_old: true` takes the old unit off that country's
+  recruit list for good, for the player and the AI alike: recruit panels, quick recruit, templates
+  and the AI planner no longer offer it, so new production uses the new unit or any other the
+  country has. Units already in the production queue finish as ordered, and a `create_unit` that
+  names the old unit still grants it. Without `retire_old` the old unit stays recruitable next to the
+  new one. Unlocking a new unit (a tech, a flag, a roster) and replacing an old one are separate:
+  `retire_old` only retires.
+- **Saves and multiplayer.** Retired units and running programmes are saved and part of the
+  multiplayer state check.
+
+#### Shared command
+
+`grant_command_authority` lends a country's armies, fleets and air wings to another country's
+command; `revoke_command_authority` takes them back.
+
+```json
+{ "type": "grant_command_authority", "source_country": "USA", "controller_country": "TUR",
+  "unit_kinds": ["army", "fleet", "air"], "filter": "in_region", "region": "western_asia",
+  "months": 6, "locked": false, "keep_after_peace": false }
+{ "type": "revoke_command_authority", "source_country": "USA", "controller_country": "TUR" }
+```
+
+- **Who.** `controller_country` (required) commands the units of `source_country` (absent = the
+  country the event reached). The two must differ. A grant between countries at war with each
+  other, or to a country that no longer exists, does nothing (warning at run time).
+- **Which units.** `unit_kinds` lists `army`, `fleet` and/or `air` (all three by default).
+  `filter` is `all` (default), `in_region` (with `region`), `in_province` (with `province_id`) or
+  `wave` (with `wave_id`, a wave a `create_unit` of the same mod names); a lone `region`,
+  `province_id` or `wave_id` picks its filter. Missiles are never lent: launching them stays with
+  the owner.
+- **What the controller gets.** It orders the units like its own (the player through the unit bar,
+  or its AI). The owner keeps everything else: it pays their upkeep, takes their losses, and their
+  war, access and fog are its own, so the controller can only send them against countries the
+  owner is at war with. A lent stack never merges with the owner's other stacks, splits keep the
+  authority, and the units cannot be disbanded while lent. The controller also sees what the lent
+  units see (they light its fog of war as well as the owner's).
+- **The controller's AI.** An AI controller moves lent armies like its own (their paths and access
+  stay the owner's). It uses a lent fleet or air wing only while the owner is at war with every
+  country the controller fights, so each target it picks is one the owner fights too; otherwise
+  the unit waits. It never positions a lent fleet to fire missiles and keeps a lent wing on its
+  owner's airfield. The owner's AI leaves its lent units alone.
+- **On the HUD.** The controller selects lent units like its own; the unit bar shows "Lent by: …"
+  with the days left, and Load / Launch missiles and Disband explain why they are off. The owner
+  cannot select a lent unit: its row in Military › Forces reads "Commanded by: …", and clicking it
+  shows **Recall** (disabled with the reason when the loan is `locked`). Both sides get a notice
+  when a loan starts or ends, and the event popup's option line names who lends what to whom.
+- **How it ends.** After `months` (0 = no time limit); when the war the two countries share ends,
+  unless `keep_after_peace` (a grant made in peacetime ends after the first war the two then share);
+  when either country is gone; when the two go to war with each other; on a revoke; or when the
+  owner recalls the units, unless `locked`.
+- **Saves and multiplayer.** The authority is saved (the controller by ISO3) and part of the
+  multiplayer state check.
 
 #### Covert operations
 
@@ -2004,6 +2140,43 @@ Mod nodes raise the `on_tech_researched` hook, and the reactive event trigger of
 (once per completed node; the trigger is only raised when a loaded event lists it). Events test a mod node with `has_tech` `"tech:<node id>"` (§3 conditions).
 Saves store progress by node id; ids a later version of the mod no longer defines are dropped with a warning.
 
+**Tech -> building, end to end (T01 -> B01).** A research node unlocks a building through the building's
+`prerequisites.tech`; no flag or event is needed. Two files do it. `Content/research_tracks.json` adds the node:
+
+```json
+{ "tracks": [ { "id": "atlantis_lab", "name": "Atlantis lab", "nodes": [
+  { "id": "atl_t01", "name": "Orichalcum smelting", "cost": 400, "months": 6, "ai_weight": 1.5 } ] } ] }
+```
+
+`Content/buildings.json` (a merge file: a new id is added) gates the building on it:
+
+```json
+[
+  { "id": "atl_b01", "name": "Orichalcum foundry", "category": "economic",
+    "cost": { "money": 900, "build_time_months": 8 },
+    "prerequisites": { "tech": "tech:atl_t01", "infrastructure": 20 },
+    "effects": { "gdp_modifier": 0.02 } }
+]
+```
+
+- **Before T01.** B01 is listed in the build picker as locked, with "Requires research: Orichalcum smelting". The build
+  command refuses it for the player, for the AI and for every multiplayer peer, and the AI's build planner skips it.
+- **After T01.** The node finishes on the monthly research tick, and B01 opens at once for the country that researched
+  it (and only that country). The AI builds it like any other building it may build.
+- **A story beat** is optional. A monthly event with a `has_tech` condition fires once the node is done:
+
+```json
+{ "id": "atl_t01_done", "type": "scripted", "category": "geopolitical_crisis", "target": "player", "fire_once": true,
+  "title": "Orichalcum", "description": "Our smelters can work the Atlantean metal.",
+  "conditions": [ { "type": "has_tech", "value": "tech:atl_t01" } ],
+  "options": [ { "text": "Build the foundries", "effects": [ { "type": "set_flag", "flag_name": "atl_orichalcum" } ] } ] }
+```
+
+- A unit uses the same key in its own `prerequisites.tech`, and a building or unit can wait for a mod doctrine tier
+  instead (`"atlantis_t2"`; the lock then reads "Requires Atlantis Tier 2").
+- The Mod Builder edits both files: Content > Research tracks for the node, and the `prerequisites` field of the
+  building's card on the Content tab for the key.
+
 ### 8.9 Specialists (`Content/specialists.json`)
 
 Named scientists and engineers a country can employ. Schema: `mod_specialists.schema.json`. The base game has none; every one comes from a mod.
@@ -2128,8 +2301,10 @@ default `victories.json` in the scenario folder) with three optional parts:
 - **End-screen rows (`end_screen_rows`).** Extra lines in the end screen's **mod record**, shown
   on every end screen of this scenario whichever way the game ended. `label_key` is a text key of
   your mod; `value` is `lifetime.<counter>` (a [lifetime counter](#lifetime-counters) of the
-  player's country), `mod_state.<key>` (your mod's own saved state) or `variable.<name>` (an event
-  variable of the player's country). Scripts add rows with `register_end_screen_row` /
+  player's country), `mod_state.<key>` (your mod's own saved state), `variable.<name>` (an event
+  variable of the player's country) or `wave.<wave id>.remaining` (an [invasion wave](#invasion-waves) of
+  your mod: units still alive; also `.remaining_stacks`, `.spawned`, `.spawned_stacks`). Scripts add rows
+  with `register_end_screen_row` /
   `IModServices.RegisterEndScreenRow`.
 - **Multiplayer.** Every player's game checks the same endings in the same order, so every peer
   picks the same winner on the same tick. The ending reached is saved with the game and in the state hash.
@@ -2137,6 +2312,44 @@ default `victories.json` in the scenario folder) with three optional parts:
 The Mod Builder's **ENDINGS** tab edits the file, and the validator checks it (duplicate ids,
 a missing title, a condition a victory cannot use, an unknown lifetime counter in a row). A game
 without a victory file runs none of this.
+
+### 8.13 HUD trackers
+
+`Content/ui/hud_trackers.json` puts up to three gauges of your mod on the top bar, after the four national
+numbers. It needs the `InjectUI` permission, like the rest of `Content/ui/`, and works with or without a
+scenario. It is presentation only: the file is outside the multiplayer content hash, so peers with different
+trackers just see different HUDs.
+
+```json
+{ "trackers": [ {
+  "id": "invasion", "value": "wave.wave_2.remaining", "country": "viewer",
+  "label_key": "atlantis.tracker.invasion", "tooltip_key": "atlantis.tracker.invasion.desc",
+  "icon": "Content/ui/icons/invasion.png",
+  "min": 0, "max": 24, "format": "of_max",
+  "bands": [ { "from": 0, "tone": "good" }, { "from": 8, "tone": "warn" }, { "from": 16, "tone": "bad" } ],
+  "target": { "low": 0, "high": 6 },
+  "visible_when": [ { "type": "has_flag", "flag_name": "invasion_started" } ]
+} ] }
+```
+
+- **`value`** is named like an end-screen row: `mod_state.<key>`, `variable.<name>`, `lifetime.<counter>`
+  or `wave.<wave id>.remaining` (`.remaining_stacks`, `.spawned`, `.spawned_stacks`).
+- **`country`** is whose variable or lifetime counter it reads, and whose state `visible_when` tests:
+  `viewer` (the local player's country, the default) or an ISO3 code.
+- **Text** comes from your mod's own localization rows (`label_key` is the caps label, `tooltip_key` the hover
+  text). **`icon`** is a PNG or JPG in your mod (at most 2048 px a side).
+- **The gauge.** With `max` above `min` a compact gauge is drawn under the value; without one only the value
+  shows. `format` is `number`, `percent` or `of_max` (value / max). `bands` rise: from each band's `from` up to
+  the next, the value and the marker take its `tone` (`neutral`, `good`, `warn`, `bad`, `gold`, `amber`,
+  `muted`, `accent`; the theme decides the colours). `target` shades the band where the value should be.
+- **`visible_when`** lists conditions that must all hold: the victory conditions (`has_flag`, `variable_gt`,
+  `lifetime_gt`, `date_after`...) and the wave conditions (`wave_eliminated`, `wave_remaining_gt/lt`).
+- A tracker reads its number once per game day (or when the viewer or the language changes) and writes it only
+  when it changed. With several mods, the first three trackers in load order show.
+
+The Mod Builder's **Interface › HUD trackers** section edits the file, shows the game's own verdict under each
+tracker and a preview gauge you can move with a slider. Validate Mod checks the permission, the schema
+(`mod_ui_hud_trackers.schema.json`), each tracker and that each icon exists.
 
 ## 9. Enum Reference
 

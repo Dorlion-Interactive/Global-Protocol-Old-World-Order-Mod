@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mod_ui_hud_trackers.schema.json",
+  "title": "Mod HUD Trackers",
+  "description": "Gauges a mod adds to the top bar, after the four KPIs (Content/ui/hud_trackers.json, needs the InjectUI permission). Each tracker shows a number the mod names - a key of its saved state, a country event variable, a lifetime counter or an invasion wave's count - with its own label, icon, format, colour bands and target band. Presentation only: the file is outside the multiplayer content hash, so peers with different trackers just see different HUDs.",
+  "type": "object",
+  "properties": {
+    "trackers": {
+      "type": "array",
+      "description": "At most three trackers; more are ignored. With several mods, the first three in load order show.",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [ "id", "value" ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]{1,32}$",
+            "description": "The tracker's id, unique in the file (shown when it has no label)."
+          },
+          "value": {
+            "type": "string",
+            "pattern": "^(mod_state\\.|variable\\.|lifetime\\.|wave\\.).+",
+            "description": "The number: mod_state.<key> (the mod's saved state), variable.<name> (a country event variable), lifetime.<counter> (a lifetime counter: personnel_lost, regiments_lost, ships_lost, aircraft_lost, civilians_affected, provinces_gained, provinces_lost, wars_won, wars_lost) or wave.<wave id>.remaining | remaining_stacks | spawned | spawned_stacks (an invasion wave of this mod)."
+          },
+          "country": {
+            "type": "string",
+            "pattern": "^([Vv][Ii][Ee][Ww][Ee][Rr]|[A-Za-z]{3})$",
+            "default": "viewer",
+            "description": "Whose number a variable or a lifetime counter is, and whose state visible_when tests: viewer (the local player's country) or a country's ISO3 code."
+          },
+          "label_key": {
+            "type": "string",
+            "description": "The localization key of the caps label (the mod's own Content/localization rows)."
+          },
+          "tooltip_key": {
+            "type": "string",
+            "description": "The localization key of the hover text that explains the tracker."
+          },
+          "icon": {
+            "type": "string",
+            "description": "A PNG or JPG inside the mod folder, shown before the value (at most 2048 px a side, 4 MB)."
+          },
+          "min": {
+            "type": "number",
+            "default": 0,
+            "description": "The gauge's left end."
+          },
+          "max": {
+            "type": "number",
+            "description": "The gauge's right end. With a max above min the tracker draws a band gauge under its value; without one it shows the value only."
+          },
+          "format": {
+            "type": "string",
+            "enum": [ "number", "percent", "of_max" ],
+            "default": "number",
+            "description": "number writes the value, percent writes it with a percent sign, of_max writes value / max (needs max)."
+          },
+          "bands": {
+            "type": "array",
+            "description": "Colour bands, rising: from each band's value up to the next one, the value and the gauge marker take its tone.",
+            "items": {
+              "type": "object",
+              "required": [ "from", "tone" ],
+              "properties": {
+                "from": { "type": "number" },
+                "tone": {
+                  "type": "string",
+                  "enum": [ "neutral", "good", "warn", "bad", "gold", "amber", "muted", "accent" ],
+                  "description": "A HUD tone; the theme decides its colour."
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "target": {
+            "type": "object",
+            "description": "The shaded target band on the gauge.",
+            "required": [ "low", "high" ],
+            "properties": {
+              "low": { "type": "number" },
+              "high": { "type": "number" }
+            },
+            "additionalProperties": false
+          },
+          "visible_when": {
+            "type": "array",
+            "description": "Conditions that must all hold for the tracker to show (on the tracker's country): has_flag, not_has_flag, flag_age_months_gt/lt, variable_gt/lt/eq, lifetime_gt/lt, date_after, date_before, wave_eliminated, wave_remaining_gt/lt. Empty = always shown.",
+            "items": { "type": "object" }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -57,6 +57,7 @@ envelope. The schema below describes **one entry**, not the whole file.
 |---|---|
 | `Content/ui/theme.json` | `mod_ui_theme.schema.json` (see `UI_THEMING_GUIDE.md`) |
 | `Content/ui/layout.json` | `mod_ui_layout.schema.json` (see `UI_LAYOUT_GUIDE.md`) |
+| `Content/ui/hud_trackers.json` | `mod_ui_hud_trackers.schema.json` (see [HUD trackers](MODDING_REFERENCE.md#813-hud-trackers)) |
 
 ## Config overrides (`overrides/`)
 
