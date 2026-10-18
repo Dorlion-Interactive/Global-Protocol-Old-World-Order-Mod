@@ -68,6 +68,29 @@
           "RYU",
           "DVT"
         ]
+      },
+      {
+        "id": "LEGA_ITALICA",
+        "nameKey": "owo.org.lega_italica.name",
+        "type": "CollectiveDefense",
+        "founder": "MIL",
+        "members": [
+          "MIL",
+          "VNC",
+          "FLR",
+          "NAP",
+          "PAP"
+        ]
+      },
+      {
+        "id": "JAGIELLONIAN_UNION",
+        "nameKey": "owo.org.jagiellonian_union.name",
+        "type": "Political",
+        "founder": "POL",
+        "members": [
+          "POL",
+          "LTH"
+        ]
       }
     ],
     "alliances": [
@@ -296,6 +319,36 @@
         "type": "trade_agreement",
         "a": "HRM",
         "b": "GUJ",
+        "months": 0
+      },
+      {
+        "type": "nap",
+        "a": "CAS",
+        "b": "PRT",
+        "months": 60
+      },
+      {
+        "type": "nap",
+        "a": "ENG",
+        "b": "BUR",
+        "months": 48
+      },
+      {
+        "type": "trade_agreement",
+        "a": "CAS",
+        "b": "GEN",
+        "months": 0
+      },
+      {
+        "type": "trade_agreement",
+        "a": "FLR",
+        "b": "FRA",
+        "months": 0
+      },
+      {
+        "type": "trade_agreement",
+        "a": "POL",
+        "b": "LTH",
         "months": 0
       }
     ],
